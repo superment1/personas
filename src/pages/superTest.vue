@@ -1,8 +1,7 @@
 <script setup>
-import CtaButton from '../components/CTAButton.vue';
+import CtaButton from '../components/CtaButton.vue'
 import { useSeo } from '../composables/useSeo'
 import HeroSection from '../components/HeroSection.vue'
-import timbrado from '../assets/image/timbrado.jpg'
 import Image from '../components/Image.vue'
 import rosto from '../assets/image/rosto.png'
 import halloween from '../assets/image/halloween.png'
