@@ -1,0 +1,74 @@
+Demo fonts are offered in good faith to help you find the perfect font for your project. They are fully installable font files, able to be used in any software program for testing and comping purposes. They are not allowed to be used in a final project (whether personal or commercial) without purchasing a license. Demo fonts include the basic Latin alphabet, most numbers, and basic punctuation. OpenType features and extended language support have been removed.
+
+
++++ WHERE TO GET A COMMERCIAL LICENSE +++
+https://www.fontspring.com/fonts/anita-jurgeleit/captura/
+
+
++++ DEMO FONT END USER LICENCE AGREEMENT (EULA) +++
+ The Anita Jürgeleit | Type Design Demo Font End User License Agreement Version 1.7 - November 8, 2019.   
+
+By downloading, installing and /or embedding font software (“Font”) offered by Anita Jürgeleit | Type Design or its distributors, you (“Licensee”) agree to be bound by the following terms and conditions of this End User Licensing Agreement (“EULA”):  
+
+1. Right Granted 
+Anita Jürgeleit | Type Design grants Licensee a worldwide, non-exclusive and non-transferrable license to, for internal testing purposes or student projects only, use the Font to create graphics, link the Webfont to webpages using the @font-face selector in CSS files, and embed the Font into applications or ebooks.  
+
+2. Requirements and Restrictions  
+Licensee agrees to abide by the following requirements and restrictions: 
+a. Licensee may not create products with the Font to be used commercially, or personally. Products created with the Font are for testing and evaluation purposes only. 
+b. Licensee may not embed the fonts in any products or webpages that are publicly accessible without prior written consent from Anita Jürgeleit | Type Design or the Foundry.   
+
+3. Provision to Third Parties  
+Licensee may NOT provide the Font to a producer, publisher or other agent who is working on behalf of the Licensee except by embedding or linking in accordance with this EULA.  
+
+4. Term 
+This EULA grants the rights set forth in Paragraph 1 for a period of 30 days after the purchase date on the receipt unless and until the EULA terminates under Paragraph 8.   
+
+5. Other Usage 
+This EULA is a „demo license“. Licenses for Desktop use, @font-face embedding, computer applications and games, installable interactive books, software, mobile applications and games, Ebooks and Epubs, product creation websites, website template distribution, website templates, and other uses not allowed by this Agreement may be available for an additional fee. Contact Anita Jürgeleit | Type Design at support@anitajuergeleit.de for more information.  
+
+6. Modifications  
+Licensee may not modify the Font or create derivative works based upon the Font without prior written consent from Anita Jürgeleit | Type Design EXCEPT THAT Licensee may generate files necessary for embedding or linking in accordance with this EULA.   
+
+7. Copyright 
+The Font is protected by copyright law. Anita Jürgeleit | Type Design is the sole, exclusive owner of all intellectual property rights, including rights under copyright and trademark law. Licensee agrees not to use the Font in any manner that infringes the intellectual property rights of Anita Jürgeleit | Type Design or violates the terms of this EULA. Licensee will be held legally responsible, and indemnifies Anita Jürgeleit | Type Design, for any infringements on the foundry‘s rights caused by failure to abide by the terms of this EULA.  
+
+8. Termination 
+This EULA is effective until terminated. If Licensee fails to comply with any term of this EULA, Anita Jürgeleit | Type Design may terminate the EULA with 30 days notice. This EULA will terminate automatically 30 days after the issuance of such notice.
+
+
+9. Refunds, Disclaimer and Limited Warranty
+Anita Jürgeleit will, at the Licensee’s request, provide a refund for the Font if:
+a. The Font appears defective in combination with a proof of purchase
+b. The Font has not been used in any published or released work.
+c. No more than 30 days have passed since the date of purchase, specified on the Invoice.
+d. The Font has been uninstalled and deleted from all Licensee’s computers.
+
+The Product is provided “as is.” Anita Jürgeleit | Type Design makes no warranty of any kind, either expressed or implied, including, but not limited to the implied warranties of merchantability and fitness for a particular purpose.
+The entire risk as to the quality and performance of the Product rests upon Licensee. Anita Jürgeleit | Type Design does not warrant that the functions contained in the Product will meet Licensee’s requirements or that the operation of the software will be uninterrupted or error free.
+
+Anita Jürgeleit | Type Design shall not be liable for any direct, indirect, consequential, or incidental damages (including damages from loss of business profits, business interruption, loss of business information, and the like) arising out of the use of or inability to use the product even if Anita Jürgeleit has been advised of the possibility of such damages.
+
+Because some states do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to Licensee.
+
+
+10. Entire Agreement 
+This EULA, in conjunction with the Invoice that accompanies each Font licensed from Anita Jürgeleit or its distributors, constitutes the entire agreement between Anita Jürgeleit and Licensee.
+
+11. Modification 
+The Parties may modify or amend this EULA in writing.  
+
+12. General provisions
+The Licensee agrees to inform all users who have legitimate access to the Font Software about the content of this Agreement and to make sure that they comply with the terms of this Agreement.
+
+This Agreement may only be modified in writing signed by an authorized officer of Anita Jürgeleit. If any part of this agreement is found void and unenforceable, it will not affect the validity of the balance of the Agreement, which shall remain valid and enforceable according to its terms.
+
+13. Waiver. 
+The waiver of one breach or default hereunder shall not constitute the waiver of any subsequent breach or default.
+
+
+15. Governing Law 
+This Agreement will be governed by the laws of Germany. This agreement will not be governed by the United Nations Convention of Contracts for the International Sale of Goods, the application of which is expressly excluded.
+
+Anita Jürgeleit | Type Design, Martin-Mark-Weg 14, 22049 Hamburg
+November 2019
