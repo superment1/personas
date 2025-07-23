@@ -1,0 +1,825 @@
+@font-face {
+    font-family: 'Crossfit';
+    src: url('@/assets/fonts/crossfit/Crossfit-Black.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crossfit-Black';
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crossfit-Bold';
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.super-natural-sleep {
+    background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 430px;
+    width: 100%;
+}
+
+div.title-super-natural-sleep {
+    width: 100%;
+    height: 150px;
+    padding: 35px 0 0 25px;
+}
+
+span.product-title {
+    font-size: 44px;
+    font-family: 'Crossfit-Black';
+    font-weight: bold;
+    color:#6EC8F0;
+    
+    display: block;
+    line-height: 44px; 
+    word-spacing: 0%;
+
+}
+
+span.product-sub-title {
+    font-family: 'Crossfit-Black';
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    color: #370F1E;
+}
+
+div.description {
+    width: 200px;
+    height: 280px;
+    padding: 35px 0 0 25px;
+}
+
+span.description {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-style: 'Regular';
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    display: block;
+    color: #370F1E;
+}
+
+button img.botao-shop {
+    height: 40px;
+    width: 100%;
+    margin-top: 65px;
+}
+
+img.strip {
+    margin-left: 40px;
+    height: 15px;
+    width: 92px;
+}
+
+.non-habit-forming {
+    width: 100%;
+    height: 100%;
+    min-height: 337px;
+    background: #FFFAF0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+div.description-forming {
+    width: 100%;
+    max-width: 400px;
+    height: 100;
+    top: 571px;
+    left: 51px;
+    opacity: 1;
+    padding: 30px 50px 0 50px;
+}
+
+div.description-forming p {
+    font-family: 'Gelasio';
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-align: center;
+    color: #370F1E;
+    text-align: center;     
+}
+
+img.image-forming {
+    margin-top: 10px;
+}
+
+section.ingredients {
+    background: #E1DCCD;
+    width: 100%;
+    height: 403px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 30px 0;
+}
+
+section.ingredients div.title {
+    width: 234px;
+    height: 100px;
+}
+
+section.ingredients div.title p {
+    font-family: 'Crossfit-Black';
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+
+section.ingredients div.description {
+    width: 340px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+section.ingredients div.description p {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+    width: 340px;
+}
+
+section.ingredients div.carrossel-ingredients {
+    width: 100%;
+    min-height: 249px;
+    height: 100%;
+}
+
+section.stress {
+    width: 100%;
+    height: 100%;
+    min-height: 527px;
+    background: #370F1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    padding: 100px 0 120px 0;
+
+}
+
+section.stress div.title {
+    width: 304px;
+    height: 65px;
+}
+
+section.stress div.title p {
+    font-family: 'Crossfit-Bold';
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 900;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+}
+
+section.stress div.description {
+    width: 254px;
+    height: 49px;
+    margin-top: -30px;
+}
+
+section.stress div.description p {
+    font-family: 'DM Sans';
+    font-weight: 200;
+    font-style: 'Regular';
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+}
+
+section.stress div.item-1-content {
+    width: 165px;
+    height: 130px;
+}
+
+section.stress div.item-2-content {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#title-stress {
+    height: 60px;
+    font-family: 'Crossfit';
+    font-weight: 900;
+    font-style: black;
+    font-size: 50px;
+    text-align: center;
+    color: #FFFAF0;
+    margin-top: 20px;
+
+}
+
+#description-stress {
+    width: 150px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-style: 'Medium';
+    line-height: 16px;
+    font-size: 14px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+}
+
+#sub-description-stress {
+    font-family: 'DM Sans';
+    font-weight: 200;
+    font-style: 'Medium';
+    font-size: 8px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+}
+
+section.shop-rest {
+    width: 100%;
+    height: 434px;
+    background-color: #E1DCCD;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imagem-centralizada {
+    position: absolute;
+    top: -100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.imagem-centralizada img {
+    width: 233px;
+    height: 203px;
+    border-radius: 12px; /* ou 16px, se quiser arredondar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+section.shop-rest div.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 350px;
+    margin-top: 60px;
+}
+
+section.shop-rest div.infos p.title {
+    width: 272px;
+    font-family: 'Crossfit-Black';
+    font-weight: bold;
+    font-style: Black;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+
+section.shop-rest div.infos p.description-title {
+    margin-top: 10px;
+    width: 238px;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+    margin-bottom: 30px;
+}
+
+section.shop-rest div.infos div.infos-users {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+section.shop-rest div.infos div.infos-users div.info {
+    width: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.shop-rest div.infos div.infos-users div.info p.number {
+    font-family: 'Crossfit';
+    font-weight: 900;
+    font-style: Black;
+    font-size: 50px;
+    line-height: 35px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+  
+section.shop-rest div.infos div.infos-users div.info p.description {
+    width: 110px;
+    font-family: 'DM Sans';
+    font-weight: 600;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+  
+section.shop-rest div.botao-shop-rest {
+    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 200px;
+}
+
+section.everyone {
+    width: 100%;
+    max-height: 442px;
+    height: 100%;
+    background-color: #370F1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0 10px 20px 10px;
+}
+
+section.everyone p.title {
+    font-family: 'Crossfit-Bold';
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+    max-width: 306px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+img.table {
+    margin-top: 20px;
+}
+
+img.selos {
+    margin-top: 10px;
+}
+
+section.supplement {
+    background-color: #FFFAF0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 30px 0 35px 0;
+}
+  
+section.supplement p.description {
+    font-family: 'Gelasio';
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-align: center;
+    color: #370F1E;
+    width: 290px;
+}
+
+section.supplement div.image-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    margin-top: 15px;
+}
+  
+section.supplement div.image-text div.image {
+    background-image: url('@/assets/image/sleepSuperment/homem-acordando.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 270px;
+    min-height: 270px;
+    width: 158px;
+    margin-top: 5px;
+}
+
+section.supplement div.image-text div.text {
+    width: 50%;
+    height: 100%;
+    margin-left: 15px;
+}
+  
+section.supplement div.image-text div.text p.text {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0%;
+    color: #370F1E;
+}
+
+section.supplement div.description-finally {
+    width: 330px;
+    color: #370F1E;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+section.supplement div.description-finally p {
+    width: 330px;
+    margin-top: 25px;
+    color: #370F1E;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+section.frascos {
+    height: 530px;
+    width: 100%;
+}
+
+section.frascos img.frascos {
+    width: 100%;
+    height: 530px;
+}
+
+section.shop-now {
+    background-color: #370F1E;
+    width: 100%;
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+section.shop-now p.shop {
+    font-family: Gelasio;
+    font-weight: 100;
+    font-style: Italic;
+    font-size: 31px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFAF0;
+    margin-top: 40px;
+}
+
+section.shop-now div.stripe-white {
+    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 17px;
+    width: 102px;
+    margin-top: 5px;
+}
+
+section.shop-now div.buttons {
+    width: 100%;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+section.questions {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFAF0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+section.questions p.title {
+    font-family: 'Crossfit-Black';
+    font-weight: 900;
+    font-size: 28px;
+    font-style: Black;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+    width: 200px;
+    margin-top: 25px;
+}
+
+.faq {
+    background: #FFFAF0;
+    padding: 30px 20px;
+    font-family: 'DM Sans', sans-serif;
+    color: #370f1e;
+}
+
+.faq h2 {
+    font-family: 'Crossfit', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+///// AJUSTES RESPONSIVOES
+  
+@media (max-width: '550px') {
+    section.header-desktop {
+       display: none;
+    }
+}
+
+@media(min-width: '550px') {
+    section.topo, section.scroll-link-products {
+        display: none;
+    }
+
+    section.header-desktop {
+        background-color: #370F1E;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section.header-desktop .header-content {
+        height: 60px;
+        width: 90%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    section.header-desktop .header-content img {
+        height: 50px;
+    }
+
+    .super-natural-sleep {
+        background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 100%;
+        aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
+        max-height: 430px;     /* impede que fique gigante em telas grandes */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.title-super-natural-sleep {
+        width: 600px;
+        height: 150px;
+        padding: 35px 0 0 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 150px 0 0 0;
+    }
+
+    div.description {
+        width: 600px;
+        height: 280px;
+        padding: 100px 0 0 0;
+
+    }
+
+    span.description {
+        font-family: 'DM Sans';
+        font-weight: 500;
+        font-style: 'Regular';
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        display: block;
+        color: #370F1E;
+        width: 200px;
+    }
+
+    button img.botao-shop {
+        height: 40px;
+        width: 180px;
+        margin-top: -80px;
+        margin-left: 450px;
+    }
+
+    img.strip {
+        margin-left: 40px;
+        height: 15px;
+        width: 92px;
+        margin-top: -40px;
+        margin-left: 500px;
+    }
+
+    section.ingredients {
+        background: #E1DCCD;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+
+    section.ingredients div.title {
+        width: 100%;
+        height: 50px;
+    }
+
+    section.ingredients div.title p {
+        font-family: 'Crossfit-Black';
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+    }
+
+    section.ingredients div.description {
+        width: 440px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 0 0 100px 0;
+    }
+
+    section.ingredients div.description p {
+        font-family: 'DM Sans';
+        font-weight: 500;
+        font-size: 16px;
+        // line-height: 20px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+        width: 440px;
+    }
+
+    section.ingredients div.carrossel-ingredients {
+        width: 100%;
+        min-height: 249px;
+        height: 100%;
+        margin-top: -90px;
+    }
+
+    section.stress {
+        all: unset;
+        display: block; 
+        width: 100%;
+        height: 100%;
+        background: #370F1E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0px 0;
+    }
+
+    section.stress div.title {
+        width: 300px;
+        height: 100%;
+    }
+
+    section.stress div.title p {
+        font-family: 'Crossfit-Bold';
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #FFFAF0;
+    }
+
+    section.stress div.description {
+        width: 230px;
+        height: 100%;
+        margin-top: -80px;
+    }
+
+    section.stress div.description p {
+        font-family: 'DM Sans';
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0%;
+        text-align: center;
+    }
+
+    section.stress div.item-1-content {
+    }
+
+    section.stress div.item-2-content {
+    }
+
+    #title-stress {
+    }
+
+    #description-stress {
+        
+    }
+
+    #sub-description-stress {
+    }
+}
+
+@media(min-width: '800px') {
+    .non-habit-forming {
+        min-height: 287px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(min-width: '1200px') {
+    button img.botao-shop {
+        height: 40px;
+        width: 180px;
+        margin-top: -20px;
+        margin-left: 500px;
+    }
+
+    img.strip {
+        margin-left: 40px;
+        height: 15px;
+        width: 92px;
+        margin-top: -00px;
+        margin-left: 550px;
+    }
+}
+
+///// AJUSTES RESPONSIVOES

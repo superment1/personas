@@ -4,11 +4,12 @@ import { defineProps, useAttrs } from 'vue'
 const props = defineProps({
   url: String,
   label: String
-})
-const attrs = useAttrs()
+});
+
+const attrs = useAttrs();
 
 function handleClick() {
-  window.location.href = `https://checkout.supemerment.co/checkout${props.url}`;
+  window.location.href = `${props.url}`;
 }
 
 </script>
@@ -16,7 +17,7 @@ function handleClick() {
 <style scoped>
   .button {
     background-color: #6EC8F0;
-    width: 326px;
+    width: 100%;
     height: 44px;
     border: none;
     border-radius: 6px;
