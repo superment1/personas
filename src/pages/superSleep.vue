@@ -2,19 +2,12 @@
   import '@/styles/superSleep.scss';
   import ButtonShop from '@/components/ButtonShopNow.vue';
   import FAQ from '@/components/Faq.vue';
-  import IngredientsCarousel from '@/components/IngredientsCarousel.vue'
+  import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
+  import SuperHeader from '../components/SuperHeader.vue';
 </script>
 
 <template>
-  <section class="topo">
-    <img src="@/assets/image/sleepSuperment/superment.gif" alt="Logo animado" />
-  </section>
-  <section class="scroll-link-products">
-    <div class="scroll-text-wrapper">
-      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
-      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
-    </div>
-  </section>
+  <SuperHeader/>
   <section class="header-desktop">
     <div class="header-content">
       <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">

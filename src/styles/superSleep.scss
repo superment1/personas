@@ -19,58 +19,6 @@
     font-style: normal;
 }
 
-.topo {
-    background: #E1DCCD;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 50px 0 0 0;
-}
-
-.topo img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;  
-}
-
-.scroll-link-products {
-    background: #370F1E;
-    height: 25px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.scroll-text-wrapper {
-    display: flex;
-    width: max-content; 
-    animation: scroll-text 15s linear infinite;
-}
-
-.scroll-text-wrapper p {
-    margin: 0;
-    padding: 0 2rem;
-    color: white;
-    font-size: 12px;
-    font-family: 'DM Sans';
-    font-weight: 200;
-    line-height: 25px;
-    white-space: nowrap;
-}
-
-@keyframes scroll-text {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
 .super-natural-sleep {
     background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
     background-size: cover;
