@@ -7,14 +7,14 @@
 
 @font-face {
     font-family: 'Crossfit-Black';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Crossfit-Bold';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -72,7 +72,7 @@
 }
 
 .super-natural-sleep {
-    background-image: url('@/assets/image/super-natural-sleep.png');
+    background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -423,7 +423,7 @@ section.shop-rest div.infos div.infos-users div.info p.description {
 }
   
 section.shop-rest div.botao-shop-rest {
-    background-image: url('../assets/image/botao-shop-rest.png');
+    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -498,7 +498,7 @@ section.supplement div.image-text {
 }
   
 section.supplement div.image-text div.image {
-    background-image: url('../assets/image/homem-acordando.png');
+    background-image: url('@/assets/image/sleepSuperment/homem-acordando.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -582,7 +582,7 @@ section.shop-now p.shop {
 }
 
 section.shop-now div.stripe-white {
-    background-image: url('../assets/image/stripe-branco.png');
+    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -714,7 +714,7 @@ section.footer p.reserved {
     }
 
     .super-natural-sleep {
-        background-image: url('@/assets/image/super-natural-sleep-2.png');
+        background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
