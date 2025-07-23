@@ -1,629 +1,25 @@
 <script setup>
-  import CTAButton from '../components/CtaButton.vue';
-  import ButtonShop from '../components/ButtonShopNow.vue';
+  import '@/styles/superSleep.scss';
+  import ButtonShop from '@/components/ButtonShopNow.vue';
+  import FAQ from '@/components/Faq.vue';
+  import IngredientsCarousel from '@/components/IngredientsCarousel.vue'
 </script>
-
-<style scoped>
-  @font-face {
-    font-family: 'Crossfit';
-    src: url('@/assets/fonts/crossfit/Crossfit-Black.otf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Crossfit-Black';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Crossfit-Bold';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  .topo {
-    background: #E1DCCD;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 50px 0 0 0;
-  }
-
-  .topo img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;  
-  }
-
-  .scroll-link-products {
-    background: #370F1E;
-    height: 25px;
-    width: 100%;  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    overflow-x: auto;
-    white-space: nowrap;
-    overflow: hidden; /* oculta texto que sai fora da área */
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .scroll-link-products p {
-    padding: 0 26px;
-    display: inline-block; 
-    color: white;
-    text-align: center;
-    width: 100%;
-    font-size: 12px;
-    font-family: 'DM Sans';
-    font-weight: 200;
-    word-spacing: 2px;
-    animation: scroll-text 20s linear infinite;
-  }
-
-  @keyframes scroll-text {
-    0% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .super-natural-sleep {
-    background-image: url('../assets/image/super-natural-sleep.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 430px;
-    width: 100%;
-  }
-
-  div.title-super-natural-sleep {
-    width: 100%;
-    height: 150px;
-    padding: 35px 0 0 25px;
-  }
-
-  span.product-title {
-    font-size: 44px;
-    font-family: 'Crossfit-Black';
-    font-weight: bold;
-    color:#6EC8F0;
-    
-    display: block;
-    line-height: 44px; 
-    word-spacing: 0%;
-
-  }
-
-  span.product-sub-title {
-    font-family: 'Crossfit-Black';
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: 0%;
-    color: #370F1E;
-  }
-
-  div.description {
-    width: 200px;
-    height: 280px;
-    padding: 35px 0 0 25px;
-  }
-
-  span.description {
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-style: 'Regular';
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    display: block;
-    color: #370F1E;
-  }
-
-  div.botao-shop {
-    background-image: url('../assets/image/botao-shop.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 40px;
-    width: 100%;
-    margin-top: 55px;
-  }
-
-  div.strip {
-    background-image: url('../assets/image/stripe.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 5px;
-    margin-left: 40px;
-    height: 15px;
-    width: 92px;
-  }
-
-  .non-habit-forming {
-    width: 100%;
-    height: 337px;
-    background: #FFFAF0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  div.description-forming {
-    width: 400px;
-    height: 100;
-    top: 571px;
-    left: 51px;
-    opacity: 1;
-    padding: 30px 50px 0 50px;
-  }
-
-  div.description-forming p {
-    font-family: 'Gelasio';
-    font-weight: 600;
-    font-style: Italic;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-align: center;
-    color: #370F1E;
-    text-align: center;     /* Justifica o texto */
-
-  }
-
-  div.image-forming {
-    background-image: url('../assets/image/capsula-flores.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 182px;
-    width: 324px;
-
-    margin-top: 20px;
-    margin-left: 30px;
-  }
-
-  section.ingredients {
-    background: #E1DCCD;
-    width: 100%;
-    height: 403px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0;
-  }
-
-  section.ingredients div.title {
-    width: 234px;
-    height: 64px;
-  }
-
-  section.ingredients div.title p {
-    font-family: 'Crossfit-Black';
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 32px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-  }
-
-  section.ingredients div.description {
-    width: 340px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  section.ingredients div.description p {
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-    width: 340px;
-  }
-
-  section.ingredients div.carrossel-ingredients {
-    width: 100%;
-    height: 249px;
-  }
-
-  section.stress {
-    width: 100%;
-    height: 527px;
-    background: #370F1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding: 40px 0 0 0;
-  }
-
-  section.stress div.title {
-    width: 304px;
-    height: 77px;
-  }
-
-  section.stress div.title p {
-    font-family: 'Crossfit-Bold';
-    font-size: 28px;
-    line-height: 28px;
-    font-weight: 400;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-  }
-
-  section.stress div.description {
-    width: 254px;
-    height: 39px;
-    margin-top: -30px;
-  }
-
-  section.stress div.description p {
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-style: 'Regular';
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-  }
-
-  section.stress div.item-1-content {
-    width: 165px;
-    height: 130px;
-  }
-
-  section.stress div.item-2-content {
-    width: 100%;
-    height: 130px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  #title-stress {
-    height: 60px;
-    font-family: 'Crossfit';
-    font-weight: 900;
-    font-style: black;
-    font-size: 50px;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 20px;
-
-  }
-
-  #description-stress {
-    width: 150px;
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-style: 'Medium';
-    line-height: 16px;
-    font-size: 14px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-  }
-
-  #sub-description-stress {
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-style: 'Medium';
-    font-size: 8px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-  }
-
-  section.shop-rest {
-    width: 100%;
-    height: 434px;
-    background-color: #E1DCCD;
-    position: relative;
-    z-index: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .imagem-centralizada {
-    position: absolute;
-    top: -100px; /* faz a imagem subir para invadir a section de cima */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  .imagem-centralizada img {
-    width: 233px;
-    height: 203px;
-    border-radius: 12px; /* ou 16px, se quiser arredondar */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  section.shop-rest div.infos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    height: 370px;
-  }
-
-  section.shop-rest div.infos p.title {
-    width: 272px;
-    font-family: 'Crossfit-Black';
-    font-weight: bold;
-    font-style: Black;
-    font-size: 28px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-  }
-
-  section.shop-rest div.infos p.description-title {
-    margin-top: 10px;
-    width: 238px;
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-style: Regular;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-    margin-bottom: 30px;
-  }
-
-  section.shop-rest div.infos div.infos-users {
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-
-  section.shop-rest div.infos div.infos-users div.info {
-    width: 112px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  section.shop-rest div.infos div.infos-users div.info p.number {
-    font-family: 'Crossfit';
-    font-weight: 900;
-    font-style: Black;
-    font-size: 50px;
-    line-height: 35px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-  }
-  
-  section.shop-rest div.infos div.infos-users div.info p.description {
-    width: 110px;
-    font-family: 'DM Sans';
-    font-weight: 600;
-    font-style: Medium;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #370F1E;
-  }
-  
-  section.shop-rest div.botao-shop-rest {
-    background-image: url('../assets/image/botao-shop-rest.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 36px;
-    width: 200px;
-  }
-
-  section.everyone {
-    width: 100%;
-    height: 442px;
-    background-color: #370F1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-  }
-
-  section.everyone p.title {
-    font-family: 'Crossfit-Black';
-    font-weight: 100;
-    font-size: 28px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-    width: 306px;
-    margin-top: 40px;
-  }
-
-  div.table {
-    background-image: url('../assets/image/tabela.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 219px;
-    width: 328px;
-    margin-top: 20px;
-  }
-
-  div.selos {
-    background-image: url('../assets/image/selos.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 74px;
-    width: 341px;
-    margin-top: 5px;
-  }
-
-  section.supplement {
-    background-color: #FFFAF0;
-    width: 100%;
-    height: 529px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-  }
-  
-  section.supplement p.description {
-    font-family: 'Gelasio';
-    font-weight: 600;
-    font-style: Italic;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: -2%;
-    text-align: center;
-    color: #370F1E;
-    width: 290px;
-    margin-top: 30px;
-  }
-
-  section.supplement div.image-text {
-    width: 100%;
-    height: 280px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    margin-top: 20px;
-  }
-  
-  section.supplement div.image-text div.image {
-    background-image: url('../assets/image/homem-acordando.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 270px;
-    width: 158px;
-    margin-top: 5px;
-  }
-
-  section.supplement div.image-text div.text {
-    width: 50%;
-    height: 269px;
-    margin-left: 15px;
-  }
-  
-  section.supplement div.image-text div.text p.text {
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-style: Regular;
-    font-size: 14px;
-    line-height: 19px;
-    letter-spacing: 0%;
-    color: #370F1E;
-  }
-
-  section.supplement p.description-finally {
-    width: 330px;
-    margin-top: 25px;
-    color: #370F1E;
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0%;
-  }
-
-  section.frascos {
-    background-image: url('../assets/image/frascos.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 530px;
-    width: 100%;
-  }
-
-  section.shop-now {
-    background-color: #370F1E;
-    width: 100%;
-    height: 315px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-  }
-
-  section.shop-now p.shop {
-    font-family: Gelasio;
-    font-weight: 100;
-    font-style: Italic;
-    font-size: 31px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 40px;
-  }
-
-  section.shop-now div.stripe-white {
-    background-image: url('../assets/image/stripe-branco.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 17px;
-    width: 102px;
-    margin-top: 5px;
-  }
-
-  section.shop-now div.buttons {
-    width: 100%;
-    height: 155px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 35px;
-  }
-
-</style>
 
 <template>
   <section class="topo">
     <img src="../assets/image/superment.gif" alt="Logo animado" />
   </section>
   <section class="scroll-link-products">
-    <p>Made in the USA   |   Clean, Natural, No Fillers   |   Save 30% | 30-Day Money-Back Guarantee</p>
+    <div class="scroll-text-wrapper">
+      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
+      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
+    </div>
+  </section>
+  <section class="header-desktop">
+    <div class="header-content">
+      <img src="@/assets/image/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
+      <img src="@/assets/image/selos.png" alt="selos" class="super-natural-sleep-header">
+    </div>
   </section>
   <section class="super-natural-sleep">
     <div class="title-super-natural-sleep">
@@ -633,17 +29,18 @@
     </div>
     <div class="description">
       <span class="description">Try our premium natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 36% off</span>
-      <span class="description" style="font-weight: bold;">for a limited time!</span>
-      <div class="botao-shop"></div>
-      <div class="strip"></div>
+      <span class="description" style="font-weight: bold;">now 36% off for a limited time!</span>
+      <button>
+        <img src="@/assets/image/botao-shop.png" alt="botao-shop" class="botao-shop">
+      </button>
+      <img src="@/assets/image/stripe.png" alt="" class="strip">
     </div>
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
       <p>"We proudly bring this with one purpose: to give you real, natural sleep support, free of anything harmful."</p>
     </div>
-    <div class="image-forming"></div>
+    <img src="@/assets/image/capsula-flores.png" alt="capsula e flores" class="image-forming">
   </section>
   <section class="ingredients">
     <div class="title">
@@ -652,7 +49,9 @@
     <div class="description">
       <p>Tired of being tired? We created a clean botanical blend to help your body rediscover natural, restful sleep.</p>
     </div>
-    <div class="carrossel-ingredients"></div>
+    <div class="carrossel-ingredients">
+      <IngredientsCarousel></IngredientsCarousel>
+    </div>
   </section>
   <section class="stress">
     <div class="title">
@@ -693,7 +92,7 @@
         </div>
         <div class="info">
           <p class="number">0%</p>
-          <p class="description" style="width: 150px;">experienced grogginess or unwanted side effects.</p>
+          <p class="description" >experienced grogginess or unwanted side effects.</p>
         </div>
       </div>
       <div class="botao-shop-rest"></div>
@@ -701,8 +100,8 @@
   </section>
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <div class="table"></div>
-    <div class="selos"></div>
+    <img src="@/assets/image/tabela.png" alt="table" class="table">
+    <img src="@/assets/image/selos.png" alt="selos" class="selos">
   </section>
   <section class="supplement">
     <p class="description">“Why isn’t there a cleaner, natural way to help you truly rest, without worrying about side effects?”</p>
@@ -716,9 +115,12 @@
         <p class="text">So we partnered with one of the most trusted labs in the U.S. to create Super Natural Sleep.</p>
       </div>
     </div>
-    <p class="description-finally">Our friends and family tried it first and loved it. Now, we’re excited to finally share it with you.</p>
+    <div class="description-finally">
+      <p >Our friends and family tried it first and loved it. Now, we’re excited to finally share it with you.</p>
+    </div>
   </section>
   <section class="frascos">
+    <img src="@/assets/image/frascos.png" alt="frascos" class="frascos">
   </section>
   <section class="shop-now">
     <p class="shop">SHOP NOW</p>
@@ -728,5 +130,17 @@
       <ButtonShop label="BUY THREE | PAY $28 PER BOTTLE"></ButtonShop>
       <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE"></ButtonShop>
     </div>
+  </section>
+  <section class="questions">
+    <p class="title">Frequently asked questions:</p>
+    <section class="faq">
+      <FAQ show="true" question="da pra fazer?" response="sim, dá demais"></FAQ>
+    </section>
+  </section>
+  <section class="footer">
+    <p class="description">Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratories. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep  is part of the commercial portfolio of Superment, a brand owned and operated by an internacional company in the United States.</p>
+    <div class="line"></div>
+    <img src="../assets/image/superment1.png" alt="superment">
+    <p class="reserved">© Super Natural Sleep Research 2025. All Rights Reserved.</p>
   </section>
 </template>
