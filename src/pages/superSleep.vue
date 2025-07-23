@@ -2,23 +2,16 @@
   import '@/styles/superSleep.scss';
   import ButtonShop from '@/components/ButtonShopNow.vue';
   import FAQ from '@/components/Faq.vue';
-  import IngredientsCarousel from '@/components/IngredientsCarousel.vue'
+  import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
+  import SuperHeader from '../components/SuperHeader.vue';
 </script>
 
 <template>
-  <section class="topo">
-    <img src="../assets/image/superment.gif" alt="Logo animado" />
-  </section>
-  <section class="scroll-link-products">
-    <div class="scroll-text-wrapper">
-      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
-      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
-    </div>
-  </section>
+  <SuperHeader/>
   <section class="header-desktop">
     <div class="header-content">
-      <img src="@/assets/image/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
-      <img src="@/assets/image/selos.png" alt="selos" class="super-natural-sleep-header">
+      <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
+      <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="super-natural-sleep-header">
     </div>
   </section>
   <section class="super-natural-sleep">
@@ -31,16 +24,16 @@
       <span class="description">Try our premium natural sleep formula,</span>
       <span class="description" style="font-weight: bold;">now 36% off for a limited time!</span>
       <button>
-        <img src="@/assets/image/botao-shop.png" alt="botao-shop" class="botao-shop">
+        <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
       </button>
-      <img src="@/assets/image/stripe.png" alt="" class="strip">
+      <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="strip">
     </div>
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
       <p>"We proudly bring this with one purpose: to give you real, natural sleep support, free of anything harmful."</p>
     </div>
-    <img src="@/assets/image/capsula-flores.png" alt="capsula e flores" class="image-forming">
+    <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
   </section>
   <section class="ingredients">
     <div class="title">
@@ -80,7 +73,7 @@
   </section>
   <section class="shop-rest">
     <div class="imagem-centralizada">
-      <img src="../assets/image/moca.png" alt="Mulher com pílula" />
+      <img src="@/assets/image/sleepSuperment/moca.png" alt="Mulher com pílula" />
     </div>
     <div class="infos">
       <p class="title">The numbers behind Super Natural Sleep</p>
@@ -100,8 +93,8 @@
   </section>
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <img src="@/assets/image/tabela.png" alt="table" class="table">
-    <img src="@/assets/image/selos.png" alt="selos" class="selos">
+    <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
+    <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
   </section>
   <section class="supplement">
     <p class="description">“Why isn’t there a cleaner, natural way to help you truly rest, without worrying about side effects?”</p>
@@ -120,7 +113,7 @@
     </div>
   </section>
   <section class="frascos">
-    <img src="@/assets/image/frascos.png" alt="frascos" class="frascos">
+    <img src="@/assets/image/sleepSuperment/frascos.png" alt="frascos" class="frascos">
   </section>
   <section class="shop-now">
     <p class="shop">SHOP NOW</p>
@@ -140,7 +133,7 @@
   <section class="footer">
     <p class="description">Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratories. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep  is part of the commercial portfolio of Superment, a brand owned and operated by an internacional company in the United States.</p>
     <div class="line"></div>
-    <img src="../assets/image/superment1.png" alt="superment">
+    <img src="@/assets/image/sleepSuperment/superment1.png" alt="superment">
     <p class="reserved">© Super Natural Sleep Research 2025. All Rights Reserved.</p>
   </section>
 </template>

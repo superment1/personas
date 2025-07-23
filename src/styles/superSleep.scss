@@ -7,72 +7,20 @@
 
 @font-face {
     font-family: 'Crossfit-Black';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Crossfit-Bold';
-    src: url('../assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
-.topo {
-    background: #E1DCCD;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 50px 0 0 0;
-}
-
-.topo img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;  
-}
-
-.scroll-link-products {
-    background: #370F1E;
-    height: 25px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.scroll-text-wrapper {
-    display: flex;
-    width: max-content; 
-    animation: scroll-text 15s linear infinite;
-}
-
-.scroll-text-wrapper p {
-    margin: 0;
-    padding: 0 2rem;
-    color: white;
-    font-size: 12px;
-    font-family: 'DM Sans';
-    font-weight: 200;
-    line-height: 25px;
-    white-space: nowrap;
-}
-
-@keyframes scroll-text {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
 .super-natural-sleep {
-    background-image: url('@/assets/image/super-natural-sleep.png');
+    background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -423,7 +371,7 @@ section.shop-rest div.infos div.infos-users div.info p.description {
 }
   
 section.shop-rest div.botao-shop-rest {
-    background-image: url('../assets/image/botao-shop-rest.png');
+    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -498,7 +446,7 @@ section.supplement div.image-text {
 }
   
 section.supplement div.image-text div.image {
-    background-image: url('../assets/image/homem-acordando.png');
+    background-image: url('@/assets/image/sleepSuperment/homem-acordando.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -582,7 +530,7 @@ section.shop-now p.shop {
 }
 
 section.shop-now div.stripe-white {
-    background-image: url('../assets/image/stripe-branco.png');
+    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -714,7 +662,7 @@ section.footer p.reserved {
     }
 
     .super-natural-sleep {
-        background-image: url('@/assets/image/super-natural-sleep-2.png');
+        background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
