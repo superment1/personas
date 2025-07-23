@@ -11,8 +11,8 @@
   </section>
   <section class="scroll-link-products">
     <div class="scroll-text-wrapper">
-      <p>Made in the USA   |   Clean, Natural, No Fillers   |   Save 30% | 30-Day Money-Back Guarantee</p>
-      <p>Made in the USA   |   Clean, Natural, No Fillers   |   Save 30% | 30-Day Money-Back Guarantee</p>
+      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
+      <p>Made in the USA | Clean, natural, no fillers | Save 30% | 30-day money-back guarantee | Real reviews rated 4.9/5.0 | 98% would recommend this product</p>
     </div>
   </section>
   <section class="header-desktop">
@@ -41,7 +41,6 @@
       <p>"We proudly bring this with one purpose: to give you real, natural sleep support, free of anything harmful."</p>
     </div>
     <img src="@/assets/image/capsula-flores.png" alt="capsula e flores" class="image-forming">
-    <!-- <div class="image-forming"></div> -->
   </section>
   <section class="ingredients">
     <div class="title">

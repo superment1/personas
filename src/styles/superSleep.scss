@@ -48,7 +48,7 @@
 .scroll-text-wrapper {
     display: flex;
     width: max-content; 
-    animation: scroll-text 12s linear infinite;
+    animation: scroll-text 15s linear infinite;
 }
 
 .scroll-text-wrapper p {
@@ -771,6 +771,127 @@ section.footer p.reserved {
         width: 92px;
         margin-top: -40px;
         margin-left: 500px;
+    }
+
+    section.ingredients {
+        background: #E1DCCD;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+
+    section.ingredients div.title {
+        width: 100%;
+        height: 50px;
+    }
+
+    section.ingredients div.title p {
+        font-family: 'Crossfit-Black';
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+    }
+
+    section.ingredients div.description {
+        width: 440px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 0 0 100px 0;
+    }
+
+    section.ingredients div.description p {
+        font-family: 'DM Sans';
+        font-weight: 500;
+        font-size: 16px;
+        // line-height: 20px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+        width: 440px;
+    }
+
+    section.ingredients div.carrossel-ingredients {
+        width: 100%;
+        min-height: 249px;
+        height: 100%;
+        margin-top: -90px;
+    }
+
+    section.stress {
+        all: unset;
+        display: block; 
+        width: 100%;
+        height: 100%;
+        background: #370F1E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0px 0;
+    }
+
+    section.stress div.title {
+        width: 300px;
+        height: 100%;
+    }
+
+    section.stress div.title p {
+        font-family: 'Crossfit-Bold';
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 900;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #FFFAF0;
+    }
+
+    section.stress div.description {
+        width: 230px;
+        height: 100%;
+        margin-top: -80px;
+    }
+
+    section.stress div.description p {
+        font-family: 'DM Sans';
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0%;
+        text-align: center;
+    }
+
+    section.stress div.item-1-content {
+    }
+
+    section.stress div.item-2-content {
+    }
+
+    #title-stress {
+    }
+
+    #description-stress {
+        
+    }
+
+    #sub-description-stress {
+    }
+}
+
+@media(min-width: '800px') {
+    .non-habit-forming {
+        min-height: 287px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }
 
