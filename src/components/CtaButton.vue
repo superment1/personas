@@ -16,7 +16,7 @@ function handleClick() {
       el?.scrollIntoView({ behavior: 'smooth' })
     }
   } else if (!props.anchorId && props.checkoutUrl) {
-    window.location.href = `https://checkout.stripe.com/pay/${props.checkoutUrl}`
+    window.location.href = `https://checkout.superment.co/checkout/${props.checkoutUrl}`
   }
 }
 
