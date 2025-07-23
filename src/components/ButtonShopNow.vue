@@ -8,7 +8,7 @@ const props = defineProps({
 const attrs = useAttrs()
 
 function handleClick() {
-  window.location.href = `https://checkout.stripe.com/pay/${props.url}`;
+  window.location.href = `https://checkout.supemerment.co/checkout${props.url}`;
 }
 
 </script>
