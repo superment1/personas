@@ -8,19 +8,19 @@ const items = [
     type: 'image',
     title: 'Passion Flower',
     subtitle: 'Calming and relaxing.',
-    image: '/src/assets/image/sleepSuperment/imagem-teste.png'
+    image: new URL('@/assets/image/sleepSuperment/imagem-teste.png', import.meta.url).href
   },
   {
     type: 'image',
     title: 'Marshmallow Root',
     subtitle: 'Calms digestion, supports sleep.',
-    image: '/src/assets/image/sleepSuperment/imagem-teste.png'
+    image: new URL('@/assets/image/sleepSuperment/moca.png', import.meta.url).href
   },
   {
     type: 'image',
     title: 'California Poppy',
     subtitle: 'Promotes calm and sleep.',
-    image: '/src/assets/image/sleepSuperment/imagem-teste.png'
+    image: new URL('@/assets/image/sleepSuperment/homem-acordando.png', import.meta.url).href
   },
   {
     type: 'video',
@@ -32,13 +32,13 @@ const items = [
     type: 'video',
     title: 'Vídeo 2 - Marshmallow Root',
     subtitle: 'Calmante natural para o sistema digestivo.',
-    url: 'https://www.youtube.com/embed/KjpzE0FeZa4'
+    url: 'https://www.youtube.com/embed/2cdF8Y3J1e4'
   },
   {
     type: 'video',
     title: 'Vídeo 3 - California Poppy',
     subtitle: 'Planta que favorece o relaxamento.',
-    url: 'https://www.youtube.com/embed/KjpzE0FeZa4'
+    url: 'https://www.youtube.com/embed/10VN5lmJfog'
   }
 ]
 
