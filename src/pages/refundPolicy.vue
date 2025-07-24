@@ -12,14 +12,14 @@ import SuperHeader from '../components/SuperHeader.vue'
 <template>
     <SuperHeader :show-redirect="true"/>
     <div class="flex flex-col mx-auto bg-[#fff9ed] items-center font-gelasio">
-        <div class="main flex flex-col max-w-[80%] mx-auto">
+        <div class="main flex flex-col max-w-[80%] md:max-w-[70%] mx-auto">
             <div class="title font-crossfit border-b-2 border-[#370f1e] text-[#370f1e]">
                 <h1 class="text-[2.25rem] text-center py-8">
                     Refund Policy
                 </h1>
             </div>
              <div class="font-sans leading-[1.2] font-medium text-[#370f1e]">
-                <div class="py-5 border-b-2 border-[#370f1e]">
+                <div class="py-5 pt-10 border-b-2 border-[#370f1e]">
                     <p class="italic pb-3">Last updated: July 22, 2025 </p>
                     <p class=""> We’re confident you’ll love Superment. But if for
 any reason you're not completely satisfied, we

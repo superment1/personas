@@ -14,6 +14,9 @@ const faqData = [
 
 <template>
   <SuperHeader/>
-  <FaqAccordion :items="faqData" />
+  <div class="max-w-[80%] md:max-w-[70%] mx-auto">
+      <FaqAccordion :items="faqData" />
+  </div>
+
   <SuperFooter/>
 </template>
