@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
         gelasio: ['Gelasio', 'serif'],
+        crossfit: ['Crossfit', 'sans-serif']
       },
     },
   },
