@@ -1,8 +1,20 @@
 <script setup>
-
+  const links = [
+    { label: 'About Us', href: '/about' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Refund Policy', href: '/refund' }
+  ]
 </script>
 
 <style scoped>
+  .font-crossfit {
+    font-family: 'Crossfit', sans-serif;
+  }
+  .font-dmsans {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
   section.footer {
     width: 100%;
     background-color: #370F1E;
@@ -39,44 +51,77 @@
     margin-top: 10px;
     width: 220px;
   }
+
+  section.footer div.footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.footer div.explore {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.footer div.contact {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
 </style>
 
 <template>
   <section class="footer">
-    <div class="w-[80%] py-5 text-start">
-      <h1 class="text-[2.25rem] font-crossfit text-[#fff9ed]">EXPLORE</h1>
-      <div class="flex flex-col text-[1.5rem] text-[#fff9ed]">
-        <a class="flex justify-between py-2 border-b" href="/about">About Us
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>        
-        <a class="flex justify-between py-2 border-b" href="/faq">FAQ
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>
-        <a class="flex justify-between py-2 border-b" href="/termsuse">Terms of Service
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>
-        <a class="flex justify-between  py-2 border-b" href="/refundpolicy">Refund Policy
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>
-      </div>
-
+    <div class="explore text-white px-6 py-8 w-full">
+      <h2 class="text-4xl md:text-4xl font-bold font-crossfit uppercase mb-6 w-full"  style="text-align: start;">Explore</h2>
+      <ul class="space-y-1 text-[#FFF] font-dmsans text-[18px] md:text-[18px]">
+        <li
+          v-for="item in links"
+          :key="item.label"
+          class="group border-b border-[#FFF] h-[38px] w-[300px]"
+        >
+          <RouterLink
+            :to="item.href"
+            class="flex justify-between items-center w-full transition underline-offset-2 hover:underline"
+          >
+            <span>{{ item.label }}</span>
+            <span class="text-1xl transition group-hover:translate-x-1">→</span>
+          </RouterLink>
+        </li>
+      </ul>
     </div>
-    <p class="description">Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratories. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep  is part of the commercial portfolio of Superment, a brand owned and operated by an internacional company in the United States.</p>
-    <div class="line"></div>
-    <div class="place-items-center">
+    <div class="contact bg-[#370F1E] text-white px-6 py-8 w-full font-dmsans">
+      <h2 class="text-4xl md:text-3xl font-bold font-crossfit uppercase mb-6 w-full"  style="text-align: start;">Contact</h2>
+      <ul class="space-y-4 text-[#FFF]">
+        <li class="flex items-center gap-3 border-b border-[#FFF] pb-2 w-[300px]">
+          <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
+            📧
+          </span>
+          <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
+        </li>
+        <li class="flex items-center gap-3 border-b border-[#FFF] pb-2 w-[300px]">
+          <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
+            📷
+          </span>
+          <a href="https://instagram.com/superment.co" target="_blank" class="text-[16px]">@superment.co</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer">
       <img src="@/assets/image/sleepSuperment/superment1.png" alt="superment">
       <p class="reserved">© Super Natural Sleep Research 2025. All Rights Reserved.</p>
+      <p class="description">Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratories. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep  is part of the commercial portfolio of Superment, a brand owned and operated by an internacional company in the United States.</p>
     </div>
-
-    
   </section>
 </template>
 
