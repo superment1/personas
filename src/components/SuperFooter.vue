@@ -1,9 +1,11 @@
 <script setup>
+  import InputRD from './InputRD.vue';
+
   const links = [
     { label: 'About Us', href: '/about' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Terms of Service', href: '/terms' },
-    { label: 'Refund Policy', href: '/refund' }
+    { label: 'Refund Policy', href: '/refundpolicy' }
   ]
 </script>
 
@@ -85,11 +87,11 @@
   <section class="footer">
     <div class="explore text-white px-6 py-8 w-full">
       <h2 class="text-4xl md:text-4xl font-bold font-crossfit uppercase mb-6 w-full"  style="text-align: start;">Explore</h2>
-      <ul class="space-y-1 text-[#FFF] font-dmsans text-[18px] md:text-[18px]">
+      <ul class="space-y-1 text-[#FFFAF0] font-dmsans text-[18px] md:text-[18px]">
         <li
           v-for="item in links"
           :key="item.label"
-          class="group border-b border-[#FFF] h-[38px] w-[300px]"
+          class="group border-b border-[#FFFAF0] h-[38px] w-[300px]"
         >
           <RouterLink
             :to="item.href"
@@ -103,14 +105,14 @@
     </div>
     <div class="contact bg-[#370F1E] text-white px-6 py-8 w-full font-dmsans">
       <h2 class="text-4xl md:text-3xl font-bold font-crossfit uppercase mb-6 w-full"  style="text-align: start;">Contact</h2>
-      <ul class="space-y-4 text-[#FFF]">
-        <li class="flex items-center gap-3 border-b border-[#FFF] pb-2 w-[300px]">
+      <ul class="space-y-4 text-[#FFFAF0]">
+        <li class="flex items-center gap-3 border-b border-[#FFFAF0] pb-2 w-[300px]">
           <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
             📧
           </span>
           <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
         </li>
-        <li class="flex items-center gap-3 border-b border-[#FFF] pb-2 w-[300px]">
+        <li class="flex items-center gap-3 border-b border-[#FFFAF0] pb-2 w-[300px]">
           <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
             📷
           </span>
@@ -118,6 +120,7 @@
         </li>
       </ul>
     </div>
+    <InputRD />
     <div class="footer">
       <img src="@/assets/image/sleepSuperment/superment1.png" alt="superment">
       <p class="reserved">© Super Natural Sleep Research 2025. All Rights Reserved.</p>

@@ -6,6 +6,8 @@
   import SuperHeader from '../components/SuperHeader.vue';
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
+  import Stopwatch from '../components/Stopwatch.vue';
+
 </script>
 
 <template>
@@ -120,6 +122,7 @@
       <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE"></ButtonShop>
     </div>
   </section>
+  <Stopwatch />
   <section class="questions">
     <p class="title">Frequently asked questions:</p>
     <section class="faq">
