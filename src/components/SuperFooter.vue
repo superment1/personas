@@ -17,7 +17,6 @@
   
   section.footer {
     width: 100%;
-    height: 100%;
     background-color: #370F1E;
     display: flex;
     flex-direction: column;
