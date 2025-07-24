@@ -10,7 +10,9 @@
 </script>
 
 <template>
-  <SuperHeader :show-redirect="false"/>
+  <div class="super-header">
+    <SuperHeader :show-redirect="false"/>
+  </div>
   <section class="header-desktop">
     <div class="header-content">
       <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
