@@ -7,7 +7,7 @@
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
   import Stopwatch from '../components/Stopwatch.vue';
-  import Teste from '../components/Teste.vue';
+
 </script>
 
 <template>
