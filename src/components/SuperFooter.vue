@@ -3,7 +3,7 @@
     { label: 'About Us', href: '/about' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Terms of Service', href: '/terms' },
-    { label: 'Refund Policy', href: '/refund' }
+    { label: 'Refund Policy', href: '/refundpolicy' }
   ]
 </script>
 

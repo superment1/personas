@@ -1,6 +1,6 @@
 
 <script setup>
-import { useSeo } from '@/composables/useSeo'
+import { useSeo } from '../composables/useSeo'
 import Header from '@/components/Header.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import TaglineStrip from '@/components/TaglineStrip.vue'
