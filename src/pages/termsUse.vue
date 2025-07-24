@@ -1,7 +1,7 @@
 
 <script setup>
 import { useSeo } from '@/composables/useSeo'
-// import SuperFooter from '../components/'
+import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
@@ -117,15 +117,13 @@ updated effective date. Continued use of the
 Site after changes constitutes acceptance of
 the revised Terms.</p>                    
                 </div> 
-                <div class="py-6 border-b-2 border-[#370f1e]">
+                <div class="py-6 ">
                     <p class="primary pb-2 text-xl font-bold"> 14. Contact Us</p>
                     <p> If you have any questions about these Terms, please contact us at: Email: superhelp@superment.co</p>                    
                 </div>
             </div>                
         </div>
     </div>
-<!-- 
     <SuperFooter>
-    </SuperFooter> -->
-
+    </SuperFooter>
 </template>
