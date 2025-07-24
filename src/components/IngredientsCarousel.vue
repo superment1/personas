@@ -4,11 +4,26 @@ import setaDireita from '@/assets/image/seta-direita.png'
 import setaEsquerda from '@/assets/image/seta-esquerda.png'
 
 const items = [
-  { title: 'Passion Flower', subtitle: 'Calming and relaxing.', image: '/src/assets/image/passion-flower.png' },
-  { title: 'Marshmallow Root', subtitle: 'Calms digestion, supports sleep.', image: '/src/assets/image/marshmallow-root.png' },
-  { title: 'Corydalis', subtitle: 'Gentle pain and sleep relief.', image: '/src/assets/image/corydalis.png' },
-  { title: 'California Poppy', subtitle: 'Promotes calm and sleep.', image: '/src/assets/image/california-poppy.png' },
-  { title: 'Prickly Pear', subtitle: 'Antioxidant support.', image: '/src/assets/image/prickly-pear.png' }
+  { 
+    title: 'Passion Flower', 
+    subtitle: 'Calming and relaxing.', 
+    image: new URL('@/assets/image/passion-flower.png', import.meta.url).href },
+  { 
+    title: 'Marshmallow Root', 
+    subtitle: 'Calms digestion, supports sleep.', 
+    image: new URL('@/assets/image/marshmallow-root.png', import.meta.url).href },
+  { 
+    title: 'Corydalis', subtitle
+    : 'Gentle pain and sleep relief.', 
+    image: new URL('@/assets/image/corydalis.png' , import.meta.url).href},
+  { 
+    title: 'California Poppy', 
+    subtitle: 'Promotes calm and sleep.', 
+    image: new URL('@/assets/image/california-poppy.png', import.meta.url).href },
+  { 
+    title: 'Prickly Pear', 
+    subtitle: 'Antioxidant support.', 
+    image: new URL('@/assets/image/prickly-pear.png', import.meta.url).href }
 ]
 
 const currentIndex = ref(2)
