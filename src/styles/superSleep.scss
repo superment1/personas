@@ -447,35 +447,35 @@ section.testimonials p.title {
 
 section.testimonials div.assessment { 
     width: 100%;
-    max-width: 390px;
+    max-width: 300px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #cfc5a7;
-    padding: 10px 20px;
+    background-color: #e4ddca;
+    padding: 10px 20px 10px 20px;
     margin-top: 30px;
     border-radius: 5px;
 }
 
 section.testimonials div.assessment p.notice{
-    width: 272px;
+    width: 100%;
     font-family: 'Gelasio';
     font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 17px;
+    line-height: 22px;
     letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
 }
 
-section.testimonials div.assessment {
-    max-width: 390px;
+section.testimonials div.assessment p.description{
+    width: 100%;
     font-family: 'Gelasio';
     font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 18px;
     letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
@@ -484,7 +484,7 @@ section.testimonials div.assessment {
 section.testimonials div.testimonials {
     width: 300px;
     height: 100%;
-    // background-color: red;
+    margin: 0;
 }
 
 section.shop-now {

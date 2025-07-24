@@ -9,7 +9,7 @@ import SuperHeader from '../components/SuperHeader.vue'
     })
 </script>
 <template>
-    <SuperHeader>
+    <SuperHeader :show-redirect="true">
     </SuperHeader>
     <div class="flex flex-col mx-auto bg-[#fff9ed] items-center font-gelasio">
         <div class="main flex flex-col max-w-[80%] mx-auto">

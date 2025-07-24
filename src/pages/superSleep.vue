@@ -7,11 +7,10 @@
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
   import Stopwatch from '../components/Stopwatch.vue';
-
 </script>
 
 <template>
-  <SuperHeader/>
+  <SuperHeader :show-redirect="false"/>
   <section class="header-desktop">
     <div class="header-content">
       <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
