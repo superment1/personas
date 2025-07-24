@@ -123,7 +123,7 @@
   <section class="questions">
     <p class="title">Frequently asked questions:</p>
     <section class="faq">
-      <FAQ show="true" question="da pra fazer?" response="sim, dá demais"></FAQ>
+      <FAQ />
     </section>
   </section>
   <SuperFooter/>
