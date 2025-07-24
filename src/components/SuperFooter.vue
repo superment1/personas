@@ -24,6 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    padding: 0 0 20px 0;
   }
   
   section.footer p.description {
@@ -102,18 +103,18 @@
         </li>
       </ul>
     </div>
-    <div class="contact bg-[#370F1E] text-white px-6 py-8 w-full font-dmsans">
-      <h2 class="text-4xl md:text-3xl font-bold font-crossfit uppercase mb-6 w-full"  style="text-align: start;">Contact</h2>
-      <ul class="space-y-4 text-[#FFFAF0]">
-        <li class="flex items-center gap-3 border-b border-[#FFFAF0] pb-2 w-[300px]">
-          <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
-            📧
+    <div class="contact bg-[#370F1E] text-white px-6 py-8 w-full font-dmsans flex flex-col items-start text-left">
+      <h2 class="text-3xl md:text-3xl font-normal font-crossfit uppercase mb-6">Contact</h2>
+      <ul class="space-y-4 text-[#FFF]">
+        <li class="flex items-center gap-2 border-b border-[#FFF] pb-2 w-[300px]">
+          <span class="w-8 h-8 flex items-end justify-center rounded">
+            <img src="@/assets/image/icons/email.png" alt="email icon" class="w-7 h-7" />
           </span>
           <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
         </li>
-        <li class="flex items-center gap-3 border-b border-[#FFFAF0] pb-2 w-[300px]">
-          <span class="bg-[#6EC8F0] w-8 h-8 flex items-center justify-center rounded">
-            📷
+        <li class="flex items-center gap-2 border-b border-[#FFF] pb-2 w-[300px]">
+          <span class="w-8 h-8 flex items-end justify-center rounded">
+            <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-7 h-7" />
           </span>
           <a href="https://instagram.com/superment.co" target="_blank" class="text-[16px]">@superment.co</a>
         </li>
