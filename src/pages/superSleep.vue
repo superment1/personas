@@ -5,6 +5,7 @@
   import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
   import SuperHeader from '../components/SuperHeader.vue';
   import SuperFooter from '../components/SuperFooter.vue';
+  import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 </script>
 
 <template>
@@ -97,22 +98,16 @@
     <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
     <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
   </section>
-  <!-- <section class="supplement">
-    <p class="description">“Why isn’t there a cleaner, natural way to help you truly rest, without worrying about side effects?”</p>
-    <div class="image-text">
-      <div class="image"></div>
-      <div class="text">
-        <p class="text">We’re not just a supplement company. We’re people who care about living well — and we see how poor sleep affects us and the people we love.</p>
-        <br>
-        <p class="text">We get it. No one wants to rely on strong pills that leave you groggy or make you feel stuck in a cycle. That’s not real rest.</p>
-        <br>
-        <p class="text">So we partnered with one of the most trusted labs in the U.S. to create Super Natural Sleep.</p>
-      </div>
+  <section class="testimonials">
+    <p class="title">What Supersleepers are saying?</p>
+    <div class="assessment">
+      <p class="notice">Rated 4.9/5.0</p>
+      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
     </div>
-    <div class="description-finally">
-      <p >Our friends and family tried it first and loved it. Now, we’re excited to finally share it with you.</p>
+    <div class="testimonials">
+      <TestimonialsCarousel/>
     </div>
-  </section> -->
+  </section>
   <section class="frascos">
     <img src="@/assets/image/sleepSuperment/frascos.png" alt="frascos" class="frascos">
   </section>

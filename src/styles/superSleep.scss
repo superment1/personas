@@ -412,91 +412,6 @@ img.selos {
     margin-top: 10px;
 }
 
-// section.supplement {
-//     background-color: #FFFAF0;
-//     width: 100%;
-//     height: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: start;
-//     padding: 30px 0 35px 0;
-// }
-  
-// section.supplement p.description {
-//     font-family: 'Gelasio';
-//     font-weight: 600;
-//     font-style: Italic;
-//     font-size: 20px;
-//     line-height: 24px;
-//     letter-spacing: -2%;
-//     text-align: center;
-//     color: #370F1E;
-//     width: 290px;
-// }
-
-// section.supplement div.image-text {
-//     width: 100%;
-//     height: 100%;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: start;
-//     justify-content: start;
-//     margin-top: 15px;
-// }
-  
-// section.supplement div.image-text div.image {
-//     background-image: url('@/assets/image/sleepSuperment/homem-acordando.png');
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     border-bottom-right-radius: 10px;
-//     border-top-right-radius: 10px;
-//     height: 270px;
-//     min-height: 270px;
-//     width: 158px;
-//     margin-top: 5px;
-// }
-
-// section.supplement div.image-text div.text {
-//     width: 50%;
-//     height: 100%;
-//     margin-left: 15px;
-// }
-  
-// section.supplement div.image-text div.text p.text {
-//     font-family: 'DM Sans';
-//     font-weight: 500;
-//     font-style: Regular;
-//     font-size: 14px;
-//     line-height: 19px;
-//     letter-spacing: 0%;
-//     color: #370F1E;
-// }
-
-// section.supplement div.description-finally {
-//     width: 330px;
-//     color: #370F1E;
-//     font-family: 'DM Sans';
-//     font-weight: 700;
-//     font-style: Bold;
-//     font-size: 14px;
-//     line-height: 20px;
-//     letter-spacing: 0%;
-// }
-
-// section.supplement div.description-finally p {
-//     width: 330px;
-//     margin-top: 25px;
-//     color: #370F1E;
-//     font-family: 'DM Sans';
-//     font-weight: 700;
-//     font-style: Bold;
-//     font-size: 14px;
-//     line-height: 20px;
-//     letter-spacing: 0%;
-// }
-
 section.frascos {
     height: 530px;
     width: 100%;
@@ -505,6 +420,69 @@ section.frascos {
 section.frascos img.frascos {
     width: 100%;
     height: 530px;
+}
+
+section.testimonials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 30px 0 0 0;
+}
+
+section.testimonials p.title {
+    width: 272px;
+    font-family: 'Crossfit-Black';
+    font-weight: bold;
+    font-style: Black;
+    font-size: 33px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+
+section.testimonials div.assessment { 
+    width: 390px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cfc5a7;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+section.testimonials div.assessment p.notice{
+    width: 272px;
+    font-family: 'Gelasio';
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+
+section.testimonials div.assessment {
+    width: 390px;
+    font-family: 'Gelasio';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
+}
+
+section.testimonials div.testimonials {
+    width: 300px;
+    height: 100%;
+    // background-color: red;
 }
 
 section.shop-now {
