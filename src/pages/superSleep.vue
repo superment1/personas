@@ -97,7 +97,7 @@
     <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
     <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
   </section>
-  <section class="supplement">
+  <!-- <section class="supplement">
     <p class="description">“Why isn’t there a cleaner, natural way to help you truly rest, without worrying about side effects?”</p>
     <div class="image-text">
       <div class="image"></div>
@@ -112,7 +112,7 @@
     <div class="description-finally">
       <p >Our friends and family tried it first and loved it. Now, we’re excited to finally share it with you.</p>
     </div>
-  </section>
+  </section> -->
   <section class="frascos">
     <img src="@/assets/image/sleepSuperment/frascos.png" alt="frascos" class="frascos">
   </section>
