@@ -9,10 +9,10 @@ import Faq from '../pages/faq.vue'
 import About from '../pages/about.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', redirect : '/supersleep' },
   { path: '/supersleep', component: SuperSleep },
   { path: '/test', component: SuperTest },
-  { path: '/sleepWomam', component: SleepWomam},
+  { path: '/beautysleep', component: SleepWomam},
   { path: '/terms', component: TermsUse },
   { path: '/refundpolicy', component: RefundPolicy },
   { path: '/faq', component: Faq},
@@ -20,6 +20,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/sleep/'),
   routes,
 })

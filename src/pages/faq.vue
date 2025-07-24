@@ -1,5 +1,7 @@
 <script setup>
 import FaqAccordion from '@/components/FaqAccordion.vue'
+import SuperHeader from '../components/SuperHeader.vue';
+import SuperFooter from '../components/SuperFooter.vue';
 
 const faqData = [
     {
@@ -11,5 +13,10 @@ const faqData = [
 </script>
 
 <template>
-  <FaqAccordion :items="faqData" />
+  <SuperHeader/>
+  <div class="max-w-[80%] md:max-w-[70%] mx-auto">
+      <FaqAccordion :items="faqData" />
+  </div>
+
+  <SuperFooter/>
 </template>

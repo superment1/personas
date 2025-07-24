@@ -62,7 +62,7 @@
   <section class="topo">
     <a 
       v-if="showRedirect"
-      href="/" 
+      href="/sleep/" 
       class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[3.5rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
     >
       <svg class="w-8 h-8 mr-[1px]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
