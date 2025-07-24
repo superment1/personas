@@ -108,13 +108,13 @@
       <ul class="space-y-4 text-[#FFF]">
         <li class="flex items-center gap-2 border-b border-[#FFF] pb-2 w-[300px]">
           <span class="w-8 h-8 flex items-end justify-center rounded">
-            <img src="@/assets/image/icons/email.png" alt="email icon" class="w-7 h-7" />
+            <img src="@/assets/image/icons/email.png" alt="email icon" class="w-7 h-7 rounded" />
           </span>
           <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
         </li>
         <li class="flex items-center gap-2 border-b border-[#FFF] pb-2 w-[300px]">
           <span class="w-8 h-8 flex items-end justify-center rounded">
-            <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-7 h-7" />
+            <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-7 h-7 rounded" />
           </span>
           <a href="https://instagram.com/superment.co" target="_blank" class="text-[16px]">@superment.co</a>
         </li>
