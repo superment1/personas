@@ -12,7 +12,7 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
 </script>
 
 <template>
-    <SuperHeader/>
+    <SuperHeader :show-redirect="true"/>
     <div :style="{ backgroundImage: `url(${bgImage})`,  backgroundSize: '110%', backgroundPosition: 'center 70%' }" class="h-[200px] flex ">
         <div class="title w-[80%] content-center mx-auto font-crossfit text-[#370f1e]">
             <h1 class="text-[2.25rem] py-8">
