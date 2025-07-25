@@ -21,13 +21,12 @@
   <SuperHeader :show-redirect="false"/>
   <section class="super-natural-sleep">
     <div class="title-super-natural-sleep">
-      <span class="product-title">FINALLY,</span>
-      <span class="product-title">RESTFUL SLEEP.</span>
+      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
     </div>
     <div class="description">
-      <span class="description">Try our premium natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 36% off for a limited time!</span>
+      <span class="description">Try our premium <br> natural sleep formula,</span>
+      <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
       <button>
         <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
       </button>
