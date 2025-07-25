@@ -1,5 +1,5 @@
 <script setup>
-  import ButtonShop from '@/components/ButtonShopNow.vue';
+  import ButtonShop from '@/components/ButtonSleepSuperment.vue';
 </script>
 
 <template>

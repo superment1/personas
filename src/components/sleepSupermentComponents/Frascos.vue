@@ -1,5 +1,5 @@
 <script setup>
-  import ShopNow from './shop-now.vue';
+  import ShopNow from './ShopNow.vue';
 </script>
 
 <template>

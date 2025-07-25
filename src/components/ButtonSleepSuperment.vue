@@ -9,7 +9,8 @@ const props = defineProps({
 const attrs = useAttrs();
 
 function handleClick() {
-  window.location.href = `${props.url}`;
+  // window.location.href = `${props.url}`;
+  console.log('veio k')
 }
 
 </script>

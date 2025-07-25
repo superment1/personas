@@ -46,7 +46,9 @@ function toggle(index) {
     padding: 0;
     font-family: 'DM Sans', sans-serif;
     color: #370f1e;
-    width: 350px;
+    width: 100%;
+    min-width: 350px;
+    max-width: 700px;
   }
 
   .faq-item {

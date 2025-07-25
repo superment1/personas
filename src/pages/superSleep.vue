@@ -1,5 +1,6 @@
 <script setup>
   import '@/styles/superSleep.scss';
+  import { defineProps, useAttrs } from 'vue'
   import FAQ from '@/components/Faq.vue';
   import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
   import SuperHeader from '../components/SuperHeader.vue';
@@ -7,6 +8,13 @@
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
   import Stopwatch from '../components/Stopwatch.vue';
   import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
+  import Stress from '../components/sleepSupermentComponents/Stress.vue';
+
+  function handleClick() {
+    console.log('veio k')
+    // window.location.href = `${props.url}`;
+  }
+  const attrs = useAttrs();
 </script>
 
 <template>
@@ -43,31 +51,7 @@
       <IngredientsCarousel></IngredientsCarousel>
     </div>
   </section>
-  <section class="stress">
-    <div class="title">
-      <p>Stress, screens, and burnout leave you drained.</p>
-    </div>
-    <div class="description">
-      <p>Super Natural Sleep helps you rest, even on stressful days.</p>
-    </div>
-    <div class="item-1-content">
-      <p id="title-stress">45%</p>
-      <p id="description-stress">of people lose sleep because of stress — the top reason for insomnia.</p>
-      <p id="sub-description-stress">American Psychological Association</p>
-    </div>
-    <div class="item-2-content">
-      <div class="item">
-        <p id="title-stress">35%</p>
-        <p id="description-stress">of people sleep less than 7 hours, harming focus and mood.</p>
-        <p id="sub-description-stress">CDC</p>
-      </div>
-      <div class="item">
-        <p id="title-stress">46%</p>
-        <p id="description-stress">of people feel burned out, draining their energy and wellbeing.</p>
-        <p id="sub-description-stress">CDC / AJC.com</p>
-      </div>
-    </div>
-  </section>
+  <Stress/>
   <section class="shop-rest">
     <div class="imagem-centralizada">
       <img src="@/assets/image/sleepSuperment/moca.png" alt="Mulher com pílula" />
@@ -85,7 +69,9 @@
           <p class="description" >experienced grogginess or unwanted side effects.</p>
         </div>
       </div>
-      <div class="botao-shop-rest"></div>
+      <button @click="handleClick">
+        <div class="botao-shop-rest"></div>
+      </button>
     </div>
   </section>
   <section class="everyone">
