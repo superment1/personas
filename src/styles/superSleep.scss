@@ -469,7 +469,8 @@ section.questions p.title {
 }
 
 ///// AJUSTES RESPONSIVOES
-  
+/// 
+
 @media(min-width: '550px') {
     .super-natural-sleep {
         background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
@@ -623,7 +624,12 @@ section.questions p.title {
         text-align: center;
         color: #370F1E;
 }
-    
+@media(min-width: '1340px') { 
+    #rd-email_field-mdhjb6wo{
+        width: 1009px !important;
+    }
+}
+
 }
 
 @media(min-width: '800px') {
