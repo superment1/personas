@@ -33,7 +33,7 @@
         id="buy-button"
         productId="prod_SbKYsQrxStW8wB"
         :showIcon="false"
-        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent mt-10">
         <img
           src="@/assets/image/sleepSuperment/botao-shop.png"
           class="w-[200px] h-[36px] rounded ml-550px object-cover"
