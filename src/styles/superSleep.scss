@@ -433,6 +433,26 @@ section.questions p.title {
     width: 200px;
 }
 
+#e-mail-site-2-fc7666a2bfa336762e39{
+    margin-left: 0 !important;
+}
+#rd-form-mdhiwotj .bricks-form__input{
+    font-size: 23px !important;
+    font-style: italic;
+}
+#rd-column-mdhiwoth > div{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.bricks-form__fieldset{
+    justify-self: center !important;
+}
+#rd-email_field-mdhjb6wo{
+    width: 350px !important;
+}
+#rd-form-mdhiwotj {
+    padding: 0 !important;
+}
 .faq {
     background: #FFFAF0;
     padding: 30px 20px;
@@ -464,6 +484,18 @@ section.questions p.title {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    #rd-email_field-mdhjb6wo{
+        width: 768px !important;
+        left: 7px !important;;
+        position: relative !important;
+    }
+    .bricks-form__fieldset{
+        justify-self: self-start !important;
+    }
+    #rd-form-mdhiwotj .bricks-form__submit{
+        width: 350px !important;
+        justify-self: end !important;
     }
 
     div.title-super-natural-sleep {
