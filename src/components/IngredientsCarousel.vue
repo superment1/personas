@@ -37,7 +37,7 @@ const next = () => {
 }
 
 const translateX = computed(() => {
-  const cardWidth = 170 + 32 // largura do card + espaçamento (mx-4 = 16px de cada lado)
+  const cardWidth = 170;// largura do card + espaçamento (mx-4 = 16px de cada lado)
   const containerWidth = carouselContainer.value?.offsetWidth || 0
   const offset = (cardWidth * currentIndex.value) - (containerWidth / 2) + (cardWidth / 2)
   return `translateX(${offset * -1}px)` // permite valores negativos (resolve o bug do primeiro item)
@@ -46,7 +46,7 @@ const translateX = computed(() => {
 </script>
 
 <template>
-  <div class="relative w-full bg-[#E1DCCD] py-12 overflow-hidden flex justify-center items-center">
+  <div class="relative w-full bg-[#E1DCCD] py-3 overflow-hidden flex justify-center items-center">
     <!-- Faixa visível -->
     <div ref="carouselContainer" class="w-full max-w-[1000px] overflow-hidden px-4">
       <div
@@ -57,7 +57,7 @@ const translateX = computed(() => {
         <div
           v-for="(item, index) in items"
           :key="index"
-          class="relative flex-none w-[170px] mx-4 text-center transition-all duration-300 ease-in-out"
+          class="relative flex-none w-[full] mx-0 text-center transition-all duration-300 ease-in-out"
           :class="{
             'scale-100 opacity-100 z-10': index === currentIndex,
             'scale-90 opacity-40 z-0': index !== currentIndex
@@ -69,15 +69,15 @@ const translateX = computed(() => {
               <img :src="setaEsquerda" alt="prev" class="w-12 h-12 md:w-14 md:h-14" style="margin-top: -50px;" />
             </button>
             <button @click="next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20">
-              <img :src="setaDireita" alt="next" class="w-12 h-12 md:w-14 md:h-14" style="margin-top: -50px;"/>
+              <img :src="setaDireita" alt="next" class="w-12 h-12 md:w-14 md:h-14 lg:w-18 lg:h-18" style="margin-top: -50px;"/>
             </button>
           </template>
 
           <!-- Card com imagem -->
-          <div class="bg-white rounded-xl shadow p-4">
-            <img :src="item.image" :alt="item.title" class="w-24 h-24 object-contain mx-auto"  />
+          <div class="bg-white rounded-xl shadow rounded-2x1">
+            <img :src="item.image" :alt="item.title" class="w-36 h-36 md:w-48 md:h-48 object-contain mx-auto"  />
           </div>
-          <div class="mt-3">
+          <div class="mt-2">
             <h3 class="title">{{ item.title }}</h3>
             <p class="description">{{ item.subtitle }}</p>
           </div>
