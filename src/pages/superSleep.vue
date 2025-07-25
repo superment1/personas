@@ -9,11 +9,12 @@
   import Stopwatch from '../components/Stopwatch.vue';
   import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
   import Stress from '../components/sleepSupermentComponents/Stress.vue';
+  import ShopButton from '../components/ShopButton.vue';
 
-  function handleClick() {
-    console.log('veio k')
-    // window.location.href = `${props.url}`;
-  }
+  // function handleClick() {
+  //   console.log('veio k')
+  //   // window.location.href = `${props.url}`;
+  // }
   const attrs = useAttrs();
 </script>
 
@@ -27,10 +28,21 @@
     <div class="description">
       <span class="description">Try our premium <br> natural sleep formula,</span>
       <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
-      <button>
+      <ShopButton
+        type="button"
+        id="buy-button"
+        productId="prod_SbKYsQrxStW8wB"
+        :showIcon="false"
+        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+        <img
+          src="@/assets/image/sleepSuperment/botao-shop.png"
+          class="w-[200px] h-[36px] rounded ml-550px object-cover"
+        />
+      </ShopButton>
+      <!-- <button>
         <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
-      </button>
-      <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="strip">
+      </button> -->
+      <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="2 strip">
     </div>
   </section>
   <section class="super-natural-sleep" id="super-sleep-grande">
@@ -88,9 +100,20 @@
           <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
         </div>
       </div>
-      <button @click="handleClick">
+      <ShopButton
+        type="button"
+        id="buy-button"
+        productId="prod_SbKYsQrxStW8wB"
+        :showIcon="false"
+        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+        <img
+          src="@/assets/image/sleepSuperment/botao-shop-rest.png"
+          class="w-[200px] rounded h-[36px] object-cover"
+        />
+      </ShopButton>
+      <!-- <button @click="handleClick">
         <div class="botao-shop-rest"></div>
-      </button>
+      </button> -->
     </div>
   </section>
   <section class="everyone">

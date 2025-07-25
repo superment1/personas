@@ -12,14 +12,14 @@ import SuperHeader from '../components/SuperHeader.vue'
     <SuperHeader :show-redirect="true">
     </SuperHeader>
     <div class="flex flex-col mx-auto bg-[#fff9ed] items-center font-gelasio">
-        <div class="main flex flex-col max-w-[80%] mx-auto">
+        <div class="main flex flex-col max-w-[80%] md:max-w-[70%] mx-auto">
             <div class="title font-crossfit border-b-2 border-[#370f1e] text-[#370f1e]">
                 <h1 class="text-[2.25rem] text-center py-8">
                     Terms of Use
                 </h1>
             </div>
             <div class="font-sans leading-[1.2] font-medium text-[#370f1e]">
-                <div class="py-5 border-b-2 border-[#370f1e]">
+                <div class="py-5 pt-10 border-b-2 border-[#370f1e]">
                     <p class="italic pb-3">Last updated: July 22, 2025 </p>
                     <p class="pb-3"> Welcome to Superment. These Terms of Service ("Terms") govern your access to and use of the website located at www.superment.co (the “Site”), operated by Superment (“we,” “our,” or “us”).</p>
                     <p>By using our Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>

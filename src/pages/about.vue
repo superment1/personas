@@ -14,14 +14,14 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
 <template>
     <SuperHeader :show-redirect="true"/>
     <div :style="{ backgroundImage: `url(${bgImage})`,  backgroundSize: '110%', backgroundPosition: 'center 70%' }" class="h-[200px] flex ">
-        <div class="title w-[80%] content-center mx-auto font-crossfit text-[#370f1e]">
+        <div class="title w-[80%]  md:max-w-[70%] content-center mx-auto font-crossfit text-[#370f1e]">
             <h1 class="text-[2.25rem] py-8">
                 About Us
             </h1>
         </div>
     </div>
     <div class="main flex flex-col bg-[#fff9ed]">
-        <div class="max-w-[80%] mx-auto">
+        <div class="max-w-[80%] md:max-w-[70%] mx-auto">
             <div class="title font-crossfit text-[#370f1e]">
                 <h1 class="text-[2.25rem] pt-4">
                     OUR MISSION
