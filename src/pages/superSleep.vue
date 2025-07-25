@@ -1,6 +1,5 @@
 <script setup>
   import '@/styles/superSleep.scss';
-  import ButtonShop from '@/components/ButtonShopNow.vue';
   import FAQ from '@/components/Faq.vue';
   import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
   import SuperHeader from '../components/SuperHeader.vue';
@@ -105,15 +104,6 @@
     </div>
   </section>
   <Frascos/>
-  <section class="shop-now">
-    <p class="shop">SHOP NOW</p>
-    <div class="stripe-white"></div>
-    <div class="buttons">
-      <ButtonShop label="BUY ONE | PAY $32"></ButtonShop>
-      <ButtonShop label="BUY THREE | PAY $28 PER BOTTLE"></ButtonShop>
-      <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE"></ButtonShop>
-    </div>
-  </section>
   <Stopwatch />
   <section class="questions">
     <p class="title">Frequently asked questions:</p>

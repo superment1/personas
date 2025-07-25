@@ -487,38 +487,6 @@ section.shop-now {
     justify-content: start;
 }
 
-section.shop-now p.shop {
-    font-family: Gelasio;
-    font-weight: 100;
-    font-style: Italic;
-    font-size: 31px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 40px;
-}
-
-section.shop-now div.stripe-white {
-    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 17px;
-    width: 102px;
-    margin-top: 5px;
-}
-
-section.shop-now div.buttons {
-    width: 100%;
-    height: 155px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 35px;
-}
-
 section.questions {
     width: 100%;
     height: 100%;
