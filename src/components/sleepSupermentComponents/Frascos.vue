@@ -27,8 +27,8 @@
 
     <div class="w-full lg:w-1/2 h-[494px] bg-image-mobile bg-image-desktop flex flex-col items-center justify-between py-5 px-0">
 
-    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5">
-      Botanical blend helping you to relaxxx.
+    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5 py-4">
+      Botanical blend helping you to relax.
     </p>
 
       <div class="grid grid-cols-2 lg:hidden">
