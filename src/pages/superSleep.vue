@@ -35,10 +35,12 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly bring this with <br> one purpose: to give you real, <br>natural sleep support, <br> free of anything harmful."</p>
-      <span class="superment-team">Superment Team</span>
+      <p>"We proudly bring this to you with <br> one purpose: to provide real, <br>natural sleep support, <br> free of anything harmful."</p>
+      <p class="superment-team">Superment Team</p>
     </div>
-    <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
+    <div class="img-non">
+      <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
+    </div>
   </section>
   <section class="ingredients">
     <div class="title">
