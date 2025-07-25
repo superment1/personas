@@ -31,7 +31,7 @@
 div.title-super-natural-sleep {
     width: 100%;
     height: 150px;
-    padding: 35px 0 0 25px;
+    padding: 40px 0 0 25px;
 }
 
 span.product-title {
@@ -66,7 +66,7 @@ span.description {
     font-weight: 500;
     font-style: 'Regular';
     font-size: 16px;
-    line-height: 20px;
+    line-height: 21px;
     letter-spacing: 0%;
     display: block;
     color: #370F1E;
@@ -75,7 +75,7 @@ span.description {
 button img.botao-shop {
     height: 40px;
     width: 100%;
-    margin-top: 65px;
+    margin-top: 50px;
 }
 
 img.strip {
@@ -87,21 +87,20 @@ img.strip {
 .non-habit-forming {
     width: 100%;
     height: 100%;
-    min-height: 337px;
     background: #FFFAF0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 40px 0 20px 0;
 }
   
 div.description-forming {
     width: 100%;
-    max-width: 400px;
-    height: 100;
-    top: 571px;
-    left: 51px;
-    opacity: 1;
-    padding: 30px 50px 0 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.description-forming p {
@@ -116,8 +115,19 @@ div.description-forming p {
     text-align: center;     
 }
 
-img.image-forming {
+div.description-forming .superment-team {
+    font-family: 'DM Sans';
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #370F1E;
+    text-align: center;  
+    text-decoration: underline;
     margin-top: 10px;
+}
+
+img.image-forming {
+    // margin-top: 10px;
 }
 
 section.ingredients {
@@ -128,7 +138,7 @@ section.ingredients {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 30px 0;
+    padding: 40px 0 0 0;
 }
 
 section.ingredients div.title {
@@ -147,7 +157,7 @@ section.ingredients div.title p {
 }
 
 section.ingredients div.description {
-    width: 340px;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -160,117 +170,19 @@ section.ingredients div.description p {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-    width: 340px;
+    width: 300px;
 }
 
 section.ingredients div.carrossel-ingredients {
     width: 100%;
-    min-height: 249px;
     height: 100%;
-}
-
-section.stress {
-    width: 100%;
-    height: 100%;
-    min-height: 527px;
-    background: #370F1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-
-    padding: 100px 0 120px 0;
-
-}
-
-section.stress div.title {
-    width: 304px;
-    height: 65px;
-}
-
-section.stress div.title p {
-    font-family: 'Crossfit-Bold';
-    font-size: 28px;
-    line-height: 28px;
-    font-weight: 900;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-section.stress div.description {
-    width: 254px;
-    height: 49px;
-    margin-top: -30px;
-}
-
-section.stress div.description p {
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-style: 'Regular';
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-section.stress div.item-1-content {
-    width: 165px;
-    height: 130px;
-}
-
-section.stress div.item-2-content {
-    width: 100%;
-    height: 130px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#title-stress {
-    height: 60px;
-    font-family: 'Crossfit';
-    font-weight: 900;
-    font-style: black;
-    font-size: 50px;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 20px;
-
-}
-
-#description-stress {
-    width: 150px;
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-style: 'Medium';
-    line-height: 16px;
-    font-size: 14px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-#sub-description-stress {
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-style: 'Medium';
-    font-size: 8px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
 }
 
 section.shop-rest {
     width: 100%;
-    height: 434px;
+    height: 100%;
     background-color: #E1DCCD;
     position: relative;
     z-index: 0;
@@ -278,19 +190,24 @@ section.shop-rest {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 0 0 40px 0;
 }
 
 .imagem-centralizada {
     position: absolute;
-    top: -100px; 
+    top: -105px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .imagem-centralizada img {
-    width: 233px;
-    height: 203px;
+    width: 243px;
+    height: 210px;
     border-radius: 12px; /* ou 16px, se quiser arredondar */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -301,7 +218,7 @@ section.shop-rest div.infos {
     align-items: center;
     justify-content: end;
     height: 350px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 section.shop-rest div.infos p.title {
@@ -341,10 +258,11 @@ section.shop-rest div.infos div.infos-users {
 
 section.shop-rest div.infos div.infos-users div.info {
     width: 112px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 section.shop-rest div.infos div.infos-users div.info p.number {
@@ -369,6 +287,10 @@ section.shop-rest div.infos div.infos-users div.info p.description {
     text-align: center;
     color: #370F1E;
 }
+
+#description-maior {
+    width: 160px;
+}
   
 section.shop-rest div.botao-shop-rest {
     background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
@@ -381,7 +303,6 @@ section.shop-rest div.botao-shop-rest {
 
 section.everyone {
     width: 100%;
-    max-height: 442px;
     height: 100%;
     background-color: #370F1E;
     display: flex;
@@ -406,20 +327,12 @@ section.everyone p.title {
 
 img.table {
     margin-top: 20px;
+    width: 350px;
 }
 
 img.selos {
     margin-top: 10px;
-}
-
-section.frascos {
-    height: 530px;
-    width: 100%;
-}
-
-section.frascos img.frascos {
-    width: 100%;
-    height: 530px;
+    width: 350px;
 }
 
 section.testimonials {
@@ -429,7 +342,7 @@ section.testimonials {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 30px 0 0 0;
+    padding: 40px 0 0 0;
     background-color: #FFFAF0;
 }
 
@@ -447,23 +360,23 @@ section.testimonials p.title {
 
 section.testimonials div.assessment { 
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #e4ddca;
+    background-color: #E1DCCD;
     padding: 10px 20px 10px 20px;
-    margin-top: 30px;
-    border-radius: 5px;
+    margin-top: 35px;
+    border-radius: 10px;
 }
 
 section.testimonials div.assessment p.notice{
     width: 100%;
     font-family: 'Gelasio';
     font-weight: bold;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 22px;
     letter-spacing: 0%;
     text-align: center;
@@ -474,7 +387,7 @@ section.testimonials div.assessment p.description{
     width: 100%;
     font-family: 'Gelasio';
     font-weight: 500;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 18px;
     letter-spacing: 0%;
     text-align: center;
@@ -482,9 +395,9 @@ section.testimonials div.assessment p.description{
 }
 
 section.testimonials div.testimonials {
-    width: 300px;
-    height: 100%;
-    margin: 0;
+    width: 350px;
+    height: 590px;
+    margin-top: -30px;
 }
 
 section.shop-now {
@@ -497,38 +410,6 @@ section.shop-now {
     justify-content: start;
 }
 
-section.shop-now p.shop {
-    font-family: Gelasio;
-    font-weight: 100;
-    font-style: Italic;
-    font-size: 31px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 40px;
-}
-
-section.shop-now div.stripe-white {
-    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 17px;
-    width: 102px;
-    margin-top: 5px;
-}
-
-section.shop-now div.buttons {
-    width: 100%;
-    height: 155px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 35px;
-}
-
 section.questions {
     width: 100%;
     height: 100%;
@@ -537,6 +418,7 @@ section.questions {
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    padding: 30px 10px 0 10px;
 }
 
 section.questions p.title {
@@ -549,7 +431,6 @@ section.questions p.title {
     text-align: center;
     color: #370F1E;
     width: 200px;
-    margin-top: 25px;
 }
 
 .faq {
@@ -569,40 +450,7 @@ section.questions p.title {
 
 ///// AJUSTES RESPONSIVOES
   
-@media (max-width: '550px') {
-    section.header-desktop {
-       display: none;
-    }
-}
-
 @media(min-width: '550px') {
-    .super-header {
-        display: none;
-    }
-
-    section.header-desktop {
-        background-color: #370F1E;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    section.header-desktop .header-content {
-        height: 60px;
-        width: 90%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    section.header-desktop .header-content img {
-        height: 50px;
-    }
-
     .super-natural-sleep {
         background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
         background-size: cover;
@@ -715,65 +563,35 @@ section.questions p.title {
         margin-top: -90px;
     }
 
-    section.stress {
-        all: unset;
-        display: block; 
+    section.shop-rest div.infos {
         width: 100%;
-        height: 100%;
-        background: #370F1E;
+        display: flex;
+    }
+
+    section.shop-rest div.infos div.infos-users {
+        width: 400px;
+    }
+
+    section.shop-rest div.infos div.infos-users div.info {
+        width: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px 0 0px 0;
     }
 
-    section.stress div.title {
-        width: 300px;
-        height: 100%;
-    }
-
-    section.stress div.title p {
-        font-family: 'Crossfit-Bold';
-        font-size: 28px;
-        line-height: 28px;
-        font-weight: 900;
-        letter-spacing: 0%;
-        text-align: center;
-        color: #FFFAF0;
-    }
-
-    section.stress div.description {
-        width: 230px;
-        height: 100%;
-        margin-top: -80px;
-    }
-
-    section.stress div.description p {
+    section.shop-rest div.infos div.infos-users div.info p.description {
+        width: 200px;
         font-family: 'DM Sans';
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 16px;
-        line-height: 18px;
+        font-weight: 600;
+        font-style: Medium;
+        font-size: 14px;
+        line-height: 16px;
         letter-spacing: 0%;
         text-align: center;
-    }
-
-    section.stress div.item-1-content {
-    }
-
-    section.stress div.item-2-content {
-    }
-
-    #title-stress {
-    }
-
-    #description-stress {
-        
-    }
-
-    #sub-description-stress {
-    }
+        color: #370F1E;
+}
+    
 }
 
 @media(min-width: '800px') {
@@ -782,6 +600,47 @@ section.questions p.title {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+
+    section.questions p.title {
+        font-family: 'Crossfit-Black';
+        font-weight: 900;
+        font-size: 32px;
+        font-style: Black;
+        line-height: 30px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    section.everyone {
+        width: 100%;
+        min-height: 442px;
+        height: 100%;
+        background-color: #370F1E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 0 10px 20px 10px;
+    }
+
+    section.everyone p.title {
+        font-size: 32px;
+        max-width: 420px;
+        width: 100%;
+    }
+
+    img.table {
+        margin-top: 20px;
+        width: 500px;
+    }
+
+    img.selos {
+        margin-top: 10px;
+        width: 500px;
     }
 }
 

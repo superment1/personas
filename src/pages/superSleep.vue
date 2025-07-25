@@ -1,33 +1,32 @@
 <script setup>
   import '@/styles/superSleep.scss';
-  import ButtonShop from '@/components/ButtonShopNow.vue';
+  import { defineProps, useAttrs } from 'vue'
   import FAQ from '@/components/Faq.vue';
   import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
   import SuperHeader from '../components/SuperHeader.vue';
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
   import Stopwatch from '../components/Stopwatch.vue';
+  import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
+  import Stress from '../components/sleepSupermentComponents/Stress.vue';
+
+  function handleClick() {
+    console.log('veio k')
+    // window.location.href = `${props.url}`;
+  }
+  const attrs = useAttrs();
 </script>
 
 <template>
-  <div class="super-header">
-    <SuperHeader :show-redirect="false"/>
-  </div>
-  <section class="header-desktop">
-    <div class="header-content">
-      <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
-      <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="super-natural-sleep-header">
-    </div>
-  </section>
+  <SuperHeader :show-redirect="false"/>
   <section class="super-natural-sleep">
     <div class="title-super-natural-sleep">
-      <span class="product-title">FINALLY,</span>
-      <span class="product-title">RESTFUL SLEEP.</span>
+      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
     </div>
     <div class="description">
-      <span class="description">Try our premium natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 36% off for a limited time!</span>
+      <span class="description">Try our premium <br> natural sleep formula,</span>
+      <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
       <button>
         <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
       </button>
@@ -36,7 +35,8 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly bring this with one purpose: to give you real, natural sleep support, free of anything harmful."</p>
+      <p>"We proudly bring this with <br> one purpose: to give you real, <br>natural sleep support, <br> free of anything harmful."</p>
+      <span class="superment-team">Superment Team</span>
     </div>
     <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
   </section>
@@ -51,31 +51,7 @@
       <IngredientsCarousel></IngredientsCarousel>
     </div>
   </section>
-  <section class="stress">
-    <div class="title">
-      <p>Stress, screens, and burnout leave you drained.</p>
-    </div>
-    <div class="description">
-      <p>Super Natural Sleep helps you rest, even on stressful days.</p>
-    </div>
-    <div class="item-1-content">
-      <p id="title-stress">45%</p>
-      <p id="description-stress">of people lose sleep because of stress — the top reason for insomnia.</p>
-      <p id="sub-description-stress">American Psychological Association</p>
-    </div>
-    <div class="item-2-content">
-      <div class="item">
-        <p id="title-stress">35%</p>
-        <p id="description-stress">of people sleep less than 7 hours, harming focus and mood.</p>
-        <p id="sub-description-stress">CDC</p>
-      </div>
-      <div class="item">
-        <p id="title-stress">46%</p>
-        <p id="description-stress">of people feel burned out, draining their energy and wellbeing.</p>
-        <p id="sub-description-stress">CDC / AJC.com</p>
-      </div>
-    </div>
-  </section>
+  <Stress/>
   <section class="shop-rest">
     <div class="imagem-centralizada">
       <img src="@/assets/image/sleepSuperment/moca.png" alt="Mulher com pílula" />
@@ -90,10 +66,12 @@
         </div>
         <div class="info">
           <p class="number">0%</p>
-          <p class="description" >experienced grogginess or unwanted side effects.</p>
+          <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
         </div>
       </div>
-      <div class="botao-shop-rest"></div>
+      <button @click="handleClick">
+        <div class="botao-shop-rest"></div>
+      </button>
     </div>
   </section>
   <section class="everyone">
@@ -111,18 +89,7 @@
       <TestimonialsCarousel/>
     </div>
   </section>
-  <section class="frascos">
-    <img src="@/assets/image/sleepSuperment/frascos.png" alt="frascos" class="frascos">
-  </section>
-  <section class="shop-now">
-    <p class="shop">SHOP NOW</p>
-    <div class="stripe-white"></div>
-    <div class="buttons">
-      <ButtonShop label="BUY ONE | PAY $32"></ButtonShop>
-      <ButtonShop label="BUY THREE | PAY $28 PER BOTTLE"></ButtonShop>
-      <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE"></ButtonShop>
-    </div>
-  </section>
+  <Frascos/>
   <Stopwatch />
   <section class="questions">
     <p class="title">Frequently asked questions:</p>

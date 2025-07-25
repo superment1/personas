@@ -6,38 +6,22 @@ import setaEsquerda from '@/assets/image/seta-esquerda.png'
 const items = [
   {
     type: 'image',
-    title: 'Passion Flower',
-    subtitle: 'Calming and relaxing.',
-    image: new URL('@/assets/image/sleepSuperment/imagem-teste.png', import.meta.url).href
+    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento01.png', import.meta.url).href
   },
   {
     type: 'image',
-    title: 'Marshmallow Root',
-    subtitle: 'Calms digestion, supports sleep.',
-    image: new URL('@/assets/image/sleepSuperment/moca.png', import.meta.url).href
+    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento02.png', import.meta.url).href
   },
   {
     type: 'image',
-    title: 'California Poppy',
-    subtitle: 'Promotes calm and sleep.',
-    image: new URL('@/assets/image/sleepSuperment/homem-acordando.png', import.meta.url).href
+    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento03.png', import.meta.url).href
+  },
+  {
+    type: 'image',
+    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento04.png', import.meta.url).href
   },
   {
     type: 'video',
-    title: 'Vídeo 1 - Passion Flower',
-    subtitle: 'Descubra os benefícios da flor da paixão.',
-    url: 'https://www.youtube.com/embed/KjpzE0FeZa4'
-  },
-  {
-    type: 'video',
-    title: 'Vídeo 2 - Marshmallow Root',
-    subtitle: 'Calmante natural para o sistema digestivo.',
-    url: 'https://www.youtube.com/embed/2cdF8Y3J1e4'
-  },
-  {
-    type: 'video',
-    title: 'Vídeo 3 - California Poppy',
-    subtitle: 'Planta que favorece o relaxamento.',
     url: 'https://www.youtube.com/embed/10VN5lmJfog'
   }
 ]
@@ -65,7 +49,7 @@ const next = () => {
         <template v-if="items[currentIndex].type === 'image'">
           <img
             :src="items[currentIndex].image"
-            :alt="items[currentIndex].title"
+            :alt="items[currentIndex].image"
             class="w-full h-full object-cover"
           />
         </template>

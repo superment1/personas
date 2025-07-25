@@ -46,12 +46,14 @@ function toggle(index) {
     padding: 0;
     font-family: 'DM Sans', sans-serif;
     color: #370f1e;
-    width: 350px;
+    width: 100%;
+    min-width: 350px;
+    max-width: 700px;
   }
 
   .faq-item {
     border-top: 1px solid #370f1e;
-    padding: 14px 0;
+    padding: 10px 0;
     cursor: pointer;
   }
 

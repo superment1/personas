@@ -45,14 +45,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="bg-[#FFD700] flex justify-center items-center px-0 py-0 w-full">
-    <div class="flex justify-between items-center px-6 py-3 w-[350px]">
+  <div class="bg-[#FFD700] flex justify-center items-center px-0 py-1 w-full">
+    <div class="flex justify-between items-center px-0 py-3 w-[350px]">
       <div class="text-[#370F1E] font-gelasio text-sm font-bold italic leading-4">
         <div>LIMITED</div>
         <div>TIME</div>
         <div>OFFER</div>
       </div>
-      <div class="text-[#370F1E] font-crossfit text-6xl md:text-6xl font-bold">
+      <div class="text-[#370F1E] font-crossfit text-7xl md:text-6xl font-bold">
         {{ time }}
       </div>
     </div>
