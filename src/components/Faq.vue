@@ -87,6 +87,22 @@ function toggle(index) {
     line-height: 19px;
     letter-spacing: 0%;
   }
+
+  @media(max-width: 730px) {
+    .faq {
+      width: 350px;
+      max-width: 350px;
+    }
+  }
+
+  @media(min-width: 730px) {
+    .faq {
+      width: 100%;
+      min-width: 700px;
+      max-width: 700px;
+    }
+  }
+
 </style>
 
 
