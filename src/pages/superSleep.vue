@@ -55,10 +55,18 @@
     </div>
     <div class="button">
       <div>
-        <button>
-          <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
-        </button>
-        <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="strip">
+        <ShopButton
+          type="button"
+          id="buy-button"
+          productId="prod_SbKYsQrxStW8wB"
+          :showIcon="false"
+          class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+          <img
+            src="@/assets/image/sleepSuperment/botao-shop.png"
+            class="w-[200px] h-[36px] rounded ml-550px object-cover"
+          />
+        </ShopButton>
+        <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="2 strip">
       </div>
     </div>
   </section>
