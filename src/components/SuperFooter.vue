@@ -28,7 +28,13 @@
               class="flex justify-between items-center w-full transition underline-offset-2 hover:underline"
             >
               <span>{{ item.label }}</span>
-              <span class="text-[16px] transition group-hover:translate-x-1">→</span>
+              <span class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1">
+                <img
+                  src="@/assets/image/icons/seta-direita.png"
+                  alt="seta"
+                  class="w-8 h-8 object-contain color-[#FFFAF0]"
+                />
+              </span>
             </RouterLink>
           </li>
         </ul>

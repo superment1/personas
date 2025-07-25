@@ -7,14 +7,13 @@
 <style scoped>
   .topo {
     background: #E1DCCD;
-    height: 100px;
+    height: 60px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 50px 0 0 0;
   }
 
   .topo img {
