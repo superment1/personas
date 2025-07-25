@@ -22,7 +22,7 @@ const items = [
   },
   {
     type: 'video',
-    url: 'https://www.youtube.com/embed/10VN5lmJfog'
+    url: new URL('@/assets/videos/depoimento-video.mp4', import.meta.url).href
   }
 ]
 
@@ -54,12 +54,14 @@ const next = () => {
           />
         </template>
         <template v-else>
-          <iframe
+          <video
             :src="items[currentIndex].url"
-            class="w-full h-full"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+            class="w-full h-full object-cover"
+            controls
+            autoplay
+            muted
+            loop
+          ></video>
         </template>
 
       </div>
