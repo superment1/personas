@@ -13,13 +13,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+
   #e-mail-site-2-fc7666a2bfa336762e39 form {
-    width: 100% !important;
-    max-width: 700px;
+    /* width: 100% !important; */
+    width: 700px;
   }
 
   .content-input {
-    width: 100%;
+    width: 350px !important;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -32,12 +34,17 @@ onMounted(() => {
     font-size: 32px;
     text-align: start;
   }
+@media (min-width: 639px) {
+  .content-input {
+    width: 769px !important;
+  }
+}
 
 </style>
 
 <template>
 <div class="content-input" >
-  <p class="title">UNLOCK 10% OFF</p>
+  <p class="title"> JOIN OUR LIST.</p>
   <div
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"

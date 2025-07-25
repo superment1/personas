@@ -1,5 +1,6 @@
 <script setup>
   import ButtonShop from '@/components/ButtonSleepSuperment.vue';
+import ShopButton from '../ShopButton.vue';
 </script>
 
 <template>
@@ -16,10 +17,41 @@
     </div>
 
     <!-- Botões -->
-    <div class="w-full h-[155px] flex flex-col items-center justify-between mt-9">
-      <ButtonShop label="BUY ONE | PAY $32" />
+    <div class="w-full h-[155px] flex flex-col items-center justify-between mt-6">
+      <ShopButton 
+        label="BUY ONE | PAY $32"
+        type="button"
+        id="buy-button"
+        productId="prod_SbKYsQrxStW8wB"
+        textColorClass="text-[#370F1E]"
+        :showIcon="false"
+        class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">
+        BUY ONE | PAY $32
+      </ShopButton>
+      <ShopButton 
+        label="BUY THREE | PAY $28 PER BOTTLE"
+        type="button"
+        id="buy-button"
+        productId="prod_SbKa8ag01A2TGX"
+        textColorClass="text-[#370F1E]"
+        :showIcon="false"
+        class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">
+        BUY THREE | PAY $28 PER BOTTLE
+      </ShopButton>
+      <ShopButton 
+        label="BUY SIX | PAY $24 PER BOTTLE"
+        type="button"
+        id="buy-button"
+        productId="prod_SbKaRuJpDVBEzx"
+        textColorClass="text-[#370F1E]"
+        :showIcon="false"
+        class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">
+        BUY SIX | PAY $24 PER BOTTLE
+      </ShopButton>
+
+      <!-- <ButtonShop label="BUY ONE | PAY $32" />
       <ButtonShop label="BUY THREE | PAY $28 PER BOTTLE" />
-      <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE" />
+      <ButtonShop label="BUY SIX | PAY $24 PER BOTTLE" /> -->
     </div>
     
   </div>

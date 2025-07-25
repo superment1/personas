@@ -23,7 +23,7 @@ function toggle(index) {
 </script>
 
 <template>
-  <section class="faq">
+  <section class="faq !px-0">
     <div
       v-for="(faq, i) in faqs"
       :key="i"
@@ -32,7 +32,7 @@ function toggle(index) {
     >
       <div class="flex justify-between items-center">
         <p class="text-base font-semibold text-[#370f1e]">{{ faq.question }}</p>
-        <span class="text-xl">{{ faq.open ? '↓' : '↑' }}</span>
+        <span class="text-xl">{{ faq.open ? '↑' : '↓' }}</span>
       </div>
       <div v-if="faq.open && faq.answer" class="mt-2 text-[#370f1e] text-sm leading-relaxed">
         {{ faq.answer }}

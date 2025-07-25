@@ -13,15 +13,15 @@
   <section class="w-full bg-[#370F1E] flex flex-col items-center justify-start pt-0 pb-5">
 
     <!-- PARTE 1: Explore + Contact -->
-    <div class="flex flex-col md:flex-row w-full justify-center items-center md:items-start">
+    <div class="flex flex-col gap-0  md:gap-[1rem] lg:gap-[4.5rem] md:flex-row w-full justify-center items-center md:items-start">
       <!-- Explore -->
-      <div class="w-full max-w-[350px] px-6 py-8 text-white flex flex-col items-start justify-center" >
+      <div class="w-full max-w-[350px] py-8 text-white flex flex-col items-start justify-center" >
         <h2 class="text-4xl font-bold font-crossfit uppercase mb-6 w-full text-left">Explore</h2>
         <ul class="space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
           <li
             v-for="item in links"
             :key="item.label"
-            class="group border-b border-[#FFFAF0] h-[38px] w-[300px]"
+            class="group border-b border-[#FFFAF0] h-[38px] w-[350px]"
           >
             <RouterLink
               :to="item.href"
@@ -41,16 +41,16 @@
       </div>
 
       <!-- Contact -->
-      <div class="w-full max-w-[350px] px-6 py-8 text-white font-dmsans flex flex-col items-start text-left" >
+      <div class="w-full max-w-[350px] py-8 text-white font-dmsans flex flex-col items-start text-left" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-6">Contact</h2>
         <ul class="text-[#FFF]">
-          <li class="flex items-center gap-2 border-b border-[#FFF] w-[300px] h-[38px]">
+          <li class="flex items-center gap-2 border-b border-[#FFF] w-[350px] h-[38px]">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/email.png" alt="email icon" class="w-6 h-6" />
             </span>
             <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
           </li>
-          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[300px] h-[38px] mt-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[350px] h-[38px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-6 h-6" />
             </span>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="w-[350px] md:w-full md:max-w-[700px] flex justify-center md:justify-center px-6">
+    <div class="max-w-[350px] sm:max-w-[85%] xl:max-w-[55%] lg:max-w-[75%] flex justify-center md:justify-center">
       <InputRD />
     </div>
 
@@ -74,7 +74,7 @@
       <p class="text-[#FFFAF0] font-gelasio italic text-[12px] leading-[14px] text-center mt-2 w-[220px]">
         © Super Natural Sleep Research 2025. All Rights Reserved.
       </p>
-      <p class="text-[#FFFAF0] font-dmsans font-light text-[10px] leading-[14px] text-justify mt-6 w-[330px] md:w-[700px]">
+      <p class="text-[#FFFAF0] font-dmsans font-light text-[10px] leading-[14px] text-justify mt-6 w-[350px] md:w-[700px]">
         Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratories. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep is part of the commercial portfolio of Superment, a brand owned and operated by an internacional company in the United States.
       </p>
     </div>
