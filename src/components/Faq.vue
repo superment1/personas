@@ -53,7 +53,7 @@ function toggle(index) {
 
   .faq-item {
     border-top: 1px solid #370f1e;
-    padding: 14px 0;
+    padding: 10px 0;
     cursor: pointer;
   }
 

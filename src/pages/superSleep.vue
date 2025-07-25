@@ -35,7 +35,8 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly bring this with one purpose: to give you real, natural sleep support, free of anything harmful."</p>
+      <p>"We proudly bring this with <br> one purpose: to give you real, <br>natural sleep support, <br> free of anything harmful."</p>
+      <span class="superment-team">Superment Team</span>
     </div>
     <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
   </section>
@@ -65,7 +66,7 @@
         </div>
         <div class="info">
           <p class="number">0%</p>
-          <p class="description" >experienced grogginess or unwanted side effects.</p>
+          <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
         </div>
       </div>
       <button @click="handleClick">
