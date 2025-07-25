@@ -11,15 +11,7 @@
 </script>
 
 <template>
-  <div class="super-header">
-    <SuperHeader :show-redirect="false"/>
-  </div>
-  <section class="header-desktop">
-    <div class="header-content">
-      <img src="@/assets/image/sleepSuperment/selos.png" alt="super-natural-sleep" class="super-natural-sleep-header">
-      <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="super-natural-sleep-header">
-    </div>
-  </section>
+  <SuperHeader :show-redirect="false"/>
   <section class="super-natural-sleep">
     <div class="title-super-natural-sleep">
       <span class="product-title">FINALLY,</span>

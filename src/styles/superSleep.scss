@@ -559,40 +559,7 @@ section.questions p.title {
 
 ///// AJUSTES RESPONSIVOES
   
-@media (max-width: '550px') {
-    section.header-desktop {
-       display: none;
-    }
-}
-
 @media(min-width: '550px') {
-    .super-header {
-        display: none;
-    }
-
-    section.header-desktop {
-        background-color: #370F1E;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    section.header-desktop .header-content {
-        height: 60px;
-        width: 90%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    section.header-desktop .header-content img {
-        height: 50px;
-    }
-
     .super-natural-sleep {
         background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
         background-size: cover;
