@@ -7,6 +7,7 @@
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
   import Stopwatch from '../components/Stopwatch.vue';
+  import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
 </script>
 
 <template>
@@ -111,9 +112,7 @@
       <TestimonialsCarousel/>
     </div>
   </section>
-  <section class="frascos">
-    <img src="@/assets/image/sleepSuperment/frascos.png" alt="frascos" class="frascos">
-  </section>
+  <Frascos/>
   <section class="shop-now">
     <p class="shop">SHOP NOW</p>
     <div class="stripe-white"></div>

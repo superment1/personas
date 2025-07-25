@@ -15,24 +15,22 @@ onMounted(() => {
 <style scoped>
   #e-mail-site-2-fc7666a2bfa336762e39 form {
     width: 100% !important;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .content-input {
     width: 100%;
-    max-width: 360px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
   }
 
   .title {
     font-family: 'Crossfit';
-    color: #FFFAF0;
+    color: #FFF;
     font-size: 32px;
     text-align: start;
-    width: 300px;
   }
 
 </style>
@@ -44,6 +42,7 @@ onMounted(() => {
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"
     class="w-full mx-auto"
+    style="margin-left: -30px;"
   ></div>
 </div>
 
