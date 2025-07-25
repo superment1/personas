@@ -46,9 +46,9 @@ const translateX = computed(() => {
 </script>
 
 <template>
-  <div class="relative w-full bg-[#E1DCCD] py-3 overflow-hidden flex justify-center items-center">
+  <div class="relative w-full bg-[#E1DCCD] py-3 overflow-hidden flex justify-center items-center" >
     <!-- Faixa visível -->
-    <div ref="carouselContainer" class="w-full max-w-[1000px] overflow-hidden px-4">
+    <div ref="carouselContainer" class="w-full max-w-[1000px] overflow-hidden px-4" >
       <div
         class="flex transition-transform duration-500 ease-in-out"
         :style="{ transform: translateX }"
@@ -75,7 +75,7 @@ const translateX = computed(() => {
 
           <!-- Card com imagem -->
           <div class="bg-white rounded-xl shadow rounded-2x1">
-            <img :src="item.image" :alt="item.title" class="w-36 h-36 md:w-48 md:h-48 object-contain mx-auto"  />
+            <img :src="item.image" :alt="item.title" class="w-36 h-36 md:w-48 md:h-48 object-contain mx-auto" style="border-radius: 16px" />
           </div>
           <div class="mt-2">
             <h3 class="title">{{ item.title }}</h3>
