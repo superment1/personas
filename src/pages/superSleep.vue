@@ -19,7 +19,7 @@
 
 <template>
   <SuperHeader :show-redirect="false"/>
-  <section class="super-natural-sleep">
+  <section class="super-natural-sleep" id="super-sleep-pequeno">
     <div class="title-super-natural-sleep">
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
@@ -31,6 +31,23 @@
         <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
       </button>
       <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="strip">
+    </div>
+  </section>
+  <section class="super-natural-sleep" id="super-sleep-grande">
+    <div class="title">
+      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
+      <span class="product-sub-title">Natural, safe, and effective.</span>
+      <div class="description">
+        <span class="description">Try our premium natural <br> sleep formula, <strong>now 36% off</strong> <br>for a limited time!</span>
+      </div>
+    </div>
+    <div class="button">
+      <div>
+        <button>
+          <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
+        </button>
+        <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="strip">
+      </div>
     </div>
   </section>
   <section class="non-habit-forming">

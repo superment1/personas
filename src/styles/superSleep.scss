@@ -19,6 +19,10 @@
     font-style: normal;
 }
 
+#super-sleep-grande {
+    display: none;
+}
+
 .super-natural-sleep {
     background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
     background-size: cover;
@@ -449,7 +453,11 @@ section.questions p.title {
 ///// AJUSTES RESPONSIVOES
   
 @media(min-width: '550px') {
-    .super-natural-sleep {
+    #super-sleep-pequeno {
+        display: none;
+    }
+
+    #super-sleep-grande {
         background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
         background-size: cover;
         background-position: center;
@@ -457,57 +465,65 @@ section.questions p.title {
 
         width: 100%;
         aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
-        max-height: 430px;     /* impede que fique gigante em telas grandes */
+        max-height: 330px;     /* impede que fique gigante em telas grandes */
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+
     }
 
-    div.title-super-natural-sleep {
-        width: 600px;
-        height: 150px;
-        padding: 35px 0 0 25px;
+    #super-sleep-grande div.title {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        padding: 80px 0 0 0;
+    }   
+
+    #super-sleep-grande div.title span.product-title {
+        text-align: start;
+        width: 300px;
+    }   
+    
+    #super-sleep-grande div.title span.product-sub-title {
+        text-align: start;
+        width: 300px;
+    }   
+
+    #super-sleep-grande div.title div.description {
+        width: 325px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: start;
-        justify-content: center;
-        padding: 150px 0 0 0;
+        justify-content: start;
     }
 
-    div.description {
-        width: 600px;
-        height: 280px;
-        padding: 100px 0 0 0;
-
-    }
-
-    span.description {
+     #super-sleep-grande div.title div.description span.description {
+        width: 100%;
+        height: 100%;
+        text-align: start;
         font-family: 'DM Sans';
         font-weight: 500;
-        font-style: 'Regular';
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0%;
-        display: block;
-        color: #370F1E;
-        width: 200px;
     }
 
-    button img.botao-shop {
-        height: 40px;
-        width: 180px;
-        margin-top: -80px;
-        margin-left: 450px;
-    }
+    #super-sleep-grande div.button {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0 0 40px 0;
+    }   
 
-    img.strip {
-        margin-left: 40px;
-        height: 15px;
-        width: 92px;
-        margin-top: -40px;
-        margin-left: 500px;
-    }
+    #super-sleep-grande div.button div {
+        margin-left: 10rem;
+    }   
 
     section.shop-rest div.infos {
         width: 100%;
@@ -650,21 +666,3 @@ section.questions p.title {
     }
 }
 
-@media(min-width: '1200px') {
-    button img.botao-shop {
-        height: 40px;
-        width: 180px;
-        margin-top: -20px;
-        margin-left: 500px;
-    }
-
-    img.strip {
-        margin-left: 40px;
-        height: 15px;
-        width: 92px;
-        margin-top: -00px;
-        margin-left: 550px;
-    }
-}
-
-///// AJUSTES RESPONSIVOES
