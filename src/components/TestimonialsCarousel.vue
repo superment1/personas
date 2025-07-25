@@ -37,10 +37,10 @@ const next = () => {
 </script>
 
 <template>
-  <div class="relative w-full py-12 flex justify-center items-center">
-    <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[500px] rounded-2xl">
+  <div class="relative w-full py-5 flex justify-center items-center">
+    <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[550px] rounded-2xl">
       <!-- Seta esquerda -->
-      <button @click="prev" class="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 z-30">
+      <button @click="prev" class="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 1rem;">
         <img :src="setaEsquerda" alt="prev" class="w-16 h-16 md:w-12 md:h-12" />
       </button>
 
@@ -67,7 +67,7 @@ const next = () => {
       </div>
 
       <!-- Seta direita -->
-      <button @click="next" class="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-30">
+      <button @click="next" class="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 1rem;">
         <img :src="setaDireita" alt="next" class="w-16 h-16 md:w-12 md:h-12" />
       </button>
     </div>

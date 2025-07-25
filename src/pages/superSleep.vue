@@ -80,7 +80,7 @@
     <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
   </section>
   <section class="testimonials">
-    <p class="title">What Supersleepers are saying?</p>
+    <p class="title">What Supersleepers are saying.</p>
     <div class="assessment">
       <p class="notice">Rated 4.9/5.0</p>
       <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
