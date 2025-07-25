@@ -34,20 +34,20 @@
 </p>
 
 
-  <div class="grid grid-cols-2 gap-y-4 lg:hidden">
-    <div class="flex flex-row items-center pl-6">
+  <div class="grid grid-cols-2 lg:hidden">
+    <div class="flex flex-row items-center pl-5">
       <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
       <p class="text-[#FFFAF0] text-sm ml-1 description">Soothe tension</p>
     </div>
-    <div class="flex flex-row items-center pr-6">
+    <div class="flex flex-row items-center pr-1">
       <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
       <p class="text-[#FFFAF0] text-sm ml-1 description">Sleep longer</p>
     </div>
-    <div class="flex flex-row items-center pl-6">
+    <div class="flex flex-row items-center pl-5">
       <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
       <p class="text-[#FFFAF0] text-sm ml-1 description">Relaxation</p>
     </div>
-    <div class="flex flex-row items-center pr-6">
+    <div class="flex flex-row items-center pr-1">
       <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
       <p class="text-[#FFFAF0] text-sm ml-1 description">Wake up recharged</p>
     </div>
