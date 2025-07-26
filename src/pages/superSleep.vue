@@ -42,7 +42,9 @@
       <!-- <button>
         <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
       </button> -->
-      <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="2 strip">
+      <div>
+        <span class="stripe">Powered by <span class="stripe-bold">stripe</span></span>
+      </div>
     </div>
   </section>
   <section class="super-natural-sleep" id="super-sleep-grande">

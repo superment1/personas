@@ -1,7 +1,8 @@
 <script setup>
-import { ref, computed } from 'vue'
-import setaDireita from '@/assets/image/seta-direita.png'
-import setaEsquerda from '@/assets/image/seta-esquerda.png'
+import { ref, computed } from 'vue';
+import setaDireita from '@/assets/image/seta-direita.png';
+import setaEsquerda from '@/assets/image/seta-esquerda.png';
+import ArrowCircle from '@/components/ArrowCircle.vue';
 
 const items = [
   { 
@@ -66,16 +67,16 @@ const translateX = computed(() => {
           <!-- Setas visíveis apenas no item atual -->
           <template v-if="index === currentIndex">
             <button @click="prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20">
-              <img :src="setaEsquerda" alt="prev" class="w-12 h-12 md:w-14 md:h-14" style="margin-top: -50px;" />
+              <ArrowCircle direction="left" style="margin-top: -30px;"/>
             </button>
             <button @click="next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20">
-              <img :src="setaDireita" alt="next" class="w-12 h-12 md:w-14 md:h-14 lg:w-18 lg:h-18" style="margin-top: -50px;"/>
+              <ArrowCircle direction="right" style="margin-top: -30px;"/>
             </button>
           </template>
 
           <!-- Card com imagem -->
           <div class="bg-white rounded-xl shadow rounded-2x1">
-            <img :src="item.image" :alt="item.title" class="w-36 h-36 md:w-48 md:h-48 object-contain mx-auto" style="border-radius: 16px" />
+            <img :src="item.image" :alt="item.title" class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto" style="border-radius: 16px" />
           </div>
           <div class="mt-2">
             <h3 class="title">{{ item.title }}</h3>
@@ -92,16 +93,16 @@ const translateX = computed(() => {
 .title {
   font-family: 'Gelasio';
   font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 14px;
   text-align: center;
   color: #370F1E;
 }
 .description {
   font-family: 'DM Sans';
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 13px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
   text-align: center;
   color: #370F1E;
   margin-top: 3px;
