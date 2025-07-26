@@ -47,7 +47,14 @@
                         </div>
                     </div>
                     <div class="flex justify-center mb-20">
-                        <ShopButton anchor-id="#" title="Shop: First Trial Special Offer" class="text-lg" />
+                        <ShopButton
+                            id="buy-button"
+                            productId="prod_SbKYsQrxStW8wB"
+                            textColorClass="text-[#58663a]"
+                            :showIcon=true
+                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            Shop: First Trial Special Offer
+                        </ShopButton>
                     </div>
                 </div>
 
@@ -111,7 +118,14 @@
                                 <span>Limited-time bundle pricing available</span>
                             </div>
                         </div>
-                        <ShopButton anchor-id="#" title="Shop: First Trial Special Offer" class="text-xl mb-32" />
+                        <ShopButton
+                            id="buy-button"
+                            productId="prod_SbKYsQrxStW8wB"
+                            textColorClass="text-[#58663a]"
+                            :showIcon=true
+                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            Shop: First Trial Special Offer
+                        </ShopButton>  
                     </div>
                 </div>
             </div>

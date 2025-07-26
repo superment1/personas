@@ -9,7 +9,7 @@
                             class="h-72 lg:w-full lg:h-full object-cover">
                     </div>
                 </div>
-                <div class="text-left lg:col-span-3">
+                <div class="text-left lg:col-span-3 justify-items-center md:justify-items-start">
                     <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8 mb-2 mx-8">
                         <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
                     </h2>
@@ -18,7 +18,14 @@
                         a plant-based, non-sedative formula designed for rest without
                         the melatonin or harsh chemicals. Just real, restorative rest.
                     </p>
-                    <ShopButton anchor-id="#" title="Shop: First Trial Special Offer" class="ml-8 text-lg lg:text-xl" />
+                    <ShopButton
+                        id="buy-button"
+                        productId="prod_SbKYsQrxStW8wB"
+                        textColorClass="text-[#58663a]"
+                        :showIcon=true
+                        class="mt-2 text-white md:ml-8 md:justify-center justify-start  bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        Shop: First Trial Special Offer
+                    </ShopButton>                    
                 </div>
             </div>
         </div>
@@ -26,7 +33,7 @@
 </template>
 
 <script lang="ts" setup>
-import ShopButton from '@/components/ShopButton.vue'
+import ShopButton from '../components/ShopButton.vue'
 </script>
 
 <style>
