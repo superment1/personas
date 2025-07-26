@@ -13,7 +13,7 @@
   <section class="w-full bg-[#370F1E] flex flex-col items-center justify-start pt-0 pb-5">
 
     <!-- PARTE 1: Explore + Contact -->
-    <div class="flex flex-col gap-0  md:gap-[1rem] lg:gap-[4.5rem] md:flex-row w-full justify-center items-center md:items-start">
+    <div class="flex flex-col gap-0  md:gap-[1rem] lg:gap-[12.5rem] md:flex-row w-full justify-center items-center md:items-start">
       <!-- Explore -->
       <div class="w-full max-w-[350px] py-8 text-white flex flex-col items-start justify-center" >
         <h2 class="text-4xl font-bold font-crossfit uppercase mb-6 w-full text-left">Explore</h2>
@@ -21,7 +21,7 @@
           <li
             v-for="item in links"
             :key="item.label"
-            class="group border-b border-[#FFFAF0] h-[38px] w-[350px]"
+            class="group border-b border-[#FFFAF0] h-[38px] w-[350px] lg:w-[450px]"
           >
             <RouterLink
               :to="item.href"
@@ -41,16 +41,16 @@
       </div>
 
       <!-- Contact -->
-      <div class="w-full max-w-[350px] py-8 text-white font-dmsans flex flex-col items-start text-left" >
+      <div class="w-full max-w-[350px] lg:max-w-[450px] py-8 text-white font-dmsans flex flex-col items-start text-left" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-6">Contact</h2>
         <ul class="text-[#FFF]">
-          <li class="flex items-center gap-2 border-b border-[#FFF] w-[350px] h-[38px]">
+          <li class="flex items-center gap-2 border-b border-[#FFF] w-[350px] lg:w-[450px] h-[38px]">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/email.png" alt="email icon" class="w-6 h-6" />
             </span>
             <a href="mailto:superhelp@superment.co" class="text-[16px]">superhelp@superment.co</a>
           </li>
-          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[350px] h-[38px] mt-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[350px] lg:w-[450px] h-[38px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-6 h-6" />
             </span>

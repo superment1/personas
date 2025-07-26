@@ -471,7 +471,8 @@ section.questions p.title {
 }
 
 ///// AJUSTES RESPONSIVOES
-  
+/// 
+
 @media(min-width: '550px') {
     #super-sleep-pequeno {
         display: none;
@@ -636,6 +637,11 @@ section.questions p.title {
         color: #370F1E;
         width: 450px;
         height: 60px;
+    }
+}
+@media(min-width: '1340px') { 
+    #rd-email_field-mdhjb6wo{
+        width: 1009px !important;
     }
 }
 
