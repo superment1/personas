@@ -4,7 +4,7 @@ import ShopButton from '../ShopButton.vue';
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full mt-10 sm:mt pb-[40px]">
+  <div class="flex flex-col items-center w-full mt-10 sm:mt pb-[40px]" id="id-shop-now">
     
     <!-- Título + Stripe (alinhado lado a lado em telas lg+) -->
     <div class="flex flex-col lg:flex-row items-center justify-center gap-2">
