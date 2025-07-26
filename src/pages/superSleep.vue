@@ -36,7 +36,7 @@
         class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent mt-10">
         <img
           src="@/assets/image/sleepSuperment/botao-shop.png"
-          class="w-[200px] h-[36px] rounded ml-550px object-cover"
+          class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
         />
       </ShopButton>
       <!-- <button>
@@ -65,7 +65,7 @@
           class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
           <img
             src="@/assets/image/sleepSuperment/botao-shop.png"
-            class="w-[200px] h-[36px] rounded ml-550px object-cover"
+            class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
           />
         </ShopButton>
         <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="2 strip">
@@ -118,7 +118,8 @@
         class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
         <img
           src="@/assets/image/sleepSuperment/botao-shop-rest.png"
-          class="w-[200px] rounded h-[36px] object-cover"
+          class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
+
         />
       </ShopButton>
       <!-- <button @click="handleClick">
