@@ -41,7 +41,7 @@ onMounted(() => {
 }
 @media (min-width: 1350px){
   .content-input {
-    width: 1012px !important; 
+    width: 700px !important; 
   }
 }
 </style>
