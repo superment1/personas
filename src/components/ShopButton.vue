@@ -43,7 +43,6 @@ const attrs = useAttrs()
 // Computed para combinar classes base com classes passadas via props
 const buttonClasses = computed(() => {
   const baseClasses = [
-    'bg-[#D2F58C]',
     'text-white',
     'px-6',
     'py-3',

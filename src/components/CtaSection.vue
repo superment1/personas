@@ -120,7 +120,7 @@
 </template>
 
 <script lang="ts" setup>
-import ShopButton from '@/components/ShopButton.vue'
+import ShopButton from '../components/ShopButton.vue'
 </script>
 
 <style>
