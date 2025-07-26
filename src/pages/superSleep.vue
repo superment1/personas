@@ -31,7 +31,6 @@
       <ShopButton
         type="button"
         id="buy-button"
-        productId="prod_SbKYsQrxStW8wB"
         :showIcon="false"
         class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent mt-10">
         <img
@@ -113,7 +112,6 @@
       <ShopButton
         type="button"
         id="buy-button"
-        productId="prod_SbKYsQrxStW8wB"
         :showIcon="false"
         class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
         <img
@@ -126,11 +124,6 @@
       </button> -->
     </div>
   </section>
-  <section class="everyone">
-    <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
-    <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
-  </section>
   <section class="testimonials">
     <p class="title">What Supersleepers are saying.</p>
     <div class="assessment">
@@ -140,6 +133,11 @@
     <div class="testimonials">
       <TestimonialsCarousel/>
     </div>
+  </section>
+  <section class="everyone">
+    <p class="title">Why everyone is switching to Super Natural Sleep.</p>
+    <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
+    <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
   </section>
   <Frascos/>
   <Stopwatch />
