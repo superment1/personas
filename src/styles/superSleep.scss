@@ -90,8 +90,11 @@ span.stripe {
 }
 
 span.stripe-bold {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bolder;
+    font-style: 'black';
+    line-height: 12px;
+    letter-spacing: -0.05rem;
 }
 
 .super-natural-sleep div.description div {
@@ -207,12 +210,12 @@ section.shop-rest {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 0 20px 0;
+    padding: 8px 0 25px 0;
 }
 
 .imagem-centralizada {
     position: absolute;
-    top: -105px; 
+    top: -100px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -223,8 +226,8 @@ section.shop-rest {
 }
 
 .imagem-centralizada img {
-    width: 243px;
-    height: 210px;
+    width: 233px;
+    height: 200px;
     border-radius: 12px; /* ou 16px, se quiser arredondar */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import setaDireita from '@/assets/image/seta-direita.png'
 import setaEsquerda from '@/assets/image/seta-esquerda.png'
+import ArrowCircle from '@/components/ArrowCircle.vue';
 
 const items = [
   {
@@ -41,7 +42,7 @@ const next = () => {
     <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[550px] rounded-2xl">
       <!-- Seta esquerda -->
       <button @click="prev" class="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 18px">
-        <img :src="setaEsquerda" alt="prev" class="w-16 h-16 md:w-12 md:h-12" />
+        <ArrowCircle direction="left" backgroundColor="#E1DCCD" :responsive="false"  />
       </button>
 
       <!-- Item visível -->
@@ -58,9 +59,9 @@ const next = () => {
             :src="items[currentIndex].url"
             class="w-full h-full object-cover"
             controls
-            autoplay
             muted
             loop
+            playsinline
           ></video>
         </template>
 
@@ -68,7 +69,7 @@ const next = () => {
 
       <!-- Seta direita -->
       <button @click="next" class="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 18px">
-        <img :src="setaDireita" alt="next" class="w-16 h-16 md:w-12 md:h-12" />
+        <ArrowCircle direction="right" backgroundColor="#E1DCCD" :responsive="false" />
       </button>
     </div>
   </div>

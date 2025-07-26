@@ -4,7 +4,7 @@ import ShopButton from '../ShopButton.vue';
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full mt-10 sm:mt-0 pb-[40px]">
+  <div class="flex flex-col items-center w-full mt-10 sm:mt pb-[40px]">
     
     <!-- Título + Stripe (alinhado lado a lado em telas lg+) -->
     <div class="flex flex-col lg:flex-row items-center justify-center gap-2">
@@ -12,7 +12,7 @@ import ShopButton from '../ShopButton.vue';
         SHOP NOW
       </p>
       <div
-        class="mt-1 lg:mt-0 w-[102px] h-[17px] bg-[url('@/assets/image/sleepSuperment/stripe-branco.png')] bg-cover bg-center bg-no-repeat"
+        class="mt-0 lg:mt-0 w-[102px] h-[17px] bg-[url('@/assets/image/sleepSuperment/stripe-branco.png')] bg-cover bg-center bg-no-repeat"
       ></div>
     </div>
 
