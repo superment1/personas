@@ -80,7 +80,7 @@
       <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
     </div>
   </section>
-  <section class="ingredients">
+  <section class="ingredients relative z-10">
     <div class="title">
       <p>The ingredients you can trust.</p>
     </div>

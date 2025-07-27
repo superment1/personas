@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full sm:h-[527px] h-[full] bg-[#370F1E] px-6 pt-8 pb-32 md:pt-10 md:pb-36 flex flex-col items-center justify-start">
+  <section class="relative z-20 w-full sm:h-[450px] h-[full] bg-[#370F1E] px-6 py-10 pb-[8.5rem] md:pb-36 flex flex-col items-center justify-start">
     <!-- Título -->
     <div class="text-center">
       <p class="font-[Crossfit-Bold] text-[32px] font-black text-[#FFFAF0] leading-[1.1]">
