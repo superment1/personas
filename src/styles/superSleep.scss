@@ -61,8 +61,7 @@ span.product-sub-title {
 
 div.description {
     width: 200px;
-    height: 280px;
-    padding: 35px 0 0 25px;
+    padding: 35px 0 0 0;
 }
 
 span.description {
@@ -161,6 +160,11 @@ section.ingredients {
     justify-content: start;
     padding: 30px 0 15px 0;
 }
+@media(min-width: '800px') {
+    section.ingredients {
+        height: 470px;
+    }
+}
 
 section.ingredients div.title {
     width: 234px;
@@ -205,7 +209,7 @@ section.shop-rest {
     height: 100%;
     background-color: #E1DCCD;
     position: relative;
-    z-index: 0;
+    z-index: 30;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -464,11 +468,13 @@ section.questions p.title {
     padding-right: 0 !important;
 }
 .bricks-form__fieldset{
-    justify-self: center !important;
+    justify-self: auto !important;
+    margin: 0 !important;
+
 }
-#rd-email_field-mdhjb6wo{
-    width: 350px !important;
-}
+// #rd-email_field-mdhjb6wo{
+//     width: 350px !important;
+// }
 #rd-form-mdhiwotj {
     padding: 0 !important;
 }
@@ -511,8 +517,7 @@ section.questions p.title {
 
     }
     #rd-email_field-mdhjb6wo{
-        width: 768px !important;
-        left: 7px !important;;
+        width: 700px !important;
         position: relative !important;
     }
     .bricks-form__fieldset{

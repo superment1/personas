@@ -71,7 +71,7 @@
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="max-w-[330px] sm:max-w-[85%] xl:max-w-[55%] lg:max-w-[75%] flex justify-center md:justify-center">
+    <div class="max-w-[330px] sm:max-w-[700px] flex justify-center md:justify-center">
       <InputRD />
     </div>
 
