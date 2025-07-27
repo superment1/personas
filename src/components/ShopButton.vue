@@ -25,7 +25,7 @@
 import { defineProps, useAttrs, computed, ref } from 'vue'
 
 const props = defineProps({
-  productId: { type: String, required: true },
+  productId: { type: String, required: false },
   customClass: { type: String, default: '' },
   title: String,
   textColorClass: {
@@ -85,20 +85,26 @@ const handleClick = async () => {
   zooming.value = true
   setTimeout(() => zooming.value = false, 300)
 
-  if (!props.productId) return
-
-  try {
-    const res = await fetch(`https://checkout.superment.co/get-price-id?product_id=${props.productId}`)
-    const data = await res.json()
-    if (!data.price_id) {
-      alert("Erro ao buscar o preço: " + (data.error || "desconhecido"))
-      return
+  if (!props.productId)  {
+    const target = document.getElementById('id-shop-now')
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
     }
-    window.location.href = `https://checkout.superment.co/checkout?price_id=${data.price_id}`
-  } catch (err) {
-    console.error("Erro na requisição:", err)
-    alert("Erro ao tentar iniciar o checkout.")
+  } else {
+    try {
+      const res = await fetch(`https://checkout.superment.co/get-price-id?product_id=${props.productId}`)
+      const data = await res.json()
+      if (!data.price_id) {
+        alert("Erro ao buscar o preço: " + (data.error || "desconhecido"))
+        return
+      }
+      window.location.href = `https://checkout.superment.co/checkout?price_id=${data.price_id}`
+    } catch (err) {
+      console.error("Erro na requisição:", err)
+      alert("Erro ao tentar iniciar o checkout.")
+    }
   }
+
 }
 </script>
 
