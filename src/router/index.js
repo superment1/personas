@@ -11,17 +11,42 @@ import Elderly from '../pages/elderly.vue'
 
 const routes = [
   { path: '/', redirect : '/supersleep' },
-  { path: '/supersleep', component: SuperSleep },
-  { path: '/test', component: SuperTest },
-  { path: '/beautysleep', component: SleepWomam},
-  { path: '/terms', component: TermsUse },
-  { path: '/refundpolicy', component: RefundPolicy },
-  { path: '/faq', component: Faq},
-  { path: '/about', component: About},
-  { path: '/elderly', component: Elderly}
+  { path: '/supersleep', name:'supersleep', component: SuperSleep },
+  { path: '/test', name: 'test', component: SuperTest },
+  { path: '/beautysleep', name:'beautysleep', component: SleepWomam},
+  { path: '/terms', name: 'terms', component: TermsUse },
+  { path: '/refundpolicy', name: 'refundpolicy', component: RefundPolicy },
+  { path: '/faq',  name: 'faq', component: Faq},
+  { path: '/about', name: 'about', component: About},
+  { path: '/elderly', name: 'elderly', component: Elderly}
 ]
 
 export const router = createRouter({
   history: createWebHistory('/sleep/'),
   routes,
+})
+
+function setThemeColor(color) {
+  let metaTag = document.querySelector('meta[name="theme-color"]')
+  if (!metaTag) {
+    metaTag = document.createElement('meta')
+    metaTag.setAttribute('name', 'theme-color')
+    document.head.appendChild(metaTag)
+  }
+  metaTag.setAttribute('content', color)
+}
+
+router.afterEach((to) => {
+  const themeColorMap = {
+    supersleep: '#E1DCCD',
+    terms: '#E1DCCD',
+    faq: '#E1DCCD',
+    about: '#E1DCCD',
+    refundpolicy: '#E1DCCD',
+    beautysleep: '#6EC8F0',
+    elderly: '#370F1E'
+
+  }
+  const color = themeColorMap[to.name] || '#ffffff'
+  setThemeColor(color)
 })

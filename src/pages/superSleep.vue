@@ -11,10 +11,6 @@
   import Stress from '../components/sleepSupermentComponents/Stress.vue';
   import ShopButton from '../components/ShopButton.vue';
 
-  // function handleClick() {
-  //   console.log('veio k')
-  //   // window.location.href = `${props.url}`;
-  // }
   const attrs = useAttrs();
 </script>
 

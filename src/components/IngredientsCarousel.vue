@@ -24,6 +24,8 @@ const items = [
     image: new URL('@/assets/image/prickly-pear.png', import.meta.url).href }
 ]
 
+
+// CLICANDO
 const currentIndex = ref(2)
 const carouselContainer = ref(null)
 
@@ -51,6 +53,27 @@ const scrollToIndex = (index) => {
   currentIndex.value = index
 }
 
+const AUTOPLAY_INTERVAL = 2000
+let autoplayTimer = null
+
+const next = () => {
+  const len = items.length
+  const nextIndex = (currentIndex.value + 1) % len
+  scrollToIndex(nextIndex)
+}
+
+const startAutoplay = () => {
+  stopAutoplay()
+  autoplayTimer = setInterval(next, AUTOPLAY_INTERVAL)
+}
+
+const stopAutoplay = () => {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer)
+    autoplayTimer = null
+  }
+}
+
 const onScroll = () => {
   const el = carouselContainer.value
   if (!el) return
@@ -72,69 +95,56 @@ const onScroll = () => {
       closestIndex = index
     }
   })
-
   currentIndex.value = closestIndex
 }
-let hoverTimeout = null
-const handleMouseEnter = (index) => {
-  if (window.innerWidth >= 1024) {
-    clearTimeout(hoverTimeout)
-    hoverTimeout = setTimeout(() => {
-      requestAnimationFrame(() => {
-        nextTick(() => {
-          scrollToIndex(index)
-        })
-      })
-    }, 100)
-  }
-}
-const handleMouseLeave = () => {
-  if (window.innerWidth >= 1024) {
-    clearTimeout(hoverTimeout)
-  }
-}
+
 onMounted(() => {
   const el = carouselContainer.value
   if (el) {
     el.addEventListener('scroll', onScroll, { passive: true })
-    sidePadding.value = el.offsetWidth / 2 - EFFECTIVE_WIDTH / 2
+    sidePadding.value = Math.max(el.offsetWidth / 2 - EFFECTIVE_WIDTH / 2 - 8, 0)
   }
-  nextTick(() => scrollToIndex(currentIndex.value))
+
+  nextTick(() => {
+    scrollToIndex(currentIndex.value)
+    startAutoplay()
+  })
 })
 
 onBeforeUnmount(() => {
-  carouselContainer.value?.removeEventListener('scroll', onScroll)
+  stopAutoplay()
 })
 
 </script>
 
 <template>
-  <div class="relative w-full bg-[#E1DCCD] flex justify-center items-center">
+  <div class="relative overflow-hidden w-full bg-[#E1DCCD] flex justify-center items-center">
     <!-- Faixa visível -->
     <div 
         ref="carouselContainer" 
-        class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory"
+        class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
       >
       <!-- Linha de cards -->
       <div class="flex w-max space-x-4 items-center relative z-0"
-        @mousedown="onMouseDown"
-        @mousemove="onMouseMove"
-        @mouseup="onMouseUp"
-        @mouseleave="onMouseUp">
-        <div class="shrink-0" :style="{ width: sidePadding + 'px' }"></div>
+          ref="carouselContainer" 
+          @mouseenter="stopAutoplay" 
+          @mouseleave="startAutoplay"
+          @touchstart.passive="stopAutoplay"
+          @touchend.passive="startAutoplay">
+        <div class="shrink-0 pointer-events-none" :style="{ width: sidePadding + 'px' }"></div>
         <div
           v-for="(item, index) in items"
           :key="index"
           :data-index="index"
-          class="relative flex-none snap-center w-[220px] md:w-[260px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
-          :class="{
-            'scale-110 opacity-100 z-[1]': index === currentIndex,
-            'scale-90  opacity-40  z-0': index !== currentIndex
-          }"
-          @mouseenter="handleMouseEnter(index)"
-          @mouseleave="handleMouseLeave"
-          @click="scrollToIndex(index)"
-        >
+          class="relative flex-none origin-center snap-center w-[220px] md:w-[260px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
+          >
+          <div
+              class="transform origin-center transition-all duration-300 ease-in-out"
+              :class="{
+                'scale-110 opacity-100 z-[1]': index === currentIndex,
+                'scale-90  opacity-40  z-0': index !== currentIndex
+              }"
+          >
           <!-- Card com imagem -->
           <div class="bg-white rounded-xl shadow rounded-2x1">
             <img 
@@ -146,7 +156,7 @@ onBeforeUnmount(() => {
             <h3 class="title">{{ item.title }}</h3>
             <p class="description">{{ item.subtitle }}</p>
           </div>
-          
+          </div>
         </div>
         <div class="shrink-0" :style="{ width: sidePadding + 'px' }"></div>
       </div>
