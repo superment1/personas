@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="w-full lg:w-1/2 h-[494px] bg-image-mobile bg-image-desktop flex flex-col items-center justify-between py-[25px] px-0">
+    <div class="w-full lg:w-1/2 h-[494px] bg-image-mobile bg-image-desktop flex flex-col items-center justify-between py-[40px] px-0">
 
     <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5">
       Botanical blend helping you to relax.
@@ -69,9 +69,9 @@
 @media (max-width: 639px) {
   .bg-image-mobile {
     width: 100%;
-    height: 470px;
+    height: 540px;
     background-image: url('@/assets/image/sleepSuperment/frascos.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }

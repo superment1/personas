@@ -17,7 +17,7 @@
       <!-- Explore -->
       <div class="w-full max-w-[330px] py-[25px] text-white flex flex-col items-start justify-center" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-[25px] w-full text-left">Explore</h2>
-        <ul class="space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
+        <ul class="flex flex-col gap-1 space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
           <li
             v-for="item in links"
             :key="item.label"
@@ -51,14 +51,14 @@
       <!-- Contact -->
       <div class="w-full max-w-[330px] lg:max-w-[330px] py-[25px] text-white font-dmsans flex flex-col items-start text-left" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-[25px]">Contact</h2>
-        <ul class="text-[#FFF]">
-          <li class="flex items-center gap-2 border-b border-[#FFF] w-[330px] lg:w-[330px] h-[32px]">
+        <ul class="text-[#FFF] flex flex-col gap-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] w-[330px] lg:w-[330px] pb-3 h-[32px]">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/email.png" alt="email icon" class="w-6 h-6" />
             </span>
             <a href="mailto:superhelp@superment.co" class="label">superhelp@superment.co</a>
           </li>
-          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[330px] lg:w-[330px] h-[32px] mt-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[330px] lg:w-[330px] pb-3 h-[32px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/instagram.png" alt="instagram icon" class="w-6 h-6" />
             </span>
