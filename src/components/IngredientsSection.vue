@@ -1,8 +1,8 @@
 <template>
     <!-- Ingredients Section -->
-    <section class="py-8 lg:pt-16 bg-[#FFFAF0]">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="font-gelasio text-[28px] leading-[1.2] lg:text-4xl text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
+    <section class="pb-10 lg:pt-16 bg-[#FFFAF0]">
+        <div class="max-w-7xl mx-auto md:justify-items-center px-4">
+            <h2 class="font-gelasio text-[28px] md:max-w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
                 An advanced botanical formula designed to support your sleep cycle.
             </h2>
 
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b pb-2 lg:flex-col lg:border-b-0"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
