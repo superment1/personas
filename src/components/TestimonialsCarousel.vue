@@ -41,7 +41,7 @@ const next = () => {
   <div class="relative w-full py-5 flex justify-center items-center">
     <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[550px] rounded-2xl">
       <!-- Seta esquerda -->
-      <button @click="prev" class="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 18px">
+      <button @click="prev" class="arrow-button absolute -left-11 top-1/2 z-30" style="margin-top: 18px">
         <ArrowCircle direction="left" backgroundColor="#E1DCCD" :responsive="false"  />
       </button>
 
@@ -68,7 +68,7 @@ const next = () => {
       </div>
 
       <!-- Seta direita -->
-      <button @click="next" class="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-30" style="margin-top: 18px">
+      <button @click="next" class="arrow-button absolute right-0 top-1/2 z-30"  style="margin-top: 18px;">
         <ArrowCircle direction="right" backgroundColor="#E1DCCD" :responsive="false" />
       </button>
     </div>
@@ -81,5 +81,16 @@ const next = () => {
 }
 .font-dmsans {
   font-family: 'DM Sans', sans-serif;
+}
+.arrow-button {
+  transition: transform 0.1s ease;
+  transform: translate(50%, -50%);
+}
+.arrow-button:hover {
+  transform: translate(50%, -50%) scale(1.05);
+}
+
+.arrow-button:active {
+  transform: translate(50%, -50%) scale(1.15);
 }
 </style>

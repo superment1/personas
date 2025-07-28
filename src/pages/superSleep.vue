@@ -35,7 +35,9 @@
         />
       </ShopButton>
       <div>
-        <span class="stripe">Powered by <span class="stripe-bold">stripe</span></span>
+        <span class="stripe">
+          <img src="../assets/image/sleepSuperment/stripe.png" ></img>
+        </span>
       </div>
     </div>
   </section>
@@ -65,7 +67,7 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly bring this to you with <br> one purpose: to provide real, <br>natural sleep support, <br> free of anything harmful."</p>
+      <p>"We proudly present to you our genuine purpose: to provide real, natural sleep support, free of anything harmful."</p>
       <p class="superment-team">Superment Team</p>
     </div>
     <div class="img-non">
@@ -112,6 +114,11 @@
 
         />
       </ShopButton>
+      <div>
+        <span class="stripe">
+          <img src="../assets/image/sleepSuperment/stripe.png" ></img>
+        </span>
+      </div>
       <!-- <button @click="handleClick">
         <div class="botao-shop-rest"></div>
       </button> -->
