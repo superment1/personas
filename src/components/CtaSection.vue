@@ -46,15 +46,15 @@
                                 certification</span>
                         </div>
                     </div>
-                    <div class="flex justify-center mb-20">
+                    <div class="mb-20">
                         <ShopButton
                             id="buy-button"
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-2 text-white md:ml-8 md:justify-center justify-start bg-[#d2f58c] !px-9 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-2 text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
-                        </ShopButton>
+                        </ShopButton>    
                     </div>
                 </div>
 
