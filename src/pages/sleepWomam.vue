@@ -22,7 +22,15 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[525px] sm:min-h-[493px] lg:min-h-[465px] 2xl:min-h-[623px] xl:min-h-[590px] md:min-h-[440px] bg-[url('@/assets/image/sleepWomam/beauty-mobile-bg.jpg')] md:bg-[url('@/assets/image/sleepWomam/beautysleep-bg.jpg')] 2xl:bg-[center_130px] md:bg-contain bg-contain bg-bottom bg-no-repeat">
+        <div class="relative 
+            min-h-[480px] sm:min-h-[493px] md:min-h-[440px] lg:min-h-[465px] xl:min-h-[590px] 2xl:min-h-[623px]
+            bg-[url('@/assets/image/sleepWomam/beauty-mobile-bg.jpg')]
+            md:bg-[url('@/assets/image/sleepWomam/beautysleep-bg.jpg')]
+            bg-no-repeat
+            bg-[left_88px] 
+            bg-contain
+            md:bg-contain
+            2xl:bg-[center_130px]">
             <Header />
             <HeroSection />
         </div>
