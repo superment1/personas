@@ -12,7 +12,7 @@ import ShopButton from '../ShopButton.vue';
         SHOP NOW
       </p>
       <div
-        class="mt-0 lg:mt-0 w-[102px] h-[17px] bg-[url('@/assets/image/sleepSuperment/stripe-branco.png')] bg-cover bg-center bg-no-repeat"
+        class="mt-0 lg:mt-0 w-[102px] h-[17px] bg-[url('@/assets/image/sleepSuperment/logo-stripe-branco.png')] bg-cover bg-center bg-no-repeat"
       ></div>
     </div>
 

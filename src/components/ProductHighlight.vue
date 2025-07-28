@@ -23,7 +23,7 @@
                         productId="prod_SbKYsQrxStW8wB"
                         textColorClass="text-[#58663a]"
                         :showIcon=true
-                        class="mt-2 text-white md:ml-8 md:justify-center justify-start  bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        class="mt-2 text-white mx-8 md:ml-8 md:justify-center justify-start bg-[#d2f58c] !px-11 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                         Shop: First Trial Special Offer
                     </ShopButton>                    
                 </div>
