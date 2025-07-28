@@ -1,8 +1,8 @@
 <template>
     <!-- Ingredients Section -->
-    <section class="py-8 lg:pt-16 bg-[#FFFAF0]">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="font-gelasio text-[28px] leading-[1.2] lg:text-4xl text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
+    <section class="pb-10 lg:pt-16 bg-[#FFFAF0]">
+        <div class="max-w-7xl mx-auto md:justify-items-center px-4">
+            <h2 class="font-gelasio text-[28px] md:max-w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
                 An advanced botanical formula designed to support your sleep cycle.
             </h2>
 
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b pb-2 lg:flex-col lg:border-b-0"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
@@ -68,19 +68,19 @@
                 </div>
             </div>
 
-            <div class="text-center">
+            <div class="text-center justify-items-center">
                 <p class="text-[#525252] font-gelasio italic mb-4 text-xl lg:text-[20px] leading-[1.1] mx-10">
                     So your skin restores overnight, and you rise with a healthy glow.
                 </p>
-                <div class="flex justify-center">
+                <div>
                     <ShopButton
                         id="buy-button"
                         productId="prod_SbKYsQrxStW8wB"
                         textColorClass="text-[#58663a]"
                         :showIcon=true
-                        class="mt-2 text-white mx-8 md:ml-8 md:justify-center justify-start bg-[#d2f58c] !px-11 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        class="mt-2 text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                         Shop: First Trial Special Offer
-                    </ShopButton>  
+                    </ShopButton>    
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 <template>
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-4 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-top bg-no-repeat">
+        <div class="w-full px-4 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[100%_-33%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="max-w-[80%] mx-auto">
                 <!-- Mobile Layout -->
-                <div class="block md:hidden pb-12">
+                <div class="block md:hidden pb-4">
                     <p class="text-[#c3e6ff] text-[24px] leading-[1.1] font-medium italic pt-8 font-gelasio">Sleep naturally.
                         Wake up<br>beautiful. Every day.</p>
                     <h2 class="text-white text-4xl font-light italic font-gelasio">
@@ -12,11 +12,11 @@
                     </h2>
                     <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26" />
                     <div class="flex justify-center items-center">
-                        <div class="relative left-12 top-8">
+                        <div class="relative left-14 top-8">
                             <img src="@/assets/image/sleepWomam/price.png" class="h-40" />
                         </div>
                     </div>
-                    <div class="space-y-3 mb-8 text-white text-md mt-48">
+                    <div class="text-white text-md mt-40">
                         <div class="flex items-center justify-start py-2">
                             <svg width="22" height="21" viewBox="0 0 22 21" class="w-6 h-6" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -46,24 +46,24 @@
                                 certification</span>
                         </div>
                     </div>
-                    <div class="flex justify-center mb-20">
+                    <div class="mb-20">
                         <ShopButton
                             id="buy-button"
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-2 text-white md:ml-8 md:justify-center justify-start bg-[#d2f58c] !px-9 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-2 text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
-                        </ShopButton>
+                        </ShopButton>    
                     </div>
                 </div>
 
                 <!-- Desktop Layout -->
-                <div class="hidden md:grid md:grid-cols-2 md:gap-12 md:items-center md:min-h-[600px] md:py-20">
+                <div class="hidden md:grid md:grid-cols-2 md:gap-12 md:items-center md:min-h-[660px] md:pt-4 md:py-20">
                     <!-- Left Side - Product & Pricing -->
                     <div class="relative">
                         <div class="relative">
-                            <div class="absolute right-8 -top-52">
+                            <div class="absolute right-12 -top-52">
                                 <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="lg:h-48" />
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-10 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-2 text-white md:ml-0 justify-center bg-[#d2f58c] px-10 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
                         </ShopButton>  
                     </div>
