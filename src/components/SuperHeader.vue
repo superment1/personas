@@ -79,7 +79,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
       </svg>
     </a>
-    <img src="@/assets/image/sleepSuperment/superment.gif" alt="Logo animado" />
+    <img src="@/assets/image/sleepSuperment/superment.gif" alt="Logo animado" loading="lazy" />
   </section>
   <section class="scroll-link-products">
     <div class="scroll-text-wrapper">
