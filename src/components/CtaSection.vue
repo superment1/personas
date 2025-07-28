@@ -1,11 +1,11 @@
 <template>
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-4 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cover bg-top bg-no-repeat">
-            <div class="w-11/12 mx-auto">
+        <div class="w-full px-4 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-top bg-no-repeat">
+            <div class="max-w-[80%] mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden pb-12">
-                    <p class="text-[#A0D7FF] text-2xl font-medium italic pt-8 font-gelasio">Sleep naturally.
+                    <p class="text-[#c3e6ff] text-[24px] leading-[1.1] font-medium italic pt-8 font-gelasio">Sleep naturally.
                         Wake up<br>beautiful. Every day.</p>
                     <h2 class="text-white text-4xl font-light italic font-gelasio">
                         SHOP NOW
@@ -52,7 +52,7 @@
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-2 text-white md:ml-8 md:justify-center justify-start bg-[#d2f58c] !px-9 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
                         </ShopButton>
                     </div>
@@ -123,7 +123,7 @@
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-6 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-2 text-white md:ml-8 justify-center bg-[#d2f58c] px-10 py-3 rounded-full text-base font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
                         </ShopButton>  
                     </div>

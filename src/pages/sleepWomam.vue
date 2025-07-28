@@ -22,7 +22,7 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[530px] lg:min-h-[650px] bg-[url('@/assets/image/sleepWomam/bg.jpg')] md:bg-[url('@/assets/image/sleepWomam/header_bg_desktop.jpg')] lg:bg-[center_130px] bg-cover bg-top bg-no-repeat">
+        <div class="relative min-h-[493px] lg:min-h-[650px] bg-[url('@/assets/image/sleepWomam/bg.jpg')] md:bg-[url('@/assets/image/sleepWomam/header_bg_desktop.jpg')] lg:bg-[center_130px] bg-cover bg-center bg-no-repeat">
             <Header />
             <HeroSection />
         </div>

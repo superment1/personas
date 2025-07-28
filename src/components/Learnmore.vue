@@ -5,7 +5,8 @@
             <p class="text-[#370F1E] mb-4 text-xl lg:text-2xl ">
                 Learn more about sleep
             </p>
-            <div class="flex justify-center mb-10">
+            <div class="flex justify-center mb-10">                
+                <a href="https://superment.co/sleepbetter/" target="_blank" rel="noopener noreferrer">
                 <button
                     class="border-2 border-[#370F1E] text-[#370F1E] px-6 py-2 rounded-full text-sm hover:bg-[#370F1E]/10 transition-colors duration-300 flex items-center gap-2">
                     <span class="text-[#370F1E] text-lg">Visit now</span>
@@ -15,6 +16,7 @@
                             fill="#370F1E" />
                     </svg>
                 </button>
+                </a>
             </div>
         </div>
     </section>

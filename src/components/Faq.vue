@@ -47,7 +47,6 @@ function toggle(index) {
     font-family: 'DM Sans', sans-serif;
     color: #370f1e;
     width: 100%;
-    min-width: 350px;
     max-width: 700px;
   }
 
@@ -90,8 +89,7 @@ function toggle(index) {
 
   @media(max-width: 730px) {
     .faq {
-      width: 350px;
-      max-width: 350px;
+      max-width: 330px;
     }
   }
 

@@ -34,9 +34,6 @@
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
         />
       </ShopButton>
-      <!-- <button>
-        <img src="@/assets/image/sleepSuperment/botao-shop.png" alt="botao-shop" class="botao-shop">
-      </button> -->
       <div>
         <span class="stripe">Powered by <span class="stripe-bold">stripe</span></span>
       </div>
@@ -55,7 +52,6 @@
         <ShopButton
           type="button"
           id="buy-button"
-          productId="prod_SbKYsQrxStW8wB"
           :showIcon="false"
           class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
           <img
