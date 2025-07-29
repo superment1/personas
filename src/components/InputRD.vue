@@ -3,10 +3,15 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   const script = document.createElement('script')
-  script.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js'
+  script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
   script.async = true
+  console.log('Iniciando carregamento do RD Station')
   script.onload = () => {
+    if (window.RDStationForms) {
     new RDStationForms('e-mail-site-2-fc7666a2bfa336762e39', '').createForm()
+    } else {
+      console.warn('RDStationForms not available after script load')
+    }
   }
   document.body.appendChild(script)
 })

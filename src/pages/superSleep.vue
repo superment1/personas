@@ -1,8 +1,8 @@
 <script setup>
-  import '@/styles/superSleep.scss';
+  import '../styles/superSleep.scss';
   import { defineProps, useAttrs } from 'vue'
-  import FAQ from '@/components/Faq.vue';
-  import IngredientsCarousel from '@/components/IngredientsCarousel.vue';
+  import FAQ from '../components/Faq.vue';
+  import IngredientsCarousel from '../components/IngredientsCarousel.vue';
   import SuperHeader from '../components/SuperHeader.vue';
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
@@ -10,7 +10,13 @@
   import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
   import Stress from '../components/sleepSupermentComponents/Stress.vue';
   import ShopButton from '../components/ShopButton.vue';
+  import { useSeo } from '../composables/useSeo';
 
+    useSeo({
+      title: 'SUPERMENT - Super Natural Sleep',
+      description: 'Natural, deep sleep is essential for healthy, radiant skin.',
+      keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
+  })
   const attrs = useAttrs();
 </script>
 
@@ -21,28 +27,33 @@
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
     </div>
-    <div class="description">
+    <div class="description !pl-[35px]">
       <span class="description">Try our premium <br> natural sleep formula,</span>
       <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
       <ShopButton
         type="button"
         id="buy-button"
         :showIcon="false"
-        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent mt-10">
+        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-10">
         <img
-          src="@/assets/image/sleepSuperment/botao-shop.png"
+          src="../assets/image/sleepSuperment/botao-shop.png"
+          loading="lazy"
+          alt="button-shop"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
         />
       </ShopButton>
       <div>
         <span class="stripe">
-          <img src="../assets/image/sleepSuperment/stripe.png" ></img>
+          <img 
+            loading="lazy" 
+            alt="logo-stripe"
+            src="../assets/image/sleepSuperment/stripe.png" ></img>
         </span>
       </div>
     </div>
   </section>
   <section class="super-natural-sleep" id="super-sleep-grande">
-    <div class="title">
+    <div class="title md:relative md:right-14">
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
       <div class="description">
@@ -55,23 +66,33 @@
           type="button"
           id="buy-button"
           :showIcon="false"
-          class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+          class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <img
-            src="@/assets/image/sleepSuperment/botao-shop.png"
+            loading="lazy"
+            alt="button-shop"
+            src="../assets/image/sleepSuperment/botao-shop.png"
             class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
           />
         </ShopButton>
-        <img src="@/assets/image/sleepSuperment/stripe.png" alt="" class="2 strip">
+        <img 
+          src="../assets/image/sleepSuperment/stripe.png" 
+          loading="lazy"
+          alt="logo-stripe" 
+          class="2 strip max-w-[150px]">
       </div>
     </div>
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly present to you our genuine purpose: to provide real, natural sleep support, free of anything harmful."</p>
+      <p>"We proudly present you our genuine purpose: to provide real, natural sleep support, free of anything harmful."</p>
       <p class="superment-team">Superment Team</p>
     </div>
     <div class="img-non">
-      <img src="@/assets/image/sleepSuperment/capsula-flores.png" alt="capsula e flores" class="image-forming">
+      <img 
+        src="../assets/image/sleepSuperment/capsula-flores.png" 
+        loading="lazy"
+        alt="capsula e flores" 
+        class="image-forming">
     </div>
   </section>
   <section class="ingredients relative z-10">
@@ -88,7 +109,11 @@
   <Stress/>
   <section class="shop-rest">
     <div class="imagem-centralizada">
-      <img src="@/assets/image/sleepSuperment/moca.png" alt="Mulher com pílula" />
+      <img 
+        src="../assets/image/sleepSuperment/moca.png" 
+        loading="lazy" 
+        alt="Mulher com pílula" 
+      />
     </div>
     <div class="infos">
       <p class="title">The numbers behind Super Natural Sleep</p>
@@ -97,31 +122,35 @@
         <div class="info">
           <p class="number">75%</p>
           <p class="description">of users reported better sleep quality.</p>
+          <span class="info-ref mt-[2px] text-[8px]">30-day trial results - 2025</span>
         </div>
         <div class="info">
           <p class="number">0%</p>
           <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
+          <span class="info-ref mt-[2px] text-[8px]">30-day trial results - 2025</span>
         </div>
       </div>
       <ShopButton
         type="button"
         id="buy-button"
         :showIcon="false"
-        class="botao-shop rounded-md ml-550px !hover:bg-none !transition-none !px-0 !bg-transparent">
+        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
         <img
-          src="@/assets/image/sleepSuperment/botao-shop-rest.png"
+          alt="button-shop"
+          loading="lazy"
+          src="../assets/image/sleepSuperment/botao-shop-rest.png"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
 
         />
       </ShopButton>
       <div>
         <span class="stripe">
-          <img src="../assets/image/sleepSuperment/stripe.png" ></img>
+          <img 
+            alt="logo-stripe"
+            loading="lazy"
+            src="../assets/image/sleepSuperment/stripe.png" ></img>
         </span>
       </div>
-      <!-- <button @click="handleClick">
-        <div class="botao-shop-rest"></div>
-      </button> -->
     </div>
   </section>
   <section class="testimonials">
@@ -136,8 +165,16 @@
   </section>
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <img src="@/assets/image/sleepSuperment/tabela.png" alt="table" class="table">
-    <img src="@/assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
+    <img 
+      loading="lazy"
+      src="../assets/image/sleepSuperment/tabela.png" 
+      alt="table" 
+      class="table">
+    <img 
+      loading="lazy"
+      src="../assets/image/sleepSuperment/selos.png" 
+      alt="selos" 
+      class="selos">
   </section>
   <Frascos/>
   <Stopwatch />

@@ -73,7 +73,7 @@
     <a 
       v-if="showRedirect"
       href="/sleep/" 
-      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[3.5rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
+      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[1.3rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
     >
       <svg class="w-8 h-8 mr-[1px]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -83,12 +83,12 @@
   </section>
   <section class="scroll-link-products">
     <div class="scroll-text-wrapper">
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
-      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend this product</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
+      <p>Made in the USA <span class="espacada">|</span> Clean, natural, no fillers <span class="espacada">|</span> Save 36% <span class="espacada">|</span> 30-day money-back guarantee <span class="espacada">|</span> Real reviews rated 4.9/5.0 <span class="espacada">|</span> 98% would recommend us</p>
     </div>
   </section>
 </template>

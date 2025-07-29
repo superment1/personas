@@ -60,9 +60,10 @@
 <style scoped>
 @font-face {
   font-family: 'Crossfit';
-  src: url('../../assets/fonts/crossfit/Crossfit-Black.otf') format('truetype');
+  src: url('../../assets/fonts/crossfit/Crossfit-Black.otf') format('woff2');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Imagem mobile: ativa até 639px */
