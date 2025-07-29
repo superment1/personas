@@ -3,6 +3,7 @@
   import { defineProps, useAttrs } from 'vue'
   import FAQ from '../components/Faq.vue';
   import IngredientsCarousel from '../components/IngredientsCarousel.vue';
+  import NotificationDisplay from '../components/NotificationDisplay.vue';
   import SuperHeader from '../components/SuperHeader.vue';
   import SuperFooter from '../components/SuperFooter.vue';
   import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
@@ -185,4 +186,5 @@
     </section>
   </section>
   <SuperFooter/>
+  <NotificationDisplay/>
 </template>
