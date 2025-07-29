@@ -1,10 +1,10 @@
 <template>
-  <div class="fixed bottom-4 right-4 z-50 flex flex-col items-end space-y-2">
+  <div class="fixed bottom-4 right-0 z-50 flex flex-col items-end space-y-2">
     <transition-group name="fade" tag="div">
       <div
         v-for="(notification, index) in visibleNotifications"
         :key="notification.id"
-        class="w-[270px] sm:w-[300px] md:w-[330px] lg:w-[360px] aspect-[3/1]"
+        class="w-[240px] sm:w-[270px] md:w-[300px] lg:w-[330px] aspect-[3/1]"
       >
         <button @click="scrollToShopNow" class="w-full h-full">
           <img
@@ -61,7 +61,7 @@ const mostrarProximaNotificacao = () => {
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % notificationsList.length
       mostrarProximaNotificacao()
-    }, 600)
+    }, 14000)
   }, 7000)
 }
 
@@ -74,9 +74,22 @@ onMounted(() => {
 
 <style scoped>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: all 0.4s ease;
 }
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from {
   opacity: 0;
+  transform: scale(0.1);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.1);
 }
 </style>
