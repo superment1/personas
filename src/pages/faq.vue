@@ -80,7 +80,7 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     },
     {
         question: 'What if I’m not satisfied?',
-        answer: `If you’re not happy with your results, just give us a call at (855) 273-0040 within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.`,
+        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.`,
         open: false
     },
     {

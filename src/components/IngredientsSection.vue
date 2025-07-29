@@ -1,13 +1,13 @@
 <template>
     <!-- Ingredients Section -->
     <section class="py-10 lg:pt-16 bg-[#FFFAF0]">
-        <div class="max-w-7xl mx-auto md:justify-items-center px-4">
-            <h2 class="font-gelasio text-[28px] md:max-w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
+        <div class="max-w-7xl mx-auto w-[full] justify-items-center px-4">
+            <h2 class="font-gelasio text-[28px] w-[330px] md:w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
                 An advanced botanical formula designed to support your sleep cycle.
             </h2>
 
-            <div class="grid grid-cols-1 max-w-[330px] mx-auto lg:max-w-5xl lg:grid-cols-5 gap-3 lg:gap-8 mb-6 lg:mb-4">
-                <div class="flex items-center py-2 border-b last:border-b-0 lg:flex-col lg:border-b-0"
+            <div class="grid grid-cols-1 max-w-[330px] mx-auto lg:max-w-5xl lg:grid-cols-5 gap-3 lg:gap-8 mb-6 lg:mb-4 lg:justify-items-center">
+                <div class="flex items-center py-2 border-b last:border-b-0 lg:flex-col lg:border-b-0 w-[330px] sm:w-[330px] md:w-[330px] lg:w-[full]"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/passionflower.png" alt="Passionflower"
@@ -19,7 +19,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b lg:flex-col lg:border-b-0 w-[330px] sm:w-[330px] md:w-[330px] lg:w-[full]"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/corydalis.png" alt="Corydalis"
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b lg:flex-col lg:border-b-0 w-[330px] sm:w-[330px] md:w-[330px] lg:w-[full]"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/marshmallow-root.png" alt="Marshmallow Root"
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b lg:flex-col lg:border-b-0 w-[330px] sm:w-[330px] md:w-[330px] lg:w-[full]"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/california-poppy.png" alt="California Poppy"
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center border-b pb-2 lg:flex-col lg:border-b-0"
+                <div class="flex items-center border-b pb-2 lg:flex-col lg:border-b-0 w-[330px] sm:w-[330px] md:w-[330px] lg:w-[full]"
                     style="border-color: #FFE1AA">
                     <div class="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
                         <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
@@ -69,7 +69,7 @@
             </div>
 
             <div class="text-center justify-items-center">
-                <p class="text-[#525252] font-gelasio italic mb-4 text-xl lg:text-[20px] leading-[1.1] mx-10">
+                <p class="text-[#525252] font-gelasio italic mb-4 text-xl lg:text-[20px] leading-[1.1] w-[330px] md:w-full">
                     So your skin restores overnight, and you rise with a healthy glow.
                 </p>
                 <div>
