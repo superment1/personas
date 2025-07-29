@@ -36,7 +36,6 @@ onMounted(() => {
   .title {
     font-family: 'Crossfit';
     color: #FFF;
-    font-size: 32px;
     text-align: start;
   }
 @media (min-width: 639px) {
@@ -53,7 +52,7 @@ onMounted(() => {
 
 <template>
 <div class="content-input" >
-  <p class="title"> JOIN OUR LIST.</p>
+  <p class="title text-4xl"> JOIN OUR LIST.</p>
   <div
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"

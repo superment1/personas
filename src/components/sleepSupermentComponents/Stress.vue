@@ -41,7 +41,7 @@
             than 7 hours, harming<br />
             focus and mood.
           </p>
-          <p class="mt-1 font-['DM_Sans'] text-[8px] font-extralight text-[#FFFAF0]">CDC</p>
+          <p class="mt-1 font-['DM_Sans'] text-[9px] font-extralight text-[#FFFAF0]">CDC</p>
         </div>
 
         <!-- Bloco 46% -->
@@ -52,7 +52,7 @@
             out, draining their<br />
             energy and wellbeing.
           </p>
-          <p class="mt-1 font-['DM_Sans'] text-[8px] font-extralight text-[#FFFAF0]">CDC / AJC.com</p>
+          <p class="mt-1 font-['DM_Sans'] text-[9px] font-extralight text-[#FFFAF0]">CDC / AJC.com</p>
         </div>
       </div>
     </div>

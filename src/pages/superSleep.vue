@@ -34,7 +34,7 @@
         type="button"
         id="buy-button"
         :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-10">
+        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
         <img
           src="../assets/image/sleepSuperment/botao-shop.png"
           loading="lazy"
@@ -122,12 +122,12 @@
         <div class="info">
           <p class="number">75%</p>
           <p class="description">of users reported better sleep quality.</p>
-          <span class="info-ref mt-[2px] text-[8px]">30-day trial results - 2025</span>
+          <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
         <div class="info">
           <p class="number">0%</p>
           <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
-          <span class="info-ref mt-[2px] text-[8px]">30-day trial results - 2025</span>
+          <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
       </div>
       <ShopButton
