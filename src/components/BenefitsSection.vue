@@ -1,11 +1,11 @@
 <template>
     <!-- What Happens When You Sleep -->
     <section class="pb-4 lg:py-12">
-        <div class="max-w-7xl lg:max-w-5xl justify-items-center mx-auto mb-8 px-4">
-            <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic mx-8">
+        <div class="max-w-[330px] lg:max-w-5xl justify-items-center mx-auto mb-8">
+            <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 mx-8">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6">
                 <!-- Benefits Grid -->
                 <div class="flex flex-col items-center gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
