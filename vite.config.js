@@ -10,5 +10,11 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    target: 'es2017',
+    minify: 'esbuild',
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096,
   }
 })

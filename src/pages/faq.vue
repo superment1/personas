@@ -1,7 +1,13 @@
 <script setup>
-import FaqAccordion from '../components/FaqAccordion.vue'
-import SuperHeader from '../components/SuperHeader.vue';
-import SuperFooter from '../components/SuperFooter.vue';
+import { useSeo } from '../composables/useSeo'
+import FaqAccordion from '../components/FaqAccordion.vue';
+import SuperHeader from '../components/SuperHeader.vue'
+import SuperFooter from '../components/SuperFooter.vue'
+    useSeo({
+            title: 'SUPERMENT - Super Natural Sleep',
+            description: 'Natural, deep sleep is essential for healthy, radiant skin.',
+            keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
+        })
 
 const faqData = [
     {
@@ -86,7 +92,7 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
 </script>
 
 <template>
-  <SuperHeader/>
+  <SuperHeader :show-redirect="true"/>
   <div class="w-full bg-[#fffaf0] ">
     <div class="max-w-[80%] md:max-w-[70%] mx-auto">
         <FaqAccordion :items="faqData" />

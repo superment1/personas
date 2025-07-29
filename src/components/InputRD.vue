@@ -3,10 +3,15 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   const script = document.createElement('script')
-  script.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js'
+  script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
   script.async = true
+  console.log('Iniciando carregamento do RD Station')
   script.onload = () => {
+    if (window.RDStationForms) {
     new RDStationForms('e-mail-site-2-fc7666a2bfa336762e39', '').createForm()
+    } else {
+      console.warn('RDStationForms not available after script load')
+    }
   }
   document.body.appendChild(script)
 })
@@ -31,7 +36,6 @@ onMounted(() => {
   .title {
     font-family: 'Crossfit';
     color: #FFF;
-    font-size: 32px;
     text-align: start;
   }
 @media (min-width: 639px) {
@@ -48,7 +52,7 @@ onMounted(() => {
 
 <template>
 <div class="content-input" >
-  <p class="title"> JOIN OUR LIST.</p>
+  <p class="title text-4xl"> JOIN OUR LIST.</p>
   <div
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"
