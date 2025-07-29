@@ -4,7 +4,7 @@
       <div
         v-for="(notification, index) in visibleNotifications"
         :key="notification.id"
-        class="w-[210px] sm:w-[240px] md:w-[270px] lg:w-[300px] aspect-[3/1]"
+        class="w-[270px] sm:w-[300px] md:w-[330px] lg:w-[360px] aspect-[3/1]"
       >
         <button @click="scrollToShopNow" class="w-full h-full">
           <img
