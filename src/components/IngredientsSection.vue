@@ -72,7 +72,7 @@
                 <p class="text-[#525252] font-gelasio italic mb-4 text-xl lg:text-[28px] text-center leading-[1.1] w-[330px] lg:w-full">
                     So your skin restores overnight, and you rise with a healthy glow.
                 </p>
-                <div>
+                <div class="justify-self-center">
                     <ShopButton
                         id="buy-button"
                         productId="prod_SbKYsQrxStW8wB"

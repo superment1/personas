@@ -1,7 +1,7 @@
 <template>
     <!-- What Happens When You Sleep -->
     <section class="pb-4 lg:py-12">
-        <div class="max-w-[90%] lg:max-w-5xl px-4 justify-items-center mx-auto mb-8">
+        <div class="w-[330px] lg:max-w-5xl justify-items-center mx-auto mb-8 lg:w-full">
             <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
@@ -71,13 +71,13 @@
                     </div>
                 </div>
             </div>
-            <div class="justify-self-start">
+            <div class="justify-self-center">
                 <ShopButton
                     id="buy-button"
                     productId="prod_SbKYsQrxStW8wB"
                     textColorClass="text-[#58663a]"
                     :showIcon=true
-                    class="mt-2 text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                    class="mt-2 text-white md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl w-[330px] lg:w-[400px]">                    
                     Shop: First Trial Special Offer
                 </ShopButton>    
             </div>

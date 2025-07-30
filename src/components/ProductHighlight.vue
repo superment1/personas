@@ -1,7 +1,7 @@
 <template>
     <!-- Product Highlight -->
     <section class="pt-12 pb-14 bg-white">
-        <div class="max-w-[90%] lg:max-w-5xl justify-items-center mx-auto px-4">
+        <div class="lg:max-w-5xl justify-items-center mx-auto">
             <div class="grid lg:grid-cols-5 items-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
                     <div class="-mt-16 -ml-12 lg:-mt-18 lg:-ml-2">
@@ -9,7 +9,7 @@
                             class="h-72 lg:w-full lg:h-full object-cover">
                     </div>
                 </div>
-                <div class="text-left inline-flex flex-col lg:col-span-3 items-start md:justify-items-start">
+                <div class="text-left inline-flex flex-col lg:col-span-3 items-start md:justify-items-start w-[330px] lg:w-full">
                     <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8 mb-2">
                         <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
                     </h2>
@@ -23,7 +23,7 @@
                         productId="prod_SbKYsQrxStW8wB"
                         textColorClass="text-[#58663a]"
                         :showIcon=true
-                        class="text-white !px-4 md:ml-8 md:w-auto md:justify-center bg-[#d2f58c] py-3 rounded-full text-[18px] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        class="mt-2 text-white md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl w-[330px] lg:w-[400px]">
                         Shop: First Trial Special Offer
                     </ShopButton>                                    
                 </div>
