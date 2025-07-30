@@ -135,7 +135,7 @@
         type="button"
         id="buy-button"
         :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
+        class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
         <img
           alt="button-shop"
           loading="lazy"

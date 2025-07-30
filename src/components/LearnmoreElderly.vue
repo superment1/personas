@@ -1,8 +1,8 @@
 <template>
     <!-- Learn More Section -->
-    <section class="relative z-10 bg-[#FFFAF0] pb-16 pt-12 rounded-t-3xl">
+    <section class="relative z-10 bg-[#FFFAF0] pt-10 pb-[4.25rem] rounded-t-3xl -mt-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-[#370F1E] mb-4 text-xl lg:text-2xl ">
+            <p class="text-[#370F1E] mb-2 text-xl lg:text-2xl ">
                 Learn more about sleep
             </p>
             <div class="flex justify-center">
