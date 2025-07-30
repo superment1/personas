@@ -2,7 +2,7 @@
     <!-- Ingredients Section -->
     <section class="py-10 lg:pt-16 bg-[#FFFAF0]">
         <div class="mx-auto md:w-[full] justify-items-center">
-            <h2 class="font-gelasio text-[28px] w-[330px] lg:w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-12 italic mx-8">
+            <h2 class="font-gelasio text-[28px] w-[330px] lg:w-[700px] leading-[1.2] lg:text-[40px] text-[#525252] text-start md:text-center mb-6 lg:mb-4 italic mx-8">
                 An advanced botanical formula designed to support your sleep cycle.
             </h2>
 
