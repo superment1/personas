@@ -1,7 +1,7 @@
 <template>
     <!-- Product Highlight -->
     <section class="pt-12 pb-14 bg-white">
-        <div class="max-w-7xl lg:max-w-5xl justify-items-center mx-auto px-4">
+        <div class="max-w-[90%] lg:max-w-5xl justify-items-center mx-auto px-4">
             <div class="grid lg:grid-cols-5 items-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
                     <div class="-mt-16 -ml-12 lg:-mt-18 lg:-ml-2">
@@ -9,7 +9,7 @@
                             class="h-72 lg:w-full lg:h-full object-cover">
                     </div>
                 </div>
-                <div class="text-left inline-flex flex-col lg:col-span-3 max-w-[330px] items-start md:justify-items-start">
+                <div class="text-left inline-flex flex-col lg:col-span-3 items-start md:justify-items-start">
                     <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8 mb-2">
                         <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
                     </h2>

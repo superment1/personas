@@ -1,13 +1,13 @@
 <template>
     <!-- What Happens When You Sleep -->
     <section class="pb-4 lg:py-12">
-        <div class="max-w-[330px] lg:max-w-5xl justify-items-center mx-auto mb-8">
+        <div class="max-w-[90%] lg:max-w-5xl px-4 justify-items-center mx-auto mb-8">
             <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6">
                 <!-- Benefits Grid -->
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -17,7 +17,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/hydration.png" alt="Hydration"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -28,7 +28,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/cell-regeneration.png" alt="Cell Regeneration"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -38,7 +38,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/even-skin-tone.png" alt="Even Skin Tone"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -48,7 +48,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/stress-reduction.png" alt="Stress Reduction"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -59,7 +59,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/glymphatic-detox.png" alt="Glymphatic Detox"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="justify-self-start">
                 <ShopButton
                     id="buy-button"
                     productId="prod_SbKYsQrxStW8wB"
