@@ -4,13 +4,16 @@
       <div
         v-for="(notification, index) in visibleNotifications"
         :key="notification.id"
-        class="w-[240px] sm:w-[270px] md:w-[300px] lg:w-[330px] aspect-[3/1]"
+        class="w-[240px] sm:w-[270px] md:w-[300px] lg:w-[330px] aspect-[5/2]"
       >
         <button @click="scrollToShopNow" class="w-full h-full">
           <img
             :src="notification.src"
+            decoding="async"
+            fetchpriority="high"
             alt="Notificação"
-            class="w-full h-full object-cover rounded-[10px] shadow-lg"
+            loading="lazy"
+            class="w-full h-full object-contain rounded-[10px] shadow-lg"
           />
         </button>
       </div>
@@ -25,19 +28,19 @@ import { ref, onMounted } from 'vue'
 const notificationsList = [
   {
     id: 1,
-    src: new URL('@/assets/image/sleepSuperment/notifications/image-1.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/image-1.png', import.meta.url).href
   },
   {
     id: 2,
-    src: new URL('@/assets/image/sleepSuperment/notifications/image-2.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/image-2.png', import.meta.url).href
   },
   {
     id: 3,
-    src: new URL('@/assets/image/sleepSuperment/notifications/image-3.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/image-3.png', import.meta.url).href
   },
   {
     id: 4,
-    src: new URL('@/assets/image/sleepSuperment/notifications/image-4.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/image-4.png', import.meta.url).href
   }
 ]
 

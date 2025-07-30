@@ -51,8 +51,8 @@ onMounted(() => {
 </style>
 
 <template>
-<div class="content-input" >
-  <p class="title text-4xl"> JOIN OUR LIST.</p>
+<div class="content-input gap-[18px]" >
+  <p class="title text-4xl"> JOIN OUR LIST</p>
   <div
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"

@@ -2,7 +2,7 @@
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
         <div class="w-full px-4 py-10 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[100%_1%] md:bg-cover md:bg-top bg-no-repeat">
-            <div class="max-w-[330px] md:max-w-full mx-auto">
+            <div class="max-w-[90%] md:max-w-full mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden">
                     <p class="text-[#c3e6ff] text-[24px] leading-[1.1] font-medium italic font-gelasio">Sleep naturally.

@@ -5,23 +5,23 @@ const items = [
   { 
     title: 'Passion Flower', 
     subtitle: 'Calming and relaxing.', 
-    image: new URL('@/assets/image/passion-flower.png', import.meta.url).href },
+    image: new URL('../assets/image/passion-flower.png', import.meta.url).href },
   { 
     title: 'Marshmallow Root', 
     subtitle: 'Calms digestion, supports sleep.', 
-    image: new URL('@/assets/image/marshmallow-root.png', import.meta.url).href },
+    image: new URL('../assets/image/marshmallow-root.png', import.meta.url).href },
   { 
     title: 'Corydalis', subtitle
     : 'Gentle pain and sleep relief.', 
-    image: new URL('@/assets/image/corydalis.png' , import.meta.url).href},
+    image: new URL('../assets/image/corydalis.png' , import.meta.url).href},
   { 
     title: 'California Poppy', 
     subtitle: 'Promotes calm and sleep.', 
-    image: new URL('@/assets/image/california-poppy.png', import.meta.url).href },
+    image: new URL('../assets/image/california-poppy.png', import.meta.url).href },
   { 
     title: 'Prickly Pear', 
     subtitle: 'Antioxidant support.', 
-    image: new URL('@/assets/image/prickly-pear.png', import.meta.url).href }
+    image: new URL('../assets/image/prickly-pear.png', import.meta.url).href }
 ]
 
 
