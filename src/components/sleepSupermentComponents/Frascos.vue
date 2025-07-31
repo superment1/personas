@@ -6,7 +6,7 @@
   <!-- MOBILE  -->
   <div class="bg-[#370F1E] mobile">
     <div class="w-full h-full bg-image flex flex-col justify-between pt-8 pb-8">
-      <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-5">
+      <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[280px] mx-auto mb-5">
         Botanical blend helping you to relax.
       </p>
       <div class="grid grid-cols-2">
