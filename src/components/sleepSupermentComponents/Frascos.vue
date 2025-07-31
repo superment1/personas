@@ -3,7 +3,12 @@
 </script>
 
 <template>
-  <div class="bg-[#370F1E] bg-image-parent-lg flex flex-col lg:flex-row items-center justify-center px-0 lg:px-12 py-0 relative">
+  <div class="bg-[#370F1E] flex flex-col items-center justify-center px-0 lg:px-12 py-0 relative">
+    
+    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5">
+      Botanical blend helping you to relax.
+    </p>
+    <div class="flex  bg-image-parent-lg">
     <div class="hidden lg:flex flex-col justify-center items-end w-1/2 gap-5 ">
       <div class="grid grid-cols-1 gap-y-3 w-[180px] lg:flex flex-col justify-center items-start">
         <div class="flex flex-row items-center">
@@ -26,11 +31,6 @@
     </div>
 
     <div class="w-full lg:w-1/2 h-[494px] bg-image-mobile bg-image-desktop flex flex-col items-center justify-between py-[40px] px-0">
-
-    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5">
-      Botanical blend helping you to relax.
-    </p>
-
       <div class="grid grid-cols-2 lg:hidden">
         <div class="flex flex-row items-center pl-5">
           <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
@@ -52,6 +52,7 @@
     </div>
     <div class="w-full h-full lg:w-1/2 mt- lg:mt-0 flex flex-row items-start justify-start">
       <ShopNow  />
+    </div>
     </div>
   </div>
 </template>

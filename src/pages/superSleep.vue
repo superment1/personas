@@ -81,7 +81,7 @@
           src="../assets/image/sleepSuperment/stripe.png" 
           loading="lazy"
           alt="logo-stripe" 
-          class="2 strip max-w-[150px]">
+          class="md:left-12 md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
   </section>
