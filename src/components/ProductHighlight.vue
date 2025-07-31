@@ -1,6 +1,6 @@
 <template>
     <!-- Product Highlight -->
-    <section class="py-12 bg-white">
+    <section id="Highlight" class="py-12 bg-white">
         <div class="max-w-7xl lg:max-w-[58rem] mx-auto px-4">
             <div class="max-w-[21rem] md:max-w-full mx-auto grid lg:grid-cols-5 items-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
@@ -18,11 +18,11 @@
                     </p>            
                     <ShopButton
                         id="buy-button"
-                        productId="prod_SbKYsQrxStW8wB"
+                        anchorId="cta-section"
                         textColorClass="text-[#58663a]"
                         :showIcon=true
-                        class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
-                        Shop: First Trial Special Offer
+                        class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        Shop: check our opening discount 
                     </ShopButton>                                    
                 </div>
             </div>

@@ -34,6 +34,7 @@
       <ShopButton
         type="button"
         id="buy-button"
+        anchorId="id-shop-now"
         :showIcon="false"
         class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
         <img
@@ -66,6 +67,7 @@
         <ShopButton
           type="button"
           id="buy-button"
+          anchorId="id-shop-now"
           :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <img
@@ -143,6 +145,7 @@
       <ShopButton
         type="button"
         id="buy-button"
+        anchorId="id-shop-now"
         :showIcon="false"
         class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
         <img

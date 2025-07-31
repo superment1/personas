@@ -74,11 +74,11 @@
             </div>
             <ShopButton
                 id="buy-button"
-                productId="prod_SbKYsQrxStW8wB"
+                anchorId="cta-section"
                 textColorClass="text-[#58663a]"
                 :showIcon=true
-                class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">                  
-                Shop: First Trial Special Offer
+                class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">                  
+                Shop: check our opening discount
             </ShopButton>    
             </div>
         </div>

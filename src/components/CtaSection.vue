@@ -1,22 +1,22 @@
 <template>
     <!-- Final CTA Section -->
-    <section class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-0 py-10 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_1%] md:bg-cover md:bg-top bg-no-repeat">
+    <section id="cta-section" class="relative rounded-t-3xl bg-[#63CFF2]">
+        <div class="w-full px-0 py-10 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_0%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-full flex items-center justify-center lg:max-w-[90%] lg:mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[330px]">
                     <p class="text-[#c3e6ff] text-[24px] leading-[1.1] font-medium italic font-gelasio">Sleep naturally.
                         Wake up<br>beautiful. Every day.</p>
-                    <h2 class="text-white text-4xl font-light italic font-gelasio">
+                    <h2 class="text-white text-4xl pt-1 font-light italic font-gelasio">
                         SHOP NOW
                     </h2>
                     <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26" />
                     <div class="flex justify-center items-center">
                         <div class="relative left-14 top-8">
-                            <img src="@/assets/image/sleepWomam/price.png" class="h-40" />
+                            <img src="../assets/image/sleepWomam/price-thin.png" class="h-40" />
                         </div>
                     </div>
-                    <div class="text-white text-md pt-44">
+                    <div class="text-white text-md pt-40">
                         <div class="flex items-center justify-start  py-2">
                             <svg width="22" height="21" viewBox="0 0 22 21" class="w-6 h-6" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +64,7 @@
                     <div class="relative">
                         <div class="relative">
                             <div class="absolute right-12 -top-52 lg:right-8 lg:-top-64">
-                                <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="h-48 lg:h-56" />
+                                <img src="@/assets/image/sleepWomam/price-desk-thin.png" alt="Pricing" class="h-48 lg:h-56" />
                             </div>
                         </div>
                     </div>

@@ -12,11 +12,11 @@
     
     <ShopButton
         id="buy-button"
-        productId="prod_SbKYsQrxStW8wB"
+        anchorId="Highlight"
         textColorClass="text-white"
         :showIcon=false
         class="mt-2 border border-[#5EC7EB] text-white bg-[#CDEBFF]/30 px-6 py-3 rounded-full text-base font-light hover:bg-[#CDEBFF]/50 transition lg:text-2xl">
-        Shop: First Trial Special Offer
+        Before you buy, know it better
     </ShopButton>
 </section>
 </template>
