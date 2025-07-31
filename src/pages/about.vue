@@ -2,6 +2,9 @@
 import { useSeo } from '../composables/useSeo'
 import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
+import ShopNow from '../components/sleepSupermentComponents/ShopNow.vue'
+import Stopwatch from '../components/Stopwatch.vue'
+import Frascos from '../components/sleepSupermentComponents/Frascos.vue'
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
         description: 'Natural, deep sleep is essential for healthy, radiant skin.',
@@ -86,6 +89,7 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
             </div>    
         </div>
     </div>
-    <div :style="{ backgroundImage: `url(${bgImageEnd})` }" class="bg-cover sm:hidden bg-bottom h-[525px] flex items-end"></div>
+    <Frascos/>
+    <Stopwatch/>
     <SuperFooter/>
 </template>

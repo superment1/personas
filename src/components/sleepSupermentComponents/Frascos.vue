@@ -70,7 +70,7 @@
 @media (max-width: 639px) {
   .bg-image-mobile {
     width: 100%;
-    height: 540px;
+    height: 520px;
     background-image: url('@/assets/image/sleepSuperment/frascos.png');
     background-size: contain;
     background-position: center;

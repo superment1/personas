@@ -20,7 +20,6 @@ onMounted(() => {
 
 
   #e-mail-site-2-fc7666a2bfa336762e39 form {
-    /* width: 100% !important; */
     width: 700px;
   }
 
