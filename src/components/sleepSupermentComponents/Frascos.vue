@@ -3,56 +3,65 @@
 </script>
 
 <template>
-  <div class="bg-[#370F1E] flex flex-col items-center justify-center px-0 lg:px-12 py-0 relative">
-    
-    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center w-full max-w-[280px] mx-auto mb-5">
+  <!-- MOBILE  -->
+  <div class="bg-[#370F1E] mobile">
+    <div class="w-full h-full bg-image flex flex-col justify-between pt-8 pb-8">
+      <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-5">
+        Botanical blend helping you to relax.
+      </p>
+      <div class="grid grid-cols-2">
+          <div class="flex flex-row items-center pl-8">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-sm ml-1 description">Soothe tension</p>
+          </div>
+          <div class="flex flex-row items-center pr-1">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-sm ml-1 description">Sleep longer</p>
+          </div>
+          <div class="flex flex-row items-center pl-8">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-sm ml-1 description">Relaxation</p>
+          </div>
+          <div class="flex flex-row items-center pr-1">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-sm ml-1 description">Wake up recharged</p>
+          </div>
+      </div>
+    </div>
+    <ShopNow/>
+  </div>
+
+  <!-- DESKTOP -->
+  <div class="w-full h-[500px] desktop md:flex flex-col bg-[#370F1E] p-8">
+    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-8">
       Botanical blend helping you to relax.
     </p>
-    <div class="flex  bg-image-parent-lg">
-    <div class="hidden lg:flex flex-col justify-center items-end w-1/2 gap-5 ">
-      <div class="grid grid-cols-1 gap-y-3 w-[180px] lg:flex flex-col justify-center items-start">
-        <div class="flex flex-row items-center">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-2 description">Soothe tension</p>
+    <div class="w-[full] bg-image flex items-start justify-center">
+        <div class="w-[1000px] flex flex-row justify-between ">
+          <div class="w-[full] grid grid-cols-1 gap-y-1 lg:flex flex-col justify-start items-start mt-40 ml-36">
+            <div class="flex flex-row items-center">
+              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Soothe tension</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Relaxation</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Sleep longer</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Wake up recharged</p>
+            </div>
+          </div>
+          <div class="w-[350px] flex flex-col justify-end items-end mt-8">
+            <div> 
+              <ShopNow/>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-row items-center">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-2 description">Relaxation</p>
-        </div>
-        <div class="flex flex-row items-center">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-2 description">Sleep longer</p>
-        </div>
-        <div class="flex flex-row items-center">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-2 description">Wake up recharged</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-full lg:w-1/2 h-[494px] bg-image-mobile bg-image-desktop flex flex-col items-center justify-between py-[40px] px-0">
-      <div class="grid grid-cols-2 lg:hidden">
-        <div class="flex flex-row items-center pl-5">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-1 description">Soothe tension</p>
-        </div>
-        <div class="flex flex-row items-center pr-1">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-1 description">Sleep longer</p>
-        </div>
-        <div class="flex flex-row items-center pl-5">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-1 description">Relaxation</p>
-        </div>
-        <div class="flex flex-row items-center pr-1">
-          <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-          <p class="text-[#FFFAF0] text-sm ml-1 description">Wake up recharged</p>
-        </div>
-      </div>
-    </div>
-    <div class="w-full h-full lg:w-1/2 mt- lg:mt-0 flex flex-row items-start justify-start">
-      <ShopNow  />
-    </div>
     </div>
   </div>
 </template>
@@ -68,28 +77,36 @@
 }
 
 /* Imagem mobile: ativa até 639px */
-@media (max-width: 639px) {
-  .bg-image-mobile {
-    width: 100%;
-    height: 520px;
+@media (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .bg-image {
+    /* width: 100%; */
+    height: 540px;
     background-image: url('@/assets/image/sleepSuperment/frascos.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 }
 
-/* Imagem desktop: ativa somente entre 640px e 1023px */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .bg-image-desktop {
-    @apply w-full h-[494px] bg-contain bg-center bg-no-repeat !important;
-    background-image: url('@/assets/image/sleepSuperment/frascos-sem-fundo.png');
-  }
-}
-
 @media (min-width: 1024px) {
-  .bg-image-parent-lg {
-    @apply bg-contain bg-center bg-no-repeat;
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block
+  }
+
+  .bg-image {
+    @apply w-full h-[494px] bg-contain bg-center bg-no-repeat !important;
     background-image: url('@/assets/image/sleepSuperment/frascos-sem-fundo.png');
   }
 }
