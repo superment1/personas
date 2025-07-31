@@ -2,10 +2,11 @@
     <!-- What Happens When You Sleep -->
     <section class="pb-4 lg:py-12">
         <div class="max-w-7xl lg:max-w-5xl justify-items-center mx-auto mb-8 lg:w-full px-4">
-            <h2 class="mx-8 font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">
+            <div class="max-w-[21rem] md:justify-items-center md:max-w-full mx-auto">
+            <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
-            <div class="max-w-[21rem] mx-auto grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-6">
+            <div class="max-w-[21rem] md:max-w-full mx-auto grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-6">
                 <!-- Benefits Grid -->
                 <div class="flex flex-col items-start gap-4 lg:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
@@ -71,15 +72,14 @@
                     </div>
                 </div>
             </div>
-            <div class="justify-self-center">
-                <ShopButton
-                    id="buy-button"
-                    productId="prod_SbKYsQrxStW8wB"
-                    textColorClass="text-[#58663a]"
-                    :showIcon=true
-                    class="mt-2 text-white md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl w-[330px] lg:w-[400px]">                    
-                    Shop: First Trial Special Offer
-                </ShopButton>    
+            <ShopButton
+                id="buy-button"
+                productId="prod_SbKYsQrxStW8wB"
+                textColorClass="text-[#58663a]"
+                :showIcon=true
+                class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">                  
+                Shop: First Trial Special Offer
+            </ShopButton>    
             </div>
         </div>
     </section>
