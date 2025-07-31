@@ -1,33 +1,29 @@
 <script setup>
-import { ref } from 'vue'
 import setaDireita from '@/assets/image/seta-direita.png'
 import setaEsquerda from '@/assets/image/seta-esquerda.png'
-import ArrowCircle from '@/components/ArrowCircle.vue';
+import ArrowCircle from '../components/ArrowCircle.vue';
+import { ref, watch, onMounted } from 'vue';
 
 const items = [
   {
-    type: 'image',
-    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento01.png', import.meta.url).href
+    type: 'video', url: new URL('@/assets/videos/depoimento-video.mp4', import.meta.url).href
   },
   {
-    type: 'image',
-    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento02.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento01.png', import.meta.url).href
   },
   {
-    type: 'image',
-    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento03.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento02.png', import.meta.url).href
   },
   {
-    type: 'image',
-    image: new URL('@/assets/image/sleepSuperment/PG3Depoimento04.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento03.png', import.meta.url).href
   },
   {
-    type: 'video',
-    url: new URL('@/assets/videos/depoimento-video.mp4', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento04.png', import.meta.url).href
   }
 ]
 
 const currentIndex = ref(0)
+const videoRef = ref(null)
 
 const prev = () => {
   currentIndex.value = (currentIndex.value - 1 + items.length) % items.length
@@ -35,6 +31,28 @@ const prev = () => {
 const next = () => {
   currentIndex.value = (currentIndex.value + 1) % items.length
 }
+
+
+watch(currentIndex, () => {
+  if (items[currentIndex.value].type === 'video') {
+    setTimeout(() => {
+      videoRef.value?.play().catch(err => {
+        console.warn('Autoplay bloqueado (troca):', err)
+      })
+    }, 100)
+  }
+})
+
+// Toca automaticamente o vídeo se for o primeiro
+onMounted(() => {
+  if (items[0].type === 'video') {
+    setTimeout(() => {
+      videoRef.value?.play().catch(err => {
+        console.warn('Autoplay bloqueado (mounted):', err)
+      })
+    }, 100)
+  }
+})
 </script>
 
 <template>
@@ -56,12 +74,14 @@ const next = () => {
         </template>
         <template v-else>
           <video
-            :src="items[currentIndex].url"
-            class="w-full h-full object-cover"
-            controls
+            ref="videoRef"
+            :src="items[currentIndex].url"            
+            autoplay
             muted
-            loop
+            loop            
             playsinline
+            controls
+            class="w-full h-full object-cover"           
           ></video>
         </template>
 

@@ -57,7 +57,6 @@ const buttonClasses = computed(() => {
     'flex',
     'items-center',
     'justify-center',
-    'gap-2',
     'hover:bg-[#58663A]/50',
     'hover:text-white',
     'hover:fill-white'

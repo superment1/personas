@@ -85,8 +85,8 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We proudly present you our genuine purpose: to provide real, natural sleep support, free of anything harmful."</p>
-      <p class="superment-team">Superment Team</p>
+      <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without anything harmful."</p>
+      <p class="superment-team">The Superment Team</p>
     </div>
     <div class="img-non">
       <img 
@@ -118,24 +118,33 @@
     </div>
     <div class="infos">
       <p class="title">The numbers behind Super Natural Sleep</p>
-      <p class="description-title">What people are saying about our powerful botanical blend:</p>
-      <div class="infos-users">
-        <div class="info">
-          <p class="number">75%</p>
-          <p class="description">of users reported better sleep quality.</p>
-          <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
-        </div>
-        <div class="info">
-          <p class="number">0%</p>
-          <p class="description" id="description-maior">experienced grogginess or unwanted side effects.</p>
+      <p class="description-title md:mb-[14px]">What people are saying about our powerful botanical blend:</p>
+      <div class="infos-users md:mb-6 flex-col gap-0 md:justify-center md:flex-row md:gap-16">
+        <div class="flex gap-8 md:gap-16">
+          <div class="info mt-2 max-w-[200px] mx-auto">
+            <p class="number">75%</p>
+            <p class="description md:w-[200px]">of users <br>reported better<br> sleep quality.</p>
+            <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
+          </div>
+          <div class="info mt-2 max-w-[240px] mx-auto">
+            <p class="number">0%</p>
+            <p class="description" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
+            <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
+          </div>          
+        </div>       
+         <div class="info max-w-[200px]">
+          <p class="number mt-5 md:mt-0">100%</p>
+          <p class="description">of users reported reduced anxiety and greater relaxation.</p>
           <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
       </div>
+
+       
       <ShopButton
         type="button"
         id="buy-button"
         :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
+        class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
         <img
           alt="button-shop"
           loading="lazy"

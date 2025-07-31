@@ -221,7 +221,7 @@ section.shop-rest {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 0 25px 0;
+    padding: 150px 0 25px 0;
 }
 
 .imagem-centralizada {
@@ -249,7 +249,7 @@ section.shop-rest div.infos {
     align-items: center;
     justify-content: end;
     height: 350px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 section.shop-rest div.infos p.title {
@@ -275,21 +275,16 @@ section.shop-rest div.infos p.description-title {
     letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
 }
 
 section.shop-rest div.infos div.infos-users {
-    width: 300px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 section.shop-rest div.infos div.infos-users div.info {
-    width: 115px;
-    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,7 +303,6 @@ section.shop-rest div.infos div.infos-users div.info p.number {
 }
   
 section.shop-rest div.infos div.infos-users div.info p.description {
-    width: 110px;
     font-family: 'DM Sans';
     font-weight: 600;
     font-style: Medium;
@@ -317,10 +311,6 @@ section.shop-rest div.infos div.infos-users div.info p.description {
     letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-}
-
-#description-maior {
-    width: 160px;
 }
   
 section.shop-rest div.botao-shop-rest {
@@ -590,17 +580,12 @@ section.questions p.title {
     section.shop-rest  {
         width: 100%;
         display: flex;
-        height: 410px;
-        padding: 20px 0 10px 0;
+        padding: 40px 0 30px 0;
     }
 
     section.shop-rest div.infos {
         width: 100%;
         display: flex;
-    }
-
-    section.shop-rest div.infos div.infos-users {
-        width: 400px;
     }
     
     section.shop-rest div.infos #buy-button {
@@ -608,7 +593,6 @@ section.questions p.title {
     }
 
     section.shop-rest div.infos div.infos-users div.info {
-        width: 180px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -616,11 +600,10 @@ section.questions p.title {
     }
 
     #description-maior {
-        width: 200px;
+        width: 240px;
     }
 
     section.shop-rest div.infos div.infos-users div.info p.description {
-        width: 140px;
         font-family: 'DM Sans';
         font-weight: 600;
         font-style: Medium;

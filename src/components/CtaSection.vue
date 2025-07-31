@@ -1,7 +1,7 @@
 <template>
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-0 py-10 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[100%_1%] md:bg-cover md:bg-top bg-no-repeat">
+        <div class="w-full px-0 py-10 min-h-[600px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_1%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-full flex items-center justify-center lg:max-w-[90%] lg:mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[330px]">
@@ -63,8 +63,8 @@
                     <!-- Left Side - Product & Pricing -->
                     <div class="relative">
                         <div class="relative">
-                            <div class="absolute right-12 -top-52">
-                                <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="lg:h-48" />
+                            <div class="absolute right-12 -top-52 lg:right-8 lg:-top-64">
+                                <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="h-48 lg:h-56" />
                             </div>
                         </div>
                     </div>
