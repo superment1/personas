@@ -35,6 +35,7 @@
     background-repeat: no-repeat;
 }
 
+
 div.title-super-natural-sleep {
     width: 100%;
     height: 150px;
@@ -500,14 +501,13 @@ section.questions p.title {
     }
 
     #super-sleep-grande {
-        background-image: url('@/assets/image/sleepSuperment/bg-supersleep.jpg');
-        background-size: cover;
-        background-position: center;
+        background-image: url('../assets/image/sleepSuperment/hero-desktop.jpg');
+        background-size: 100%;
+        background-position: 100% -183px;
         background-repeat: no-repeat;
-
         width: 100%;
         aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
-        max-height: 330px;     /* impede que fique gigante em telas grandes */
+        max-height: 380px;     /* impede que fique gigante em telas grandes */
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -539,11 +539,13 @@ section.questions p.title {
     #super-sleep-grande div.title span.product-title {
         text-align: start;
         width: 300px;
+        font-size: 50px;
     }   
     
     #super-sleep-grande div.title span.product-sub-title {
         text-align: start;
         width: 300px;
+        font-size: 25px;
     }   
 
     #super-sleep-grande div.title div.description {
@@ -561,7 +563,7 @@ section.questions p.title {
         text-align: start;
         font-family: 'DM Sans';
         font-weight: 500;
-        font-size: 16px;
+        font-size: 21px;
         line-height: 20px;
         letter-spacing: 0%;
     }
@@ -575,7 +577,8 @@ section.questions p.title {
     }   
 
     #super-sleep-grande div.button div {
-        margin-left: 10rem;
+        margin-left: 11rem;
+        margin-bottom: 2rem;
     }   
 
     section.shop-rest  {

@@ -11,6 +11,7 @@ import CtaSectionElderly from '../components/CtaSectionElderly.vue'
 import LearnmoreElderly from '../components/LearnmoreElderly.vue'
 import FooterElderly from '../components/FooterElderly.vue'
 import Guarantees from '../components/Guarantees.vue'
+import SleepTransformation from '../components/SleepTransformation.vue'
 
 useSeo({
     title: 'SUPERMENT - Super Natural Sleep',
@@ -30,7 +31,7 @@ useSeo({
         <TaglineStripElderly />
 
         <ProductHighlightElderly />
-
+        <SleepTransformation/>
         <IngredientsSectionElderly />        
         
         <Guarantees/>

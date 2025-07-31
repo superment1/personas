@@ -2,7 +2,7 @@
     <!-- Learn More Section -->
     <section class="relative z-10 bg-[#CDEBFF] py-12 rounded-t-3xl -mt-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-[#370F1E] mb-4 text-xl lg:text-2xl ">
+            <p class="text-[#370F1E] px-6 mb-4 text-xl lg:text-2xl ">
                 Learn more about us and how important is the right sleep
             </p>
             <div class="flex justify-center mb-10">                
