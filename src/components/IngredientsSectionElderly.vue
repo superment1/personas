@@ -74,7 +74,7 @@
                      productId="prod_SbKYsQrxStW8wB" 
                      textColorClass="text-[#083d4f]" 
                      iconColorClass="text-[#083d4f]" 
-                     title="Shop: First Trial Special Offer" 
+                     title="Shop: check our opening discount" 
                      class="ml-8 bg-[#ffc35a] font-medium text-lg lg:text-xl" />
                 </div>
             </div>

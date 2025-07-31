@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full py-[25px] bg-[#370f1e]" id="id-shop-now">
+  <div class="flex flex-col items-center w-full py-[25px]" id="id-shop-now">
     
     <!-- Título + Stripe (alinhado lado a lado em telas lg+) -->
     <div class="flex flex-col lg:flex-row items-center justify-center gap-2">

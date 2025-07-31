@@ -26,6 +26,7 @@ import { defineProps, useAttrs, computed, ref } from 'vue'
 
 const props = defineProps({
   productId: { type: String, required: false },
+  anchorId: String,
   customClass: { type: String, default: '' },
   title: String,
   textColorClass: {
@@ -85,7 +86,7 @@ const handleClick = async () => {
   setTimeout(() => zooming.value = false, 300)
 
   if (!props.productId)  {
-    const target = document.getElementById('id-shop-now')
+    const target = document.getElementById(props.anchorId)
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' })
     }
