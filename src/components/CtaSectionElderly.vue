@@ -1,7 +1,7 @@
 <template>
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-4 py-10 min-h-[600px] rounded-t-3xl bg-[url('../assets/image/sleepElderly/bannerElderly.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_1%] md:bg-cover md:bg-top bg-no-repeat">
+        <div class="w-full px-4 pt-10 pb-14 md:pb-0 min-h-[600px] rounded-t-3xl bg-[url('../assets/image/sleepElderly/bannerElderly.png')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_1%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-full flex items-center justify-center lg:max-w-[90%] lg:mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[330px]">
@@ -26,28 +26,28 @@
                 </div>
 
                 <!-- Desktop Layout -->
-                <div class="hidden md:grid md:grid-cols-2 md:gap-12 md:items-start md:min-h-[600px] md:py-20">
+                <div class="hidden md:grid md:grid-cols-2 md:gap-12 md:items-start md:min-h-[600px] md:py-16">
                     <!-- Left Side - Product & Pricing -->
                     <div class="relative">
                         <div class="relative">
                             <div class="absolute right-8">
-                                <img src="@/assets/image/sleepElderly/price1.png" alt="Pricing" class="lg:h-48" />
+                                <img src="@/assets/image/sleepElderly/price1.png" alt="Pricing" class="lg:h-56" />
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Side - Content -->
-                    <div class="text-left">
+                    <div class="text-left xl:max-w-[22rem]">
                         <p class="text-[#ffdc6b] text-[2.5rem] font-medium  font-crossfit mb-4">
                             SHOP NOW
                         </p>
-                        <h2 class="text-white text-4xl font-bold  font-crossfit mb-4">
+                        <h2 class="text-white text-5xl font-bold  font-crossfit mb-4">
                             You don’t need to push through another tired day.
                         </h2>
                         <div class="inline-block mb-4">
                             <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26" />
                         </div>
-                        <h1 class="font-crossfit uppercase text-[#370f1e] leading-none pr-32 pb-5 text-[1.5rem]">There’s a gentle way to sleep and rest, naturally.</h1>
+                        <h1 class="font-crossfit uppercase text-[#370f1e] leading-none pr-12 pb-5 text-[1.75rem]">There’s a gentle way to sleep and rest, naturally.</h1>
                         <ShopButton id="buy-button" 
                         productId="prod_SbKYsQrxStW8wB" 
                         textColorClass="text-[#083d4f]" 

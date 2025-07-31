@@ -1,6 +1,6 @@
 <template>
     <!-- Product Highlight -->
-    <section class="py-12 bg-white">
+    <section class="pb-8 pt-12 bg-white">
         <div class="max-w-7xl lg:max-w-3xl mx-auto px-4">
             <div class="grid lg:grid-cols-5 items-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
