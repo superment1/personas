@@ -63,8 +63,8 @@
                     <!-- Left Side - Product & Pricing -->
                     <div class="relative">
                         <div class="relative">
-                            <div class="absolute right-12 -top-52">
-                                <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="lg:h-48" />
+                            <div class="absolute right-12 -top-52 lg:right-8 lg:-top-64">
+                                <img src="@/assets/image/sleepWomam/price.png" alt="Pricing" class="h-48 lg:h-56" />
                             </div>
                         </div>
                     </div>

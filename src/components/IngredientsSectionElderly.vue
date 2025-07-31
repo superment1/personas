@@ -69,7 +69,13 @@
                     Gentle Ingredients. Powerful Sleep Support.
                 </p>
                 <div class="flex justify-center">
-                     <ShopButton  id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083d4f]" iconColorClass="text-[#083d4f]" title="Shop: First Trial Special Offer" class="ml-8 bg-[#ffc35a] font-medium text-lg lg:text-xl" />
+                     <ShopButton  
+                     id="buy-button" 
+                     productId="prod_SbKYsQrxStW8wB" 
+                     textColorClass="text-[#083d4f]" 
+                     iconColorClass="text-[#083d4f]" 
+                     title="Shop: First Trial Special Offer" 
+                     class="ml-8 bg-[#ffc35a] font-medium text-lg lg:text-xl" />
                 </div>
             </div>
         </div>
@@ -77,7 +83,7 @@
 </template>
 
 <script lang="ts" setup>
-import ShopButton from '@/components/ShopButton.vue'
+import ShopButton from '../components/ShopButton.vue'
 </script>
 
 <style>

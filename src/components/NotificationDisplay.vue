@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-4 right-0 z-50 flex flex-col items-end space-y-2">
+  <div class="fixed bottom-28 right-0 z-50 flex flex-col items-end space-y-2">
     <transition-group name="fade" tag="div">
       <div
         v-for="(notification, index) in visibleNotifications"
