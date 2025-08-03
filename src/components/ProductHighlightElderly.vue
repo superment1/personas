@@ -10,10 +10,10 @@
                     </div>
                 </div>
                 <div class="text-left lg:col-span-3">
-                    <h2 class="font-crossfit text-3xl lg:text-4xl uppercase text-[#370f1e] leading-8 mx-8">
-                        <span class="">Super Natural <br>Sleep restores the:</br></span>
+                    <h2 class="font-crossfit text-3xl lg:text-4xl uppercase text-[#370f1e] leading-[1] mx-8">
+                        <span class="">Super Natural Sleep restores the:</br></span>
                     </h2>
-                        <p class="text-[1.3rem] py-2 text-[#5a5656] lg:text-[1.5rem] leading-5 mx-8">Real rest, mental clarity, and the energy to do what you love again.</p>
+                        <p class="text-[1.2rem] py-2 text-[#5a5656] lg:text-[1.5rem] leading-5 mx-8">Real rest, mental clarity, and the energy to do what you love again.</p>
                         <p class="text-[#726f6f] text-[1rem] lg:text-[1.1rem] mb-6 leading-none mx-8">
                         Clean, non-sedative formula. No melatonin. Made in FDA & GMP-certified U.S. labs.
                         </p>                  
@@ -23,7 +23,7 @@
                     textColorClass="text-[#083d4f]" 
                     iconColorClass="text-[#083d4f]" 
                     title="Shop: First Trial Special Offer" 
-                    class="ml-8 bg-[#ffc35a] font-medium text-lg lg:text-xl" />
+                    class="ml-8 bg-[#ffc35a] !py-2 font-medium text-lg lg:text-xl" />
                 </div>
             </div>
         </div>
