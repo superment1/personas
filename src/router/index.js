@@ -24,6 +24,9 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory('/sleep/'),
   routes,
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 function setThemeColor(color) {
