@@ -1,6 +1,6 @@
 <template>
     <!-- What Happens When You Sleep -->
-    <section class="py-14">
+    <section class="pb-14">
         <div class="max-w-7xl lg:max-w-5xl justify-items-center mx-auto lg:w-full px-4">
             <div class="max-w-[21rem] md:justify-items-center md:max-w-full mx-auto">
             <h2 class="font-gelasio text-[28px] lg:text-4xl leading-none text-[#525252] text-left lg:text-center mb-6 lg:mb-12 italic">

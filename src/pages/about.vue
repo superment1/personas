@@ -58,40 +58,11 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
                     lovers — and haters. We believe in win-win relationships, and we work hard to do this in practice. We believe in talent. We favor the nonconformists. 
                     We don’t like to say or hear “no” for what matters. And we especially feed the relationships that help us evolve mutually. That’s the energy of “let’s go — together.”
                 </p>
-                <p class="font-sans leading-[1.2] border-[#370f1e] border-t-2 font-medium  pt-4">
+                <p class="font-sans leading-[1.2] border-[#370f1e] border-t font-medium  pt-4">
                     It’s always good to talk about energy. But we already gave you our genuine philosophy. Now maybe it’s your time. Send us a message or email — we’d love to hear from you. Superment is excited to meet you. And you’ll see for yourself: our energy doesn’t lie.
                 </p>
             </div>
-            <!-- <div class="title font-crossfit text-[#370f1e]">
-                <h1 class="text-[2.25rem] pt-4">
-                    OUR VALUES
-                </h1>
-            </div> -->
-            <!-- <div class="font-sans leading-[1.2] font-medium text-[#370f1e]">
-            <div class="py-5 border-b-2 font-medium border-[#370f1e]">
-                    <p class="italic font-gelasio pb-3 font-semibold">Quality </p>
-                    <p class="pb-3"> We hold ourselves to the highest standards,
-    using only rigorously tested ingredients,
-    certified and manufactured in FDA-approved
-    facilities to deliver supplements you can
-    count on.</p>
-                </div>
-                <div class="py-5 border-b-2 border-[#370f1e]">
-                    <p class="italic font-gelasio font-semibold pb-3">Trust</p>
-                    <p class="pb-3"> We hold ourselves to the highest standards,
-    using only rigorously tested ingredients,
-    certified and manufactured in FDA-approved
-    facilities to deliver supplements you can
-    count on.</p>
-                </div>
-                <div class="py-5">
-                    <p class="italic font-gelasio font-semibold pb-3">Respect</p>
-                    <p class="pb-3"> We believe health should be empowering, not
-    restrictive. Our products are made to fit your
-    real life, supporting your well-being without
-    forcing impossible diets or miracle promises.</p>
-                </div>
-            </div>     -->
+  
         </div>
     </div>
     <Frascos description="<span class='text-[#6EC8f0]'>Super Natural Sleep.</span> <span><br>Our latest way to help you sleep naturally.</span>" />
