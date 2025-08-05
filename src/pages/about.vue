@@ -16,13 +16,13 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
 
 <template>
     <SuperHeader :show-redirect="true"/>
-    <div :style="{ backgroundImage: `url(${bgImage})`,  backgroundSize: '110%', backgroundPosition: 'center 18%' }" 
-            class="h-[200px] xl:h-[300px] flex lg:bg-cover lg:bg-[position:-55rem] 2xl:bg-[position:center_23%] bg-no-repeat">
+    <div :style="{ 
+        backgroundImage: `url(${bgImage})`
+        }"
+        class="h-[200px] xl:h-[300px] flex bg-cover bg-[position:center_16%] lg:bg-[position:center_22%] 2xl:!bg-[position:center_3%] bg-no-repeat"
+        >            
         <div class="title w-[80%]  md:max-w-[700px] content-center mx-auto font-crossfit text-[#fff]">
             <h1 class="text-[2.25rem] py-8">
-                <!-- background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: -55rem; -->
                 Energy doesn’t lie.
             </h1>
         </div>
@@ -30,7 +30,7 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
     <div class="main flex flex-col bg-[#fff9ed]">
         <div class="max-w-[80%] md:max-w-[700px] pt-8 pb-10 mx-auto">
             <div class="title font-crossfit text-[#370f1e]">
-                <h1 class="text-[2.25rem] leading-[1] uppercase pb-4">
+                <h1 class="text-[2.25rem] leading-[1] pb-4">
                     The energy of loving what we do.
                 </h1>
                 <p class="font-sans leading-[1.2] font-medium">At Superment, we value integrity. Our goal is to do good — in the best way, all the time.
@@ -38,20 +38,20 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.png', import.m
                 </p>
             </div>
             <div class="title font-crossfit text-[#370f1e]">
-                <h1 class="text-[2.25rem] leading-[1] uppercase pt-8 pb-4">
+                <h1 class="text-[2.25rem] leading-[1] pt-8 pb-4">
                     The energy of the mind and body.
                 </h1>
                 <p class="font-sans leading-[1.2] font-medium">No one escapes this truth: without health, nothing works. And to be healthy, you need to respect yourself as a human being. That means caring for everything that impacts your physical and mental balance. That’s where we come in — understanding you as a whole: sleep, energy, sexual vitality, healthy weight, joint health, and radiant skin. Because when it comes to health, energy really doesn’t lie.
                 </p>
             </div>
             <div class="title font-crossfit text-[#370f1e]">
-                <h1 class="text-[2.25rem] leading-[1] uppercase pt-8 pb-4">
+                <h1 class="text-[2.25rem] leading-[1] pt-8 pb-4">
                     The energy of science and nature.
                 </h1>
                 <p class="font-sans leading-[1.2] font-medium">From the day we’re born to the day we’re gone, nature is the answer. To who we are. To how we work. To how we live. By the way, it’s human nature that led us to invent science and technology — and when we bring them together with nature and integrity, the sky’s the limit. That’s real energy. The kind that moves us forward.                </p>
             </div>
             <div class="title font-crossfit text-[#370f1e]">
-                <h1 class="text-[2.25rem] leading-[1] uppercase pt-8 pb-4">
+                <h1 class="text-[2.25rem] leading-[1] pt-8 pb-4">
                     The energy of our relationships.
                 </h1>
                 <p class="font-sans leading-[1.2] font-medium pb-8">We love caring for and growing with everyone: clients, teammates, partner labs, commercial allies, society, 

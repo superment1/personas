@@ -1,6 +1,6 @@
 <template>
     <!-- Product Highlight -->
-    <section id="Highlight" class="py-12 bg-white">
+    <section id="Highlight" class="pt-12 pb-16 bg-white">
         <div class="max-w-7xl lg:max-w-[58rem] mx-auto px-4">
             <div class="max-w-[21rem] md:max-w-full mx-auto grid lg:grid-cols-5 items-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
@@ -13,7 +13,7 @@
                     <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8">
                         <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
                     </h2>
-                    <p class="text-[#525252] mb-6 lg:mb-8 text-md lg:text-lg leading-5">
+                    <p class="text-[#525252] mb-6 lg:mb-8 text-[17px] lg:text-lg leading-5">
                        Support your skin's regeneration cycle with Super Natural Sleep: a plant-based, non-sedative formula designed for real recovery. No melatonin, no harsh chemicals. Just real, restorative rest.
                     </p>            
                     <ShopButton

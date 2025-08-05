@@ -4,7 +4,7 @@
   defineProps({
     description: {
       type: String,
-      default: 'Botanical blend helping you to relax.',
+      default: 'A botanical blend that helps you relax.',
     }
   });
 </script>
