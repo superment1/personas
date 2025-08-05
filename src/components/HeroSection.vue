@@ -7,9 +7,6 @@
         <span class="hidden md:block sm:text-3xl sm:font-thin xl:font-normal xl:text-5xl mt-10">Renew your skin, brighten your<br>beauty —
             <em class="font-gelasio font-semibold italic text-[#A0D7FF]">sleeping.</em></span>
     </h1>
-    <div>
-    </div>
-    
     <ShopButton
         id="buy-button"
         anchorId="Highlight"
@@ -23,10 +20,4 @@
 
 <script setup>
 import ShopButton from './ShopButton.vue';
-
-
 </script>
-
-<style>
-
-</style>

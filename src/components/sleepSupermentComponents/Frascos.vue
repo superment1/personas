@@ -1,13 +1,19 @@
 <script setup>
   import ShopNow from './ShopNow.vue';
+  
+  defineProps({
+    description: {
+      type: String,
+      default: 'Botanical blend helping you to relax.',
+    }
+  });
 </script>
 
 <template>
   <!-- MOBILE  -->
   <div class="bg-[#370F1E] mobile">
     <div class="w-full h-full bg-image flex flex-col justify-between pt-8 pb-8">
-      <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[280px] mx-auto mb-5">
-        Botanical blend helping you to relax.
+      <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[280px] mx-auto mb-5">
       </p>
       <div class="grid grid-cols-2">
           <div class="flex flex-row items-center pl-8">
@@ -33,8 +39,7 @@
 
   <!-- DESKTOP -->
   <div class="w-full h-[500px] desktop md:flex flex-col bg-[#370F1E] p-8">
-    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-8">
-      Botanical blend helping you to relax.
+    <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full mx-auto mb-8">
     </p>
     <div class="w-[full] bg-image flex items-start justify-center">
         <div class="w-[1000px] flex flex-row justify-between ">

@@ -8,6 +8,7 @@ import RefundPolicy from '../pages/refundPolicy.vue'
 import Faq from '../pages/faq.vue'
 import About from '../pages/about.vue'
 import Elderly from '../pages/elderly.vue'
+import Menopause from '../pages/menopause.vue'
 
 const routes = [
   { path: '/', redirect : '/supersleep' },
@@ -18,7 +19,8 @@ const routes = [
   { path: '/refundpolicy', name: 'refundpolicy', component: RefundPolicy },
   { path: '/faq',  name: 'faq', component: Faq},
   { path: '/about', name: 'about', component: About},
-  { path: '/elderly', name: 'elderly', component: Elderly}
+  { path: '/elderly', name: 'elderly', component: Elderly},
+  { path: '/menopause', name: 'menopause', component: Menopause}
 ]
 
 export const router = createRouter({
@@ -47,8 +49,8 @@ router.afterEach((to) => {
     about: '#E1DCCD',
     refundpolicy: '#E1DCCD',
     beautysleep: '#6EC8F0',
-    elderly: '#370F1E'
-
+    elderly: '#370F1E',
+    menopause: '#E6B4FF'
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)
