@@ -28,11 +28,11 @@
           </div>
       </div>
     </div>
-    <ShopNow/>
+    <ShopNow id="id-shop-now"/>
   </div>
 
   <!-- DESKTOP -->
-  <div class="w-full h-[500px] desktop md:flex flex-col bg-[#370F1E] p-8">
+  <div class="w-full h-[500px] desktop md:flex flex-col bg-[#370F1E] p-8" id="id-shop-now-desk">
     <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-8">
       Botanical blend helping you to relax.
     </p>
