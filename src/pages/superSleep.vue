@@ -12,6 +12,7 @@
   import Stress from '../components/sleepSupermentComponents/Stress.vue';
   import ShopButton from '../components/ShopButton.vue';
   import { useSeo } from '../composables/useSeo';
+import ShopNow from '../components/sleepSupermentComponents/ShopNow.vue';
 
     useSeo({
       title: 'SUPERMENT - Super Natural Sleep',
