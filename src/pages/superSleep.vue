@@ -14,6 +14,7 @@
   import { useSeo } from '../composables/useSeo';
   import { useWindowSize } from '@vueuse/core';
 
+
   const { width } = useWindowSize();
 
   useSeo({
