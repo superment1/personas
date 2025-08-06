@@ -42,11 +42,11 @@
           </div>
       </div>
     </div>
-    <ShopNow/>
+    <ShopNow id="id-shop-now"/>
   </div>
 
   <!-- DESKTOP -->
-  <div class="w-full h-[500px] hidden md:flex items-center flex-col bg-[#370F1E] p-8">
+  <div id='id-shop-now-desk' class="w-full h-[500px] hidden md:flex items-center flex-col bg-[#370F1E] p-8">
     <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full mx-auto mb-8">
     </p>
       <img
