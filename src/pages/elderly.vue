@@ -23,7 +23,7 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[530px] lg:min-h-[650px] bg-[url('@/assets/image/sleepElderly/elderyHappy.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:110%] bg-[position:100%_119%] bg-no-repeat">
+        <div class="relative min-h-[610px] lg:min-h-[650px] bg-[url('@/assets/image/sleepElderly/hero-mobile-2.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:110%] bg-[position:91%_100%] bg-no-repeat">
             <HeaderElderly />
             <HeroSectionElderly />
         </div>
@@ -32,7 +32,7 @@ useSeo({
 
         <ProductHighlightElderly />
         <SleepTransformation/>
-        <IngredientsSectionElderly />        
+        <IngredientsSectionElderly />         
         
         <Guarantees/>
 

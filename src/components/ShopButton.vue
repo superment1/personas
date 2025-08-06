@@ -29,6 +29,7 @@ const props = defineProps({
   anchorId: String,
   customClass: { type: String, default: '' },
   title: String,
+  paymentLink: String,
   textColorClass: {
     type: String,
     default: 'text-[#58663A]'
@@ -80,17 +81,24 @@ const buttonAttrs = computed(() => {
   return otherAttrs
 })
 
-// Lógica de clique com zoom
+
 const handleClick = async () => {
   zooming.value = true
   setTimeout(() => zooming.value = false, 300)
-
-  if (!props.productId)  {
+  
+  if (props.anchorId && !props.productId && !props.paymentLink) {
     const target = document.getElementById(props.anchorId)
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' })
     }
-  } else {
+  }
+
+  if (props.paymentLink) {
+    window.location.href = props.paymentLink
+    return
+  }
+
+  if (props.productId) {
     try {
       const res = await fetch(`https://checkout.superment.co/get-price-id?product_id=${props.productId}`)
       const data = await res.json()
@@ -104,8 +112,8 @@ const handleClick = async () => {
       alert("Erro ao tentar iniciar o checkout.")
     }
   }
-
 }
+
 </script>
 
 <style scoped>

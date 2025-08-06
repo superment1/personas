@@ -65,7 +65,7 @@
             </div>
 
             <div class="text-center">
-                <p class="text-[#525252] leading-[1] px-16 md:px-0 font-crossfit mb-6 text-xl lg:text-3xl mx-8">
+                <p class="text-[#525252] leading-[1] px-8 md:px-0 font-crossfit mb-6 text-xl lg:text-3xl mx-8">
                     Gentle Ingredients. Powerful Sleep Support.
                 </p>
                 <div class="flex justify-center">
@@ -74,8 +74,8 @@
                      productId="prod_SbKYsQrxStW8wB" 
                      textColorClass="text-[#083d4f]" 
                      iconColorClass="text-[#083d4f]" 
-                     title="Shop: check our opening discount" 
-                     class="ml-8 bg-[#ffc35a] font-medium text-lg lg:text-xl" />
+                     title="Shop: First Trial Special Offer" 
+                     class=" bg-[#ffc35a] font-medium text-lg lg:text-xl" />
                 </div>
             </div>
         </div>

@@ -1,14 +1,28 @@
 <script setup>
   import ShopNow from './ShopNow.vue';
+  
+  defineProps({
+    description: {
+      type: String,
+      default: 'A botanical blend that helps you relax.',
+    }
+  });
 </script>
 
 <template>
   <!-- MOBILE  -->
-  <div class="bg-[#370F1E] mobile">
-    <div class="w-full h-full bg-image flex flex-col justify-between pt-8 pb-8">
-      <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[280px] mx-auto mb-5">
-        Botanical blend helping you to relax.
-      </p>
+  <div class="bg-[#370F1E] sm:hidden">
+      <img
+        src="@/assets/image/sleepSuperment/frascos.webp"
+        alt="Frascos Superment Mobile"
+        class="w-full h-[540px] object-cover absolute mb-6"
+        loading="lazy"
+        width="540"
+        height="540"
+      />
+    <div class="relative w-full h-[540px] flex flex-col justify-between pt-8 pb-10">
+      <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[280px] mx-auto mb-5">
+    </p>
       <div class="grid grid-cols-2">
           <div class="flex flex-row items-center pl-8">
             <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
@@ -32,36 +46,41 @@
   </div>
 
   <!-- DESKTOP -->
-  <div class="w-full h-[500px] desktop md:flex flex-col bg-[#370F1E] p-8" id="id-shop-now-desk">
-    <p class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full max-w-[330px] mx-auto mb-8">
-      Botanical blend helping you to relax.
+  <div class="w-full h-[500px] hidden md:flex items-center flex-col bg-[#370F1E] p-8" id="id-shop-now-desk">
+    <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full mx-auto mb-8">
     </p>
-    <div class="w-[full] bg-image flex items-start justify-center">
-        <div class="w-[1000px] flex flex-row justify-between ">
-          <div class="w-[full] grid grid-cols-1 gap-y-1 lg:flex flex-col justify-start items-start mt-40 ml-36">
-            <div class="flex flex-row items-center">
-              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Soothe tension</p>
-            </div>
-            <div class="flex flex-row items-center">
-              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Relaxation</p>
-            </div>
-            <div class="flex flex-row items-center">
-              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Sleep longer</p>
-            </div>
-            <div class="flex flex-row items-center">
-              <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
-              <p class="text-[#FFFAF0] text-[28px] ml-2 description">Wake up recharged</p>
-            </div>
+      <img
+        src="@/assets/image/sleepSuperment/frascos-sem-fundo.webp"
+        alt="Frascos Super Natural Sleep"
+        loading="lazy"
+        width="600"
+        height="494"
+        class="w-[700px] object-contain"
+      />
+      <div class="w-[1000px] absolute flex flex-row pt-20 justify-between ">
+        <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-start items-start ml-40 mt-40">
+          <div class="flex flex-row items-center">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-[28px] ml-2 description">Soothe tension</p>
           </div>
-          <div class="w-[350px] flex flex-col justify-end items-end mt-8">
-            <div> 
-              <ShopNow/>
-            </div>
+          <div class="flex flex-row items-center">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-[28px] ml-2 description">Relaxation</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-[28px] ml-2 description">Sleep longer</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
+            <p class="text-[#FFFAF0] text-[28px] ml-2 description">Wake up recharged</p>
           </div>
         </div>
+        <div class="w-[350px] flex flex-col justify-end items-end mt-8">
+          <div> 
+            <ShopNow/>
+          </div>
+        </div>        
     </div>
   </div>
 </template>
@@ -85,15 +104,6 @@
   .mobile {
     display: block;
   }
-
-  .bg-image {
-    /* width: 100%; */
-    height: 540px;
-    background-image: url('@/assets/image/sleepSuperment/frascos.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -103,11 +113,6 @@
 
   .desktop {
     display: block
-  }
-
-  .bg-image {
-    @apply w-full h-[494px] bg-contain bg-center bg-no-repeat !important;
-    background-image: url('@/assets/image/sleepSuperment/frascos-sem-fundo.png');
   }
 }
 

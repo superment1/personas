@@ -22,7 +22,7 @@
         label="BUY ONE | PAY $32"
         type="button"
         id="buy-button"
-        productId="prod_SbKYsQrxStW8wB"
+        paymentLink="https://buy.stripe.com/6oU8wQ4uKafh6OGelXb3q04"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
         class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">
@@ -32,7 +32,7 @@
         label="BUY THREE | PAY $28 PER BOTTLE"
         type="button"
         id="buy-button"
-        productId="prod_SbKa8ag01A2TGX"
+        paymentLink="https://buy.stripe.com/bJe6oI4uKevx0qigu5b3q05"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
         class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">
@@ -42,7 +42,7 @@
         label="BUY SIX | PAY $24 PER BOTTLE"
         type="button"
         id="buy-button"
-        productId="prod_SbKaRuJpDVBEzx"
+        paymentLink="https://buy.stripe.com/6oU8wQ7GW7358WO0v7b3q06"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
         class=" !bg-[#6EC8F0] text-[14px] font-bold w-[326px] rounded-md botao-shop !hover:bg-none !transition-none !px-0">

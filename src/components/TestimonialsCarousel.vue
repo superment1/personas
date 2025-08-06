@@ -9,6 +9,9 @@ const items = [
     type: 'video', url: new URL('@/assets/videos/depoimento-video.mp4', import.meta.url).href
   },
   {
+    type: 'video', url: new URL('@/assets/videos/depoimento_nuala.mp4', import.meta.url).href
+  },
+  {
     type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento01.png', import.meta.url).href
   },
   {

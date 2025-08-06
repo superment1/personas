@@ -16,5 +16,11 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addComponents }) {
+      addComponents({
+        
+      })
+    }
+  ],
 }
