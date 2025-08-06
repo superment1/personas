@@ -12,7 +12,8 @@
   import Stress from '../components/sleepSupermentComponents/Stress.vue';
   import ShopButton from '../components/ShopButton.vue';
   import { useSeo } from '../composables/useSeo';
-  import { useWindowSize } from '@vueuse/core'
+  import { useWindowSize } from '@vueuse/core';
+
 
   const { width } = useWindowSize();
 
