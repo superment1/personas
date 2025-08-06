@@ -1,35 +1,28 @@
 <script setup>
-import { useSeo } from '../composables/useSeo'
+import { useSeo } from '../composables/useSeo.js'
 import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
-import ShopNow from '../components/sleepSupermentComponents/ShopNow.vue'
 import Stopwatch from '../components/Stopwatch.vue'
 import Frascos from '../components/sleepSupermentComponents/Frascos.vue'
+
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
         description: 'Natural, deep sleep is essential for healthy, radiant skin.',
         keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
     })
-const bgImage = new URL('@/assets/image/about/bg-about.webp', import.meta.url).href
+
 const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.webp', import.meta.url).href
 </script>
 
 <template>
-    <img 
-        :src="bgImage" 
-        fetchpriority="high" 
-        decoding="async" 
-        alt="" 
-        width="1" 
-        height="1" 
-        class="hidden"
-    />
     <SuperHeader :show-redirect="true"/>
-    <div :style="{ 
-        backgroundImage: `url(${bgImage})`
-        }"
-        class="h-[200px] xl:h-[300px] flex bg-cover bg-[position:center_16%] lg:bg-[position:center_22%] 2xl:!bg-[position:center_3%] bg-no-repeat"
-        >            
+    <div  class="
+        h-[200px] xl:h-[300px] flex bg-no-repeat bg-cover
+        bg-[url('@/assets/image/about/bg-mobile.webp')]
+        md:bg-[url('@/assets/image/about/bg-wide.webp')]
+        bg-[position:center_16%] lg:bg-[position:center_22%] 2xl:!bg-[position:center_3%]
+    "
+    >           
         <div class="title w-[80%]  md:max-w-[700px] content-center mx-auto font-crossfit text-[#fff]">
             <h1 class="text-[2.25rem] py-8">
                 Energy doesn’t lie.
