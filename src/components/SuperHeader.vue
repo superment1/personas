@@ -73,7 +73,7 @@
     <a 
       v-if="showRedirect"
       href="/sleep/" 
-      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[1.3rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
+      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[0.9rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
     >
       <svg class="w-8 h-8 mr-[1px]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
