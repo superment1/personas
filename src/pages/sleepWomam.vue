@@ -11,6 +11,8 @@ import Badges from '@/components/Badges.vue'
 import CtaSection from '@/components/CtaSection.vue'
 import Learnmore from '@/components/Learnmore.vue'
 import Footer from '@/components/Footer.vue'
+import logoHeader from '@/assets/image/sleepWomam/logo.svg'
+import footerLogo from '@/assets/image/sleepWomam/footer_logo.svg'
 
 useSeo({
     title: 'SUPERMENT - Super Natural Sleep',
@@ -23,7 +25,10 @@ useSeo({
     <div>
         <!-- Blue Rounded Header -->
         <div class="relative min-h-[530px] lg:min-h-[650px] bg-[url('@/assets/image/sleepWomam/bg.jpg')] md:bg-[url('@/assets/image/sleepWomam/header_bg_desktop.jpg')] lg:bg-[center_130px] bg-cover bg-top bg-no-repeat">
-            <Header />
+            <Header 
+                color="#6EC8F0"
+                :imageSrc="logoHeader"
+            />
             <HeroSection />
         </div>
 
@@ -39,8 +44,14 @@ useSeo({
 
         <CtaSection />
 
-        <Learnmore />
+        <Learnmore 
+            backgroundColor="#CDEBFF"
+            text="Learn more about us and how important is the right sleep"
+        />
 
-        <Footer />
+        <Footer 
+            color="#6EC8F0"
+            :imageSrc="footerLogo"
+        />
     </div>
 </template>
