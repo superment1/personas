@@ -11,7 +11,7 @@ import Frascos from '../components/sleepSupermentComponents/Frascos.vue'
         keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
     })
 
-const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos.webp', import.meta.url).href
+const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos2.webp', import.meta.url).href
 </script>
 
 <template>
