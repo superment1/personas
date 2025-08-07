@@ -8,7 +8,8 @@
             <p class="text-[#370F1E] mb-4 font-DMSans font-medium text-xl lg:text-2xl text-center tracking-tight leading-[1.1]">
                 {{ text }}
             </p>
-            <div class="flex justify-center mb-10">
+            <div class="flex justify-center mb-10">                
+                <a href="https://superment.co/sleepbetter/" target="_blank" rel="noopener noreferrer">
                 <button
                     class="border-[#370F1E] text-[#370F1E] px-6 py-2 rounded-full text-sm hover:bg-[#370F1E]/10 transition-colors duration-300 flex items-center gap-2"
                       style="border: 1px solid #370F1E"
@@ -20,6 +21,7 @@
                             fill="#370F1E" />
                     </svg>
                 </button>
+                </a>
             </div>
         </div>
     </section>

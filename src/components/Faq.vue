@@ -24,7 +24,7 @@ const faqs = ref([
   },
   {
     question: 'What if I’m not satisfied?',
-    answer: 'If you’re not happy with your results, just give us a call at (855) 273-0040 within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.',
+    answer: 'If you’re not happy with your results, just send us an email at superhelp@superment.co within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.',
     open: false
   },
   {
@@ -46,12 +46,13 @@ function toggle(index) {
     padding: 0;
     font-family: 'DM Sans', sans-serif;
     color: #370f1e;
-    width: 350px;
+    width: 100%;
+    max-width: 700px;
   }
 
   .faq-item {
     border-top: 1px solid #370f1e;
-    padding: 14px 0;
+    padding: 10px 0;
     cursor: pointer;
   }
 
@@ -85,6 +86,21 @@ function toggle(index) {
     line-height: 19px;
     letter-spacing: 0%;
   }
+
+  @media(max-width: 730px) {
+    .faq {
+      max-width: 330px;
+    }
+  }
+
+  @media(min-width: 730px) {
+    .faq {
+      width: 100%;
+      min-width: 700px;
+      max-width: 700px;
+    }
+  }
+
 </style>
 
 

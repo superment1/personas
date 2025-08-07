@@ -1,6 +1,6 @@
 
 <script setup>
-import { useSeo } from '@/composables/useSeo'
+import { useSeo } from '../composables/useSeo'
 import Header from '@/components/Header.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import TaglineStrip from '@/components/TaglineStrip.vue'
@@ -24,7 +24,19 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[530px] lg:min-h-[650px] bg-[url('@/assets/image/sleepWomam/bg.jpg')] md:bg-[url('@/assets/image/sleepWomam/header_bg_desktop.jpg')] lg:bg-[center_130px] bg-cover bg-top bg-no-repeat">
+        <div class="relative 
+            min-h-[480px] sm:min-h-[493px] lg:min-h-[521px] md:min-h-[466px] xl:min-h-[616px]
+            bg-[url('@/assets/image/sleepWomam/beauty-mobile-bg.jpg')]
+            md:bg-[url('@/assets/image/sleepWomam/beautysleep-bg.jpg')]
+            bg-no-repeat
+            bg-[left_88px]
+            md:bg-[20%_100px]
+            md:[background-size:123%]
+            xl:bg-[20%_100px]
+            xl:bg-contain
+            bg-contain
+            lg:bg-[25%_108px]
+            2xl:bg-[center_100px]">
             <Header 
                 color="#6EC8F0"
                 :imageSrc="logoHeader"
