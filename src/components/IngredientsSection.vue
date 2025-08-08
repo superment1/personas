@@ -7,7 +7,7 @@
                 An advanced botanical formula designed to support your sleep cycle.
             </h2>
 
-            <div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-8 mb-6 lg:mb-4">
+            <div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-0 mb-6 lg:mb-4">
                 <div class="flex items-center w-[330px] py-2 border-b last:border-b-0 lg:flex-col lg:border-b-0 "
                     style="border-color: #FFE1AA">
                     <div class="w-[full] h-[full] lg:w-24 lg:h-24 flex items-center justify-center mr-6 flex-shrink-0 lg:mb-3 lg:mr-0">
@@ -89,7 +89,7 @@
                     anchorId="cta-section"
                     textColorClass="text-[#58663a]"
                     :showIcon=true
-                    class="mt-2 w-[330px] md:w-auto text-white md:justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                    class="mt-2 w-[330px] text-white justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition">
                     Shop: check our opening discount
                 </ShopButton>   
 
