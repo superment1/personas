@@ -13,8 +13,8 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Collagen</h3>
-                        <p class="text-[#525252] leading-[1.1] text-[15px] lg:text-lg font-light">
-                            Natural sleep boosts collagen, helping firm the skin and reduce wrinkles.
+                        <p class="text-[#525252] leading-[1.1] text-[14px] lg:text-lg font-light">
+                            Natural sleep boosts collagen, helping firm <br class="block md:hidden">the skin and reduce wrinkles.
                         </p>
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Hydration</h3>
-                        <p class="text-[#525252] text-[15px] leading-[1.1] lg:text-lg font-light">
-                            At night, your skin retains more moisture — leaving it fresher and more supple by
-                            morning.
+                        <p class="text-[#525252] text-[14px] leading-[1.1] lg:text-lg font-light">
+                            At night, your skin retains more moisture <br class="block md:hidden">— leaving it fresher and more supple by
+                            <br class="block md:hidden">morning.
                         </p>
                     </div>
                 </div>
@@ -34,8 +34,8 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Cell Regeneration</h3>
-                        <p class="text-[#525252] text-[15px] leading-[1.1] lg:text-lg font-light">
-                            During sleep, your skin renews itself — repairing damage and revealing a healthier glow.
+                        <p class="text-[#525252] text-[14px] leading-[1.1] lg:text-lg font-light">
+                            During sleep, your skin renews itself <br class="block md:hidden">— repairing damage and revealing a healthier glow.
                         </p>
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Even Skin Tone</h3>
-                        <p class="text-[#525252] text-[15px] leading-[1.1] lg:text-lg font-light">
-                            Restorative sleep supports tone correction and reduces spots and dark circles.
+                        <p class="text-[#525252] text-[14px] leading-[1.1] lg:text-lg font-light">
+                            Restorative sleep supports tone correction and <br class="block md:hidden">reduces spots and <br class="block md:hidden">dark circles.
                         </p>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Stress Reduction</h3>
-                        <p class="text-[#525252] text-[15px] leading-[1.1] lg:text-lg font-light">
-                            Good sleep lowers cortisol levels — calming inflammation and preventing flare-ups like
+                        <p class="text-[#525252] text-[14px] leading-[1.1] lg:text-lg font-light">
+                            Good sleep lowers cortisol levels — <br class="block md:hidden">calming inflammation and preventing flare-<br class="block md:hidden">ups like
                             acne or dermatitis.
                         </p>
                     </div>
@@ -65,9 +65,9 @@
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
                         <h3 class="font-normal text-[21px] leading-[1.1] text-[#525252] mb-1">Glymphatic Detox</h3>
-                        <p class="text-[#525252] text-[15px] leading-[1.1] lg:text-lg font-light">
-                            Deep sleep activates the brain's glymphatic system, flushing toxins and reducing
-                            puffiness and under-eye shadows.
+                        <p class="text-[#525252] text-[14px] leading-[1.1] lg:text-lg font-light">
+                            Deep sleep activates <br class="block md:hidden">the brain's glymphatic system, flushing toxins and reducing
+                            puffiness and under-eye <br class="block md:hidden">shadows.
                         </p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 anchorId="cta-section"
                 textColorClass="text-[#58663a]"
                 :showIcon=true
-                class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">                  
+                class="mt-2 w-[330px] md:w-auto text-white md:justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">                  
                 Shop: check our opening discount
             </ShopButton>    
             </div>

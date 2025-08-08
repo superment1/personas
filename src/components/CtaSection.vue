@@ -16,7 +16,7 @@
                             <img src="../assets/image/sleepWomam/price-thin.png" class="h-40" />
                         </div>
                     </div>
-                    <div class="text-white text-md pt-40">
+                    <div class="text-white text-md pt-36">
                         <div class="flex items-center justify-start  py-2">
                             <svg width="22" height="21" viewBox="0 0 22 21" class="w-6 h-6" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@
                             productId="prod_SbKYsQrxStW8wB"
                             textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-4 text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-4 w-[330px] text-white md:ml-8 w-[330px] md:w-auto md:justify-center justify-between bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                             Shop: First Trial Special Offer
                         </ShopButton>    
                     </div>

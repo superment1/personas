@@ -10,18 +10,18 @@
                     </div>
                 </div>
                 <div class="text-left lg:col-span-3">
-                    <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8">
+                    <h2 class="font-gelasio text-3xl lg:text-4xl text-[#525252] leading-8 -mt-2">
                         <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
                     </h2>
-                    <p class="text-[#525252] mb-6 lg:mb-8 text-[17px] lg:text-lg leading-5">
-                       Support your skin's regeneration cycle with Super Natural Sleep: a plant-based, non-sedative formula designed for real recovery. No melatonin, no harsh chemicals. Just real, restorative rest.
+                    <p class="text-[#525252] mb-6 lg:mb-8 text-[17px] lg:text-lg leading-5 -tracking-[0.01em]">
+                       Support your skin's regeneration cycle with Super Natural Sleep: a plant-based, non-sedative formula designed for real <br class="block md:hidden">recovery. No melatonin, no harsh <br class="block md:hidden">chemicals. Just real, restorative rest.
                     </p>            
                     <ShopButton
                         id="buy-button"
                         anchorId="cta-section"
                         textColorClass="text-[#58663a]"
                         :showIcon=true
-                        class="mt-2 w-full md:w-auto text-white md:justify-center justify-start bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                        class="mt-0 w-[330px] text-white md:justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
                         Shop: check our opening discount 
                     </ShopButton>                                    
                 </div>
