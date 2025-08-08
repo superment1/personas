@@ -42,7 +42,7 @@
         :showIcon="false"
         class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
         <img
-          src="../assets/image/sleepSuperment/botao-shop.png"
+          src="../assets/image/sleepSuperment/button-shop.webp"
           loading="lazy"
           alt="button-shop"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
@@ -77,7 +77,7 @@
           <img
             loading="lazy"
             alt="button-shop"
-            src="../assets/image/sleepSuperment/botao-shop.png"
+            src="../assets/image/sleepSuperment/button-shop.webp"
             class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
           />
         </ShopButton>
@@ -155,7 +155,7 @@
         <img
           alt="button-shop"
           loading="lazy"
-          src="../assets/image/sleepSuperment/botao-shop-rest.png"
+          src="../assets/image/sleepSuperment/button-shop.webp"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
 
         />
