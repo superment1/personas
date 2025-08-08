@@ -34,7 +34,7 @@
     </div>
     <div class="description !pl-[35px]">
       <span class="description">Try our premium <br> natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
+      <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
       <ShopButton
         type="button"
         id="buy-button"
@@ -63,7 +63,7 @@
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
       <div class="description">
-        <span class="description">Try our premium natural <br> sleep formula, <strong>now 36% off</strong> <br>for a limited time!</span>
+        <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a limited time!</span>
       </div>
     </div>
     <div class="button">

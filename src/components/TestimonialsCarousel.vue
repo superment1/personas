@@ -6,22 +6,28 @@ import { ref, watch, onMounted } from 'vue';
 
 const items = [
   {
+    type: 'video', url: new URL('@/assets/videos/ligiani_depoiment.mp4', import.meta.url).href
+  },  
+  {
     type: 'video', url: new URL('@/assets/videos/depoimento-video.mp4', import.meta.url).href
   },
   {
     type: 'video', url: new URL('@/assets/videos/depoimento_nuala.mp4', import.meta.url).href
+  },  
+  {
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Bruna.png', import.meta.url).href
   },
   {
-    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento01.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Danielle.png', import.meta.url).href
   },
   {
-    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento02.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Eliseu.png', import.meta.url).href
   },
   {
-    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento03.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Ligiani.png', import.meta.url).href
   },
   {
-    type: 'image', image: new URL('@/assets/image/sleepSuperment/PG3Depoimento04.png', import.meta.url).href
+    type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Nuala.png', import.meta.url).href
   }
 ]
 
