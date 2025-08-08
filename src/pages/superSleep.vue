@@ -34,7 +34,7 @@
     </div>
     <div class="description !pl-[35px]">
       <span class="description">Try our premium <br> natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 36% off <br> for a limited time!</span>
+      <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
       <ShopButton
         type="button"
         id="buy-button"
@@ -42,7 +42,7 @@
         :showIcon="false"
         class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
         <img
-          src="../assets/image/sleepSuperment/botao-shop.png"
+          src="../assets/image/sleepSuperment/button-shop.webp"
           loading="lazy"
           alt="button-shop"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
@@ -63,7 +63,7 @@
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
       <div class="description">
-        <span class="description">Try our premium natural <br> sleep formula, <strong>now 36% off</strong> <br>for a limited time!</span>
+        <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a limited time!</span>
       </div>
     </div>
     <div class="button">
@@ -77,7 +77,7 @@
           <img
             loading="lazy"
             alt="button-shop"
-            src="../assets/image/sleepSuperment/botao-shop.png"
+            src="../assets/image/sleepSuperment/button-shop.webp"
             class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
           />
         </ShopButton>
@@ -155,7 +155,7 @@
         <img
           alt="button-shop"
           loading="lazy"
-          src="../assets/image/sleepSuperment/botao-shop-rest.png"
+          src="../assets/image/sleepSuperment/button-shop.webp"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
 
         />
