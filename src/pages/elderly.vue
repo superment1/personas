@@ -14,9 +14,9 @@ import Guarantees from '../components/Guarantees.vue'
 import SleepTransformation from '../components/SleepTransformation.vue'
 
 useSeo({
-    title: 'SUPERMENT - Super Natural Sleep',
-    description: 'Natural, deep sleep is essential for healthy, radiant skin.',
-    keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
+    title: 'Natural Sleep Aid for Elderly | Superment - Non-Medication Sleep Support',
+    description: 'Struggling with sleep as a senior? Superment offers a gentle, non-habit forming natural sleep supplement with ingredients like Passionflower & California Poppy.',
+    keywords: 'natural sleep aid for elderly sleep supplement for seniors non-medication sleep for older adults best sleep aid for seniors herbal sleep remedies elderly'
 })
 </script>
 
