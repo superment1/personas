@@ -18,9 +18,9 @@
   const { width } = useWindowSize();
 
   useSeo({
-    title: 'Wake Up Refreshed & Glowing: Beauty Sleep Supplement by Superment',
-    description: "Discover Superment's plant-based sleep aid designed for women. Achieve radiant skin, reduce wrinkles, and boost collagen naturally with restorative beauty sleep. Combat hormonal sleep issues and wake up refreshed.",
-    keywords: 'Natural sleep aid Skincare supplement Supplement for glowing skin Anti-aging supplement Hair, skin, and nails supplement'
+    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
+    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
+    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
   const attrs = useAttrs();
 </script>

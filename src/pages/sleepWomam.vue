@@ -25,16 +25,16 @@ useSeo({
     <div>
         <!-- Blue Rounded Header -->
         <div class="relative 
-            min-h-[480px] sm:min-h-[493px] lg:min-h-[521px] md:min-h-[466px] xl:min-h-[616px]
+            min-h-[550px] sm:min-h-[493px] lg:min-h-[521px] md:min-h-[466px] xl:min-h-[616px]
             bg-[url('@/assets/image/sleepWomam/beauty-mobile-bg.jpg')]
             md:bg-[url('@/assets/image/sleepWomam/beautysleep-bg.jpg')]
             bg-no-repeat
-            bg-[left_88px]
+            bg-[left_98px]
             md:bg-[20%_100px]
             md:[background-size:123%]
             xl:bg-[20%_100px]
             xl:bg-contain
-            bg-contain
+            [background-size:110%]
             lg:bg-[25%_108px]
             2xl:bg-[center_100px]">
             <Header 
