@@ -18,9 +18,9 @@
   const { width } = useWindowSize();
 
   useSeo({
-    title: 'SUPERMENT - Super Natural Sleep',
-    description: 'Natural, deep sleep is essential for healthy, radiant skin.',
-    keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
+    title: 'Wake Up Refreshed & Glowing: Beauty Sleep Supplement by Superment',
+    description: "Discover Superment's plant-based sleep aid designed for women. Achieve radiant skin, reduce wrinkles, and boost collagen naturally with restorative beauty sleep. Combat hormonal sleep issues and wake up refreshed.",
+    keywords: 'Natural sleep aid Skincare supplement Supplement for glowing skin Anti-aging supplement Hair, skin, and nails supplement'
   })
   const attrs = useAttrs();
 </script>
