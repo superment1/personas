@@ -13,6 +13,7 @@
   import ShopButton from '../components/ShopButton.vue';
   import { useSeo } from '../composables/useSeo';
   import { useWindowSize } from '@vueuse/core';
+  import BannerModal from '../components/BannerModal.vue'
 
 
   const { width } = useWindowSize();
@@ -155,7 +156,7 @@
         <img
           alt="button-shop"
           loading="lazy"
-          src="../assets/image/sleepSuperment/button-shop.webp"
+          src="../assets/image/sleepSuperment/botao-shop-rest.png"
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
 
         />
@@ -203,4 +204,5 @@
   </section>
   <SuperFooter/>
   <NotificationDisplay/>
+  <BannerModal/>
 </template>
