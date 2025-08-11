@@ -34,7 +34,7 @@ useSeo({
             md:[background-size:123%]
             xl:bg-[20%_100px]
             xl:bg-contain
-            [background-size:110%]
+            [background-size:116%]
             lg:bg-[25%_108px]
             2xl:bg-[center_100px]">
             <Header 
