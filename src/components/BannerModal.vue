@@ -57,12 +57,12 @@ watch(showModal, async (isOpen) => {
 
 <template>
   <div
-    v-show="true"
+    v-show="showModal"
     class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
     aria-hidden="true">
   </div>
     <div
-      v-show="true"
+      v-show="showModal"
       role="dialog"
       aria-modal="true"
       aria-labelledby="rd-modal-title"
