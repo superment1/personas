@@ -1,6 +1,6 @@
 <template>
     <!-- Trust Badges -->
-    <section class="pb-[60px]">
+    <section class="pb-[60px] pt-[60px]">
         <div class="max-w-7xl mx-auto md:justify-items-center justify-items-start px-4">
             <div class="flex ml-8 items-center gap-6">
                 <div class="w-20 h-16 lg:w-24 lg:h-24 flex items-center justify-center">

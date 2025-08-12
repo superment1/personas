@@ -9,12 +9,12 @@
                             class="h-72 lg:w-full lg:h-full object-cover">
                     </div>
                 </div>
-                <div class="text-left lg:col-span-3">
-                    <h2 class="font-crossfit text-3xl lg:text-4xl uppercase text-[#370f1e] leading-[1] mx-8">
+                <div class="flex flex-col items-center justify-center lg:col-span-3">
+                    <h2 class="font-crossfit text-[32px] uppercase text-[#370f1e] leading-[1] w-[330px]">
                         <span class="">Super Natural Sleep restores the:</br></span>
                     </h2>
-                        <p class="text-[1.2rem] py-2 text-[#5a5656] lg:text-[1.5rem] leading-5 mx-8">Real rest, mental clarity, and the energy to do what you love again.</p>
-                        <p class="text-[#726f6f] text-[1rem] lg:text-[1.1rem] mb-6 leading-none mx-8">
+                        <p class="text-[1.2rem] py-2 text-[#5a5656] lg:text-[1.5rem] leading-[1.01em] border-b-2 h-[60px] w-[330px]" style="border-color: #ffc35a;">Real rest, mental clarity, and the energy to do what you love again.</p>
+                        <p class="text-[#726f6f] text-[1rem] lg:text-[1.1rem] mb-6 leading-none mx-0 mt-4 w-[330px]">
                         Clean, non-sedative formula. No melatonin. Made in FDA & GMP-certified U.S. labs.
                         </p>                  
                     <ShopButton 
@@ -23,7 +23,7 @@
                     textColorClass="text-[#083d4f]" 
                     iconColorClass="text-[#083d4f]" 
                     title="Shop: First Trial Special Offer" 
-                    class="ml-8 bg-[#ffc35a] !py-2 font-medium text-lg lg:text-xl" />
+                    class="bg-[#ffc35a] !py-2 font-medium text-lg lg:text-xl w-[330px] justify-between" />
                 </div>
             </div>
         </div>

@@ -16,11 +16,11 @@
                             <img src="../assets/image/sleepElderly/price-ederly.png"  class="h-56" />
                         </div>
                     </div>
-                    <div class="pt-8">
+                    <div class="mt-14">
                         <h1 class="font-crossfit uppercase text-[#370f1e] leading-none pb-5 text-[28px]">There’s a gentle way to sleep and rest, naturally.</h1>
-                        
-                        <div class="flex">
-                            <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083d4f]" iconColorClass="text-[#083d4f]" title="Shop: First Trial Special Offer" class="bg-[#ffc35a] font-medium px-7 text-lg lg:text-xl" />
+                        <Guarantees></Guarantees>
+                        <div class="flex mt-3">
+                            <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083d4f]" iconColorClass="text-[#083d4f]" title="Shop: First Trial Special Offer" class="bg-[#ffc35a] font-medium px-7 text-lg lg:text-xl justify-between w-[330px]" />
                         </div>
                     </div>
                 </div>
@@ -47,6 +47,7 @@
                         <div class="inline-block mb-4">
                             <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26" />
                         </div>
+                        
                         <h1 class="font-crossfit uppercase text-[#370f1e] leading-none pr-12 pb-5 text-[1.75rem]">There’s a gentle way to sleep and rest, naturally.</h1>
                         <ShopButton id="buy-button" 
                         productId="prod_SbKYsQrxStW8wB" 
@@ -63,6 +64,8 @@
 
 <script lang="ts" setup>
 import ShopButton from '../components/ShopButton.vue'
+import Guarantees from '../components/Guarantees.vue'
+
 </script>
 
 <style>

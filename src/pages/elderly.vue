@@ -1,17 +1,19 @@
 
 <script setup>
 import { useSeo } from '../composables/useSeo'
-import HeaderElderly from '../components/HeaderElderly.vue'
+import Header from '../components/Header.vue'
 import HeroSectionElderly from '../components/HeroSectionElderly.vue'
 import TaglineStripElderly from '../components/TaglineStripElderly.vue'
 import ProductHighlightElderly from '../components/ProductHighlightElderly.vue'
 import IngredientsSectionElderly from '../components/IngredientsSectionElderly.vue'
 import BadgesElderly from '../components/BadgesElderly.vue'
 import CtaSectionElderly from '../components/CtaSectionElderly.vue'
-import LearnmoreElderly from '../components/LearnmoreElderly.vue'
-import FooterElderly from '../components/FooterElderly.vue'
+import Footer from '@/components/Footer.vue'
+import logoFooter from '@/assets/image/discomfort/footer.svg'
 import Guarantees from '../components/Guarantees.vue'
 import SleepTransformation from '../components/SleepTransformation.vue'
+import logoHeader from '@/assets/image/discomfort/header.svg'
+import Learnmore from '@/components/Learnmore.vue'
 
 useSeo({
     title: 'Natural Sleep Aid for Elderly | Superment - Non-Medication Sleep Support',
@@ -23,8 +25,8 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[610px] lg:min-h-[650px] bg-[url('@/assets/image/sleepElderly/hero-mobile-2.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:110%] bg-[position:91%_100%] bg-no-repeat">
-            <HeaderElderly />
+        <div class="relative min-h-[550px] lg:min-h-[630px] bg-[url('@/assets/image/sleepElderly/hero-mobile-2.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:100%] bg-[position:91%_100%] bg-no-repeat">
+            <Header color="#370F1E" :image-src="logoHeader" />
             <HeroSectionElderly />
         </div>
 
@@ -34,14 +36,20 @@ useSeo({
         <SleepTransformation/>
         <IngredientsSectionElderly />         
         
-        <Guarantees/>
+        <!-- <Guarantees/> -->
 
         <BadgesElderly />
 
         <CtaSectionElderly />
 
-        <LearnmoreElderly />
+        <Learnmore 
+            backgroundColor="#FFFAF0"
+            text="Learn more about us and how important is the right sleep"
+        />
 
-        <FooterElderly />
+        <Footer 
+            color="#370F1E"
+            :imageSrc="logoFooter"
+        />
     </div>
 </template>
