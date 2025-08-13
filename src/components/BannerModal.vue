@@ -101,16 +101,16 @@ watch(showModal, async (isOpen) => {
     >          
       <div @click.stop 
         class="relative w-full max-w-xl font-crossfit text-[34px] md:text-[40px] shadow-2xl ring-1 rounded-xl bg-[#6EC8F0] ring-black/5 pt-4 pb-[7px] space-y-0">
-        <h1 id="rd-modal-title" class="text-[#370F1E] leading-[1.3] flex items-center justify-center flex-col" >
-          Sign up below to get a <br class="hidden sm:hidden"> 
-          <span class="tracking-wide">
-            <span class="bg-[#FFDC03] inline-block text-center rounded px-[5px] h-[40px]">10%</span> super discount.
-          </span> 
+        <h1 id="rd-modal-title"
+            class="text-[#370F1E] leading-[1.3] flex flex-wrap items-center justify-center text-center px-2">
+          Sign up below to get a 
+          <span class="bg-[#FFDC03] inline-block text-center rounded px-[5px] h-[40px] mx-1">10%</span> 
+          super discount.
         </h1>
         <div
           role="main"
           id="lead-e9a65abee360f5aa42a1"
-          class="w-[360px] md:w-full">
+          class="w-[360px]">
         </div>
       </div>
     </div>
@@ -232,17 +232,24 @@ watch(showModal, async (isOpen) => {
   }
 
 
-  @media(max-width: 420px) {
+  @media(max-width: 350px) {
     :deep(#rd-section-me7bf6lg) {
       width: 100% !important;   
-      max-width: 280px;
+      max-width: 290px;
+    }
+  }
+
+  @media(min-width: 350px) and (max-width: 420px) {
+    :deep(#rd-section-me7bf6lg) {
+      width: 100% !important;   
+      max-width: 320px;
     }
   }
 
   @media(min-width: 420px) {
     :deep(#rd-section-me7bf6lg) {
       width: 100% !important;   
-      max-width: 355px;
+      max-width: 360px;
     }
   }
 
