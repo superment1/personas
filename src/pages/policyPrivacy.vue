@@ -22,8 +22,6 @@ import SuperHeader from '../components/SuperHeader.vue'
                 <div class="py-4 pt-10 border-b-2 border-[#370f1e]">
                     <p class="pb-3">We value the privacy of our consumers and are committed to transparency in the processing of personal data. This Privacy Policy outlines how we collect, use, store, and share your personal information when you interact with our content, forms, websites, and services—whether through advertisements on social networks (including Meta, Google, and others) or through our associated websites and landing pages.</p>
                 </div>
-                <p class="italic py-3">Introduction </p>
-
                 <div class="py-4 border-b-2 border-[#370f1e]">
                     <p class="primary pb-2 text-xl font-bold"> What is this policy about?</p>
                     <p> This document explains how this website collects, uses, and protects your personal data to achieve the purposes outlined in this document.</p>
@@ -145,7 +143,7 @@ import SuperHeader from '../components/SuperHeader.vue'
                     <p class="primary py-2 text-xl font-bold">12. Changes to This Privacy Policy</p>
                     <p class="py-2">We may update this Privacy Policy at any time to reflect legal or operational changes. The most recent version will always be available on our websites, indicating the effective date.</p>
                 </div>
-                <div class="py-4">
+                <div class="py-4 pb-10">
                     <p class="primary py-2 text-xl font-bold">13. Contact</p>
                     <p class="py-2">For additional information or to exercise your privacy rights, please contact us:</p>
                     <p>Superment</p>

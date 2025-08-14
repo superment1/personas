@@ -6,7 +6,7 @@
     { label: 'FAQ', href: '/faq' },
     { label: 'Terms of Service', href: '/terms' },
     { label: 'Refund Policy', href: '/refundpolicy' },
-    { label: 'Policy Privacy', href: '/privacypolicy'}
+    { label: 'Privacy Policy', href: '/privacypolicy'}
   ]
 </script>
 
