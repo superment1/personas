@@ -9,6 +9,7 @@ import RefundPolicy from '../pages/refundPolicy.vue'
 import Faq from '../pages/faq.vue'
 import About from '../pages/about.vue'
 import Elderly from '../pages/elderly.vue'
+import PolicyPrivacy from '../pages/policyPrivacy.vue'
 
   const routes = [
   { path: '/', redirect : '/supersleep' },
@@ -16,6 +17,7 @@ import Elderly from '../pages/elderly.vue'
   { path: '/test', name: 'test', component: SuperTest },
   { path: '/beautysleep', name:'beautysleep', component: SleepWomam},
   { path: '/terms', name: 'terms', component: TermsUse },
+  { path: '/privacypolicy', name:'privacypolicy', component:PolicyPrivacy },
   { path: '/refundpolicy', name: 'refundpolicy', component: RefundPolicy },
   { path: '/faq',  name: 'faq', component: Faq},
   { path: '/about', name: 'about', component: About},
@@ -52,7 +54,8 @@ router.afterEach((to) => {
     beautysleep: '#6EC8F0',
     elderly: '#370F1E',
     discomfort: '#370F1E',
-    menopause: '#E6B4FF'
+    menopause: '#E6B4FF',
+    privacypolicy:'#E1DCCD',
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)
