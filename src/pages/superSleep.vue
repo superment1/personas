@@ -28,7 +28,16 @@
 
 <template>
   <SuperHeader :show-redirect="false"/>
-  <section class="super-natural-sleep" id="super-sleep-pequeno">
+  <section class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
+      id="super-sleep-pequeno">
+      <img
+        src="@/assets/image/sleepSuperment/bg-supersleep1.webp"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover object-[50%_50%] transform -z-10"
+        fetchpriority="high"
+        decoding="async"
+        width="1600" height="900"
+      />
     <div class="title-super-natural-sleep">
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
@@ -41,7 +50,7 @@
         id="buy-button"
         :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
         :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
+        class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
         <img
           src="../assets/image/sleepSuperment/button-shop.webp"
           loading="lazy"
@@ -49,8 +58,8 @@
           class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110"
         />
       </ShopButton>
-      <div>
-        <span class="stripe">
+      <div class="justify-self-center">
+        <span class="stripe justify-items-center">
           <img 
             loading="lazy" 
             alt="logo-stripe"
@@ -59,16 +68,24 @@
       </div>
     </div>
   </section>
-  <section class="super-natural-sleep" id="super-sleep-grande">
-    <div class="title md:relative md:right-14">
-      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-      <span class="product-sub-title">Natural, safe, and effective.</span>
-      <div class="description">
-        <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a limited time!</span>
-      </div>
-    </div>
-    <div class="button">
-      <div>
+  <section  class="relative overflow-hidden w-full aspect-[16/5] max-h-[380px] hidden sm:flex items-center justify-center" id="super-sleep-grande">
+     <img
+        src="../assets/image/sleepSuperment/hero-desktop.jpg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover lg:object-[100%_-100px] xl:object-[100%_-150px] -z-10"
+        fetchpriority="high"
+        decoding="async"
+        width="1600" height="900"
+      />
+    <div class="flex flex-row title md:relative gap-52">
+      <div class="flex flex-col">
+        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
+        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <div class="description">
+          <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a limited time!</span>
+        </div>
+      </div>      
+      <div class="button relative bottom-16">
         <ShopButton
           type="button"
           id="buy-button"
@@ -89,6 +106,7 @@
           class="md:left-12 md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
+    
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
