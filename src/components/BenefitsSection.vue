@@ -1,14 +1,14 @@
 <template>
     <!-- What Happens When You Sleep -->
-    <div class="w-full lg:max-w-5xl justify-items-center mx-auto lg:w-full mt-[62px] pb-[60px]">
-        <div class="w-[318px] md:justify-items-center md:max-w-full mx-auto">
+    <div class="w-full justify-items-center mt-[62px] pb-[60px] md:mt-[38px]">
+        <div class="w-[318px] md:w-[760px] lg:w-[960px] flex flex-col items-center justify-center">
             <h2
-                class="font-gelasio text-[28px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">
+                class="font-gelasio text-[28px] md:text-[34px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
-            <div class="max-w-[21rem] md:max-w-full mx-auto grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-6">
+            <div class="w-[316px] md:w-[760px] lg:w[960px] grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 mb-6">
                 <!-- Benefits Grid -->
-                <div class="flex flex-col items-start gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 md:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -21,7 +21,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start gap-4 lg:items-start">
+                <div class="flex flex-col items-start gap-4 md:items-start">
                     <img src="@/assets/image/sleepWomam/hydration.png" alt="Hydration"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -35,7 +35,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start gap-4 lg:items-start mt-[7px]">
+                <div class="flex flex-col items-start gap-4 md:items-start mt-[7px] md:mt-0">
                     <img src="@/assets/image/sleepWomam/cell-regeneration.png" alt="Cell Regeneration"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -48,7 +48,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start gap-4 lg:items-start mt-[7px]">
+                <div class="flex flex-col items-start gap-4 md:items-start mt-[7px] md:mt-0">
                     <img src="@/assets/image/sleepWomam/even-skin-tone.png" alt="Even Skin Tone"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -61,7 +61,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start gap-4 lg:items-start mt-[5px]">
+                <div class="flex flex-col items-start gap-4 md:items-start mt-[5px] md:mt-0">
                     <img src="@/assets/image/sleepWomam/stress-reduction.png" alt="Stress Reduction"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
@@ -75,7 +75,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start gap-4 lg:items-start mt-[5px]">
+                <div class="flex flex-col items-start gap-4 md:items-start mt-[5px] md:mt-0">
                     <img src="@/assets/image/sleepWomam/glymphatic-detox.png" alt="Glymphatic Detox"
                         class="w-[150px] h-[150px] lg:w-[290px] lg:h-[160px] rounded-xl object-cover flex-shrink-0" />
                     <div class="text-left">
