@@ -79,7 +79,9 @@
 
     <!-- PARTE 3: Footer com logo e texto -->
     <div class="flex flex-col gap-3 items-center">
-      <img src="@/assets/image/sleepSuperment/superment1.png" alt="superment" class="mt-5 w-[150px]" />
+      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
+        <span class="inline-flex items-baseline">SUPERMENT<sub class="font-sans text-sm leading-none font-thin">®</sub></span>
+      </div>
       <p class="label-reserved">
         © Super Natural Sleep Research 2025. All Rights Reserved.
       </p>

@@ -23,7 +23,6 @@
 }
 
 .super-natural-sleep {
-    background-image: url('@/assets/image/sleepSuperment/bg-supersleep1.webp');
     height: 430px;
     width: 100%;
     background-size: cover;
@@ -42,6 +41,42 @@ div.title-super-natural-sleep {
     padding: 39px 0 0 35px;
 }
 
+.logo-gif{
+    font-family: 'Crossfit', Impact, sans-serif; 
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #370F1E;
+    display:inline-flex;
+    align-items:flex-end;         
+  }
+  .super-wrap{
+    display:inline-flex;
+    align-items:flex-end;
+    height:1em;                  
+    overflow:hidden;             
+    gap:0.02em;
+  }
+  .ment{ margin-left:0.06em; }
+
+  .letter{
+    display:inline-block;
+    transform:translateY(-1.2em) scaleY(1.15);  
+    animation:drop 700ms cubic-bezier(.2,.85,.25,1.2) infinite both;
+    animation-delay:calc(var(--i) * 90ms);
+    will-change:transform;
+  }
+
+  @keyframes drop{
+    70%  { transform:translateY(0.06em)  scaleY(.92); } 
+    88%  { transform:translateY(-0.03em) scaleY(1.04); }
+    100% { transform:translateY(0)       scaleY(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .letter{ animation:none; transform:none; }
+  }
 span.product-title {
     font-size: 44px;
     font-family: 'Crossfit-Black';
@@ -320,7 +355,6 @@ section.shop-rest div.infos div.infos-users div.info p.description {
 }
   
 section.shop-rest div.botao-shop-rest {
-    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -522,7 +556,6 @@ div.description {
     //     flex-direction: row;
     //     align-items: center;
     //     justify-content: center;
-
     // }
     #rd-email_field-mdhjb6wo{
         width: 700px !important;
@@ -582,11 +615,6 @@ div.description {
         flex-direction: column;
         align-self: flex-end;
     }   
-
-    #super-sleep-grande div.button div {
-        margin-left: 11rem;
-    }   
-
     section.shop-rest  {
         width: 100%;
         display: flex;

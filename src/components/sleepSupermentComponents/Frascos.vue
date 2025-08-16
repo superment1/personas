@@ -13,10 +13,12 @@
   <!-- MOBILE  -->
   <div class="bg-[#370F1E] sm:hidden">
       <img
-        src="@/assets/image/sleepSuperment/frascos.webp"
+        src="/assets/frascos-427.webp"
+        srcset="/assets/frascos-427.webp 427w, /assets/frascos-560.webp 560w"
         alt="Frascos Superment Mobile"
+        sizes="427px"
+        loading="lazy" decoding="async"
         class="w-full h-[540px] object-cover absolute mb-6"
-        loading="lazy"
         width="540"
         height="540"
       />
@@ -55,10 +57,10 @@
         loading="lazy"
         width="600"
         height="494"
-        class="object-contain"
+        class="object-contain -ml-20"
       />
-      <div class=" absolute flex sm:gap-48 sm:left-24 lg:left-44 lg:gap-52 flex-row justify-between ">
-        <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-end items-start ml-4 mt-40">
+      <div class=" absolute sm:max-w-[700px] flex sm:pt-8 sm:gap-44 flex-row justify-between ">
+        <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-end items-start mt-40">
           <div class="flex flex-row items-center">
             <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
             <p class="text-[#FFFAF0] text-[28px] ml-2 description">Soothe tension</p>

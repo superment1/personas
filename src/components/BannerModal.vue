@@ -24,7 +24,7 @@ function onKey(e) {
 }
 
 onMounted(() => {
-  setTimeout(openModal, 1500)
+  setTimeout(openModal, 5000)
   const script = document.createElement('script')
   script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
   script.async = true
@@ -127,17 +127,17 @@ watch(showModal, async (isOpen) => {
   :deep(#lead-e9a65abee360f5aa42a1 input),
   :deep(#lead-e9a65abee360f5aa42a1 select),
   :deep(#lead-e9a65abee360f5aa42a1 textarea) {
-    height: 44px; /* aumenta altura */
-    font-size: 18px; /* aumenta tamanho do texto */
-    padding: 0 14px; /* espaço interno */
-    border-radius: 10px; /* opcional */
+    height: 44px; 
+    font-size: 18px; 
+    padding: 0 14px; 
+    border-radius: 10px;
   }
   
  :deep(#lead-e9a65abee360f5aa42a1 input.bricks-form__input) {
-  height: 44px !important; /* ajuste o valor como preferir */
-  font-size: 18px;          /* aumenta também o tamanho do texto */
-  padding: 0 14px;          /* deixa mais espaçado nas laterais */
-  border-radius: 10px;      /* opcional, para arredondar */
+  height: 44px !important; 
+  font-size: 18px;        
+  padding: 0 14px;          
+  border-radius: 10px;     
 }
 
 
@@ -146,7 +146,7 @@ watch(showModal, async (isOpen) => {
   background-color: #FFDC03;
   color: #370F1E;
   width: 100% !important;  
-  padding: 0 16px;          /* ajuste lateral */
+  padding: 0 16px;         
   height: 44px;
   display: flex;
   align-items: center;
@@ -156,42 +156,40 @@ watch(showModal, async (isOpen) => {
   font-style: italic;
   font-weight: 500;
   border-radius: 6px;
-  align-self: flex-start;    /* garante que fique à esquerda no container */
+  align-self: flex-start;   
   margin: 5px 0 0 0;  
   transition: all 0.15s ease; 
 }
 
   :deep(#lead-e9a65abee360f5aa42a1 button:active) {
-    transform: scale(0.96); /* leve redução no clique */
-    background-color: darken(#FFDC03, 10%); /* cor mais escura ao clicar */
+    transform: scale(0.96); 
+    background-color: darken(#FFDC03, 10%);
   }
 
   :deep(#rd-form-me7bf6ln) {
-    width: 100% !important;   /* ocupa toda a largura do modal */
+    width: 100% !important; 
     max-width: 700px !important;
     border-radius: 4px;
   }
 
   :deep(#lead-e9a65abee360f5aa42a1 .phone-country .select2-choice) {
-    padding-left: 0px !important; /* ajuste fino */
+    padding-left: 0px !important; 
   }
 
-  /* Ajusta o select de país */
+ 
 :deep(#lead-e9a65abee360f5aa42a1 .phone-country .select2-choice) {
-  height: 44px !important; /* mesmo valor dos outros inputs */
+  height: 44px !important; 
   display: flex;
   align-items: center;
-  padding-left: 8px; /* espaço interno */
+  padding-left: 8px; 
 }
 
-/* Ajusta o input de telefone */
 :deep(#lead-e9a65abee360f5aa42a1 .phone-input-group input) {
   height: 44px !important;
   font-size: 18px;
   padding: 0 14px;
 }
 
-/* Remove espaço extra entre select e input */
 :deep(#lead-e9a65abee360f5aa42a1 .phone-input-group) {
   gap: 0 !important;
 }
@@ -214,7 +212,6 @@ watch(showModal, async (isOpen) => {
     text-align: center; /* centraliza o valor */
   }
 
-  /* Opcional: centralizar também o placeholder */
   :deep(#rd-date_field-me8z38cj::-webkit-input-placeholder) {
     text-align: center;
   }

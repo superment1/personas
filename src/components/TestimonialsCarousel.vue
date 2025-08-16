@@ -68,7 +68,13 @@ onMounted(() => {
   <div class="relative w-full py-5 flex justify-center items-center">
     <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[550px] rounded-2xl">
       <!-- Seta esquerda -->
-      <button @click="prev" class="arrow-button absolute -left-11 top-1/2 z-30" style="margin-top: 18px">
+      <button 
+      @click="prev" 
+      class="arrow-button absolute -left-11 top-1/2 z-30" 
+      style="margin-top: 18px"
+      aria-label="Depoimento anterior"
+      :aria-disabled="isFirstSlide" :disabled="isFirstSlide"
+      >
         <ArrowCircle direction="left" backgroundColor="#E1DCCD" :responsive="false"  />
       </button>
 
@@ -97,7 +103,13 @@ onMounted(() => {
       </div>
 
       <!-- Seta direita -->
-      <button @click="next" class="arrow-button absolute right-0 top-1/2 z-30"  style="margin-top: 18px;">
+      <button 
+      @click="next" 
+      class="arrow-button absolute right-0 top-1/2 z-30"  
+      style="margin-top: 18px;"
+      aria-label="Próximo depoimento"
+      :aria-disabled="isLastSlide" :disabled="isLastSlide"
+    >
         <ArrowCircle direction="right" backgroundColor="#E1DCCD" :responsive="false" />
       </button>
     </div>
