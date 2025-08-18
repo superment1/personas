@@ -1,19 +1,20 @@
 <script setup>
-  import '../styles/superSleep.scss';
-  import { defineProps, useAttrs } from 'vue'
-  import FAQ from '../components/Faq.vue';
-  import IngredientsCarousel from '../components/IngredientsCarousel.vue';
-  import NotificationDisplay from '../components/NotificationDisplay.vue';
-  import SuperHeader from '../components/SuperHeader.vue';
-  import SuperFooter from '../components/SuperFooter.vue';
-  import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
-  import Stopwatch from '../components/Stopwatch.vue';
-  import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
-  import Stress from '../components/sleepSupermentComponents/Stress.vue';
-  import ShopButton from '../components/ShopButton.vue';
-  import { useSeo } from '../composables/useSeo';
-  import { useWindowSize } from '@vueuse/core';
-  import BannerModal from '../components/BannerModal.vue'
+import '../styles/superSleep.scss';
+import { defineProps, onMounted, useAttrs } from 'vue'
+import FAQ from '../components/Faq.vue';
+import IngredientsCarousel from '../components/IngredientsCarousel.vue';
+import NotificationDisplay from '../components/NotificationDisplay.vue';
+import SuperHeader from '../components/SuperHeader.vue';
+import SuperFooter from '../components/SuperFooter.vue';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
+import Stopwatch from '../components/Stopwatch.vue';
+import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
+import Stress from '../components/sleepSupermentComponents/Stress.vue';
+import ShopButton from '../components/ShopButton.vue';
+import { useSeo } from '../composables/useSeo';
+import { useWindowSize } from '@vueuse/core';
+import BannerModal from '../components/BannerModal.vue'
+import toast from '@/services/toastService.js';
 
   const { width } = useWindowSize();
   useSeo({
@@ -22,6 +23,9 @@
     keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
   const attrs = useAttrs();
+  onMounted(() => {
+  toast.info('voce conseguiu um desconto', 8000);
+})
 </script>
 
 <template>
@@ -47,6 +51,7 @@
       decoding="async"
     />
     </picture>
+
     <div class="title-super-natural-sleep">
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
@@ -122,7 +127,8 @@
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
-      <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without anything harmful."</p>
+      <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without
+        anything harmful."</p>
       <p class="superment-team">The Superment Team</p>
     </div>
     <div class="img-non">
@@ -140,6 +146,7 @@
           style="max-width:324px;height:auto"
         />
       </picture>
+
     </div>
   </section>
   <section class="ingredients relative z-10">
@@ -147,13 +154,14 @@
       <p>The ingredients you can trust.</p>
     </div>
     <div class="description">
-      <p>Tired of being tired? We created a clean botanical blend to help your body rediscover natural, restful sleep.</p>
+      <p>Tired of being tired? We created a clean botanical blend to help your body rediscover natural, restful sleep.
+      </p>
     </div>
     <div class="carrossel-ingredients">
       <IngredientsCarousel></IngredientsCarousel>
     </div>
   </section>
-  <Stress/>
+  <Stress />
   <section class="shop-rest">
     <div class="imagem-centralizada">
       <img 
@@ -161,6 +169,7 @@
         loading="lazy" 
         alt="Mulher com pílula" 
       />
+
     </div>
     <div class="infos">
       <p class="title">The numbers behind Super Natural Sleep</p>
@@ -176,9 +185,9 @@
             <p class="number">0%</p>
             <p class="description" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
             <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
-          </div>          
-        </div>       
-         <div class="info max-w-[200px]">
+          </div>
+        </div>
+        <div class="info max-w-[200px]">
           <p class="number mt-5 md:mt-0">100%</p>
           <p class="description">of users reported reduced anxiety and greater relaxation.</p>
           <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
@@ -196,10 +205,7 @@
       </ShopButton>
       <div>
         <span class="stripe">
-          <img 
-            alt="logo-stripe"
-            loading="lazy"
-            src="../assets/image/sleepSuperment/stripe.png" ></img>
+          <img alt="logo-stripe" loading="lazy" src="../assets/image/sleepSuperment/stripe.png"></img>
         </span>
       </div>
     </div>
@@ -211,7 +217,7 @@
       <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
     </div>
     <div class="testimonials">
-      <TestimonialsCarousel/>
+      <TestimonialsCarousel />
     </div>
   </section>
   <section class="everyone">
@@ -245,8 +251,9 @@
         style="max-width:350px;height:auto"
       />
     </picture>
+
   </section>
-  <Frascos/>
+  <Frascos />
   <Stopwatch />
   <section class="questions">
     <p class="title">Frequently asked questions:</p>
@@ -254,7 +261,7 @@
       <FAQ />
     </section>
   </section>
-  <SuperFooter/>
-  <NotificationDisplay/>
-  <BannerModal/>
+  <SuperFooter />
+  <NotificationDisplay />
+  <BannerModal />
 </template>
