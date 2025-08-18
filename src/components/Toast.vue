@@ -52,7 +52,7 @@ function stripCouponFromText(text) {
                 <button
                     aria-label="copy"
                     title="Copy coupon"
-                    class="bg-[#FFDC03] cursor-pointer text-[#370F1E] justify-center items-center flex gap-3 font-bold text-[25px] px-4 rounded-[25px] hover:opacity-90 transition"
+                    class="bg-[#FFDC03] cursor-pointer text-[#370F1E] justify-center items-center flex gap-4 font-bold text-[25px] px-4 rounded-[25px] hover:opacity-90 transition"
                     @click="copyAndClose(msg)"
                     >
                     {{ extractCode(msg.text) || 'Copy' }}
