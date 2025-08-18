@@ -5,25 +5,39 @@ const items = [
   { 
     title: 'Passion Flower', 
     subtitle: 'Calming and relaxing.', 
-    image: new URL('../assets/image/passion-flower.png', import.meta.url).href },
-  { 
-    title: 'Marshmallow Root', 
-    subtitle: 'Calms digestion, supports sleep.', 
-    image: new URL('../assets/image/marshmallow-root.png', import.meta.url).href },
-  { 
-    title: 'Corydalis', subtitle
-    : 'Gentle pain and sleep relief.', 
-    image: new URL('../assets/image/corydalis.png' , import.meta.url).href},
-  { 
-    title: 'California Poppy', 
-    subtitle: 'Promotes calm and sleep.', 
-    image: new URL('../assets/image/california-poppy.png', import.meta.url).href },
-  { 
-    title: 'Prickly Pear', 
-    subtitle: 'Antioxidant support.', 
-    image: new URL('../assets/image/prickly-pear.png', import.meta.url).href }
+    img1x: 'assets/passion-flower-128.webp',
+    img2x: 'assets/passion-flower-256.webp',
+    w: 128, h: 128, alt: 'Passion flower'
+  },
+   {
+    title: 'Marshmallow Root',
+    subtitle: 'Calms digestion, supports sleep.',
+    img1x: 'assets/marshmallow-root-128.webp',
+    img2x: 'assets/marshmallow-root-256.webp',
+    w: 128, h: 128, alt: 'Marshmallow root'
+  },
+  {
+    title: 'Corydalis',
+    subtitle: 'Gentle pain and sleep relief.',
+    img1x: 'assets/corydalis-128.webp',
+    img2x: 'assets/corydalis-256.webp',
+    w: 128, h: 128, alt: 'Corydalis'
+  },
+  {
+    title: 'California Poppy',
+    subtitle: 'Promotes calm and sleep.',
+    img1x: 'assets/california-poppy-128.webp',
+    img2x: 'assets/california-poppy-256.webp',
+    w: 128, h: 128, alt: 'California poppy'
+  },
+  {
+    title: 'Prickly Pear',
+    subtitle: 'Antioxidant support.',
+    img1x: 'assets/prickly-pear-128.webp',
+    img2x: 'assets/prickly-pear-256.webp',
+    w: 128, h: 128, alt: 'Prickly pear'
+  }
 ]
-
 
 // CLICANDO
 const currentIndex = ref(2)
@@ -148,8 +162,10 @@ onBeforeUnmount(() => {
           <!-- Card com imagem -->
           <div class="bg-white rounded-xl shadow rounded-2x1">
             <img 
-            :src="item.image" 
+            :src="item.img1x"
+            :srcset="`${item.img1x} 1x, ${item.img2x} 2x`"
             :alt="item.title" 
+            loading="lazy" decoding="async"
             class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl" />
           </div>
           <div class="mt-2">

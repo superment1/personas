@@ -22,12 +22,7 @@
     font-display: swap; 
 }
 
-#super-sleep-grande {
-    display: none;
-}
-
 .super-natural-sleep {
-    background-image: url('@/assets/image/sleepSuperment/bg-supersleep1.webp');
     height: 430px;
     width: 100%;
     background-size: cover;
@@ -43,9 +38,45 @@
 div.title-super-natural-sleep {
     width: 100%;
     height: 150px;
-    padding: 40px 0 0 35px;
+    padding: 39px 0 0 35px;
 }
 
+.logo-gif{
+    font-family: 'Crossfit', Impact, sans-serif; 
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #370F1E;
+    display:inline-flex;
+    align-items:flex-end;         
+  }
+  .super-wrap{
+    display:inline-flex;
+    align-items:flex-end;
+    height:1em;                  
+    overflow:hidden;             
+    gap:0.02em;
+  }
+  .ment{ margin-left:0.06em; }
+
+  .letter{
+    display:inline-block;
+    transform:translateY(-1.2em) scaleY(1.15);  
+    animation:drop 700ms cubic-bezier(.2,.85,.25,1.2) infinite both;
+    animation-delay:calc(var(--i) * 90ms);
+    will-change:transform;
+  }
+
+  @keyframes drop{
+    70%  { transform:translateY(0.06em)  scaleY(.92); } 
+    88%  { transform:translateY(-0.03em) scaleY(1.04); }
+    100% { transform:translateY(0)       scaleY(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .letter{ animation:none; transform:none; }
+  }
 span.product-title {
     font-size: 44px;
     font-family: 'Crossfit-Black';
@@ -65,11 +96,6 @@ span.product-sub-title {
     line-height: 26px;
     letter-spacing: 0%;
     color: #370F1E;
-}
-
-div.description {
-    width: 200px;
-    padding: 35px 0 0 0px;
 }
 
 span.description {
@@ -329,7 +355,6 @@ section.shop-rest div.infos div.infos-users div.info p.description {
 }
   
 section.shop-rest div.botao-shop-rest {
-    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -509,25 +534,29 @@ section.questions p.title {
 ///// AJUSTES RESPONSIVOES
 /// 
 
-@media(min-width: '550px') {
+div.description {
+    width: 200px;
+    padding: 31px 0 0 0px;
+}
+
+@media(min-width: 550px) {
+    div.description {
+        width: 200px;
+        padding: 40px 0 0 0px;
+    }
     #super-sleep-pequeno {
         display: none;
     }
 
-    #super-sleep-grande {
-        background-image: url('../assets/image/sleepSuperment/hero-desktop.jpg');
-        background-size: 100%;
-        background-position: 100% -183px;
-        background-repeat: no-repeat;
-        width: 100%;
-        aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
-        max-height: 380px;     /* impede que fique gigante em telas grandes */
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-    }
+    // #super-sleep-grande {
+    //     width: 100%;
+    //     aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
+    //     max-height: 380px;     /* impede que fique gigante em telas grandes */
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
     #rd-email_field-mdhjb6wo{
         width: 700px !important;
         position: relative !important;
@@ -543,11 +572,9 @@ section.questions p.title {
     #super-sleep-grande div.title {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
+        align-items: center;
         justify-content: center;
-        padding: 80px 0 0 0;
+  
     }   
 
     #super-sleep-grande div.title span.product-title {
@@ -583,18 +610,11 @@ section.questions p.title {
     }
 
     #super-sleep-grande div.button {
-        width: 100%;
-        height: 100%;
+        max-height: 380px;
         display: flex;
-        flex-direction: column-reverse;
-        padding: 0 0 40px 0;
+        flex-direction: column;
+        align-self: flex-end;
     }   
-
-    #super-sleep-grande div.button div {
-        margin-left: 11rem;
-        margin-bottom: 2rem;
-    }   
-
     section.shop-rest  {
         width: 100%;
         display: flex;

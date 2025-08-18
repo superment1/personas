@@ -13,10 +13,12 @@
   <!-- MOBILE  -->
   <div class="bg-[#370F1E] sm:hidden">
       <img
-        src="@/assets/image/sleepSuperment/frascos.webp"
+        src="/assets/frascos-427.webp"
+        srcset="/assets/frascos-427.webp 427w, /assets/frascos-560.webp 560w"
         alt="Frascos Superment Mobile"
+        sizes="427px"
+        loading="lazy" decoding="async"
         class="w-full h-[540px] object-cover absolute mb-6"
-        loading="lazy"
         width="540"
         height="540"
       />
@@ -46,7 +48,7 @@
   </div>
 
   <!-- DESKTOP -->
-  <div class="w-full h-[500px] hidden md:flex items-center flex-col bg-[#370F1E] p-8" id="id-shop-now-desk">
+  <div class="w-full h-[429px] hidden md:flex items-center flex-col bg-[#370F1E] p-8" id="id-shop-now-desk">
     <p v-html="description" class="text-[28px] leading-[28px] text-[#FFFAF0] font-[900] font-crossfit text-center lg:text-[34px] w-full mx-auto mb-8">
     </p>
       <img
@@ -55,10 +57,10 @@
         loading="lazy"
         width="600"
         height="494"
-        class="w-[700px] object-contain"
+        class="object-contain -ml-20"
       />
-      <div class="w-[1000px] absolute flex flex-row pt-20 justify-between ">
-        <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-start items-start ml-40 mt-40">
+      <div class=" absolute sm:max-w-[700px] flex sm:pt-8 sm:gap-44 flex-row justify-between ">
+        <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-end items-start mt-40">
           <div class="flex flex-row items-center">
             <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>
             <p class="text-[#FFFAF0] text-[28px] ml-2 description">Soothe tension</p>

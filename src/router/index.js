@@ -1,29 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../pages/index.vue'
-import SuperSleep from '../pages/superSleep.vue'
-import SuperTest from '../pages/superTest.vue'
-import SleepWomam from '../pages/sleepWomam.vue'
-import TermsUse from '../pages/termsUse.vue'
-import Discomfort from '../pages/discomfort.vue'
-import RefundPolicy from '../pages/refundPolicy.vue'
-import Faq from '../pages/faq.vue'
-import About from '../pages/about.vue'
-import Elderly from '../pages/elderly.vue'
-import PrivacyPolicy from '../pages/policyPrivacy.vue'
 
-  const routes = [
+const routes = [
   { path: '/', redirect : '/supersleep' },
-  { path: '/supersleep', name:'supersleep', component: SuperSleep },
-  { path: '/test', name: 'test', component: SuperTest },
-  { path: '/beautysleep', name:'beautysleep', component: SleepWomam},
-  { path: '/terms', name: 'terms', component: TermsUse },
-  { path: '/privacypolicy', name:'privacypolicy', component:PrivacyPolicy },
-  { path: '/refundpolicy', name: 'refundpolicy', component: RefundPolicy },
-  { path: '/faq',  name: 'faq', component: Faq},
-  { path: '/about', name: 'about', component: About},
-  { path: '/elderly', name: 'elderly', component: Elderly},
-  // { path: '/menopause', name: 'menopause', component: Menopause},
-  { path: '/discomfort', component: Discomfort }
+  { path: '/supersleep',   name:'supersleep',    component: () => import('../pages/superSleep.vue') },
+  { path: '/test',         name: 'test',         component: () => import('../pages/superTest.vue') },
+  { path: '/beautysleep',  name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
+  { path: '/terms',        name: 'terms',        component: () => import('../pages/termsUse.vue') },
+  { path: '/privacypolicy',name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
+  { path: '/refundpolicy', name: 'refundpolicy', component: () => import('../pages/refundPolicy.vue') },
+  { path: '/faq',          name: 'faq',          component: () => import('../pages/faq.vue') },
+  { path: '/about',        name: 'about',        component: () => import('../pages/about.vue') },
+  { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
+  { path: '/discomfort',   name:'disconfort',    component: () => import('../pages/discomfort.vue') }
 ]
 
 export const router = createRouter({

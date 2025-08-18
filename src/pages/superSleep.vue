@@ -16,24 +16,42 @@ import { useWindowSize } from '@vueuse/core';
 import BannerModal from '../components/BannerModal.vue'
 import toast from '@/services/toastService.js';
 
-
-const { width } = useWindowSize();
-
-useSeo({
-  title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
-  description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
-  keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
-})
-const attrs = useAttrs();
-
-onMounted(() => {
+  const { width } = useWindowSize();
+  useSeo({
+    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
+    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
+    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
+  })
+  const attrs = useAttrs();
+  onMounted(() => {
   toast.info('voce conseguiu um desconto', 8000);
 })
 </script>
 
 <template>
-  <SuperHeader :show-redirect="false" />
-  <section class="super-natural-sleep" id="super-sleep-pequeno">
+  <SuperHeader :show-redirect="false"/>
+  <section class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
+      id="super-sleep-pequeno">
+      <picture class="absolute inset-0 -z-10">
+    <source
+      type="image/webp"
+      srcset="/assets/hero-m-360.webp 360w,
+              /assets/hero-m-480.webp 480w,
+              /assets/hero-m-640.webp 640w,
+              /assets/hero-m-768.webp 768w,
+              /assets/hero-m-960.webp 960w"
+      sizes="100vw" />
+    <img
+      src="/assets/hero-m-768.webp"
+      alt="Super Natural Sleep no travesseiro"
+      class="w-full h-full object-cover object-[50%_50%]"
+      loading="eager"
+      width="768" height="820"
+      fetchpriority="high"
+      decoding="async"
+    />
+    </picture>
+
     <div class="title-super-natural-sleep">
       <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
       <span class="product-sub-title">Natural, safe, and effective.</span>
@@ -41,38 +59,71 @@ onMounted(() => {
     <div class="description !pl-[35px]">
       <span class="description">Try our premium <br> natural sleep formula,</span>
       <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
-      <ShopButton type="button" id="buy-button" :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
-        :showIcon="false" class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent mt-7">
-        <img src="../assets/image/sleepSuperment/button-shop.webp" loading="lazy" alt="button-shop"
-          class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110" />
+      <ShopButton
+        type="button"
+        id="buy-button"
+        :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+        :showIcon="false"
+        class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
+        <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[165px] font-crossfit h-9">
+          <span class="relative inline-block text-[#ecd68b]
+          before:content-[''] before:absolute before:-left-1 before:-right-1
+          before:top-1/2 before:h-[1px] before:bg-[#5d4503]
+          before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP REST</span>
+        </div>
+
       </ShopButton>
-      <div>
-        <span class="stripe">
-          <img loading="lazy" alt="logo-stripe" src="../assets/image/sleepSuperment/stripe.png"></img>
+      <div class="place-self-center">
+        <span class="stripe justify-items-center">
+          <img 
+            loading="lazy" 
+            alt="logo-stripe"
+            src="../assets/image/sleepSuperment/stripe.png" ></img>
         </span>
       </div>
     </div>
   </section>
-  <section class="super-natural-sleep" id="super-sleep-grande">
-    <div class="title md:relative md:right-14">
-      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-      <span class="product-sub-title">Natural, safe, and effective.</span>
-      <div class="description">
-        <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a
-          limited time!</span>
-      </div>
-    </div>
-    <div class="button">
-      <div>
-        <ShopButton type="button" id="buy-button" :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
-          :showIcon="false" class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
-          <img loading="lazy" alt="button-shop" src="../assets/image/sleepSuperment/button-shop.webp"
-            class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110" />
+  <section  class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande" 
+    ><img
+        src="/assets/hero-1080.webp"
+        srcset="/assets/hero-768.webp 768w, /assets/hero-1080.webp 1080w, /assets/hero-1600.webp 1600w"
+        sizes="100vw"
+        width="1600" height="900"
+        loading="eager" decoding="async"
+        alt="Super Sleep"
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+
+    <div class="flex flex-row title md:relative gap-52">
+      <div class="flex flex-col">
+        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
+        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <div class="description">
+          <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a limited time!</span>
+        </div>
+      </div>      
+      <div class="button relative bottom-20">
+        <ShopButton
+          type="button"
+          id="buy-button"
+          :anchorId="width > 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+          :showIcon="false"
+          class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
+          <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[165px] font-crossfit h-9">
+            <span class="relative inline-block text-[#ecd68b]
+            before:content-[''] before:absolute before:-left-1 before:-right-1
+            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
+            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP REST</span>
+          </div>
         </ShopButton>
-        <img src="../assets/image/sleepSuperment/stripe.png" loading="lazy" alt="logo-stripe"
-          class="md:left-12 md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
+        <img 
+          src="../assets/image/sleepSuperment/stripe.png" 
+          loading="lazy"
+          alt="logo-stripe" 
+          class="self-center md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
+    
   </section>
   <section class="non-habit-forming">
     <div class="description-forming">
@@ -81,8 +132,21 @@ onMounted(() => {
       <p class="superment-team">The Superment Team</p>
     </div>
     <div class="img-non">
-      <img src="../assets/image/sleepSuperment/capsula-flores.png" loading="lazy" alt="capsula e flores"
-        class="image-forming">
+      <picture>
+        <source type="image/webp"
+          srcset="/assets/capsula-flores-324.webp 1x, 
+          /assets/capsula-flores-648.webp 2x"
+          sizes="324px">
+        <img
+          src="/assets/capsula-flores-324.webp"         
+          width="324" height="182"
+          alt="cápsula e flores"
+          loading="lazy" decoding="async"
+          class="image-forming"
+          style="max-width:324px;height:auto"
+        />
+      </picture>
+
     </div>
   </section>
   <section class="ingredients relative z-10">
@@ -100,7 +164,12 @@ onMounted(() => {
   <Stress />
   <section class="shop-rest">
     <div class="imagem-centralizada">
-      <img src="../assets/image/sleepSuperment/moca.png" loading="lazy" alt="Mulher com pílula" />
+      <img 
+        src="../assets/image/sleepSuperment/moca.webp" 
+        loading="lazy" 
+        alt="Mulher com pílula" 
+      />
+
     </div>
     <div class="infos">
       <p class="title">The numbers behind Super Natural Sleep</p>
@@ -124,12 +193,15 @@ onMounted(() => {
           <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
       </div>
-
-
-      <ShopButton type="button" id="buy-button" :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
-        :showIcon="false" class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
-        <img alt="button-shop" loading="lazy" src="../assets/image/sleepSuperment/botao-shop-rest.png"
-          class="1 w-[200px] h-[36px] rounded object-cover transition-transform duration-300 hover:scale-110" />
+      <ShopButton
+        type="button"
+        id="buy-button"
+        :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+        :showIcon="false"
+        class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
+        <div class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
+          <span class="text-[#ffdf01]">SHOP REST</span>
+        </div>
       </ShopButton>
       <div>
         <span class="stripe">
@@ -150,8 +222,36 @@ onMounted(() => {
   </section>
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <img loading="lazy" src="../assets/image/sleepSuperment/tabela.png" alt="table" class="table">
-    <img loading="lazy" src="../assets/image/sleepSuperment/selos.png" alt="selos" class="selos">
+    <picture>
+      <source type="image/webp"
+          srcset="/assets/tabela-350.webp 350w,
+                  /assets/tabela-600.webp 600w"
+          sizes="(min-width: 1024px) 600px, 350px"> 
+      <img
+        src="/assets/tabela-350.webp"
+        srcset="/assets/tabela-350.webp 350w, /assets/tabela-600.webp 600w"
+        sizes="(min-width: 1024px) 600px, 350px"
+        width="350" height="233"
+        alt="table"
+        loading="lazy" decoding="async"
+        class="table"
+        style="aspect-ratio: 350 / 233;"
+      />
+    </picture>
+    <picture>
+      <source type="image/webp"
+          srcset="/assets/selos-350.webp 1x, /assets/selos-700.webp 2x">
+      <img
+        src="/assets/selos-350.webp"
+        srcset="/assets/selos-350.webp 1x, /assets/selos-700.webp 2x"
+        width="350" height="67"
+        alt="Selos de garantia e certificações"
+        loading="lazy" decoding="async"
+        class="mt-4"
+        style="max-width:350px;height:auto"
+      />
+    </picture>
+
   </section>
   <Frascos />
   <Stopwatch />
