@@ -1,8 +1,8 @@
 <script setup>
+import { ref, computed, watch, onMounted } from 'vue'
 import setaDireita from '@/assets/image/seta-direita.png'
 import setaEsquerda from '@/assets/image/seta-esquerda.png'
 import ArrowCircle from '../components/ArrowCircle.vue';
-import { ref, watch, onMounted } from 'vue';
 
 const items = [
   {
@@ -30,6 +30,8 @@ const items = [
     type: 'image', image: new URL('@/assets/image/sleepSuperment/NovosDepoimentos-Nuala.png', import.meta.url).href
   }
 ]
+const isFirstSlide = computed(() => currentIndex.value <= 0)
+const isLastSlide  = computed(() => currentIndex.value >= items.length - 1)
 
 const currentIndex = ref(0)
 const videoRef = ref(null)
@@ -40,8 +42,6 @@ const prev = () => {
 const next = () => {
   currentIndex.value = (currentIndex.value + 1) % items.length
 }
-
-
 watch(currentIndex, () => {
   if (items[currentIndex.value].type === 'video') {
     setTimeout(() => {
@@ -51,8 +51,6 @@ watch(currentIndex, () => {
     }, 100)
   }
 })
-
-// Toca automaticamente o vídeo se for o primeiro
 onMounted(() => {
   if (items[0].type === 'video') {
     setTimeout(() => {

@@ -1,11 +1,35 @@
 <script setup>
 import { ref, onMounted, watch, onBeforeUnmount, nextTick } from 'vue'
+import { toastStore } from '../stores/toastStore'
 
 const showModal = ref(false)
 const OPEN_KEY = 'rd-modal-opened' 
 
 let rdScriptLoaded = false
 let formCreated = false
+let originalAlert = null
+
+function hookAlertToToast() {
+  if (originalAlert) return
+  originalAlert = window.alert
+  window.alert = (msg) => {
+    const text = String(msg ?? '').trim() || 'Action completed.'
+    const m = /code:\s*([A-Z0-9_-]+)/i.exec(text)
+    if (m && navigator.clipboard) {
+      navigator.clipboard.writeText(m[1]).catch(() => {})
+      toastStore.push({ type: 'success', text: `${text}` })
+    } else {
+      toastStore.push({ type: 'success', text })
+    }
+
+  }
+}
+function unhookAlert() {
+  if (originalAlert) {
+    window.alert = originalAlert
+    originalAlert = null
+  }
+}
 
 function openModal() {
   if (!sessionStorage.getItem(OPEN_KEY)) {
@@ -24,7 +48,10 @@ function onKey(e) {
 }
 
 onMounted(() => {
+  hookAlertToToast()
+
   setTimeout(openModal, 5000)
+
   const script = document.createElement('script')
   script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
   script.async = true
@@ -50,7 +77,6 @@ onMounted(() => {
       phoneInput.setAttribute('data-last-country-code', '1')
       phoneInput.value = '+1 '
 
-      // Dispara evento para atualizar a UI (bandeira)
       const event = new Event('change', { bubbles: true })
       phoneInput.dispatchEvent(event)
 
@@ -64,12 +90,13 @@ onMounted(() => {
       btn.addEventListener('click', () => {
         closeModal()
       })
-      clearInterval(checkButton) // parar de verificar
+      clearInterval(checkButton) 
     }
   }, 800)
 })
 
 onBeforeUnmount(() => {
+  unhookAlert()
   window.removeEventListener('keydown', onKey)
   document.body.style.overflow = ''
 })
@@ -141,7 +168,6 @@ watch(showModal, async (isOpen) => {
 }
 
 
-/* Botão do RD */
 :deep(#lead-e9a65abee360f5aa42a1 button) {
   background-color: #FFDC03;
   color: #370F1E;

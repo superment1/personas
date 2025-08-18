@@ -24,7 +24,13 @@ const faqs = ref([
   },
   {
     question: 'What if I’m not satisfied?',
-    answer: 'If you’re not happy with your results, just send us an email at superhelp@superment.co within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.',
+    answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.
+            
+                •	120 days for the 6-bottle combo
+                •	90 days for the 3-bottle combo
+                •	30 days for a single bottle
+        
+        We accept returns on any unopened bottles and will do everything we can to make it right.`,
     open: false
   },
   {
@@ -103,7 +109,6 @@ function toggle(index) {
 
 </style>
 
-
 <template>
   <section class="faq">
     <div
@@ -117,7 +122,7 @@ function toggle(index) {
         <span>{{ faq.open ? '↓' : '↑' }}</span>
       </div>
       <div v-if="faq.open && faq.answer" class="answer">
-        {{ faq.answer }}
+        <p class="whitespace-pre-line py-4">{{ faq.answer }}</p>
       </div>
     </div>
   </section>

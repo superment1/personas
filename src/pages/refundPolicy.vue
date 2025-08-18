@@ -26,14 +26,14 @@ any reason you're not completely satisfied, we
 offer a simple and fair return policy</p>
                 </div>
                 <div class="py-5 border-b-2 border-[#370f1e]">
-                    <p class="primary pb-2 text-xl font-bold"> 30-Day Money-Back Guarantee</p>
-                    <p class="pb-3"> If you’re unhappy with your purchase for any
-reason, just let us know within 30 days of receiving your order and we’ll issue a full refund—no
-questions asked.</p>
-                    <p> To be eligible, the request must be made within
-30 days of delivery, and applies to first-time
-purchases made through www.superment.co
-only.</p>
+                    <p class="primary pb-2 text-xl font-bold"> Money-Back Guarantee</p>
+                    <p class="pb-3"> If you’re unhappy with your purchase for any reason, just let us know within the applicable period below and we’ll issue a full </p>
+                    <ul class="list-disc pl-6 space-y-1">                        
+                        <li><span class="">120 days – for purchases of the 6-bottle bundle</span></li>
+                        <li><span class="">90 days – for purchases of the 3-bottle bundle</span></li>
+                        <li><span class="">30 days – for purchases of a single bottle</span></li>
+                    </ul>
+                    <p class="pt-3">To be eligible, the request must be made within the time frame above, counting from the delivery date, and applies to first-time purchases made through www.superment.co only.</p>
                 </div>
                 <div class="py-5 border-b-2 border-[#370f1e]">
                     <p class="primary pb-2 text-xl font-bold"> How to Request a Refund</p>

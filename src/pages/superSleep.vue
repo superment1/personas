@@ -23,9 +23,6 @@ import toast from '@/services/toastService.js';
     keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
   const attrs = useAttrs();
-  onMounted(() => {
-  toast.info('voce conseguiu um desconto', 8000);
-})
 </script>
 
 <template>
