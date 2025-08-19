@@ -100,7 +100,7 @@
                     </p>
 
                     <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true
-                        class="mt-[24px] w-[316px] h-[50px] text-white justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition">
+                        class="mt-[24px] w-[316px] h-[50px] text-white justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition  lg:text-[20px] lg:px-5 lg:w-[392px]">
                         Shop: check our opening discount
                     </ShopButton>
 

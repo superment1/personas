@@ -62,7 +62,7 @@
                     <div class="relative">
                         <div class="relative">
                             <div class="absolute right-12 -top-52 lg:right-4 lg:-top-56">
-                                <img src="@/assets/image/sleepWomam/price-desk-thin.png" alt="Pricing"
+                                <img src="@/assets/image/sleepWomam/price-thin.png" alt="Pricing"
                                     class="h-58 lg:h-50" />
                             </div>
                         </div>

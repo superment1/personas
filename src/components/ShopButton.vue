@@ -47,6 +47,7 @@ const buttonClasses = computed(() => {
     'text-white',
     'px-3',
     'py-0',
+    'h-[50px]',
     'rounded-full',
     'transition-transform',
     'duration-300',
