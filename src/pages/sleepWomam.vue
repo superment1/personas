@@ -1,4 +1,3 @@
-
 <script setup>
 import { useSeo } from '../composables/useSeo'
 import Header from '@/components/Header.vue'
@@ -23,26 +22,8 @@ useSeo({
 
 <template>
     <div>
-        <!-- Blue Rounded Header -->
-        <div class="relative 
-            min-h-[550px] sm:min-h-[493px] lg:min-h-[521px] md:min-h-[466px] xl:min-h-[616px]
-            bg-[url('@/assets/image/sleepWomam/beauty-mobile-bg.jpg')]
-            md:bg-[url('@/assets/image/sleepWomam/beautysleep-bg.jpg')]
-            bg-no-repeat
-            bg-[left_98px]
-            md:bg-[20%_100px]
-            md:[background-size:123%]
-            xl:bg-[20%_100px]
-            xl:bg-contain
-            [background-size:116%]
-            lg:bg-[25%_108px]
-            2xl:bg-[center_100px]">
-            <Header 
-                color="#6EC8F0"
-                :imageSrc="logoHeader"
-            />
-            <HeroSection />
-        </div>
+        <Header color="#6EC8F0" :imageSrc="logoHeader" />
+        <HeroSection />
 
         <TaglineStrip />
 
@@ -56,14 +37,16 @@ useSeo({
 
         <CtaSection />
 
-        <Learnmore 
-            backgroundColor="#CDEBFF"
-            text="Learn more about us and how important is the right sleep"
-        />
+        <Learnmore backgroundColor="#CDEBFF" text="Learn more about us and how important is the right sleep" />
 
-        <Footer 
-            color="#6EC8F0"
-            :imageSrc="footerLogo"
-        />
+        <Footer color="#6EC8F0" :imageSrc="footerLogo" />
     </div>
 </template>
+
+<style scoped>
+@media(max-width: 424px) {
+    .image-mobile {
+        height: 580px;
+    }
+}
+</style>
