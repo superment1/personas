@@ -80,12 +80,18 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     },
     {
         question: 'What if I’m not satisfied?',
-        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.`,
+        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.
+                    
+                        •	120 days for the 6-bottle combo
+                        •	90 days for the 3-bottle combo
+                        •	30 days for a single bottle
+                
+                We accept returns on any unopened bottles and will do everything we can to make it right.`,
         open: false
     },
     {
         question: 'How can I talk to Superment?',
-        answer: `You can email us at superhelp@superment.co or send us a DM on Instagram @superment.co. It will be a pleasure to talk to you.`,
+        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.`,
         open: false
     }
 ]

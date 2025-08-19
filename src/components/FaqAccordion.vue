@@ -35,7 +35,7 @@ function toggle(index) {
         <span class="text-xl">{{ faq.open ? '↑' : '↓' }}</span>
       </div>
       <div v-if="faq.open && faq.answer" class="mt-2 text-[#370f1e] text-sm leading-relaxed">
-        {{ faq.answer }}
+        <p class="whitespace-pre-line">{{ faq.answer }}</p>
       </div>
     </div>
   </section>
