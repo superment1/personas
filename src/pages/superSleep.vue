@@ -27,26 +27,28 @@ import toast from '@/services/toastService.js';
 
 <template>
   <SuperHeader :show-redirect="false"/>
-  <section class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
-      id="super-sleep-pequeno">
-      <picture class="absolute inset-0 -z-10">
-    <source
-      type="image/webp"
-      srcset="/assets/hero-m-360.webp 360w,
-              /assets/hero-m-480.webp 480w,
-              /assets/hero-m-640.webp 640w,
-              /assets/hero-m-768.webp 768w,
-              /assets/hero-m-960.webp 960w"
-      sizes="100vw" />
-    <img
-      src="/assets/hero-m-768.webp"
-      alt="Super Natural Sleep no travesseiro"
-      class="w-full h-full object-cover object-[50%_50%]"
-      loading="eager"
-      width="768" height="820"
-      fetchpriority="high"
-      decoding="async"
-    />
+  <section 
+      id="super-sleep-pequeno"
+      class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
+  >
+    <picture class="absolute inset-0 -z-10">
+      <source
+        type="image/webp"
+        srcset="/assets/hero-m-360.webp 360w,
+                /assets/hero-m-480.webp 480w,
+                /assets/hero-m-640.webp 640w,
+                /assets/hero-m-768.webp 768w,
+                /assets/hero-m-960.webp 960w"
+        sizes="100vw" />
+      <img
+        src="/assets/hero-m-768.webp"
+        alt="Super Natural Sleep no travesseiro"
+        class="w-full h-full object-cover object-[50%_50%]"
+        loading="eager"
+        width="768" height="820"
+        fetchpriority="high"
+        decoding="async"
+      />
     </picture>
 
     <div class="title-super-natural-sleep">
@@ -103,7 +105,7 @@ import toast from '@/services/toastService.js';
         <ShopButton
           type="button"
           id="buy-button"
-          :anchorId="width > 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+          :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
           :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[165px] font-crossfit h-9">

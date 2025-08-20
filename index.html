@@ -9,7 +9,6 @@
     <link 
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" 
       rel="stylesheet"  media="print" onload="this.media='all'">
-
     <link rel="preload" as="image" 
           fetchpriority="high" 
           type="image/webp"
@@ -34,7 +33,7 @@
             /assets/hero-2880.webp 2880w"
           imagesizes="100vw"/>
     <meta name="theme-color" content="#fff">
-    <link rel="icon" type="image/png" href="/public/favicon.png">
+    <!-- <link rel="icon" type="image/png" href="/public/favicon.png"> -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <script>
@@ -78,33 +77,6 @@
         window.addEventListener('touchstart', onInteract, { passive:true });
       })();
     </script>
-    <!-- <script>
-      (function(){
-        const load = () => {
-          if (window.__tpLoaded) return; window.__tpLoaded = true;
-          // Google Tag Manager
-          const s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
-          document.head.appendChild(s);
-        };
-        const onFirstInteract = () => { load(); cleanup(); };
-        const cleanup = () => {
-          window.removeEventListener('scroll', onFirstInteract, { passive:true });
-          window.removeEventListener('mousemove', onFirstInteract);
-          window.removeEventListener('touchstart', onFirstInteract, { passive:true });
-        };
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(load, { timeout: 3000 });
-        } else {
-          setTimeout(load, 2000);
-        }
-        window.addEventListener('scroll', onFirstInteract, { passive:true });
-        window.addEventListener('mousemove', onFirstInteract);
-        window.addEventListener('touchstart', onFirstInteract, { passive:true });
-      })();
-    </script> -->
-
   </head>
   <body>
     <div id="app"></div>
