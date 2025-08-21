@@ -1,12 +1,12 @@
 <template>
     <!-- What Happens When You Sleep -->
-    <div class="w-full flex items-center justify-center mt-[62px] pb-[60px] md:mt-[38px] min-w-[350px]">
-        <div class="w-[full] min-w-[350px] md:w-[760px] lg:w-[960px] flex flex-col items-center justify-center">
+    <div class="w-full flex items-center justify-center mt-[62px] pb-[60px] md:mt-[38px] ">
+        <div class="w-[full] min-w-[316px] md:w-[760px] lg:w-[960px] flex flex-col items-center justify-center">
             <h2
-                class="w-[350px] md:w-full font-gelasio text-[28px] md:text-[34px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">
+                class="w-[316px] md:w-full font-gelasio text-[28px] md:text-[34px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
-            <div class="w-[350px] md:w-[760px] lg:w-[960px] grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 mb-6">
+            <div class="w-[316px] md:w-[760px] lg:w-[960px] grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 mb-6 ">
                 <!-- Benefits Grid -->
                 <div class="flex flex-col items-start gap-4 md:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
