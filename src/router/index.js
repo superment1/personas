@@ -11,7 +11,9 @@ const routes = [
   { path: '/faq',          name: 'faq',          component: () => import('../pages/faq.vue') },
   { path: '/about',        name: 'about',        component: () => import('../pages/about.vue') },
   { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
-  { path: '/discomfort',   name:'disconfort',    component: () => import('../pages/discomfort.vue') }
+  { path: '/discomfort',   name:'disconfort',    component: () => import('../pages/discomfort.vue') },
+  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')}
+  
 ]
 
 export const router = createRouter({
