@@ -2,7 +2,7 @@
     <!-- Final CTA Section -->
     <section id="cta-section" class="relative rounded-t-3xl bg-[#63CFF2]">
         <div
-            class="w-full px-0 p-[42px] h-[822px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.webp')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_0%] md:bg-cover md:bg-top bg-no-repeat">
+            class="w-full px-0 p-[42px] h-[822px] rounded-t-3xl bg-[url('@/assets/image/sleepWomam/bg_footer.webp')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[70%_0%] md:bg-top bg-no-repeat md:h-[650px]">
             <div class="w-full flex items-center justify-center lg:max-w-[90%] lg:mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[316px]">
@@ -25,7 +25,7 @@
                                     d="M7.81147 20.1592L6.02697 17.1517L2.63847 16.4092L2.96922 12.921L0.673218 10.294L2.96922 7.66696L2.63847 4.17871L6.02697 3.43621L7.81147 0.428711L11 1.78246L14.1885 0.428711L15.973 3.43621L19.3615 4.17871L19.0307 7.66696L21.3267 10.294L19.0307 12.921L19.3615 16.4092L15.973 17.1517L14.1885 20.1592L11 18.8055L7.81147 20.1592ZM9.94997 13.4977L15.2537 8.19396L14.2 7.10946L9.94997 11.3595L7.79997 9.24021L6.74622 10.294L9.94997 13.4977Z"
                                     fill="#D2F58C" />
                             </svg>
-                            <span class="ml-2 font-DMSans text-[16px] font-normal">30-day satisfaction guarantee</span>
+                            <span class="ml-2 font-DMSans text-[16px] font-light">30-day satisfaction guarantee</span>
                         </div>
                         <div class="flex items-center justify-start py-3">
                             <svg width="22" height="21" viewBox="0 0 22 21" class="w-6 h-6" fill="none"
@@ -34,7 +34,8 @@
                                     d="M7.81147 20.1592L6.02697 17.1517L2.63847 16.4092L2.96922 12.921L0.673218 10.294L2.96922 7.66696L2.63847 4.17871L6.02697 3.43621L7.81147 0.428711L11 1.78246L14.1885 0.428711L15.973 3.43621L19.3615 4.17871L19.0307 7.66696L21.3267 10.294L19.0307 12.921L19.3615 16.4092L15.973 17.1517L14.1885 20.1592L11 18.8055L7.81147 20.1592ZM9.94997 13.4977L15.2537 8.19396L14.2 7.10946L9.94997 11.3595L7.79997 9.24021L6.74622 10.294L9.94997 13.4977Z"
                                     fill="#D2F58C" />
                             </svg>
-                            <span class="ml-2 leading-[1.2]">Clean-label, clinically guided formulation</span>
+                            <span class="ml-2 leading-[1.2] font-DMSans text-[16px] font-light">Clean-label, clinically
+                                guided formulation</span>
                         </div>
                         <div class="flex items-center justify-start py-3">
                             <svg width="22" height="21" viewBox="0 0 22 21" class="w-8 h-8" fill="none"
@@ -43,7 +44,8 @@
                                     d="M7.81147 20.1592L6.02697 17.1517L2.63847 16.4092L2.96922 12.921L0.673218 10.294L2.96922 7.66696L2.63847 4.17871L6.02697 3.43621L7.81147 0.428711L11 1.78246L14.1885 0.428711L15.973 3.43621L19.3615 4.17871L19.0307 7.66696L21.3267 10.294L19.0307 12.921L19.3615 16.4092L15.973 17.1517L14.1885 20.1592L11 18.8055L7.81147 20.1592ZM9.94997 13.4977L15.2537 8.19396L14.2 7.10946L9.94997 11.3595L7.79997 9.24021L6.74622 10.294L9.94997 13.4977Z"
                                     fill="#D2F58C" />
                             </svg>
-                            <span class="ml-2 leading-[1.2]">Trusted U.S. manufacturing, under FDA and GMP
+                            <span class="ml-2 leading-[1.2] font-DMSans text-[16px] font-light">Trusted U.S.
+                                manufacturing, under FDA and GMP
                                 certification</span>
                         </div>
                     </div>
@@ -69,7 +71,7 @@
                     </div>
 
                     <!-- Right Side - Content -->
-                    <div class="text-left w-[380px]">
+                    <div class="text-left w-[380px] h-full">
                         <p class="text-[#A0D7FF] text-2xl font-medium italic font-gelasio mb-0 leading-[1.2]">
                             Sleep naturally. Wake up beautiful. Every day.
                         </p>
@@ -122,7 +124,7 @@
                         </div>
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-0 w-[380px] text-white justify-center justify-between bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition text-[22px]">
+                            class="mt-0 w-[342px] text-white justify-center justify-between bg-[#d2f58c] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition text-[22px]">
                             Shop: First Trial Special Offer
                         </ShopButton>
                     </div>
