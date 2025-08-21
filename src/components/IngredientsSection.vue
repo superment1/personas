@@ -1,10 +1,10 @@
 <template>
     <!-- Ingredients Section -->
     <section class="pt-10 lg:pt-16 bg-[#FFFAF0]">
-        <div class="md:max-w-7xl mx-auto px-4">
-            <div class="max-w-[21rem] md:justify-items-center md:max-w-full mx-auto">
+        <div class="w-full">
+            <div class="max-w-[21rem] w-[316px] md:justify-items-center md:max-w-full mx-auto">
                 <h2
-                    class="font-gelasio md:max-w-[700px] text-[28px] leading-[1.12] lg:text-[40px] text-[#525252] text-start md:text-center mb-2 lg:mb-12 italic">
+                    class="font-gelasio w-[316px] md:max-w-[700px] text-[28px] leading-[1.12] lg:text-[40px] text-[#525252] text-start md:text-center mb-2 lg:mb-12 italic">
                     An advanced botanical formula designed to support your sleep cycle.
                 </h2>
 
