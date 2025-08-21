@@ -1,4 +1,3 @@
-
 <script setup>
 import { useSeo } from '../composables/useSeo'
 import Header from '../components/Header.vue'
@@ -25,31 +24,23 @@ useSeo({
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[550px] lg:min-h-[630px] bg-[url('@/assets/image/sleepElderly/hero-mobile-2.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:100%] bg-[position:91%_100%] bg-no-repeat">
-            <Header color="#370F1E" :image-src="logoHeader" />
-            <HeroSectionElderly />
-        </div>
+        <Header color="#370F1E" :image-src="logoHeader" />
+        <HeroSectionElderly />
 
         <TaglineStripElderly />
 
         <ProductHighlightElderly />
-        <SleepTransformation/>
-        <IngredientsSectionElderly />         
-        
+        <SleepTransformation />
+        <IngredientsSectionElderly />
+
         <!-- <Guarantees/> -->
 
         <BadgesElderly />
 
         <CtaSectionElderly />
 
-        <Learnmore 
-            backgroundColor="#FFFAF0"
-            text="Learn more about us and how important is the right sleep"
-        />
+        <Learnmore backgroundColor="#FFFAF0" text="Learn more about us and how important is the right sleep" />
 
-        <Footer 
-            color="#370F1E"
-            :imageSrc="logoFooter"
-        />
+        <Footer color="#370F1E" :imageSrc="logoFooter" />
     </div>
 </template>
