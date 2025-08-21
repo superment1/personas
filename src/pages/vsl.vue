@@ -3,7 +3,10 @@ import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import BannerRetention from '../components/BannerRetention.vue'
-
+import FAQ from '../components/Faq.vue';
+import SuperFooter from '../components/SuperFooter.vue';
+import VslBadges from '../components/VslBadges.vue';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -111,7 +114,7 @@ function onModalClose() {
   // permite reabrir imediatamente ao próximo gesto de saída
   lastShown = 0
 }
-
+const hasStarted = ref(false)
 onMounted(() => {
   // ====== Exit-intent listeners ======
   window.addEventListener('mousemove', onMouseMove, { passive: true })
@@ -119,11 +122,11 @@ onMounted(() => {
   document.addEventListener('visibilitychange', onVisibilityChange)
   window.addEventListener('blur', onWindowBlur)
 
-  // Mobile
   window.addEventListener('popstate', onPopState)
   window.addEventListener('scroll', onScroll, { passive: true })
 
   const v = videoEl.value
+
   if (!fsHandlerAdded) {
     document.addEventListener('fullscreenchange', onFsChange)
     videoEl.value?.addEventListener?.('webkitendfullscreen', onFsChange)
@@ -132,9 +135,10 @@ onMounted(() => {
   if (v) {
     v.muted = true
     v.playsInline = true
-    v.play().catch(() => {})
+    // v.play().catch(() => {})
     io = new IntersectionObserver(([entry]) => {
       if (!videoEl.value) return
+      if (!hasStarted.value) return   
       if (entry.isIntersecting) videoEl.value.play().catch(() => {})
       else videoEl.value.pause()
     }, { threshold: 0.25 })
@@ -162,32 +166,32 @@ onBeforeUnmount(() => {
   <div class="w-full min-h-screen bg-white flex flex-col">
 
     <!-- Header -->
-    <header class="w-full bg-[#370F1E]">
+    <header class="hidden sm:flex w-full bg-[#370F1E]">
       <div class="h-14 justify-center flex items-center px-4">
       </div>
     </header>
 
-    <!-- Main -->
+    <!-- mobile -->
     <main class="flex-1 bg-[#6EC8F0]">
-      <div class="max-w-[330px] justify-items-center sm:max-w-[1260px] mx-auto px-4 py-8">
-        <div class="font-crossfit justify-items-center leading-none items-center text-[97px]">        
-          <h1 class="text-[#fff] items-center"> 
-            The Simple Natural Ritual 
+      <div class="max-w-[357px] justify-items-center sm:max-w-[1260px] mx-auto pb-[24px] pt-[34px]">
+        <div class="font-crossfit uppercase leading-none text-[38px] sm:text-[97px]">        
+          <h1 class="text-[#fff] leading-[0.9] items-center"> 
+            The Simple Natural Ritual That Finally 
           </h1>
           <h1 class="text-[#370F1E]"> 
-            That Ended My Sleepless Nights
+            Let  Me Sleep All Night.
           </h1>
         </div>
 
-        <div class="relative py-14 ">
+        <div class="relative pt-[25px]">
           <video
             ref="videoEl"
-            class="max-w-[600px] max-h-[750px] rounded-2xl shadow-lg"
+            class="maw-w-[349px] max-h-[432px] sm:max-w-[600px] sm:max-h-[750px] shadow-lg"
             preload="metadata"
             playsinline
             muted
             :controls="controlsEnabled"
-            poster="../assets/image/sleepElderly/bannerElderly.png"
+            poster="../assets/image/vsl/Homem.png"
           >
             <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
@@ -199,24 +203,26 @@ onBeforeUnmount(() => {
             @click="enterFullscreenWithSound"
             aria-label="Assistir em tela cheia com áudio"
           >
-                  <span class="relative inline-flex">
+            <span class="relative inline-flex">
               <!-- anel pulsante -->
-              <span class="absolute inline-flex h-24 w-24 rounded-full opacity-75 animate-ping bg-yellow-400"></span>
+              <span class="absolute inline-flex h-[123px] w-[123px] rounded-full opacity-75 animate-ping bg-[#FFDC03]"></span>
               <!-- botão -->
               <span
-                class="relative inline-flex h-24 w-24 items-center justify-center rounded-full bg-yellow-400 text-[#370F1E] font-extrabold shadow-lg"
+                class="relative inline-flex h-[123px] z-0 w-[123px] items-center text-[62px] justify-center rounded-full bg-yellow-400 text-[#fff] font-extrabold shadow-lg"
               >
-               Play ▶
+              ▶
+              <span class="absolute z-10 leading-none text-[#370F1E] text-[22px] font-crossfit">CLICK HERE PLAY VIDEO</span>
               </span>
+              
             </span>
           </button>
         </div>
       </div>
     </main>
 
-    <div class="w-full h-[318px] bg-[#370F1E]">
-      <div class="flex flex-col gap-[40px] pt-[65px]">
-        <div class="flex flex-row justify-center">
+    <div class="w-full h-[143px] sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
+      <div class="flex max-w-[349px] flex-col sm:gap-[40px]">
+        <div class="flex flex-row">
           <svg xmlns="http://www.w3.org/2000/svg" width="111" height="112" viewBox="0 0 111 112" fill="white">
             <path d="M45.5518 87.157C45.3495 87.3095 45.2428 87.5016 45.2428 87.7333C45.2428 87.9649 45.3271 88.1627 45.4844 88.3265C45.6473 88.496 45.8552 88.5751 46.1081 88.5751C46.389 88.5751 46.6587 88.4791 46.9115 88.2813C47.1026 88.1344 47.2262 87.9536 47.2824 87.7446C47.3217 87.6033 47.3442 87.3378 47.3442 86.9479V86.6202C47.1419 86.688 46.8273 86.7727 46.3946 86.8688C45.962 86.9649 45.6754 87.0609 45.5462 87.157H45.5518Z" fill="#fff"/>
             <path d="M56.7216 35.2216L55.8732 37.6737H57.5925L56.7216 35.2216Z" fill="#fff"/>
@@ -352,41 +358,73 @@ onBeforeUnmount(() => {
             <path d="M39.7034 90.0916C45.5175 93.8223 52.3282 95.9939 59.7481 95.9939C67.168 95.9939 74.0343 93.8223 79.793 90.0916H39.7034Z" fill="#370F1E"/>
           </svg>
         </div>
-        <h1 class="font-gelasio text-center italic text-[#fff] text-[30px]">Certified by the highest standards.</h1>
+        <h1 class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[30px]">Certified by the highest standards.</h1>
       </div>
       
     </div>
-    <div class="bg-[#fff] py-[3.45rem] justify-items-center">
-      <div class="justify-items-center">
-        <h1 class="text-[#6EC8F0] uppercase leading-none font-crossfit text-[83px]">Scientific References</h1>
-        <ul class="w-[960px] italic text-[#350E1D] font-gelasio font-normal">
-          <li class="flex gap-5 pb-[1.8rem] pt-[2.6rem] border-b-2 border-[#AAA]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20" fill="none">
-              <path d="M11.3872 16.502C11.3872 18.4503 10.0436 19.9283 8.09536 19.9283H3.42625C1.47799 19.9283 0 18.4503 0 16.502V12.1688C0 10.6236 0.235135 9.75029 0.738995 8.03716L2.78803 1.62134C3.09034 0.84875 3.76216 0.27771 4.60192 0.27771H9.47257C10.6147 0.27771 11.5552 1.28543 11.5216 2.42751L11.4208 8.33947C11.4208 8.84334 11.3872 9.41438 11.3872 9.91824V16.502ZM24.6556 16.502C24.6556 18.4503 23.2783 19.9283 21.3301 19.9283H16.661C14.7127 19.9283 13.2347 18.4503 13.2347 16.502V12.1688C13.2347 10.6236 13.4699 9.75029 13.9737 8.03716L16.0228 1.62134C16.3251 0.84875 17.0305 0.27771 17.8367 0.27771H22.7073C23.8494 0.27771 24.7899 1.28543 24.7899 2.42751L24.6556 8.33947V16.502Z" fill="#350E1D"/>
-            </svg>
+    <VslBadges/>
+    <div class="bg-[#fff] max-w-[349px] mx-auto py-[20px]">
+      <div class=" ">
+        <h1 class="text-[#350E1D] uppercase leading-none font-crossfit text-[30px] sm:text-[83px]">Scientific References</h1>
+        <ul class="max-w-[349px] sm:max-w-[960px] italic text-[#350E1D] font-gelasio font-normal">
+          <li class="flex gap-5 pb-[13px] pt-[17px] border-b border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[34px] leading-none">Sleep deprivation makes people less happy, more anxious.</h1>
-              <p class="text-[19px] pt-[14px]">Source: Montana State University</p>
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Montana State University</strong> – Study by Montana State researcher finds sleep deprivation makes people less happy, more anxious. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[1.8rem] pt-[2.3rem] border-b-2 border-[#AAA]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20" fill="none">
-              <path d="M11.3872 16.502C11.3872 18.4503 10.0436 19.9283 8.09536 19.9283H3.42625C1.47799 19.9283 0 18.4503 0 16.502V12.1688C0 10.6236 0.235135 9.75029 0.738995 8.03716L2.78803 1.62134C3.09034 0.84875 3.76216 0.27771 4.60192 0.27771H9.47257C10.6147 0.27771 11.5552 1.28543 11.5216 2.42751L11.4208 8.33947C11.4208 8.84334 11.3872 9.41438 11.3872 9.91824V16.502ZM24.6556 16.502C24.6556 18.4503 23.2783 19.9283 21.3301 19.9283H16.661C14.7127 19.9283 13.2347 18.4503 13.2347 16.502V12.1688C13.2347 10.6236 13.4699 9.75029 13.9737 8.03716L16.0228 1.62134C16.3251 0.84875 17.0305 0.27771 17.8367 0.27771H22.7073C23.8494 0.27771 24.7899 1.28543 24.7899 2.42751L24.6556 8.33947V16.502Z" fill="#350E1D"/>
-            </svg>
+          <li class="flex gap-5 pb-[13px] pt-[12px] border-b border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[34px] leading-none">Chronic sleep loss raises inflammation, weight gain, and cancer risk.</h1>
-              <p class="text-[19px] pt-[14px]">Source: Institute of Medicine (US) Committee on Sleep Medicine and Research</p>
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Colten, H. R., & Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health problem. (2006)</h1>
             </div>
           </li>
+          <li class="flex gap-5 pb-[13px] pt-[12px] border-b border-[#AAA]">
+            <div class="flex-col">
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Sleep Foundation </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pb-[13px] pt-[12px] border-b border-[#AAA]">
+            <div class="flex-col">
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Calhoun, D. A., & Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
+            </div>
+          </li>
+           <li class="flex gap-5 pb-[13px] pt-[12px] border-b border-[#AAA]">
+            <div class="flex-col">
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Mesarwi, O., Polak, J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance and obesity. (2013)</h1>
+            </div>
+          </li>
+           <li class="flex gap-5 pb-[13px] pt-[12px] border-b border-[#AAA]">
+            <div class="flex-col">
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Spiegel, K., Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose metabolism and obesity risk. (2009)</h1>
+            </div>
+          </li>
+           <li class="flex gap-5 pb-[13px] pt-[12px]">
+            <div class="flex-col">
+              <h1 class="text-[10px] font-normal tracking-wider sm:text-[34px] leading-none"><strong>Ungvari, Z., Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</h1>
+            </div>
+          </li>
+
         </ul>
       </div>
     </div>
-    <div class="bg-[#6EC8F0] flex justify-center items-center">
-      <div class="w-[1270px] py-[4.1rem]">
-        <p class="text-[#370F1E] font-gelasio italic font-normal leading-normal text-[32px] ">Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, restorative sleep. It does not contain melatonin or harsh chemicals. Super Natural Sleep is manufactured in the United States by an FDA registered and GMP-compliant laboratory. All product’s quality, safety, and compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose, treat, cure or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition. Super Natural Sleep is part of the commercial portfolio of Superment.</p>
+    <!-- DESKTOP -->
+    <div class="bg-[#350E1D] items-center">
+      <div class="max-w-[349px] py-[36px] font-gelasio font-medium  text-center justify-self-center">
+        <p class="title pt-[20px] text-[#fff] font-semibold text-[30px] leading-none italic">Why people love</p>
+        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[30px] pb-[32px] italic"> Super Natural Sleep?</p>
+        <div class="bg-white/10 pb-[17px] pt-[10px] text-[#fff] rounded-lg">
+          <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
+          <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better sleep.</p>
+        </div>
+        <TestimonialsCarousel/>
       </div>
-
     </div>
+    <div class="bg-[#fffaf0] py-[20px]">
+      <div class="max-w-[349px] items-center mx-auto">
+        <h1 class="text-center pb-[30px] leading-none text-[#370F1E] text-[28px] font-crossfit">Frequently asked<br>questions:</h1>
+        <FAQ />
+      </div>
+    </div>
+    <SuperFooter/>
 
     <!-- <BannerRetention
       v-model:open="modalOpen"
