@@ -11,11 +11,12 @@
                     class="w-[316px] h-[416px] flex flex-col items-center justify-start md:h-[180px] md:flex-row justify-center">
                     <div class="w-full h-[80px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px] "
                         style="border-color: #FFE1AA">
-                        <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-[180px] ">
+                        <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-[180px]">
                             <img src="@/assets/image/sleepWomam/passionflower.png" alt="Passionflower"
                                 class="w-[65px] h-[65px] md:h-[100px] md:w-[100px]  object-contain ml-5 md:ml-0" />
                         </div>
-                        <div class="w-full pl-11 flex flex-col items-start jusfity-start md:pl-0 md:mt-4 ">
+                        <div
+                            class="w-full pl-11 flex flex-col items-start justify-start md:pl-0 md:mt-4 md:items-center md:justify-center">
                             <span
                                 class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[150px]">Passionflower</span>
                             <span
@@ -33,14 +34,14 @@
                         </div>
                         <div class="w-full pl-11 flex flex-col items-start jusfity-start md:pl-0 md:mt-4">
                             <span
-                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[150px]">Corydalis</span>
+                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[180px]">Corydalis</span>
                             <span
-                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[150px]">Eases
+                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[180px]">Eases
                                 tension.</span>
                         </div>
                     </div>
 
-                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px]"
+                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px] "
                         style="border-color: #FFE1AA">
                         <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-full">
 
@@ -49,14 +50,14 @@
                         </div>
                         <div class="w-full pl-11 flex flex-col items-start jusfity-start md:pl-0 md:mt-4">
                             <span
-                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[150px]">Marshmallow</span>
+                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[180px]">Marshmallow</span>
                             <span
-                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[150px]">Soothes
+                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[180px]">Soothes
                                 digestion.</span>
                         </div>
                     </div>
 
-                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px]"
+                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px] "
                         style="border-color: #FFE1AA">
                         <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-full">
                             <img src="@/assets/image/sleepWomam/california-poppy.png" alt="California Poppy"
@@ -64,15 +65,15 @@
                         </div>
                         <div class="w-full pl-11 flex flex-col items-start jusfity-start md:pl-0 md:mt-4">
                             <span
-                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[150px]">California</span>
+                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[180px]">California</span>
                             <span
-                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[150px]">Relaxes
+                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[180px]">Relaxes
                                 the
                                 body.</span>
                         </div>
                     </div>
 
-                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px]"
+                    <div class="w-full h-[84px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px] "
                         style="border-color: #FFE1AA">
                         <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-full">
                             <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
@@ -80,10 +81,10 @@
                         </div>
                         <div class="w-full pl-11 flex flex-col items-start jusfity-start md:pl-0 md:mt-4">
                             <span
-                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[150px]">Prickly
+                                class="text-center font-DMSans text-[20px] font-light text-[#525252] h-[28px] md:w-[180px]">Prickly
                                 Pear</span>
                             <span
-                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[150px]">Keeps
+                                class="text-center font-DMSans text-[16px] font-light text-[#525252] md:w-[180px]">Keeps
                                 sleep
                                 steady.</span>
                         </div>
