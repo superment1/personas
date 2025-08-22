@@ -103,7 +103,7 @@ function toggle(index) {
     .faq {
       width: 100%;
       min-width: 700px;
-      max-width: 700px;
+      max-width: 1260px;
     }
   }
 

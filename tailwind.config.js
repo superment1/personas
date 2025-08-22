@@ -15,6 +15,16 @@ module.exports = {
         crossfit: ['Crossfit', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      keyframes: {
+        marquee: {
+          '0%':   { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 15s linear infinite',
+        'marquee-fast': 'marquee 5s linear infinite',
+      }
     },
   },
   plugins: [
