@@ -6,7 +6,7 @@
                 class="w-[316px] md:w-full font-gelasio text-[28px] md:text-[34px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">
                 What happens when you sleep naturally:
             </h2>
-            <div class="w-[316px] md:w-[760px] lg:w-[960px] grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 mb-6 ">
+            <div class="w-[316px] md:w-[760px] lg:w-[960px] grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 mb-[24px]">
                 <!-- Benefits Grid -->
                 <div class="flex flex-col items-start gap-4 md:items-start">
                     <img src="@/assets/image/sleepWomam/collagen.jpg" alt="Collagen"
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true class="mt-2 w-[316px] h-[50px] text-white justify-center justify-between lg:px-5 lg:mt-[26px] text-[16px] md:text-[18px] md:w-[350px]
+            <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true class="w-[316px] h-[50px] text-white justify-between lg:px-5 lg:mt-[26px] text-[16px] md:text-[18px] md:w-[350px]
                 bg-[#d2f58c] px-2 rounded-full font-light hover:bg-[#58663a]/50 transition">
                 Shop: check our opening discount
             </ShopButton>

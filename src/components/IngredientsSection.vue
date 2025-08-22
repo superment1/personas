@@ -4,11 +4,11 @@
         <div class="w-full">
             <div class="max-w-[21rem] w-[316px] md:justify-items-center md:max-w-full mx-auto">
                 <h2
-                    class="font-gelasio w-[316px] md:w-[700px] text-[28px] leading-[1.12] lg:text-[40px] text-[#525252] text-start md:text-center mb-2 lg:mb-12 italic">
+                    class="font-gelasio w-[316px] md:w-[700px] text-[28px] leading-[1.12] lg:text-[40px] text-[#525252] text-start md:text-center mb-[20px] lg:mb-12 italic">
                     An advanced botanical formula designed to support your sleep cycle.
                 </h2>
                 <div
-                    class="w-[316px] h-[416px] flex flex-col items-center justify-start md:h-[180px] md:flex-row justify-center">
+                    class="w-[316px] h-[416px] flex flex-col items-center md:h-[180px] md:flex-row justify-center">
                     <div class="w-full h-[80px] flex flex-row items-center justify-center border-b border-5 md:flex-col md:border-0 md:w-[180px] md:h-[180px] "
                         style="border-color: #FFE1AA">
                         <div class="w-[100px] h-[80px] md:h-[100px] flex items-center justify-center md:w-[180px] ">

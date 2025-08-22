@@ -408,18 +408,21 @@ onBeforeUnmount(() => {
     </div>
     <!-- DESKTOP -->
     <div class="bg-[#350E1D] items-center">
-      <div class="max-w-[349px] py-[36px] font-gelasio font-medium  text-center justify-self-center">
+      <div class="[349px] mx-auto py-[36px] font-gelasio font-medium  text-center justify-self-center">
         <p class="title pt-[20px] text-[#fff] font-semibold text-[30px] leading-none italic">Why people love</p>
         <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[30px] pb-[32px] italic"> Super Natural Sleep?</p>
         <div class="bg-white/10 pb-[17px] pt-[10px] text-[#fff] rounded-lg">
           <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
           <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better sleep.</p>
         </div>
+      </div>
+      <div class="max-w-[310px] mx-auto items-center"> 
         <TestimonialsCarousel/>
       </div>
+
     </div>
     <div class="bg-[#fffaf0] py-[20px]">
-      <div class="max-w-[349px] items-center mx-auto">
+      <div class="max-w-[320px] items-center mx-auto">
         <h1 class="text-center pb-[30px] leading-none text-[#370F1E] text-[28px] font-crossfit">Frequently asked<br>questions:</h1>
         <FAQ />
       </div>
