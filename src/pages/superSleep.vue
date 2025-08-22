@@ -260,7 +260,12 @@ import toast from '@/services/toastService.js';
       <FAQ />
     </section>
   </section>
-  <SuperFooter />
+  <div class="bg-[#370F1E] w-full">
+    <div class="max-w-[330px] mx-auto">
+      <SuperFooter />
+    </div>
+  </div>
+
   <NotificationDisplay />
   <BannerModal />
 </template>

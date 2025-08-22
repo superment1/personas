@@ -173,14 +173,14 @@ onBeforeUnmount(() => {
 
     <!-- mobile -->
     <main class="flex-1 bg-[#6EC8F0]">
-      <div class="max-w-[357px] justify-items-center sm:max-w-[1260px] mx-auto pb-[24px] pt-[34px]">
+      <div class="mx-auto w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] pt-[34px]">
         <div class="font-crossfit uppercase leading-none text-[38px] sm:text-[97px]">        
           <h1 class="text-[#fff] leading-[0.9] items-center"> 
-            The Simple Natural Ritual That Finally 
-          </h1>
-          <h1 class="text-[#370F1E]"> 
+            The Simple Natural Ritual That Finally           
+          <span class="text-[#370F1E]"> 
             Let  Me Sleep All Night.
-          </h1>
+          </span>
+        </h1>
         </div>
 
         <div class="relative pt-[25px]">
@@ -193,7 +193,6 @@ onBeforeUnmount(() => {
             :controls="controlsEnabled"
             poster="../assets/image/vsl/Homem.png"
           >
-            <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
           </video>
           <button
@@ -210,7 +209,9 @@ onBeforeUnmount(() => {
               <span
                 class="relative inline-flex h-[123px] z-0 w-[123px] items-center text-[62px] justify-center rounded-full bg-yellow-400 text-[#fff] font-extrabold shadow-lg"
               >
-              ▶
+              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="68" viewBox="0 0 59 68" fill="none">
+                <path d="M56.8168 30.7827C59.426 32.2911 59.426 36.0577 56.8168 37.5661L5.87853 67.0148C3.26671 68.5248 -4.49648e-05 66.64 -4.4833e-05 63.6231L-4.22585e-05 4.72567C-4.21266e-05 1.70879 3.2667 -0.175998 5.87852 1.33396L56.8168 30.7827Z" fill="white"/>
+              </svg>
               <span class="absolute z-10 leading-none text-[#370F1E] text-[22px] font-crossfit">CLICK HERE PLAY VIDEO</span>
               </span>
               
@@ -221,7 +222,7 @@ onBeforeUnmount(() => {
     </main>
 
     <div class="w-full h-[143px] sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
-      <div class="flex max-w-[349px] flex-col sm:gap-[40px]">
+      <div class="flex max-w-[349px] mx-auto flex-col sm:gap-[40px]">
         <div class="flex flex-row">
           <svg xmlns="http://www.w3.org/2000/svg" width="111" height="112" viewBox="0 0 111 112" fill="white">
             <path d="M45.5518 87.157C45.3495 87.3095 45.2428 87.5016 45.2428 87.7333C45.2428 87.9649 45.3271 88.1627 45.4844 88.3265C45.6473 88.496 45.8552 88.5751 46.1081 88.5751C46.389 88.5751 46.6587 88.4791 46.9115 88.2813C47.1026 88.1344 47.2262 87.9536 47.2824 87.7446C47.3217 87.6033 47.3442 87.3378 47.3442 86.9479V86.6202C47.1419 86.688 46.8273 86.7727 46.3946 86.8688C45.962 86.9649 45.6754 87.0609 45.5462 87.157H45.5518Z" fill="#fff"/>
@@ -358,13 +359,15 @@ onBeforeUnmount(() => {
             <path d="M39.7034 90.0916C45.5175 93.8223 52.3282 95.9939 59.7481 95.9939C67.168 95.9939 74.0343 93.8223 79.793 90.0916H39.7034Z" fill="#370F1E"/>
           </svg>
         </div>
-        <h1 class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[30px]">Certified by the highest standards.</h1>
+        <p class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[30px]">
+          Certified by the highest standards.
+        </p>
       </div>
       
     </div>
     <VslBadges/>
-    <div class="bg-[#fff] max-w-[349px] mx-auto py-[20px]">
-      <div class=" ">
+    <div class="bg-[#fff] w-full py-[20px]">
+      <div class="mx-auto w-full max-w-[349px] sm:max-w-[1260px]">
         <h1 class="text-[#350E1D] uppercase leading-none font-crossfit text-[30px] sm:text-[83px]">Scientific References</h1>
         <ul class="max-w-[349px] sm:max-w-[960px] italic text-[#350E1D] font-gelasio font-normal">
           <li class="flex gap-5 pb-[13px] pt-[17px] border-b border-[#AAA]">
@@ -407,10 +410,10 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <!-- DESKTOP -->
-    <div class="bg-[#350E1D] items-center">
-      <div class="[349px] mx-auto py-[36px] font-gelasio font-medium  text-center justify-self-center">
-        <p class="title pt-[20px] text-[#fff] font-semibold text-[30px] leading-none italic">Why people love</p>
-        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[30px] pb-[32px] italic"> Super Natural Sleep?</p>
+    <div class="bg-[#350E1D] w-full items-center">
+      <div class="max-w-[349px] mx-auto py-[36px] font-gelasio font-medium  text-center justify-self-center">
+        <p class="title pt-[20px] text-[#fff] font-semibold text-[31px] leading-none italic">Why people love</p>
+        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[31px] pb-[32px] italic"> Super Natural Sleep?</p>
         <div class="bg-white/10 pb-[17px] pt-[10px] text-[#fff] rounded-lg">
           <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
           <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better sleep.</p>
@@ -419,15 +422,19 @@ onBeforeUnmount(() => {
       <div class="max-w-[310px] mx-auto items-center"> 
         <TestimonialsCarousel/>
       </div>
-
     </div>
-    <div class="bg-[#fffaf0] py-[20px]">
-      <div class="max-w-[320px] items-center mx-auto">
+    <div class="bg-[#fffaf0] w-full py-[20px]">
+      <div class="max-w-[349px] mx-auto items-center">
         <h1 class="text-center pb-[30px] leading-none text-[#370F1E] text-[28px] font-crossfit">Frequently asked<br>questions:</h1>
         <FAQ />
       </div>
     </div>
-    <SuperFooter/>
+    <div class="bg-[#350E1D] w-full items-center">
+      <div class="max-w-[349px] mx-auto">
+        <SuperFooter/>
+      </div>
+    </div>
+
 
     <!-- <BannerRetention
       v-model:open="modalOpen"

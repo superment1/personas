@@ -68,5 +68,9 @@ const bgImageEnd = new URL('@/assets/image/sleepSuperment/frascos2.webp', import
     </div>
     <Frascos description="<span class='text-[#6EC8f0]'>Super Natural Sleep.</span> <span><br>Our latest way to help you sleep naturally.</span>" />
     <Stopwatch/>
-    <SuperFooter/>
+    <div class="bg-[#370F1E] w-full">
+        <div class="max-w-[330px] mx-auto">
+        <SuperFooter />
+        </div>
+    </div>
 </template>

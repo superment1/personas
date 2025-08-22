@@ -104,5 +104,9 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
         <FaqAccordion :items="faqData" />
     </div>
   </div>
-  <SuperFooter/>
+  <div class="bg-[#370F1E] w-full">
+    <div class="max-w-[330px] mx-auto">
+      <SuperFooter />
+    </div>
+  </div>
 </template>
