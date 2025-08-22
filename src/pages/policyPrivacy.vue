@@ -152,6 +152,9 @@ import SuperHeader from '../components/SuperHeader.vue'
             </div>                
         </div>
     </div>
-    <SuperFooter>
-    </SuperFooter>
+    <div class="bg-[#370F1E] w-full">
+        <div class="max-w-[330px] mx-auto">
+            <SuperFooter />
+        </div>
+    </div>
 </template>

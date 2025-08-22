@@ -16,13 +16,13 @@
     <!-- PARTE 1: Explore + Contact -->
     <div class="flex flex-col gap-0  md:gap-[3rem] lg:gap-[2.5rem] md:flex-row w-full justify-center items-center py-6 md:items-start">
       <!-- Explore -->
-      <div class="w-full max-w-[330px] py-[25px] text-white flex flex-col items-start justify-center" >
+      <div class="w-full py-[25px] text-white flex flex-col items-start justify-center" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-[25px] w-full text-left">Explore</h2>
-        <ul class="flex flex-col gap-1 space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
+        <ul class="flex flex-col w-full gap-1 space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
           <li
             v-for="item in links"
             :key="item.label"
-            class="group border-b border-[#FFFAF0] h-[32px] w-[330px] lg:w-[330px]"
+            class="group border-b border-[#FFFAF0] h-[32px]  lg:w-[330px]"
           >
             <RouterLink
               :to="item.href"
@@ -50,16 +50,16 @@
       </div>
 
       <!-- Contact -->
-      <div class="w-full max-w-[330px] lg:max-w-[330px] py-[25px] text-white font-dmsans flex flex-col items-start text-left" >
+      <div class="w-full lg:max-w-[330px] py-[25px] text-white font-dmsans flex flex-col items-start text-left" >
         <h2 class="text-4xl font-normal font-crossfit uppercase mb-[28px]">Contact</h2>
-        <ul class="text-[#FFF] flex flex-col gap-1">
-          <li class="flex items-center gap-2 border-b border-[#FFF] w-[330px] lg:w-[330px] pb-3 h-[32px]">
+        <ul class="text-[#FFF] w-full flex flex-col gap-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] pb-3 h-[32px]">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/email.webp" alt="email icon" class="w-6 h-6" />
             </span>
             <a href="mailto:superhelp@superment.co" class="label">superhelp@superment.co</a>
           </li>
-          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 w-[330px] lg:w-[330px] pb-3 h-[32px] mt-1">
+          <li class="flex items-center gap-2 border-b border-[#FFF] py-1 pb-3 h-[32px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
               <img src="@/assets/image/icons/instagram.webp" alt="instagram icon" class="w-6 h-6" />
             </span>
@@ -72,7 +72,7 @@
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="max-w-[330px] sm:max-w-[700px] flex justify-center md:justify-center">
+    <div class="sm:max-w-[700px] max-w-[330px] flex justify-center md:justify-center">
       <InputRD />
     </div>
 
@@ -85,7 +85,7 @@
       <p class="label-reserved">
         © Super Natural Sleep Research 2025. All Rights Reserved.
       </p>
-      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 w-[330px] md:w-[700px]">
+      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[700px]">
         Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, 
         restorative sleep. It does not contain melatonin or harsh chemicals. 
         Super Natural Sleep is manufactured in the United States by an FDA registered and 
