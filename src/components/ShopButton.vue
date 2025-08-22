@@ -45,7 +45,7 @@ const zooming = ref(false)
 const buttonClasses = computed(() => {
   const baseClasses = [
     'text-white',
-    'px-3',
+    'px-[1rem]',
     'py-0',
     'h-[50px]',
     'rounded-full',

@@ -13,14 +13,14 @@
                 <em class="italic">Natural, deep sleep is essential for healthy, radiant skin.</em>
             </h2>
             <p
-                class="text-[#525252] text-[16px] lg:text-[20px] font-light lg:text-[20px] md:mt-0  leading-5 -tracking-[0.01em] lg:leading-6">
+                class="text-[#525252] text-[16px]  font-light lg:text-[20px] md:mt-0  leading-5 -tracking-[0.01em] lg:leading-6">
                 Support your skin's regeneration cycle with Super Natural Sleep: <br class="hidden lg:block">a
                 plant-based, non-sedative
                 formula designed for real <br class="block md:hidden">recovery. No melatonin, no harsh <br
                     class="block md:hidden">chemicals. Just real, restorative rest.
             </p>
             <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true
-                class="mt-5 md:mt-4 w-[316px] h-[50px] text-white justify-center justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-[20px] lg:px-5 lg:w-[392px]">
+                class="mt-5 md:mt-4 w-[316px] h-[50px] text-white justify-between bg-[#d2f58c] rounded-full text-[1rem] font-light hover:bg-[#58663a]/50 transition lg:text-[20px] lg:px-5 lg:w-[392px]">
                 Shop: check our opening discount
             </ShopButton>
         </div>

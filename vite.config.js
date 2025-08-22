@@ -10,11 +10,11 @@ export default defineConfig({
     alias: { '@': path.resolve(__dirname, './src') }
   },
   build: {
-    target: 'es2019',               // <— deixa de emitir JS legado
+    target: 'es2019',              
     minify: 'esbuild',
     cssCodeSplit: true,
     assetsInlineLimit: 1024,
-    modulePreload: { polyfill: false }, // <— não injeta polyfill de modulepreload
+    modulePreload: { polyfill: false }, 
     rollupOptions: {
       treeshake: true,
       output: {
@@ -28,23 +28,7 @@ export default defineConfig({
     }
   },
   esbuild: {
-    drop: ['console','debugger']    // opcional: menos JS para parse/executar
+    drop: ['console','debugger']  
   }
 })
 
-// // https://vite.dev/config/
-// export default defineConfig({
-//   base: '/sleep/',
-//   plugins: [vue()],
-//   resolve: {
-//     alias: {
-//       '@': path.resolve(__dirname, './src')
-//     }
-//   },
-//   build: {
-//     target: 'es2017',
-//     minify: 'esbuild',
-//     cssCodeSplit: true,
-//     assetsInlineLimit: 4096,
-//   }
-// })
