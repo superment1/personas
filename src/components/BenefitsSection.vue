@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true class="w-[316px] h-[50px] text-white justify-between lg:px-5 lg:mt-[26px] text-[16px] md:text-[18px] md:w-[350px]
+            <ShopButton id="buy-button" anchorId="cta-section" textColorClass="text-[#58663a]" :showIcon=true class="mt-2 w-[316px] h-[50px] text-white justify-center justify-between lg:px-5 lg:mt-[26px] text-[16px]
                 bg-[#d2f58c] px-2 rounded-full font-light hover:bg-[#58663a]/50 transition">
                 Shop: check our opening discount
             </ShopButton>
