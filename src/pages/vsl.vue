@@ -12,7 +12,7 @@ const router = useRouter()
 const modalOpen = ref(false)
 const videoEl = ref(null)
 
-const showAfterVideo = ref(false)
+const showAfterVideo = ref(true)
 
 const urlPath = '/supersleep'
 function openModal() { modalOpen.value = true }
@@ -186,7 +186,8 @@ onBeforeUnmount(() => {
     </header>
     <!-- mobile -->
     <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] px-10 sm:px-0">
-      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
+      <div
+        class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
         <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[591px]">
           <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
@@ -196,7 +197,7 @@ onBeforeUnmount(() => {
               </span>
             </h1>
           </div>
-           
+
           <div class="hidden sm:block font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.875] items-center">
               THE SOLUTION <br>THAT FINALLY
@@ -209,9 +210,7 @@ onBeforeUnmount(() => {
           <div class="relative z-10 pt-[28px] sm:pt-0">
             <video ref="videoEl" @ended="onVideoEnded"
               class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] rounded-md sm:h-[812px] sm:max-h-[812px] shadow-lg"
-              preload="metadata" 
-              playsinline muted 
-              >
+              preload="metadata" playsinline muted>
               <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             </video>
             <button v-if="showPlayOverlay" type="button"
@@ -604,10 +603,11 @@ onBeforeUnmount(() => {
             </svg>
           </div>
           <div class="sm:w-[1260px] sm:max-w-[100%] max-w-[349px]">
-            <p class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[22px]">
+            <p
+              class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[22px]">
               Certified by the highest standards of America.
             </p>
-          </div> 
+          </div>
         </div>
       </div>
     </main>
@@ -954,7 +954,7 @@ onBeforeUnmount(() => {
           </svg>
         </div>
         <p class="font-gelasio text-center font-normal relative bottom-4 italic text-[#fff] text-[13px] sm:text-[30px]">
-         Certified by the highest standards of America.
+          Certified by the highest standards of America.
         </p>
       </div>
 
@@ -969,36 +969,42 @@ onBeforeUnmount(() => {
           <h1 class="text-[#350E1D] leading-[0.89] font-crossfit text-[30px] text-start sm:text-[83px] ">
             Scientific References</h1>
         </div>
-        <ul class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
+        <ul
+          class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
           <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b-2 border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[580px] sm:text-[18px] leading-[1.2]"><strong>Montana State
+              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[580px] sm:text-[18px] leading-[1.2]">
+                <strong>Montana State
                   University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
                 happy, more anxious. (n.d.)</h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[26px] border-b-2 border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R., &
+              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R.,
+                  &
                   Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
                 problem. (2006)</h1>
             </div>
           </li>
           <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep Foundation
+              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep
+                  Foundation
                 </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun, D. A., &
+              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun,
+                  D. A., &
                   Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b-2 border-[#AAA]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O., Polak,
+              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O.,
+                  Polak,
                   J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
                 and obesity. (2013)</h1>
             </div>
@@ -1037,10 +1043,12 @@ onBeforeUnmount(() => {
     </div>
     <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
       <div class="flex flex-col items-center sm:max-w-[1260px]">
-        <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
+        <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">
+          Frequently asked <br>
           questions:</h1>
-        <h1 class="text-start hidden sm:block pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
-      questions:</h1>
+        <h1 class="text-start hidden sm:block pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">
+          Frequently asked <br>
+          questions:</h1>
         <FAQ />
       </div>
     </div>
