@@ -184,34 +184,33 @@ onBeforeUnmount(() => {
       <div class="h-[45px] justify-center  flex items-center px-4">
       </div>
     </header>
-
     <!-- mobile -->
     <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] px-10 sm:px-0">
-      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[77px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-32 h-[591px]">
-          <div class="sm:hidden font-crossfit uppercase leading-none text-[38px] sm:text-[80px]">
+      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[591px]">
+          <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
-              The Simple Natural Ritual That Finally  
+              The solution that
               <span class="text-[#370F1E]">
-                Let Me Sleep All Night.
+                finally ended my sleepless nights.
               </span>
             </h1>
           </div>
-          <div class="hidden sm:block font-crossfit uppercase leading-none text-[38px] sm:text-[80px]">
+           
+          <div class="hidden sm:block font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.875] items-center">
-              The Simple <br> Natural Ritual
+              THE SOLUTION <br>THAT FINALLY
               <br><span class="text-[#370F1E]">
-                That Finally <br>Let Me Sleep <br>All Night.
+                ENDED MY <br>SLEEPLESS <br>NIGHTS.
               </span>
             </h1>
           </div>
 
           <div class="relative z-10 pt-[28px] sm:pt-0">
             <video ref="videoEl" @ended="onVideoEnded"
-              class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px] shadow-lg"
+              class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] rounded-md sm:h-[812px] sm:max-h-[812px] shadow-lg"
               preload="metadata" 
               playsinline muted 
-              :controls="controlsEnabled" 
               >
               <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             </video>
@@ -964,54 +963,54 @@ onBeforeUnmount(() => {
       <VslBadges />
     </div>
 
-    <div class="bg-[#FFFAF0] w-full pt-[69px] pb-[20px]">
-      <div class="px-10 flex flex-col gap-0 sm:gap-[48px] items-center justify-start">
+    <div class="bg-[#FFFAF0] w-full pt-[35px] pb-[20px]">
+      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[48px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-[#350E1D] uppercase leading-[0.89] font-crossfit text-[30px] text-start sm:text-[83px] ">
-            Scientific <br>References</h1>
+          <h1 class="text-[#350E1D] leading-[0.89] font-crossfit text-[30px] text-start sm:text-[83px] ">
+            Scientific References</h1>
         </div>
-        <ul class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-gelasio font-normal">
-          <li class="flex gap-5 pb-[18px] pt-[17px] border-b-2 border-[#AAA]">
+        <ul class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
+          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b-2 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[580px] sm:text-[18px] leading-[1.2]"><strong>Montana State
                   University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
                 happy, more anxious. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[17px] pt-[26px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[26px] border-b-2 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R., &
                   Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
                 problem. (2006)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[18px] pt-[26px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep Foundation
                 </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[18px] pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun, D. A., &
                   Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[18px] pt-[16px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b-2 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O., Polak,
                   J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
                 and obesity. (2013)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[18px] pt-[25px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b-2 border-[#AAA]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Spiegel, K.,
                   Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose
                 metabolism and obesity risk. (2009)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pb-[18px] pt-[25px]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px]">
             <div class="flex-col">
               <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Ungvari, Z.,
                   Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced
@@ -1038,8 +1037,10 @@ onBeforeUnmount(() => {
     </div>
     <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
       <div class="flex flex-col items-center sm:max-w-[1260px]">
-        <h1 class="text-center pb-[30px] leading-none text-[#370F1E] text-[42px] font-crossfit">Frequently asked
+        <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
           questions:</h1>
+        <h1 class="text-start hidden sm:block pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
+      questions:</h1>
         <FAQ />
       </div>
     </div>
@@ -1049,7 +1050,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div v-else class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
-      <div class="max-w-[349px] flex flex-col justify-center items-center mx-auto">
+      <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
           <span class="inline-flex text-center items-baseline">SUPERMENT<sub
               class="font-sans text-sm leading-none font-thin">®</sub></span>
@@ -1057,7 +1058,7 @@ onBeforeUnmount(() => {
         <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
           © Super Natural Sleep Research 2025.<br> All Rights Reserved.
         </p>
-        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[700px]">
+        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3">
           Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and
           guide the user into deep,
           restorative sleep. It does not contain melatonin or harsh chemicals.
