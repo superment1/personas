@@ -12,7 +12,8 @@ const routes = [
   { path: '/about',        name: 'about',        component: () => import('../pages/about.vue') },
   { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
   { path: '/discomfort',   name:'disconfort',    component: () => import('../pages/discomfort.vue') },
-  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')}
+  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')},
+  { path: '/vsl2',          name:'vsl2',           component: () => import('../pages/vsl2.vue')}
   
 ]
 
@@ -46,7 +47,8 @@ router.afterEach((to) => {
     discomfort: '#370F1E',
     menopause: '#E6B4FF',
     privacypolicy:'#E1DCCD',
-    vsl:'#6EC8F0'
+    vsl:'#6EC8F0',
+    vsl2:'#6EC8F0'
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)

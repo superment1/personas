@@ -2,111 +2,103 @@
 import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import BannerRetention from '../components/BannerRetention.vue'
 import FAQ from '../components/Faq.vue';
-import SuperFooter from '../components/SuperFooter.vue';
-import VslBadges from '../components/VslBadges.vue';
-import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
+import BannerRetention from '../components/BannerRetention.vue'
 
 const router = useRouter()
-const modalOpen = ref(false)
+// const modalOpen = ref(false)
 const videoEl = ref(null)
 
-const showAfterVideo = ref(true)
+const showAfterVideo = ref(false)
 
-const urlPath = '/supersleep'
-function openModal() { modalOpen.value = true }
-function goToPage() { router.push(urlPath) }
-
-/** ===== Exit-intent config ===== */
-const COOLDOWN_MS = 20000
-const TOP_ZONE = 8
-let lastShown = 0
-let lastY = 9999
-let io
-
-function openExitModal() {
-  const now = Date.now()
-  if (now - lastShown < COOLDOWN_MS) return
-  modalOpen.value = true
-  lastShown = now
-}
-
-/** Desktop: mouse indo pro topo (barra de URL/fechar aba) */
-function onMouseMove(e) {
-  // movimento para cima e perto do topo
-  const goingUp = e.clientY < lastY
-  if (goingUp && e.clientY <= TOP_ZONE) openExitModal()
-  lastY = e.clientY
-}
-/** Desktop: mouse saiu da janela pelo topo */
-function onMouseOut(e) {
-  if (!e.relatedTarget && e.clientY <= 0) openExitModal()
-}
-/** Abandono por troca de aba/janela */
-function onVisibilityChange() {
-  if (document.visibilityState === 'hidden') openExitModal()
-}
-function onWindowBlur() {
-  openExitModal()
-}
-
-/** Mobile: “voltar” do navegador */
-function onPopState() {
-  openExitModal()
-}
+/* ===== Redireciona ao terminar ===== */
+const REDIRECT_URL = '/supersleep'
 function onVideoEnded() {
-  showAfterVideo.value = true
+  router.push(REDIRECT_URL)
+}
+
+// const route = useRoute()
+// /* Pode vir de prop/env. Exemplo via query: ?vturb=https://scripts.converteai.net/.../player.js */
+// const vturbSrc = computed(() => route.query.vturb || import.meta.env.VITE_VTURB_PLAYER_SRC)
+
+// function extractPlayerId(url) {
+//   // pega o trecho /players/<PLAYER_ID>/
+//   const m = /\/players\/([^/]+)\//.exec(url || '')
+//   return m ? m[1] : null
+// }
+
+let io = null // você já usa io; garanta que está declarado
+let lastAllowedTime = 0
+const SEEK_TOLERANCE = 0.3 // tolerância anti-bounce (segundos)
+
+function attachAntiSeekGuards(v) {
+  // atualiza o maior tempo já assistido
+  const onTimeUpdate = () => {
+    if (v.currentTime - lastAllowedTime > SEEK_TOLERANCE) {
+      lastAllowedTime = v.currentTime
+    }
+  }
+
+  const onSeeking = () => {
+    // se tentou pular pra frente, volta
+    if (v.currentTime > lastAllowedTime + SEEK_TOLERANCE) {
+      v.currentTime = lastAllowedTime
+    }
+  }
+
+  const onRateChange = () => {
+    if (v.playbackRate !== 1) v.playbackRate = 1
+  }
+
+  const onContextMenu = (e) => e.preventDefault() // desabilita menu com “Salvar vídeo”, etc.
+
+  v.addEventListener('timeupdate', onTimeUpdate)
+  v.addEventListener('seeking', onSeeking)
+  v.addEventListener('ratechange', onRateChange)
+  v.addEventListener('contextmenu', onContextMenu)
+
+  // guarda funções para remover depois, se quiser
+  v.__antiSeekGuards = { onTimeUpdate, onSeeking, onRateChange, onContextMenu }
+}
+
+function detachAntiSeekGuards(v) {
+  const g = v?.__antiSeekGuards
+  if (!g) return
+  v.removeEventListener('timeupdate', g.onTimeUpdate)
+  v.removeEventListener('seeking', g.onSeeking)
+  v.removeEventListener('ratechange', g.onRateChange)
+  v.removeEventListener('contextmenu', g.onContextMenu)
+  delete v.__antiSeekGuards
 }
 function onVideoPlay() {
   hasStarted.value = true
-  // se o usuário der replay do começo, esconda de novo
-  const v = videoEl.value
-  if (v && v.currentTime < 0.5) showAfterVideo.value = false
-}
-/** Mobile: scroll intenso pra cima (sinal de abandono) */
-let lastScrollY = 0
-function onScroll() {
-  const y = window.scrollY
-  const delta = lastScrollY - y
-  if (delta > 120) openExitModal()
-  lastScrollY = y
 }
 
 const showPlayOverlay = ref(true)
 const controlsEnabled = ref(false)
 let fsHandlerAdded = false
 
+const isFs = ref(false)
+
 async function enterFullscreenWithSound() {
   const v = videoEl.value
   if (!v) return
 
   try {
+    // 1) som ligado
     v.muted = false
     v.volume = 1
 
-    if (typeof v.webkitEnterFullscreen === 'function') {
-      // @ts-ignore
-      v.webkitEnterFullscreen()
-      await v.play().catch(() => { })
-      controlsEnabled.value = true
-      showPlayOverlay.value = false
-      return
-    }
+    // 2) tocar
+    await v.play().catch(() => {})
 
-    // Demais navegadores
-    if (!document.fullscreenElement) {
-      await v.requestFullscreen?.().catch(async () => {
-        const container = v.parentElement
-        await container?.requestFullscreen?.()
-      })
-    }
-
-    await v.play().catch(() => { })
-    controlsEnabled.value = true
+    // 3) ativar fullscreen "falso" (classe no container)
+    isFs.value = true
     showPlayOverlay.value = false
-  } catch (e) {
-    // se bloquear, mantém o botão visível
+
+    // 4) (opcional) bloquear scroll da página enquanto em FS falso
+    document.documentElement.style.overflow = 'hidden'
+  } catch {
     showPlayOverlay.value = true
   }
 }
@@ -115,44 +107,32 @@ function onFsChange() {
   if (!document.fullscreenElement) {
     showPlayOverlay.value = true
     controlsEnabled.value = false
-    openModal()
     // volta a mutar, se quiser repetir o comportamento silencioso
     if (videoEl.value) videoEl.value.muted = true
   }
 }
 
-function onModalClose() {
-  // permite reabrir imediatamente ao próximo gesto de saída
-  lastShown = 0
-}
 const hasStarted = ref(false)
 onMounted(() => {
-  // ====== Exit-intent listeners ======
-  window.addEventListener('mousemove', onMouseMove, { passive: true })
-  document.addEventListener('mouseout', onMouseOut, { passive: true })
-  document.addEventListener('visibilitychange', onVisibilityChange)
-  window.addEventListener('blur', onWindowBlur)
-
-  window.addEventListener('popstate', onPopState)
-  window.addEventListener('scroll', onScroll, { passive: true })
-
   const v = videoEl.value
 
   if (!fsHandlerAdded) {
     document.addEventListener('fullscreenchange', onFsChange)
-    videoEl.value?.addEventListener?.('webkitendfullscreen', onFsChange)
     fsHandlerAdded = true
   }
+
   if (v) {
     v.muted = true
     v.playsInline = true
     v.addEventListener('ended', onVideoEnded)
     v.addEventListener('play', onVideoPlay)
-    // v.play().catch(() => {})
+    // iOS: agora aqui, depois de garantir v
+    v.addEventListener?.('webkitendfullscreen', onFsChange)
+    attachAntiSeekGuards(v)
     io = new IntersectionObserver(([entry]) => {
       if (!videoEl.value) return
       if (!hasStarted.value) return
-      if (entry.isIntersecting) videoEl.value.play().catch(() => { })
+      if (entry.isIntersecting) videoEl.value.play().catch(() => {})
       else videoEl.value.pause()
     }, { threshold: 0.25 })
     io.observe(v)
@@ -160,19 +140,18 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', onMouseMove)
-  document.removeEventListener('mouseout', onMouseOut)
-  document.removeEventListener('visibilitychange', onVisibilityChange)
-  window.removeEventListener('blur', onWindowBlur)
-
-  window.removeEventListener('popstate', onPopState)
-  window.removeEventListener('scroll', onScroll)
   const v = videoEl.value
   v?.removeEventListener?.('ended', onVideoEnded)
   v?.removeEventListener?.('play', onVideoPlay)
-  if (io && videoEl.value) io.unobserve(videoEl.value)
+  detachAntiSeekGuards(v)
+  if (io && v) {
+    io.unobserve(v)
+    io.disconnect()
+    io = null
+  }
+
   document.removeEventListener('fullscreenchange', onFsChange)
-  videoEl.value?.removeEventListener?.('webkitendfullscreen', onFsChange)
+  v?.removeEventListener?.('webkitendfullscreen', onFsChange)
 })
 
 </script>
@@ -186,8 +165,7 @@ onBeforeUnmount(() => {
     </header>
     <!-- mobile -->
     <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] px-10 sm:px-0">
-      <div
-        class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
+      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
         <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[591px]">
           <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
@@ -197,7 +175,7 @@ onBeforeUnmount(() => {
               </span>
             </h1>
           </div>
-
+           
           <div class="hidden sm:block font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.875] items-center">
               THE SOLUTION <br>THAT FINALLY
@@ -208,13 +186,24 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="relative z-10 pt-[28px] sm:pt-0">
-            <video ref="videoEl" @ended="onVideoEnded"
-              class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] rounded-md sm:h-[812px] sm:max-h-[812px] shadow-lg"
-              preload="metadata" playsinline muted>
+            <video
+              ref="videoEl"
+              @ended="onVideoEnded"
+              class="no-seek w-[349px] rounded-md shadow-lg maw-w-[349px] max-h-[432px] sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px]"
+              preload="metadata"
+              playsinline
+              muted
+              controls
+              controlslist="nodownload noplaybackrate noremoteplayback"
+              disablepictureinpicture
+              disableremoteplayback
+              x-webkit-airplay="deny"
+            >
               <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             </video>
             <button v-if="showPlayOverlay" type="button"
-              class="absolute inset-0 flex items-center sm:h-[812px]  justify-center" @click="enterFullscreenWithSound"
+              class="absolute inset-0 flex items-center sm:h-[812px]  justify-center" 
+              @click="enterFullscreenWithSound"
               aria-label="Assistir em tela cheia com áudio">
               <span class="relative inline-flex">
                 <!-- anel pulsante -->
@@ -237,26 +226,6 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
-        <div
-          class="overflow-hidden max-w-[100%] xl:max-w-[50%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
-          <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-          </div>
-        </div>
-      </div>
-
       <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[291px] flex-col bg-[#370F1E]">
         <div class="flex px-10 flex-col items-center sm:pt-[8px] sm:gap-[38px]">
           <div class="flex flex-row sm:w-[1260px] sm:max-w-[100%] max-w-[349px] ">
@@ -603,11 +572,10 @@ onBeforeUnmount(() => {
             </svg>
           </div>
           <div class="sm:w-[1260px] sm:max-w-[100%] max-w-[349px]">
-            <p
-              class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[22px]">
+            <p class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[22px]">
               Certified by the highest standards of America.
             </p>
-          </div>
+          </div> 
         </div>
       </div>
     </main>
@@ -954,72 +922,60 @@ onBeforeUnmount(() => {
           </svg>
         </div>
         <p class="font-gelasio text-center font-normal relative bottom-4 italic text-[#fff] text-[13px] sm:text-[30px]">
-          Certified by the highest standards of America.
+         Certified by the highest standards of America.
         </p>
       </div>
-
     </div>
-    <div v-show="showAfterVideo" class="">
-      <VslBadges />
-    </div>
-
-    <div class="bg-[#FFFAF0] w-full pt-[35px] pb-[20px]">
-      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[48px] items-center justify-start">
+    <div class="bg-[#FFFAF0] w-full pt-[54px] pb-[20px]">
+      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-[#350E1D] leading-[0.89] font-crossfit text-[30px] text-start sm:text-[83px] ">
+          <h1 class="text-[#350E1D] leading-[0.85] pb-[46px] font-crossfit text-[30px] text-center sm:text-[68px] ">
             Scientific References</h1>
         </div>
-        <ul
-          class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
-          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b-2 border-[#AAA]">
+        <ul class="columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
+          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[580px] sm:text-[18px] leading-[1.2]">
-                <strong>Montana State
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Montana State
                   University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
-                happy, more anxious. (n.d.)
-              </h1>
+                happy, more anxious. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[26px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R.,
-                  &
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Colten, H. R., &
                   Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
                 problem. (2006)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep
-                  Foundation
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Sleep Foundation
                 </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun,
-                  D. A., &
-                  Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Calhoun, D. A., &
+                  Harding, S. M.</strong> – Sleep and hypertension. (2010)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O.,
-                  Polak,
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Mesarwi, O., Polak,
                   J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
                 and obesity. (2013)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Spiegel, K.,
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Spiegel, K.,
                   Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose
                 metabolism and obesity risk. (2009)</h1>
             </div>
           </li>
           <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Ungvari, Z.,
+              <h1 class="text-[13px] font-normal  sm:pb-[18px] tracking-[1px] sm:text-[24px] border-b border-[#370F1E] leading-[1.2]"><strong>Ungvari, Z.,
                   Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced
                 sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</h1>
             </div>
@@ -1027,39 +983,17 @@ onBeforeUnmount(() => {
         </ul>
       </div>
     </div>
-    <!-- DESKTOP -->
-    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
-      <div class="max-w-[349px] mx-auto py-[36px] font-gelasio font-medium  text-center justify-self-center">
-        <p class="title pt-[20px] text-[#fff] font-semibold text-[31px] leading-none italic">Why people love</p>
-        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[31px] pb-[32px] italic"> Super Natural Sleep?</p>
-        <div class="bg-white/10 pb-[17px] pt-[10px] text-[#fff] rounded-lg">
-          <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
-          <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better
-            sleep.</p>
-        </div>
-      </div>
-      <div class="max-w-[310px] mx-auto items-center">
-        <TestimonialsCarousel />
-      </div>
-    </div>
     <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
       <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">
-            Frequently asked <br>
+          <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
             questions:</h1>
-          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
-            Frequently asked questions:</h1>
+          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">Frequently asked questions:</h1>
           <FAQ />
         </div>
       </div>
     </div>
-    <div v-if="showAfterVideo" class="bg-[#350E1D] w-full items-center">
-      <div class="max-w-[349px] mx-auto">
-        <SuperFooter />
-      </div>
-    </div>
-    <div v-else class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
+    <div class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
       <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
           <span class="inline-flex text-center items-baseline">SUPERMENT<sub
