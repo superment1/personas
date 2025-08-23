@@ -210,9 +210,8 @@ onBeforeUnmount(() => {
           <div class="relative z-10 pt-[28px] sm:pt-0">
             <video ref="videoEl" @ended="onVideoEnded"
               class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px] shadow-lg"
-              preload="metadata" playsinline muted :controls="controlsEnabled"
-              src="https://www.youtube.com/watch?v=bQpBKzNJ3Tw bg-[red]">
-
+              preload="metadata" playsinline muted :controls="controlsEnabled" poster="../assets/image/vsl/Homem.png">
+              <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
             </video>
             <button v-if="showPlayOverlay" type="button"
               class="absolute inset-0 flex items-center sm:h-[812px]  justify-center" @click="enterFullscreenWithSound"
