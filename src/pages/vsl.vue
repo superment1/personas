@@ -1036,12 +1036,13 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
-      <div class="flex flex-col items-center sm:max-w-[1260px]">
-        <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
-          questions:</h1>
-        <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
-      questions:</h1>
-        <FAQ />
+      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
+        <div class="w-full max-w-[349px] md:max-w-[1260px]">
+          <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
+            questions:</h1>
+          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">Frequently asked questions:</h1>
+          <FAQ />
+        </div>
       </div>
     </div>
     <div v-if="showAfterVideo" class="bg-[#350E1D] w-full items-center">

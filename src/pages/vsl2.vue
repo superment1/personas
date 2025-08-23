@@ -17,6 +17,16 @@ function onVideoEnded() {
   router.push(REDIRECT_URL)
 }
 
+// const route = useRoute()
+// /* Pode vir de prop/env. Exemplo via query: ?vturb=https://scripts.converteai.net/.../player.js */
+// const vturbSrc = computed(() => route.query.vturb || import.meta.env.VITE_VTURB_PLAYER_SRC)
+
+// function extractPlayerId(url) {
+//   // pega o trecho /players/<PLAYER_ID>/
+//   const m = /\/players\/([^/]+)\//.exec(url || '')
+//   return m ? m[1] : null
+// }
+
 let io = null // você já usa io; garanta que está declarado
 let lastAllowedTime = 0
 const SEEK_TOLERANCE = 0.3 // tolerância anti-bounce (segundos)
@@ -916,56 +926,56 @@ onBeforeUnmount(() => {
         </p>
       </div>
     </div>
-    <div class="bg-[#FFFAF0] w-full pt-[70px] pb-[20px]">
+    <div class="bg-[#FFFAF0] w-full pt-[54px] pb-[20px]">
       <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-[#350E1D] leading-[0.85] font-crossfit text-[30px] text-start sm:text-[68px] ">
+          <h1 class="text-[#350E1D] leading-[0.85] pb-[46px] font-crossfit text-[30px] text-center sm:text-[68px] ">
             Scientific References</h1>
         </div>
-        <ul class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
-          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b-2 border-[#AAA]">
+        <ul class="columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
+          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[600px] sm:text-[18px] leading-[1.2]"><strong>Montana State
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Montana State
                   University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
                 happy, more anxious. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R., &
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Colten, H. R., &
                   Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
                 problem. (2006)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep Foundation
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Sleep Foundation
                 </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun, D. A., &
-                  Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Calhoun, D. A., &
+                  Harding, S. M.</strong> – Sleep and hypertension. (2010)</h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O., Polak,
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Mesarwi, O., Polak,
                   J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
                 and obesity. (2013)</h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b-2 border-[#AAA]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Spiegel, K.,
+              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Spiegel, K.,
                   Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose
                 metabolism and obesity risk. (2009)</h1>
             </div>
           </li>
           <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px]">
             <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Ungvari, Z.,
+              <h1 class="text-[13px] font-normal  sm:pb-[18px] tracking-[1px] sm:text-[24px] border-b border-[#370F1E] leading-[1.2]"><strong>Ungvari, Z.,
                   Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced
                 sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</h1>
             </div>
