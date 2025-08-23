@@ -12,7 +12,8 @@ const routes = [
   { path: '/about',        name: 'about',        component: () => import('../pages/about.vue') },
   { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
   { path: '/discomfort',   name:'disconfort',    component: () => import('../pages/discomfort.vue') },
-  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')}
+  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')},
+  { path: '/vsl2',          name:'vsl2',           component: () => import('../pages/vsl2.vue')}
   
 ]
 

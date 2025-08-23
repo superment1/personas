@@ -41,6 +41,12 @@ div.title-super-natural-sleep {
     padding: 39px 0 0 35px;
 }
 
+.no-seek::-webkit-media-controls-timeline { display: none !important; }
+.no-seek::-webkit-media-controls-seek-back-button,
+.no-seek::-webkit-media-controls-seek-forward-button { display: none !important; }
+.no-seek::-webkit-media-controls-current-time-display,
+.no-seek::-webkit-media-controls-time-remaining-display { display: none !important; }
+
 .logo-gif{
     font-family: 'Crossfit', Impact, sans-serif; 
     font-weight: 900;
