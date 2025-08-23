@@ -79,7 +79,7 @@
 
     <!-- PARTE 3: Footer com logo e texto -->
     <div class="flex flex-col gap-3 items-center">
-      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
+      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem] font-crossfit">
         <span class="inline-flex items-baseline">SUPERMENT<sub class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
       <p class="label-reserved">
