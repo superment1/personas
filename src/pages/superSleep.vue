@@ -256,12 +256,12 @@ import toast from '@/services/toastService.js';
   <Stopwatch />
   <section class="questions">
     <p class="title">Frequently asked questions:</p>
-    <section class="faq">
+    <section class="faq !max-w-[743px]">
       <FAQ />
     </section>
   </section>
   <div class="bg-[#370F1E] w-full">
-    <div class="max-w-[330px] mx-auto">
+    <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
       <SuperFooter />
     </div>
   </div>

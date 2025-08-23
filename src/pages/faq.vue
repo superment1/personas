@@ -105,7 +105,7 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     </div>
   </div>
   <div class="bg-[#370F1E] w-full">
-    <div class="max-w-[330px] mx-auto">
+    <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
       <SuperFooter />
     </div>
   </div>
