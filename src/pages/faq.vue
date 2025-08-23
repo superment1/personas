@@ -100,12 +100,12 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
 <template>
   <SuperHeader :show-redirect="true"/>
   <div class="w-full bg-[#fffaf0] ">
-    <div class="max-w-[80%] md:max-w-[70%] mx-auto">
+    <div class="max-w-[80%] md:max-w-[50%] mx-auto">
         <FaqAccordion :items="faqData" />
     </div>
   </div>
   <div class="bg-[#370F1E] w-full">
-    <div class="max-w-[330px] mx-auto">
+    <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
       <SuperFooter />
     </div>
   </div>

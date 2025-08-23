@@ -7,9 +7,9 @@ import ShopButton from './ShopButton.vue';
 
 <template>
     <Stopwatch bg="#FFD700" text-color="#370F1E" />
-    <div class="w-full h-[600px] lg:h-[2153px] bg-[#6EC8F0] flex flex-col items-center justify-start">
+    <div class="w-full h-[660px] lg:h-[2153px] bg-[#6EC8F0] flex flex-col items-center justify-start">
         <img src="@/assets/image/vsl-badge.webp" alt="bagde VSL"
-            class="w-[500px] h-[500px] -mt-[60px] lg:w-[1340px] lg:h-[1156px]">
+            class="w-[500px] h-[500px] -mt-[60px] lg:w-[1229px] lg:h-[1130px]">
         <div class="w-full h-full flex flex-col items-center justify-start -mt-[81px]">
             <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                 class="h-[36px] w-[335px] bg-[#FFDC03] font-gelasio italic font-normal text-[19px] justify-center lg:w-[960px] lg:h-[112px] lg:text-[54px] mt-[12px]">
@@ -41,10 +41,10 @@ import ShopButton from './ShopButton.vue';
                     FIRST TRIAL SPECIAL OFFER
                 </div>
             </ShopButton>
-            <div class="w-[400px] flex flex-rol items-center justify-center gap-6 lg:w-full">
+            <div class="w-[400px] max-w-[1000px] flex flex-rol items-center justify-center lg:w-full">
                 <div class="w-[160px] flex flex-col items-center justify-start lg:w-[50%]">
                     <img src="@/assets/image/3-badge.webp" alt="bagde VSL"
-                        class="w-[150px] h-[150px] -mt-2 lg:w-[500px] lg:h-[500px]">
+                        class="w-[150px] h-[150px] -mt-2 lg:w-[470px] lg:h-[470px]">
                     <ShopButton textColorClass="text-[#370F1E]" :show-icon="false"
                         class="h-[30px] w-[165px] bg-[#FFDC03] font-gelasio italic font-medium text-[15px] justify-between -mt-5 lg:w-[468px] lg:h-[93px] lg:text-[42px]">
                         <div class="flex flex-row items-center justify-end">
@@ -78,7 +78,7 @@ import ShopButton from './ShopButton.vue';
                 </div>
                 <div class="w-[160px] flex flex-col items-center justify-start lg:w-[50%]">
                     <img src="@/assets/image/6-badge.webp" alt="bagde VSL"
-                        class="w-[140px] h-[140px] lg:w-[500px] lg:h-[500px]">
+                        class="w-[140px] h-[140px] lg:w-[465px] lg:h-[458px]">
                     <ShopButton textColorClass="text-[#370F1E]" :show-icon="false"
                         class="h-[30px] w-[165px] bg-[#FFDC03] font-gelasio italic font-medium text-[15px] justify-between -mt-4 lg:w-[468px] lg:h-[93px] lg:text-[42px]">
                         <div class="flex flex-row items-center justify-end">
@@ -167,7 +167,7 @@ import ShopButton from './ShopButton.vue';
                 <span class="font-roboto text-[#370F1E] leading-[137%] text-[14px] font-bold"> FREE U.S.
                     <br>Shipping</span>
             </div>
-            <div class="hidden lg:block pt-24 lg:w-full lg:h-full lg:px-36">
+            <div class="hidden lg:block pt-24 lg:w-[970px] lg:h-full">
                 <div class="w-full lg:h-[80px] flex flex-row items-center justify-start">
                     <svg class="block" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
                         fill="none">

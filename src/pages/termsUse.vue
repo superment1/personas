@@ -12,7 +12,7 @@ import SuperHeader from '../components/SuperHeader.vue'
     <SuperHeader :show-redirect="true">
     </SuperHeader>
     <div class="flex flex-col mx-auto bg-[#fff9ed] items-center font-gelasio">
-        <div class="main flex flex-col max-w-[80%] md:max-w-[70%] mx-auto">
+        <div class="main flex flex-col max-w-[80%] md:max-w-[50%] mx-auto">
             <div class="title font-crossfit border-b-2 border-[#370f1e] text-[#370f1e]">
                 <h1 class="text-[2.25rem] text-center py-8">
                     Terms of Use
@@ -124,7 +124,7 @@ the revised Terms.</p>
         </div>
     </div>
     <div class="bg-[#370F1E] w-full">
-        <div class="max-w-[330px] mx-auto">
+        <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
             <SuperFooter />
         </div>
     </div>
