@@ -7,7 +7,7 @@ import ShopButton from './ShopButton.vue';
 
 <template>
     <Stopwatch bg="#FFD700" text-color="#370F1E" />
-    <div class="w-full h-[600px] lg:h-[2153px] bg-[#6EC8F0] flex flex-col items-center justify-start">
+    <div class="w-full h-[660px] lg:h-[2153px] bg-[#6EC8F0] flex flex-col items-center justify-start">
         <img src="@/assets/image/vsl-badge.webp" alt="bagde VSL"
             class="w-[500px] h-[500px] -mt-[60px] lg:w-[1340px] lg:h-[1156px]">
         <div class="w-full h-full flex flex-col items-center justify-start -mt-[81px]">
