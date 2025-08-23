@@ -36,10 +36,11 @@ import ShopButton from './ShopButton.vue';
         <div class="w-[350px] lg:w-[1200px] flex flex-col items-center justify-start lg:flex-row justify-between ">
             <!-- FRASCO GRANDE -->
             <div
-                class="w-[350px] h-[348px] bg-[#90DAF4] rounded-[30px] pt-0 pb-1 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
+                class="w-[350px] h-[348px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
                 <img src="@/assets/image/vsl-badge.webp" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
                 <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-[540px]">
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
+                    productId="prod_SbKYsQrxStW8wB"
                     class="h-[38px] w-[325px] bg-[#FFDC03] justify-center lg:w-[506px] lg:h-[70px] lg:text-[54px] lg:-mt-3">
                     <div class="flex flex-row items-center justify-center">
                         <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
@@ -84,7 +85,7 @@ import ShopButton from './ShopButton.vue';
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
                         <img src="@/assets/image/3-badge.webp" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3 ml-4 lg:w-[400px] lg:h-[400px]">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false"
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
                             class="h-[66px] w-[145px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-center justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
@@ -126,7 +127,7 @@ import ShopButton from './ShopButton.vue';
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
                         <img src="@/assets/image/6-badge.webp" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3  lg:w-[400px] lg:h-[400px]">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false"
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
                             class="h-[66px] w-[145px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-center justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"

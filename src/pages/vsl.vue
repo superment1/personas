@@ -12,7 +12,7 @@ const router = useRouter()
 const modalOpen = ref(false)
 const videoEl = ref(null)
 
-const showAfterVideo = ref(true)
+const showAfterVideo = ref(false)
 
 const urlPath = '/supersleep'
 function openModal() { modalOpen.value = true }
