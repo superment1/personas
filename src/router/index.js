@@ -47,7 +47,8 @@ router.afterEach((to) => {
     discomfort: '#370F1E',
     menopause: '#E6B4FF',
     privacypolicy:'#E1DCCD',
-    vsl:'#6EC8F0'
+    vsl:'#6EC8F0',
+    vsl2:'#6EC8F0'
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)
