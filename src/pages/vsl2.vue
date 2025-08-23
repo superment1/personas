@@ -17,15 +17,15 @@ function onVideoEnded() {
   router.push(REDIRECT_URL)
 }
 
-const route = useRoute()
-/* Pode vir de prop/env. Exemplo via query: ?vturb=https://scripts.converteai.net/.../player.js */
-const vturbSrc = computed(() => route.query.vturb || import.meta.env.VITE_VTURB_PLAYER_SRC)
+// const route = useRoute()
+// /* Pode vir de prop/env. Exemplo via query: ?vturb=https://scripts.converteai.net/.../player.js */
+// const vturbSrc = computed(() => route.query.vturb || import.meta.env.VITE_VTURB_PLAYER_SRC)
 
-function extractPlayerId(url) {
-  // pega o trecho /players/<PLAYER_ID>/
-  const m = /\/players\/([^/]+)\//.exec(url || '')
-  return m ? m[1] : null
-}
+// function extractPlayerId(url) {
+//   // pega o trecho /players/<PLAYER_ID>/
+//   const m = /\/players\/([^/]+)\//.exec(url || '')
+//   return m ? m[1] : null
+// }
 
 let io = null // você já usa io; garanta que está declarado
 let lastAllowedTime = 0
