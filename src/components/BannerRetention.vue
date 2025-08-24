@@ -21,9 +21,9 @@ function close() {
 }
 
 
-const remainingMs = ref(0)                 // ms restantes p/ exibir
-let tickId = null                          // setInterval id
-let deadline = 0                           // timestamp (ms) de término
+const remainingMs = ref(0)                 
+let tickId = null                          
+let deadline = 0                     
 
 function startCountdown() {
   if (props.timer <= 0) return

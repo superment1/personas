@@ -22,7 +22,7 @@ import ShopButton from './ShopButton.vue';
                             d="M117.825 25.3908C117.825 17.0422 113.791 10.4549 106.079 10.4549C98.3352 10.4549 93.649 17.0422 93.649 25.3258C93.649 35.1398 99.178 40.0956 107.12 40.0956C110.992 40.0956 113.921 39.2149 116.132 37.9768V31.4546C113.921 32.5627 111.381 33.2485 108.161 33.2485C105.006 33.2485 102.207 32.1404 101.847 28.2928H117.761C117.761 27.8668 117.825 26.1704 117.825 25.3908ZM101.75 22.2903C101.75 18.6086 103.997 17.0746 106.047 17.0746C108.028 17.0746 110.146 18.605 110.146 22.2903H101.75ZM81.0854 10.4549C77.8977 10.4549 75.8481 11.9529 74.7099 12.996L74.2849 10.9747H67.1242V49L75.261 47.2675L75.2934 38.0418C76.4641 38.89 78.1894 40.0992 81.0566 40.0992C86.8773 40.0992 92.183 35.3997 92.183 25.0623C92.147 15.6056 86.7765 10.4549 81.0854 10.4549ZM79.1331 32.9236C77.2133 32.9236 76.0715 32.2379 75.2934 31.3896L75.261 19.2908C76.1075 18.3452 77.2781 17.6919 79.1331 17.6919C82.0939 17.6919 84.1434 21.0197 84.1434 25.2897C84.1434 29.6607 82.1228 32.9236 79.1331 32.9236ZM64.0986 6.76972V0.150024L55.9293 1.87894V8.53112L64.0986 6.76972ZM55.9293 11.0072H64.0986V39.5397H55.9293V11.0072ZM47.1766 13.4219L46.6579 11.0072H39.6269V39.5433H47.7637V20.204C49.6835 17.6919 52.9361 18.1466 53.9446 18.5076V11.0072C52.9037 10.6174 49.0964 9.8991 47.1766 13.4219ZM30.9065 3.93271L22.9642 5.62914L22.9318 31.747C22.9318 36.5728 26.5445 40.1281 31.3604 40.1281C34.0294 40.1281 35.9817 39.6408 37.0551 39.0525V32.4328C36.0141 32.8551 30.8741 34.3566 30.8741 29.5308V17.9553H37.0551V11.0072H30.8741L30.9065 3.93271ZM8.90937 19.2908C8.90937 18.0203 9.95033 17.5294 11.6721 17.5294C14.1466 17.5294 17.2695 18.2802 19.7441 19.6157V11.9529C17.1758 10.9382 14.4362 10.4296 11.6757 10.4549C5.06608 10.4549 0.675293 13.9092 0.675293 19.6843C0.675293 28.6826 13.0408 27.2496 13.0408 31.1262C13.0408 32.6277 11.7405 33.1186 9.91792 33.1186C7.21645 33.1186 3.76577 32.0105 1.03189 30.5089V38.2692C4.05753 39.5758 7.11919 40.1281 9.91792 40.1281C16.686 40.1281 21.3361 36.7713 21.3361 30.9312C21.3073 21.2147 8.90937 22.9436 8.90937 19.2908Z"
                             fill="#370F1E" />
                     </svg>
-                    <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="49" height="22"
+                    <svg class="block lg:hidden mr-[5px]" xmlns="http://www.w3.org/2000/svg" width="49" height="22"
                         viewBox="0 0 49 22" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M49.0014 11.1307C49.0014 7.44913 47.3376 4.54429 44.1572 4.54429C40.9634 4.54429 39.0308 7.44913 39.0308 11.1021C39.0308 15.4299 41.311 17.6153 44.5865 17.6153C46.1834 17.6153 47.3911 17.2269 48.3032 16.681V13.8048C47.3911 14.2934 46.3439 14.5958 45.0158 14.5958C43.7146 14.5958 42.5603 14.1072 42.4118 12.4104H48.9746C48.9746 12.2226 49.0014 11.4745 49.0014 11.1307ZM42.3717 9.76346C42.3717 8.13993 43.2986 7.46346 44.1439 7.46346C44.9609 7.46346 45.8343 8.13834 45.8343 9.76346H42.3717ZM33.8494 4.54429C32.5348 4.54429 31.6896 5.20484 31.2201 5.66484L31.0449 4.77349H28.0917V21.542L31.4474 20.778L31.4608 16.7096C31.9436 17.0837 32.6551 17.6169 33.8376 17.6169C36.2381 17.6169 38.4262 15.5445 38.4262 10.9859C38.4114 6.81564 36.1965 4.54429 33.8494 4.54429ZM33.0443 14.4526C32.2526 14.4526 31.7817 14.1502 31.4608 13.7761L31.4474 8.44076C31.7965 8.02374 32.2793 7.73564 33.0443 7.73564C34.2654 7.73564 35.1106 9.20318 35.1106 11.0862C35.1106 13.0137 34.2773 14.4526 33.0443 14.4526ZM26.8439 2.91917V0L23.4748 0.762422V3.69592L26.8439 2.91917ZM23.4748 4.78782H26.8439V17.3702H23.4748V4.78782ZM19.8651 5.85266L19.6512 4.78782H16.7515V17.3718H20.1072V8.84346C20.899 7.73564 22.2404 7.93619 22.6563 8.09536V4.78782C22.227 4.61592 20.6569 4.29917 19.8651 5.85266ZM13.1552 1.6681L9.87967 2.41619L9.86631 13.9337C9.86631 16.0618 11.3562 17.6296 13.3423 17.6296C14.4431 17.6296 15.2482 17.4147 15.6909 17.1553V14.2361C15.2616 14.4224 13.1418 15.0845 13.1418 12.9564V7.85183H15.6909V4.78782H13.1418L13.1552 1.6681ZM4.08332 8.44076C4.08332 7.88048 4.51262 7.66401 5.22268 7.66401C6.24321 7.66401 7.53113 7.99508 8.55165 8.58401V5.20484C7.49247 4.75738 6.36266 4.5331 5.22417 4.54429C2.49831 4.54429 0.6875 6.06754 0.6875 8.61425C0.6875 12.5824 5.78717 11.9504 5.78717 13.6599C5.78717 14.3221 5.25091 14.5385 4.49925 14.5385C3.38514 14.5385 1.96205 14.0499 0.834563 13.3877V16.8099C2.08237 17.3861 3.34503 17.6296 4.49925 17.6296C7.29048 17.6296 9.20824 16.1493 9.20824 13.574C9.19635 9.28913 4.08332 10.0516 4.08332 8.44076Z"
@@ -36,8 +36,8 @@ import ShopButton from './ShopButton.vue';
         <div class="w-[350px] lg:w-[1200px] flex flex-col items-center justify-start lg:flex-row justify-between ">
             <!-- FRASCO GRANDE -->
             <div
-                class="w-[350px] h-[348px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
-                <img src="@/assets/image/vsl-badge.webp" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
+                class="w-[350px] h-[360px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
+                <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
                 <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-[540px]">
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_SbKYsQrxStW8wB"
@@ -71,7 +71,7 @@ import ShopButton from './ShopButton.vue';
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span class="leading-7 font-bold text-[21px] lg:text-[34px] font-DMSans ml-5 lg:ml-12">
+                        <span class="leading-7 !py-[10px] font-bold text-[21px] lg:text-[34px] font-DMSans ml-5 lg:ml-12">
                             First Trial Special Offer
                         </span>
                     </div>
@@ -83,11 +83,11 @@ import ShopButton from './ShopButton.vue';
                 <div class="flex flex-row items-center justify-between gap-3 lg:flex-row items-center justify-start">
                     <div
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
-                        <img src="@/assets/image/3-badge.webp" alt="bagde VSL"
+                        <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3 ml-4 lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                            class="h-[66px] w-[145px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
-                            <div class="flex flex-row items-center justify-end">
+                            class="h-[66px] w-[145px] bg-[#FFDC03] rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
                                     fill="none">
                                     <g clip-path="url(#clip0_142_375)">
@@ -115,9 +115,9 @@ import ShopButton from './ShopButton.vue';
                                         fill="#370F1E" />
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
-                                    <span class="font-DMSans text-[#370F1E] leading-[1.1] font-bold text-start ml-3">Buy
-                                        3 <br><span class="font-gelasio italic font-bold font-[10px]">$32</span><span
-                                            class="font-[10px] font-gelasio font-regular italic"> each</span>
+                                    <span class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
+                                        3 <br><span class="font-gelasio italic font-bold text-[17px]  ">$32</span><span
+                                            class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
                             </div>
@@ -125,11 +125,11 @@ import ShopButton from './ShopButton.vue';
                     </div>
                     <div
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
-                        <img src="@/assets/image/6-badge.webp" alt="bagde VSL"
+                        <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3  lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                            class="h-[66px] w-[145px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
-                            <div class="flex flex-row items-center justify-end">
+                            class="h-[66px] w-[145px] rounded-[20px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
                                     fill="none">
                                     <g clip-path="url(#clip0_142_375)">
@@ -157,9 +157,9 @@ import ShopButton from './ShopButton.vue';
                                         fill="#370F1E" />
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
-                                    <span class="font-DMSans text-[#370F1E] leading-[1.1] font-bold text-start ml-3">Buy
-                                        6 <br><span class="font-gelasio italic font-bold font-[10px]">$26</span><span
-                                            class="font-[10px] font-gelasio font-regular italic"> each</span>
+                                    <span class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
+                                        6 <br><span class="font-gelasio italic font-bold text-[17px]">$26</span><span
+                                            class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@ import ShopButton from './ShopButton.vue';
                             fill="#370F1E" />
                     </svg>
                     <div>
-                        <span class="font-DMSans font-[15px] text-[#370F1E] font-semibold">Free U.S. <br>Shipping</span>
+                        <span class="font-DMSans font-[15px] text-[#370F1E]">Free U.S. <br>Shipping</span>
                     </div>
                     <div class="w-[1px] h-[80px] bg-[#370F1E]"></div>
 
@@ -225,7 +225,7 @@ import ShopButton from './ShopButton.vue';
                     </svg>
                     <div>
                         <span
-                            class="font-DMSans font-[15px] text-[#370F1E] font-semibold">Money-Back<br>Guarantee</span>
+                            class="font-DMSans font-[15px] text-[#370F1E]">Money-Back<br>Guarantee</span>
                     </div>
                 </div>
             </div>
@@ -252,7 +252,7 @@ import ShopButton from './ShopButton.vue';
                     fill="#370F1E" />
             </svg>
             <div>
-                <span class="font-DMSans font-[15px] text-[#370F1E] font-semibold">Free U.S. <br>Shipping</span>
+                <span class="font-DMSans text-[#370F1E]">Free U.S. <br>Shipping</span>
             </div>
             <div class="w-[1px] h-[80px] bg-[#370F1E]"></div>
 
@@ -289,7 +289,7 @@ import ShopButton from './ShopButton.vue';
                     fill="#370F1E" />
             </svg>
             <div>
-                <span class="font-DMSans font-[15px] text-[#370F1E] font-semibold">Money-Back<br>Guarantee</span>
+                <span class="font-DMSans text-[#370F1E] ">Money-Back<br>Guarantee</span>
             </div>
         </div>
     </div>

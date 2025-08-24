@@ -63,12 +63,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative w-full py-5 flex justify-center items-center">
+  <div class="relative w-full pt-5 pb-[40px] flex justify-center items-center">
     <div class="w-full max-w-[800px] px-4 flex justify-center items-center relative h-[550px] rounded-2xl">
       <!-- Seta esquerda -->
       <button 
       @click="prev" 
-      class="arrow-button absolute -left-11 top-1/2 z-30" 
+      class="arrow-button absolute -left-[40px] top-1/2 z-30" 
       style="margin-top: 18px"
       aria-label="Depoimento anterior"
       :aria-disabled="isFirstSlide" :disabled="isFirstSlide"
