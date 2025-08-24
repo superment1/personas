@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
@@ -6,152 +6,77 @@ import FAQ from '../components/Faq.vue';
 import BannerRetention from '../components/BannerRetention.vue'
 
 const router = useRouter()
-// const modalOpen = ref(false)
-const videoEl = ref(null)
 
-const showAfterVideo = ref(false)
-
-/* ===== Redireciona ao terminar ===== */
 const REDIRECT_URL = '/supersleep'
+
 function onVideoEnded() {
   router.push(REDIRECT_URL)
 }
 
-// const route = useRoute()
-// /* Pode vir de prop/env. Exemplo via query: ?vturb=https://scripts.converteai.net/.../player.js */
-// const vturbSrc = computed(() => route.query.vturb || import.meta.env.VITE_VTURB_PLAYER_SRC)
-
-// function extractPlayerId(url) {
-//   // pega o trecho /players/<PLAYER_ID>/
-//   const m = /\/players\/([^/]+)\//.exec(url || '')
-//   return m ? m[1] : null
-// }
-
-let io = null // você já usa io; garanta que está declarado
-let lastAllowedTime = 0
-const SEEK_TOLERANCE = 0.3 // tolerância anti-bounce (segundos)
-
-function attachAntiSeekGuards(v) {
-  // atualiza o maior tempo já assistido
-  const onTimeUpdate = () => {
-    if (v.currentTime - lastAllowedTime > SEEK_TOLERANCE) {
-      lastAllowedTime = v.currentTime
-    }
-  }
-
-  const onSeeking = () => {
-    // se tentou pular pra frente, volta
-    if (v.currentTime > lastAllowedTime + SEEK_TOLERANCE) {
-      v.currentTime = lastAllowedTime
-    }
-  }
-
-  const onRateChange = () => {
-    if (v.playbackRate !== 1) v.playbackRate = 1
-  }
-
-  const onContextMenu = (e) => e.preventDefault() // desabilita menu com “Salvar vídeo”, etc.
-
-  v.addEventListener('timeupdate', onTimeUpdate)
-  v.addEventListener('seeking', onSeeking)
-  v.addEventListener('ratechange', onRateChange)
-  v.addEventListener('contextmenu', onContextMenu)
-
-  // guarda funções para remover depois, se quiser
-  v.__antiSeekGuards = { onTimeUpdate, onSeeking, onRateChange, onContextMenu }
-}
-
-function detachAntiSeekGuards(v) {
-  const g = v?.__antiSeekGuards
-  if (!g) return
-  v.removeEventListener('timeupdate', g.onTimeUpdate)
-  v.removeEventListener('seeking', g.onSeeking)
-  v.removeEventListener('ratechange', g.onRateChange)
-  v.removeEventListener('contextmenu', g.onContextMenu)
-  delete v.__antiSeekGuards
-}
-function onVideoPlay() {
-  hasStarted.value = true
-}
-
 const showPlayOverlay = ref(true)
-const controlsEnabled = ref(false)
-let fsHandlerAdded = false
-
-const isFs = ref(false)
-
-async function enterFullscreenWithSound() {
-  const v = videoEl.value
-  if (!v) return
-
-  try {
-    // 1) som ligado
-    v.muted = false
-    v.volume = 1
-
-    // 2) tocar
-    await v.play().catch(() => {})
-
-    // 3) ativar fullscreen "falso" (classe no container)
-    isFs.value = true
-    showPlayOverlay.value = false
-
-    // 4) (opcional) bloquear scroll da página enquanto em FS falso
-    document.documentElement.style.overflow = 'hidden'
-  } catch {
-    showPlayOverlay.value = true
-  }
+function hideOverlayAndLetUserPlay() {
+  showPlayOverlay.value = false
 }
-function onFsChange() {
-  // quando não estiver mais em fullscreen, volta o overlay e desliga controles
-  if (!document.fullscreenElement) {
-    showPlayOverlay.value = true
-    controlsEnabled.value = false
-    // volta a mutar, se quiser repetir o comportamento silencioso
-    if (videoEl.value) videoEl.value.muted = true
-  }
+
+function loadVturbOnce() {
+  const id = 'vturb-script-68aa4210166658ec2475a56e'
+  if (document.getElementById(id)) return
+  const s = document.createElement('script')
+  s.id = id
+  s.async = true
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/68aa4210166658ec2475a56e/v4/player.js'
+  document.head.appendChild(s)
 }
+
 
 const hasStarted = ref(false)
+let io: IntersectionObserver | null = null
+
+let readyHandler: any
+let playHandler: any
+let endedHandler: any
+
 onMounted(() => {
-  const v = videoEl.value
+  loadVturbOnce()
 
-  if (!fsHandlerAdded) {
-    document.addEventListener('fullscreenchange', onFsChange)
-    fsHandlerAdded = true
-  }
+  const playerEl = document.getElementById('vid-68aa4210166658ec2475a56e') as any
+  if (!playerEl) return
 
-  if (v) {
-    v.muted = true
-    v.playsInline = true
-    v.addEventListener('ended', onVideoEnded)
-    v.addEventListener('play', onVideoPlay)
-    // iOS: agora aqui, depois de garantir v
-    v.addEventListener?.('webkitendfullscreen', onFsChange)
-    attachAntiSeekGuards(v)
-    io = new IntersectionObserver(([entry]) => {
-      if (!videoEl.value) return
-      if (!hasStarted.value) return
-      if (entry.isIntersecting) videoEl.value.play().catch(() => {})
-      else videoEl.value.pause()
-    }, { threshold: 0.25 })
-    io.observe(v)
+  const onPlayerReady = () => {
+    playerEl.addEventListener('video:play', () => {
+      hasStarted.value = true
+      showPlayOverlay.value = false
+    })
+
+    playerEl.addEventListener('video:play', playHandler)
+    endedHandler = () => onVideoEnded()
+    playerEl.addEventListener('video:ended', endedHandler)
+
+    if ('IntersectionObserver' in window) {
+      io = new IntersectionObserver(([entry]) => {
+        if (!hasStarted.value) return
+        if (entry?.isIntersecting) { playerEl.play?.()
+        } else {
+          playerEl.pause?.()
+        }
+      }, { threshold: 0.25 })
+      io.observe(playerEl)
+    }
   }
+  readyHandler = onPlayerReady
+  playerEl.addEventListener('player:ready', readyHandler)
+  document.addEventListener('player:ready', readyHandler, { once: true })
 })
 
 onBeforeUnmount(() => {
-  const v = videoEl.value
-  v?.removeEventListener?.('ended', onVideoEnded)
-  v?.removeEventListener?.('play', onVideoPlay)
-  detachAntiSeekGuards(v)
-  if (io && v) {
-    io.unobserve(v)
-    io.disconnect()
-    io = null
+  const el = document.getElementById('vid-68aa4210166658ec2475a56e') as any
+  if (el) {
+    if (playHandler) el.removeEventListener('video:play', playHandler)
+    if (endedHandler) el.removeEventListener('video:ended', endedHandler)
+    if (readyHandler) el.removeEventListener('player:ready', readyHandler)
   }
-
-  document.removeEventListener('fullscreenchange', onFsChange)
-  v?.removeEventListener?.('webkitendfullscreen', onFsChange)
+  document.removeEventListener('player:ready', readyHandler as any)
+  io?.disconnect()
 })
 
 </script>
@@ -164,9 +89,9 @@ onBeforeUnmount(() => {
       </div>
     </header>
     <!-- mobile -->
-    <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] px-10 sm:px-0">
+    <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] sm:px-0">
       <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[591px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[570px]">
           <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
               The solution that
@@ -186,44 +111,22 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="relative z-10 pt-[28px] sm:pt-0">
-            <video
-              ref="videoEl"
-              @ended="onVideoEnded"
-              class="no-seek w-[349px] rounded-md shadow-lg maw-w-[349px] max-h-[432px] sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px]"
-              preload="metadata"
-              playsinline
-              muted
-              controls
-              controlslist="nodownload noplaybackrate noremoteplayback"
-              disablepictureinpicture
-              disableremoteplayback
-              x-webkit-airplay="deny"
-            >
-              <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
-            </video>
-            <button v-if="showPlayOverlay" type="button"
-              class="absolute inset-0 flex items-center sm:h-[812px]  justify-center" 
-              @click="enterFullscreenWithSound"
-              aria-label="Assistir em tela cheia com áudio">
-              <span class="relative inline-flex">
-                <!-- anel pulsante -->
-                <span
-                  class="absolute inline-flex h-[123px] w-[123px] rounded-full opacity-75 animate-ping bg-[#FFDC03]"></span>
-                <!-- botão -->
-                <span
-                  class="relative inline-flex h-[123px] z-0 w-[123px] items-center text-[62px] justify-center rounded-full bg-yellow-400 text-[#fff] font-extrabold shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="68" viewBox="0 0 59 68" fill="none">
-                    <path
-                      d="M56.8168 30.7827C59.426 32.2911 59.426 36.0577 56.8168 37.5661L5.87853 67.0148C3.26671 68.5248 -4.49648e-05 66.64 -4.4833e-05 63.6231L-4.22585e-05 4.72567C-4.21266e-05 1.70879 3.2667 -0.175998 5.87852 1.33396L56.8168 30.7827Z"
-                      fill="white" />
-                  </svg>
-                  <span class="absolute z-10 leading-none text-[#370F1E] text-[22px] font-crossfit">CLICK HERE PLAY
-                    VIDEO</span>
-                </span>
+             <div
+                class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
+                      sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px] overflow-hidden"
+              >
+              <vturb-smartplayer
+                id="vid-68aa4210166658ec2475a56e"
+                style="display:block;
+                margin:0 auto;
+                width:100%;
+                height:100%;"
+                class="absolute inset-0"
+              ></vturb-smartplayer>
+              </div>
+            </div>
 
-              </span>
-            </button>
-          </div>
+
         </div>
       </div>
       <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[291px] flex-col bg-[#370F1E]">
@@ -926,67 +829,74 @@ onBeforeUnmount(() => {
         </p>
       </div>
     </div>
-    <div class="bg-[#FFFAF0] w-full pt-[54px] pb-[20px]">
+    <div class="bg-[#FFFAF0] w-full py-[54px]">
       <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-[#350E1D] leading-[0.85] pb-[46px] font-crossfit text-[30px] text-center sm:text-[68px] ">
-            Scientific References</h1>
+          <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
+            Scientific <br> references:</h1>
+          <h1 class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-start sm:text-[68px] ">
+            Scientific references:</h1>
         </div>
-        <ul class="columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
-          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
+        <ul class="w-full columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Montana State
-                  University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
-                happy, more anxious. (n.d.)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Montana State
+                  University</strong> 
+                <p>Study by Montana State researcher finds sleep deprivation makes people less
+                happy, more anxious. (n.d.)</p>
+              </h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Colten, H. R., &
-                  Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
-                problem. (2006)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Colten, H. R., &
+                  Altevogt, B. M. (Eds.)</strong> 
+                  <p>Sleep disorders and sleep deprivation: An unmet public health
+                problem. (2006)</p>
+              </h1>
             </div>
           </li>
           <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Sleep Foundation
-                </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Sleep Foundation
+                </strong> <p> How sleep deprivation affects your heart. (n.d.)</p></h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Calhoun, D. A., &
-                  Harding, S. M.</strong> – Sleep and hypertension. (2010)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Calhoun, D. A., &
+                  Harding, S. M.</strong> <p> Sleep and hypertension. (2010)</p></h1>
             </div>
           </li>
           <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Mesarwi, O., Polak,
-                  J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
-                and obesity. (2013)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Mesarwi, O., Polak,
+                  J., Jun, J., & Polotsky, V. Y.</strong> <p> Sleep disorders and the development of insulin resistance
+                and obesity. (2013)</p>
+              </h1>
             </div>
           </li>
           <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal tracking-[1px] sm:text-[24px] leading-[1.2]"><strong>Spiegel, K.,
-                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose
-                metabolism and obesity risk. (2009)</h1>
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Spiegel, K.,
+                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> <p> Effects of poor and short sleep on glucose
+                metabolism and obesity risk. (2009)</p></h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px]">
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[13px] font-normal  sm:pb-[18px] tracking-[1px] sm:text-[24px] border-b border-[#370F1E] leading-[1.2]"><strong>Ungvari, Z.,
-                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced
-                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</h1>
+              <h1 class="text-[14px] font-normal pb-[15px]  sm:pb-[18px] sm:text-[24px] leading-[1.3]"><strong>Ungvari, Z.,
+                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> <p> Imbalanced
+                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</p></h1>
             </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
+    <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col items-center justify-start">
       <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">Frequently asked <br>
+          <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">Frequently asked <br>
             questions:</h1>
           <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">Frequently asked questions:</h1>
           <FAQ />

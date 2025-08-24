@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
@@ -10,40 +10,57 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 
 const router = useRouter()
 const modalOpen = ref(false)
-const videoEl = ref(null)
-
 const showAfterVideo = ref(false)
 
 const urlPath = '/supersleep'
 function openModal() { modalOpen.value = true }
 function goToPage() { router.push(urlPath) }
 
-/** ===== Exit-intent config ===== */
 const COOLDOWN_MS = 20000
 const TOP_ZONE = 8
 let lastShown = 0
 let lastY = 9999
 let io
 
+const AFTER_VIDEO_GRACE_MS = 10000
+let afterVideoUntil = 0
+
+function onPrimary() {
+  router.push('/supersleep')
+}
+
 function openExitModal() {
   const now = Date.now()
+  if (modalOpen.value) return
+  if (now < afterVideoUntil) return
+  if (showAfterVideo.value) return
   if (now - lastShown < COOLDOWN_MS) return
+
   modalOpen.value = true
   lastShown = now
 }
+function onPageHide() {
+  openExitModal()
+}
+function loadVturbOnce() {
+  const id = 'vturb-script-68aa4210166658ec2475a56e'
+  if (document.getElementById(id)) return
+  const s = document.createElement('script')
+  s.id = id
+  s.async = true
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/68aa4210166658ec2475a56e/v4/player.js'
+  document.head.appendChild(s)
+}
 
-/** Desktop: mouse indo pro topo (barra de URL/fechar aba) */
 function onMouseMove(e) {
-  // movimento para cima e perto do topo
   const goingUp = e.clientY < lastY
   if (goingUp && e.clientY <= TOP_ZONE) openExitModal()
   lastY = e.clientY
 }
-/** Desktop: mouse saiu da janela pelo topo */
 function onMouseOut(e) {
   if (!e.relatedTarget && e.clientY <= 0) openExitModal()
 }
-/** Abandono por troca de aba/janela */
+
 function onVisibilityChange() {
   if (document.visibilityState === 'hidden') openExitModal()
 }
@@ -51,82 +68,51 @@ function onWindowBlur() {
   openExitModal()
 }
 
-/** Mobile: “voltar” do navegador */
 function onPopState() {
   openExitModal()
 }
 function onVideoEnded() {
   showAfterVideo.value = true
+  afterVideoUntil = Date.now() + AFTER_VIDEO_GRACE_MS
 }
-function onVideoPlay() {
-  hasStarted.value = true
-  // se o usuário der replay do começo, esconda de novo
-  const v = videoEl.value
-  if (v && v.currentTime < 0.5) showAfterVideo.value = false
-}
-/** Mobile: scroll intenso pra cima (sinal de abandono) */
-let lastScrollY = 0
+
+let lastScrollY = window.scrollY || 0
+let lastScrollT = performance.now()
+
 function onScroll() {
   const y = window.scrollY
-  const delta = lastScrollY - y
-  if (delta > 120) openExitModal()
+  const t = performance.now()
+
+  const dy = lastScrollY - y        
+  const dt = Math.max(t - lastScrollT, 1)
+  const vel = dy / dt                 
+
+  if (dy > 120 && vel > 0.6) openExitModal()
+  if (y <= 12 && dy > 0) openExitModal()
+
   lastScrollY = y
+  lastScrollT = t
 }
 
 const showPlayOverlay = ref(true)
-const controlsEnabled = ref(false)
+function hideOverlayAndLetUserPlay() {
+  showPlayOverlay.value = false
+}
+
 let fsHandlerAdded = false
 
-async function enterFullscreenWithSound() {
-  const v = videoEl.value
-  if (!v) return
-
-  try {
-    v.muted = false
-    v.volume = 1
-
-    if (typeof v.webkitEnterFullscreen === 'function') {
-      // @ts-ignore
-      v.webkitEnterFullscreen()
-      await v.play().catch(() => { })
-      controlsEnabled.value = true
-      showPlayOverlay.value = false
-      return
-    }
-
-    // Demais navegadores
-    if (!document.fullscreenElement) {
-      await v.requestFullscreen?.().catch(async () => {
-        const container = v.parentElement
-        await container?.requestFullscreen?.()
-      })
-    }
-
-    await v.play().catch(() => { })
-    controlsEnabled.value = true
-    showPlayOverlay.value = false
-  } catch (e) {
-    // se bloquear, mantém o botão visível
-    showPlayOverlay.value = true
-  }
-}
-function onFsChange() {
-  // quando não estiver mais em fullscreen, volta o overlay e desliga controles
-  if (!document.fullscreenElement) {
-    showPlayOverlay.value = true
-    controlsEnabled.value = false
-    openModal()
-    // volta a mutar, se quiser repetir o comportamento silencioso
-    if (videoEl.value) videoEl.value.muted = true
-  }
-}
-
 function onModalClose() {
-  // permite reabrir imediatamente ao próximo gesto de saída
   lastShown = 0
 }
 const hasStarted = ref(false)
+
+let readyHandler: any
+let playHandler: any
+let endedHandler: any
+
 onMounted(() => {
+  loadVturbOnce()
+
   // ====== Exit-intent listeners ======
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
@@ -135,28 +121,24 @@ onMounted(() => {
 
   window.addEventListener('popstate', onPopState)
   window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('pagehide', onPageHide)
 
-  const v = videoEl.value
+   const el = document.getElementById('vid-68aa4210166658ec2475a56e')
+  if (!el) return
 
-  if (!fsHandlerAdded) {
-    document.addEventListener('fullscreenchange', onFsChange)
-    videoEl.value?.addEventListener?.('webkitendfullscreen', onFsChange)
-    fsHandlerAdded = true
+  const onReady = () => {
+    el.addEventListener('video:play', () => {
+      showPlayOverlay.value = false
+    })
+
+    el.addEventListener('video:ended', () => {
+      showPlayOverlay.value = false
+      showAfterVideo.value = true
+    }, { once: true })
   }
-  if (v) {
-    v.muted = true
-    v.playsInline = true
-    v.addEventListener('ended', onVideoEnded)
-    v.addEventListener('play', onVideoPlay)
-    // v.play().catch(() => {})
-    io = new IntersectionObserver(([entry]) => {
-      if (!videoEl.value) return
-      if (!hasStarted.value) return
-      if (entry.isIntersecting) videoEl.value.play().catch(() => { })
-      else videoEl.value.pause()
-    }, { threshold: 0.25 })
-    io.observe(v)
-  }
+  el.addEventListener('player:ready', onReady, { once: true })
+  document.addEventListener('player:ready', onReady, { once: true })
+
 })
 
 onBeforeUnmount(() => {
@@ -164,15 +146,9 @@ onBeforeUnmount(() => {
   document.removeEventListener('mouseout', onMouseOut)
   document.removeEventListener('visibilitychange', onVisibilityChange)
   window.removeEventListener('blur', onWindowBlur)
-
   window.removeEventListener('popstate', onPopState)
   window.removeEventListener('scroll', onScroll)
-  const v = videoEl.value
-  v?.removeEventListener?.('ended', onVideoEnded)
-  v?.removeEventListener?.('play', onVideoPlay)
-  if (io && videoEl.value) io.unobserve(videoEl.value)
-  document.removeEventListener('fullscreenchange', onFsChange)
-  videoEl.value?.removeEventListener?.('webkitendfullscreen', onFsChange)
+
 })
 
 </script>
@@ -185,10 +161,10 @@ onBeforeUnmount(() => {
       </div>
     </header>
     <!-- mobile -->
-    <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px] px-10 sm:px-0">
+    <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px]">
       <div
         class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[591px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 h-[570px]">
           <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
               The solution that
@@ -208,36 +184,25 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="relative z-10 pt-[28px] sm:pt-0">
-            <video ref="videoEl" @ended="onVideoEnded"
-              class="maw-w-[349px] max-h-[432px] sm:max-w-[649px] rounded-md sm:h-[812px] sm:max-h-[812px] shadow-lg"
-              preload="metadata" playsinline muted>
-              <source src="../assets/videos/depoimento-video.mp4" type="video/mp4" />
-            </video>
-            <button v-if="showPlayOverlay" type="button"
-              class="absolute inset-0 flex items-center sm:h-[812px]  justify-center" @click="enterFullscreenWithSound"
-              aria-label="Assistir em tela cheia com áudio">
-              <span class="relative inline-flex">
-                <!-- anel pulsante -->
-                <span
-                  class="absolute inline-flex h-[123px] w-[123px] rounded-full opacity-75 animate-ping bg-[#FFDC03]"></span>
-                <!-- botão -->
-                <span
-                  class="relative inline-flex h-[123px] z-0 w-[123px] items-center text-[62px] justify-center rounded-full bg-yellow-400 text-[#fff] font-extrabold shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="68" viewBox="0 0 59 68" fill="none">
-                    <path
-                      d="M56.8168 30.7827C59.426 32.2911 59.426 36.0577 56.8168 37.5661L5.87853 67.0148C3.26671 68.5248 -4.49648e-05 66.64 -4.4833e-05 63.6231L-4.22585e-05 4.72567C-4.21266e-05 1.70879 3.2667 -0.175998 5.87852 1.33396L56.8168 30.7827Z"
-                      fill="white" />
-                  </svg>
-                  <span class="absolute z-10 leading-none text-[#370F1E] text-[22px] font-crossfit">CLICK HERE PLAY
-                    VIDEO</span>
-                </span>
+             <div
+                class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
+                      sm:max-w-[649px] sm:h-[812px] sm:max-h-[812px] overflow-hidden"
+              >
+              <vturb-smartplayer
+                id="vid-68aa4210166658ec2475a56e"
+                style="
+                display:block;
+                margin:0 auto;
+                width:100%;
+                height:100%;"
+                class="absolute inset-0"
+              ></vturb-smartplayer>
+              </div>
+            </div>
 
-              </span>
-            </button>
-          </div>
         </div>
       </div>
-      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+      <div  v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
         <div
           class="overflow-hidden max-w-[100%] xl:max-w-[50%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
@@ -963,89 +928,89 @@ onBeforeUnmount(() => {
       <VslBadges />
     </div>
 
-    <div class="bg-[#FFFAF0] w-full pt-[35px] pb-[20px]">
-      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[48px] items-center justify-start">
-        <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-[#350E1D] leading-[0.89] font-crossfit text-[30px] text-start sm:text-[83px] ">
-            Scientific References</h1>
-        </div>
-        <ul
-          class="columns-1 sm:columns-2 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] italic text-[#350E1D] font-sans font-medium">
-          <li class="flex gap-5 pt-[25px] pb-[15px] sm:pb-[18px] sm:pt-[17px] border-b-2 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:max-w-[580px] sm:text-[18px] leading-[1.2]">
-                <strong>Montana State
-                  University</strong> – Study by Montana State researcher finds sleep deprivation makes people less
-                happy, more anxious. (n.d.)
-              </h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[26px] border-b-2 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Colten, H. R.,
-                  &
-                  Altevogt, B. M. (Eds.)</strong> – Sleep disorders and sleep deprivation: An unmet public health
-                problem. (2006)</h1>
-            </div>
-          </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Sleep
-                  Foundation
-                </strong> – How sleep deprivation affects your heart. (n.d.)</h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b-2 sm:border-0 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Calhoun,
-                  D. A., &
-                  Harding, S. M.</strong> – Sleep and hypertension. <br>(2010)</h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b-2 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Mesarwi, O.,
-                  Polak,
-                  J., Jun, J., & Polotsky, V. Y.</strong> – Sleep disorders and the development of insulin resistance
-                and obesity. (2013)</h1>
-            </div>
-          </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b-2 border-[#AAA]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Spiegel, K.,
-                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> – Effects of poor and short sleep on glucose
-                metabolism and obesity risk. (2009)</h1>
-            </div>
-          </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px]">
-            <div class="flex-col">
-              <h1 class="text-[10px] font-normal tracking-[0.182px] sm:text-[18px] leading-[1.2]"><strong>Ungvari, Z.,
-                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> – Imbalanced
-                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</h1>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- DESKTOP -->
+    <!-- DESKTOP  -->
     <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
-      <div class="max-w-[349px] mx-auto py-[36px] font-gelasio font-medium  text-center justify-self-center">
-        <p class="title pt-[20px] text-[#fff] font-semibold text-[31px] leading-none italic">Why people love</p>
-        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[31px] pb-[32px] italic"> Super Natural Sleep?</p>
-        <div class="bg-white/10 pb-[17px] pt-[10px] text-[#fff] rounded-lg">
+      <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
+        <p class="title pt-[20px] text-[#fff] font-semibold text-[34px] leading-none">Every day, more people</p>
+        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
+        <div class="bg-white/10 font-gelasio px-3 pb-[17px] pt-[10px] text-[#fff] rounded-[20px]">
           <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
           <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better
             sleep.</p>
         </div>
       </div>
-      <div class="max-w-[310px] mx-auto items-center">
+      <div class="max-w-[349px] mx-auto items-center">
         <TestimonialsCarousel />
       </div>
     </div>
-    <div class="bg-[#fffaf0] w-full py-[20px] flex flex-col items-center justify-start">
+    <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
+      <div class="px-0 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
+        <div class="w-full max-w-[349px] md:max-w-[1260px]">
+          <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
+            Scientific <br> references:</h1>
+          <h1 class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-start sm:text-[68px] ">
+            Scientific references:</h1>
+        </div>
+        <ul class="w-full columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Montana State
+                  University</strong> 
+                <p>Study by Montana State researcher finds sleep deprivation makes people less
+                happy, more anxious. (n.d.)</p>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Colten, H. R., &
+                  Altevogt, B. M. (Eds.)</strong> 
+                  <p>Sleep disorders and sleep deprivation: An unmet public health
+                problem. (2006)</p>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Sleep Foundation
+                </strong> <p> How sleep deprivation affects your heart. (n.d.)</p></h1>
+            </div>
+          </li>
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Calhoun, D. A., &
+                  Harding, S. M.</strong> <p> Sleep and hypertension. (2010)</p></h1>
+            </div>
+          </li>
+          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Mesarwi, O., Polak,
+                  J., Jun, J., & Polotsky, V. Y.</strong> <p> Sleep disorders and the development of insulin resistance
+                and obesity. (2013)</p>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px] leading-[1.3]"><strong>Spiegel, K.,
+                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> <p> Effects of poor and short sleep on glucose
+                metabolism and obesity risk. (2009)</p></h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[24px]  leading-[1.3]"><strong>Ungvari, Z.,
+                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> <p> Imbalanced
+                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</p></h1>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col items-center justify-start">
       <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
-          <h1 class="text-start w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[30px] font-crossfit">
+          <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
             Frequently asked <br>
             questions:</h1>
           <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
@@ -1083,5 +1048,17 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
+  <!-- <BannerRetention
+    v-model:open="modalOpen"
+    title="Atenção!"
+    message="Quer garantir seu desconto antes de sair?"
+    primary-text="Garantir agora"
+    secondary-text="Continuar navegando"
+    :disable-backdrop-close="true"
+    :disable-esc="false"
+    :timer="10000"
+    @close="onModalClose"
+    @primary="onPrimary" 
+  /> -->
 
 </template>

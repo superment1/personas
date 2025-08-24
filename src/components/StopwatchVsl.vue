@@ -31,7 +31,7 @@ onBeforeUnmount(() => t && clearInterval(t))
 <template>
   <section class="flex flex-col justify-end items-end py-0 bg-[##6EC8F0]">
     <div class="flex flex-col items-start justify-center w-[160px] gap-2 lg:gap-4">
-      <div class="flex flex-row items-center justify-between w-full lg:w-[410px]">
+      <div class="flex flex-row items-center gap-[3px] w-full lg:w-[410px]">
         <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
           fill="none">
           <path
@@ -92,7 +92,6 @@ onBeforeUnmount(() => t && clearInterval(t))
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 5.345px 8.908px 11.581px rgba(0, 0, 0, 0.30);
 
 }
 
