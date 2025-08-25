@@ -1,10 +1,82 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">    
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">  </head>
+    <base href="/sleep/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" 
+      rel="stylesheet"  media="print" onload="this.media='all'">
+    <link rel="prefetch" as="image" 
+          fetchpriority="high" 
+          type="image/webp"
+          media="(max-width: 767px)"
+          href="/assets/hero-m-768.webp"
+          imagesrcset="
+            /assets/hero-m-360.webp 360w,
+            /assets/hero-m-480.webp 480w,
+            /assets/hero-m-640.webp 640w,
+            /assets/hero-m-768.webp 768w,
+            /assets/hero-m-960.webp 960w"
+          imagesizes="100vw"/>
+
+    <link rel="prefetch" as="image" media="(min-width: 768px)"
+          href="/assets/hero-1920.webp"
+          imagesrcset="
+            /assets/hero-1080.webp 1080w,
+            /assets/hero-1600.webp 1600w,
+            /assets/hero-1920.webp 1920w,
+            /assets/hero-2240.webp 2240w,
+            /assets/hero-2560.webp 2560w"
+          imagesizes="100vw"/>
+    <meta name="theme-color" content="#fff">
+    <link rel="icon" type="image/png" href="/public/favicon.webp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    </script>
+    
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent','default',{
+        ad_storage:'denied',
+        analytics_storage:'denied',
+        ad_user_data:'denied',
+        ad_personalization:'denied',
+        wait_for_update: 500
+      });
+    </script>
+    <script>
+      (function(){
+        const loadGTM = () => {
+          if (window.__gtmLoaded) return; window.__gtmLoaded = true;
+          const s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
+          document.head.appendChild(s);
+        };
+
+        const onInteract = () => { loadGTM(); cleanup(); };
+        const cleanup = () => {
+          window.removeEventListener('scroll', onInteract, { passive:true });
+          window.removeEventListener('mousemove', onInteract);
+          window.removeEventListener('touchstart', onInteract, { passive:true });
+        };
+
+        // carrega no idle (até 3s) ou fallback em 2s; antes se houver interação
+        if ('requestIdleCallback' in window) requestIdleCallback(loadGTM, { timeout: 3000 });
+        else setTimeout(loadGTM, 2000);
+        window.addEventListener('scroll', onInteract, { passive:true });
+        window.addEventListener('mousemove', onInteract);
+        window.addEventListener('touchstart', onInteract, { passive:true });
+      })();
+    </script>
+  </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>

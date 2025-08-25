@@ -1,39 +1,88 @@
-@font-face {
+@font-face {    
     font-family: 'Crossfit';
-    src: url('@/assets/fonts/crossfit/Crossfit-Black.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/Crossfit-Black.otf') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap; 
 }
 
 @font-face {
     font-family: 'Crossfit-Black';
-    src: url('@/assets/fonts/crossfit/CrossfitDemo-Black.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Black.otf') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap; 
 }
 
 @font-face {
     font-family: 'Crossfit-Bold';
-    src: url('@/assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('truetype');
+    src: url('@/assets/fonts/crossfit/CrossfitDemo-Bold.otf') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap; 
 }
 
 .super-natural-sleep {
-    background-image: url('@/assets/image/sleepSuperment/super-natural-sleep.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 430px;
     width: 100%;
+    background-size: cover;
+    background-position: 100% 53%;
+    background-repeat: no-repeat;
+}
+
+.section-wrapper {
+  @apply w-full max-w-screen-xl mx-auto px-4 
+          sm:px-6 lg:px-8 lg:py-16;
 }
 
 div.title-super-natural-sleep {
     width: 100%;
     height: 150px;
-    padding: 35px 0 0 25px;
+    padding: 39px 0 0 35px;
 }
 
+.no-seek::-webkit-media-controls-timeline { display: none !important; }
+.no-seek::-webkit-media-controls-seek-back-button,
+.no-seek::-webkit-media-controls-seek-forward-button { display: none !important; }
+.no-seek::-webkit-media-controls-current-time-display,
+.no-seek::-webkit-media-controls-time-remaining-display { display: none !important; }
+
+.logo-gif{
+    font-family: 'Crossfit', Impact, sans-serif; 
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #370F1E;
+    display:inline-flex;
+    align-items:flex-end;         
+  }
+  .super-wrap{
+    display:inline-flex;
+    align-items:flex-end;
+    height:1em;                  
+    overflow:hidden;             
+    gap:0.02em;
+  }
+  .ment{ margin-left:0.06em; }
+
+  .letter{
+    display:inline-block;
+    transform:translateY(-1.2em) scaleY(1.15);  
+    animation:drop 700ms cubic-bezier(.2,.85,.25,1.2) infinite both;
+    animation-delay:calc(var(--i) * 90ms);
+    will-change:transform;
+  }
+
+  @keyframes drop{
+    70%  { transform:translateY(0.06em)  scaleY(.92); } 
+    88%  { transform:translateY(-0.03em) scaleY(1.04); }
+    100% { transform:translateY(0)       scaleY(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .letter{ animation:none; transform:none; }
+  }
 span.product-title {
     font-size: 44px;
     font-family: 'Crossfit-Black';
@@ -55,18 +104,12 @@ span.product-sub-title {
     color: #370F1E;
 }
 
-div.description {
-    width: 200px;
-    height: 280px;
-    padding: 35px 0 0 25px;
-}
-
 span.description {
     font-family: 'DM Sans';
     font-weight: 500;
     font-style: 'Regular';
     font-size: 16px;
-    line-height: 20px;
+    line-height: 21px;
     letter-spacing: 0%;
     display: block;
     color: #370F1E;
@@ -75,36 +118,55 @@ span.description {
 button img.botao-shop {
     height: 40px;
     width: 100%;
-    margin-top: 65px;
+    margin-top: 50px;
 }
 
-img.strip {
-    margin-left: 40px;
-    height: 15px;
-    width: 92px;
+span.stripe {
+    max-width: 100px !important;
+    color: #370F1E;
+    font-size: 9px;
+    font-family: 'DM Sans';
+    font-weight: 800;
+}
+span.stripe img {
+    max-width: 100px;
+}
+span.stripe-bold {
+    font-size: 16px;
+    font-weight: bolder;
+    font-style: 'black';
+    line-height: 12px;
+    letter-spacing: -0.05rem;
+}
+
+.super-natural-sleep div.description div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5px;
 }
 
 .non-habit-forming {
     width: 100%;
     height: 100%;
-    min-height: 337px;
     background: #FFFAF0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 35px 0 20px 0;
 }
   
 div.description-forming {
     width: 100%;
-    max-width: 400px;
-    height: 100;
-    top: 571px;
-    left: 51px;
-    opacity: 1;
-    padding: 30px 50px 0 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.description-forming p {
+    max-width: 335px;
     font-family: 'Gelasio';
     font-weight: 600;
     font-style: Italic;
@@ -116,24 +178,40 @@ div.description-forming p {
     text-align: center;     
 }
 
-img.image-forming {
+div.description-forming .superment-team {
+    font-family: 'DM Sans';
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #370F1E;
+    text-align: center;  
+    text-decoration: underline;
     margin-top: 10px;
+}
+
+img.image-forming {
+    width: 324px;
+    height: 182px;
 }
 
 section.ingredients {
     background: #E1DCCD;
     width: 100%;
-    height: 403px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 30px 0;
+    padding: 30px 0 15px 0;
+}
+@media(min-width: '800px') {
+    section.ingredients {
+        height: 470px;
+    }
 }
 
 section.ingredients div.title {
     width: 234px;
-    height: 100px;
 }
 
 section.ingredients div.title p {
@@ -147,12 +225,12 @@ section.ingredients div.title p {
 }
 
 section.ingredients div.description {
-    width: 340px;
-    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    margin-top: -24px;
 }
 
 section.ingredients div.description p {
@@ -160,124 +238,27 @@ section.ingredients div.description p {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-    width: 340px;
+    width: 300px;
 }
 
 section.ingredients div.carrossel-ingredients {
     width: 100%;
-    min-height: 249px;
     height: 100%;
-}
-
-section.stress {
-    width: 100%;
-    height: 100%;
-    min-height: 527px;
-    background: #370F1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-
-    padding: 100px 0 120px 0;
-
-}
-
-section.stress div.title {
-    width: 304px;
-    height: 65px;
-}
-
-section.stress div.title p {
-    font-family: 'Crossfit-Bold';
-    font-size: 28px;
-    line-height: 28px;
-    font-weight: 900;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-section.stress div.description {
-    width: 254px;
-    height: 49px;
-    margin-top: -30px;
-}
-
-section.stress div.description p {
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-style: 'Regular';
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-section.stress div.item-1-content {
-    width: 165px;
-    height: 130px;
-}
-
-section.stress div.item-2-content {
-    width: 100%;
-    height: 130px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#title-stress {
-    height: 60px;
-    font-family: 'Crossfit';
-    font-weight: 900;
-    font-style: black;
-    font-size: 50px;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 20px;
-
-}
-
-#description-stress {
-    width: 150px;
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-style: 'Medium';
-    line-height: 16px;
-    font-size: 14px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-}
-
-#sub-description-stress {
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-style: 'Medium';
-    font-size: 8px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
 }
 
 section.shop-rest {
     width: 100%;
-    height: 434px;
+    height: 100%;
     background-color: #E1DCCD;
     position: relative;
-    z-index: 0;
+    z-index: 30;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 150px 0 25px 0;
 }
 
 .imagem-centralizada {
@@ -286,11 +267,15 @@ section.shop-rest {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .imagem-centralizada img {
     width: 233px;
-    height: 203px;
+    height: 200px;
     border-radius: 12px; /* ou 16px, se quiser arredondar */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -301,9 +286,19 @@ section.shop-rest div.infos {
     align-items: center;
     justify-content: end;
     height: 350px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
-
+#bricks-component-cFMlAvmxFKCNi3PblXWYPg{
+    width: auto !important;
+}
+#rd-row-me7bf6ll{
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+#rd-column-me7bf6lm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 section.shop-rest div.infos p.title {
     width: 272px;
     font-family: 'Crossfit-Black';
@@ -327,24 +322,20 @@ section.shop-rest div.infos p.description-title {
     letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
 }
 
 section.shop-rest div.infos div.infos-users {
-    width: 300px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 section.shop-rest div.infos div.infos-users div.info {
-    width: 112px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 section.shop-rest div.infos div.infos-users div.info p.number {
@@ -359,7 +350,6 @@ section.shop-rest div.infos div.infos-users div.info p.number {
 }
   
 section.shop-rest div.infos div.infos-users div.info p.description {
-    width: 110px;
     font-family: 'DM Sans';
     font-weight: 600;
     font-style: Medium;
@@ -371,7 +361,6 @@ section.shop-rest div.infos div.infos-users div.info p.description {
 }
   
 section.shop-rest div.botao-shop-rest {
-    background-image: url('@/assets/image/sleepSuperment/botao-shop-rest.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -381,14 +370,13 @@ section.shop-rest div.botao-shop-rest {
 
 section.everyone {
     width: 100%;
-    max-height: 442px;
     height: 100%;
     background-color: #370F1E;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 40px 10px;
 }
 
 section.everyone p.title {
@@ -401,110 +389,81 @@ section.everyone p.title {
     color: #FFFAF0;
     max-width: 306px;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 img.table {
     margin-top: 20px;
+    width: 350px;
 }
 
 img.selos {
     margin-top: 10px;
+    width: 350px;
 }
 
-section.supplement {
-    background-color: #FFFAF0;
+section.testimonials {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 30px 0 35px 0;
+    padding: 25px 0 5px 0;
+    background-color: #FFFAF0;
 }
-  
-section.supplement p.description {
-    font-family: 'Gelasio';
-    font-weight: 600;
-    font-style: Italic;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: -2%;
+
+section.testimonials p.title {
+    width: 272px;
+    font-family: 'Crossfit-Black';
+    font-weight: bold;
+    font-style: Black;
+    font-size: 33px;
+    line-height: 28px;
+    letter-spacing: 0%;
     text-align: center;
     color: #370F1E;
-    width: 290px;
 }
 
-section.supplement div.image-text {
+section.testimonials div.assessment { 
     width: 100%;
+    max-width: 350px;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    margin-top: 15px;
-}
-  
-section.supplement div.image-text div.image {
-    background-image: url('@/assets/image/sleepSuperment/homem-acordando.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 270px;
-    min-height: 270px;
-    width: 158px;
-    margin-top: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1DCCD;
+    padding: 10px 20px 10px 20px;
+    margin-top: 35px;
+    border-radius: 10px;
 }
 
-section.supplement div.image-text div.text {
-    width: 50%;
-    height: 100%;
-    margin-left: 15px;
+section.testimonials div.assessment p.notice{
+    width: 100%;
+    font-family: 'Gelasio';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #370F1E;
 }
-  
-section.supplement div.image-text div.text p.text {
-    font-family: 'DM Sans';
+
+section.testimonials div.assessment p.description{
+    width: 100%;
+    font-family: 'Gelasio';
     font-weight: 500;
-    font-style: Regular;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 17px;
+    line-height: 18px;
     letter-spacing: 0%;
+    text-align: center;
     color: #370F1E;
 }
 
-section.supplement div.description-finally {
-    width: 330px;
-    color: #370F1E;
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0%;
-}
-
-section.supplement div.description-finally p {
-    width: 330px;
-    margin-top: 25px;
-    color: #370F1E;
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0%;
-}
-
-section.frascos {
-    height: 530px;
-    width: 100%;
-}
-
-section.frascos img.frascos {
-    width: 100%;
-    height: 530px;
+section.testimonials div.testimonials {
+    width: 350px;
+    height: 590px;
 }
 
 section.shop-now {
@@ -517,38 +476,6 @@ section.shop-now {
     justify-content: start;
 }
 
-section.shop-now p.shop {
-    font-family: Gelasio;
-    font-weight: 100;
-    font-style: Italic;
-    font-size: 31px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #FFFAF0;
-    margin-top: 40px;
-}
-
-section.shop-now div.stripe-white {
-    background-image: url('@/assets/image/sleepSuperment/stripe-branco.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 17px;
-    width: 102px;
-    margin-top: 5px;
-}
-
-section.shop-now div.buttons {
-    width: 100%;
-    height: 155px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 35px;
-}
-
 section.questions {
     width: 100%;
     height: 100%;
@@ -557,6 +484,7 @@ section.questions {
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    padding: 25px 10px 0 10px;
 }
 
 section.questions p.title {
@@ -569,12 +497,34 @@ section.questions p.title {
     text-align: center;
     color: #370F1E;
     width: 200px;
-    margin-top: 25px;
 }
 
+#e-mail-site-2-fc7666a2bfa336762e39{
+    margin-left: 0 !important;
+}
+#rd-form-mdhiwotj .bricks-form__input{
+    font-size: 23px !important;
+    font-style: italic;
+}
+#rd-column-mdhiwoth > div{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.bricks-form__fieldset{
+    width: 100% !important;
+    justify-self: auto !important;
+    margin: 0 !important;
+
+}
+// #rd-email_field-mdhjb6wo{
+//     width: 350px !important;
+// }
+#rd-form-mdhiwotj {
+    padding: 0 !important;
+}
 .faq {
     background: #FFFAF0;
-    padding: 30px 20px;
+    padding: 30px 20px 25px;
     font-family: 'DM Sans', sans-serif;
     color: #370f1e;
 }
@@ -588,120 +538,138 @@ section.questions p.title {
 }
 
 ///// AJUSTES RESPONSIVOES
-  
-@media (max-width: '550px') {
-    section.header-desktop {
-       display: none;
-    }
+/// 
+
+div.description {
+    width: 200px;
+    padding: 31px 0 0 0px;
 }
 
-@media(min-width: '550px') {
-    section.topo, section.scroll-link-products {
+@media(min-width: 550px) {
+    div.description {
+        width: 200px;
+        padding: 40px 0 0 0px;
+    }
+    #super-sleep-pequeno {
         display: none;
     }
 
-    section.header-desktop {
-        background-color: #370F1E;
+    // #super-sleep-grande {
+    //     width: 100%;
+    //     aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
+    //     max-height: 380px;     /* impede que fique gigante em telas grandes */
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+    #rd-email_field-mdhjb6wo{
+        width: 700px !important;
+        position: relative !important;
+    }
+    .bricks-form__fieldset{
+        justify-self: self-start !important;
+    }
+    #rd-form-mdhiwotj .bricks-form__submit{
+        width: 350px !important;
+        justify-self: end !important;
+    }
+
+    #super-sleep-grande div.title {
         width: 100%;
-        height: 60px;
-        display: flex;
+        height: 100%;
         align-items: center;
         justify-content: center;
-    }
+  
+    }   
 
-    section.header-desktop .header-content {
-        height: 60px;
-        width: 90%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+    #super-sleep-grande div.title span.product-title {
+        text-align: start;
+        width: 300px;
+        font-size: 50px;
+    }   
+    
+    #super-sleep-grande div.title span.product-sub-title {
+        text-align: start;
+        width: 300px;
+        font-size: 25px;
+    }   
 
-    section.header-desktop .header-content img {
-        height: 50px;
-    }
-
-    .super-natural-sleep {
-        background-image: url('@/assets/image/sleepSuperment/super-natural-sleep-2.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        width: 100%;
-        aspect-ratio: 16 / 5; /* ajusta a altura automaticamente baseado na largura */
-        max-height: 430px;     /* impede que fique gigante em telas grandes */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    div.title-super-natural-sleep {
-        width: 600px;
-        height: 150px;
-        padding: 35px 0 0 25px;
+    #super-sleep-grande div.title div.description {
+        width: 300px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: start;
-        justify-content: center;
-        padding: 150px 0 0 0;
+        justify-content: start;
     }
 
-    div.description {
-        width: 600px;
-        height: 280px;
-        padding: 100px 0 0 0;
-
-    }
-
-    span.description {
-        font-family: 'DM Sans';
-        font-weight: 500;
-        font-style: 'Regular';
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0%;
-        display: block;
-        color: #370F1E;
-        width: 200px;
-    }
-
-    button img.botao-shop {
-        height: 40px;
-        width: 180px;
-        margin-top: -80px;
-        margin-left: 450px;
-    }
-
-    img.strip {
-        margin-left: 40px;
-        height: 15px;
-        width: 92px;
-        margin-top: -40px;
-        margin-left: 500px;
-    }
-
-    section.ingredients {
-        background: #E1DCCD;
+     #super-sleep-grande div.title div.description span.description {
         width: 100%;
         height: 100%;
+        text-align: start;
+        font-family: 'DM Sans';
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 20px;
+        letter-spacing: 0%;
+    }
+
+    #super-sleep-grande div.button {
+        max-height: 380px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }   
+    section.shop-rest  {
+        width: 100%;
+        display: flex;
+        padding: 40px 0 30px 0;
+    }
+
+    section.shop-rest div.infos {
+        width: 100%;
+        display: flex;
+    }
+    
+    section.shop-rest div.infos #buy-button {
+        margin-top: -20px;
+    }
+
+    section.shop-rest div.infos div.infos-users div.info {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
     }
 
+    #description-maior {
+        width: 240px;
+    }
+
+    section.shop-rest div.infos div.infos-users div.info p.description {
+        font-family: 'DM Sans';
+        font-weight: 600;
+        font-style: Medium;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+    }
+
+    section.ingredients  {
+        padding: 40px 0 40px 0;
+    }
+
     section.ingredients div.title {
-        width: 100%;
-        height: 50px;
+        width: 430px;
     }
 
     section.ingredients div.title p {
         font-family: 'Crossfit-Black';
         font-weight: bold;
-        font-size: 38px;
+        font-size: 36px;
         line-height: 32px;
         letter-spacing: 0%;
         text-align: center;
@@ -709,117 +677,100 @@ section.questions p.title {
     }
 
     section.ingredients div.description {
-        width: 440px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         justify-content: start;
-        padding: 0 0 100px 0;
     }
 
     section.ingredients div.description p {
         font-family: 'DM Sans';
         font-weight: 500;
         font-size: 16px;
-        // line-height: 20px;
-        letter-spacing: 0%;
+        line-height: 20px;
         text-align: center;
         color: #370F1E;
-        width: 440px;
+        width: 450px;
+        height: 60px;
     }
-
-    section.ingredients div.carrossel-ingredients {
-        width: 100%;
-        min-height: 249px;
-        height: 100%;
-        margin-top: -90px;
-    }
-
-    section.stress {
-        all: unset;
-        display: block; 
-        width: 100%;
-        height: 100%;
-        background: #370F1E;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 0 0px 0;
-    }
-
-    section.stress div.title {
-        width: 300px;
-        height: 100%;
-    }
-
-    section.stress div.title p {
-        font-family: 'Crossfit-Bold';
-        font-size: 28px;
-        line-height: 28px;
-        font-weight: 900;
-        letter-spacing: 0%;
-        text-align: center;
-        color: #FFFAF0;
-    }
-
-    section.stress div.description {
-        width: 230px;
-        height: 100%;
-        margin-top: -80px;
-    }
-
-    section.stress div.description p {
-        font-family: 'DM Sans';
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 16px;
-        line-height: 18px;
-        letter-spacing: 0%;
-        text-align: center;
-    }
-
-    section.stress div.item-1-content {
-    }
-
-    section.stress div.item-2-content {
-    }
-
-    #title-stress {
-    }
-
-    #description-stress {
-        
-    }
-
-    #sub-description-stress {
+}
+@media(min-width: '1340px') { 
+    #rd-email_field-mdhjb6wo{
+        width: 700px !important;
     }
 }
 
 @media(min-width: '800px') {
     .non-habit-forming {
-        min-height: 287px;
+        height: 100%;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        padding: 40px 0;
+    }
+
+    section.non-habit-forming .description-forming {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+    }
+
+    section.non-habit-forming .description-forming p {
+        text-align: start;
+    }
+    
+    section.non-habit-forming .description-forming .superment-team {
+        text-align: start;
+        width: 350px;
+        margin-top: 5px;
+    }
+    
+    section.non-habit-forming div.img-non {
+        width: 100%;
+        height: 100%;
+    }
+
+    section.questions p.title {
+        font-family: 'Crossfit-Black';
+        font-weight: 900;
+        font-size: 32px;
+        font-style: Black;
+        line-height: 30px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #370F1E;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    section.everyone {
+        width: 100%;
+        min-height: 442px;
+        height: 100%;
+        background-color: #370F1E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 0 10px 20px 10px;
+    }
+
+    section.everyone p.title {
+        font-size: 32px;
+        max-width: 420px;
+        width: 100%;
+    }
+
+    img.table {
+        margin-top: 20px;
+        width: 500px;
+    }
+
+    img.selos {
+        margin-top: 10px;
+        width: 500px;
     }
 }
 
-@media(min-width: '1200px') {
-    button img.botao-shop {
-        height: 40px;
-        width: 180px;
-        margin-top: -20px;
-        margin-left: 500px;
-    }
-
-    img.strip {
-        margin-left: 40px;
-        height: 15px;
-        width: 92px;
-        margin-top: -00px;
-        margin-left: 550px;
-    }
-}
-
-///// AJUSTES RESPONSIVOES
