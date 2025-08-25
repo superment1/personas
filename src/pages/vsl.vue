@@ -519,8 +519,8 @@ onBeforeUnmount(() => {
       <VslBadges />
     </div>
 
-    <!-- DESKTOP  -->
-    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
+    <!-- DESKTOP v-show="showAfterVideo"  -->
+    <div  class="bg-[#350E1D] w-full items-center">
       <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
         <p class="title pt-[20px] text-[#fff] font-semibold text-[34px] leading-none">Every day, more people</p>
         <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
@@ -530,7 +530,7 @@ onBeforeUnmount(() => {
             sleep.</p>
         </div>
       </div>
-      <div class="max-w-[349px] mx-auto items-center">
+      <div class="max-w-[349px] sm:max-w-[1260px] mx-auto items-center">
         <TestimonialsCarousel />
       </div>
     </div>
