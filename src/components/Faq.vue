@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const faqs = ref([
   {
     question: 'What is Super Natural Sleep?',
-    answer: `Super Natural Sleep is a premium, plant-based supplement that helps you fall asleep faster, stay asleep longer, and wake up refreshed. It combines Passionflower, California Poppy, Corydalis, and Prickly Pear to promote calm, reduce restlessness, and support deep, restorative sleep, without grogginess or dependency.`,
+    answer: `Super Natural Sleep is a premium supplement formulated with natural ingredients that relax the nervous system and helps you fall asleep faster, stay asleep longer, and wake up refreshed. It combines Passionflower, California Poppy, Corydalis, and Prickly Pear to promote calm, reduce restlessness, and support deep, restorative sleep, without grogginess or dependency.`,
     open: true
   },
   {

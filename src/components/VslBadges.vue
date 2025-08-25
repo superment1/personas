@@ -88,7 +88,7 @@ import ShopButton from './ShopButton.vue';
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
                             class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 27 27"
                                     fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path
@@ -130,7 +130,7 @@ import ShopButton from './ShopButton.vue';
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
                             class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 27 27"
                                     fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path

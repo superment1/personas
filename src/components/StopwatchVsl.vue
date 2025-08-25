@@ -64,16 +64,27 @@ onBeforeUnmount(() => t && clearInterval(t))
       <div class="w-[160px] flex flex-row items-center justify-between lg:gap-8">
         <!-- Minutes -->
         <div class="flex flex-col gap-2">
-          <div class="card">
-            <span class="title">{{ mm }}</span>
+          <div
+            class="card relative overflow-hidden isolate
+         before:content-[''] before:absolute
+         before:inset-x-0
+         before:top-1/2 before:-translate-y-1/2
+         before:h-px before:bg-black/20 before:pointer-events-none">
+            <span class="title text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]">
+              {{ mm }}</span>
           </div>
           <span class="label">Minutes</span>
         </div>
 
         <!-- Seconds -->
         <div class="flex flex-col gap-2">
-          <div class="card">
-            <span class="title">{{ ss }}</span>
+          <div class="card relative overflow-hidden isolate
+         before:content-[''] before:absolute
+         before:inset-x-0
+         before:top-1/2 before:-translate-y-1/2
+         before:h-px before:bg-black/20 before:pointer-events-none">
+            <span class="title text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]">
+              {{ ss }}</span>
           </div>
           <span class="label">Seconds</span>
         </div>
