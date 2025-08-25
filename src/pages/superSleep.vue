@@ -254,15 +254,21 @@ import toast from '@/services/toastService.js';
   </section>
   <Frascos />
   <Stopwatch />
-  <section class="questions">
-    <p class="title">Frequently asked questions:</p>
-    <section class="faq !max-w-[743px]">
-      <FAQ />
-    </section>
-  </section>
+  <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
+    <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
+      <div class="w-full max-w-[349px] md:max-w-[700px] mx-auto">
+        <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
+          Frequently asked <br>
+          questions:</h1>
+        <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
+          Frequently asked questions:</h1>
+        <FAQ />
+      </div>
+    </div>
+  </div>
   <div class="bg-[#370F1E] w-full">
     <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-      <SuperFooter />
+      <SuperFooter /> 
     </div>
   </div>
 
