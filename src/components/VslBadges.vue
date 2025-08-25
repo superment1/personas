@@ -36,7 +36,7 @@ import ShopButton from './ShopButton.vue';
         <div class="w-[350px] lg:w-[1200px] flex flex-col items-center justify-start lg:flex-row justify-between ">
             <!-- FRASCO GRANDE -->
             <div
-                class="w-[350px] h-[360px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
+                class="smartplayer-scroll-event w-[350px] h-[360px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[550px] lg:h-full lg:pb-4">
                 <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
                 <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-[540px]">
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
