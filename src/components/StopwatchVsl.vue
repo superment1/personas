@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import FlipDigit from './FlipDigit.vue'
 
 const DURATION_MS = 7 * 60 * 1000
 const mm = ref('07')
@@ -72,30 +73,35 @@ onBeforeUnmount(() => t && clearInterval(t))
         </span>
       </div>
 
-      <div class="w-[160px] flex flex-row items-center justify-between lg:gap-8">
+      <div class="w-[160px] flex flex-row items-center justify-between lg:gap-4">
         <!-- Minutes -->
         <div class="flex flex-col gap-2">
           <div
-            class="card relative overflow-hidden isolate
-         before:content-[''] before:absolute
-         before:inset-x-0
-         before:top-1/2 before:-translate-y-1/2
-         before:h-px before:bg-black/20 before:pointer-events-none">
-            <span class="title text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]">
-              {{ mm }}</span>
+            class="card relative overflow-hidden sm:text-[143px] text-[56px] font-crossfit isolate rounded-[19px]
+                  w-[80px] h-[68px] lg:w-[120px] lg:h-[100px]
+                  shadow-[0_8px_16px_rgba(0,0,0,0.18)]
+                  bg-[linear-gradient(180deg,#FFD91F_6%,#F3C81C_54%,#D7A90F_100%)]
+                  before:content-[''] before:absolute before:left-0 before:right-0
+                  before:top-1/2 before:-translate-y-1/2 before:h-px
+                  before:bg-black/20 before:pointer-events-none"
+          >
+            <FlipDigit :value="mm" />
           </div>
           <span class="label">Minutes</span>
         </div>
 
         <!-- Seconds -->
         <div class="flex flex-col gap-2">
-          <div class="card relative overflow-hidden isolate
-         before:content-[''] before:absolute
-         before:inset-x-0
-         before:top-1/2 before:-translate-y-1/2
-         before:h-px before:bg-black/20 before:pointer-events-none">
-            <span class="title text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]">
-              {{ ss }}</span>
+          <div
+            class="card relative overflow-hidden sm:text-[143px] text-[56px] font-crossfit isolate rounded-[19px]
+                  w-[80px] h-[68px] lg:w-[120px] lg:h-[100px]
+                  shadow-[0_8px_16px_rgba(0,0,0,0.18)]
+                  bg-[linear-gradient(180deg,#FFD91F_6%,#F3C81C_54%,#D7A90F_100%)]
+                  before:content-[''] before:absolute before:left-0 before:right-0
+                  before:top-1/2 before:-translate-y-1/2 before:h-px
+                  before:bg-black/20 before:pointer-events-none"
+          >
+            <FlipDigit :value="ss" />
           </div>
           <span class="label">Seconds</span>
         </div>
@@ -109,7 +115,7 @@ onBeforeUnmount(() => t && clearInterval(t))
   width: 75.94px;
   height: 75.94px;
   flex-shrink: 0;
-  border-radius: 7.127px;
+  border-radius: 18px;
   background: linear-gradient(132deg, #FFDC03 2.9%, #C9B11C 94.39%);
   display: flex;
   align-items: center;
