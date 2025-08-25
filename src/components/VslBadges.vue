@@ -41,7 +41,7 @@ import ShopButton from './ShopButton.vue';
                 <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-[540px]">
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_SbKYsQrxStW8wB"
-                    class="h-[38px] w-[325px] bg-[#FFDC03] justify-center lg:w-[506px] lg:h-[70px] lg:text-[54px] lg:-mt-3">
+                    class="h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-center lg:w-[506px] lg:h-[70px] lg:text-[54px] lg:-mt-3">
                     <div class="flex flex-row items-center justify-center">
                         <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                             viewBox="0 0 47 48" fill="none">
@@ -86,7 +86,7 @@ import ShopButton from './ShopButton.vue';
                         <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3 ml-4 lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                            class="h-[66px] w-[145px] bg-[#FFDC03] rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
                                     fill="none">
@@ -128,7 +128,7 @@ import ShopButton from './ShopButton.vue';
                         <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3  lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                            class="h-[66px] w-[145px] rounded-[20px] bg-[#FFDC03] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
                                     fill="none">

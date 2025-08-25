@@ -92,15 +92,18 @@ function toggle(index) {
     letter-spacing: 0%;
   }
 
-  @media(max-width: 730px) {
-    .faq {
-      max-width: 345px;
-    }
-  }
-
   @media(min-width: 730px) {
     .faq {
       width: 100%;
+    }
+    div.question p.question {
+      font-size: 18px;
+    }
+    .question {
+      font-size: 18px;
+    }
+    .answer {
+      font-size: 16px;
     }
   }
 
