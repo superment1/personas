@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const DURATION_MS = 7 * 60 * 1000 // 7 minutos fixo
+const DURATION_MS = 7 * 60 * 1000
 const mm = ref('07')
 const ss = ref('00')
-let endAt = Date.now() + DURATION_MS
+let endAt = 0
 let t = null
 
 function tick() {
@@ -20,9 +20,20 @@ function tick() {
   }
 }
 
-onMounted(() => {
+function startCountdown() {
+  endAt = Date.now() + DURATION_MS
   tick()
+  if (t) clearInterval(t)
   t = setInterval(tick, 1000)
+}
+
+onMounted(() => {
+  const el = document.getElementById('vid-68aa4210166658ec2475a56e')
+    const onReady = () => {
+      el.addEventListener('video:ended', () => { startCountdown()}, { once: true })
+  }
+  el?.addEventListener('player:ready', onReady, { once: true })
+  document.addEventListener('player:ready', onReady, { once: true })
 })
 
 onBeforeUnmount(() => t && clearInterval(t))
