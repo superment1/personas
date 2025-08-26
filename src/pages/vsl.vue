@@ -7,6 +7,13 @@ import FAQ from '../components/Faq.vue';
 import SuperFooter from '../components/SuperFooter.vue';
 import VslBadges from '../components/VslBadges.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
+import { useSeo } from '../composables/useSeo';
+
+  useSeo({
+    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
+    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
+    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
+  })
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -201,7 +208,8 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-      <div  v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+      <!-- v-show="showAfterVideo"  -->
+      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
         <div
           class="overflow-hidden max-w-[100%] xl:max-w-[65%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
@@ -515,12 +523,12 @@ onBeforeUnmount(() => {
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div v-show="showAfterVideo" class="">
+    <div class="">
       <VslBadges />
     </div>
 
     <!-- DESKTOP v-show="showAfterVideo"  -->
-    <div  class="bg-[#350E1D] w-full items-center">
+    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
       <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
         <p class="title pt-[20px] text-[#fff] font-semibold text-[34px] leading-none">Every day, more people</p>
         <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
@@ -535,7 +543,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
-      <div class="px-0 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
+      <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
             Scientific <br> references:</h1>
@@ -599,12 +607,12 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
-      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
+      <div class="px-0 sm:px-10 flex flex-col">
         <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
-          <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
+          <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
             Frequently asked <br>
             questions:</h1>
-          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
+          <h1 class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
             Frequently asked questions:</h1>
           <FAQ />
         </div>
