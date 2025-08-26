@@ -14,7 +14,7 @@
                     skin.</em>
             </h2>
             <p
-                class="text-[#525252] text-[16px] font-light lg:text-[20px] md:mt-0  leading-5 -tracking-[0.01em] lg:leading-6 lg:mt-2">
+                class="text-[#525252] mt-2 text-[16px] font-light lg:text-[20px] md:mt-0  leading-5 -tracking-[0.01em] lg:leading-6 lg:mt-2">
                 Support your skin's regeneration cycle with Super Natural Sleep: <br class="hidden lg:block">a
                 plant-based, non-sedative
                 formula designed for real <br class="block md:hidden">recovery. No melatonin, no harsh <br
