@@ -34,6 +34,7 @@ import toast from '@/services/toastService.js';
     <picture class="absolute inset-0 -z-10">
       <source
         type="image/webp"
+        src="/assets/hero-m-768.webp"
         srcset="/assets/hero-m-360.webp 360w,
                 /assets/hero-m-480.webp 480w,
                 /assets/hero-m-640.webp 640w,
