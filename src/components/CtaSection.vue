@@ -13,8 +13,10 @@
                     </h2>
                     <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26 mt-[12px]" />
                     <div class="flex justify-center items-center">
-                        <div class="relative left-[58px] top-5">
-                            <img src="../assets/image/sleepWomam/price-thin.png" class="w-[95px] h-[171px]" />
+                        <div class="relative left-[65px] top-2">
+                            <PriceThin corValorAntigo="#6EC8F0" :valorAtual="42" :valorAntigo="60"
+                                corFundoValorAtual="#3B0F1E" corValorAtual="#D2F58C" corFundoFree="#D2F58C"
+                                corLetraFree="#58663A" />
                         </div>
                     </div>
                     <div class="text-white text-md mt-[138px]">
@@ -51,7 +53,7 @@
                     <div class="mb-16">
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-[12px] w-[311px] h-[50px] !pr-[1.5rem] text-white md:ml-8 md:w-auto md:justify-center justify-between bg-[#d2f58c] rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                            class="mt-[12px] w-[311px] h-[50px] !pr-[1.5rem] text-white md:ml-8 md:w-auto md:justify-center justify-between bg-[#d2f58c] rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition ">
                             Shop: First Trial Special Offer
                         </ShopButton>
                     </div>
@@ -61,26 +63,25 @@
                 <div class="hidden md:grid md:grid-cols-2 md:gap-12 md:items-center md:min-h-[660px] md:pt-4 md:py-20">
                     <!-- Left Side - Product & Pricing -->
                     <div class="relative">
-                        <div class="relative">
-                            <div class="absolute right-12 -top-52 lg:right-4 lg:-top-56">
-                                <img src="@/assets/image/sleepWomam/price-thin.png" alt="Pricing"
-                                    class="h-58 lg:h-50" />
-                            </div>
+                        <div class="absolute right-12 -top-52 lg:right-4 lg:-top-56">
+                            <PriceThin corValorAntigo="#6EC8F0" :valorAtual="42" :valorAntigo="60"
+                                corFundoValorAtual="#3B0F1E" corValorAtual="#D2F58C" corFundoFree="#D2F58C"
+                                corLetraFree="#58663A" />
                         </div>
                     </div>
 
                     <!-- Right Side - Content -->
                     <div class="text-left w-[380px] h-[510px]">
-                        <p class="text-[#A0D7FF] text-[24px] font-medium italic font-gelasio mb-0 leading-[1.2]">
+                        <p class="text-[#A0D7FF] text-[24px] font-medium italic font-gelasio mb-0 leading-[1.12]">
                             Sleep naturally. Wake up <br>beautiful. Every day.
                         </p>
-                        <h2 class="text-white text-[44px] font-bold italic font-gelasio mb-[8px]">
+                        <h2 class="text-white text-[40px] font-bold italic font-gelasio mb-[10px]">
                             SHOP NOW
                         </h2>
                         <div class="inline-block mb-[8px]">
                             <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-[150px]" />
                         </div>
-                        <div class="space-y-1 mb-[16px] text-white text-lg">
+                        <div class="space-y-[10px] mb-[16px] text-white text-lg">
                             <div class="flex items-center">
                                 <svg width="22" height="21" viewBox="0 0 22 21" class="w-6 h-6 mr-3" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +124,7 @@
                         </div>
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#58663a]"
                             :showIcon=true
-                            class="mt-0 w-[311px] lg:w-[342px] text-white justify-center justify-between bg-[#d2f58c] py-3 rounded-full text-[18px] font-light hover:bg-[#58663a]/50 transition lg:text-[20px]">
+                            class="mt-0 w-[311px] lg:w-[342px] text-white justify-center justify-between bg-[#d2f58c] py-3 rounded-full text-[18px] font-light hover:bg-[#58663a]/50 transition lg:text-[20px] lg:justify-center gap-3">
                             Shop: First Trial Special Offer
                         </ShopButton>
                     </div>
@@ -135,6 +136,7 @@
 
 <script lang="ts" setup>
 import ShopButton from '../components/ShopButton.vue'
+import PriceThin from '../components/PriceThin.vue';
 </script>
 
 <style></style>
