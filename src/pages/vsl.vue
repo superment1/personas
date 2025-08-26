@@ -523,7 +523,7 @@ onBeforeUnmount(() => {
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div class="">
+    <div v-show="showAfterVideo" class="">
       <VslBadges />
     </div>
 
