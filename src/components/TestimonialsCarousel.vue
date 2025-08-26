@@ -56,7 +56,7 @@ watch(currentIndex, () => {
 </script>
 
 <template>
-  <div class="relative w-full pt-5 pb-10 flex justify-center items-center lg:pt-0">
+  <div class="relative w-full pt-5 pb-10 flex justify-center items-center lg:pt-10">
     <div class="w-full max-w-[800px] lg:max-w-[1250px] px-4 relative h-[550px] lg:h-[600px]">
 
       <!-- seta esquerda -->

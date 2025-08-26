@@ -7,12 +7,12 @@ import ShopButton from './ShopButton.vue';
 
 <template>
     <div
-        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start py-10 pb-[54px] lg:pt-[110px] lg:pb-[130px]">
+        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start py-10 pb-[54px] lg:pt-[78px] lg:pb-[130px]">
         <!-- HEADER COM CONTADOR -->
         <div
             class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between py-4 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
             <div>
-                <span class="text-[#370F1E] font-crossfit text-[61px] lg:text-[148px] font-bold leading-[90%]">SHOP
+                <span class="text-[#370F1E] font-crossfit text-[61px] lg:text-[148px] font-bold leading-[0.87]">SHOP
                     <br>NOW</span>
                 <div class="flex flex-row justify-between items-center">
                     <span class="text-[#370F1E] text-[12px] lg:text-[30px]">Powered by </span>
@@ -58,7 +58,7 @@ import ShopButton from './ShopButton.vue';
                                 </clipPath>
                             </defs>
                         </svg>
-                        <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                        <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                             viewBox="0 0 27 27" fill="none">
                             <g clip-path="url(#clip0_142_375)">
                                 <path
@@ -104,7 +104,7 @@ import ShopButton from './ShopButton.vue';
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                                     viewBox="0 0 27 27" fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path
@@ -150,7 +150,7 @@ import ShopButton from './ShopButton.vue';
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                                     viewBox="0 0 27 27" fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path

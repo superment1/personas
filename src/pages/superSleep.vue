@@ -83,15 +83,17 @@ import toast from '@/services/toastService.js';
     </div>
   </section>
   <section  class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande" 
-    ><img
-        src="/assets/hero-1080.webp"
-        srcset="/assets/hero-768.webp 768w, /assets/hero-1080.webp 1080w, /assets/hero-1600.webp 1600w"
-        sizes="100vw"
-        width="1600" height="900"
-        loading="eager" decoding="async"
-        alt="Super Sleep"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
+    > 
+    <img
+      src="../assets/image/sleepSuperment/BannerPaginaD2.webp"
+      sizes="100vw"
+      width="1600"
+      height="900"
+      loading="eager"
+      decoding="async"
+      alt="Super Sleep"
+      class="absolute inset-0 w-full h-full object-cover object-top -z-10"
+    />
 
     <div class="flex flex-row title md:relative gap-52">
       <div class="flex flex-col">

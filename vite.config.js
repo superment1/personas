@@ -5,7 +5,14 @@ import path from 'path'
 
 export default defineConfig({
   base: '/sleep/',
-  plugins: [vue()],
+  plugins: [ vue({
+      template: {
+        compilerOptions: {
+          // trate a tag como custom element (não é componente Vue)
+          isCustomElement: (tag) => tag === 'vturb-smartplayer' || tag.startsWith('vturb-')
+        }
+      }
+    })],
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') }
   },
