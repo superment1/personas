@@ -40,6 +40,7 @@ document.querySelectorAll('img').forEach(img => {
 router.isReady().then(async () => {
   app.mount('#app')
   await nextTick()
+  try { await document.fonts?.ready } catch {}
   await waitForHero(1000)
   document.getElementById('app')?.setAttribute('data-visual-ready', '')
 })

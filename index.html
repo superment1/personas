@@ -51,7 +51,6 @@
           window.removeEventListener('touchstart', onInteract, { passive:true });
         };
 
-        // carrega no idle (até 3s) ou fallback em 2s; antes se houver interação
         if ('requestIdleCallback' in window) requestIdleCallback(loadGTM, { timeout: 3000 });
         else setTimeout(loadGTM, 2000);
         window.addEventListener('scroll', onInteract, { passive:true });
@@ -62,16 +61,13 @@
   </head>
   <body>
     <div id="app" style="opacity:0;transition:opacity 120ms ease;background:#fff;"></div>
-
     <div id="splash-hero"
         style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">
       <picture style="position:absolute;inset:0">
-        <!-- AVIF preferido (mesmo arquivo do preload e do hero do app) -->
         <source type="image/avif"
                 srcset="/assets/posterMobile.avif 768w"
                 sizes="100vw"
                 media="(max-width:767px)">
-        <!-- WebP fallback -->
         <source type="image/webp"
                 srcset="/assets/posterMobile.webp 768w"
                 sizes="100vw"
@@ -79,35 +75,58 @@
         <img src="/assets/posterMobile.avif"
             alt="" width="768" height="820"
             loading="eager" fetchpriority="high" decoding="async"
-            style="position:absolute;top: 10px; width:100%;height:100%;object-fit:cover; object-position:center">
+            style="position:absolute;width:100%;height:100%;object-fit:cover; object-position:center">
       </picture>
     </div>
     <script type="module" src="/src/main.js"></script>
     <script>
       (function () {
-        const app = document.getElementById('app')
-        const splash = document.getElementById('splash-hero')
-        const isMobile = matchMedia('(max-width: 767px)').matches
+        const app = document.getElementById('app');
+        const splash = document.getElementById('splash-hero');
+        if (!app || !splash) return;
 
-        // Desktop: sem splash
+        const isMobile = matchMedia('(max-width: 767px)').matches;
         if (!isMobile) { app.style.opacity = '1'; splash?.remove(); return }
-
-        let done = false
+        const BASE = '/sleep';
+        let rest = location.pathname.startsWith(BASE) ? location.pathname.slice(BASE.length) : location.pathname;
+        rest = rest.split('?')[0].split('#')[0];  
+        rest = rest.replace(/^\/+|\/+$/g, '');    
+        const route = rest === '' ? 'supersleep' : rest.split('/')[0];
+        const splashMap = {
+          supersleep:   { avif: "assets/posterMobile.avif" },
+          beautysleep:  { avif: "assets/posterBeauty.avif" },
+          vsl:          { avif: "assets/posterVsl.avif" },
+          vsl2:         { avif: "assets/posterVsl.avif" },
+          elderly:      { avif: "assets/posterElderly.avif" },
+          about:        { avif: "assets/posterAbout.avif" },
+          terms:        { avif: "assets/posterTerms.avif"},
+          faq:          { avif: "assets/posterFaq.avif"},
+          refundpolicy: { avif: "assets/posterRefundPolicy.avif"},  
+          privacypolicy:{ avif: "assets/posterPrivacyPolicy.avif"},  
+        };
+        const assets = splashMap[route];
+        if (!assets) { app.style.opacity = '1'; splash?.remove(); return }
+        const sources = splash.querySelectorAll('source');
+        const img = splash.querySelector('img');
+        sources.forEach((s) => {
+          if ((s.getAttribute('type') || '').toLowerCase() === 'image/avif') {
+            s.setAttribute('srcset', `${assets.avif} 768w`);
+          }
+        });
+        if (img) img.src = assets.avif;
+        let done = false;
         const swap = () => {
-          if (done) return; done = true
-          app.style.opacity = '1'
-          requestAnimationFrame(() => splash?.remove())
-          clearTimeout(fallback)
-        }
-
-        // quando o app marcar "pronto visual"
+          if (done) return; done = true;
+          app.style.opacity = '1';
+          requestAnimationFrame(() => splash?.remove());
+          clearTimeout(fallback);
+        };
         const obs = new MutationObserver(() => {
-          if (app.hasAttribute('data-visual-ready')) { obs.disconnect(); swap() }
-        })
-        obs.observe(app, { attributes:true })
+          if (app.hasAttribute('data-visual-ready')) { obs.disconnect(); swap(); }
+        });
+        obs.observe(app, { attributes: true });
 
-        // segurança: troca em 3s caso algo impeça o sinal
-        const fallback = setTimeout(swap, 3000)
+        const fallback = setTimeout(swap, 3000);
       })();
     </script>
 

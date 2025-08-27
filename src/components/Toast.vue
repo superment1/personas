@@ -11,6 +11,18 @@ function copyAndClose(msg) {
   toastStore.removeToast(msg.id)
 }
 
+function closeModal() {
+  if (typeof toastStore.clear === 'function') {
+    toastStore.clear()
+    return
+  }
+  if (typeof toastStore.removeToast === 'function') {
+    const list = [...toastStore.messages]
+    for (const m of list) toastStore.removeToast(m.id)
+  } else {
+    toastStore.messages.length = 0
+  }
+}
 function extractCode(text) {
   const m = /:\s*([A-Z0-9][A-Z0-9_-]{4,})\b/i.exec(text || '')
   if (m) return m[1]
@@ -29,6 +41,7 @@ function stripCouponFromText(text) {
     <div
         v-if="toastStore.messages.length"
         class="fixed inset-0 bg-black/30 flex items-center justify-center z-50"
+        @click.self="closeModal"
         >
         <div class="flex flex-col gap-4 px-6">
             <div
@@ -44,10 +57,13 @@ function stripCouponFromText(text) {
                         <path d="M16.8091 1.09044L5.1314 0.337047C2.41575 0.162396 0.165832 2.41231 0.340483 5.12797L1.09388 16.8056C1.1658 17.898 1.62811 18.9288 2.40548 19.7062L15.316 32.6167C17.0762 34.3769 19.9322 34.3769 21.6924 32.6167L32.6167 21.6924C34.3769 19.9322 34.3769 17.0762 32.6167 15.3159L19.7062 2.40546C18.9323 1.63152 17.9015 1.16236 16.8056 1.09387L16.8091 1.09044ZM9.36755 9.36754C8.30594 10.4291 6.57998 10.4291 5.51837 9.36754C4.45677 8.30593 4.45677 6.57997 5.51838 5.51836C6.57998 4.45676 8.30594 4.45676 9.36755 5.51836C10.4292 6.57997 10.4292 8.30593 9.36755 9.36754Z" fill="#fff"/>
                     </svg>           
                     <div class="flex flex-col pt-2 text-[25px] leading-[1.1]">
-                        <p> Thank you!</p>
+                        <p>Thank you!</p>
                         <p class="pt-4"> Here’s your <br>exclusive</p>
                         <p class="mb-4 w-[215px]"> {{ stripCouponFromText(msg.text) }}</p>                
                     </div>    
+                    <div v-if="toastStore.messages.length" class="modal">
+                        <button class="cursor-pointer" type="button" aria-label="Close" @click="closeModal">X</button>
+                    </div>
                 </div>
                 <button
                     aria-label="copy"

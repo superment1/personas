@@ -5,6 +5,7 @@ import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
+import BannerModal from '../components/BannerModal.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
@@ -14,7 +15,7 @@ const SuperFooter = defineAsyncComponent(() => import('../components/SuperFooter
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const Stopwatch = defineAsyncComponent(() => import('../components/Stopwatch.vue'))
 const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
-const BannerModal = defineAsyncComponent(() => import('../components/BannerModal.vue'))
+
 
   useSeo({
     title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
@@ -297,7 +298,7 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
     </div>
   </div>
   <LazyIsland><NotificationDisplay /></LazyIsland>
-  <LazyIsland><BannerModal /></LazyIsland>
+  <BannerModal />
 </template>
 <style>
 html { scroll-behavior: smooth; }

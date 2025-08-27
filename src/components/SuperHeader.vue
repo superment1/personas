@@ -45,7 +45,7 @@ onMounted(async () => {
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
       </svg>
     </a>
-    <div class="pb-5 relative w-[250px] h-[60px]">
+    <div class="relative w-[250px] h-[60px]">
       <div
         class="absolute inset-0 flex items-center text-[#370F1E] justify-center
               transition-opacity duration-300 pointer-events-none select-none"
