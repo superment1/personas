@@ -1,6 +1,5 @@
 <script setup>
 import '../styles/superSleep.scss';
-import { defineProps, onMounted, useAttrs } from 'vue'
 import FAQ from '../components/Faq.vue';
 import IngredientsCarousel from '../components/IngredientsCarousel.vue';
 import NotificationDisplay from '../components/NotificationDisplay.vue';
@@ -12,17 +11,18 @@ import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
 import Stress from '../components/sleepSupermentComponents/Stress.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
-import { useWindowSize } from '@vueuse/core';
 import BannerModal from '../components/BannerModal.vue'
-import toast from '@/services/toastService.js';
 
-  const { width } = useWindowSize();
   useSeo({
     title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
     description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
     keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
-  const attrs = useAttrs();
+
+const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width:1024px)').matches)
+  ? 'id-shop-now-desk'
+  : 'id-shop-now'
+
 </script>
 
 <template>
@@ -31,71 +31,88 @@ import toast from '@/services/toastService.js';
       id="super-sleep-pequeno"
       class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
   >
-    <picture class="absolute inset-0 -z-10">
+    <picture class="absolute inset-0 z-0">
+      <!-- AVIF preferido -->
+      <source
+        type="image/avif"
+        srcset="/assets/hero-m-768.avif 768w"
+        sizes="100vw" />
+
+      <!-- WebP fallback responsivo -->
       <source
         type="image/webp"
-        src="/assets/hero-m-768.webp"
         srcset="/assets/hero-m-360.webp 360w,
                 /assets/hero-m-480.webp 480w,
                 /assets/hero-m-640.webp 640w,
                 /assets/hero-m-768.webp 768w,
                 /assets/hero-m-960.webp 960w"
         sizes="100vw" />
+
       <img
         src="/assets/hero-m-768.webp"
         alt="Super Natural Sleep no travesseiro"
         class="w-full h-full object-cover object-[50%_50%]"
-        loading="eager"
         width="768" height="820"
-        fetchpriority="high"
-        decoding="async"
-      />
+        loading="eager" fetchpriority="high" decoding="async" />
     </picture>
+    <div class="">
+      <div class="title-super-natural-sleep relative z-10">
+        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
+        <span class="product-sub-title">Natural, safe, and effective.</span>
+      </div>
+      <div class="description !pl-[35px] relative z-10">
+        <span class="description">Try our premium <br> natural sleep formula,</span>
+        <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
+        <ShopButton
+          type="button"
+          id="buy-button"
+          :anchorId="anchorId"
+          :showIcon="false"
+          class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
+          <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[165px] font-crossfit h-9">
+            <span class="relative inline-block text-[#ecd68b]
+            before:content-[''] before:absolute before:-left-1 before:-right-1
+            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
+            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP REST</span>
+          </div>
 
-    <div class="title-super-natural-sleep">
-      <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-      <span class="product-sub-title">Natural, safe, and effective.</span>
-    </div>
-    <div class="description !pl-[35px]">
-      <span class="description">Try our premium <br> natural sleep formula,</span>
-      <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
-      <ShopButton
-        type="button"
-        id="buy-button"
-        :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
-        :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
-        <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[165px] font-crossfit h-9">
-          <span class="relative inline-block text-[#ecd68b]
-          before:content-[''] before:absolute before:-left-1 before:-right-1
-          before:top-1/2 before:h-[1px] before:bg-[#5d4503]
-          before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP REST</span>
+        </ShopButton>
+        <div class="place-self-center">
+          <span class="stripe justify-items-center">
+            <img 
+              loading="lazy" 
+              alt="logo-stripe"
+              src="../assets/image/sleepSuperment/stripe.png" ></img>
+          </span>
         </div>
-
-      </ShopButton>
-      <div class="place-self-center">
-        <span class="stripe justify-items-center">
-          <img 
-            loading="lazy" 
-            alt="logo-stripe"
-            src="../assets/image/sleepSuperment/stripe.png" ></img>
-        </span>
       </div>
     </div>
+   
   </section>
   <section  class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande" 
-    > 
-    <img
-      src="../assets/image/sleepSuperment/BannerPaginaD2.webp"
-      sizes="100vw"
-      width="1600"
-      height="900"
-      loading="eager"
-      decoding="async"
-      alt="Super Sleep"
-      class="absolute inset-0 w-full h-full object-cover object-top -z-10"
-    />
+    >   
+    <picture class="absolute inset-0 -z-10 w-full h-full">
+      <source
+        media="(min-width: 640px)"
+        type="image/avif"
+        srcset="../assets/image/sleepSuperment/BannerPaginaD2.avif"
+        sizes="100vw" />
 
+      <!-- WebP fallback (desktop) -->
+      <source
+        media="(min-width: 640px)"
+        type="image/webp"
+        srcset="../assets/image/sleepSuperment/BannerPaginaD2.webp"
+        sizes="100vw" />
+
+      <!-- Fallback final -->
+      <img
+        src="../assets/image/sleepSuperment/BannerPaginaD2.webp"
+        alt="bg-desktop"
+        width="1600" height="900"
+        loading="lazy" decoding="async" fetchpriority="low"
+        class="w-full h-full object-cover object-top" />
+    </picture>
     <div class="flex flex-row title md:relative gap-52">
       <div class="flex flex-col">
         <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
@@ -108,7 +125,7 @@ import toast from '@/services/toastService.js';
         <ShopButton
           type="button"
           id="buy-button"
-          :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+          :anchorId="anchorId"
           :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <div class="bg-[#370F1E] text-[1.2rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[165px] font-crossfit h-9">
@@ -198,7 +215,7 @@ import toast from '@/services/toastService.js';
       <ShopButton
         type="button"
         id="buy-button"
-        :anchorId="width < 1024 ? 'id-shop-now' : 'id-shop-now-desk'"
+        :anchorId="anchorId"
         :showIcon="false"
         class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
         <div class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
@@ -256,7 +273,7 @@ import toast from '@/services/toastService.js';
 
   </section>
   <Frascos />
-  <Stopwatch />
+  <Stopwatch limit="midnight" :repeat="true" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[349px] md:max-w-[700px] mx-auto">

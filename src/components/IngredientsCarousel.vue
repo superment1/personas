@@ -133,12 +133,10 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="relative overflow-hidden w-full bg-[#E1DCCD] flex justify-center items-center">
-    <!-- Faixa visível -->
     <div 
         ref="carouselContainer" 
         class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
       >
-      <!-- Linha de cards -->
       <div class="flex w-max space-x-4 items-center relative z-0"
           ref="carouselContainer" 
           @mouseenter="stopAutoplay" 

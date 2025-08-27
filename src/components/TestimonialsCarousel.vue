@@ -68,11 +68,21 @@ watch(currentIndex, () => {
       <!-- MOBILE: 1 item -->
       <div class="block lg:hidden absolute inset-0 w-full h-full z-10 overflow-hidden rounded-2xl">
         <template v-if="items[i0].type === 'image'">
-          <img :src="items[i0].image" alt="" class="w-full h-full object-cover" />
+          <img 
+          :src="items[i0].image" 
+          alt="" 
+          loading="lazy"
+          decoding="async"
+          class="w-full h-full object-cover" />
         </template>
         <template v-else>
-          <video ref="vm" :src="items[i0].url" autoplay muted loop playsinline controls
-            class="w-full h-full object-cover"></video>
+          <video ref="vm" :src="items[i0].url" 
+          autoplay muted
+          preload="none"
+          loop 
+          playsinline 
+          controls
+          class="w-full h-full object-cover"></video>
         </template>
       </div>
 
@@ -84,24 +94,41 @@ watch(currentIndex, () => {
             <img :src="items[i0].image" alt="" class="w-full h-full object-cover" />
           </template>
           <template v-else>
-            <video ref="v0" :src="items[i0].url" autoplay muted loop playsinline controls
-              class="w-full h-full object-cover"></video>
+            <video 
+            ref="v0" 
+            :src="items[i0].url"
+            preload="none"
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            controls
+            class="w-full h-full object-cover"></video>
           </template>
         </div>
-        <!-- Coluna 2 -->
         <div class="rounded-2xl overflow-hidden">
           <template v-if="items[i1].type === 'image'">
-            <img :src="items[i1].image" alt="" class="w-full h-full object-cover" />
+            <img 
+            :src="items[i1].image" 
+            alt="" 
+            class="w-full h-full object-cover" 
+            loading="lazy"
+            decoding="async"
+          />
           </template>
           <template v-else>
             <video ref="v1" :src="items[i1].url" autoplay muted loop playsinline controls
               class="w-full h-full object-cover"></video>
           </template>
         </div>
-        <!-- Coluna 3 -->
+
         <div class="rounded-2xl overflow-hidden">
           <template v-if="items[i2].type === 'image'">
-            <img :src="items[i2].image" alt="" class="w-full h-full object-cover" />
+            <img :src="items[i2].image" 
+            alt="" 
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover" />
           </template>
           <template v-else>
             <video ref="v2" :src="items[i2].url" autoplay muted loop playsinline controls

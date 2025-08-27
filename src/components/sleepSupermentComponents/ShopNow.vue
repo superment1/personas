@@ -33,7 +33,7 @@
         productId="prod_SbKYsQrxStW8wB"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
-        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:px-0 sm:py-2 w-[290px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
+        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:px-0 sm:py-2 w-[349px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
         BUY ONE | PAY $42
       </ShopButton>
       <ShopButton 
@@ -43,7 +43,7 @@
         productId="prod_SbKa8ag01A2TGX"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
-        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:py-2 sm:px-0 w-[290px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
+        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:py-2 sm:px-0 w-[349px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
         BUY THREE | PAY $32 PER BOTTLE
       </ShopButton>
       <ShopButton 
@@ -53,7 +53,7 @@
         productId="prod_SbKaRuJpDVBEzx"
         textColorClass="text-[#370F1E]"
         :showIcon="false"
-        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:py-2 sm:px-0 w-[290px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
+        class=" !bg-[#6EC8F0] text-[14px] font-bold sm:py-2 sm:px-0 w-[349px] sm:w-[260px] 2xl:w-[326px] rounded-md botao-shop !hover:bg-none !transition-none">
         BUY SIX | PAY $26 PER BOTTLE
       </ShopButton>
 
