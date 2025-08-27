@@ -1,17 +1,20 @@
 <script setup>
 import '../styles/superSleep.scss';
-import FAQ from '../components/Faq.vue';
-import IngredientsCarousel from '../components/IngredientsCarousel.vue';
-import NotificationDisplay from '../components/NotificationDisplay.vue';
 import SuperHeader from '../components/SuperHeader.vue';
-import SuperFooter from '../components/SuperFooter.vue';
-import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
-import Stopwatch from '../components/Stopwatch.vue';
-import Frascos from '../components/sleepSupermentComponents/Frascos.vue';
-import Stress from '../components/sleepSupermentComponents/Stress.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
-import BannerModal from '../components/BannerModal.vue'
+import { defineAsyncComponent } from 'vue'
+import LazyIsland from '@/components/LazyIsland.vue'
+
+const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
+const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
+const Frascos = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Frascos.vue'))
+const Stress  = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Stress.vue'))
+const SuperFooter = defineAsyncComponent(() => import('../components/SuperFooter.vue'))
+const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
+const Stopwatch = defineAsyncComponent(() => import('../components/Stopwatch.vue'))
+const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
+const BannerModal = defineAsyncComponent(() => import('../components/BannerModal.vue'))
 
   useSeo({
     title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
@@ -91,13 +94,12 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
   </section>
   <section  class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande" 
     >   
-    <picture class="absolute inset-0 -z-10 w-full h-full">
+    <picture class="absolute inset-0 z-0 w-full h-full">
       <source
         media="(min-width: 640px)"
         type="image/avif"
         srcset="../assets/image/sleepSuperment/BannerPaginaD2.avif"
         sizes="100vw" />
-
       <!-- WebP fallback (desktop) -->
       <source
         media="(min-width: 640px)"
@@ -177,10 +179,10 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
       </p>
     </div>
     <div class="carrossel-ingredients">
-      <IngredientsCarousel></IngredientsCarousel>
+      <LazyIsland><IngredientsCarousel /></LazyIsland>
     </div>
   </section>
-  <Stress />
+  <LazyIsland><Stress /></LazyIsland>
   <section class="shop-rest">
     <div class="imagem-centralizada">
       <img 
@@ -217,7 +219,7 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
         id="buy-button"
         :anchorId="anchorId"
         :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none pb-1 !px-0 !bg-transparent">
+        class="botao-shop rounded-md !hover:bg-none pb-4 pt-[20px] !px-0 !bg-transparent">
         <div class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
           <span class="text-[#ffdf01]">SHOP REST</span>
         </div>
@@ -236,7 +238,7 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
       <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
     </div>
     <div class="testimonials">
-      <TestimonialsCarousel />
+    <LazyIsland><TestimonialsCarousel /></LazyIsland> 
     </div>
   </section>
   <section class="everyone">
@@ -272,9 +274,12 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
     </picture>
 
   </section>
-  <Frascos />
+ 
+  <LazyIsland><Frascos /></LazyIsland>
+  <div id="id-shop-now" class="scroll-target"></div>
   <Stopwatch limit="midnight" :repeat="true" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
+
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[349px] md:max-w-[700px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
@@ -282,16 +287,21 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
           questions:</h1>
         <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
           Frequently asked questions:</h1>
-        <FAQ />
+        <LazyIsland><div class="faq-wrap"><FAQ /></div></LazyIsland>
       </div>
     </div>
   </div>
   <div class="bg-[#370F1E] w-full">
     <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-      <SuperFooter /> 
+     <LazyIsland><SuperFooter /></LazyIsland>
     </div>
   </div>
-
-  <NotificationDisplay />
-  <BannerModal />
+  <LazyIsland><NotificationDisplay /></LazyIsland>
+  <LazyIsland><BannerModal /></LazyIsland>
 </template>
+<style>
+html { scroll-behavior: smooth; }
+.scroll-target { height: 0; }
+#id-shop-now, #id-shop-now-desk { scroll-margin-top: 80px; }
+  
+</style>
