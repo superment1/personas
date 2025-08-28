@@ -82,7 +82,7 @@ watch(currentIndex, () => {
           loop 
           playsinline 
           controls
-          class="w-full h-full object-cover"></video>
+          class="w-full h-full object-contain"></video>
         </template>
       </div>
 
@@ -103,7 +103,7 @@ watch(currentIndex, () => {
             loop 
             playsinline 
             controls
-            class="w-full h-full object-cover"></video>
+            class="w-full h-full object-contain"></video>
           </template>
         </div>
         <div class="rounded-2xl overflow-hidden">
@@ -118,7 +118,7 @@ watch(currentIndex, () => {
           </template>
           <template v-else>
             <video ref="v1" :src="items[i1].url" autoplay muted loop playsinline controls
-              class="w-full h-full object-cover"></video>
+              class="w-full h-full object-contain"></video>
           </template>
         </div>
 
@@ -132,7 +132,7 @@ watch(currentIndex, () => {
           </template>
           <template v-else>
             <video ref="v2" :src="items[i2].url" autoplay muted loop playsinline controls
-              class="w-full h-full object-cover"></video>
+              class="w-full h-full object-contain"></video>
           </template>
         </div>
       </div>

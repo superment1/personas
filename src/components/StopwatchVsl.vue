@@ -5,6 +5,7 @@ import FlipDigit from './FlipDigit.vue'
 const DURATION_MS = 7 * 60 * 1000
 const mm = ref('07')
 const ss = ref('00')
+const emit = defineEmits(['expired']) 
 let endAt = 0
 let t = null
 
@@ -18,6 +19,7 @@ function tick() {
   if (left <= 0 && t) {
     clearInterval(t)
     t = null
+    emit('expired') 
   }
 }
 

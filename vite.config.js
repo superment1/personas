@@ -17,7 +17,7 @@ export default defineConfig({
     alias: { '@': path.resolve(__dirname, './src') }
   },
   build: {
-    target: 'es2019',              
+    target: 'es2020',              
     minify: 'esbuild',
     cssCodeSplit: true,
     assetsInlineLimit: 1024,
