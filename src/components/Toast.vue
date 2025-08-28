@@ -61,8 +61,19 @@ function stripCouponFromText(text) {
                         <p class="pt-4"> Here’s your <br>exclusive</p>
                         <p class="mb-4 w-[215px]"> {{ stripCouponFromText(msg.text) }}</p>                
                     </div>    
-                    <div v-if="toastStore.messages.length" class="modal">
-                        <button class="cursor-pointer" type="button" aria-label="Close" @click="closeModal">X</button>
+                    <div v-if="toastStore.messages.length" class="modal text-white">
+                        <button class="cursor-pointer" 
+                        type="button" aria-label="Close" @click="closeModal">
+                        <svg
+                          width="24" height="24" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round"
+                          role="img" aria-label="close"
+                        >
+                          <circle cx="12" cy="12" r="9.2"/>
+                          <path d="M9 9l6 6M15 9l-6 6"/>
+                        </svg>
+                      </button>
                     </div>
                 </div>
                 <button

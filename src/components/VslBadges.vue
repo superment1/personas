@@ -1,9 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import Stopwatch from '../components/StopwatchVsl.vue';
 import ShopButton from './ShopButton.vue';
 
-</script>
+const emit = defineEmits<{ (e: 'expired'): void }>()
 
+</script>
 
 <template>
     <div
@@ -31,7 +32,7 @@ import ShopButton from './ShopButton.vue';
                 </div>
             </div>
             <div class="w-[1px] h-[124px] bg-[#370F1E] lg:w-[3px] lg:h-[300px]"></div>
-            <Stopwatch />
+            <Stopwatch @expired="() => emit('expired')" />
         </div>
         <div class="w-[350px] lg:w-[1250px] flex flex-col items-center justify-start lg:flex-row justify-between">
             <!-- FRASCO GRANDE -->
@@ -74,7 +75,7 @@ import ShopButton from './ShopButton.vue';
                         </svg>
                         <span
                             class="leading-7 !py-[10px] font-bold text-[21px] lg:text-[34px] font-DMSans ml-5 lg:ml-8">
-                            First Trial Special Offers
+                            First Trial Special Offer
                         </span>
                     </div>
                 </ShopButton>

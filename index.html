@@ -9,57 +9,59 @@
     <link 
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" 
       rel="stylesheet"  media="print" onload="this.media='all'">
-    <link rel="preload" as="image" type="image/avif"
-      href="/assets/hero-m-768.avif"
-      imagesrcset="./assets/hero-m-768.avif 768w"
-      imagesizes="100vw"
-      media="(max-width: 767px)">
     <meta name="theme-color" content="#fff">
     <link rel="icon" type="image/png" href="/public/favicon.webp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- Analitics -->
     <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-    </script>
-    
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('consent','default',{
-        ad_storage:'denied',
-        analytics_storage:'denied',
-        ad_user_data:'denied',
-        ad_personalization:'denied',
-        wait_for_update: 500
-      });
-    </script>
-    <script>
-      (function(){
-        const loadGTM = () => {
+
+      (function () {
+        function loadGTM() {
           if (window.__gtmLoaded) return; window.__gtmLoaded = true;
-          const s = document.createElement('script');
+          var s = document.createElement('script');
           s.async = true;
           s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
           document.head.appendChild(s);
-        };
+        }
 
-        const onInteract = () => { loadGTM(); cleanup(); };
-        const cleanup = () => {
-          window.removeEventListener('scroll', onInteract, { passive:true });
-          window.removeEventListener('mousemove', onInteract);
-          window.removeEventListener('touchstart', onInteract, { passive:true });
-        };
+        function loadHotjar() {
+          if (window.__hjLoaded) return; window.__hjLoaded = true;
+          (function (c, s, q, u, a, r, e) {
+            c.hj = c.hj || function(){ (c.hj.q = c.hj.q || []).push(arguments) };
+            c._hjSettings = { hjid: 6505028 }; // <-- use um ÚNICO ID
+            r = s.getElementsByTagName('head')[0];
+            e = s.createElement('script'); e.async = true;
+            e.src = q + c._hjSettings.hjid + u;
+            r.appendChild(e);
+          })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js');
+        }
 
-        if ('requestIdleCallback' in window) requestIdleCallback(loadGTM, { timeout: 3000 });
-        else setTimeout(loadGTM, 2000);
-        window.addEventListener('scroll', onInteract, { passive:true });
-        window.addEventListener('mousemove', onInteract);
-        window.addEventListener('touchstart', onInteract, { passive:true });
+        function loadAll(){ loadGTM(); loadHotjar(); cleanup(); }
+
+        function cleanup(){
+          window.removeEventListener('scroll', loadAll, { passive:true });
+          window.removeEventListener('mousemove', loadAll);
+          window.removeEventListener('touchstart', loadAll, { passive:true });
+        }
+
+        // carrega em idle ou após 2s, e na primeira interação
+        if ('requestIdleCallback' in window) requestIdleCallback(loadAll, { timeout: 3000 });
+        else setTimeout(loadAll, 2000);
+
+        window.addEventListener('scroll', loadAll, { passive:true });
+        window.addEventListener('mousemove', loadAll);
+        window.addEventListener('touchstart', loadAll, { passive:true });
       })();
     </script>
   </head>
   <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6Z2ZN9H"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <div id="app" style="opacity:0;transition:opacity 120ms ease;background:#fff;"></div>
     <div id="splash-hero"
         style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">

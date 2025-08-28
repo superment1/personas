@@ -20,8 +20,31 @@ const modalOpen = ref(false)
 const showAfterVideo = ref(false)
 
 const urlPath = '/supersleep'
+
 function openModal() { modalOpen.value = true }
 function goToPage() { router.push(urlPath) }
+
+const BACK_STATE = { exitGuard: true }
+let backGuardActive = false
+
+function onBackPress(e: PopStateEvent) {
+  if (!backGuardActive) return
+  history.pushState(BACK_STATE, document.title, location.href)
+  openExitModal(true)
+}
+
+function enableBackExitGuard() {
+  if (backGuardActive) return
+  backGuardActive = true
+  history.pushState(BACK_STATE, document.title, location.href)
+  window.addEventListener('popstate', onBackPress)
+}
+
+function disableBackExitGuard() {
+  if (!backGuardActive) return
+  backGuardActive = false
+  window.removeEventListener('popstate', onBackPress)
+}
 
 const COOLDOWN_MS = 20000
 const TOP_ZONE = 8
@@ -32,16 +55,19 @@ let io
 const AFTER_VIDEO_GRACE_MS = 10000
 let afterVideoUntil = 0
 
-function onPrimary() {
-  router.push('/supersleep')
+function onCountdownExpired() {
+  modalOpen.value = true
+  lastShown = Date.now()
 }
 
-function openExitModal() {
+function openExitModal(force = false) {
   const now = Date.now()
   if (modalOpen.value) return
-  if (now < afterVideoUntil) return
-  if (showAfterVideo.value) return
-  if (now - lastShown < COOLDOWN_MS) return
+  if (!force) {
+    if (now < afterVideoUntil) return
+    if (showAfterVideo.value) return
+    if (now - lastShown < COOLDOWN_MS) return
+  }
 
   modalOpen.value = true
   lastShown = now
@@ -59,13 +85,14 @@ function loadVturbOnce() {
   document.head.appendChild(s)
 }
 
-function onMouseMove(e) {
+function onMouseMove(e: MouseEvent) {
   const goingUp = e.clientY < lastY
-  if (goingUp && e.clientY <= TOP_ZONE) openExitModal()
+  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true) 
   lastY = e.clientY
 }
-function onMouseOut(e) {
-  if (!e.relatedTarget && e.clientY <= 0) openExitModal()
+
+function onMouseOut(e: MouseEvent) {
+  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true) 
 }
 
 function onVisibilityChange() {
@@ -143,6 +170,9 @@ onMounted(() => {
       showAfterVideo.value = true
     }, { once: true })
   }
+  if (window.matchMedia?.('(pointer: coarse)').matches) {
+    enableBackExitGuard()
+  }
   el.addEventListener('player:ready', onReady, { once: true })
   document.addEventListener('player:ready', onReady, { once: true })
 
@@ -155,7 +185,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('blur', onWindowBlur)
   window.removeEventListener('popstate', onPopState)
   window.removeEventListener('scroll', onScroll)
-
+  disableBackExitGuard()
 })
 
 </script>
@@ -524,7 +554,7 @@ onBeforeUnmount(() => {
     </div>
     <!-- v-show="showAfterVideo" -->
     <div v-show="showAfterVideo" class="">
-      <VslBadges />
+      <VslBadges  @expired="onCountdownExpired" />
     </div>
 
     <!-- DESKTOP v-show="showAfterVideo"  -->
@@ -647,17 +677,21 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- <BannerRetention
+  <BannerRetention
     v-model:open="modalOpen"
-    title="Atenção!"
-    message="Quer garantir seu desconto antes de sair?"
-    primary-text="Garantir agora"
-    secondary-text="Continuar navegando"
+    title="WAIT!"
+    subtitle="LOW STOCK WARNING!"
+    buttonText="Yes, stay on this page!"
     :disable-backdrop-close="true"
     :disable-esc="false"
-    :timer="10000"
-    @close="onModalClose"
-    @primary="onPrimary" 
-  /> -->
+  >
+  <template #message>
+    <p>
+      <span class="text-[#FFDC03]">Super Natural Sleep</span> is selling out fast!<br>
+      Secure your order today to avoid any disappointment.<br><br>
+      Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
+    </p>
+  </template>
+</BannerRetention>
 
 </template>
