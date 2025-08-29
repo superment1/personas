@@ -38,11 +38,11 @@ function onCountdownExpired() { }
       <CtaPageC />
       <IngredientsC />
       <BeyoundC />
-      <div class="bg-[#350E1D] w-full items-center">
+      <div class="bg-[#FFFAF0] w-full items-center">
         <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
-          <p class="title pt-[20px] text-[#fff] font-semibold text-[34px] leading-none">Every day, more people</p>
+          <p class="title pt-[20px] text-[#370F1E] font-semibold text-[34px] leading-none">Every day, more people</p>
           <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
-          <div class="bg-white/10 font-gelasio px-3 pb-[17px] pt-[10px] text-[#fff] rounded-[20px]">
+          <div class="bg-[#E1DCCD] font-gelasio px-3 pb-[17px] pt-[10px] text-[#370F1E] rounded-[20px]">
             <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
             <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for
               deeper,<br>better
