@@ -13,6 +13,7 @@ import Guarantees from '../components/Guarantees.vue'
 import SleepTransformation from '../components/SleepTransformation.vue'
 import logoHeader from '@/assets/image/discomfort/header.svg'
 import Learnmore from '@/components/Learnmore.vue'
+import BeyoundC from '@/components/BeyoundC.vue'
 
 useSeo({
     title: 'Natural Sleep Aid for Elderly | Superment - Non-Medication Sleep Support',
@@ -26,8 +27,7 @@ useSeo({
         <!-- Blue Rounded Header -->
         <Header color="#370F1E" :image-src="logoHeader" />
         <HeroSectionElderly />
-
-        <TaglineStripElderly />
+        <BeyoundC />
 
         <ProductHighlightElderly />
         <SleepTransformation />
