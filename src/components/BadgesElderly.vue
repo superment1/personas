@@ -7,20 +7,20 @@
                 Formula</p>
         </div>
         <div class="hidden md:grid w-[890px] grid-cols-2 pb-4">
-            <div class="w-[400px] flex flex-row items-center justify-end gap-3">
-                <span>*</span>
+            <div class="w-[350px] flex flex-row items-center justify-start gap-3">
+                <img src="../assets/image/sleepElderly/svg-icon.svg" alt="icon" class="w-10">
                 <p class="text-[20px] text-[#525252] font-DMSans">Botanical Ingredients</p>
             </div>
             <div class="w-[400px] flex flex-row items-center justify-start gap-3">
-                <span>*</span>
+                <img src="../assets/image/sleepElderly/svg-icon.svg" alt="icon" class="w-10">
                 <p class="text-[20px] text-[#525252] font-DMSans">Clean-Label, Non-Habit Forming</p>
             </div>
-            <div class="w-[400px] flex flex-row items-center justify-end gap-3">
-                <span>*</span>
+            <div class="w-[350px] flex flex-row items-center justify-start gap-3">
+                <img src="../assets/image/sleepElderly/svg-icon.svg" alt="icon" class="w-10">
                 <p class="text-[20px] text-[#525252] font-DMSans">30-Day Satisfaction Guarantee</p>
             </div>
             <div class="w-[500px] flex flex-row items-center justify-start gap-3">
-                <span>*</span>
+                <img src="../assets/image/sleepElderly/svg-icon.svg" alt="icon" class="w-10">
                 <p class="text-[20px] text-[#525252] font-DMSans">Made in the U.S.A. in FDA & GMP-Certified Facilities
                 </p>
             </div>
