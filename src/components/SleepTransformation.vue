@@ -4,7 +4,7 @@ import ShopButton from '../components/ShopButton.vue'
 
 <template>
     <section class="py-[30px] pb-12 bg-white">
-        <div class="max-w-7xl lg:max-w-[80rem] flex-col justify-items-center">
+        <div class="w-full flex-col justify-items-center">
             <div class="flex-col flex md:flex-row justify-start items-center">
                 <div
                     class="flex flex-col items-center justify-start md:gap-6 md:flex-row md:items-start w-[316px] lg:w-[962px]">
