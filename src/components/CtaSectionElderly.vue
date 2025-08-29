@@ -2,7 +2,7 @@
     <!-- Final CTA Section -->
     <section class="relative rounded-t-3xl bg-[#63CFF2]">
         <div
-            class="w-full px-4 pt-11 pb-[66px] md:pb-0 min-h-[600px] rounded-t-3xl bg-[url('../assets/image/sleepElderly/bannerElderly.png')] md:bg-[url('@/assets/image/sleepElderly/bg_footer_desk.webp')] bg-cotain bg-[70%_20%] md:bg-cover md:bg-top bg-no-repeat">
+            class="w-full px-4 pt-11 pb-[66px] md:pb-0 min-h-[600px] rounded-t-3xl bg-[url('../assets/image/sleepElderly/bannerElderly.webp')] md:bg-[url('@/assets/image/sleepElderly/bg_footer_desk.webp')] bg-cotain bg-[70%_20%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-full flex items-center justify-center lg:max-w-[90%] lg:mx-auto">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[314px]">
