@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full h-[461px] flex flex-col items-center justify-start bg-[#370F1E]">
-        <div class="w-[400px] flex flex-col items-center justify-start py-10 gap-5">
+    <div class="w-full h-[458px] flex flex-col items-center justify-start bg-[#370F1E]">
+        <div class="w-[400px] flex flex-col items-center justify-start pb-10 pt-[37px] gap-[30px]">
             <p class="font-gelasio text-[25px] text-[#fff] text-center font-bold italic leading-[1.1]">Beyond rest,
                 <br>benefits
                 you’ll
