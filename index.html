@@ -17,7 +17,6 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-
       (function () {
         function loadGTM() {
           if (window.__gtmLoaded) return; window.__gtmLoaded = true;
@@ -26,7 +25,6 @@
           s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
           document.head.appendChild(s);
         }
-
         function loadHotjar() {
           if (window.__hjLoaded) return; window.__hjLoaded = true;
           (function (c, s, q, u, a, r, e) {
@@ -38,16 +36,12 @@
             r.appendChild(e);
           })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js');
         }
-
         function loadAll(){ loadGTM(); loadHotjar(); cleanup(); }
-
         function cleanup(){
           window.removeEventListener('scroll', loadAll, { passive:true });
           window.removeEventListener('mousemove', loadAll);
           window.removeEventListener('touchstart', loadAll, { passive:true });
         }
-
-        // carrega em idle ou após 2s, e na primeira interação
         if ('requestIdleCallback' in window) requestIdleCallback(loadAll, { timeout: 3000 });
         else setTimeout(loadAll, 2000);
 
@@ -62,24 +56,25 @@
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6Z2ZN9H"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <div id="app" style="opacity:0;transition:opacity 120ms ease;background:#fff;"></div>
+    <div id="app"></div>
     <div id="splash-hero"
         style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">
       <picture style="position:absolute;inset:0">
-        <source type="image/avif"
-                srcset="/assets/posterMobile.avif 768w"
-                sizes="100vw"
-                media="(max-width:767px)">
-        <source type="image/webp"
-                srcset="/assets/posterMobile.webp 768w"
-                sizes="100vw"
-                media="(max-width:767px)">
-        <img src="/assets/posterMobile.avif"
-            alt="" width="768" height="820"
-            loading="eager" fetchpriority="high" decoding="async"
-            style="position:absolute;width:100%;height:100%;object-fit:cover; object-position:center">
-      </picture>
+    <source type="image/avif" srcset="/assets/posterMobile.avif 768w" sizes="100vw" media="(max-width:767px)">
+    <source type="image/webp" srcset="/assets/posterMobile.webp 768w" sizes="100vw" media="(max-width:767px)">
+    <img src="/assets/posterMobile.webp"
+         alt="" width="768" height="820"
+         loading="eager" decoding="async"
+         style="position:absolute;top:0;width:100%;height:100%;object-fit:cover;object-position:top">
+  </picture>
     </div>
+    <script>
+      new PerformanceObserver((list) => {
+        for (const e of list.getEntries()) {
+          console.log('[LCP]', Math.round(e.startTime), e.element?.tagName, e.element?.id || '');
+        }
+      }).observe({ type: 'largest-contentful-paint', buffered: true });
+    </script>
     <script type="module" src="/src/main.js"></script>
     <script>
       (function () {
@@ -95,27 +90,29 @@
         rest = rest.replace(/^\/+|\/+$/g, '');    
         const route = rest === '' ? 'supersleep' : rest.split('/')[0];
         const splashMap = {
-          supersleep:   { avif: "assets/posterMobile.avif" },
-          beautysleep:  { avif: "assets/posterBeauty.avif" },
-          vsl:          { avif: "assets/posterVsl.avif" },
-          vsl2:         { avif: "assets/posterVsl.avif" },
-          elderly:      { avif: "assets/posterElderly.avif" },
-          about:        { avif: "assets/posterAbout.avif" },
-          terms:        { avif: "assets/posterTerms.avif"},
-          faq:          { avif: "assets/posterFaq.avif"},
-          refundpolicy: { avif: "assets/posterRefundPolicy.avif"},  
-          privacypolicy:{ avif: "assets/posterPrivacyPolicy.avif"},  
+          supersleep:   { avif: "assets/posterMobile.avif",       webp: "assets/posterMobile.webp" },
+          beautysleep:  { avif: "assets/posterBeauty.avif",       webp: "assets/posterBeauty.webp" },
+          vsl:          { avif: "assets/posterVsl.avif",          webp: "assets/posterVsl.webp" },
+          vsl2:         { avif: "assets/posterVsl.avif",          webp: "assets/posterVsl.webp" },
+          elderly:      { avif: "assets/posterElderly.avif",      webp: "assets/posterElderly.webp" },
+          about:        { avif: "assets/posterAbout.avif",        webp: "assets/posterAbout.webp" },
+          terms:        { avif: "assets/posterTerms.avif",        webp: "assets/posterTerms.webp" },
+          faq:          { avif: "assets/posterFaq.avif",          webp: "assets/posterFaq.webp" },
+          refundpolicy: { avif: "assets/posterRefundPolicy.avif", webp: "assets/posterRefundPolicy.webp" },
+          privacypolicy:{ avif: "assets/posterPrivacyPolicy.avif",webp: "assets/posterPrivacyPolicy.webp" }, 
         };
         const assets = splashMap[route];
         if (!assets) { app.style.opacity = '1'; splash?.remove(); return }
+
         const sources = splash.querySelectorAll('source');
         const img = splash.querySelector('img');
+
         sources.forEach((s) => {
-          if ((s.getAttribute('type') || '').toLowerCase() === 'image/avif') {
-            s.setAttribute('srcset', `${assets.avif} 768w`);
-          }
+          const t = (s.getAttribute('type') || '').toLowerCase();
+          if (t === 'image/avif') s.setAttribute('srcset', `${assets.avif} 768w`);
+          if (t === 'image/webp') s.setAttribute('srcset', `${assets.webp} 768w`);
         });
-        if (img) img.src = assets.avif;
+        if (img) img.src = assets.webp;
         let done = false;
         const swap = () => {
           if (done) return; done = true;
@@ -133,4 +130,7 @@
     </script>
 
   </body>
+  <style>
+    #app { opacity: 0; transition: opacity 120ms ease; }
+  </style>
 </html>
