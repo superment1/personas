@@ -2,10 +2,17 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import FlipDigit from './FlipDigit.vue'
 
+
+const props = defineProps({
+  durationMs: { type: Number, default: 7 * 60 * 1000 },    
+  startOn:    { type: String,  default: 'video-ended' },   
+  persistKey: { type: String,  default: '' }                
+})
+const emit = defineEmits(['expired'])
+
 const DURATION_MS = 7 * 60 * 1000
 const mm = ref('07')
 const ss = ref('00')
-const emit = defineEmits(['expired']) 
 let endAt = 0
 let t = null
 
@@ -24,21 +31,31 @@ function tick() {
 }
 
 function startCountdown() {
-  endAt = Date.now() + DURATION_MS
+  if (props.persistKey) {
+    const savedStart = Number(localStorage.getItem(props.persistKey) || 0)
+    const startAt = savedStart || Date.now()
+    if (!savedStart) localStorage.setItem(props.persistKey, String(startAt))
+    endAt = startAt + props.durationMs
+  } else {
+    endAt = Date.now() + props.durationMs
+  }
   tick()
   if (t) clearInterval(t)
   t = setInterval(tick, 1000)
 }
 
 onMounted(() => {
+  if (props.startOn === 'mount') {
+    startCountdown()
+    return
+  }
   const el = document.getElementById('vid-68aa4210166658ec2475a56e')
-    const onReady = () => {
-      el.addEventListener('video:ended', () => { startCountdown()}, { once: true })
+  const onReady = () => {
+    el?.addEventListener('video:ended', () => { startCountdown() }, { once: true })
   }
   el?.addEventListener('player:ready', onReady, { once: true })
   document.addEventListener('player:ready', onReady, { once: true })
 })
-
 onBeforeUnmount(() => t && clearInterval(t))
 </script>
 

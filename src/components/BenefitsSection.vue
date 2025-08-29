@@ -1,6 +1,6 @@
 <template>
     <!-- What Happens When You Sleep -->
-    <div class="w-full flex items-center justify-center mt-[62px] pb-[60px] md:mt-[38px] lg:pt-6">
+    <div class="w-full flex items-center bg-[#fff] justify-center mt-[62px] pb-[60px] md:mt-[38px] lg:pt-6">
         <div class="w-[full] min-w-[316px] md:w-[760px] lg:w-[960px] flex flex-col items-center justify-center">
             <h2
                 class="w-[316px] md:w-full font-gelasio text-[28px] md:text-[34px] leading-[1.10] text-[#525252] text-left lg:text-center lg:text-[40px] mb-6 lg:mb-12 italic">

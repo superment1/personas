@@ -553,8 +553,13 @@ onBeforeUnmount(() => {
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div v-show="showAfterVideo" class="">
-      <VslBadges  @expired="onCountdownExpired" />
+    <div  v-show="showAfterVideo" class="">
+     <VslBadges
+        id="id-vsl-badges"
+        :duration-ms="7 * 60 * 1000"
+        start-on="video-ended"
+        @expired="onCountdownExpired"
+      />
     </div>
 
     <!-- DESKTOP v-show="showAfterVideo"  -->
@@ -648,12 +653,12 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
-    <div v-if="showAfterVideo" class="bg-[#350E1D] w-full items-center">
+    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
       <div class="max-w-[349px] mx-auto">
         <SuperFooter />
       </div>
     </div>
-    <div v-else class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
+    <div v-show="!showAfterVideo" class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
       <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
           <span class="inline-flex text-center items-baseline">SUPERMENT<sub

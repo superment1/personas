@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   { path: '/supersleep',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
-  { path: '/test',         name: 'test',         component: () => import('../pages/superTest.vue') },
   { path: '/beautysleep',  name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
   { path: '/terms',        name: 'terms',        component: () => import('../pages/termsUse.vue') },
   { path: '/privacypolicy',name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
@@ -12,7 +11,9 @@ const routes = [
   { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
   { path: '/discomfort',   name:'discomfort',    component: () => import('../pages/discomfort.vue') },
   { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')},
-  { path: '/vsl2',          name:'vsl2',           component: () => import('../pages/vsl2.vue')}
+  { path: '/vsl2',         name:'vsl2',         component: () => import('../pages/vsl2.vue')},
+  { path: '/sleepbetter',  name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')}
+
   
 ]
 

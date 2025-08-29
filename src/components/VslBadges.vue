@@ -2,6 +2,12 @@
 import Stopwatch from '../components/StopwatchVsl.vue';
 import ShopButton from './ShopButton.vue';
 
+const props = defineProps({
+  durationMs: { type: Number, default: 7*60*1000 },
+  startOn:    { type: String,  default: 'mount' },
+  persistKey: { type: String,  default: '' }
+})
+
 const emit = defineEmits<{ (e: 'expired'): void }>()
 
 </script>
@@ -32,7 +38,12 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 </div>
             </div>
             <div class="w-[1px] h-[124px] bg-[#370F1E] lg:w-[3px] lg:h-[300px]"></div>
-            <Stopwatch @expired="() => emit('expired')" />
+            <Stopwatch 
+                :duration-ms="durationMs"
+                :start-on="startOn"
+                :persist-key="persistKey"
+                @expired="$emit('expired')"
+            />
         </div>
         <div class="w-[350px] lg:w-[1250px] flex flex-col items-center justify-start lg:flex-row justify-between">
             <!-- FRASCO GRANDE -->

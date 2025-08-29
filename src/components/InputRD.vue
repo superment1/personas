@@ -1,20 +1,20 @@
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 const formRef = ref(null)
 let io, loaded = false, mounted = false
 
-function loadRD() {
+function loadRD(): Promise<any> {
   return new Promise((resolve, reject) => {
-    if (window.RDStationForms) return resolve()
-    if (loaded) return resolve()
-    loaded = true
+    // se já carregou antes
+    if ((window as any).RDStationForms) return resolve((window as any).RDStationForms)
+
     const s = document.createElement('script')
     s.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js'
     s.async = true
-    s.crossOrigin = 'anonymous'
-    s.onload = () => resolve()
-    s.onerror = () => { loaded = false; reject(new Error('RD load failed')) }
+    s.type = 'text/javascript'             // <- importante: NÃO 'module'
+    s.onload = () => resolve((window as any).RDStationForms)
+    s.onerror = () => reject(new Error('RD load failed'))
     document.head.appendChild(s)
   })
 }
