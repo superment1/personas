@@ -1,21 +1,23 @@
-<script setup>
+<script setup lang="ts">
 import '../styles/superSleep.scss';
 import SuperHeader from '../components/SuperHeader.vue';
+import SuperHeader2 from '../components/SuperHeader2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
+import VslBadges from '../components/VslBadges.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import SuperFooter from '../components/SuperFooter.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
 const Frascos = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Frascos.vue'))
 const Stress  = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Stress.vue'))
-const SuperFooter = defineAsyncComponent(() => import('../components/SuperFooter.vue'))
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
-const Stopwatch = defineAsyncComponent(() => import('../components/Stopwatch.vue'))
 const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
-
+const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
   useSeo({
     title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
@@ -23,14 +25,111 @@ const NotificationDisplay = defineAsyncComponent(() => import('../components/Not
     keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
 
-const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width:1024px)').matches)
-  ? 'id-shop-now-desk'
-  : 'id-shop-now'
+const anchorId = 'id-vsl-badges'
+
+// ===== Exit-intent / retenção (sem vídeo) =====
+const modalOpen = ref(false)
+
+const BACK_STATE = { exitGuard: true }
+let backGuardActive = false
+
+function onBackPress(e: PopStateEvent) {
+  if (!backGuardActive) return
+  history.pushState(BACK_STATE, document.title, location.href)
+  openExitModal(true)
+}
+function enableBackExitGuard() {
+  if (backGuardActive) return
+  backGuardActive = true
+  history.pushState(BACK_STATE, document.title, location.href)
+  window.addEventListener('popstate', onBackPress)
+}
+function disableBackExitGuard() {
+  if (!backGuardActive) return
+  backGuardActive = false
+  window.removeEventListener('popstate', onBackPress)
+}
+
+// cooldown e gatilhos
+const COOLDOWN_MS = 20000
+const TOP_ZONE = 8
+let lastShown = 0
+let lastY = 9999
+
+function onCountdownExpired() {
+  modalOpen.value = true
+  lastShown = Date.now()
+}
+function openExitModal(force = false) {
+  const now = Date.now()
+  if (modalOpen.value) return
+  if (!force) {
+    if (now - lastShown < COOLDOWN_MS) return
+  }
+  modalOpen.value = true
+  lastShown = now
+}
+function onPageHide() { openExitModal() }
+
+function onMouseMove(e: MouseEvent) {
+  const goingUp = e.clientY < lastY
+  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true)
+  lastY = e.clientY
+}
+function onMouseOut(e: MouseEvent) {
+  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true)
+}
+function onVisibilityChange() {
+  if (document.visibilityState === 'hidden') openExitModal()
+}
+function onWindowBlur() { openExitModal() }
+function onPopState() { openExitModal() }
+
+let lastScrollY = window.scrollY || 0
+let lastScrollT = performance.now()
+function onScroll() {
+  const y = window.scrollY
+  const t = performance.now()
+  const dy = lastScrollY - y
+  const dt = Math.max(t - lastScrollT, 1)
+  const vel = dy / dt
+  if (dy > 120 && vel > 0.6) openExitModal()
+  if (y <= 12 && dy > 0) openExitModal()
+  lastScrollY = y
+  lastScrollT = t
+}
+
+onMounted(() => {
+  // listeners de retenção
+  window.addEventListener('mousemove', onMouseMove, { passive: true })
+  document.addEventListener('mouseout', onMouseOut, { passive: true })
+  document.addEventListener('visibilitychange', onVisibilityChange)
+  window.addEventListener('blur', onWindowBlur)
+  window.addEventListener('popstate', onPopState)
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('pagehide', onPageHide)
+
+  // guard de back apenas em touch (igual VSL)
+  if (window.matchMedia?.('(pointer: coarse)').matches) {
+    enableBackExitGuard()
+  }
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('mousemove', onMouseMove)
+  document.removeEventListener('mouseout', onMouseOut)
+  document.removeEventListener('visibilitychange', onVisibilityChange)
+  window.removeEventListener('blur', onWindowBlur)
+  window.removeEventListener('popstate', onPopState)
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('pagehide', onPageHide)
+  disableBackExitGuard()
+})
 
 </script>
 
 <template>
-  <SuperHeader :show-redirect="false"/>
+  <SuperHeader2 :show-redirect="false"/>
   <section 
       id="super-sleep-pequeno"
       class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden" 
@@ -277,10 +376,13 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
   </section>
  
   <LazyIsland><Frascos /></LazyIsland>
-  <div id="id-shop-now" class="scroll-target"></div>
-  <Stopwatch limit="midnight" :repeat="true" />
+  <VslBadges
+    id="id-vsl-badges"
+    :duration-ms="7 * 60 * 1000"
+    start-on="mount"
+    @expired="onCountdownExpired"
+  />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
-
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[349px] md:max-w-[700px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
@@ -294,11 +396,27 @@ const anchorId = (typeof window !== 'undefined' && window.matchMedia('(min-width
   </div>
   <div class="bg-[#370F1E] w-full">
     <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-     <LazyIsland><SuperFooter /></LazyIsland>
+     <SuperFooter />
     </div>
   </div>
   <LazyIsland><NotificationDisplay /></LazyIsland>
   <BannerModal />
+  <BannerRetention
+    v-model:open="modalOpen"
+    title="WAIT!"
+    subtitle="LOW STOCK WARNING!"
+    buttonText="Yes, stay on this page!"
+    :disable-backdrop-close="true"
+    :disable-esc="false"
+  >
+    <template #message>
+      <p>
+        <span class="text-[#FFDC03]">Super Natural Sleep</span> is selling out fast!<br>
+        Secure your order today to avoid any disappointment.<br><br>
+        Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
+      </p>
+    </template>
+  </BannerRetention>
 </template>
 <style>
 html { scroll-behavior: smooth; }
