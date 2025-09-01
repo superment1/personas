@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-full bg-[url('@/assets/image/pagec/banner-produto.webp')] h-[797px] flex flex-col items-center justify-start">
+        class="w-full bg-[url('@/assets/image/pagec/banner_produto_3.webp')] h-[797px] flex flex-col items-center justify-start">
         <div class="w-[335px] flex flex-col items-center justify-start pb-10 pt-[213px]">
             <span class="text-start w-[332px] font-gelasio text-[15px] text-[#370F1E] leading-[1.18]">
                 <span class="font-bold">That’s why we created Super <br>Natural Sleep</span> — a plant-based <br>formula
@@ -21,7 +21,7 @@
                 <br><span class="text-[white]">Compare and prove it:</span>
             </span>
             <div class="py-7">
-                <img src="@/assets/image/pagec/table.png" alt="table"></img>
+                <img src="@/assets/image/pagec/tabela.webp" alt="table"></img>
             </div>
         </div>
     </div>

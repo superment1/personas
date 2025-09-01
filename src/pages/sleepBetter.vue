@@ -250,62 +250,62 @@ function onCountdownExpired() { }
           <p  class="text-[#370F1E] leading-[1.2] text-[15px]">
             Melatonin, sleep teas, OTC pilss, harsh chemicals and sedatives may help you fall asleep faster. But rather than supporting <br> your natural sleep cycles, they often suppress them — <span class="font-bold"> leading to shallow, disconnected rest.</span>
           </p>
-          <p class="font-bold text-[#370F1E] pt-[16px]">
+          <p class="font-bold leading-[1.2] text-[#370F1E] pt-[18px]">
             Common side effects of conventional sleep aids:
           </p>
-          <ul class="grid grid-cols-2 text-[14px] leading-[15.4px] font-gelasio italic pt-[27px] gap-x-3 gap-y-[27.58px] list-none">
+          <ul class="grid grid-cols-2 text-[14px] leading-[15.4px] font-gelasio italic pt-[37px] gap-x-3 gap-y-[27px] list-none">
             <li class="bg-[#370F1E] relative rounded-[7px]">
               <img
-                src="../assets/image/pagec/emoji/face_with_steam_from_nose.webp"
+                src="../assets/image/pagec/emoji/woozy_face.webp"
                 alt="" aria-hidden="true"
                 width="22" height="22"
                 loading="lazy"
                 class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
               />
-              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#fff] text-center">Increased stress or anxiety</div>
+              <div class="leading-[15.4px] pb-[9px] pt-[15px] px-[10px] text-[#fff] text-center">Next-day <br>grogginess</div>
             </li>
             <li class="bg-[#370F1E] relative rounded-[7px]">
               <img
-                src="../assets/image/pagec/emoji/face_with_thermometer.webp"
+                src="../assets/image/pagec/emoji/dizzy_face.webp"
                 alt="" aria-hidden="true"
                 width="22" height="22"
                 loading="lazy"
                 class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
               />
-              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#fff] text-center">Getting sick more often</div>
+              <div class="leading-[15.4px] pb-[9px] pt-[15px] px-[10px] text-[#fff] text-center">Restless or vivid dreams</div>
             </li>
             <li class="bg-[#370F1E] relative rounded-[7px]">
               <img
-                src="../assets/image/pagec/emoji/weary_face.webp"
+                src="../assets/image/pagec/emoji/persevering_face.webp"
                 alt="" aria-hidden="true"
                 width="22" height="22"
                 loading="lazy"
                 class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
               />
-              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#fff] text-center">Fatigue that <br> rest doesn’t fix</div>
+              <div class="leading-[15.4px] pb-[9px] pt-[15px] px-[10px] text-[#fff] text-center">Disrupted hormonal rhythms</div>
             </li>
             <li class="bg-[#370F1E] relative rounded-[7px]">
               <img
-                src="../assets/image/pagec/emoji/older_person001.webp"
+                src="../assets/image/pagec/emoji/shocked_face_with_exploding.webp"
                 alt="" aria-hidden="true"
                 width="22" height="22"
                 loading="lazy"
                 class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
               />
-              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#fff] text-center">Early signs <br> of aging</div>
+              <div class="leading-[15.4px] pb-[9px] pt-[15px] px-[4px] text-[#fff] text-center">Short-term relief, long-term dependence</div>
             </li>
           </ul>
         </div>
       </div>
     </section>
-      <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
+      <div class="bg-[#FFFAF0] w-full pt-[42px] items-center justify-start">
         <div class="px-0 flex flex-col items-center justify-start">
           <div class="w-full max-w-[349px] md:max-w-[1260px]">
             <h1
-              class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-gelasio font-bold italic  text-[34px] text-center sm:text-[68px] ">
+              class="text-[#350E1D] sm:hidden w-full leading-[0.9] pb-[46px] font-gelasio font-bold italic text-[25px] text-center sm:text-[68px] ">
               Scientific <br> references:</h1>
             <h1
-              class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-bold font-gelasio italic text-[34px] text-start sm:text-[68px] ">
+              class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-bold font-gelasio italic text-start sm:text-[68px] ">
               Scientific references:</h1>
           </div>
           <ul
@@ -374,10 +374,10 @@ function onCountdownExpired() { }
           </ul>
         </div>
       </div>
-      <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
+      <div class="bg-[#fffaf0] w-full pt-[50px] pb-[45px] flex flex-col">
         <div class="px-0 sm:px-10 flex flex-col">
           <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
-            <h1 class="text-center w-full sm:hidden pb-[46px] font-bold leading-none text-[#370F1E] text-[34px] font-gelasio italic">
+            <h1 class="text-center w-full sm:hidden pb-[46px] font-bold leading-none text-[#370F1E] text-[25px] font-gelasio italic">
               Frequently asked <br>
               questions:</h1>
             <h1
