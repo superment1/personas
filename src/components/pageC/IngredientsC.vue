@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-start bg-[#FFFAF0]">
+    <div class="w-full relative flex flex-col items-center justify-start bg-[#FFFAF0]">
         <div class="w-[310px] flex flex-col items-center justify-start py-[42px] gap-y-3">
             <span class="font-gelasio text-[25px] leading-[1.1] text-[#370F1E] text-center">What’s inside and <br><span
                     class="font-bold">why it
@@ -32,6 +32,11 @@
             </div>
 
         </div>
+        <span
+            class="pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-4 translate-y-[1px] z-10
+                  w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent
+                  border-t-[28px] border-t-[#FFFAF0]">
+          </span>
     </div>
 </template>
 
