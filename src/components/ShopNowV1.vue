@@ -14,12 +14,15 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
 <template>
     <div
-        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start 
-        py-10 pb-[54px] lg:pt-[78px] lg:pb-[130px]">
-         
+        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start pt-[33px] pb-[54px] lg:pt-[78px] lg:pb-[130px]">
+            <div class="w-[350px] text-[#370F1E] text-center text-[20px] leading-[1.2] font-gelasio italic">
+                <h1> You don’t have to live <br> exhausted anymore.</h1>
+                <p class="pt-2 font-bold">Break the cycle now. <br> Claim real rest and your<br>energy back.</p>
+            </div>    
+
         <!-- HEADER COM CONTADOR -->
         <div
-            class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between pt-4 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
+            class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between pt-12 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
            
             <div>
                 <span class="text-[#370F1E] font-crossfit text-[61px] lg:text-[148px] font-bold leading-[0.87]">SHOP
@@ -52,8 +55,8 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
             <!-- FRASCO GRANDE -->
             <div
                 class="smartplayer-scroll-event w-[350px] h-[360px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[600px] lg:h-[600px] lg:pb-4">
-                <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
-                <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-auto w-[110%] max-w-[900px]">
+                <img src="@/assets/image/pagec/bottle_one.webp" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
+                <img src="@/assets/image/pagec/bottle_one.webp" alt="bagde VSL" class="hidden lg:block h-auto w-[110%] max-w-[900px]">
 
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_SbKYsQrxStW8wB"
@@ -100,7 +103,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 <div class="flex flex-row items-center justify-between gap-3 lg:flex-row items-center justify-start">
                     <div
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
-                        <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
+                        <img src="@/assets/image/pagec/bottles_three.webp" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3 ml-4 lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
                             class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
@@ -146,7 +149,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                     </div>
                     <div
                         class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
-                        <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
+                        <img src="@/assets/image/pagec/bottles_six.webp" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3  lg:w-[400px] lg:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
                             class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
