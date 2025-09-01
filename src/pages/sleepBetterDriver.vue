@@ -39,21 +39,20 @@ function onCountdownExpired() { }
         <picture>
           <source media="(min-width: 640px)" srcset="@/assets/image/pagec/hero_desk.webp" />
           <img
-            src="@/assets/image/pagec/hero_womam.webp"
+            src="@/assets/image/pagec/hero_c.webp"
             alt="driver"
             class="w-full object-cover"
           />
         </picture>
         <!-- Texto sobreposto -->
         <div class="absolute inset-0 z-10 flex sm:items-center">
-          <div class="px-[42px] pt-[46px] flex flex-col justify-between pb-8 sm:pb-0 max-w-screen-xl">
-            <h1 class="font-gelasio italic text-center text-white text-[30px] sm:text-[48px] leading-[0.91] drop-shadow">
-              I Blank in Meetings. <br>I Miss Games. <br>I Cry in Cabs. 
-
-              <br><span class="text-[#FFDC03]">The Real Problem? <br>No Sleep.</span>
+          <div class="px-[42px] pt-[68px] flex flex-col justify-between pb-8 sm:pb-0 max-w-screen-xl">
+            <h1 class="font-gelasio italic text-white text-[36px] sm:text-[48px] leading-[0.91] drop-shadow">
+              I Almost Didn’t <br>Make It Home.
+              <br><span class="text-[#FFDC03]"> Then I Found <br> Real Rest. </span>
             </h1>
-            <p class="text-[#fff] text-center leading-[18px] text-[15px]">
-             I thought burnout was just part of the job. Turns out, my nights were running <br> me into the ground.
+            <p class="text-[#fff] leading-[18px] text-[15px]">
+              After years of nodding off behind the wheel, I discovered a simple, natural way to sleep through the night — and drive with confidence again.
             </p>
           </div>
         </div>
@@ -210,13 +209,13 @@ function onCountdownExpired() { }
       <IngredientsC />
       <BeyoundC />
       <div class="bg-[#FFFAF0] w-full items-center">
-        <div class="w-[349px] mx-auto pt-[31px] font-gelasio font-medium  italic text-center justify-self-center">
-          <p class="title text-[#370F1E] font-semibold text-[25px] leading-none">Everyday, more people</p>
-          <p class="text-[#6EC8F0] font-semibold leading-[1.1] text-[25px] pb-[24px]"> finally sleep again.</p>
-          <div class="bg-gradient-to-b from-[#E2DCCE] to-[#CAC0AA] w-[318px] justify-self-center relative text-right flex font-gelasio px-3 pb-[17px] pt-[10px] text-[#370F1E] rounded-[20px]">
-             <img class="absolute left-3 top-1/2 -translate-y-1/2 w-[80px] h-auto" src="../assets/image/seloRated.webp" alt="rated">
-            <p class="description w-full text-right leading-[1.2] text-[17px]"><strong>98%</strong> would recommend <br> it for
-              deeper,better
+        <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
+          <p class="title pt-[20px] text-[#370F1E] font-semibold text-[34px] leading-none">Every day, more people</p>
+          <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
+          <div class="bg-[#E1DCCD] font-gelasio px-3 pb-[17px] pt-[10px] text-[#370F1E] rounded-[20px]">
+            <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
+            <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for
+              deeper,<br>better
               sleep.</p>
           </div>
         </div>
@@ -251,10 +250,10 @@ function onCountdownExpired() { }
         <div class="px-0 flex flex-col items-center justify-start">
           <div class="w-full max-w-[349px] md:max-w-[1260px]">
             <h1
-              class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-gelasio font-bold italic  text-[34px] text-center sm:text-[68px] ">
+              class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
               Scientific <br> references:</h1>
             <h1
-              class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-bold font-gelasio italic text-[34px] text-start sm:text-[68px] ">
+              class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-start sm:text-[68px] ">
               Scientific references:</h1>
           </div>
           <ul
@@ -326,11 +325,11 @@ function onCountdownExpired() { }
       <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
         <div class="px-0 sm:px-10 flex flex-col">
           <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
-            <h1 class="text-center w-full sm:hidden pb-[46px] font-bold leading-none text-[#370F1E] text-[34px] font-gelasio italic">
+            <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
               Frequently asked <br>
               questions:</h1>
             <h1
-              class="text-start hidden w-full sm:block pb-[46px] font-bold leading-none text-[#370F1E] text-[62px] font-gelasio italic">
+              class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
               Frequently asked questions:</h1>
             <FAQ />
           </div>

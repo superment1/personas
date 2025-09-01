@@ -14,10 +14,16 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
 <template>
     <div
-        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start py-10 pb-[54px] lg:pt-[78px] lg:pb-[130px]">
+        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start pt-[33px] pb-[54px] lg:pt-[78px] lg:pb-[130px]">
+            <div class="w-[350px] text-[#370F1E] text-center text-[20px] leading-[1.2] font-gelasio italic">
+                <h1> You don’t have to live <br> exhausted anymore.</h1>
+                <p class="pt-2 font-bold">Break the cycle now. <br> Claim real rest and your<br>energy back.</p>
+            </div>    
+
         <!-- HEADER COM CONTADOR -->
         <div
-            class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between py-4 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
+            class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between pt-12 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
+           
             <div>
                 <span class="text-[#370F1E] font-crossfit text-[61px] lg:text-[148px] font-bold leading-[0.87]">SHOP
                     <br>NOW</span>
