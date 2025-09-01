@@ -58,7 +58,7 @@
         height="494"
         class="object-contain -ml-20"
       />
-      <div class=" absolute sm:max-w-[725px] right-[407px] flex sm:pt-8 sm:gap-44 flex-row justify-between ">
+      <div class=" absolute sm:max-w-[725px] sm:right-[140px] lg:right-[407px] flex sm:pt-8 sm:gap-44 flex-row justify-between ">
         <div class="w-full grid grid-cols-1 gap-y-1 lg:flex flex-col justify-end items-start mt-40">
           <div class="flex flex-row items-center">
             <span class="w-5 h-5 bg-[url('@/assets/image/icons/icone-circle.png')] bg-contain bg-no-repeat bg-center"></span>

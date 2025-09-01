@@ -216,7 +216,7 @@ onBeforeUnmount(() => {
         class="w-full h-full object-cover object-top" />
     </picture>
     <div class="flex flex-row title md:relative gap-52">
-      <div class="flex flex-col">
+      <div class="flex flex-col z-10">
         <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
         <span class="product-sub-title">Natural, safe, and effective.</span>
         <div class="description">
@@ -384,7 +384,7 @@ onBeforeUnmount(() => {
   />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
-      <div class="w-full max-w-[349px] md:max-w-[700px] mx-auto">
+      <div class="w-full max-w-[349px] sm:max-w-[700px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
           Frequently asked <br>
           questions:</h1>
@@ -401,7 +401,7 @@ onBeforeUnmount(() => {
   </div>
   <LazyIsland><NotificationDisplay /></LazyIsland>
   <BannerModal />
-  <BannerRetention
+  <!-- <BannerRetention
     v-model:open="modalOpen"
     title="WAIT!"
     subtitle="LOW STOCK WARNING!"
@@ -416,7 +416,7 @@ onBeforeUnmount(() => {
         Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
       </p>
     </template>
-  </BannerRetention>
+  </BannerRetention> -->
 </template>
 <style>
 html { scroll-behavior: smooth; }

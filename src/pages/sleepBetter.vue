@@ -3,9 +3,9 @@ import '../styles/superSleep.scss';
 import { onBeforeMount } from 'vue';
 import FAQ from '../components/Faq.vue';
 import SuperFooter from '../components/SuperFooter.vue';
-import BeyoundC from '../components/pagec/BeyoundC.vue';
-import CtaPageC from '../components/pagec/CtaPageC.vue';
-import IngredientsC from '../components/pagec/IngredientsC.vue';
+import BeyoundC from '../components/pageC/BeyoundC.vue'
+import CtaPageC from '../components/pageC/CtaPageC.vue';
+import IngredientsC from '../components/pageC/IngredientsC.vue';
 import VslBadges from '../components/VslBadges.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 import { useSeo } from '../composables/useSeo';
@@ -35,6 +35,130 @@ function onCountdownExpired() { }
   <div class="w-full min-h-screen bg-white flex flex-col">
     <!-- Header -->
     <main>
+      <section class="relative w-full">
+        <picture>
+          <source media="(min-width: 640px)" srcset="@/assets/image/pagec/hero_desk.webp" />
+          <img
+            src="@/assets/image/pagec/hero_c.webp"
+            alt="driver"
+            class="w-full object-cover"
+          />
+        </picture>
+        <!-- Texto sobreposto -->
+        <div class="absolute inset-0 z-10 flex sm:items-center">
+          <div class="px-[42px] pt-[68px] flex flex-col justify-between pb-8 sm:pb-0 max-w-screen-xl">
+            <h1 class="font-gelasio italic text-white text-[36px] sm:text-[48px] leading-[0.91] drop-shadow">
+              I Almost Didn’t <br>Make It Home.
+              <br><span class="text-[#FFDC03]"> Then I Found <br> Real Rest. </span>
+            </h1>
+            <p class="text-[#fff] leading-[18px] text-[15px]">
+              After years of nodding off behind the wheel, I discovered a simple, natural way to sleep through the night — and drive with confidence again.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="w-full bg-[#FFFAF0] relative">
+          <div class="px-[42px] text-[15px] font-normal text-[#370F1E] leading-[17.7px] py-8">
+            <p>
+              No more 2 a.m. wake-ups. No more fog. Just deep rest that gave me back my focus, my safety, and my peace of mind.
+            </p>
+            <p class="pt-5">For years, I thought pounding coffee and muscling through the miles was just the job. But that night on I-40, I realized tough doesn’t mean stupid.
+            </p>
+            <p class="pt-5">What I found wasn’t some pill that knocks you out. It was a way to actually rest — deep, solid, no 2 a.m. wake-ups, no fog in the morning.
+            </p>
+            <p class="pt-5">First night, I slept like a log. Week later, I was pulling ten hours straight and still had gas in the tank. My wife says I sound like myself again.
+            </p>
+            <p class="pt-5">If you’re out there white-knuckling it, thinking coffee’s enough — don’t wait for your close call.
+            </p>
+            <p class="italic pt-5 font-gelasio font-semibold">Super Natural Sleep gave me back my focus, my safety, and my peace of mind. It can do the same for you.
+            </p>
+
+          </div>
+          <span
+            class="pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-4 translate-y-[1px] z-10
+                  w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent
+                  border-t-[28px] border-t-[#FFFAF0]">
+          </span>
+      </div>
+    </section>
+    <section>
+      <div class="w-full bg-[#E1DCCD] relative">
+        <div class="px-[42px] pt-[38px] pb-[35px]">
+          <h1 class="text-[#370F1E] text-center font-gelasio text-[25px] italic font-normal leading-[29.5px]">
+            Signs your sleep
+            may be compromised too:
+          </h1>
+          <ul class="grid grid-cols-2 text-[14px] leading-[15.4px] font-gelasio italic pt-[27px] gap-x-3 gap-y-[27.58px] list-none">
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/face_with_spiral_eyes.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Mental fog or forgetfulness</div>
+            </li>
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/angry_face.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Mood swings and irritability</div>
+            </li>
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/face_with_steam_from_nose.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Increased stress or anxiety</div>
+            </li>
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/face_with_thermometer.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Getting sick more often</div>
+            </li>
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/weary_face.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Fatigue that rest doesn’t fix</div>
+            </li>
+            <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <img
+                src="../assets/image/pagec/emoji/older_person001.webp"
+                alt="" aria-hidden="true"
+                width="22" height="22"
+                loading="lazy"
+                class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 z-10 pointer-events-none select-none"
+              />
+              <div class="leading-[15.4px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">Early signs of aging</div>
+            </li>
+          </ul>
+        </div>
+        <span
+          class="pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-4 translate-y-[1px] z-10
+                  w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent
+                  border-t-[28px] border-t-[#E1DCCD]">
+          </span>
+      </div>
+    </section>
       <CtaPageC />
       <IngredientsC />
       <BeyoundC />
