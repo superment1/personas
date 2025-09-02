@@ -2,17 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   { path: '/supersleep',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
-  { path: '/beautysleep',  name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
-  { path: '/terms',        name: 'terms',        component: () => import('../pages/termsUse.vue') },
-  { path: '/privacypolicy',name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
-  { path: '/refundpolicy', name: 'refundpolicy', component: () => import('../pages/refundPolicy.vue') },
-  { path: '/faq',          name: 'faq',          component: () => import('../pages/faq.vue') },
-  { path: '/about',        name: 'about',        component: () => import('../pages/about.vue') },
-  { path: '/elderly',      name: 'elderly',      component: () => import('../pages/elderly.vue') },
-  { path: '/discomfort',   name:'discomfort',    component: () => import('../pages/discomfort.vue') },
-  { path: '/vsl',          name:'vsl',           component: () => import('../pages/vsl.vue')},
-  { path: '/vsl2',         name:'vsl2',         component: () => import('../pages/vsl2.vue')},
-  { path: '/sleepbetter',  name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')}
+  { path: '/sleepingbeauty',    name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
+  { path: '/terms',             name: 'terms',        component: () => import('../pages/termsUse.vue') },
+  { path: '/privacypolicy',     name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
+  { path: '/refundpolicy',      name: 'refundpolicy', component: () => import('../pages/refundPolicy.vue') },
+  { path: '/faq',               name: 'faq',          component: () => import('../pages/faq.vue') },
+  { path: '/about',             name: 'about',        component: () => import('../pages/about.vue') },
+  { path: '/maturesleep',       name: 'elderly',      component: () => import('../pages/elderly.vue') },
+  { path: '/discomfort',        name:'discomfort',    component: () => import('../pages/discomfort.vue') },
+  { path: '/vsleep',            name:'vsl',           component: () => import('../pages/vsl.vue')},
+  { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
+  { path: '/sleepbetterv2/home1', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
 
 ]
 
