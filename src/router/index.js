@@ -14,11 +14,10 @@ const routes = [
   { path: '/vsl2',         name:'vsl2',         component: () => import('../pages/vsl2.vue')},
   { path: '/sleepbetter',  name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')}
 
-  
 ]
 
 export const router = createRouter({
-  history: createWebHistory('/sleep/'),
+  history: createWebHistory('/'),
   routes,
   scrollBehavior() {
     return { top: 0 }

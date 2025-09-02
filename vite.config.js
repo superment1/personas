@@ -4,11 +4,10 @@ import path from 'path'
 
 
 export default defineConfig({
-  base: '/sleep/',
+  base: '/',
   plugins: [ vue({
       template: {
         compilerOptions: {
-          // trate a tag como custom element (não é componente Vue)
           isCustomElement: (tag) => tag === 'vturb-smartplayer' || tag.startsWith('vturb-')
         }
       }

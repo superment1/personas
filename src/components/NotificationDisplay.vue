@@ -36,7 +36,7 @@ const notificationsList = [
   },
   {
     id: 3,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-03.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/Notify-03.webp', import.meta.url).href
   },
   {
     id: 4,
@@ -46,18 +46,18 @@ const notificationsList = [
     id: 5,
     src: new URL('../assets/image/sleepSuperment/notifications/Notify-05.png', import.meta.url).href
   },
-   {
-    id: 6,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-06.webp', import.meta.url).href
-  },
-   {
-    id: 7,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-07.webp', import.meta.url).href
-  },
-   {
-    id: 8,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-08.webp', import.meta.url).href
-  }
+  //  {
+  //   id: 6,
+  //   src: new URL('../assets/image/sleepSuperment/notifications/Notify-06.webp', import.meta.url).href
+  // },
+  //  {
+  //   id: 7,
+  //   src: new URL('../assets/image/sleepSuperment/notifications/Notify-07.webp', import.meta.url).href
+  // },
+  //  {
+  //   id: 8,
+  //   src: new URL('../assets/image/sleepSuperment/notifications/Notify-08.webp', import.meta.url).href
+  // }
 ]
 
 const visibleNotifications = ref([])
