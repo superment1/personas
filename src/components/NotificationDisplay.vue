@@ -45,6 +45,18 @@ const notificationsList = [
   {
     id: 5,
     src: new URL('../assets/image/sleepSuperment/notifications/Notify-05.png', import.meta.url).href
+  },
+   {
+    id: 6,
+    src: new URL('../assets/image/sleepSuperment/notifications/Notify-06.webp', import.meta.url).href
+  },
+   {
+    id: 7,
+    src: new URL('../assets/image/sleepSuperment/notifications/Notify-07.webp', import.meta.url).href
+  },
+   {
+    id: 8,
+    src: new URL('../assets/image/sleepSuperment/notifications/Notify-08.webp', import.meta.url).href
   }
 ]
 
