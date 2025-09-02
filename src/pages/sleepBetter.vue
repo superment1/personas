@@ -10,6 +10,7 @@ import IngredientsC from '../components/pageC/IngredientsC.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 import { useSeo } from '../composables/useSeo';
 import ShopNowV1 from '../components/ShopNowV1.vue';
+import NotificationDisplay from '../components/NotificationDisplay.vue';
 
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
@@ -394,5 +395,6 @@ function onCountdownExpired() { }
         <SuperFooter />
       </div>
     </div>
+    <NotificationDisplay />
   </div>
 </template>
