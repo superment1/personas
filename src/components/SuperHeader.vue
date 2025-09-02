@@ -1,6 +1,18 @@
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
+import { useRouter } from 'vue-router'
 defineProps({ showRedirect: Boolean })
+
+
+const router = useRouter()
+
+function goBack() {
+  if (window.history.length > 1) {
+    router.back()
+  } else {
+    router.push('/') 
+  }
+}
 
 const items = [
   'Made in the USA',
@@ -23,7 +35,8 @@ onMounted(async () => {
     <!-- Botão voltar -->
     <a
       v-if="showRedirect"
-      href="/sleep/"
+      href="javascript:void(0)"
+      @click.prevent="goBack"
       class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[0.9rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
     >
       <svg
