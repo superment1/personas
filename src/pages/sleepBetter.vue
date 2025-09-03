@@ -6,31 +6,26 @@ import SuperFooter from '../components/SuperFooter.vue';
 import BeyoundC from '../components/pageC/BeyoundC.vue'
 import CtaPageC from '../components/pageC/CtaPageC.vue';
 import IngredientsC from '../components/pageC/IngredientsC.vue';
-// import VslBadges from '../components/VslBadges.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 import { useSeo } from '../composables/useSeo';
 import ShopNowV1 from '../components/ShopNowV1.vue';
 import NotificationDisplay from '../components/NotificationDisplay.vue';
 
-useSeo({
-  title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
-  description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
-  keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
-})
-
-onBeforeMount(() => {
-  if (typeof window === 'undefined') return;
-  if (document.getElementById('rdstation-forms-script')) return;
-
-  const s = document.createElement('script');
-  s.id = 'rdstation-forms-script';
-  s.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js';
-  s.async = true;            // sem type="module"
-  document.head.appendChild(s);
-});
-
-function onCountdownExpired() { }
-
+  useSeo({
+    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
+    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
+    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
+  })
+  onBeforeMount(() => {
+    if (typeof window === 'undefined') return;
+    if (document.getElementById('rdstation-forms-script')) return;
+    const s = document.createElement('script');
+    s.id = 'rdstation-forms-script';
+    s.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js';
+    s.async = true; 
+    document.head.appendChild(s);
+  });
+  function onCountdownExpired() { }
 </script>
 
 <template>
@@ -39,11 +34,21 @@ function onCountdownExpired() { }
     <main>
       <section class="relative w-full">
         <picture>
-          <source media="(min-width: 640px)" srcset="@/assets/image/pagec/hero_desk.webp" />
+          <source media="(min-width: 640px)" 
+            srcset="../assets/image/pagec/hero_desk.webp" />
+          <source
+            type="image/webp"
+            media="(max-width: 639px)"
+            srcset="/assets/hero_womam.avif"
+            sizes="100vw"
+          />
           <img
-            src="@/assets/image/pagec/hero_womam.webp"
+            src="/assets/hero_womam.avif"
             alt="driver"
             class="w-full object-cover"
+            width="768" height="432"
+            decoding="async"
+            fetchpriority="high"
           />
         </picture>
       </section>
