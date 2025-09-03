@@ -73,7 +73,7 @@
                     </img>
                     <span
                         class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
-                        Better immunity and resilience
+                        Better immunity <br> and resilience
                     </span>
                 </div>
                 <div

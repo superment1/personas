@@ -368,8 +368,8 @@
                 <img class="rounded-2xl w-[310px] h-[306px] block lg:hidden" src="@/assets/image/pagec/tabela.webp"
                     alt="table"></img>
                 <img class="rounded-2xl hidden lg:block lg:h-[1000px] lg:w-[1000px]"
-                    src="@/assets/image/pagec/tabela-desk.webp" alt="table"></img>
-
+                    src="@/assets/image/pagec/tabela-desk.webp" loading="lazy" alt="table"></img>
+ 
             </div>
         </div>
         <span class="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-12 translate-y-[70px] z-10
