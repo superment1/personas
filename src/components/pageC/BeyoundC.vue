@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-[458px] lg:h-[1055px] flex flex-col items-center justify-start bg-[#370F1E] lg:pt-20">
+    <div class="w-full h-[460px] lg:h-[1055px] flex flex-col items-center justify-start bg-[#370F1E] lg:pt-20">
         <div class="w-[400px] flex flex-col items-center justify-start pb-10 pt-[37px] gap-[30px] lg:w-[1000px]">
             <p
                 class="font-gelasio text-[25px] text-[#fff] text-center font-bold italic leading-[1.1] lg:text-[52px] lg:font-light">
@@ -9,7 +9,7 @@
                 feel.
             </p>
             <div
-                class="grid grid-cols-2 gap-y-[27px] gap-x-[15px] lg:grid-cols-3 lg:pt-20 lg:gap-x-[50px] lg:gap-y-[60px]">
+                class="grid grid-cols-2 gap-y-[27px] pt-[2px] gap-x-[15px] lg:grid-cols-3 lg:pt-20 lg:gap-x-[50px] lg:gap-y-[60px]">
                 <div
                     class="w-[148px] h-[55px] lg:w-[308px] lg:h-[170px] bg-[#FFFAF0] rounded-[6px] lg:rounded-[16px] relative flex items-center justify-center overflow-visible">
                     <img src="@/assets/image/pagec/nerd.png"
@@ -17,7 +17,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="mt-2 font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Sharper focus and mental clarity
                     </span>
                 </div>
