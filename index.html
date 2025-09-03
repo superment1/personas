@@ -59,14 +59,6 @@
     <div id="app"></div>
     <div id="splash-hero"
         style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">
-      <picture style="position:absolute;inset:0">
-    <source type="image/avif" srcset="assets/posterMobile.avif 768w" sizes="100vw" media="(max-width:767px)">
-    <source type="image/webp" srcset="assets/posterMobile.webp 768w" sizes="100vw" media="(max-width:767px)">
-    <img src="assets/posterMobile.webp"
-         alt="" width="768" height="820"
-         loading="eager" decoding="async"
-         style="position:absolute;top:0;width:100%;height:100%;object-fit:cover;object-position:top">
-  </picture>
     </div>
     <script>
       new PerformanceObserver((list) => {
@@ -82,64 +74,75 @@
         const splash = document.getElementById('splash-hero');
         if (!app || !splash) return;
 
-        const isMobile = matchMedia('(max-width: 767px)').matches;
-        if (!isMobile) { app.style.opacity = '1'; splash?.remove(); return }
-        
-        const baseTag  = document.querySelector('base');
-        const baseHref = baseTag ? baseTag.getAttribute('href') || '/' : '/';
+        const baseHref = (document.querySelector('base')?.getAttribute('href') || '/').trim();
         const basePath = new URL(baseHref, location.origin).pathname.replace(/\/+$/, '/') || '/';
 
-        
-        const pathname = new URL(location.href).pathname;
-        let rest = pathname.startsWith(basePath)
-          ? pathname.slice(basePath.length)
-          : pathname.replace(/^\/+/, '');
-        rest = rest.split('?')[0].split('#')[0].replace(/^\/+|\/+$/g, '');
+        const path = location.pathname;
+        const hashPath = location.hash.replace(/^#\/?/, '');
 
-        const route = rest === '' ? 'supersleep' : rest.split('/').filter(Boolean)[0];
+        function splitClean(p) {
+          return p.split('?')[0].split('#')[0].split('/').filter(Boolean);
+        }
+
+        let relPath = path.startsWith(basePath) ? path.slice(basePath.length) : path.replace(/^\/+/, '');
+        const segs = splitClean(relPath);
+        const hashSegs = splitClean(hashPath);
+        let route = 'supersleep';
+        if (hashSegs.length) {
+          route = hashSegs[0];
+        } else if (segs.length) {
+          route = (segs[0] === 'sleep') ? (segs[1] || 'supersleep') : segs[0];
+        }
+
         const splashMap = {
-          supersleep:   { avif: "assets/posterMobile.avif",       webp: "assets/posterMobile.webp" },
-          sleepingbeauty:  { avif: "assets/posterBeauty.avif",       webp: "assets/posterBeauty.webp" },
-          vsleep:          { avif: "assets/posterVsl.avif",          webp: "assets/posterVsl.webp" },
-          vsleep2:         { avif: "assets/posterVsl.avif",          webp: "assets/posterVsl.webp" },
-          maturesleep:      { avif: "assets/posterElderly.avif",      webp: "assets/posterElderly.webp" },
-          about:        { avif: "assets/posterAbout.avif",        webp: "assets/posterAbout.webp" },
-          terms:        { avif: "assets/posterTerms.avif",        webp: "assets/posterTerms.webp" },
-          faq:          { avif: "assets/posterFaq.avif",          webp: "assets/posterFaq.webp" },
-          refundpolicy: { avif: "assets/posterRefundPolicy.avif", webp: "assets/posterRefundPolicy.webp" },
-          privacypolicy:{ avif: "assets/posterPrivacyPolicy.avif",webp: "assets/posterPrivacyPolicy.webp" }, 
-          sleepbetterv2:  { avif: "assets/poster_hero_womam.avif", webp: "assets/poster_hero_womam.webp" }, 
+          supersleep:     { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          sleepingbeauty: { avif: "/assets/posterBeauty.avif",        webp: "/assets/posterBeauty.webp" },
+          vsleep:         { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
+          vsleep2:        { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
+          maturesleep:    { avif: "/assets/posterElderly.avif",       webp: "/assets/posterElderly.webp" },
+          about:          { avif: "/assets/posterAbout.avif",         webp: "/assets/posterAbout.webp" },
+          terms:          { avif: "/assets/posterTerms.avif",         webp: "/assets/posterTerms.webp" },
+          faq:            { avif: "/assets/posterFaq.avif",           webp: "/assets/posterFaq.webp" },
+          refundpolicy:   { avif: "/assets/posterRefundPolicy.avif",  webp: "/assets/posterRefundPolicy.webp" },
+          privacypolicy:  { avif: "/assets/posterPrivacyPolicy.avif", webp: "/assets/posterPrivacyPolicy.webp" },
+          sleepbetter:  { avif: "/assets/poster_hero_womam.avif",   webp: "/assets/poster_hero_womam.webp" },
+          sleepbetter2:  { avif: "/assets/poster_womam2.avif",   webp: "/assets/poster_womam2.webp" },
+          // aliases úteis:
+          sleep:          { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          "":             { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
         };
-        const assets = splashMap[route];
-        if (!assets) { app.style.opacity = '1'; splash?.remove(); return }
 
-        const sources = splash.querySelectorAll('source');
-        const img = splash.querySelector('img');
+        const assets = splashMap[route] || splashMap.supersleep;
 
-        sources.forEach((s) => {
-          const t = (s.getAttribute('type') || '').toLowerCase();
-          if (t === 'image/avif') s.setAttribute('srcset', `${assets.avif} 768w`);
-          if (t === 'image/webp') s.setAttribute('srcset', `${assets.webp} 768w`);
-        });
-        if (img) img.src = assets.webp;
-        let done = false;
-        const swap = () => {
-          if (done) return; done = true;
-          app.style.opacity = '1';
-          requestAnimationFrame(() => splash?.remove());
-          clearTimeout(fallback);
-        };
+
+        splash.innerHTML = `
+          <picture style="position:absolute;inset:0">
+            <source type="image/avif" srcset="${assets.avif} 768w" sizes="100vw" media="(max-width:767px)">
+            <source type="image/webp" srcset="${assets.webp} 768w" sizes="100vw" media="(max-width:767px)">
+            <img id="splash-img" src="${assets.webp}" alt="" width="768" height="820"
+                decoding="async" style="position:absolute;top:0;width:100%;height:100%;object-fit:cover;object-position:top">
+          </picture>
+        `;
+
+        const isMobile = matchMedia('(max-width: 767px)').matches;
+        app.style.opacity = '1'; 
+        function reveal() {
+          splash.style.transition = 'opacity .15s ease';
+          splash.style.opacity = '0';
+          splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+        }
+
         const obs = new MutationObserver(() => {
-          if (app.hasAttribute('data-visual-ready')) { obs.disconnect(); swap(); }
+          if (app.hasAttribute('data-visual-ready')) {
+            obs.disconnect();
+            reveal();
+          }
         });
         obs.observe(app, { attributes: true });
-
-        const fallback = setTimeout(swap, 3000);
+        const fallback = setTimeout(reveal, isMobile ? 900 : 400);
       })();
     </script>
-
-  </body>
-  <style>
-    #app { opacity: 0; transition: opacity 120ms ease; }
-  </style>
+    <style>
+      #app { opacity: 1; }
+    </style>
 </html>

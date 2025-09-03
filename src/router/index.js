@@ -12,8 +12,9 @@ const routes = [
   { path: '/discomfort',        name:'discomfort',    component: () => import('../pages/discomfort.vue') },
   { path: '/vsleep',            name:'vsl',           component: () => import('../pages/vsl.vue')},
   { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
-  { path: '/sleepbetterv2/home1', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
-
+  { path: '/sleep', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
+  { path: '/sleep2', name:'sleepbetter2',   component: () => import('../pages/sleepBetter2.vue')},
+  
 ]
 
 export const router = createRouter({
