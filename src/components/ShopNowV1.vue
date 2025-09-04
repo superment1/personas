@@ -15,9 +15,11 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 <template>
     <div
         class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start pt-[33px] pb-[54px] lg:pt-[78px] lg:pb-[130px]">
-            <div class="w-[350px] text-[#370F1E] text-center text-[20px] leading-[1.2] font-gelasio italic">
-                <h1> You don’t have to live <br> exhausted anymore.</h1>
-                <p class="pt-2 font-bold">Break the cycle now. <br> Claim real rest and your<br>energy back.</p>
+            <div class="w-[350px] lg:w-[996px] text-[#370F1E] text-center text-[20px] lg:text-[38px] leading-[1.2] font-gelasio italic">
+                <h1 class="sm:hidden block"> You don’t have to live <br> exhausted anymore.</h1>
+                <h1 class="hidden sm:block"> You don’t have to live exhausted anymore.</h1>
+                <p class="pt-[30px] pb-[40px] sm:block hidden font-bold text-[46px]">Break the cycle now. Claim real rest <br> and your energy back.</p>
+                <p class="pt-2 font-bold sm:hidden block">Break the cycle now. <br> Claim real rest and your<br>energy back.</p>
             </div>    
         <!-- HEADER COM CONTADOR -->
         <div

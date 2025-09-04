@@ -12,8 +12,8 @@ const items = [
    {
     title: 'Marshmallow Root',
     subtitle: 'Calms digestion, supports sleep.',
-    img1x: 'assets/marshmallow-root-128.webp',
-    img2x: 'assets/marshmallow-root-256.webp',
+    img1x: 'assets/marshmallow.webp',
+    img2x: 'assets/marshmallow.webp',
     w: 128, h: 128, alt: 'Marshmallow root'
   },
   {

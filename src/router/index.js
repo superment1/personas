@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-  { path: '/supersleep',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
+  { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
   { path: '/sleepingbeauty',    name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
   { path: '/terms',             name: 'terms',        component: () => import('../pages/termsUse.vue') },
   { path: '/privacypolicy',     name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
@@ -48,7 +48,9 @@ router.afterEach((to) => {
     menopause: '#E6B4FF',
     privacypolicy:'#E1DCCD',
     vsl:'#6EC8F0',
-    vsl2:'#6EC8F0'
+    vsl2:'#6EC8F0',
+    sleepbetter: '#E1DCCD',
+    sleepbetter2: '#E1DCCD' 
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)

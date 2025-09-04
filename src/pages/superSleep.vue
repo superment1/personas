@@ -400,23 +400,21 @@ onBeforeUnmount(() => {
     </div>
   </div>
   <LazyIsland><NotificationDisplay /></LazyIsland>
-  <BannerModal />
-  <!-- <BannerRetention
+  <!-- <BannerModal /> -->
+  <BannerRetention
     v-model:open="modalOpen"
     title="WAIT!"
-    subtitle="LOW STOCK WARNING!"
-    buttonText="Yes, stay on this page!"
+    subtitle="DON'T LEAVE"
+    buttonText="SLEEP20"
     :disable-backdrop-close="true"
     :disable-esc="false"
   >
     <template #message>
       <p>
-        <span class="text-[#FFDC03]">Super Natural Sleep</span> is selling out fast!<br>
-        Secure your order today to avoid any disappointment.<br><br>
-        Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
+        <span class="text-[#fff] sm:text-[31px] text-[13px]">Get <span class="text-[#FFDC03] sm:text-[24px]">20% OFF </span> to shop now <br> — today only.</span>
       </p>
     </template>
-  </BannerRetention> -->
+  </BannerRetention>
 </template>
 <style>
 html { scroll-behavior: smooth; }

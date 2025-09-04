@@ -87,15 +87,15 @@
         let relPath = path.startsWith(basePath) ? path.slice(basePath.length) : path.replace(/^\/+/, '');
         const segs = splitClean(relPath);
         const hashSegs = splitClean(hashPath);
-        let route = 'supersleep';
+        let route = 'sleepnatural';
         if (hashSegs.length) {
           route = hashSegs[0];
         } else if (segs.length) {
-          route = (segs[0] === 'sleep') ? (segs[1] || 'supersleep') : segs[0];
+          route = (segs[0] === 'sleep') ? (segs[1] || 'sleepnatural') : segs[0];
         }
 
         const splashMap = {
-          supersleep:     { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          sleepnatural:     { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
           sleepingbeauty: { avif: "/assets/posterBeauty.avif",        webp: "/assets/posterBeauty.webp" },
           vsleep:         { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
           vsleep2:        { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
@@ -105,10 +105,9 @@
           faq:            { avif: "/assets/posterFaq.avif",           webp: "/assets/posterFaq.webp" },
           refundpolicy:   { avif: "/assets/posterRefundPolicy.avif",  webp: "/assets/posterRefundPolicy.webp" },
           privacypolicy:  { avif: "/assets/posterPrivacyPolicy.avif", webp: "/assets/posterPrivacyPolicy.webp" },
-          sleepbetter:  { avif: "/assets/poster_hero_womam.avif",   webp: "/assets/poster_hero_womam.webp" },
-          sleepbetter2:  { avif: "/assets/poster_womam2.avif",   webp: "/assets/poster_womam2.webp" },
-          // aliases úteis:
-          sleep:          { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          sleep:  { avif: "/assets/poster_sleep.avif",   webp: "/assets/poster_sleep.webp" },
+          sleep2:  { avif: "/assets/poster_sleep.avif",   webp: "/assets/poster_sleep.webp" },
+          // aliases úteis
           "":             { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
         };
 

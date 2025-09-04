@@ -192,7 +192,7 @@ function onCountdownExpired() { }
                 <p class="text-[14px] text-center px-[30px] pt-2 pb-[15px] leading-[1.1] font-gelasio italic text-[#370F1E]">higher risk of type 2 diabetes</p>
               </li>
               <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
-                <div class="bg-[#FFDC03] pt-1 pb-1 px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">700+</div>
+                <div class="bg-[#FFDC03] pt-1 pb-1 px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">+700</div>
                 <p class="text-[14px] text-center px-[30px] pt-2 pb-[15px] leading-[1.1] font-gelasio italic text-[#370F1E]">genes disrupted after just one week of poor sleep</p>
               </li>
               <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center col-span-2">
@@ -208,7 +208,7 @@ function onCountdownExpired() { }
       <CtaPageC />
       <IngredientsC />
       <BeyoundC />
-      <div class="bg-[#FFFAF0] w-full items-center">
+      <div class="bg-[#FFFAF0] w-full items-center lg:pb-[40px]">
         <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
           <p class="title pt-[20px] text-[#370F1E] font-semibold text-[34px] leading-none">Every day, more people</p>
           <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
