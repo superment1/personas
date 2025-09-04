@@ -320,31 +320,31 @@ import BannerRetention from '../components/BannerRetention.vue'
           </div>
           <div >
             <ul class="grid pt-[31px] grid-cols-2  gap-x-[15px] gap-y-[15px]">
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">+48%</div>
                 <p class="text-[14px] text-center px-[30px] pt-[10px] pb-[11px] leading-[1.1] font-gelasio italic text-[#370F1E]">higher risk of heart disease</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">+33%</div>
                 <p class="text-[14px] text-center px-[30px] pt-[10px] pb-[11px] leading-[1.1] font-gelasio italic text-[#370F1E]">higher risk of memory loss</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">+46%</div>
                 <p class="text-[14px] text-center px-[7px] pt-[10px] pb-[11px] leading-[1.1] font-gelasio italic text-[#370F1E]">higher risk of anxiety and depression</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-6 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">4X</div>
                 <p class="text-[14px] text-center px-[30px] pt-[10px] pb-[11px] leading-[1.1] font-gelasio italic text-[#370F1E]">more likely to get sick</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-6 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">3X</div>
                 <p class="text-[14px] text-center px-[15px] pt-[10px] pb-[11px] leading-[1.1] font-gelasio italic text-[#370F1E]">higher risk of type 2 diabetes</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center">
                 <div class="bg-[#FFDC03]  w-[80px] pt-[2px] pb-[2px] px-2 text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">+700</div>
                 <p class="text-[14px] text-center px-[5px] pt-[4px] pb-[1px] leading-[1.1] font-gelasio italic text-[#370F1E]">genes disrupted after just one week of <br> poor sleep</p>
               </li>
-              <li class="bg-[#FFFAF0] rounded-[7px] justify-center items-center col-span-2">
+              <li class="bg-[#FFFAF0] flex flex-col rounded-[7px] justify-center items-center col-span-2">
                 <div class="bg-[#FFDC03]  w-[255px] pt-[2px] pb-[2px] px-[19px] text-[#370F1E] text-[26px] leading-[1]  justify-self-center font-gelasio rounded-b-[7px]">24 hours awake=</div>
                 <p class="text-[14px] text-center px-[15px] pt-[10px] pb-[12px] leading-[1.1] font-gelasio italic text-[#370F1E]">similar of being drunk</p>
               </li>
