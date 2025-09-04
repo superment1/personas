@@ -17,7 +17,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Sharper focus and mental clarity
                     </span>
                 </div>
@@ -28,7 +28,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         More balanced <br>mood
                     </span>
                 </div>
@@ -39,7 +39,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Steadier energy throughout the day
                     </span>
                 </div>
@@ -50,7 +50,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Less tension and inflammation
                     </span>
                 </div>
@@ -61,8 +61,8 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
-                        Cellular recovery while you sleep
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        Cellular recovery <br></br> while you sleep
                     </span>
                 </div>
                 <div
@@ -72,7 +72,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Better immunity <br> and resilience
                     </span>
                 </div>
@@ -83,7 +83,7 @@
                         fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     </img>
                     <span
-                        class="font-gelasio text-[13px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
+                        class="font-gelasio text-[12px] lg:text-[30px] font-bold lg:font-thin text-[#370F1E]  italic text-center leading-[1.1]">
                         Waking up refreshed <br>— not foggy
                     </span>
                 </div>
