@@ -16,8 +16,8 @@
                 Wake up clear, energized, <br class="block lg:hidden">and steady on your feet <br
                     class="block lg:hidden">— without grogginess.
             </span>
-            <ShopButton id="buy-button" anchorId="Highlight" textColorClass="text-white" :showIcon=false
-                class="mt-[22px] border border-[#5EC7EB] text-white bg-[#CDEBFF]/30 w-[286px] w-[316px] lg:w-[365px] rounded-full font-DMSans text-[20px] h-[50px] font-light hover:bg-[#CDEBFF]/50 transition lg:text-[24px] lg:mt-2">
+            <ShopButton id="buy-button" textColorClass="text-white" :showIcon=false productId="prod_SbKYsQrxStW8wB"
+                class="mt-[22px] border border-[#5EC7EB] text-white w-[286px] w-[316px] lg:w-[365px] rounded-full font-DMSans text-[20px] h-[50px] font-light hover:bg-[#CDEBFF]/50 transition lg:text-[24px] lg:mt-2">
                 Shop: First Trial Special Offer
             </ShopButton>
         </div>

@@ -1,6 +1,6 @@
 <template>
     <!-- Trust Badges -->
-    <section class="w-full h-full py-16 flex items-center justify-center bg-[#FFFAF0] md:flex-col md:gap-6">
+    <section class="w-full h-full py-16 flex items-center justify-center bg-white md:flex-col md:gap-6">
         <div class="w-[893px] hidden md:flex flex flex-col items-center justify-start">
             <p class="hidden md:block text-[#370F1E] text-[40px] font-crossfit font-black uppercase"> Clean, Clinically
                 Guided
@@ -26,12 +26,12 @@
             </div>
         </div>
         <div class="flex gap-5 w-[300px]">
-            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]" src="@/assets/image/sleepWomam/fda_logo.png"
+            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]" src="../assets/image/sleepElderly/fda_logo.svg"
                 alt="FDA" />
-            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]" src="@/assets/image/sleepWomam/gmp_certified.png"
+            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]" src="../assets/image/sleepElderly/gmp_logo.svg"
                 alt="GMP" />
-            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]"
-                src="@/assets/image/sleepWomam/usda_organic_logo.png" alt="USDA" />
+            <img class="w-[80px] h-[80px] md:w-[105px] md:h-[105px]" src="../assets/image/sleepElderly/usda_logo.svg"
+                alt="USDA" />
         </div>
     </section>
 </template>

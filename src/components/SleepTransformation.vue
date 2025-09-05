@@ -14,7 +14,7 @@ import ShopButton from '../components/ShopButton.vue'
                         <h2 class="uppercase text-[#370F1E] pt-4 font-crossfit text-[32px] md:text-[40px]">You’re not
                             just aging — <br>your sleep is changing.</h2>
                         <p
-                            class="pt-[18px] text-[#525252] text-[16px] md:text-[20px] tracking-wide font-light leading-[1.18em]">
+                            class="pt-[18px] text-[#525252] text-[16px] md:text-[20px] tracking-wide font-light leading-[1.18em] w-[320px] md:w-[462px]">
                             As you age, your body makes less of the natural messengers that regulate sleep — like
                             melatonin and serotonin. <br class="block lg:hidden">Discomforts like reflux, tension, and
                             light sleep become more
@@ -26,7 +26,7 @@ import ShopButton from '../components/ShopButton.vue'
                                 without drugs or next-day grogginess.</span>
                         </p>
                         <ShopButton id="buy-button" textColorClass="text-[#083d4f]" iconColorClass="text-[#083d4f]"
-                            title="Shop: First Trial Special Offer"
+                            title="Shop: First Trial Special Offer" productId="prod_SbKYsQrxStW8wB"
                             class="bg-[#ffc35a] font-medium text-[18px] text-[16px] lg:text-[20px] w-[316px] lg:w-[347px] justify-center gap-3" />
                     </div>
 

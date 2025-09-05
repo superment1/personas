@@ -3,8 +3,9 @@
     <section class="py-[36px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center w-full">
         <div class="w-full flex flex-col items-center justify-center md:w-[952px]">
             <h2
-                class="font-crossfit text-[30px] leading-[1.11] md:text-4xl text-[#370F1E] text-center mb-2 md:mb-12 mx-8 ">
-                EACH INGREDIENT WAS CAREFULLY SELECTED <br class="hidden md:block">HELP YOU SLEEP DEEPLY, NATURALLY:
+                class="font-crossfit text-[30px] leading-[1.11] md:text-4xl text-[#370F1E] text-center mb-2 md:mb-12 mx-8 w-[375px] md:w-[700px]">
+                EACH INGREDIENT WAS CAREFULLY SELECTED TO <br class="hidden md:block">HELP YOU SLEEP DEEPLY AND
+                NATURALLY.
             </h2>
 
             <div
@@ -80,7 +81,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2 pb-2 border-b-2 md:flex-col md:border-b-0"
                     style="border-color: #FFE1AA">
                     <div
-                        class="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-14 h-14 md:w-28 md:h-28 flex items-center justify-center mr-6 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
                             class="max-w-full max-h-full object-contain" />
                     </div>

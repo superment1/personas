@@ -26,7 +26,7 @@
                         <h1 class="font-crossfit uppercase text-[#370f1e] leading-[1.1] text-[28px]">There’s a
                             gentle way to sleep and rest, naturally.</h1>
                         <Guarantees></Guarantees>
-                        <div class="flex mt-3">
+                        <div class="flex mt-1">
                             <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083d4f]"
                                 iconColorClass="text-[#083d4f]" title="Shop: First Trial Special Offer"
                                 class="bg-[#ffc35a] font-bold text-[18px] justify-center w-[316px] gap-2 tracking-tight" />
