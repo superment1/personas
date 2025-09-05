@@ -13,7 +13,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center py-2 h-[96px] md:flex-col md:border-b-0
                     border-b-2 " style="border-color: #FFE1AA">
                     <div
-                        class="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-16 h-16 md:w-[128px] md:h-[128px] flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/passionflower.png" alt="Passionflower"
                             class="max-w-full max-h-full object-contain" />
                     </div>
@@ -31,7 +31,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-3  pb-2 border-b-2 md:flex-col md:border-b-0"
                     style="border-color: #FFE1AA">
                     <div
-                        class="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-16 h-16 md:w-[124px] md:h-[124px] flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/california-poppy.png" alt="California Poppy"
                             class="max-w-full max-h-full object-contain" />
                     </div>
@@ -48,7 +48,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2  pb-2 border-b-2 md:flex-col md:border-b-0"
                     style="border-color: #FFE1AA">
                     <div
-                        class="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/marshmallow-root.png" alt="Marshmallow Root"
                             class="max-w-full max-h-full object-contain" />
                     </div>
@@ -65,7 +65,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2  pb-2 border-b-2 md:flex-col md:border-b-0"
                     style="border-color: #FFE1AA">
                     <div
-                        class="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/corydalis.png" alt="Corydalis"
                             class="max-w-full max-h-full object-contain" />
                     </div>
@@ -81,7 +81,7 @@
                 <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2 pb-2 border-b-2 md:flex-col md:border-b-0"
                     style="border-color: #FFE1AA">
                     <div
-                        class="w-14 h-14 md:w-28 md:h-28 flex items-center justify-center mr-6 flex-shrink-0 md:mb-3 md:mr-0">
+                        class="w-14 h-14 md:w-32 md:h-32 flex items-center justify-center mr-6 flex-shrink-0 md:mb-3 md:mr-0">
                         <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
                             class="max-w-full max-h-full object-contain" />
                     </div>
@@ -97,7 +97,7 @@
 
             <div class="text-center pt-6">
                 <p
-                    class="text-[#525252] md:text-center leading-[1] px-8 md:px-0 font-crossfit mb-6 text-xl md:text-3xl mx-8">
+                    class="text-[#525252] md:text-center leading-[1] px-8 md:px-0 font-crossfit mb-6 text-[20px] md:text-[28px] mx-8">
                     Gentle Ingredients. <br class="block md:hidden"> Powerful Sleep Support.
                 </p>
                 <div class="flex justify-center">
