@@ -156,9 +156,11 @@ onBeforeUnmount(() => {
           <div
             class="px-[42px] text-[31px] lg:text-[42px] text-center font-normal text-[#370F1E] py-[30px] lg:py-[68px]">
             <h1 class="leading-[32px] sm:hidden block font-gelasio italic">Poor sleep doesn’t <br> just make you tired –
-              <br> <span class="font-semibold"> it wears down your entire system.</span></h1>
+              <br> <span class="font-semibold"> it wears down your entire system.</span>
+            </h1>
             <h1 class="leading-[44px] hidden sm:block font-gelasio italic">Poor sleep doesn’t just make you tired – <br>
-              <span class="font-semibold"> it wears down your entire system.</span></h1>
+              <span class="font-semibold"> it wears down your entire system.</span>
+            </h1>
             <p
               class=" text-[12px] lg:text-[30px] pt-[12px] lg:pt-[30px] leading-[14px] lg:leading-[35px] font-bold lg:font-normal text-[#BD6A3A]">
               The content below is based on research <br> by the CDC (2022) on short sleep duration.</p>
@@ -317,7 +319,8 @@ onBeforeUnmount(() => {
                 <h1 class="text-[#FFDC03] leading-[32px] font-gelasio text-[33px]">The deeper risks you can’t see.</h1>
                 <p class="text-[14px] leading-[16.52px] text-[#fff]"><span class="font-bold">Surface symptoms <br> are
                     just the beginning. </span> <br>Beneath them, chronic sleep loss quietly <br>disrupts the body’s
-                  <br> most vital systems.</p>
+                  <br> most vital systems.
+                </p>
               </div>
               <img class="max-w-[150px] max-h-[215px]" src="../assets/image/pagec/iceberg.webp" loading="lazy"
                 alt="iceberg">
@@ -382,7 +385,8 @@ onBeforeUnmount(() => {
                 </li>
               </ul>
               <p class="text-center pt-[15px] leading-[18px] text-[15px] pb-[30px] text-[#fff]">This isn’t just data —
-                <span class="font-semibold">  it’s your body sending <br> early warnings.</span></p>
+                <span class="font-semibold">  it’s your body sending <br> early warnings.</span>
+              </p>
             </div>
           </div>
           <span class="pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-4 translate-y-[1px] z-10
@@ -408,7 +412,8 @@ onBeforeUnmount(() => {
               class="description w-[200px] ml-[80px] lg:w-[305px] lg:ml-[133px] text-left leading-[1] lg:text-[20px] text-[17px]">
               <strong>98%</strong> would recommend it <br>for
               deeper, better
-              sleep.</p>
+              sleep.
+            </p>
           </div>
         </div>
         <div class="max-w-[349px] sm:max-w-[1260px] mx-auto items-center">
@@ -602,7 +607,7 @@ onBeforeUnmount(() => {
     :disable-backdrop-close="true" :disable-esc="false">
     <template #message>
       <p>
-        <span class="text-[#fff] sm:text-[31px] text-[13px]">Get <span class="text-[#FFDC03] sm:text-[24px]">20% OFF
+        <span class="text-[#fff] sm:text-[31px] text-[16px]">Get <span class="text-[#FFDC03] sm:text-[28px]">20% OFF
           </span> to shop now <br> — today only.</span>
       </p>
     </template>
