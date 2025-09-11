@@ -312,7 +312,6 @@ onBeforeUnmount(() => {
       <img src="/assets/why_exhausted.webp">
       </img>
     </div>
-    
   </section>
 
   <section class="ingredients relative z-10 bg-[#FFFAF0]">
@@ -325,79 +324,31 @@ onBeforeUnmount(() => {
       </LazyIsland>
     </div>
   </section>
-  <LazyIsland>
-    <Stress />
-  </LazyIsland>
-  <section class="shop-rest">
-    <div class="imagem-centralizada">
-      <img src="../assets/image/sleepSuperment/moca.webp" loading="lazy" alt="Mulher com pílula" />
-
+  <section class="bg-[#FFFAF0] px-12 pb-[20px] pt-[30px]">
+    <div class="font-crossfit text-[32px] text-center text-[#370F1E]">
+      <p class="leading-[1]">What Customers<br>Experience With <br><span class="text-[#6EC8F0]">Super Relax:</span></p>
     </div>
-    <div class="infos">
-      <p class="title">The numbers behind Super Natural Sleep</p>
-      <p class="description-title md:mb-[14px]">What people are saying about our powerful botanical blend:</p>
-      <div class="infos-users md:mb-6 flex-col gap-0 md:justify-center md:flex-row md:gap-16">
-        <div class="flex gap-8 md:gap-16">
-          <div class="info mt-2 max-w-[200px] mx-auto">
-            <p class="number">75%</p>
-            <p class="description md:w-[200px]">of users <br>reported better<br> sleep quality.</p>
-            <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
-          </div>
-          <div class="info mt-2 max-w-[240px] mx-auto">
-            <p class="number">0%</p>
-            <p class="description" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
-            <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
-          </div>
-        </div>
-        <div class="info max-w-[200px]">
-          <p class="number mt-5 md:mt-0">100%</p>
-          <p class="description">of users reported reduced anxiety and greater relaxation.</p>
-          <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
-        </div>
+    <div class="flex flex-col pt-[14px]">
+      <div class="flex items-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px]">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px]">of users reported reduced<br>anxiety and greater relaxation.</span>
       </div>
-      <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
-        class="botao-shop rounded-md !hover:bg-none pb-4 pt-[20px] !px-0 !bg-transparent">
-        <div
-          class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
-          <span class="text-[#ffdf01]">SHOP REST</span>
-        </div>
-      </ShopButton>
-      <div>
-        <span class="stripe">
-          <img alt="logo-stripe" loading="lazy" src="../assets/image/sleepSuperment/stripe.png"></img>
-        </span>
+      <div class="flex pl-[17px] pt-[5px] items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px]">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px]">of users reported better<br> sleep quality.</span>
+      </div>
+      <div class="flex pl-[35px] pt-[5px] items-center gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px]">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px]">experienced grogginess <br> or unwanted side effects.</span>
       </div>
     </div>
-  </section>
-  <section class="testimonials">
-    <p class="title">What Supersleepers are saying.</p>
-    <div class="assessment">
-      <p class="notice">Rated 4.9/5.0</p>
-      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
-    </div>
-    <div class="testimonials">
-      <LazyIsland>
-        <TestimonialsCarousel />
-      </LazyIsland>
-    </div>
-  </section>
-  <section class="everyone">
-    <p class="title">Why everyone is switching to Super Natural Sleep.</p>
-    <picture>
-      <source type="image/webp" srcset="/assets/tabela-350.webp 350w,
-                  /assets/tabela-600.webp 600w" sizes="(min-width: 1024px) 600px, 350px">
-      <img src="/assets/tabela-350.webp" srcset="/assets/tabela-350.webp 350w, /assets/tabela-600.webp 600w"
-        sizes="(min-width: 1024px) 600px, 350px" width="350" height="233" alt="table" loading="lazy" decoding="async"
-        class="table" style="aspect-ratio: 350 / 233;" />
-    </picture>
-    <picture>
-      <source type="image/webp" srcset="/assets/selos-350.webp 1x, /assets/selos-700.webp 2x">
-      <img src="/assets/selos-350.webp" srcset="/assets/selos-350.webp 1x, /assets/selos-700.webp 2x" width="350"
-        height="67" alt="Selos de garantia e certificações" loading="lazy" decoding="async" class="mt-4"
-        style="max-width:350px;height:auto" />
-    </picture>
   </section>
   <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
+  <section class="bg-[#370F1E] px-10 py-8">
+    <div>
+      <img src="/assets/tabela_relax.webp" alt="table">
+    </div>
+  </section>
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[349px] sm:max-w-[700px] mx-auto">
