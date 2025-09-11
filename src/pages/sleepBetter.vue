@@ -169,7 +169,7 @@ onBeforeUnmount(() => {
       <section>
         <div class="w-full bg-[#FFFAF0] flex items-center justify-center relative">
           <div
-            class="px-[42px] sm:px-0 items-center text-[15px] md:text-[30px] max-w-[996px] font-normal text-[#370F1E] leading-[17.7px] md:leading-[35px] py-8">
+            class="px-[42px] lg:px-0 items-center text-[15px] sm:text-[18px] md:text-[30px] max-w-[400px] sm:max-w-[480px] md:max-w-[996px] font-normal text-[#370F1E] leading-[17.7px] sm:leading-[21px] md:leading-[35px] py-8">
             <p class="sm:hidden block">
               That night, it hit me — I wasn’t just tired. I was half-present everywhere: at work, at home, even with
               myself.
@@ -213,63 +213,70 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <div class="w-full flex bg-[#E1DCCD] justify-center relative">
-          <div class="px-[42px] sm:px-0 sm:max-w-[996px] pt-[38px] pb-[35px] lg:py-[125px]">
+          <div
+            class="px-[42px] sm:px-0 sm:max-w-[996px] pt-[38px] pb-[35px] lg:py-[125px] flex flex-col items-center justify-center">
             <h1
-              class="text-[#370F1E] sm:hidden block text-center font-gelasio text-[25px] italic font-normal leading-[29.5px]">
+              class="text-[#370F1E] lg:hidden block text-center font-gelasio text-[25px] sm:text-[28px] md:text-[34px] italic font-normal leading-[29.5px]">
               Signs your sleep<br> may be compromised too:
             </h1>
             <h1
-              class="text-[#370F1E] sm:block hidden text-star font-gelasio text-[51px] italic font-normal leading-[29.5px]">
+              class="text-[#370F1E] lg:block hidden text-star font-gelasio text-[51px] italic font-normal leading-[29.5px]">
               Signs your sleep may be compromised too:
             </h1>
             <ul
-              class="grid grid-cols-2 sm:grid-cols-3 text-[14px] lg:text-[30px] font-gelasio italic pt-[27px] lg:pt-[74px] gap-x-3 gap-y-[27.58px] lg:gap-x-[37px] lg:gap-y-[63px] list-none">
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              class="grid grid-cols-2 md:grid-cols-3 text-[14px] lg:text-[30px] font-gelasio italic pt-[27px] lg:pt-[74px] gap-x-3 gap-y-[27.58px] lg:gap-x-[37px] lg:gap-y-[63px] list-none">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/face_with_spiral_eyes.webp" alt="" aria-hidden="true" width="22"
                   height="22" loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] pb-[11px] pt-[15px] lg:py-[37px] lg:leading-[33px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] pb-[11px] pt-[15px] lg:py-[37px] lg:leading-[33px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Mental fog or forgetfulness</div>
               </li>
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/angry_face.webp" alt="" aria-hidden="true" width="22" height="22"
                   loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] lg:leading-[33px] lg:py-[37px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] lg:leading-[33px] lg:py-[37px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Mood swings and irritability</div>
               </li>
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/face_with_steam_from_nose.webp" alt="" aria-hidden="true"
                   width="22" height="22" loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] lg:leading-[33px] lg:py-[37px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] lg:leading-[33px] lg:py-[37px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Increased stress<br>or anxiety</div>
               </li>
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/face_with_thermometer.webp" alt="" aria-hidden="true" width="22"
                   height="22" loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Getting sick <br>more often</div>
               </li>
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/weary_face.webp" alt="" aria-hidden="true" width="22" height="22"
                   loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Fatigue that <br> rest doesn’t fix</div>
               </li>
-              <li class="bg-[#FFFAF0] relative rounded-[7px]">
+              <li
+                class="bg-[#FFFAF0] relative rounded-[7px] w-[150px] h-[55px] sm:w-[190px] sm:h-[60px] lg:w-[308px] lg:h-[156px]">
                 <img src="../assets/image/pagec/emoji/older_person001.webp" alt="" aria-hidden="true" width="22"
                   height="22" loading="lazy"
                   class="absolute left-1/2 -translate-x-1/2 top-0 lg:w-[54px] -translate-y-1/2 z-10 pointer-events-none select-none" />
                 <div
-                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center">
+                  class="leading-[15.4px] lg:py-[37px] lg:leading-[33px] pb-[11px] pt-[15px] px-[10px] text-[#370F1E] text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                   Early signs <br> of aging</div>
               </li>
             </ul>
