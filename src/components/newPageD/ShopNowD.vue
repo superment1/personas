@@ -10,17 +10,17 @@ const faqs = ref([
     },
     {
         question: 'Ingredients',
-        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        answer: 'Each plant was chosen because science shows how it acts on your nervous system — gently, but effectively: \n\nPassionflower – Boosts GABA, the brain’s natural “brake pedal,” to quiet mental overactivity and reduce anxiety. \n\nCalifornia Poppy – Eases physical tension, helps relax the body, and supports deeper, restorative sleep. \n\nCorydalis – Supports natural pain relief and reduces nerve inflammation that keeps the body on edge. \n\n Prickly Pear – Helps lower cortisol and improve blood flow, protecting your body from stress overload. \n\nMarshmallow Root – Soothes discomforts (like throat dryness or irritation) that can worsen anxiety, supporting calm comfort. \n\n No fillers. No hidden chemicals. Just plants that speak your body’s language.',
         open: false
     },
     {
         question: 'How to use',
-        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        answer: 'Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus. \n\nNighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.\n\nWorks flexibly — whether you need support at work, at night, or both.\n\nSafe for daily use. Non-habit-forming.',
         open: false
     },
     {
         question: 'Benefits',
-        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        answer: 'With balance restored, here’s what customers report:\n\nAnxiety & Stress Relief – Feel lighter, calmer, and more in control.\n\nImproved Mood – Relief of depressive symptoms and mental fog.\n\nPain & Inflammation Support – Comfort for nerve-related pain without harsh meds.\n\nSteady Energy by Day – Clearer focus, less tension, more productivity.\n\nRestorative Sleep by Night – Fall asleep naturally, stay asleep, and wake up refreshed.\n\n100% Plant-Based – No sedation. No grogginess. No dependency.',
         open: false
     },
 ])
