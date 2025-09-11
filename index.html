@@ -25,18 +25,9 @@
           s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
           document.head.appendChild(s);
         }
-        function loadHotjar() {
-          if (window.__hjLoaded) return; window.__hjLoaded = true;
-          (function (c, s, q, u, a, r, e) {
-            c.hj = c.hj || function(){ (c.hj.q = c.hj.q || []).push(arguments) };
-            c._hjSettings = { hjid: 6505028 }; // <-- use um ÚNICO ID
-            r = s.getElementsByTagName('head')[0];
-            e = s.createElement('script'); e.async = true;
-            e.src = q + c._hjSettings.hjid + u;
-            r.appendChild(e);
-          })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js');
-        }
-        function loadAll(){ loadGTM(); loadHotjar(); cleanup(); }
+        function loadAll(){ 
+          loadGTM();
+          cleanup(); }
         function cleanup(){
           window.removeEventListener('scroll', loadAll, { passive:true });
           window.removeEventListener('mousemove', loadAll);
@@ -96,6 +87,7 @@
 
         const splashMap = {
           sleepnatural:     { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          relax:     { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
           sleepingbeauty: { avif: "/assets/posterBeauty.avif",        webp: "/assets/posterBeauty.webp" },
           vsleep:         { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
           vsleep2:        { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
@@ -110,10 +102,7 @@
           // aliases úteis
           "":             { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
         };
-
-        const assets = splashMap[route] || splashMap.supersleep;
-
-
+        const assets = splashMap[route];
         splash.innerHTML = `
           <picture style="position:absolute;inset:0">
             <source type="image/avif" srcset="${assets.avif} 768w" sizes="100vw" media="(max-width:767px)">

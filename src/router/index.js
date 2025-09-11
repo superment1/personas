@@ -14,7 +14,7 @@ const routes = [
   { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
   { path: '/sleep', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
   { path: '/sleep2', name:'sleepbetter2',   component: () => import('../pages/sleepBetter2.vue')},
-  
+  { path: '/relax',    name:'superrelax',   component: () => import('../pages/superRelax.vue') },  
 ]
 
 export const router = createRouter({
