@@ -95,7 +95,7 @@ onMounted(async () => {
       />
     </div>
   </section>
-  <section class="scroll-link-products">
+  <section class="scroll-link-products z-10">
     <div class="marquee">
       <div class="marquee__track">
         <!-- dois grupos idênticos para loop contínuo -->
