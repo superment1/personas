@@ -1,8 +1,39 @@
 <script setup>
+import { ref } from 'vue'
 import ShopButton from '../ShopButton.vue';
+
+const faqs = ref([
+    {
+        question: 'Why Super Relax',
+        answer: 'Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
+        open: true
+    },
+    {
+        question: 'Ingredients',
+        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        open: false
+    },
+    {
+        question: 'How to use',
+        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        open: false
+    },
+    {
+        question: 'Benefits',
+        answer: 'Take 1-2 capsules 30 minutes before bedtime. For best results, use consistently as part of your nightly routine.',
+        open: false
+    },
+])
+
+function toggle(index) {
+    faqs.value = faqs.value.map((faq, i) => ({
+        ...faq,
+        open: i === index ? !faq.open : false
+    }))
+}
 </script>
 <template>
-    <div class="bg-[#6EC8F0] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3">
+    <div class="bg-[#6EC8F0] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3 pb-10">
         <p class="text-[#370F1E] text-center font-crossfit text-[32px] font-bold leading-[1]">Get Your <br>Super Relax
             Now.</p>
         <div class="flex flex-col items-center justify-center gap-y-0">
@@ -91,7 +122,8 @@ import ShopButton from '../ShopButton.vue';
                 Rest by Night.</p>
             <div
                 class="bg-[url('@/assets/image/vsl/NN1.png')] w-[317px] h-[260px] bg-cover bg-center flex items-center justify-between">
-                <svg xmlns="http://www.w3.org/2000/svg" width="105" height="104" viewBox="0 0 105 104" fill="none">
+                <svg class="mt-8 -ml-2" xmlns="http://www.w3.org/2000/svg" width="105" height="104"
+                    viewBox="0 0 105 104" fill="none">
                     <g filter="url(#filter0_d_122_9)">
                         <circle cx="52.5915" cy="48.5915" r="48.5915" fill="url(#paint0_linear_122_9)" />
                     </g>
@@ -170,7 +202,8 @@ import ShopButton from '../ShopButton.vue';
                         </linearGradient>
                     </defs>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                <svg class="mt-12 mr-1" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45"
+                    fill="none">
                     <circle cx="22.5" cy="22.5" r="22.5" fill="#E1DCCD" />
                     <path
                         d="M22.4999 3.66553C32.9015 3.66553 41.3338 12.0979 41.3339 22.4995C41.3339 32.9012 32.9016 41.3335 22.4999 41.3335C12.0983 41.3334 3.66589 32.9011 3.66589 22.4995C3.666 12.098 12.0984 3.66563 22.4999 3.66553Z"
@@ -287,13 +320,13 @@ import ShopButton from '../ShopButton.vue';
 
         <!-- FRASCOS PEQUENOS -->
         <div class="w-[351px] h-full rounded-[30px] grid grid-cols-2 gap-2 mt-1">
-            <div
-                class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start">
+            <div class="w-[170px] h-[233px]bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start">
                 <div
                     class="bg-[url('@/assets/image/vsl/NN2.png')] w-[156px] h-[186px] bg-cover bg-center ml-5 -mt-4 flex items-center justify-end">
                     <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-8 mr-[18px]">
-                        <div class="w-10 h-10 border rounded-full border-[#370F1E] flex items-center justify-end">
-                            <p class="leading-[0.82] ml-[6px] text-[#370F1E] text-[16px] font-bold font-crossfit">47%
+                        <div
+                            class="w-[44px] h-[44px] border rounded-full border-[#370F1E] flex items-center justify-end">
+                            <p class="leading-[0.82] ml-[8px] text-[#370F1E] text-[16px] font-bold font-crossfit">47%
                                 OFF
                             </p>
                         </div>
@@ -302,7 +335,7 @@ import ShopButton from '../ShopButton.vue';
                 </div>
 
                 <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                    class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                    class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-[14px]">
                     <div class="flex flex-row items-start justify-end">
                         <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27" fill="none">
                             <g clip-path="url(#clip0_8_170)">
@@ -319,22 +352,21 @@ import ShopButton from '../ShopButton.vue';
                         </svg>
                         <div class="flex flex-row items-center justify-end w-full">
                             <span
-                                class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] lg:text-[32px] text-start ml-3">Buy
-                                3 <br><span
-                                    class="font-gelasio italic font-bold text-[17px] lg:text-[32px]  ">$32</span><span
+                                class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
+                                3 <br><span class="font-gelasio italic font-bold text-[17px]  ">$32</span><span
                                     class="font-gelasio font-thin italic"> each</span>
                             </span>
                         </div>
                     </div>
                 </ShopButton>
             </div>
-            <div
-                class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
+            <div class="w-[170px] h-[233px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                 <div
                     class="bg-[url('@/assets/image/vsl/NN3.png')] w-[156px] h-[186px] bg-cover bg-center -mt-4 flex items-center justify-end">
                     <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-6 mr-[5px]">
-                        <div class="w-10 h-10 border rounded-full border-[#370F1E] flex items-center justify-end">
-                            <p class="leading-[0.82] ml-[6px] text-[#370F1E] text-[16px] font-bold font-crossfit">57%
+                        <div
+                            class="w-[44px] h-[44px] border rounded-full border-[#370F1E] flex items-center justify-end">
+                            <p class="leading-[0.82] ml-[8px] text-[#370F1E] text-[16px] font-bold font-crossfit">57%
                                 OFF
                             </p>
                         </div>
@@ -342,7 +374,7 @@ import ShopButton from '../ShopButton.vue';
                 </div>
 
                 <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                    class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                    class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee -mt-[14px]">
                     <div class="flex flex-row items-start justify-end">
                         <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27" fill="none">
                             <g clip-path="url(#clip0_8_170)">
@@ -359,14 +391,24 @@ import ShopButton from '../ShopButton.vue';
                         </svg>
                         <div class="flex flex-row items-center justify-end w-full">
                             <span
-                                class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] lg:text-[32px] text-start ml-3">Buy
-                                6 <br><span
-                                    class="font-gelasio italic font-bold text-[17px] lg:text-[32px]">$26</span><span
+                                class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
+                                6 <br><span class="font-gelasio italic font-bold text-[17px]">$26</span><span
                                     class="font-gelasio font-thin italic"> each</span>
                             </span>
                         </div>
                     </div>
                 </ShopButton>
+            </div>
+        </div>
+        <div class="w-[351px] faq-item cursor-pointer border-b border-[#370F1E] mt-5"></div>
+        <div v-for="(faq, i) in faqs" :key="faq.id"
+            class="w-[351px] faq-item cursor-pointer py-0 border-b border-[#370F1E]" @click="toggle(i)">
+            <div class="flex justify-between items-center">
+                <p class="text-[13px] font-bold leading-[1.15] text-[#370f1e]">{{ faq.question }}</p>
+                <span class="text-xl">{{ faq.open ? '↑' : '↓' }}</span>
+            </div>
+            <div v-if="faq.open && faq.answer" class="mt-2 text-[#370f1e] text-[13px] leading-[1.15] pb-3">
+                <p class="whitespace-pre-line">{{ faq.answer }}</p>
             </div>
         </div>
     </div>
