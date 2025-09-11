@@ -7,7 +7,7 @@ import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
-import VslBadges from '../components/VslBadges.vue';
+import ShopNowD from '../components/newPageD/ShopNowD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
 
@@ -128,13 +128,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <SuperHeader2 
-  :show-redirect="false"
-  :items="[
+  <SuperHeader2 :show-redirect="false" :items="[
     'Science-Backed Botanicals',
-    'No Sedation. No Dependency. No Fog.',    
-  ]"
-   />
+    'No Sedation. No Dependency. No Fog.',
+  ]" />
   <section id="super-sleep-pequeno"
     class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden">
     <picture class="absolute inset-0 z-0">
@@ -325,7 +322,7 @@ onBeforeUnmount(() => {
   <LazyIsland>
     <Frascos />
   </LazyIsland>
-  <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
+  <ShopNowD id="shop-now-d" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[349px] sm:max-w-[700px] mx-auto">
@@ -359,7 +356,7 @@ onBeforeUnmount(() => {
           </span> to shop now <br> — today only.</span>
       </p>
     </template>
-  </BannerRetention> -->
+</BannerRetention> -->
 </template>
 <style>
 html {
