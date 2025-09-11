@@ -5,8 +5,8 @@ const items = [
   { 
     title: 'Passion Flower', 
     subtitle: 'Calming and relaxing.', 
-    img1x: 'assets/passion-flower-128.webp',
-    img2x: 'assets/passion-flower-256.webp',
+    img1x: 'assets/passion_flower_relax.webp',
+    img2x: 'assets/passion_flower_relax.webp',
     w: 128, h: 128, alt: 'Passion flower'
   },
    {
@@ -26,8 +26,8 @@ const items = [
   {
     title: 'California Poppy',
     subtitle: 'Promotes calm and sleep.',
-    img1x: 'assets/california-poppy-128.webp',
-    img2x: 'assets/california-poppy-256.webp',
+    img1x: '/assets/california_poppy_relax.webp',
+    img2x: '/assets/california_poppy_relax.webp',
     w: 128, h: 128, alt: 'California poppy'
   },
   {
@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden w-full bg-[#E1DCCD] flex justify-center items-center">
+  <div class="relative overflow-hidden w-full flex justify-center items-center">
     <div 
         ref="carouselContainer" 
         class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"

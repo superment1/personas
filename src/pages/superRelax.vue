@@ -365,11 +365,43 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#370F1E]">
     <div class="px-12 py-6">
-      <img src="/assets/why_exhausted.webp">
+      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted">
       </img>
     </div>
   </section>
-
+  <section class="bg-[#FFFAF0] pb-[12px]">
+    <div class="flex flex-col ">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-3 pt-[20px] px-10 w-full">
+        <img src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+        <div class="flex flex-col">
+          <p class="font-crossfit leading-[1] text-[#370F1E] text-[26px]">But here’s the <br>good news:</p>
+          <p class="font-gelasio italic text-[14px]">You don’t have to stay in fight-or-flight. With the right natural support, your body can return to balance.</p>
+        </div>
+        <div
+          class="pointer-events-none -z-10 absolute bottom-[-48px] left-0 w-full h-32
+                bg-[#FFDC03]
+                [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
+        </div>
+      </div>
+      <div class="pt-[74px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px]"> 
+          Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
+      </div>
+      <div class="flex pt-4">
+        <img src="/assets/bottle_relax_1.webp" width="227" height="236" loading="lazy" alt="bottle">
+        <div class="flex-col text-[14px] text-[#370F1E] italic font-gelasio flex">
+          <img src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
+          <p class="border-b font-semibold py-2 leading-[1.1] border-[#370F1E]">Restores Nervous<br> System Balance</p>
+          <p class="border-b font-semibold py-2 leading-[1.1] border-[#370F1E]">100% plant-based.</p>
+          <p class="leading-[1.1] font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
+        </div>
+      </div>
+      <div class="px-10">
+        <img src="/assets/box_4.webp" alt="blocks">
+      </div>      
+    </div>
+    
+  </section>
   <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title text-[32px]">
       <p>Five Powerful Plants,<br><span class="text-[#6EC8F0]"> Proven to Restore <br> Calm and Clarity.</span></p>
@@ -406,6 +438,21 @@ onBeforeUnmount(() => {
     <div>
       <img src="/assets/tabela_relax.webp" alt="table">
     </div>
+  </section>
+  <section class="bg-[#FFDC03] px-[35px] pb-[42px]">
+    <div>
+      <img src="/assets/superbottle.webp" alt="" loading="lazy">
+      <div>
+        <p class="text-center leading-[1] text-[44px] font-crossfit text-[#370F1E]">Take Back Your Days and Nights.</p>
+      </div>
+      <div class="pt-[30px]">
+          <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#FFDC03]" :showIcon="false"
+            class="botao-shop font-bold !m-0 text-[18px] w-full rounded-3xl text-center !h-[58px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
+            Get Calm, Clarity & Rest Now
+          </ShopButton> 
+        </div>
+    </div>
+     
   </section>
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
