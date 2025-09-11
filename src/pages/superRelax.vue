@@ -371,7 +371,7 @@ onBeforeUnmount(() => {
     </div>
   </section>
 
-  <!-- <section class="ingredients relative z-10 bg-[#FFFAF0]">
+  <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title text-[32px]">
       <p>Five Powerful Plants,<br><span class="text-[#6EC8F0]"> Proven to Restore <br> Calm and Clarity.</span></p>
     </div>
@@ -380,7 +380,7 @@ onBeforeUnmount(() => {
         <IngredientsCarousel />
       </LazyIsland>
     </div>
-  </section> -->
+  </section>
   <DepoimentsD />
   <section class="bg-[#FFFAF0] px-12 pb-[20px] pt-[30px]">
     <div class="font-crossfit text-[32px] text-center text-[#370F1E]">
