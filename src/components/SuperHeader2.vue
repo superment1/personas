@@ -1,8 +1,14 @@
-<script setup>
-import { ref, onMounted } from "vue"  
-defineProps({ showRedirect: Boolean })
+<script setup lang="ts">
+import { ref, onMounted, computed } from 'vue'
 
-const items = [
+const props = withDefaults(defineProps<{
+  showRedirect?: boolean
+  items?: string[]
+}>(), {
+  showRedirect: false
+})
+
+const defaultItems= [
   'Made in the USA',
   'Clean, natural, no fillers',
   'Save up to 57%',
@@ -10,6 +16,9 @@ const items = [
   'Real reviews rated 4.9/5.0',
   'Free U.S. shipping'
 ]
+
+const itemsToShow = computed(() => props.items?.length ? props.items : defaultItems)
+
 const showGif = ref(false)
 const gifSrc = new URL("../assets/image/sleepSuperment/superment-gif.gif", import.meta.url).href
 
@@ -91,7 +100,7 @@ onMounted(async () => {
       <div class="marquee__track">
         <!-- dois grupos idênticos para loop contínuo -->
         <ul class="marquee__group" v-for="i in 2" :key="i" :aria-hidden="i === 2">
-          <li v-for="(t, idx) in items" :key="i + '-' + idx" class="marquee__item">{{ t }}</li>
+          <li v-for="(t, idx) in itemsToShow" :key="i + '-' + idx" class="marquee__item">{{ t }}</li>
         </ul>
       </div>
     </div>
@@ -137,7 +146,7 @@ onMounted(async () => {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee-scroll 18s linear infinite;
+  animation: marquee-scroll 14s linear infinite;
 }
 
 .marquee__group {
