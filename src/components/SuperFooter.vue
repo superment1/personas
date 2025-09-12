@@ -61,7 +61,7 @@
           </li>
           <li class="flex items-center gap-2 border-b border-[#FFF] py-1 pb-3 h-[32px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
-              <img src="@/assets/image/icons/instagram.webp" alt="instagram icon" loading="lazy"  class="w-6 h-6" />
+              <img src="@/assets/image/icons/instagran.webp" alt="instagram icon" loading="lazy"  class="w-6 h-6" />
             </span>
             <a href="https://instagram.com/superment.co" target="_blank" class="label">@superment.co</a>
           </li>
