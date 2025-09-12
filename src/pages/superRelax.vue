@@ -7,6 +7,7 @@ import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
 import ShopNowD from '../components/newPageD/ShopNowD.vue';
+import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
 
@@ -417,6 +418,7 @@ onBeforeUnmount(() => {
       </LazyIsland>
     </div>
   </section>
+  <DepoimentsD />
   <section class="bg-[#FFFAF0] px-12 pb-[20px] pt-[30px]">
     <div class="font-crossfit text-[32px] text-center text-[#370F1E]">
       <p class="leading-[1]">What Customers<br>Experience With <br><span class="text-[#6EC8F0]">Super Relax:</span></p>
@@ -439,6 +441,7 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <ShopNowD id="shop-now-d" />
+
   <section class="bg-[#370F1E] px-10 py-8">
     <div>
       <img src="/assets/tabela_relax.webp" alt="table">
