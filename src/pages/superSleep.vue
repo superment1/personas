@@ -233,7 +233,7 @@ onBeforeUnmount(() => {
 
     </div>
   </section>
-  <section class="ingredients relative z-10">
+  <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title">
       <p>The ingredients you can trust.</p>
     </div>
@@ -327,7 +327,7 @@ onBeforeUnmount(() => {
   <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
-      <div class="w-full max-w-[349px] sm:max-w-[700px] mx-auto">
+      <div class="w-full max-w-[330px] sm:max-w-[700px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
           Frequently asked <br>
           questions:</h1>
