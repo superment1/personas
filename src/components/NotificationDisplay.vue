@@ -50,8 +50,6 @@ const notificationsList = [
 
 const visibleNotifications = ref([])
 let currentIndex = 0
-
-// Função para scroll suave até o botão com id "id-shop-now"
 const scrollToShopNow = () => {
   const el = document.getElementById('id-shop-now')
   if (el) {

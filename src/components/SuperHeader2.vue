@@ -182,14 +182,6 @@ onMounted(async () => {
   padding-left: 0px;
 }
 
-.marquee__item:last-child::after {
-  content: "|";
-  display: inline-block;
-  margin-left: 16px;
-  margin-right: 0;
-  letter-spacing: 0;
-}
-
 .marquee__group>.marquee__item:first-child {
   padding-left: 0px;
 }

@@ -38,6 +38,7 @@ function setThemeColor(color) {
 router.afterEach((to) => {
   const themeColorMap = {
     supersleep: '#E1DCCD',
+    superrelax: '#E1DCCD',
     terms: '#E1DCCD',
     faq: '#E1DCCD',
     about: '#E1DCCD',
