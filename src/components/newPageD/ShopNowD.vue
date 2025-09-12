@@ -400,9 +400,9 @@ function toggle(index) {
                 </ShopButton>
             </div>
         </div>
-        <div class="w-[351px] faq-item cursor-pointer border-b border-[#370F1E] mt-5"></div>
+        <div class="w-[320px] faq-item cursor-pointer border-b border-[#370F1E] mt-5"></div>
         <div v-for="(faq, i) in faqs" :key="faq.id"
-            class="w-[351px] faq-item cursor-pointer py-0 border-b border-[#370F1E]" @click="toggle(i)">
+            class="w-[320px] faq-item cursor-pointer py-0 border-b border-[#370F1E]" @click="toggle(i)">
             <div class="flex justify-between items-center">
                 <p class="text-[13px] font-bold leading-[1.15] text-[#370f1e]">{{ faq.question }}</p>
                 <span class="text-xl">{{ faq.open ? '↑' : '↓' }}</span>
