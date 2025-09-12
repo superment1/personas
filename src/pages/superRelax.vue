@@ -12,9 +12,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
-const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
-const Frascos = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Frascos.vue'))
-const Stress = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Stress.vue'))
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
@@ -129,16 +126,20 @@ onBeforeUnmount(() => {
 
 <template>
   <SuperHeader2 :show-redirect="false" :items="[
-    '100% Plant-Based', 
-    'Science-Backed', 
-    'Non-Sedative', 
-    'Non-Habit-Forming', 
-    'Caffeine-Free', 
-    'Gluten-, Soy- & Dairy-Free', 
-    'Made in the USA', 
+    'Save 14%',
+    'Free Shipping',
+    '120-Day Money-Back Guarantee',
+    '100% Plant-Based',
+    'Science-Backed',
+    'Non-Sedative',
+    'Non-Habit-Forming',
+    'Caffeine-Free',
+    'Gluten, Soy & Dairy-Free',
+    'Made in the USA',
     'GMP-Certified Facility',
+    ,
   ]" />
-  <section class="firtsection bg-[#6fc8f0]">
+  <section class="firtsection bg-[#50b5b2]">
     <div class="relative
         -top-[28px]
         z-0
@@ -275,7 +276,7 @@ onBeforeUnmount(() => {
                   </linearGradient>
                 </defs>
               </svg>
-              <p class="text-[13px] lg:text-[22px] font-bold">4.8/5 <span class="font-medium"> Rated.</span> <br>98% <span
+              <p class="text-[13px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98% <span
                   class="font-medium">Recommend.</span></p>
             </div>
           </div>
@@ -286,7 +287,7 @@ onBeforeUnmount(() => {
               Peacefully All Night.</span> </p>
         </div>
         <div class="flex flex-col px-6 lg:px-12">
-          <div class="flex pt-[24px] pb-[10px] lg:pb-[22px] gap-[5px] ">
+          <div class="flex pt-[24px] pb-[20px] lg:pb-[22px] gap-[5px] ">
             <svg class="lg:w-[30px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" width="22" height="90" viewBox="0 0 19 81" fill="none">
               <path
                 d="M8.99362 48.8975C9.33579 47.7402 10.0805 46.9211 10.9963 46.3914C11.0517 46.3603 11.0416 46.2846 10.9762 46.2712C8.7068 45.7104 6.11032 46.6897 5.18445 49.0088C4.72151 50.1661 4.89763 51.4659 5.65745 52.4897C7.17709 54.5507 9.96478 54.9602 12.0178 53.9364C12.0732 53.9097 12.0631 53.834 12.0027 53.8162C10.9712 53.4913 10.0252 52.8503 9.38108 51.7953C8.84266 50.9095 8.70177 49.8679 8.98859 48.8975H8.99362Z"
@@ -378,7 +379,7 @@ onBeforeUnmount(() => {
                   fill="#370F1E" />
               </svg>
               <div>
-                <span class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</span>
+                <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
               </div>
             </div>
             <div class="w-[1px] h-[42px] lg:h-[70px] bg-[#370F1E]"></div>
@@ -417,7 +418,7 @@ onBeforeUnmount(() => {
                   fill="#370F1E" />
               </svg>
               <div>
-                <span class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</span>
+                <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
               </div>
             </div>
           </div>
@@ -428,7 +429,7 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E]">
-    <div class="px-8 flex sm:hidden py-6">
+    <div class="px-8 flex sm:hidden py-8">
       <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted">
       </img>
     </div>
@@ -438,7 +439,7 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-3 lg:gap-10 pt-[20px] px-8 lg:px-40 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-8 lg:gap-10 pt-[20px] px-8 lg:px-40 w-full">
         <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy" alt="exhausted"></img>
         <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
@@ -446,7 +447,7 @@ onBeforeUnmount(() => {
           <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.</p>
         </div>
         <div
-          class="pointer-events-none -z-10 absolute bottom-[-48px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
+          class="pointer-events-none -z-10 absolute bottom-[-55px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
                 bg-[#FFDC03]
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
@@ -456,18 +457,18 @@ onBeforeUnmount(() => {
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
       <div class="flex pt-4">
-        <img class="block lg:hidden" src="/assets/bottle_relax_1.webp" width="227" height="236" loading="lazy" alt="bottle">
+        <img class="block lg:hidden" src="/assets/bottle_relax.webp" width="227" height="236" loading="lazy" alt="bottle">
         <img class="hidden lg:block" src="/assets/bottle_relax_1_desk.webp" width="688" height="793" loading="lazy" alt="bottle">
         <div class="flex-col text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
-          <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance</p>
+          <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
       <div class="px-8 lg:px-40">
-        <img class="lg:hidden block" src="/assets/boxs_4.webp" alt="blocks">
-        <img class="hidden lg:block" src="/assets/boxs_4_desk.webp" alt="blocks">
+        <img class="lg:hidden block" src="/assets/box4.webp" alt="blocks">
+        <img class="hidden lg:block" src="/assets/box4_desk.webp" alt="blocks">
       </div>      
     </div>
     
@@ -486,7 +487,7 @@ onBeforeUnmount(() => {
   <DepoimentsD />
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[30px]">
     <div class="font-crossfit text-[32px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="lg:hidden leading-[1]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
+      <p class="lg:hidden leading-[1]">What Customers<br>Experience With <br><span class="text-[#4DBCB6] leading-[40px]">Super Relax:</span></p>
       <p class="hidden lg:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">

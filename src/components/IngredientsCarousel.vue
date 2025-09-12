@@ -4,35 +4,35 @@ import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 const items = [
   { 
     title: 'Passion Flower', 
-    subtitle: 'Calming and relaxing.', 
+    subtitle: 'Calms racing thoughts and eases anxiety so your mind feels clear and at ease.', 
     img1x: 'assets/passion_flower_relax.webp',
     img2x: 'assets/passion_flower_relax.webp',
     w: 128, h: 128, alt: 'Passion flower'
   },
    {
     title: 'Marshmallow Root',
-    subtitle: 'Calms digestion, supports sleep.',
+    subtitle: 'Soothes internal irritation, restoring comfort that allows true relaxation.',
     img1x: 'assets/marshmallow.webp',
     img2x: 'assets/marshmallow.webp',
     w: 128, h: 128, alt: 'Marshmallow root'
   },
   {
     title: 'Corydalis',
-    subtitle: 'Gentle pain and sleep relief.',
+    subtitle: 'Relieves stress-driven discomfort and supports a calm, steady state throughout the day.',
     img1x: 'assets/corydalis-128.webp',
     img2x: 'assets/corydalis-256.webp',
     w: 128, h: 128, alt: 'Corydalis'
   },
   {
     title: 'California Poppy',
-    subtitle: 'Promotes calm and sleep.',
+    subtitle: 'Releases tension and restlessness, helping you relax deeply and sleep soundly.',
     img1x: '/assets/california_poppy_relax.webp',
     img2x: '/assets/california_poppy_relax.webp',
     w: 128, h: 128, alt: 'California poppy'
   },
   {
     title: 'Prickly Pear',
-    subtitle: 'Antioxidant support.',
+    subtitle: 'Balances cortisol to reduce stress, boost resilience, and keep your energy steady.',
     img1x: 'assets/prickly-pear-128.webp',
     img2x: 'assets/prickly-pear-256.webp',
     w: 128, h: 128, alt: 'Prickly pear'
@@ -189,6 +189,8 @@ onBeforeUnmount(() => {
   color: #370F1E;
 }
 .description {
+  justify-self: center;
+  max-width: 159px;
   font-family: 'DM Sans';
   font-weight: 500;
   font-size: 10px;

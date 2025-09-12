@@ -105,7 +105,7 @@ function toggle(index) {
                     </linearGradient>
                 </defs>
             </svg>
-            <p class="text-[#370F1E] text-center font-gelasio text-[14px] leading-[1.06] font-semibold">4.8/5 Rated |
+            <p class="text-[#370F1E] text-center font-gelasio text-[14px] leading-[1.06] font-semibold">4.9/5 Rated |
                 98% Recommend
             </p>
         </div>
