@@ -438,40 +438,44 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-3 pt-[20px] px-8 w-full">
-        <img src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
-        <div class="flex flex-col text-[#370F1E] gap-[10px]">
-          <p class="font-crossfit leading-[1]  text-[26px]">But here’s the <br>good news:</p>
-          <p class="font-gelasio italic leading-[1.3] text-[14px]">You don’t have to stay in <br>fight-or-flight. With the right natural support, your body <br>can return to balance.</p>
+      <div class="flex relative z-30 bg-[#FFDC03] gap-3 lg:gap-10 pt-[20px] px-8 lg:px-40 w-full">
+        <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+        <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy" alt="exhausted"></img>
+        <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
+          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px]">But here’s the <br>good news:</p>
+          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.</p>
         </div>
         <div
-          class="pointer-events-none -z-10 absolute bottom-[-48px] left-0 w-full h-32
+          class="pointer-events-none -z-10 absolute bottom-[-48px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
                 bg-[#FFDC03]
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px]"> 
+      <div class="pt-[74px] lg:pt-[180px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] lg:text-[60px]"> 
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
       <div class="flex pt-4">
-        <img src="/assets/bottle_relax_1.webp" width="227" height="236" loading="lazy" alt="bottle">
-        <div class="flex-col text-[14px] text-[#370F1E] italic font-gelasio flex">
-          <img src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
-          <p class="border-b font-semibold py-2 leading-[1.1] border-[#370F1E]">Restores Nervous<br> System Balance</p>
-          <p class="border-b font-semibold py-2 leading-[1.1] border-[#370F1E]">100% plant-based.</p>
-          <p class="leading-[1.1] font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
+        <img class="block lg:hidden" src="/assets/bottle_relax_1.webp" width="227" height="236" loading="lazy" alt="bottle">
+        <img class="hidden lg:block" src="/assets/bottle_relax_1_desk.webp" width="688" height="793" loading="lazy" alt="bottle">
+        <div class="flex-col text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
+          <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance</p>
+          <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
+          <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-8">
-        <img src="/assets/box_4.webp" alt="blocks">
+      <div class="px-8 lg:px-40">
+        <img class="lg:hidden block" src="/assets/boxs_4.webp" alt="blocks">
+        <img class="hidden lg:block" src="/assets/boxs_4_desk.webp" alt="blocks">
       </div>      
     </div>
     
   </section>
   <section class="ingredients relative z-10 bg-[#FFFAF0]">
-    <div class="title text-[32px]">
-      <p>Five Powerful Plants,<br><span class="text-[#6EC8F0]"> Proven to Restore <br> Calm and Clarity.</span></p>
+    <div class="font-crossfit text-[#370F1E] text-center ">
+      <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven to Restore <br> Calm and Clarity.</span></p>
+      <p class="hidden leading-[1] text-[60px] lg:block">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven to Restore Calm and Clarity.</span></p>
     </div>
     <div class="carrossel-ingredients">
       <LazyIsland>
@@ -480,43 +484,49 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <DepoimentsD />
-  <section class="bg-[#FFFAF0] px-12 pb-[20px] pt-[30px]">
-    <div class="font-crossfit text-[32px] text-center text-[#370F1E]">
-      <p class="leading-[1]">What Customers<br>Experience With <br><span class="text-[#6EC8F0]">Super Relax:</span></p>
+  <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[30px]">
+    <div class="font-crossfit text-[32px] lg:text-[70px] text-center text-[#370F1E]">
+      <p class="lg:hidden leading-[1]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
+      <p class="hidden lg:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">
-      <div class="flex items-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px]">100% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px]">of users reported reduced<br>anxiety and greater
+      <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px] lg:text-[100px]">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported reduced<br>anxiety and greater
           relaxation.</span>
       </div>
-      <div class="flex pl-[17px] pt-[5px] items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px]">75% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px]">of users reported better<br> sleep quality.</span>
+      <div class="flex pl-[17px] pt-[5px] lg:self-center items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px] lg:text-[100px]">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported better<br> sleep quality.</span>
       </div>
-      <div class="flex pl-[35px] pt-[5px] items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px]">0% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px]">experienced grogginess <br> or unwanted side
+      <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
+        <span class="font-crossfit text-[43px] lg:text-[100px]">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">experienced grogginess <br> or unwanted side
           effects.</span>
       </div>
     </div>
   </section>
   <ShopNowD id="shop-now-d" />
 
-  <section class="bg-[#370F1E] px-10 py-8">
-    <div>
-      <img src="/assets/tabela_relax.webp" alt="table">
+  <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
+    <div class="lg:hidden">
+      <img src="/assets/tabela_relax.webp" alt="table" loading="lazy">
+    </div>
+    <div class="hidden lg:block">
+      <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white" >Why everyone is  <span class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
+      <img src="/assets/tabela_relax_desk.webp" alt="table" loading="lazy">
+      <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>
-  <section class="bg-[#FFDC03] px-[40px] pb-[42px]">
-    <div>
-      <img src="/assets/superbottle.webp" alt="" loading="lazy">
+  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
+    <div class="justify-self-center max-w-[950px]">
+      <img class="justify-self-center lg:h-[700px]" src="/assets/superbottle.webp"  alt="" loading="lazy">
       <div>
-        <p class="text-center leading-[1] text-[44px] font-crossfit text-[#370F1E]">Take Back Your Days and Nights.</p>
+        <p class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
           <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#FFDC03]" :showIcon="false"
-            class="botao-shop font-bold !m-0 text-[18px] w-full rounded-3xl text-center !h-[58px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
+            class="botao-shop font-bold !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
             Get Calm, Clarity & Rest Now
           </ShopButton> 
         </div>
@@ -525,7 +535,7 @@ onBeforeUnmount(() => {
   </section>
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
-      <div class="w-full max-w-[330px] sm:max-w-[700px] mx-auto">
+      <div class="w-full max-w-[330px] sm:max-w-[950px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[25px] font-bold font-gelasio italic">
           Frequently asked <br>
           questions:</h1>
@@ -540,14 +550,14 @@ onBeforeUnmount(() => {
     </div>
   </div>
   <div class="bg-[#370F1E] w-full">
-    <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
+    <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
       <SuperFooter />
     </div>
   </div>
   <LazyIsland>
     <NotificationDisplay />
   </LazyIsland>
-  <BannerModal />
+  <!-- <BannerModal /> -->
   <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
     :disable-backdrop-close="true" :disable-esc="false">
     <template #message>
