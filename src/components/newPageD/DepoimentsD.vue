@@ -2,11 +2,46 @@
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 
 const testimonials = ref([
-    { avatar: new URL('@/assets/image/newPageD/ligiane.png', import.meta.url).href },
-    { avatar: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href },
-    { avatar: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href },
-    { avatar: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href },
-    { avatar: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href },
+    {
+        // avatarDesk: new URL('@/assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
+        avatarMobile: new URL('@/assets/image/newPageD/ligiani.png', import.meta.url).href,
+        title: 'From stressed to relaxed.',
+        testimonial: 'I used to arrive very stressed from work and still I couldn\'t rest… Now I\'m finally able to relax and sleep again.',
+        name: 'Ligiani G., 44',
+        city: 'Boston, MA'
+    },
+    {
+        // avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
+        avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
+        title: 'I am enjoying it!!',
+        testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
+        name: 'Danielle A., 37',
+        city: 'Los Angeles, CA'
+    },
+    {
+        // avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
+        avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
+        title: 'Good both day & night.',
+        testimonial: 'I used to wake up at night to pee and then couldn’t fall back asleep. Now I sleep through and have way more energy in the day.',
+        name: 'Eliseu C., 40',
+        city: 'Fort Lauderdale, FL'
+    },
+    {
+        // avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
+        avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
+        title: 'Eased the pain in my legs.',
+        testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
+        name: 'Bruna R., 38',
+        city: 'New York, NY'
+    },
+    {
+        // avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
+        avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
+        title: 'Didn’t expect it to work this well.',
+        testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
+        name: 'Nuala O., 35',
+        city: 'Miami, FL'
+    },
 ])
 
 const track = ref(null)
@@ -108,8 +143,41 @@ onBeforeUnmount(() => ro?.disconnect?.())
             <div class="shrink-0" :style="{ width: spacer + 'px' }" />
             <div v-for="(t, i) in testimonials" :key="i" :ref="el => (itemEls[i] = el)"
                 class="shrink-0 w-[319px] md:w-[360px] snap-center ">
-                <img :src="t.avatar" :alt="`testimonial-${i + 1}`" loading="lazy" decoding="async"
-                    class="w-[319px] h-[219px] rounded-xl pointer-events-none " />
+                <div
+                    class="shrink-0 w-[301px] h-[219px] snap-center bg-[#FFFAF0] rounded-xl flex flex-col items-start justify-start pt-[31px] px-6 gap-y-[14px]">
+                    <p class="text-[#370F1E] font-crossfit font-bold text-[20px] leading-[1.2]">{{ t.title }}
+                    </p>
+                    <p class="text-[#370F1E] font-DMSans font-bold text-[13px] leading-[1.15]">{{ t.testimonial }}</p>
+                    <div class="flex flex-row items-start justify-start mt-2">
+                        <img :src="t.avatarMobile" alt="avatar" class="w-[48px] h-[48px] rounded-full object-cover" />
+                        <div class="flex flex flex-col items-start justify-center ml-3 pt-1">
+                            <p class="text-[#370F1E] font-gelasio font-bold italic text-[14px] leading-[0.96]">{{ t.name
+                                }}</p>
+                            <p
+                                class="text-[#370F1E] font-gelasio font-semibold italic text-[13px] leading-[1.15] mt-[2px]">
+                                {{
+                                    t.city }}</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="8" viewBox="0 0 54 8"
+                                fill="none">
+                                <path
+                                    d="M4.5824 0.379751L5.33963 2.71317H7.79239C8.18541 2.71317 8.35003 3.2173 8.03108 3.44776L6.04748 4.8902L6.8047 7.22361C6.92611 7.59811 6.49811 7.90882 6.17917 7.67836L4.19556 6.23592L2.21195 7.67836C1.89301 7.90882 1.46501 7.59811 1.58641 7.22361L2.34364 4.8902L0.360033 3.44776C0.0410919 3.2173 0.205707 2.71317 0.598725 2.71317H3.05149L3.80871 0.379751C3.93012 0.00525226 4.45894 0.00525226 4.58035 0.379751H4.5824Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M15.8993 0.379629L16.6565 2.71304H19.1093C19.5023 2.71304 19.6669 3.21718 19.348 3.44764L17.3644 4.89008L18.1216 7.22349C18.243 7.59799 17.815 7.9087 17.4961 7.67824L15.5125 6.2358L13.5288 7.67824C13.2099 7.9087 12.7819 7.59799 12.9033 7.22349L13.6605 4.89008L11.6769 3.44764C11.358 3.21718 11.5226 2.71304 11.9156 2.71304H14.3684L15.1256 0.379629C15.247 0.00513019 15.7758 0.00513019 15.8972 0.379629H15.8993Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M27.2168 0.379629L27.974 2.71304H30.4268C30.8198 2.71304 30.9844 3.21718 30.6655 3.44764L28.6819 4.89008L29.4391 7.22349C29.5605 7.59799 29.1325 7.9087 28.8136 7.67824L26.83 6.2358L24.8463 7.67824C24.5274 7.9087 24.0994 7.59799 24.2208 7.22349L24.978 4.89008L22.9944 3.44764C22.6755 3.21718 22.8401 2.71304 23.2331 2.71304H25.6859L26.4431 0.379629C26.5645 0.00513019 27.0933 0.00513019 27.2147 0.379629H27.2168Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M38.5349 0.379629L39.2921 2.71304H41.7449C42.1379 2.71304 42.3025 3.21718 41.9836 3.44764L40 4.89008L40.7572 7.22349C40.8786 7.59799 40.4506 7.9087 40.1317 7.67824L38.1481 6.2358L36.1645 7.67824C35.8455 7.9087 35.4175 7.59799 35.5389 7.22349L36.2962 4.89008L34.3125 3.44764C33.9936 3.21718 34.1582 2.71304 34.5512 2.71304H37.004L37.7612 0.379629C37.8826 0.00513019 38.4115 0.00513019 38.5329 0.379629H38.5349Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M49.8514 0.379629L50.6087 2.71304H53.0614C53.4545 2.71304 53.6191 3.21718 53.3001 3.44764L51.3165 4.89008L52.0737 7.22349C52.1951 7.59799 51.7672 7.9087 51.4482 7.67824L49.4646 6.2358L47.481 7.67824C47.1621 7.9087 46.7341 7.59799 46.8555 7.22349L47.6127 4.89008L45.6291 3.44764C45.3101 3.21718 45.4747 2.71304 45.8678 2.71304H48.3205L49.0778 0.379629C49.1992 0.00513019 49.728 0.00513019 49.8494 0.379629H49.8514Z"
+                                    fill="#370F1E" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="shrink-0" :style="{ width: spacer + 'px' }" />
         </div>
