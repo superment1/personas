@@ -128,8 +128,14 @@ onBeforeUnmount(() => {
 
 <template>
   <SuperHeader2 :show-redirect="false" :items="[
-    'Science-Backed Botanicals',
-    'No Sedation. No Dependency. No Fog.',
+    '100% Plant-Based', 
+    'Science-Backed', 
+    'Non-Sedative', 
+    'Non-Habit-Forming', 
+    'Caffeine-Free', 
+    'Gluten-, Soy- & Dairy-Free', 
+    'Made in the USA', 
+    'GMP-Certified Facility',
   ]" />
   <section class="firtsection bg-[#6fc8f0]">
     <div class="relative
@@ -363,14 +369,14 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E]">
-    <div class="px-12 py-6">
+    <div class="px-8 py-6">
       <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted">
       </img>
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col ">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-3 pt-[20px] px-10 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-3 pt-[20px] px-8 w-full">
         <img src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
         <div class="flex flex-col">
           <p class="font-crossfit leading-[1] text-[#370F1E] text-[26px]">But here’s the <br>good news:</p>
@@ -395,7 +401,7 @@ onBeforeUnmount(() => {
           <p class="leading-[1.1] font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-10">
+      <div class="px-8">
         <img src="/assets/box_4.webp" alt="blocks">
       </div>      
     </div>
@@ -438,7 +444,7 @@ onBeforeUnmount(() => {
       <img src="/assets/tabela_relax.webp" alt="table">
     </div>
   </section>
-  <section class="bg-[#FFDC03] px-[35px] pb-[42px]">
+  <section class="bg-[#FFDC03] px-[40px] pb-[42px]">
     <div>
       <img src="/assets/superbottle.webp" alt="" loading="lazy">
       <div>
@@ -455,7 +461,7 @@ onBeforeUnmount(() => {
   </section>
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
-      <div class="w-full max-w-[349px] sm:max-w-[700px] mx-auto">
+      <div class="w-full max-w-[330px] sm:max-w-[700px] mx-auto">
         <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
           Frequently asked <br>
           questions:</h1>
