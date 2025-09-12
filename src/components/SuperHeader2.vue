@@ -146,7 +146,7 @@ onMounted(async () => {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee-scroll 14s linear infinite;
+  animation: marquee-scroll 25s linear infinite;
 }
 
 .marquee__group {

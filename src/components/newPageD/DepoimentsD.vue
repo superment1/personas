@@ -96,7 +96,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
             Why People Love<br />Super Relax.
         </p>
         <p class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] mt-2">
-            4.8/5 (160+ Reviews) | 98% Recommend
+            4.9/5 (160+ Reviews) | 98% Recommend
         </p>
 
         <!-- trilho -->
