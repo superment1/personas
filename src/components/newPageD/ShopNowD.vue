@@ -36,7 +36,7 @@ function toggle(index) {
     <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3 pb-10">
         <p class="text-[#FFF] text-center font-crossfit text-[32px] font-bold leading-[1]">Get Your <br>Super Relax
             Now.</p>
-        <div class="flex flex-col items-center justify-center gap-y-0">
+        <div class="flex flex-col items-center justify-center gap-y-0 mt-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="79" height="20" viewBox="0 0 79 20" fill="none">
                 <g filter="url(#filter0_d_69_398)">
                     <path
@@ -111,7 +111,7 @@ function toggle(index) {
         </div>
 
         <!-- FRASCO GRANDE -->
-        <div class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-1">
+        <div class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-2">
             <p class="text-[#370F1E] text-center font-gelasio text-[16px] italic font-bold leading-[1.3]">Stress,
                 Anxiety,
                 Exhaustion,
