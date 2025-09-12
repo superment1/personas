@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import '../styles/superSleep.scss';
-import SuperHeader from '../components/SuperHeader.vue';
 import SuperHeader2 from '../components/SuperHeader2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
@@ -25,7 +24,7 @@ useSeo({
   keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
 })
 
-const anchorId = 'id-vsl-badges'
+const anchorId = 'shop-now-d'
 
 const modalOpen = ref(false)
 
