@@ -33,7 +33,7 @@ function toggle(index) {
 }
 </script>
 <template>
-    <div class="bg-[#6EC8F0] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3 pb-10">
+    <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3 pb-10">
         <p class="text-[#370F1E] text-center font-crossfit text-[32px] font-bold leading-[1]">Get Your <br>Super Relax
             Now.</p>
         <div class="flex flex-col items-center justify-center gap-y-0">
@@ -111,7 +111,7 @@ function toggle(index) {
         </div>
 
         <!-- FRASCO GRANDE -->
-        <div class="w-[351px] h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start py-4 mt-1">
+        <div class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-1">
             <p class="text-[#370F1E] text-center font-gelasio text-[16px] italic font-bold leading-[1.3]">Stress,
                 Anxiety,
                 Exhaustion,
@@ -320,7 +320,7 @@ function toggle(index) {
 
         <!-- FRASCOS PEQUENOS -->
         <div class="w-[351px] h-full rounded-[30px] grid grid-cols-2 gap-2 mt-1">
-            <div class="w-[170px] h-[233px]bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start">
+            <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                 <div
                     class="bg-[url('@/assets/image/vsl/NN2.png')] w-[156px] h-[186px] bg-cover bg-center ml-5 -mt-4 flex items-center justify-end">
                     <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-8 mr-[18px]">
@@ -360,7 +360,7 @@ function toggle(index) {
                     </div>
                 </ShopButton>
             </div>
-            <div class="w-[170px] h-[233px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
+            <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                 <div
                     class="bg-[url('@/assets/image/vsl/NN3.png')] w-[156px] h-[186px] bg-cover bg-center -mt-4 flex items-center justify-end">
                     <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-6 mr-[5px]">
