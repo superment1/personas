@@ -9,7 +9,7 @@ import BannerModal from '../components/BannerModal.vue';
 import ShopNowD from '../components/newPageD/ShopNowD.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import SuperFooter from '../components/SuperFooter.vue';
+import SuperFooter2 from '../components/SuperFooter2.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
@@ -141,18 +141,17 @@ onBeforeUnmount(() => {
   ]" />
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative
-        -top-[28px]
         z-0
         bg-top
         bg-no-repeat bg-contain lg:bg-cover
-        md:bg-[100%_-70%]
-        bg-[url('/assets/hero_relax.webp')]
+        md:bg-[100%]
+        bg-[url('/assets/hero_relax_new.webp')]
         md:bg-[url('/assets/hero_relax_desk.webp')]
         ">
-      <div class="w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-0 lg:pb-[36px]">
+      <div class="w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-12">
           <div class="text-[#370F1E] gap-[120px] lg:gap-[20px] flex flex-col">
-            <p class="italic sm:hidden font-gelasio mt-[60px] text-[13px] leading-[15px] font-bold">A Powerful <br>Plant-Based
+            <p class="italic sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful <br>Plant-Based
               Formula <br><span class="font-medium">that Restores Nervous <br>System Balance.</span></p>
             <p class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful <br>Plant-Based
               Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span></p>
@@ -521,7 +520,7 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
     <div class="justify-self-center max-w-[950px]">
-      <img class="justify-self-center lg:h-[700px]" src="/assets/superbottle.webp"  alt="" loading="lazy">
+      <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp"  alt="" loading="lazy">
       <div>
         <p class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">Take Back Your Days and Nights.</p>
       </div>
@@ -550,9 +549,9 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <div class="bg-[#370F1E] w-full">
+  <div class="bg-[#350e1d] w-full">
     <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
-      <SuperFooter />
+      <SuperFooter2 />
     </div>
   </div>
   <LazyIsland>

@@ -86,12 +86,12 @@ onBeforeUnmount(() => {
   }
 @media (min-width: 639px) {
   .content-input {
-    width: 769px !important;
+    width: 950px !important;
   }
 }
 @media (min-width: 1350px){
   .content-input {
-    width: 700px !important; 
+    width: 950px !important; 
   }
 }
 </style>
