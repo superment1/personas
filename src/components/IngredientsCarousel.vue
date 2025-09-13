@@ -166,7 +166,7 @@ onBeforeUnmount(() => {
             loading="lazy" decoding="async"
             class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl" />
           </div>
-          <div class="mt-2">
+          <div class="mt-2 grid">
             <h3 class="title">{{ item.title }}</h3>
             <p class="description">{{ item.subtitle }}</p>
           </div>

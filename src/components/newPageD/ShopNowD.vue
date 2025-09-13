@@ -33,7 +33,7 @@ function toggle(index) {
 }
 </script>
 <template>
-    <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 gap-y-3 pb-10 lg:py-[95px]">
+    <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 pb-10 lg:py-[95px]">
         <p class="text-[#FFF] text-center font-crossfit text-[32px] font-bold leading-[1] lg:text-[60px]">Get Your <br
                 class="block lg:hidden">Super Relax
             Now.</p>
@@ -201,7 +201,8 @@ function toggle(index) {
                     Day,
                     Rest by Night.</p>
                 <div
-                    class="bg-[url('@/assets/image/vsl/NN1.png')] w-[317px] h-[260px] bg-cover bg-center flex items-center justify-between">
+                    class="bg-[url('@/assets/image/newPageD/nn1_2.webp')] w-[317px] h-[260px] bg-cover bg-center flex items-center justify-between">
+
                     <svg class="mt-7" xmlns="http://www.w3.org/2000/svg" width="97" height="97" viewBox="0 0 97 97"
                         fill="none">
                         <path
@@ -273,7 +274,8 @@ function toggle(index) {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <svg class="mt-12 mr-1" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                    <img class="relative left-[54px] top-[12px]" src="/assets/pre_o.webp" width="63" height="123" alt="">
+                    <svg class="mt-12 mr-2 right-[7px] relative z-10" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
                         viewBox="0 0 45 45" fill="none">
                         <circle cx="22.5" cy="22.5" r="22.5" fill="#E1DCCD" />
                         <path
@@ -397,7 +399,7 @@ function toggle(index) {
             <div class="w-[351px] h-full rounded-[30px] grid grid-cols-2 gap-2 mt-4">
                 <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                     <div
-                        class="bg-[url('@/assets/image/vsl/NN2.png')] w-[156px] h-[186px] bg-cover bg-center ml-5 -mt-4 flex items-center justify-end">
+                        class="bg-[url('@/assets/image/newPageD/nn2.webp')] w-[156px] h-[186px] bg-cover bg-center ml-5 -mt-4 flex items-center justify-end">
                         <div
                             class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-8 mr-[18px]">
                             <div
@@ -440,7 +442,7 @@ function toggle(index) {
                 </div>
                 <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                     <div
-                        class="bg-[url('@/assets/image/vsl/NN3.png')] w-[156px] h-[186px] bg-cover bg-center -mt-4 flex items-center justify-end">
+                        class="bg-[url('@/assets/image/newPageD/nn3.webp')] w-[156px] h-[186px] bg-cover bg-center -mt-4 flex items-center justify-end">
                         <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-6 mr-[5px]">
                             <div
                                 class="w-[44px] h-[44px] border rounded-full border-[#370F1E] flex items-center justify-end">
@@ -797,7 +799,7 @@ function toggle(index) {
         <div v-for="(faq, i) in faqs" :key="faq.id"
             class="w-[320px] lg:w-[1134px] faq-item cursor-pointer py-0 lg:py-5 border-b border-[#370F1E]"
             @click="toggle(i)">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center py-[8px]">
                 <p class="text-[13px] lg:text-[26px] font-bold leading-[1.15] text-[#370f1e]">{{ faq.question }}
                 </p>
                 <span class="text-xl">{{ faq.open ? '↑' : '↓' }}</span>
