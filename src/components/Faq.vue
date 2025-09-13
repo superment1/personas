@@ -3,13 +3,13 @@ import { ref } from 'vue'
 
 const faqs = ref([
   {
-    question: 'What is Super Natural Relax?',
+    question: 'What is Super Relax?',
     answer: `Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.`,
     open: true
   },
   {
     question: 'What are the ingredients?',
-    answer:`The formula combines 5 science-backed botanicals:
+    answer: `The formula combines 5 science-backed botanicals:
             Passionflower. Calms a restless mind so you can slow down and find peace.
 
             California Poppy. Relaxes the body and helps you drift into restorative sleep.
@@ -67,75 +67,72 @@ function toggle(index) {
 </script>
 
 <style scoped>
+.faq {
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: #370f1e;
+  width: 100%;
+}
+
+.faq-item {
+  border-top: 1px solid #370f1e;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid #370f1e;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+div.question p.question {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #370f1e;
+}
+
+.answer {
+  color: #370f1e;
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0%;
+}
+
+@media(min-width: 730px) {
   .faq {
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-    color: #370f1e;
     width: 100%;
   }
 
-  .faq-item {
-    border-top: 1px solid #370f1e;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-
-  .faq-item:last-child {
-    border-bottom: 1px solid #370f1e;
+  div.question p.question {
+    font-size: 18px;
   }
 
   .question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-  }
-
-  div.question p.question {
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #370f1e;
+    font-size: 18px;
   }
 
   .answer {
-    color: #370f1e;
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-style: Regular;
-    font-size: 14px;
-    line-height: 19px;
-    letter-spacing: 0%;
+    font-size: 16px;
   }
-
-  @media(min-width: 730px) {
-    .faq {
-      width: 100%;
-    }
-    div.question p.question {
-      font-size: 18px;
-    }
-    .question {
-      font-size: 18px;
-    }
-    .answer {
-      font-size: 16px;
-    }
-  }
-
+}
 </style>
 
 <template>
   <section class="faq">
-    <div
-      v-for="(faq, i) in faqs"
-      :key="i"
-      class="faq-item"
-      @click="toggle(i)"
-    >
+    <div v-for="(faq, i) in faqs" :key="i" class="faq-item" @click="toggle(i)">
       <div class="question">
         <p class="question">{{ faq.question }}</p>
         <span>{{ faq.open ? '↓' : '↑' }}</span>
@@ -146,4 +143,3 @@ function toggle(index) {
     </div>
   </section>
 </template>
-
