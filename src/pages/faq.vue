@@ -35,7 +35,7 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     },
         {
         question: 'Is Super Natural Sleep habit-forming?',
-        answer: `Not at all. Super Natural Sleep is non-habit-forming and safe for long-term use. Its ingredients gently support your body’s ability to sleep better over time, without creating reliance or tolerance.`,
+        answer: `Not at all. Super Natural Sleep is non-habit forming and safe for long-term use. Its ingredients gently support your body’s ability to sleep better over time, without creating reliance or tolerance.`,
         open: false
     },
     {

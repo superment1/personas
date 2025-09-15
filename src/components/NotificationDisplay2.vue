@@ -28,23 +28,23 @@ import { ref, onMounted } from 'vue'
 const notificationsList = [
   {
     id: 1,
-    src: new URL('../assets/image/sleepSuperment/notifications/notify-06.webp', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-01.webp', import.meta.url).href
   },
   {
     id: 2,
-    src: new URL('../assets/image/sleepSuperment/notifications/notify-07.webp', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-02.webp', import.meta.url).href
   },
   {
     id: 3,
-    src: new URL('../assets/image/sleepSuperment/notifications/notify-08.webp', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-03.webp', import.meta.url).href
   },
   {
     id: 4,
-    src: new URL('../assets/image/sleepSuperment/notifications/notify-09.webp', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-04.webp', import.meta.url).href
   },
   {
     id: 5,
-    src: new URL('../assets/image/sleepSuperment/notifications/notify-10.webp', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-05.webp', import.meta.url).href
   },
 ]
 

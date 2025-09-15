@@ -15,7 +15,7 @@ const faqs = ref([
     },
     {
         question: 'How to use',
-        answer: 'Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus. \n\nNighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.\n\nWorks flexibly — whether you need support at work, at night, or both.\n\nSafe for daily use. Non-habit-forming.',
+        answer: 'Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus. \n\nNighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.\n\nWorks flexibly — whether you need support at work, at night, or both.\n\nSafe for daily use. Non-habit forming.',
         open: false
     },
     {

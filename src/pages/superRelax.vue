@@ -13,7 +13,7 @@ import SuperFooter2 from '../components/SuperFooter2.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
-const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
+const NotificationDisplay2 = defineAsyncComponent(() => import('../components/NotificationDisplay2.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
 useSeo({
@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
     '100% Plant-Based',
     'Science-Backed',
     'Non-Sedative',
-    'Non-Habit-Forming',
+    'Non-Habit Forming',
     'Caffeine-Free',
     'Gluten, Soy & Dairy-Free',
     'Made in the USA',
@@ -601,7 +601,7 @@ onBeforeUnmount(() => {
     </div>
   </div>
   <LazyIsland>
-    <NotificationDisplay />
+    <NotificationDisplay2 />
   </LazyIsland>
   <!-- <BannerModal /> -->
   <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"

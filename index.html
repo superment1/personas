@@ -41,6 +41,32 @@
         window.addEventListener('touchstart', loadAll, { passive:true });
       })();
     </script>
+    <script>
+      (function () {
+        // Detecta a página e seta uma variável de cor global
+        var color = location.pathname.includes('/sleep')
+          ? '#6EC8F0'                 // sleep
+          : location.pathname.includes('/relax')
+          ? '#4DBCB6'                 // relax
+          : '#4DBCB6';                // padrão
+
+        document.documentElement.style.setProperty('--rd-btn-bg', color);
+      })();
+      </script>
+
+      <style>
+      /* Regra genérica que pega o botão do RD (mesmo se for injetado depois) */
+      .bricks--component-button[id^="rd-button-"] {
+        background: var(--rd-btn-bg) !important;       /* cobre gradiente */
+        background-color: var(--rd-btn-bg) !important; /* fallback */
+        border-color: var(--rd-btn-bg) !important;
+      }
+      .bricks--component-button[id^="rd-button-"]:hover,
+      .bricks--component-button[id^="rd-button-"]:focus {
+        filter: brightness(0.95) !important;
+      }
+      </style>
+
   </head>
   <body>
     <noscript>
