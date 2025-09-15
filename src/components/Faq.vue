@@ -23,7 +23,7 @@ const faqs = ref([
   },
   {
     question: 'Is Super Relax safe?',
-    answer: 'Yes. It’s 100% plant-based, non-habit-forming, and made in the USA in FDA-registered, GMP-certified labs. No sedation, no dependency, no morning fog.',
+    answer: 'Yes. It’s 100% plant-based, non-habit forming, and made in the USA in FDA-registered, GMP-certified labs. No sedation, no dependency, no morning fog.',
     open: false
   },
   {
@@ -34,7 +34,7 @@ const faqs = ref([
 
               Works flexibly — whether you need support at work, at night, or both.
 
-              Safe for daily use. Non-habit-forming.`,
+              Safe for daily use. Non-habit forming.`,
     open: false
   },
   {
