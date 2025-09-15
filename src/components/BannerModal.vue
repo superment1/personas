@@ -50,7 +50,7 @@ function onKey(e) {
 onMounted(() => {
   hookAlertToToast()
 
-  setTimeout(openModal, 5000)
+  setTimeout(openModal, 9000)
 
   const script = document.createElement('script')
   script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"

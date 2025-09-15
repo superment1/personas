@@ -3,39 +3,58 @@ import { ref } from 'vue'
 
 const faqs = ref([
   {
-    question: 'What is Super Natural Sleep?',
-    answer: `Super Natural Sleep is a premium supplement formulated with natural ingredients that relax the nervous system and helps you fall asleep faster, stay asleep longer, and wake up refreshed. It combines Passionflower, California Poppy, Corydalis, and Prickly Pear to promote calm, reduce restlessness, and support deep, restorative sleep, without grogginess or dependency.`,
+    question: 'What is Super Relax?',
+    answer: `Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.`,
     open: true
   },
   {
-    question: 'Is it safe to take with medications?',
-    answer: 'While Super Natural Sleep uses gentle plant-based ingredients, it’s best to consult your healthcare provider before combining it with prescription medications, especially if you’re managing a chronic condition.',
+    question: 'What are the ingredients?',
+    answer: `The formula combines 5 science-backed botanicals:
+            Passionflower. Calms a restless mind so you can slow down and find peace.
+
+            California Poppy. Relaxes the body and helps you drift into restorative sleep.
+
+            Corydalis. Eases physical tension and reduces nighttime discomfort.
+
+            Prickly Pear. Supports lower stress hormones for deeper rest and recovery.
+
+            Marshmallow Root. Soothes irritation and promotes physical comfort through the night.`,
     open: false
   },
   {
-    question: 'Are there any side effects?',
-    answer: 'Super Natural Sleep is well-tolerated and free from synthetic additives or harsh sedatives. Still, if you have a medical condition or take other medications, check with your doctor before starting any supplement.',
+    question: 'Is Super Relax safe?',
+    answer: 'Yes. It’s 100% plant-based, non-habit forming, and made in the USA in FDA-registered, GMP-certified labs. No sedation, no dependency, no morning fog.',
+    open: false
+  },
+  {
+    question: 'How do I take it?',
+    answer: `Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus.
+
+              Nighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.
+
+              Works flexibly — whether you need support at work, at night, or both.
+
+              Safe for daily use. Non-habit forming.`,
     open: false
   },
   {
     question: 'How long does shipping take?',
-    answer: 'Orders are processed and shipped within the U.S., and delivery can take up to 7 business days. Once your order is on its way, you’ll receive a tracking link to follow its progress.',
+    answer: `Orders are processed within 24 hours and typically arrive in 3–5 business days within the U.S. You’ll receive tracking information as soon as your order ships.`,
+    open: false
+  },
+  {
+    question: 'How can I reach you if I have questions?',
+    answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
     open: false
   },
   {
     question: 'What if I’m not satisfied?',
-    answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.
-            
-                •	120 days for the 6-bottle combo
-                •	90 days for the 3-bottle combo
-                •	30 days for a single bottle
-        
-        We accept returns on any unopened bottles and will do everything we can to make it right.`,
+    answer: 'We stand by our formula. That’s why every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply reach out at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk.',
     open: false
   },
   {
-    question: 'How can I talk to Superment?',
-    answer: 'You can email us at superhelp@superment.co or send us a DM on Instagram @superment.co. It will be a pleasure to talk to you.',
+    question: 'Are there any side effects?',
+    answer: 'Super Relax is well-tolerated and free from synthetic additives or harsh sedatives. Still, if you have a medical condition or take other medications, check with your doctor before starting any supplement.',
     open: false
   }
 ])
@@ -48,75 +67,72 @@ function toggle(index) {
 </script>
 
 <style scoped>
+.faq {
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: #370f1e;
+  width: 100%;
+}
+
+.faq-item {
+  border-top: 1px solid #370f1e;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid #370f1e;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+div.question p.question {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #370f1e;
+}
+
+.answer {
+  color: #370f1e;
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0%;
+}
+
+@media(min-width: 730px) {
   .faq {
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-    color: #370f1e;
     width: 100%;
   }
 
-  .faq-item {
-    border-top: 1px solid #370f1e;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-
-  .faq-item:last-child {
-    border-bottom: 1px solid #370f1e;
+  div.question p.question {
+    font-size: 18px;
   }
 
   .question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-  }
-
-  div.question p.question {
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #370f1e;
+    font-size: 18px;
   }
 
   .answer {
-    color: #370f1e;
-    font-family: 'DM Sans';
-    font-weight: 500;
-    font-style: Regular;
-    font-size: 14px;
-    line-height: 19px;
-    letter-spacing: 0%;
+    font-size: 16px;
   }
-
-  @media(min-width: 730px) {
-    .faq {
-      width: 100%;
-    }
-    div.question p.question {
-      font-size: 18px;
-    }
-    .question {
-      font-size: 18px;
-    }
-    .answer {
-      font-size: 16px;
-    }
-  }
-
+}
 </style>
 
 <template>
   <section class="faq">
-    <div
-      v-for="(faq, i) in faqs"
-      :key="i"
-      class="faq-item"
-      @click="toggle(i)"
-    >
+    <div v-for="(faq, i) in faqs" :key="i" class="faq-item" @click="toggle(i)">
       <div class="question">
         <p class="question">{{ faq.question }}</p>
         <span>{{ faq.open ? '↓' : '↑' }}</span>
@@ -127,4 +143,3 @@ function toggle(index) {
     </div>
   </section>
 </template>
-

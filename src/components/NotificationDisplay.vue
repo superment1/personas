@@ -28,30 +28,28 @@ import { ref, onMounted } from 'vue'
 const notificationsList = [
   {
     id: 1,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-01.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-06.webp', import.meta.url).href
   },
   {
     id: 2,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-02.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-07.webp', import.meta.url).href
   },
   {
     id: 3,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-03.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-08.webp', import.meta.url).href
   },
   {
     id: 4,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-04.png', import.meta.url).href
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-09.webp', import.meta.url).href
   },
   {
     id: 5,
-    src: new URL('../assets/image/sleepSuperment/notifications/Notify-05.png', import.meta.url).href
-  }
+    src: new URL('../assets/image/sleepSuperment/notifications/notify-10.webp', import.meta.url).href
+  },
 ]
 
 const visibleNotifications = ref([])
 let currentIndex = 0
-
-// Função para scroll suave até o botão com id "id-shop-now"
 const scrollToShopNow = () => {
   const el = document.getElementById('id-shop-now')
   if (el) {

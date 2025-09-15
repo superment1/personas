@@ -1,10 +1,9 @@
 <template>
     <!-- Learn More Section -->
-    <section class="relative z-10 rounded-t-3xl h-[203px] -mt-[24px] pt-[35px] lg:h-[230px]"
-        :style="{ backgroundColor }">
+    <section class="relative z-10 rounded-t-3xl h-[203px] -mt-[24px] pt-6 lg:h-[200px]" :style="{ backgroundColor }">
         <div class="max-w-7xl mx-auto px-4 w-[355px]">
             <p
-                class="text-[#370F1E] mb-[14px] font-DMSans font-light text-xl lg:text-2xl text-center tracking-tight leading-[1.1]">
+                class="text-[#370F1E] mb-[14px] font-DMSans font-light text-[20px] text-center tracking-tight leading-[1.1]">
                 {{ text }}
             </p>
             <div class="flex justify-center mb-10">

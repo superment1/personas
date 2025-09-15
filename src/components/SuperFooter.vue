@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <section class="w-full bg-[#370F1E] flex flex-col items-center justify-start pt-0 pb-5">
+  <section class="w-full bg-[#350E1D] flex flex-col items-center justify-start pt-0 pb-5">
 
     <!-- PARTE 1: Explore + Contact -->
     <div class="flex flex-col gap-0  md:gap-[3rem] lg:gap-[2.5rem] md:flex-row w-full justify-center items-center py-6 md:items-start">
@@ -55,13 +55,13 @@
         <ul class="text-[#FFF] w-full flex flex-col gap-1">
           <li class="flex items-center gap-2 border-b border-[#FFF] pb-3 h-[32px]">
             <span class="w-8 h-8 flex items-center justify-center">
-              <img src="@/assets/image/icons/email.webp" alt="email icon" class="w-6 h-6" />
+              <img src="@/assets/image/icons/email1.webp" alt="email icon" loading="lazy" class="w-6 h-6" />
             </span>
             <a href="mailto:superhelp@superment.co" class="label">superhelp@superment.co</a>
           </li>
           <li class="flex items-center gap-2 border-b border-[#FFF] py-1 pb-3 h-[32px] mt-1">
             <span class="w-8 h-8 flex items-center justify-center">
-              <img src="@/assets/image/icons/instagram.webp" alt="instagram icon" class="w-6 h-6" />
+              <img src="@/assets/image/icons/instagram.png" alt="instagram icon" loading="lazy"  class="w-6 h-6" />
             </span>
             <a href="https://instagram.com/superment.co" target="_blank" class="label">@superment.co</a>
           </li>

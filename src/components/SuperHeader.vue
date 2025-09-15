@@ -1,5 +1,18 @@
 <script setup>
+import { ref, onMounted, nextTick } from "vue";
+import { useRouter } from 'vue-router'
 defineProps({ showRedirect: Boolean })
+
+
+const router = useRouter()
+
+function goBack() {
+  if (window.history.length > 1) {
+    router.back()
+  } else {
+    router.push('/') 
+  }
+}
 
 const items = [
   'Made in the USA',
@@ -9,23 +22,48 @@ const items = [
   'Real reviews rated 4.9/5.0',
   'Free U.S. shipping'
 ]
+const showVideo = ref(false);
+const mp4Src   = new URL('../assets/videos/logo_superment_animado.mp4', import.meta.url).href;
+
+onMounted(async () => {
+  await nextTick();
+})
 </script>
 
 <template>
-  <section class="topo">
-    <a v-if="showRedirect" href="/sleep/"
-      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[0.9rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700">
-      <svg class="w-8 h-8 mr-[1px]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+  <section class="topo relative flex flex-col items-center">
+    <!-- Botão voltar -->
+    <a
+      v-if="showRedirect"
+      href="javascript:void(0)"
+      @click.prevent="goBack"
+      class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[0.9rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700"
+    >
+      <svg
+        class="w-8 h-8 mr-[1px]"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.2"
+        viewBox="0 0 24 24"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
       </svg>
     </a>
-    <img src="@/assets/image/sleepSuperment/superment-gif.gif" 
-    width="250" height="48" 
-    alt="Logo animado" 
-    fetchpriority="high"
-    decoding="async" />
+   <div class="relative w-[250px] h-[60px]">
+      <video
+        class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
+        :class="{ 'opacity-0': !showVideo }"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        @loadeddata="showVideo = true"
+      >
+        <source :src="mp4Src"  type="video/mp4" />
+      </video>
+    </div>
   </section>
-
   <section class="scroll-link-products">
     <div class="marquee">
       <div class="marquee__track">
@@ -52,7 +90,7 @@ const items = [
 
 .topo img {
   width: 250px;
-  height: auto;
+  height: 60px;
   object-fit: cover;
 }
 
@@ -133,10 +171,6 @@ const items = [
   100% {
     transform: translateX(-50%);
   }
-}
-
-.marquee:hover .marquee__track {
-  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

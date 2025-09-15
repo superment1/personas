@@ -4,13 +4,19 @@ import path from 'path'
 
 
 export default defineConfig({
-  base: '/sleep/',
-  plugins: [vue()],
+  base: '/',
+  plugins: [ vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag === 'vturb-smartplayer' || tag.startsWith('vturb-')
+        }
+      }
+    })],
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') }
   },
   build: {
-    target: 'es2019',              
+    target: 'es2020',              
     minify: 'esbuild',
     cssCodeSplit: true,
     assetsInlineLimit: 1024,

@@ -1,21 +1,69 @@
-<script setup>
-import { onMounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+
+const formRef = ref(null)
+let io, loaded = false, mounted = false
+
+function loadRD(): Promise<any> {
+  return new Promise((resolve, reject) => {
+    // se já carregou antes
+    if ((window as any).RDStationForms) return resolve((window as any).RDStationForms)
+
+    const s = document.createElement('script')
+    s.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js'
+    s.async = true
+    s.type = 'text/javascript'             // <- importante: NÃO 'module'
+    s.onload = () => resolve((window as any).RDStationForms)
+    s.onerror = () => reject(new Error('RD load failed'))
+    document.head.appendChild(s)
+  })
+}
+
+async function mountForm() {
+  if (mounted) return
+  try {
+    await loadRD()
+    if (window.RDStationForms) {
+      new window.RDStationForms('e-mail-site-2-fc7666a2bfa336762e39', '').createForm()
+      mounted = true
+    }
+  } catch (e) {
+    console.warn('RDStationForms:', e)
+  }
+}
+
+function eagerOnFirstInteraction() {
+  mountForm()
+  window.removeEventListener('pointerdown', eagerOnFirstInteraction)
+  window.removeEventListener('keydown', eagerOnFirstInteraction)
+}
 
 onMounted(() => {
-  const script = document.createElement('script')
-  script.src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"
-  script.async = true
-  script.onload = () => {
-    if (window.RDStationForms) {
-    new RDStationForms('e-mail-site-2-fc7666a2bfa336762e39', '').createForm()
-    } else {
-      console.warn('RDStationForms not available after script load')
-    }
+  // Lazy por viewport (com prefetch ~200px antes)
+  if ('IntersectionObserver' in window && formRef.value) {
+    io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        io.disconnect()
+        mountForm()
+      }
+    }, { rootMargin: '200px' })
+    io.observe(formRef.value)
+  } else {
+    // Fallback: carrega em idle
+    setTimeout(mountForm, 3000)
   }
-  document.body.appendChild(script)
+
+  // Fallback adicional: 1ª interação do usuário
+  window.addEventListener('pointerdown', eagerOnFirstInteraction, { once: true })
+  window.addEventListener('keydown', eagerOnFirstInteraction, { once: true })
+})
+
+onBeforeUnmount(() => {
+  if (io) io.disconnect()
+  window.removeEventListener('pointerdown', eagerOnFirstInteraction)
+  window.removeEventListener('keydown', eagerOnFirstInteraction)
 })
 </script>
-
 <style scoped>
 
 
@@ -38,12 +86,12 @@ onMounted(() => {
   }
 @media (min-width: 639px) {
   .content-input {
-    width: 769px !important;
+    width: 950px !important;
   }
 }
 @media (min-width: 1350px){
   .content-input {
-    width: 700px !important; 
+    width: 950px !important; 
   }
 }
 </style>

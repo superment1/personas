@@ -1,72 +1,118 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 const props = defineProps({
-  bg: { type: String, default: '#FFD700' },          // cor de fundo
-  textColor: { type: String, default: '#370F1E' },   // cor do texto
-  limit: { type: [String, Number, Date], default: 'midnight' } // alvo do contador
+  bg: { type: String, default: '#FFD700' },
+  textColor: { type: String, default: '#370F1E' },
+  limit: { type: [String, Number, Date], default: 'midnight' },
+  repeat: { type: Boolean, default: false }
 })
 
 const time = ref('00:00:00')
-let countdownInterval = null
-let targetDate = null
+let timer = null
+let targetTs = 0
+let lastShown = -1  
 
-function computeTargetDate() {
+const DAY = 86_400_000
+let initialSeconds = 0      
+let initialDateMs = 0 
+
+function formatFromSeconds(total) {
+  const h = (total / 3600) | 0
+  const m = ((total % 3600) / 60) | 0
+  const s = total % 60
+  const hh = h > 9 ? '' + h : '0' + h
+  const mm = m > 9 ? '' + m : '0' + m
+  const ss = s > 9 ? '' + s : '0' + s
+  return `${hh}:${mm}:${ss}`
+}
+
+function stop() {
+  if (timer) { clearTimeout(timer); timer = null }
+}
+function scheduleNext() {
+  const now = Date.now()
+  const nextBoundary = Math.ceil(now / 1000) * 1000
+  const delay = Math.max(80, Math.min(250, nextBoundary - now))
+  timer = setTimeout(tick, delay)
+}
+
+function computeTargetTs(nowTs = Date.now()) {
   if (props.limit === 'midnight') {
-    const now = new Date()
-    const midnight = new Date()
-    midnight.setHours(24, 0, 0, 0)
-    return midnight
+    const d = new Date(nowTs)
+    d.setHours(24, 0, 0, 0)
+    return d.getTime()
   }
 
   if (typeof props.limit === 'number') {
-    const d = new Date()
-    d.setSeconds(d.getSeconds() + props.limit)
-    return d
+    return nowTs + initialSeconds * 1000
   }
 
-  const d = new Date(props.limit)
-  return isNaN(d.getTime()) ? null : d
-}
-
-function formatDistance(ms) {
-  if (ms <= 0) return '00:00:00'
-  const totalSeconds = Math.floor(ms / 1000)
-  const hours = Math.floor(totalSeconds / 3600)
-  const minutes = Math.floor((totalSeconds % 3600) / 60)
-  const seconds = totalSeconds % 60
-  return [
-    String(hours).padStart(2, '0'),
-    String(minutes).padStart(2, '0'),
-    String(seconds).padStart(2, '0')
-  ].join(':')
+  const base = initialDateMs || new Date(props.limit).getTime()
+  if (isNaN(base)) return nowTs
+  let t = base
+  while (t <= nowTs) t += DAY
+  return t
 }
 
 function tick() {
-  const now = new Date().getTime()
-  const dist = targetDate.getTime() - now
-  time.value = formatDistance(dist)
-  if (dist <= 0 && countdownInterval) {
-    clearInterval(countdownInterval)
-    countdownInterval = null
-  }
-}
+  const now = Date.now()
+  const dist = targetTs - now
+  const sec = Math.max(0, (dist / 1000) | 0)
 
-function startCountdown() {
-  targetDate = computeTargetDate()
-  if (!targetDate) {
-    time.value = '00:00:00'
+  if (sec !== lastShown) {
+    time.value = formatFromSeconds(sec)
+    lastShown = sec
+  }
+
+  if (sec <= 0) {
+    if (!props.repeat) {
+      stop()
+      return
+    }
+    targetTs = computeTargetTs(now + 1)
+    lastShown = -1
+    scheduleNext()
     return
   }
-  tick()
-  if (countdownInterval) clearInterval(countdownInterval)
-  countdownInterval = setInterval(tick, 1000)
+
+  scheduleNext()
 }
 
-onMounted(startCountdown)
-onBeforeUnmount(() => countdownInterval && clearInterval(countdownInterval))
+function start() {
+  stop()
+  if (typeof props.limit === 'number') {
+    initialSeconds = props.limit
+    initialDateMs = 0
+  } else if (props.limit !== 'midnight') {
+    initialDateMs = new Date(props.limit).getTime() || 0
+    initialSeconds = 0
+  } else {
+    initialSeconds = 0
+    initialDateMs = 0
+  }
 
-watch(() => props.limit, startCountdown)
+  targetTs = computeTargetTs()
+  lastShown = -1
+  tick()
+}
+
+function onVis() {
+  if (document.hidden) stop()
+  else start()
+}
+
+onMounted(() => {
+  start()
+  document.addEventListener('visibilitychange', onVis)
+})
+
+onBeforeUnmount(() => {
+  stop()
+  document.removeEventListener('visibilitychange', onVis)
+})
+
+watch(() => props.limit, start)
 </script>
 
 <template>
