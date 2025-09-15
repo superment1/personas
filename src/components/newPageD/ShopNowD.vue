@@ -309,7 +309,7 @@ function toggle(index) {
                     No Dependency. No Fog.</p>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
-                    class="h-[60px] w-[321px] bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-tr-[20px]  shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
+                    class="h-[60px] w-[321px] bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 27 27" fill="none">
                             <g clip-path="url(#clip0_142_375)">
@@ -590,7 +590,7 @@ function toggle(index) {
                 </div>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_SbKYsQrxStW8wB"
-                    class="h-[75px] w-[523px] bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-tr-[20px]  shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
+                    class="h-[75px] w-[523px] bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="43" viewBox="0 0 44 43" fill="none">
                             <g clip-path="url(#clip0_198_1739)">
@@ -643,7 +643,7 @@ function toggle(index) {
                         </svg>
                     </div>
                     <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                        class="relative z-10 h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
+                        class="relative !py-[3.5rem] z-10 h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
                         <div class="flex flex-row items-start justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
                                 fill="none">
@@ -671,7 +671,7 @@ function toggle(index) {
                 </div>
                 <div class="w-[270px] h-[412px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                     <div class="relative w-[272px] h-[275px]">
-                        <img src="@/assets/image/newPageD/nn3-desk.png" alt="frasco-6" class="w-[279px] h-[290px]">
+                        <img src="@/assets/image/newPageD/nn3-desk.png" alt="frasco-6" class="w-[279px] h-[280px]">
                         <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
                             height="77" viewBox="0 0 67 66" fill="none">
                             <circle cx="33.0974" cy="32.9128" r="32.9128" fill="#E1DCCD" />
@@ -697,7 +697,7 @@ function toggle(index) {
                         </svg>
                     </div>
                     <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                        class="h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
+                        class="h-[117px] !py-[3.5rem] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
                         <div class="flex flex-row items-start justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
                                 fill="none">

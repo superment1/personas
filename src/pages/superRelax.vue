@@ -457,8 +457,72 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E]">
-    <div class="px-8 flex sm:hidden py-8">
-      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted">
+    <div class="px-8 flex flex-col sm:hidden pt-[27px] pb-8">
+      <p class="text-center pb-[32px] text-white text-[32px] leading-[1] font-crossfit">Why You’re<br><span class="text-[#FFDC03]"> Exhausted by Day</span> <br>and Wired by Night.</p>
+      <div class="bg-[#5C2841] p-3 px-[20px] rounded-2xl font-sans text-white text-[13px] leading-[1]">
+        <div class="flex justify-between  pb-[10px] items-center border-b border-[#48152b]">
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/mind.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-20">
+          </div>
+          <p class="p-[15px]">Modern life keeps your nervous<br> system stuck in “fight-or-flight.”</p>
+        </div>
+        <div class="flex justify-between py-[10px] items-center border-b border-[#48152b]">
+          <p class="">Deadlines, screens, and constant pressure push cortisol up when it <br> should fall, leaving you wired at<br> night and exhausted by day.</p>
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/batery.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-24 h-20">
+          </div>          
+        </div>
+        <div class="flex justify-between  py-[10px] items-center border-b border-[#48152b]">
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/ray.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
+          </div>
+          <p class="p-[15px] pr-2">Over time, this nonstop overdrive<br> steals your sleep, drains your <br> energy, and clouds your clarity.</p>
+        </div>
+        <div class="flex py-[10px] justify-between items-center">
+          <p class="">Pills can sedate you, but they <br>don’t fix the real problem: a<br> nervous system out of balance.</p>
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/pills.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
+          </div>          
+        </div>
+      </div>
+      <img src="../assets/image/newPageD/exhausted.webp" class="py-9" loading="lazy" alt="exhausted">
+      <img src="../assets/image/newPageD/statistics.webp" loading="lazy" alt="exhausted">
       </img>
     </div>
     <div class="hidden px-40 py-20 sm:flex">
