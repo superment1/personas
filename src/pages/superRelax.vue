@@ -94,7 +94,6 @@ function onScroll() {
   lastScrollY = y
   lastScrollT = t
 }
-
 onMounted(() => {
   // listeners de retenção
   window.addEventListener('mousemove', onMouseMove, { passive: true })
@@ -110,7 +109,6 @@ onMounted(() => {
     enableBackExitGuard()
   }
 })
-
 onBeforeUnmount(() => {
   window.removeEventListener('mousemove', onMouseMove)
   document.removeEventListener('mouseout', onMouseOut)
@@ -139,25 +137,31 @@ onBeforeUnmount(() => {
     'GMP-Certified Facility',
   ]" />
   <section class="firtsection bg-[#50b5b2]">
-    <div class="relative
-        z-0
-        bg-top
-        bg-no-repeat bg-contain lg:bg-cover
-        md:bg-[100%]
-        bg-[url('/assets/hero_relax_new.webp')]
-        md:bg-[url('/assets/hero_relax_desk.webp')]
-        ">
-      <div class="w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
+    <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
+      <picture class="pointer-events-none select-none">
+        <source media="(min-width:1024px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
+        <img
+          id="hero-lcp"
+          src="/assets/hero_relax_new1.webp"
+          width="1280" height="800"
+          alt="relax-hero"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="absolute inset-0 z-0 w-full h-full object-cover" />
+      </picture>
+
+      <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-12">
           <div class="text-[#370F1E] gap-[120px] lg:gap-[20px] flex flex-col">
-            <p class="italic sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
+            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
               <br>Plant-Based
               Formula <br><span class="font-medium">that Restores Nervous <br>System Balance.</span>
-            </p>
-            <p class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
+            </h1>
+            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
               <br>Plant-Based
               Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span>
-            </p>
+            </h1>
             <div class="font-gelasio">
               <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" width="69" height="17" viewBox="0 0 69 17"
                 fill="none">
@@ -456,9 +460,73 @@ onBeforeUnmount(() => {
 
     </div>
   </section>
-  <section class="bg-[#370F1E]">
-    <div class="px-8 flex sm:hidden py-8">
-      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted">
+  <section class="bg-[#370F1E] relative">
+    <div class="px-8 flex flex-col sm:hidden pt-[27px] pb-8">
+      <p class="text-center pb-[32px] text-white text-[32px] leading-[1] font-crossfit">Why You’re<br><span class="text-[#FFDC03]"> Exhausted by Day</span> <br>and Wired by Night.</p>
+      <div class="bg-[#5C2841] p-3 px-[20px] rounded-2xl font-sans text-white text-[13px] leading-[1]">
+        <div class="flex justify-between  pb-[10px] items-center border-b border-[#48152b]">
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/mind.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-20">
+          </div>
+          <p class="p-[15px]">Modern life keeps your nervous<br> system stuck in “fight-or-flight.”</p>
+        </div>
+        <div class="flex justify-between py-[10px] items-center border-b border-[#48152b]">
+          <p class="">Deadlines, screens, and constant pressure push cortisol up when it <br> should fall, leaving you wired at<br> night and exhausted by day.</p>
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/batery.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-24 h-20">
+          </div>          
+        </div>
+        <div class="flex justify-between  py-[10px] items-center border-b border-[#48152b]">
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/ray.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
+          </div>
+          <p class="p-[15px] pr-2">Over time, this nonstop overdrive<br> steals your sleep, drains your <br> energy, and clouds your clarity.</p>
+        </div>
+        <div class="flex py-[10px] justify-between items-center">
+          <p class="">Pills can sedate you, but they <br>don’t fix the real problem: a<br> nervous system out of balance.</p>
+          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
+              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
+              <defs>
+                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#370F1E"/>
+                  <stop offset="1" stop-color="#4C152A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <img src="../assets/image/newPageD/pills.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
+          </div>          
+        </div>
+      </div>
+      <img src="../assets/image/newPageD/exhausted.webp" class="py-9" loading="lazy" alt="exhausted">
+      <img src="../assets/image/newPageD/statistics.webp" loading="lazy" alt="exhausted">
       </img>
     </div>
     <div class="hidden px-40 py-20 sm:flex">
@@ -486,13 +554,11 @@ onBeforeUnmount(() => {
         <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] lg:text-[60px]">
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
-      <div class="flex pt-4">
-        <img class="block lg:hidden" src="/assets/bottle_relax.webp" width="227" height="236" loading="lazy"
-          alt="bottle">
-        <img class="hidden lg:block" src="/assets/bottle_relax_1_desk.webp" width="688" height="793" loading="lazy"
-          alt="bottle">
+      <div class="flex justify-center">
+        <img class="w-[230px] lg:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy" alt="bottle">
+        <!-- <img class="hidden lg:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
-          class="flex-col text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          class="flex-col relative right-6 self-center w-[150px] lg:w-[400px] text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
           <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>

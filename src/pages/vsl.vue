@@ -19,7 +19,7 @@ const router = useRouter()
 const modalOpen = ref(false)
 const showAfterVideo = ref(false)
 
-const urlPath = '/supersleep'
+const urlPath = '/sleepnatural'
 
 function openModal() { modalOpen.value = true }
 function goToPage() { router.push(urlPath) }
