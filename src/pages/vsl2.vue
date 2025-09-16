@@ -7,7 +7,7 @@ import BannerRetention from '../components/BannerRetention.vue'
 
 const router = useRouter()
 
-const REDIRECT_URL = '/supersleep'
+const REDIRECT_URL = '/sleepnatual'
 
 function onVideoEnded() {
   router.push(REDIRECT_URL)
