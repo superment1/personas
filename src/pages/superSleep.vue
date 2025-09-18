@@ -250,30 +250,30 @@ onBeforeUnmount(() => {
   <LazyIsland>
     <Stress />
   </LazyIsland>
-  <section class="shop-rest">
+  <section class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[25px] md:pt-[40px]">
     <div class="imagem-centralizada">
       <img src="../assets/image/sleepSuperment/moca.webp" loading="lazy" alt="Mulher com pílula" />
 
     </div>
-    <div class="infos">
-      <p class="title">The numbers behind Super Natural Sleep</p>
-      <p class="description-title md:mb-[14px]">What people are saying about our powerful botanical blend:</p>
-      <div class="infos-users md:mb-6 flex-col gap-0 md:justify-center md:flex-row md:gap-16">
+    <div class="flex flex-col items-center justify-end h-[350px] mt-[30px]">
+      <p class="w-[272px] font-crossfit font-bold text-[28px] text-center text-[#370F1E] leading-[1]">The numbers behind Super Natural Sleep</p>
+      <p class="mt-[10px] mb-[14px] w-[238px] font-DMSans font-medium text-[16px] leading-[18px] text-center text-[#370F1E] md:mb-[14px]">What people are saying about our powerful botanical blend:</p>
+      <div class="w-full flex items-center md:mb-1 flex-col gap-0 md:justify-center md:flex-row md:gap-16">
         <div class="flex gap-8 md:gap-16">
-          <div class="info mt-2 max-w-[200px] mx-auto">
-            <p class="number">75%</p>
-            <p class="description md:w-[200px]">of users <br>reported better<br> sleep quality.</p>
+          <div class="flex flex-col items-center justify-start mt-2 max-w-[200px] mx-auto">
+            <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7]">75%</p>
+            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15] md:w-[200px]">of users <br>reported better<br> sleep quality.</p>
             <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
           </div>
-          <div class="info mt-2 max-w-[240px] mx-auto">
-            <p class="number">0%</p>
-            <p class="description" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
+          <div class="flex flex-col items-center justify-start mt-2 max-w-[240px] mx-auto">
+            <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7]">0%</p>
+            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
             <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
           </div>
         </div>
-        <div class="info max-w-[200px]">
-          <p class="number mt-5 md:mt-0">100%</p>
-          <p class="description">of users reported reduced anxiety and greater relaxation.</p>
+        <div class="flex flex-col items-center justify-start max-w-[200px]">
+          <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7] mt-5 md:mt-0">100%</p>
+          <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]">of users reported reduced anxiety and greater relaxation.</p>
           <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
       </div>
