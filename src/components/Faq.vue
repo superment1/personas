@@ -28,13 +28,11 @@ const faqs = ref([
   },
   {
     question: 'How do I take it?',
-    answer: `Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus.
+    answer: `To gradually restore your nervous system, take 2 capsules with water every evening before bedtime. 
 
-              Nighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.
+              You can also take 1–2 capsules as needed during stressful moments to ease tension and maintain focus. 
 
-              Works flexibly — whether you need support at work, at night, or both.
-
-              Safe for daily use. Non-habit forming.`,
+              Safe for daily use and non-habit forming.`,
     open: false
   },
   {

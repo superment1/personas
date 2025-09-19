@@ -45,7 +45,7 @@ onMounted(async () => {
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
       </svg>
     </a>
-    <div class="relative w-[250px] h-[60px]">
+    <div class="relative w-[250px] h-[55px]">
       <div class="absolute inset-0 flex items-center text-[#370F1E] justify-center
               transition-opacity duration-300 pointer-events-none select-none" :class="{ 'opacity-0': showGif }"
         aria-hidden="true">
@@ -86,7 +86,6 @@ onMounted(async () => {
           </defs>
         </svg>
       </div>
-
       <img :src="gifSrc" width="250" height="60" loading="lazy" alt="Logo animado" decoding="async" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300
               pointer-events-none select-none" :class="{ 'opacity-0': !showGif }" aria-hidden="true" />
     </div>
@@ -106,7 +105,7 @@ onMounted(async () => {
 <style scoped>
 .topo {
   background: #E1DCCD;
-  height: 60px;
+  height: 70px;
   width: 100%;
   display: flex;
   flex-direction: column;

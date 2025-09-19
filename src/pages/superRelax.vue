@@ -153,10 +153,9 @@ onBeforeUnmount(() => {
 
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-12">
-          <div class="text-[#370F1E] gap-[120px] lg:gap-[20px] flex flex-col">
-            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
-              <br>Plant-Based
-              Formula <br><span class="font-medium">that Restores Nervous <br>System Balance.</span>
+          <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
+            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful Plant-Based
+             <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
             </h1>
             <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
               <br>Plant-Based
@@ -369,7 +368,7 @@ onBeforeUnmount(() => {
                   <p>Stress, Anxiety & Exhaustion Relief </p>
                 </li>
                 <li>
-                  <p>Pain & Inflammation Relief</p>
+                  <p>Pain & Inflammation Reduction</p>
                 </li>
                 <li>
                   <p>Mood, Focus & Energy </p>
@@ -461,7 +460,12 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E] relative">
-    <div class="px-8 flex flex-col sm:hidden pt-[27px] pb-8">
+    <div class="sm:hidden px-[30px] pt-[26px] pb-[36px]">
+      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted-2">
+    </div>
+
+    <!-- <div class="px-8 flex flex-col sm:hidden pt-[27px] pb-8">
+
       <p class="text-center pb-[32px] text-white text-[32px] leading-[1] font-crossfit">Why You’re<br><span class="text-[#FFDC03]"> Exhausted by Day</span> <br>and Wired by Night.</p>
       <div class="bg-[#5C2841] p-3 px-[20px] rounded-2xl font-sans text-white text-[13px] leading-[1]">
         <div class="flex justify-between  pb-[10px] items-center border-b border-[#48152b]">
@@ -528,14 +532,14 @@ onBeforeUnmount(() => {
       <img src="../assets/image/newPageD/exhausted.webp" class="py-9" loading="lazy" alt="exhausted">
       <img src="../assets/image/newPageD/statistics.webp" loading="lazy" alt="exhausted">
       </img>
-    </div>
+    </div> -->
     <div class="hidden px-40 py-20 sm:flex">
       <img src="/assets/why_exhausted_desktop.webp" loading="lazy" alt="exhausted-2">
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-8 lg:gap-10 pt-[20px] px-8 lg:px-40 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
         <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
@@ -566,8 +570,8 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div class="px-8 lg:px-40">
-        <img class="lg:hidden block" src="/assets/box4.webp" alt="blocks">
-        <img class="hidden lg:block" src="/assets/box4_desk.webp" alt="blocks">
+        <img class="lg:hidden block" src="/assets/box41.webp" alt="blocks">
+        <img class="hidden lg:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
 
@@ -635,8 +639,8 @@ onBeforeUnmount(() => {
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#FFDC03]" :showIcon="false"
-          class="botao-shop font-bold !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]" textColorClass="text-[#FFDC03]" :showIcon="true"
+          class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
           Get Calm, Clarity & Rest Now
         </ShopButton>
       </div>
@@ -647,11 +651,11 @@ onBeforeUnmount(() => {
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[330px] sm:max-w-[950px] mx-auto">
         <h1
-          class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[25px] font-bold font-gelasio italic">
+          class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[32px] font-bold font-crossfit">
           Frequently asked <br>
           questions:</h1>
         <h1
-          class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold  font-gelasio italic">
+          class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold font-crossfit">
           Frequently asked questions:</h1>
         <LazyIsland>
           <div class="faq-wrap">

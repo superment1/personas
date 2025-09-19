@@ -187,7 +187,7 @@ function toggle(index) {
         <div class="block lg:hidden">
             <!-- FRASCO GRANDE -->
             <div
-                class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-2">
+                class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-5">
                 <p class="text-[#370F1E] text-center font-gelasio text-[16px] italic font-bold leading-[1.3]">
                     Stress,
                     Anxiety,
@@ -309,7 +309,7 @@ function toggle(index) {
                     No Dependency. No Fog.</p>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
-                    class="h-[60px] w-[321px] bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
+                    class="h-[60px] w-[321px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 27 27" fill="none">
                             <g clip-path="url(#clip0_142_375)">
@@ -568,7 +568,7 @@ function toggle(index) {
                 </div>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
-                    class="h-[75px] w-[523px] bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
+                    class="h-[75px] w-[523px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="43" viewBox="0 0 44 43" fill="none">
                             <g clip-path="url(#clip0_198_1739)">
