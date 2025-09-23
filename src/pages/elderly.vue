@@ -41,6 +41,9 @@ useSeo({
 
         <Learnmore backgroundColor="#FFFAF0" text="Learn more about us and how important is the right sleep" />
 
-        <Footer color="#370F1E" :imageSrc="logoFooter" />
+        <Footer color="#370F1E"
+                colortext="rgba(255,255,255,.85)"
+                title="SUPERMENT"
+                subtitle="© Super Natural Sleep Research 2025.<br> All Rights Reserved"/>
     </div>
 </template>

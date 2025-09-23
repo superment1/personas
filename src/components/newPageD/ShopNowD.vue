@@ -15,7 +15,7 @@ const faqs = ref([
     },
     {
         question: 'How to use',
-        answer: 'Daytime: Take 1–2 capsules during stressful moments to ease tension and restore focus. \n\nNighttime: Take before bed to calm the nervous system and prepare your body for restful sleep.\n\nWorks flexibly — whether you need support at work, at night, or both.\n\nSafe for daily use. Non-habit forming.',
+        answer: 'To gradually restore your nervous system, take 2 capsules with water every evening before bedtime. \n\n You can also take 1–2 capsules as needed during stressful moments to ease tension and maintain focus. \n\n Safe for daily use and non-habit forming.',
         open: false
     },
     {
@@ -187,7 +187,7 @@ function toggle(index) {
         <div class="block lg:hidden">
             <!-- FRASCO GRANDE -->
             <div
-                class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-2">
+                class="w-[351px] h-full bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start py-4 mt-5">
                 <p class="text-[#370F1E] text-center font-gelasio text-[16px] italic font-bold leading-[1.3]">
                     Stress,
                     Anxiety,
@@ -309,7 +309,7 @@ function toggle(index) {
                     No Dependency. No Fog.</p>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
-                    class="h-[60px] w-[321px] bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-tr-[20px]  shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
+                    class="h-[60px] w-[321px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-3">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 27 27" fill="none">
                             <g clip-path="url(#clip0_142_375)">
@@ -396,24 +396,11 @@ function toggle(index) {
 
             <!-- FRASCOS PEQUENOS -->
             <div class="w-[351px] h-full rounded-[30px] grid grid-cols-2 gap-2 mt-4">
-                <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
+                <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                     <div
-                        class="bg-[url('@/assets/image/newPageD/nn2.webp')] w-[156px] h-[186px] bg-cover bg-center ml-5 -mt-4 flex items-center justify-end">
-                        <div
-                            class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-8 mr-[18px]">
-                            <div
-                                class="w-[44px] h-[44px] border rounded-full border-[#370F1E] flex items-center justify-end">
-                                <p class="leading-[0.82] ml-[8px] text-[#370F1E] text-[16px] font-bold font-crossfit">
-                                    43%
-                                    OFF
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
-                        class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-[14px]">
+                        class="w-[170px] h-[233px] bg-[url('@/assets/image/newPageD/nn2.webp')] bg-contain bg-no-repeat flex flex-col-reverse items-center pb-[14px]">
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
+                        class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between ">
                         <div class="flex flex-row items-start justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
                                 fill="none">
@@ -438,47 +425,38 @@ function toggle(index) {
                             </div>
                         </div>
                     </ShopButton>
+                    </div>
                 </div>
                 <div class="w-[170px] h-[233px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                     <div
-                        class="bg-[url('@/assets/image/newPageD/nn3.webp')] w-[156px] h-[186px] bg-cover bg-center -mt-4 flex items-center justify-end">
-                        <div class="w-12 h-12 bg-[#E1DCCD] rounded-full flex items-center justify-center mt-6 mr-[5px]">
-                            <div
-                                class="w-[44px] h-[44px] border rounded-full border-[#370F1E] flex items-center justify-end">
-                                <p class="leading-[0.82] ml-[8px] text-[#370F1E] text-[16px] font-bold font-crossfit">
-                                    58%
-                                    OFF
-                                </p>
+                        class="w-[170px] h-[233px] bg-[url('@/assets/image/newPageD/nn3.webp')] bg-contain bg-no-repeat flex flex-col-reverse items-center pb-[14px]">
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                            class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee">
+                            <div class="flex flex-row items-start justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8_170)">
+                                        <path
+                                            d="M1.5763 1.54408C1.19885 1.54408 0.892944 1.19727 0.892944 0.769353C0.892944 0.341437 1.19885 -0.00537109 1.5763 -0.00537109H5.12714C5.45608 -0.00537109 5.73074 0.258464 5.7957 0.609001L6.32857 2.86512H26.3721C26.7496 2.86512 27.0555 3.21193 27.0555 3.63984C27.0555 3.69951 27.0498 3.75731 27.0382 3.81325L26.1633 9.60177C26.16 9.63067 26.1559 9.65864 26.1501 9.68661L25.2694 15.5152C25.2127 15.8928 24.924 16.1594 24.5967 16.1585H9.47071L10.0414 18.5722H23.869C24.2464 18.5722 24.5523 18.919 24.5523 19.3469C24.5523 19.7748 24.2464 20.1216 23.869 20.1216H9.51759C9.21579 20.1216 8.94031 19.8923 8.85807 19.5464L7.9313 15.6252C7.9239 15.5991 7.91732 15.5721 7.91239 15.5441L7.1065 12.1348L6.5432 9.75187C6.5358 9.72576 6.52922 9.69966 6.52429 9.67262L5.14523 3.83842V3.83655L4.60332 1.54221H1.5763V1.54408ZM21.4455 22.3115C21.1651 22.3115 20.9127 22.4402 20.7293 22.6481C20.5459 22.856 20.4324 23.1431 20.4324 23.4601C20.4324 23.7771 20.5459 24.0642 20.7293 24.2721C20.9127 24.48 21.1659 24.6087 21.4455 24.6087C21.7251 24.6087 21.9784 24.48 22.1618 24.2721C22.3452 24.0642 22.4587 23.7771 22.4587 23.4601C22.4587 23.1431 22.3452 22.856 22.1618 22.6481C21.9784 22.4402 21.7251 22.3115 21.4455 22.3115ZM19.763 21.5517C20.194 21.0632 20.7885 20.7612 21.4455 20.7612C22.1026 20.7612 22.6971 21.0632 23.128 21.5517C23.5589 22.0402 23.8254 22.7143 23.8254 23.4592C23.8254 24.2041 23.5589 24.8781 23.128 25.3666C22.6971 25.8551 22.1026 26.1572 21.4455 26.1572C20.7885 26.1572 20.194 25.8551 19.763 25.3666C19.3321 24.8781 19.0657 24.2041 19.0657 23.4592C19.0657 22.7143 19.3321 22.0402 19.763 21.5517ZM12.5282 22.3115C12.2486 22.3115 11.9953 22.4402 11.8119 22.6481C11.6293 22.856 11.515 23.1431 11.515 23.4601C11.515 23.7771 11.6285 24.0642 11.8119 24.2721C11.9953 24.48 12.2486 24.6087 12.5282 24.6087C12.8077 24.6087 13.061 24.48 13.2444 24.2721C13.4278 24.0642 13.5413 23.7771 13.5413 23.4601C13.5413 23.1431 13.4278 22.856 13.2444 22.6481C13.061 22.4402 12.8077 22.3115 12.5282 22.3115ZM10.8457 21.5517C11.2766 21.0632 11.8711 20.7612 12.5282 20.7612C13.1852 20.7612 13.7797 21.0632 14.2106 21.5517C14.6416 22.0402 14.908 22.7143 14.908 23.4592C14.908 24.2041 14.6416 24.8781 14.2106 25.3666C13.7797 25.8551 13.1852 26.1572 12.5282 26.1572C11.8711 26.1572 11.2766 25.8551 10.8457 25.3666C10.4148 24.8781 10.1483 24.2041 10.1483 23.4592C10.1483 22.7143 10.4148 22.0393 10.8457 21.5517ZM24.6757 10.287H20.4851L20.2236 14.61H24.0227L24.6757 10.287ZM19.1175 10.287H13.2905L13.6992 14.61H18.856L19.1175 10.287ZM11.9188 10.287H8.08426L9.10642 14.61H12.3283L11.9196 10.287H11.9188ZM7.7175 8.73755H11.7716L11.3629 4.41457H6.69533L7.7175 8.73755ZM13.1433 8.73755H19.2104L19.4719 4.41457H12.7346L13.1433 8.73755ZM20.578 8.73755H24.9092L25.5621 4.41457H20.8387L20.5772 8.73755H20.578Z"
+                                            fill="#370F1E" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_8_170">
+                                            <rect width="26.1626" height="26.1626" fill="white"
+                                                transform="translate(0.892944 -0.00537109)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div class="flex flex-row items-center justify-end w-full">
+                                    <span
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
+                                        6 <br><span class="font-gelasio italic font-bold text-[17px]">$29</span><span
+                                            class="font-gelasio font-thin italic"> each</span>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </ShopButton>
                     </div>
-
-                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
-                        class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee -mt-[14px]">
-                        <div class="flex flex-row items-start justify-end">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
-                                fill="none">
-                                <g clip-path="url(#clip0_8_170)">
-                                    <path
-                                        d="M1.5763 1.54408C1.19885 1.54408 0.892944 1.19727 0.892944 0.769353C0.892944 0.341437 1.19885 -0.00537109 1.5763 -0.00537109H5.12714C5.45608 -0.00537109 5.73074 0.258464 5.7957 0.609001L6.32857 2.86512H26.3721C26.7496 2.86512 27.0555 3.21193 27.0555 3.63984C27.0555 3.69951 27.0498 3.75731 27.0382 3.81325L26.1633 9.60177C26.16 9.63067 26.1559 9.65864 26.1501 9.68661L25.2694 15.5152C25.2127 15.8928 24.924 16.1594 24.5967 16.1585H9.47071L10.0414 18.5722H23.869C24.2464 18.5722 24.5523 18.919 24.5523 19.3469C24.5523 19.7748 24.2464 20.1216 23.869 20.1216H9.51759C9.21579 20.1216 8.94031 19.8923 8.85807 19.5464L7.9313 15.6252C7.9239 15.5991 7.91732 15.5721 7.91239 15.5441L7.1065 12.1348L6.5432 9.75187C6.5358 9.72576 6.52922 9.69966 6.52429 9.67262L5.14523 3.83842V3.83655L4.60332 1.54221H1.5763V1.54408ZM21.4455 22.3115C21.1651 22.3115 20.9127 22.4402 20.7293 22.6481C20.5459 22.856 20.4324 23.1431 20.4324 23.4601C20.4324 23.7771 20.5459 24.0642 20.7293 24.2721C20.9127 24.48 21.1659 24.6087 21.4455 24.6087C21.7251 24.6087 21.9784 24.48 22.1618 24.2721C22.3452 24.0642 22.4587 23.7771 22.4587 23.4601C22.4587 23.1431 22.3452 22.856 22.1618 22.6481C21.9784 22.4402 21.7251 22.3115 21.4455 22.3115ZM19.763 21.5517C20.194 21.0632 20.7885 20.7612 21.4455 20.7612C22.1026 20.7612 22.6971 21.0632 23.128 21.5517C23.5589 22.0402 23.8254 22.7143 23.8254 23.4592C23.8254 24.2041 23.5589 24.8781 23.128 25.3666C22.6971 25.8551 22.1026 26.1572 21.4455 26.1572C20.7885 26.1572 20.194 25.8551 19.763 25.3666C19.3321 24.8781 19.0657 24.2041 19.0657 23.4592C19.0657 22.7143 19.3321 22.0402 19.763 21.5517ZM12.5282 22.3115C12.2486 22.3115 11.9953 22.4402 11.8119 22.6481C11.6293 22.856 11.515 23.1431 11.515 23.4601C11.515 23.7771 11.6285 24.0642 11.8119 24.2721C11.9953 24.48 12.2486 24.6087 12.5282 24.6087C12.8077 24.6087 13.061 24.48 13.2444 24.2721C13.4278 24.0642 13.5413 23.7771 13.5413 23.4601C13.5413 23.1431 13.4278 22.856 13.2444 22.6481C13.061 22.4402 12.8077 22.3115 12.5282 22.3115ZM10.8457 21.5517C11.2766 21.0632 11.8711 20.7612 12.5282 20.7612C13.1852 20.7612 13.7797 21.0632 14.2106 21.5517C14.6416 22.0402 14.908 22.7143 14.908 23.4592C14.908 24.2041 14.6416 24.8781 14.2106 25.3666C13.7797 25.8551 13.1852 26.1572 12.5282 26.1572C11.8711 26.1572 11.2766 25.8551 10.8457 25.3666C10.4148 24.8781 10.1483 24.2041 10.1483 23.4592C10.1483 22.7143 10.4148 22.0393 10.8457 21.5517ZM24.6757 10.287H20.4851L20.2236 14.61H24.0227L24.6757 10.287ZM19.1175 10.287H13.2905L13.6992 14.61H18.856L19.1175 10.287ZM11.9188 10.287H8.08426L9.10642 14.61H12.3283L11.9196 10.287H11.9188ZM7.7175 8.73755H11.7716L11.3629 4.41457H6.69533L7.7175 8.73755ZM13.1433 8.73755H19.2104L19.4719 4.41457H12.7346L13.1433 8.73755ZM20.578 8.73755H24.9092L25.5621 4.41457H20.8387L20.5772 8.73755H20.578Z"
-                                        fill="#370F1E" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_8_170">
-                                        <rect width="26.1626" height="26.1626" fill="white"
-                                            transform="translate(0.892944 -0.00537109)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <div class="flex flex-row items-center justify-end w-full">
-                                <span
-                                    class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] text-start ml-3">Buy
-                                    6 <br><span class="font-gelasio italic font-bold text-[17px]">$29</span><span
-                                        class="font-gelasio font-thin italic"> each</span>
-                                </span>
-                            </div>
-                        </div>
-                    </ShopButton>
                 </div>
             </div>
         </div>
@@ -589,8 +567,8 @@ function toggle(index) {
                     </svg>
                 </div>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
-                    productId="prod_SbKYsQrxStW8wB"
-                    class="h-[75px] w-[523px] bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-tr-[20px]  shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
+                    productId="prod_T2jNgj5cCjXcvG"
+                    class="h-[75px] w-[523px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="43" viewBox="0 0 44 43" fill="none">
                             <g clip-path="url(#clip0_198_1739)">
@@ -642,8 +620,8 @@ function toggle(index) {
                                 fill="#370F1E" />
                         </svg>
                     </div>
-                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                        class="relative z-10 h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
+                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
+                        class="relative !py-[3.5rem] z-10 h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
                         <div class="flex flex-row items-start justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
                                 fill="none">
@@ -671,7 +649,7 @@ function toggle(index) {
                 </div>
                 <div class="w-[270px] h-[412px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                     <div class="relative w-[272px] h-[275px]">
-                        <img src="@/assets/image/newPageD/nn3-desk.png" alt="frasco-6" class="w-[279px] h-[290px]">
+                        <img src="@/assets/image/newPageD/nn3-desk.png" alt="frasco-6" class="w-[279px] h-[280px]">
                         <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
                             height="77" viewBox="0 0 67 66" fill="none">
                             <circle cx="33.0974" cy="32.9128" r="32.9128" fill="#E1DCCD" />
@@ -696,8 +674,8 @@ function toggle(index) {
                                 fill="#370F1E" />
                         </svg>
                     </div>
-                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                        class="h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
+                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                        class="h-[117px] !py-[3.5rem] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
                         <div class="flex flex-row items-start justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
                                 fill="none">

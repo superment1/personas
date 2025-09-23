@@ -15,24 +15,24 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 <template>
     <div
         class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start 
-        py-10 pb-[54px] lg:pt-[78px] lg:pb-[130px]">
+        py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]">
          
         <!-- HEADER COM CONTADOR -->
         <div
-            class="w-[350px] lg:w-[700px] flex flex-row items-center justify-between pt-4 pb-12 lg:pb-[146px] lg:pt-[46px] lg:mr-40">
+            class="w-[350px] sm:w-[460px] xl:w-[700px] flex flex-row items-center justify-between pt-4 pb-12 xl:pb-[146px] xl:pt-[46px] xl:mr-40">
            
-            <div>
-                <span class="text-[#370F1E] font-crossfit text-[61px] lg:text-[148px] font-bold leading-[0.87]">SHOP
+            <div class="w">
+                <span class="text-[#370F1E] font-crossfit text-[61px] sm:text-[82px] xl:text-[148px] font-bold leading-[0.87]">SHOP
                     <br>NOW</span>
                 <div class="flex flex-row justify-between items-center">
-                    <span class="text-[#370F1E] text-[12px] lg:text-[30px]">Powered by </span>
-                    <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="118" height="49"
+                    <span class="text-[#370F1E] text-[12px] xl:text-[30px]">Powered by </span>
+                    <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="118" height="49"
                         viewBox="0 0 118 49" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M117.825 25.3908C117.825 17.0422 113.791 10.4549 106.079 10.4549C98.3352 10.4549 93.649 17.0422 93.649 25.3258C93.649 35.1398 99.178 40.0956 107.12 40.0956C110.992 40.0956 113.921 39.2149 116.132 37.9768V31.4546C113.921 32.5627 111.381 33.2485 108.161 33.2485C105.006 33.2485 102.207 32.1404 101.847 28.2928H117.761C117.761 27.8668 117.825 26.1704 117.825 25.3908ZM101.75 22.2903C101.75 18.6086 103.997 17.0746 106.047 17.0746C108.028 17.0746 110.146 18.605 110.146 22.2903H101.75ZM81.0854 10.4549C77.8977 10.4549 75.8481 11.9529 74.7099 12.996L74.2849 10.9747H67.1242V49L75.261 47.2675L75.2934 38.0418C76.4641 38.89 78.1894 40.0992 81.0566 40.0992C86.8773 40.0992 92.183 35.3997 92.183 25.0623C92.147 15.6056 86.7765 10.4549 81.0854 10.4549ZM79.1331 32.9236C77.2133 32.9236 76.0715 32.2379 75.2934 31.3896L75.261 19.2908C76.1075 18.3452 77.2781 17.6919 79.1331 17.6919C82.0939 17.6919 84.1434 21.0197 84.1434 25.2897C84.1434 29.6607 82.1228 32.9236 79.1331 32.9236ZM64.0986 6.76972V0.150024L55.9293 1.87894V8.53112L64.0986 6.76972ZM55.9293 11.0072H64.0986V39.5397H55.9293V11.0072ZM47.1766 13.4219L46.6579 11.0072H39.6269V39.5433H47.7637V20.204C49.6835 17.6919 52.9361 18.1466 53.9446 18.5076V11.0072C52.9037 10.6174 49.0964 9.8991 47.1766 13.4219ZM30.9065 3.93271L22.9642 5.62914L22.9318 31.747C22.9318 36.5728 26.5445 40.1281 31.3604 40.1281C34.0294 40.1281 35.9817 39.6408 37.0551 39.0525V32.4328C36.0141 32.8551 30.8741 34.3566 30.8741 29.5308V17.9553H37.0551V11.0072H30.8741L30.9065 3.93271ZM8.90937 19.2908C8.90937 18.0203 9.95033 17.5294 11.6721 17.5294C14.1466 17.5294 17.2695 18.2802 19.7441 19.6157V11.9529C17.1758 10.9382 14.4362 10.4296 11.6757 10.4549C5.06608 10.4549 0.675293 13.9092 0.675293 19.6843C0.675293 28.6826 13.0408 27.2496 13.0408 31.1262C13.0408 32.6277 11.7405 33.1186 9.91792 33.1186C7.21645 33.1186 3.76577 32.0105 1.03189 30.5089V38.2692C4.05753 39.5758 7.11919 40.1281 9.91792 40.1281C16.686 40.1281 21.3361 36.7713 21.3361 30.9312C21.3073 21.2147 8.90937 22.9436 8.90937 19.2908Z"
                             fill="#370F1E" />
                     </svg>
-                    <svg class="block lg:hidden mr-[5px]" xmlns="http://www.w3.org/2000/svg" width="49" height="22"
+                    <svg class="block xl:hidden mr-[5px]" xmlns="http://www.w3.org/2000/svg" width="49" height="22"
                         viewBox="0 0 49 22" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M49.0014 11.1307C49.0014 7.44913 47.3376 4.54429 44.1572 4.54429C40.9634 4.54429 39.0308 7.44913 39.0308 11.1021C39.0308 15.4299 41.311 17.6153 44.5865 17.6153C46.1834 17.6153 47.3911 17.2269 48.3032 16.681V13.8048C47.3911 14.2934 46.3439 14.5958 45.0158 14.5958C43.7146 14.5958 42.5603 14.1072 42.4118 12.4104H48.9746C48.9746 12.2226 49.0014 11.4745 49.0014 11.1307ZM42.3717 9.76346C42.3717 8.13993 43.2986 7.46346 44.1439 7.46346C44.9609 7.46346 45.8343 8.13834 45.8343 9.76346H42.3717ZM33.8494 4.54429C32.5348 4.54429 31.6896 5.20484 31.2201 5.66484L31.0449 4.77349H28.0917V21.542L31.4474 20.778L31.4608 16.7096C31.9436 17.0837 32.6551 17.6169 33.8376 17.6169C36.2381 17.6169 38.4262 15.5445 38.4262 10.9859C38.4114 6.81564 36.1965 4.54429 33.8494 4.54429ZM33.0443 14.4526C32.2526 14.4526 31.7817 14.1502 31.4608 13.7761L31.4474 8.44076C31.7965 8.02374 32.2793 7.73564 33.0443 7.73564C34.2654 7.73564 35.1106 9.20318 35.1106 11.0862C35.1106 13.0137 34.2773 14.4526 33.0443 14.4526ZM26.8439 2.91917V0L23.4748 0.762422V3.69592L26.8439 2.91917ZM23.4748 4.78782H26.8439V17.3702H23.4748V4.78782ZM19.8651 5.85266L19.6512 4.78782H16.7515V17.3718H20.1072V8.84346C20.899 7.73564 22.2404 7.93619 22.6563 8.09536V4.78782C22.227 4.61592 20.6569 4.29917 19.8651 5.85266ZM13.1552 1.6681L9.87967 2.41619L9.86631 13.9337C9.86631 16.0618 11.3562 17.6296 13.3423 17.6296C14.4431 17.6296 15.2482 17.4147 15.6909 17.1553V14.2361C15.2616 14.4224 13.1418 15.0845 13.1418 12.9564V7.85183H15.6909V4.78782H13.1418L13.1552 1.6681ZM4.08332 8.44076C4.08332 7.88048 4.51262 7.66401 5.22268 7.66401C6.24321 7.66401 7.53113 7.99508 8.55165 8.58401V5.20484C7.49247 4.75738 6.36266 4.5331 5.22417 4.54429C2.49831 4.54429 0.6875 6.06754 0.6875 8.61425C0.6875 12.5824 5.78717 11.9504 5.78717 13.6599C5.78717 14.3221 5.25091 14.5385 4.49925 14.5385C3.38514 14.5385 1.96205 14.0499 0.834563 13.3877V16.8099C2.08237 17.3861 3.34503 17.6296 4.49925 17.6296C7.29048 17.6296 9.20824 16.1493 9.20824 13.574C9.19635 9.28913 4.08332 10.0516 4.08332 8.44076Z"
@@ -40,7 +40,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                     </svg>
                 </div>
             </div>
-            <div class="w-[1px] h-[124px] bg-[#370F1E] lg:w-[3px] lg:h-[300px]"></div>
+            <div class="w-[1px] h-[124px] sm:w-[2px] sm:h-[160px] bg-[#370F1E] xl:w-[3px] xl:h-[300px]"></div>
             <Stopwatch 
                 :duration-ms="durationMs"
                 :start-on="startOn"
@@ -48,18 +48,18 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 @expired="$emit('expired')"
             />
         </div>
-        <div class="w-[350px] lg:w-[1250px] flex flex-col items-center justify-start lg:flex-row justify-between">
+        <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center justify-start xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
             <div
-                class="smartplayer-scroll-event w-[350px] h-[360px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center lg:w-[600px] lg:h-[600px] lg:pb-4">
-                <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block lg:hidden">
-                <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden lg:block h-auto w-[110%] max-w-[900px]">
+                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:w-[600px] xl:h-[600px] xl:pb-4">
+                <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block xl:hidden">
+                <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden xl:block h-auto w-[110%] max-w-[900px]">
 
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_SbKYsQrxStW8wB"
-                    class="h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-center lg:w-[506px] lg:h-[70px] lg:text-[54px] lg:-mt-10">
+                    class="h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-center sm:w-[406px] sm:h-[60px] xl:w-[506px] xl:h-[70px] xl:text-[54px] xl:-mt-10">
                     <div class="flex flex-row items-center justify-center">
-                        <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
+                        <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                             viewBox="0 0 47 48" fill="none">
                             <g clip-path="url(#clip0_191_447)">
                                 <path
@@ -73,7 +73,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </clipPath>
                             </defs>
                         </svg>
-                        <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
+                        <svg class="block xl:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                             viewBox="0 0 27 27" fill="none">
                             <g clip-path="url(#clip0_142_375)">
                                 <path
@@ -88,7 +88,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                             </defs>
                         </svg>
                         <span
-                            class="leading-7 !py-[10px] font-bold text-[21px] lg:text-[34px] font-DMSans ml-5 lg:ml-8">
+                            class="leading-7 !py-[10px] font-bold text-[21px] sm:text-[26px] xl:text-[34px] font-DMSans ml-5 xl:ml-8">
                             First Trial Special Offer
                         </span>
                     </div>
@@ -96,16 +96,16 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
             </div>
             <!-- FRASCOS PEQUENOS -->
             <div
-                class="w-[350px] flex flex-row items-center justify-between py-3 lg:w-[600px] lg:h-[615px] lg:gap-4 lg:justify-between lg:flex-col justify-start">
-                <div class="flex flex-row items-center justify-between gap-3 lg:flex-row items-center justify-start">
+                class="w-[350px] flex flex-row items-center justify-between py-3 sm:w-[460px] xl:w-[600px] xl:h-[615px] xl:gap-4 xl:justify-between xl:flex-col justify-start">
+                <div class="flex flex-row items-center justify-between gap-3 xl:flex-row items-center justify-start">
                     <div
-                        class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
-                            class="w-[200px] h-[180px] -mt-3 ml-4 lg:w-[400px] lg:h-[400px]">
+                            class="w-[200px] h-[180px] -mt-3 ml-4 sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                            class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
-                                <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
+                                <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                                     viewBox="0 0 47 48" fill="none">
                                     <g clip-path="url(#clip0_191_447)">
                                         <path
@@ -119,7 +119,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
+                                <svg class="block xl:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                                     viewBox="0 0 27 27" fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path
@@ -135,9 +135,9 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] lg:text-[32px] text-start ml-3">Buy
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
                                         3 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] lg:text-[32px]  ">$32</span><span
+                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]  ">$32</span><span
                                             class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
@@ -145,13 +145,13 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         </ShopButton>
                     </div>
                     <div
-                        class="w-[170px] h-[233px] lg:w-[300px] lg:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start lg:pb-4">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
-                            class="w-[200px] h-[180px] -mt-3  lg:w-[400px] lg:h-[400px]">
+                            class="w-[200px] h-[180px] -mt-3  sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                            class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between lg:w-[253px] lg:h-[165px] lg:text-[30px] -mt-[14px]">
+                            class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] -mt-[14px]">
                             <div class="flex flex-row items-start justify-end">
-                                <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
+                                <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                                     viewBox="0 0 47 48" fill="none">
                                     <g clip-path="url(#clip0_191_447)">
                                         <path
@@ -165,7 +165,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
+                                <svg class="block xl:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
                                     viewBox="0 0 27 27" fill="none">
                                     <g clip-path="url(#clip0_142_375)">
                                         <path
@@ -181,9 +181,9 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] lg:text-[32px] text-start ml-3">Buy
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
                                         6 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] lg:text-[32px]">$26</span><span
+                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">$26</span><span
                                             class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
@@ -193,7 +193,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 </div>
                 <!-- ICONES DESK -->
                 <div
-                    class="hidden lg:flex bg-[#90DAF4] rounded-[30px] w-[600px] h-[176px] flex flex-row items-center justify-center px-10 gap-6 w-[615px]">
+                    class="hidden xl:flex bg-[#90DAF4] rounded-[30px] w-[600px] h-[176px] flex flex-row items-center justify-center px-10 gap-6 w-[615px]">
                     <div class="flex flex-row gap-7 items-center justify-center w-[250px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74" height="50" viewBox="0 0 74 50" fill="none">
                             <path
@@ -258,9 +258,9 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
         <!-- ICONES MOBILE -->
         <div
-            class="w-[350px] h-[100px] bg-[#90DAF4] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 lg:hidden">
-            <div class="flex flex-row items-center justify-center gap-4 w-[200px]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
+            class="w-[350px] h-[100px] sm:w-[460px] bg-[#90DAF4] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
+            <div class="flex flex-row items-center justify-center gap-4 w-[200px] sm:gap-6 sm:justify-start">
+                <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
                     <path
                         d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
                         fill="#370F1E" />
@@ -278,12 +278,12 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E]">Free U.S. <br>Shipping</span>
+                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px]">Free U.S. <br>Shipping</span>
                 </div>
             </div>
             <div class="w-[1px] h-[80px] bg-[#370F1E]"></div>
 
-            <div class="flex flex-row items-center justify-end gap-4 w-[200px]">
+            <div class="flex flex-row items-center justify-end gap-4 w-[200px] sm:justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="48" viewBox="0 0 33 48" fill="none">
                     <path
                         d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -317,7 +317,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E] ">Money-Back<br>Guarantee</span>
+                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px] ">Money-Back<br>Guarantee</span>
                 </div>
             </div>
         </div>
