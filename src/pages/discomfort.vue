@@ -87,22 +87,40 @@ useSeo({
                 </ShopButton>
             </div>
         </div>
-        <div class="relative flex flex-col items-center justify-start w-full h-[755px]">
-            <div class="absolute z-20 w-[316px]">
-                <div class="h-[260px]">
-                    <img src="@/assets/image/discomfort/embalagem-1.png" alt="frasco"
-                        class="w-[298px] h-[410px] relative -top-[110px] right-[15px] rotate-[5deg]">
+        <div class="relative flex flex-col items-center justify-start w-full h-[755px] lg:h-[250px]">
+            <div class="absolute z-20 w-[316px] lg:w-[804px] grid lg:grid-cols-2">
+                <div class="hidden lg:flex flex-col items-end justify-start col-span-2 lg:col-span-1">
+                    <p
+                        class="text-[#370F1E] text-[40px] font-crossfit font-bold leading-[1] uppercase  text-start w-[402px]">
+                        Finally, a sleep
+                        formula that
+                        feels good
+                        to take:</p>
                 </div>
-                <p class="text-[#370F1E] text-[32px] font-crossfit font-bold leading-[1] uppercase">Finally, a sleep
+                <div
+                    class="h-[260px] lg:w-[402px] lg:h-[100px] relative -top-[110px] right-[15px] lg:-top-[180px] lg:left-[80px] col-span-2 lg:col-span-1">
+                    <picture class="flex flex-row items-start justify-end">
+                        <!-- Imagem para telas grandes -->
+                        <source srcset="@/assets/image/discomfort/embalagem-1-desk.webp" media="(min-width:1024px)">
+
+                        <!-- Imagem padrão (mobile) -->
+                        <img src="@/assets/image/discomfort/embalagem-1.png" alt="frasco"
+                            class="w-[298px] h-[410px] rotate-[5deg]">
+                    </picture>
+                </div>
+                <p
+                    class="text-[#370F1E] text-[32px] font-crossfit font-bold leading-[1] uppercase block lg:hidden col-span-2">
+                    Finally, a sleep
                     formula that
                     feels good
                     to take:</p>
-                <div class="grid grid-cols-1 mt-[16px] gap-[25px]">
+                <div class="col-span-2 grid grid-cols-1 mt-[16px] gap-[25px] lg:w-[804px] lg:grid-cols-6">
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
-                        <div class="flex flex-row items-start justify-center gap-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
+                        <div class="flex flex-row items-start justify-center gap-3 lg:flex-col lg:flex-col">
                             <img src="@/assets/image/discomfort/digestion.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Soothes digestion
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Soothes
+                                digestion
                                 <br>and
                                 relieves reflux
                             </p>
@@ -114,10 +132,11 @@ useSeo({
                             easing bloating, discomfort, and nighttime irritation.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
-                        <div class="flex flex-row items-start justify-center gap-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
+                        <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/face.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Reduces coughing
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Reduces
+                                coughing
                                 and throat dryness
                             </p>
                         </div>
@@ -127,34 +146,39 @@ useSeo({
                             uninterrupted breathing while you sleep.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
-                        <div class="flex flex-row items-start justify-center gap-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
+                        <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/psyc.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Calms the mind
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Calms the
+                                mind
                                 and eases anxiety
                             </p>
                         </div>
                         <p class="font-DMSans text-[16px] leading-[1.12] text-[#525252] tracking-tight"><span
-                                class="italic">Passionflower and California Poppy</span> gently relax the nervous system
+                                class="italic">Passionflower and California Poppy</span> gently relax the nervous
+                            system
                             so you can unwind and fall asleep faster.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
-                        <div class="flex flex-row items-start justify-center gap-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-3">
+                        <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/restle.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Relieves tension
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Relieves
+                                tension
                                 and physical restlessness
                             </p>
                         </div>
                         <p class="font-DMSans text-[16px] leading-[1.12] text-[#525252] tracking-tight"><span
-                                class="italic">Corydalis</span> helps reduce minor aches and body agitation that make it
+                                class="italic">Corydalis</span> helps reduce minor aches and body agitation that
+                            make it
                             hard <br>to stay asleep.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
-                        <div class="flex flex-row items-start justify-center gap-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-3">
+                        <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/cloud.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Supports deep,
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Supports
+                                deep,
                                 uninterrupted sleep
                             </p>
                         </div>
@@ -163,17 +187,18 @@ useSeo({
                             supports your
                             body’s natural sleep rhythm.</p>
                     </div>
-
                 </div>
-                <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
-                    :showIcon=false
-                    class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px]">
-                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
-                            fill="#083D4F" />
-                    </svg> Shop: First Trial Special Offer
-                </ShopButton>
+                <div class="col-span-2 w-full justify-items-center">
+                    <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
+                        :showIcon=false
+                        class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px]">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
+                                fill="#083D4F" />
+                        </svg> Shop: First Trial Special Offer
+                    </ShopButton>
+                </div>
             </div>
         </div>
         <div
