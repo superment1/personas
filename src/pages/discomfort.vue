@@ -163,14 +163,13 @@ useSeo({
                     <span class="font-gelasio">-</span>
                     finally.
                 </p>
-                <div class="relative h-[275px] w-[316px] mx-auto">
+                <div class="relative h-[295px] w-[316px] flex items-start justify-start overflow-hidden">
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
-                        class="absolute z-20 -top-[42px] -translate-x-[50px]" />
-
-                    <!-- Segunda imagem (atrás e rotacionada) -->
+                        class="w-[268px] absolute z-10 -top-[42px] right-[100px]" />
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
-                        class="absolute z-10 -top-[12px] left-[215px] -translate-x-1/2 rotate-[30deg]" />
+                        class="w-[268px] absolute left-[80px] rotate-[30deg]" />
                 </div>
+
 
             </div>
             <div class="w-[316px] flex flex-col items-center justify-start">
@@ -188,12 +187,12 @@ useSeo({
             </div>
         </div>
         <div
-            class="pt-[36px] pb-[84px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl">
+            class="pt-[36px] pb-[84px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl w-full">
             <div class="w-full flex flex-col items-center justify-center md:w-[952px]">
-                <h2
-                    class="font-crossfit text-[30px] leading-[1.11] md:text-4xl text-[#370F1E] text-center mb-2 md:mb-12 mx-8 w-[350px] md:w-[700px]">
+                <p
+                    class="font-crossfit text-[30px] leading-[1.11] md:text-4xl text-[#370F1E] text-center mb-2 md:mb-12 mx-8 w-[356px] md:w-[700px]">
                     EACH INGREDIENT WAS <br>CAREFULLY SELECTED TO HELP <br>YOU SLEEP DEEPLY, NATURALLY:
-                </h2>
+                </p>
 
                 <div
                     class="w-[316px] mt-[14px] md:w-[1000px] flex flex-col items-center justify-center md:flex-row md:h-[287px] md:mt-0 md:gap-6">
