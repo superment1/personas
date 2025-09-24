@@ -1,31 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../pages/index.vue'
-import SuperSleep from '../pages/superSleep.vue'
-import SuperTest from '../pages/superTest.vue'
-import SleepWomam from '../pages/sleepWomam.vue'
-import TermsUse from '../pages/termsUse.vue'
-import Discomfort from '../pages/discomfort.vue'
-import RefundPolicy from '../pages/refundPolicy.vue'
-import Faq from '../pages/faq.vue'
-import About from '../pages/about.vue'
-import Elderly from '../pages/elderly.vue'
 
-  const routes = [
-  { path: '/', redirect : '/supersleep' },
-  { path: '/supersleep', name:'supersleep', component: SuperSleep },
-  { path: '/test', name: 'test', component: SuperTest },
-  { path: '/beautysleep', name:'beautysleep', component: SleepWomam},
-  { path: '/terms', name: 'terms', component: TermsUse },
-  { path: '/refundpolicy', name: 'refundpolicy', component: RefundPolicy },
-  { path: '/faq',  name: 'faq', component: Faq},
-  { path: '/about', name: 'about', component: About},
-  { path: '/elderly', name: 'elderly', component: Elderly},
-  // { path: '/menopause', name: 'menopause', component: Menopause},
-  { path: '/discomfort', component: Discomfort }
+const routes = [
+  { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
+  { path: '/sleepingbeauty',    name:'beautysleep',   component: () => import('../pages/sleepWomam.vue') },
+  { path: '/terms',             name: 'terms',        component: () => import('../pages/termsUse.vue') },
+  { path: '/privacypolicy',     name:'privacypolicy', component: () => import('../pages/policyPrivacy.vue') },
+  { path: '/refundpolicy',      name: 'refundpolicy', component: () => import('../pages/refundPolicy.vue') },
+  { path: '/faq',               name: 'faq',          component: () => import('../pages/faq.vue') },
+  { path: '/about',             name: 'about',        component: () => import('../pages/about.vue') },
+  { path: '/maturesleep',       name: 'elderly',      component: () => import('../pages/elderly.vue') },
+  { path: '/discomfort',        name:'discomfort',    component: () => import('../pages/discomfort.vue') },
+  { path: '/vsleep',            name:'vsl',           component: () => import('../pages/vsl.vue')},
+  { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
+  { path: '/sleep', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
+  { path: '/sleep2', name:'sleepbetter2',   component: () => import('../pages/sleepBetter2.vue')},
+  { path: '/relax',    name:'superrelax',   component: () => import('../pages/superRelax.vue') },  
+  { path: '/slim',    name:'superslim',   component: () => import('../pages/superSlim.vue') },  
 ]
 
 export const router = createRouter({
-  history: createWebHistory('/sleep/'),
+  history: createWebHistory('/'),
   routes,
   scrollBehavior() {
     return { top: 0 }
@@ -45,6 +39,7 @@ function setThemeColor(color) {
 router.afterEach((to) => {
   const themeColorMap = {
     supersleep: '#E1DCCD',
+    superrelax: '#E1DCCD',
     terms: '#E1DCCD',
     faq: '#E1DCCD',
     about: '#E1DCCD',
@@ -52,7 +47,12 @@ router.afterEach((to) => {
     beautysleep: '#6EC8F0',
     elderly: '#370F1E',
     discomfort: '#370F1E',
-    menopause: '#E6B4FF'
+    menopause: '#E6B4FF',
+    privacypolicy:'#E1DCCD',
+    vsl:'#6EC8F0',
+    vsl2:'#6EC8F0',
+    sleepbetter: '#E1DCCD',
+    sleepbetter2: '#E1DCCD' 
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)

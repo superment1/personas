@@ -12,7 +12,7 @@ import SuperFooter from '../components/SuperFooter.vue'
 const faqData = [
     {
         question: 'What is Super Natural Sleep?',
-        answer: 'Super Natural Sleep is a premium, plant-based supplement that helps you fall asleep faster, stay asleep longer, and wake up refreshed. It combines Passionflower, California Poppy, Corydalis, and Prickly Pear to promote calm, reduce restlessness, and support deep, restorative sleep, without grogginess or dependency.',
+        answer: 'Super Natural Sleep is a premium supplement formulated with natural ingredients that relax the nervous system and helps you fall asleep faster, stay asleep longer, and wake up refreshed. It combines Passionflower, California Poppy, Corydalis, and Prickly Pear to promote calm, reduce restlessness, and support deep, restorative sleep, without grogginess or dependency.',
         open: true
     },
     {
@@ -35,7 +35,7 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     },
         {
         question: 'Is Super Natural Sleep habit-forming?',
-        answer: `Not at all. Super Natural Sleep is non-habit-forming and safe for long-term use. Its ingredients gently support your body’s ability to sleep better over time, without creating reliance or tolerance.`,
+        answer: `Not at all. Super Natural Sleep is non-habit forming and safe for long-term use. Its ingredients gently support your body’s ability to sleep better over time, without creating reliance or tolerance.`,
         open: false
     },
     {
@@ -80,12 +80,18 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
     },
     {
         question: 'What if I’m not satisfied?',
-        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within 30 days of your purchase. We accept returns on any unopened bottles and will do everything we can to make it right.`,
+        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.
+                    
+                        •	120 days for the 6-bottle combo
+                        •	90 days for the 3-bottle combo
+                        •	30 days for a single bottle
+                
+                We accept returns on any unopened bottles and will do everything we can to make it right.`,
         open: false
     },
     {
         question: 'How can I talk to Superment?',
-        answer: `You can email us at superhelp@superment.co or send us a DM on Instagram @superment.co. It will be a pleasure to talk to you.`,
+        answer: `If you’re not happy with your results, just send us an email at superhelp@superment.co within the guarantee period of your purchase.`,
         open: false
     }
 ]
@@ -94,9 +100,13 @@ If you’d like to know more, feel free to email us at superhelp@superment.co or
 <template>
   <SuperHeader :show-redirect="true"/>
   <div class="w-full bg-[#fffaf0] ">
-    <div class="max-w-[80%] md:max-w-[70%] mx-auto">
+    <div class="max-w-[80%] md:max-w-[50%] mx-auto">
         <FaqAccordion :items="faqData" />
     </div>
   </div>
-  <SuperFooter/>
+  <div class="bg-[#370F1E] w-full">
+    <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
+      <SuperFooter />
+    </div>
+  </div>
 </template>

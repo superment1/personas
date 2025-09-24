@@ -1,47 +1,49 @@
-
 <script setup>
 import { useSeo } from '../composables/useSeo'
-import HeaderElderly from '../components/HeaderElderly.vue'
+import Header from '../components/Header.vue'
 import HeroSectionElderly from '../components/HeroSectionElderly.vue'
 import TaglineStripElderly from '../components/TaglineStripElderly.vue'
 import ProductHighlightElderly from '../components/ProductHighlightElderly.vue'
 import IngredientsSectionElderly from '../components/IngredientsSectionElderly.vue'
 import BadgesElderly from '../components/BadgesElderly.vue'
 import CtaSectionElderly from '../components/CtaSectionElderly.vue'
-import LearnmoreElderly from '../components/LearnmoreElderly.vue'
-import FooterElderly from '../components/FooterElderly.vue'
+import Footer from '@/components/Footer.vue'
+import logoFooter from '@/assets/image/discomfort/footer.svg'
 import Guarantees from '../components/Guarantees.vue'
 import SleepTransformation from '../components/SleepTransformation.vue'
+import logoHeader from '@/assets/image/discomfort/header.svg'
+import Learnmore from '@/components/Learnmore.vue'
 
 useSeo({
-    title: 'SUPERMENT - Super Natural Sleep',
-    description: 'Natural, deep sleep is essential for healthy, radiant skin.',
-    keywords: 'superment, super natural sleep, sleep, natural, radiant skin'
+    title: 'Natural Sleep Aid for Elderly | Superment - Non-Medication Sleep Support',
+    description: 'Struggling with sleep as a senior? Superment offers a gentle, non-habit forming natural sleep supplement with ingredients like Passionflower & California Poppy.',
+    keywords: 'natural sleep aid for elderly sleep supplement for seniors non-medication sleep for older adults best sleep aid for seniors herbal sleep remedies elderly'
 })
 </script>
 
 <template>
     <div>
         <!-- Blue Rounded Header -->
-        <div class="relative min-h-[610px] lg:min-h-[650px] bg-[url('@/assets/image/sleepElderly/hero-mobile-2.png')] md:bg-[url('@/assets/image/sleepElderly/elderyHappyDesk.png')] lg:bg-[center_130px] bg-[length:110%] bg-[position:91%_100%] bg-no-repeat">
-            <HeaderElderly />
-            <HeroSectionElderly />
-        </div>
+        <Header color="#370F1E" :image-src="logoHeader" />
+        <HeroSectionElderly />
 
         <TaglineStripElderly />
 
         <ProductHighlightElderly />
-        <SleepTransformation/>
-        <IngredientsSectionElderly />         
-        
-        <Guarantees/>
+        <SleepTransformation />
+        <IngredientsSectionElderly />
+
+        <!-- <Guarantees/> -->
 
         <BadgesElderly />
 
         <CtaSectionElderly />
 
-        <LearnmoreElderly />
+        <Learnmore backgroundColor="#FFFAF0" text="Learn more about us and how important is the right sleep" />
 
-        <FooterElderly />
+        <Footer color="#370F1E"
+                colortext="rgba(255,255,255,.85)"
+                title="SUPERMENT"
+                subtitle="© Super Natural Sleep Research 2025.<br> All Rights Reserved"/>
     </div>
 </template>

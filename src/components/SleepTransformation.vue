@@ -3,25 +3,35 @@ import ShopButton from '../components/ShopButton.vue'
 </script>
 
 <template>
-    <section class="py-6 pb-12 bg-white">
-        <div class="max-w-7xl lg:max-w-[80rem] justify-items-center mx-auto px-4">
-            <div class="flex-col flex md:flex-row mx-8">
-                <div class="flex flex-col md:gap-6 md:flex-row">
-                    <img class="rounded-[10px] md:w-[478px] max-h-max" width="315px" height="auto" src="../assets/image/sleepElderly/Before-After-mobile.png"></img>
+    <section class="py-[30px] pb-12 bg-white">
+        <div class="w-full flex-col justify-items-center">
+            <div class="flex-col flex md:flex-row justify-start items-center">
+                <div
+                    class="flex flex-col items-center justify-start md:gap-6 md:flex-row md:items-start w-[316px] lg:w-[962px]">
+                    <img class="rounded-[10px] w-[316px] h-[251px] md:w-[478px] md:h-[383px] max-h-max"
+                        src="../assets/image/sleepElderly/Before-After-mobile.webp"></img>
                     <div class="flex-col  leading-none md:max-w-[462px] ">
-                        <h2 class="uppercase text-[#370F1E] pt-4 font-crossfit text-[30px] md:text-[40px]">You’re not just aging — <br>your sleep is changing.</h2>
-                        <p class="pt-4 text-[#525252] leading-[1] text-[16px] sm:text-[20px]">As you age, your body makes less of the natural messengers that regulate sleep — like melatonin and serotonin. Discomforts like reflux, tension, and light sleep become more common.</p>
-                        <p class="pt-[0.9rem] pb-6 text-[#525252] leading-[1] text-[16px] sm:text-[20px]"><strong>Super Natural Sleep</strong> helps calm your body and support deep, natural rest — without drugs or next-day grogginess.</p>
-                    <ShopButton 
-                        id="buy-button" 
-                        textColorClass="text-[#083d4f]" 
-                        iconColorClass="text-[#083d4f]" 
-                        title="Shop: First Trial Special Offer" 
-                        class="bg-[#ffc35a] w-full py-2 !px-4 font-medium text-[1.1rem] lg:text-2xl" />
+                        <h2 class="uppercase text-[#370F1E] pt-4 font-crossfit text-[32px] md:text-[40px]">You’re not
+                            just aging — <br>your sleep is changing.</h2>
+                        <p
+                            class="pt-[18px] text-[#525252] text-[16px] md:text-[20px] tracking-wide font-light leading-[1.18em] w-[320px] md:w-[462px]">
+                            As you age, your body makes less of the natural messengers that regulate sleep — like
+                            melatonin and serotonin. <br class="block lg:hidden">Discomforts like reflux, tension, and
+                            light sleep become more
+                            common.</p>
+                        <p
+                            class="pt-[13px] pb-6 text-[#525252] leading-[1.16em] text-[16px] md:text-[20px] font-semibold">
+                            Super Natural Sleep <span class="font-light">helps calm your body and support deep, natural
+                                rest —
+                                without drugs or next-day grogginess.</span>
+                        </p>
+                        <ShopButton id="buy-button" textColorClass="text-[#083d4f]" iconColorClass="text-[#083d4f]"
+                            title="Shop: First Trial Special Offer" productId="prod_SbKYsQrxStW8wB"
+                            class="bg-[#ffc35a] font-medium text-[18px] text-[16px] lg:text-[20px] w-[316px] lg:w-[347px] justify-center gap-3" />
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
     </section>

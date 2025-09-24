@@ -4,26 +4,40 @@ import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 const items = [
   { 
     title: 'Passion Flower', 
-    subtitle: 'Calming and relaxing.', 
-    image: new URL('../assets/image/passion-flower.png', import.meta.url).href },
-  { 
-    title: 'Marshmallow Root', 
-    subtitle: 'Calms digestion, supports sleep.', 
-    image: new URL('../assets/image/marshmallow-root.png', import.meta.url).href },
-  { 
-    title: 'Corydalis', subtitle
-    : 'Gentle pain and sleep relief.', 
-    image: new URL('../assets/image/corydalis.png' , import.meta.url).href},
-  { 
-    title: 'California Poppy', 
-    subtitle: 'Promotes calm and sleep.', 
-    image: new URL('../assets/image/california-poppy.png', import.meta.url).href },
-  { 
-    title: 'Prickly Pear', 
-    subtitle: 'Antioxidant support.', 
-    image: new URL('../assets/image/prickly-pear.png', import.meta.url).href }
+    subtitle: 'Calms racing thoughts and eases anxiety so your mind feels clear and at ease.', 
+    img1x: 'assets/passion_flower_relax.webp',
+    img2x: 'assets/passion_flower_relax.webp',
+    w: 128, h: 128, alt: 'Passion flower'
+  },
+   {
+    title: 'Marshmallow Root',
+    subtitle: 'Soothes internal irritation, restoring comfort that allows true relaxation.',
+    img1x: 'assets/marshmallow.webp',
+    img2x: 'assets/marshmallow.webp',
+    w: 128, h: 128, alt: 'Marshmallow root'
+  },
+  {
+    title: 'Corydalis',
+    subtitle: 'Relieves stress-driven discomfort and supports a calm, steady state throughout the day.',
+    img1x: 'assets/corydalis-128.webp',
+    img2x: 'assets/corydalis-256.webp',
+    w: 128, h: 128, alt: 'Corydalis'
+  },
+  {
+    title: 'California Poppy',
+    subtitle: 'Releases tension and restlessness, helping you relax deeply and sleep soundly.',
+    img1x: '/assets/california_poppy_relax.webp',
+    img2x: '/assets/california_poppy_relax.webp',
+    w: 128, h: 128, alt: 'California poppy'
+  },
+  {
+    title: 'Prickly Pear',
+    subtitle: 'Balances cortisol to reduce stress, boost resilience, and keep your energy steady.',
+    img1x: 'assets/prickly-pear-128.webp',
+    img2x: 'assets/prickly-pear-256.webp',
+    w: 128, h: 128, alt: 'Prickly pear'
+  }
 ]
-
 
 // CLICANDO
 const currentIndex = ref(2)
@@ -118,13 +132,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden w-full bg-[#E1DCCD] flex justify-center items-center">
-    <!-- Faixa visível -->
+  <div class="relative overflow-hidden w-full flex justify-center items-center">
     <div 
         ref="carouselContainer" 
         class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
       >
-      <!-- Linha de cards -->
       <div class="flex w-max space-x-4 items-center relative z-0"
           ref="carouselContainer" 
           @mouseenter="stopAutoplay" 
@@ -148,11 +160,13 @@ onBeforeUnmount(() => {
           <!-- Card com imagem -->
           <div class="bg-white rounded-xl shadow rounded-2x1">
             <img 
-            :src="item.image" 
+            :src="item.img1x"
+            :srcset="`${item.img1x} 1x, ${item.img2x} 2x`"
             :alt="item.title" 
+            loading="lazy" decoding="async"
             class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl" />
           </div>
-          <div class="mt-2">
+          <div class="mt-2 grid">
             <h3 class="title">{{ item.title }}</h3>
             <p class="description">{{ item.subtitle }}</p>
           </div>
@@ -175,6 +189,8 @@ onBeforeUnmount(() => {
   color: #370F1E;
 }
 .description {
+  justify-self: center;
+  max-width: 159px;
   font-family: 'DM Sans';
   font-weight: 500;
   font-size: 10px;

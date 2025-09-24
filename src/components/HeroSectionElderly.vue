@@ -1,25 +1,42 @@
 <template>
-<!-- Hero Section -->
-<section class="flex flex-col mx-10 text-start md:max-w-[60%] pt-10 md:mx-auto md:pb-12 md:pt-20 relative z-10">
-    <h1 class="text-white leading-none font-crossfit  mb-4">
-        <span class="block md:pr-40 max-w-72 md:text-[3.5rem] text-[2.5rem]">FINALLY SLEEP THROUGH THE NIGHT<span style="color: #6ec8f0;">-</span><span style="color: #6ec8f0;"> <br> WITHOUT MEDICATION. </span></span>
-    </h1>
-    <span class=" font-sans text-[1.5rem] max-w-[286px] md:max-w-[65%] mb-3 leading-none font-normal text-white">Wake up clear, energized, and steady on your feet — without grogginess.</span>
-    <ShopButton
-        id="buy-button"
-        productId="prod_SbKYsQrxStW8wB"
-        textColorClass="text-white"
-        :showIcon=false
-        class="mt-2 border md:max-w-[50%] border-[#5EC7EB] text-white !px-0 md:px-6 !py-2 rounded-full text-[1.3rem] font-light bg-transparent hover:bg-[#CDEBFF]/50 transition lg:text-2xl">
-        Shop: First Trial Special Offer
-    </ShopButton>
-</section>
+    <div class="bg-[url('@/assets/image/sleepElderly/elderyHappy.webp')]
+            md:bg-[url('@/assets/image/sleepElderly/elderlyHappyDesk.webp')]
+            w-full h-[464px] lg:h-[521px] bg-no-repeat
+            [background-size:100%_100%] bg-[58%_top] -mt-3
+            lg:bg-[100%_top] flex flex-col items-center justify-center text-center relative">
+        <div
+            class="w-[316px] h-[356px] flex flex-col items-start justify-start lg:h-[300px] lg:w-[820px] gap-4 lg:gap-3 lg:pt-8">
+            <span class="crossfit text-[36px] font-bold uppercase text-[white] leading-none text-start lg:text-[52px]">
+                Finally sleep through the <br> night <span class="text-[#6EC8F0]">- <br class="block lg:hidden">without
+                    <br class="block lg:hidden"> medication.</span>
+            </span>
+
+            <span
+                class="text-[24px] text-[white] text-start leading-none font-extralight w-[316px] lg:w-[600px] lg:mt-3 lg:text-[28px] tracking-wide">
+                Wake up clear, energized, <br class="block lg:hidden">and steady on your feet <br
+                    class="block lg:hidden">— without grogginess.
+            </span>
+            <ShopButton id="buy-button" textColorClass="text-white" :showIcon=false productId="prod_SbKYsQrxStW8wB"
+                class="mt-[22px] border border-[#5EC7EB] text-white w-[286px] w-[316px] lg:w-[365px] rounded-full font-DMSans text-[20px] h-[50px] font-light hover:bg-[#CDEBFF]/50 transition lg:text-[24px] lg:mt-2">
+                Shop: First Trial Special Offer
+            </ShopButton>
+        </div>
+    </div>
 </template>
 
 <script setup>
-import ShopButton from '@/components/ShopButton.vue' 
+import ShopButton from './ShopButton.vue';
 </script>
 
-<style>
+<style scoped>
+@font-face {
+    font-family: "Crossfit";
+    src: url("@/assets/fonts/crossfit/Crossfit-Black.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
+.crossfit {
+    font-family: 'Crossfit';
+}
 </style>

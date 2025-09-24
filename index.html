@@ -3,45 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/sleep/" />
+    <base href="/"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"  media="print" onload="this.media='all'">
-    <!-- Cor da barra de status no Android (Chrome) -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" 
+      rel="stylesheet"  media="print" onload="this.media='all'">
     <meta name="theme-color" content="#fff">
+    <link rel="icon" type="image/png" href="/public/favicon.webp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <!-- Google Tag Manager (adiado para depois do load) -->
+    <!-- Analitics -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
+      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      (function () {
+        function loadGTM() {
+          if (window.__gtmLoaded) return; window.__gtmLoaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
+          document.head.appendChild(s);
+        }
+        function loadAll(){ 
+          loadGTM();
+          cleanup(); }
+        function cleanup(){
+          window.removeEventListener('scroll', loadAll, { passive:true });
+          window.removeEventListener('mousemove', loadAll);
+          window.removeEventListener('touchstart', loadAll, { passive:true });
+        }
+        if ('requestIdleCallback' in window) requestIdleCallback(loadAll, { timeout: 3000 });
+        else setTimeout(loadAll, 2000);
 
-      window.addEventListener('load', function () {
-        const gtmScript = document.createElement('script');
-        gtmScript.async = true;
-        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-T6Z2ZN9H';
-        document.head.appendChild(gtmScript);
-      });
+        window.addEventListener('scroll', loadAll, { passive:true });
+        window.addEventListener('mousemove', loadAll);
+        window.addEventListener('touchstart', loadAll, { passive:true });
+      })();
     </script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Tag Manager -->
-    <!-- <script>
-    (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-T6Z2ZN9H');
-      </script> -->
-    <!-- End Google Tag Manager -->
+    <script>
+      (function () {
+        var color = location.pathname.includes('/sleep')
+          ? '#6EC8F0'                 // sleep
+          : location.pathname.includes('/relax')
+          ? '#4DBCB6'                 // relax
+          : '#4DBCB6';                // padrão
+
+        document.documentElement.style.setProperty('--rd-btn-bg', color);
+      })();
+      </script>
+      <style>
+      .bricks--component-button[id^="rd-button-"] {
+        background: var(--rd-btn-bg) !important;       
+        background-color: var(--rd-btn-bg) !important; 
+        border-color: var(--rd-btn-bg) !important;
+      }
+      .bricks--component-button[id^="rd-button-"]:hover,
+      .bricks--component-button[id^="rd-button-"]:focus {
+        filter: brightness(0.95) !important;
+      }
+      </style>
+
   </head>
   <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6Z2ZN9H"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <div id="app"></div>
+    <div id="splash-hero"
+        style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">
+    </div>
+    <script>
+      new PerformanceObserver((entryList) => {
+        const ents = entryList.getEntries();
+        const last = ents[ents.length - 1];
+        console.log('LCP candidate:', last?.element, 'size:', last?.size, 'at', last?.startTime);
+      }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const el = document.querySelector('#hero-lcp');
+        if (el) {
+          const r = el.getBoundingClientRect();
+          console.log('#hero-lcp rect:', r);
+        }
+        console.log('header computed position:', getComputedStyle(document.querySelector('header, .header, SuperHeader2')||document.body).position);
+      });
+    </script>
     <script type="module" src="/src/main.js"></script>
-  </body>
+    <script>
+      (function () {
+        const app = document.getElementById('app');
+        const splash = document.getElementById('splash-hero');
+        if (!app || !splash) return;
+        const baseHref = (document.querySelector('base')?.getAttribute('href') || '/').trim();
+        const basePath = new URL(baseHref, location.origin).pathname.replace(/\/+$/, '/') || '/';
+        const path = location.pathname;
+        const hashPath = location.hash.replace(/^#\/?/, '');
+        function splitClean(p) {
+          return p.split('?')[0].split('#')[0].split('/').filter(Boolean);
+        }
+
+        let relPath = path.startsWith(basePath) ? path.slice(basePath.length) : path.replace(/^\/+/, '');
+        const segs = splitClean(relPath);
+        const hashSegs = splitClean(hashPath);
+        let route = 'sleepnatural';
+        if (hashSegs.length) {
+          route = hashSegs[0];
+        } else if (segs.length) {
+          route = (segs[0] === 'sleep') ? (segs[1] || 'sleepnatural') : segs[0];
+        }
+
+        const splashMap = {
+          sleepnatural:   { avif: "/assets/posterMobile.avif",        webp: "/assets/posterMobile.webp" },
+          relax:          { avif: "/assets/poster_relax.avif",        webp: "/assets/poster_relax.webp" },
+          sleepingbeauty: { avif: "/assets/posterBeauty.avif",        webp: "/assets/posterBeauty.webp" },
+          vsleep:         { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
+          vsleep2:        { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
+          maturesleep:    { avif: "/assets/posterElderly.avif",       webp: "/assets/posterElderly.webp" },
+          about:          { avif: "/assets/posterAbout.avif",         webp: "/assets/posterAbout.webp" },
+          terms:          { avif: "/assets/posterTerms.avif",         webp: "/assets/posterTerms.webp" },
+          faq:            { avif: "/assets/posterFaq.avif",           webp: "/assets/posterFaq.webp" },
+          refundpolicy:   { avif: "/assets/posterRefundPolicy.avif",  webp: "/assets/posterRefundPolicy.webp" },
+          privacypolicy:  { avif: "/assets/posterPrivacyPolicy.avif", webp: "/assets/posterPrivacyPolicy.webp" },
+          sleep:          { avif: "/assets/poster_sleep.avif",        webp: "/assets/poster_sleep.webp" },
+          sleep2:         { avif: "/assets/poster_sleep.avif",        webp: "/assets/poster_sleep.webp" },
+        };
+        const assets = splashMap[route] || splashMap['sleepnatural'];
+        splash.innerHTML = `
+          <picture style="position:absolute;inset:0">
+            <source type="image/avif" srcset="${assets.avif} 768w" sizes="100vw" media="(max-width:767px)">
+            <source type="image/webp" srcset="${assets.webp} 768w" sizes="100vw" media="(max-width:767px)">
+            <img id="splash-img" src="${assets.webp}" alt="" width="768" height="820"
+                decoding="async" style="position:absolute;top:0;width:100%;height:100%;object-fit:cover;object-position:top">
+          </picture>
+        `;
+        const isMobile = matchMedia('(max-width: 767px)').matches;
+        app.style.opacity = '1'; 
+        function reveal() {
+          splash.style.transition = 'opacity .15s ease';
+          splash.style.opacity = '0';
+          splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+        }
+
+        const obs = new MutationObserver(() => {
+          if (app.hasAttribute('data-visual-ready')) {
+            obs.disconnect();
+            reveal();
+          }
+        });
+        obs.observe(app, { attributes: true });
+        const fallback = setTimeout(reveal, isMobile ? 900 : 400);
+      })();
+    </script>
+    <style>
+      #app { opacity: 1; }
+    </style>
 </html>

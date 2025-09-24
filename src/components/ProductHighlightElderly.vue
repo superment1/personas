@@ -1,29 +1,32 @@
 <template>
     <!-- Product Highlight -->
     <section class="pb-8 pt-12 bg-white">
-        <div class="max-w-7xl lg:max-w-3xl mx-auto px-4">
-            <div class="grid lg:grid-cols-5 items-center lg:items-start">
+        <div class="w-full flex flex-col items-center justify-start">
+            <div class="grid lg:grid-cols-5 flex flex-col items-center justify-center lg:items-start">
                 <div class="flex justify-center lg:col-span-2">
                     <div class="-mt-16 -ml-12 lg:-mt-18 lg:-ml-2">
                         <img src="@/assets/image/sleepWomam/product.png" alt="Super Natural Sleep"
-                            class="h-72 lg:w-full lg:h-full object-cover">
+                            class="w-[260px] h-[294px] lg:w-full lg:h-full object-cover">
                     </div>
                 </div>
-                <div class="text-left lg:col-span-3">
-                    <h2 class="font-crossfit text-3xl lg:text-4xl uppercase text-[#370f1e] leading-[1] mx-8">
+                <div
+                    class="flex flex-col items-center justify-start lg:col-span-3 w-[316px] -mt-2 lg:w-[398px] lg:items-start">
+                    <h2 class="block lg:hidden font-crossfit text-[32px] uppercase text-[#370f1e] leading-[1]">
                         <span class="">Super Natural Sleep restores the:</br></span>
                     </h2>
-                        <p class="text-[1.2rem] py-2 text-[#5a5656] lg:text-[1.5rem] leading-5 mx-8">Real rest, mental clarity, and the energy to do what you love again.</p>
-                        <p class="text-[#726f6f] text-[1rem] lg:text-[1.1rem] mb-6 leading-none mx-8">
+                    <h2 class="hidden lg:block font-crossfit text-[40px] uppercase text-[#370f1e] leading-[1]">
+                        <span class="">Super Natural <br>Sleep restores:</br></span>
+                    </h2>
+                    <p class="text-[20px] font-normal py-2 text-[#5a5656] lg:text-[1.5rem] leading-[1.02em] border-b-2 h-[60px] lg:h-[65px] w-[316px] lg:w-[370px] lg:text-[24px]"
+                        style="border-color: #ffc35a;">Real rest, mental clarity, and the energy to do what you love
+                        again.</p>
+                    <p
+                        class="text-[#726f6f] text-[16px] lg:text-[20px] font-light leading-[1.2rem] mx-0 mt-[13px] w-[316px] lg:w-[390px] lg:leading-[1.2em]">
                         Clean, non-sedative formula. No melatonin. Made in FDA & GMP-certified U.S. labs.
-                        </p>                  
-                    <ShopButton 
-                    id="buy-button" 
-                    productId="prod_SbKYsQrxStW8wB" 
-                    textColorClass="text-[#083d4f]" 
-                    iconColorClass="text-[#083d4f]" 
-                    title="Shop: First Trial Special Offer" 
-                    class="ml-8 bg-[#ffc35a] !py-2 font-medium text-lg lg:text-xl" />
+                    </p>
+                    <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083d4f]"
+                        iconColorClass="text-[#083d4f]" title="Shop: First Trial Special Offer"
+                        class="bg-[#ffc35a] font-semibold text-[18px] lg:text-[20px] w-[316px] justify-between mt-[20px] lg:w-[347px]" />
                 </div>
             </div>
         </div>
@@ -34,6 +37,4 @@
 import ShopButton from '../components/ShopButton.vue'
 </script>
 
-<style>
-
-</style>
+<style></style>
