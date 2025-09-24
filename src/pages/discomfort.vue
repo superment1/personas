@@ -627,7 +627,7 @@ useSeo({
 <style scoped>
 @font-face {
     font-family: "Crossfit-LIGHT";
-    src: url("@/assets/fonts/crossfit/CrossfitDemo-bold.otf") format("truetype");
+    src: url("@/assets/fonts/crossfit/CrossfitDemo-Bold.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
