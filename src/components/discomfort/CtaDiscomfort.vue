@@ -1,28 +1,37 @@
 <template>
     <!-- Final CTA Section -->
     <section id="cta-section" class="relative rounded-t-3xl bg-[#63CFF2]">
-        <div class="w-full px-0 py-9 min-h-[750px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
+        <div
+            class="w-full px-0 py-9 pb-[70px] min-h-[750px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/sleepWomam/bg_footer_desktop.png')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-[full] flex items-center justify-center">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[330px]">
                     <h2 class="text-[#FFC35A] font-crossfit text-[40px]">
                         SHOP NOW
                     </h2>
-                    <p class="font-DMSans text-[24px] text-[#370F1E] leading-[1.1em] font-medium" >Comfortable, restorative <br>sleep starts here</br></p>
-                    <p class="font-crossfit text-[#FFF] text-[40px] leading-[1.1em] mt-1" >NO MORE REFLUX. NO MORE RESTLESSNESS.</p>
+                    <p class="font-DMSans text-[24px] text-[#370F1E] leading-[1.1em] font-medium">Comfortable,
+                        restorative <br>sleep starts here</br></p>
+                    <p class="font-crossfit text-[#FFF] text-[40px] leading-[1.1em] mt-1">NO MORE REFLUX. NO MORE
+                        RESTLESSNESS.</p>
                     <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26 mt-2" />
-                        <div class="flex flex-row justify-end">
-                            <img src="@/assets/image/discomfort/price-thin.png" class="h-45 mr-2" />
+                    <div class="flex flex-col items-center justify-end w-[316px]">
+                        <img src="@/assets/image/discomfort/price-thin.png"
+                            class="w-[123px] h-[236px] ml-[190px] relative z-10" />
+                        <img src="@/assets/image/discomfort/free.png"
+                            class="h-[90px] w-[93px] ml-[220px] -mt-7 relative z-1" />
                     </div>
-                    <div class="mt-32">
-                        <ShopButton
-                            id="buy-button"
-                            productId="prod_SbKYsQrxStW8wB"
-                            textColorClass="text-[#083D4F]"
-                            :showIcon=true
-                            class="md:ml-8 w-[330px] md:w-auto md:justify-center justify-start bg-[#FFC35A] py-3 rounded-full text-[1.1rem] font-light hover:bg-[#58663a]/50 transition lg:text-2xl">
+                    <div class="mt-20">
+                        <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
+                            :showIcon=false
+                            class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px] ">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
+                                    fill="#083D4F" />
+                            </svg>
                             Shop: First Trial Special Offer
-                        </ShopButton>    
+                        </ShopButton>
                     </div>
                 </div>
             </div>
@@ -31,9 +40,7 @@
 </template>
 
 <script setup>
-    import ShopButton from '@/components/ShopButton.vue';
+import ShopButton from '@/components/ShopButton.vue';
 </script>
 
-<style>
-
-</style>
+<style></style>
