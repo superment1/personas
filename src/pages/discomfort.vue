@@ -22,37 +22,58 @@ useSeo({
             <SleepSection />
         </div>
         <div class="w-full h-[60px] bg-[#370F1E] flex items-center justify-center">
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">CLEAN
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">CLEAN
             </span>
-            <span class="font-gelasio text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">-</span>
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">
+            <span
+                class="font-gelasio text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">-</span>
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">
                 LABEL </span>
-            <span class="font-gelasio text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">. </span>
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px] ml-1">
+            <span
+                class="font-gelasio text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">.
+            </span>
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px] ml-1">
                 MELATONIN </span>
-            <span class="font-gelasio text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">-</span>
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">
+            <span
+                class="font-gelasio text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">-</span>
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">
                 FREE.
             </span>
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px] ml-1">
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px] ml-1">
                 NON
             </span>
-            <span class="font-gelasio text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">
+            <span
+                class="font-gelasio text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">
                 -
             </span>
-            <span class="font-crossfit-light text-[#E1DCCD] text-[20px] font-bold leading-[1.1] tracking-[0.4px]">
+            <span
+                class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">
                 SEDATIVE.
             </span>
         </div>
-        <div class="w-[316px] py-[48px] flex flex-col items-center justify-start">
-            <img src="@/assets/image/discomfort/imagem-1.webp" alt="image-1" class="w-[316px] h-[258px] rounded-[10px]">
-            <div class="w-full pt-[8px]">
-                <p class="text-[#370F1E] font-crossfit text-[32px] font-bold leading-[1] uppercase">Sometimes
+        <div class="w-[316px] py-[48px] flex flex-col items-center justify-start lg:grid grid-cols-2 lg:w-full">
+            <picture class="flex flex-row items-start justify-end">
+                <source srcset="@/assets/image/discomfort/imagem-1-desk.webp" media="(min-width:1024px)">
+                <img src="@/assets/image/discomfort/imagem-1.webp" alt="image-1"
+                    class="w-[316px] h-[258px] lg:w-[402px] lg:h-[386px] rounded-[10px]" />
+            </picture>
+            <div
+                class="w-full pt-[8px] grid-colspan-1 lg:flex lg:flex-col lg:items-start lg:justify-start lg:h-[386px] lg:pt-0 lg:px-[32px]">
+                <p class="text-[#370F1E] font-crossfit text-[32px] font-bold leading-[1] uppercase lg:text-[40px]">
+                    Sometimes
                     you're
-                    not wired — you're just uncomfortable.</p>
+                    <br class="hidden lg:block">not wired — you're <br class="hidden lg:block">just uncomfortable.
+                </p>
                 <p class="font-DMSans text-[20px] leading-[1] text-[#525252] mt-[8px]">
-                    Discomfort in your gut, throat, <br>or body may seem minor, but <br>it quietly sabotages your sleep
-                    <br>- keeping you restless, night <br>after night.
+                    Discomfort in your gut, throat, <br class="block lg:hidden">or body <br class="hidden lg:block">may
+                    seem minor, but <br class="block lg:hidden">it quietly <br class="hidden lg:block">sabotages your
+                    sleep
+                    <br class="block lg:hidden">- keeping you <br class="hidden lg:block">restless, night <br
+                        class="block lg:hidden">after night.
                 </p>
                 <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                     :showIcon=false
@@ -66,10 +87,12 @@ useSeo({
                 </ShopButton>
             </div>
         </div>
-        <div class="relative flex flex-col items-center justify-start w-full h-[785px]">
+        <div class="relative flex flex-col items-center justify-start w-full h-[755px]">
             <div class="absolute z-20 w-[316px]">
-                <img src="@/assets/image/discomfort/frasco-sombra.webp" alt="frasco"
-                    class="w-[268px] h-[294px] relative -top-[65px] right-[15px]">
+                <div class="h-[260px]">
+                    <img src="@/assets/image/discomfort/embalagem-1.png" alt="frasco"
+                        class="w-[298px] h-[410px] relative -top-[110px] right-[15px] rotate-[5deg]">
+                </div>
                 <p class="text-[#370F1E] text-[32px] font-crossfit font-bold leading-[1] uppercase">Finally, a sleep
                     formula that
                     feels good
