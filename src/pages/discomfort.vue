@@ -202,35 +202,45 @@ useSeo({
             </div>
         </div>
         <div
-            class="w-full h-full flex flex-col items-center justify-end pt-[555px] pb-[100px] bg-[#370F1E] rounded-3xl">
-            <div class="w-[316px] flex flex-col items-center justify-end">
-                <p class="text-[#FFC35A] font-crossfit-light font-black text-[30px] leading-[1.1] uppercase">Fewer
+            class="w-full h-full flex flex-col items-center justify-end pt-[555px] lg:pt-[455px] pb-[100px] bg-[#370F1E] rounded-3xl lg:grid lg:grid-cols-2">
+            <div class="w-[316px] flex flex-col items-center justify-end lg:w-full lg:items-end ">
+                <p
+                    class="text-[#FFC35A] font-crossfit-light font-black text-[30px] leading-[1.1] uppercase block lg:hidden">
+                    Fewer
                     nighttime
                     bathroom
                     trips
                     <span class="font-gelasio">-</span>
                     finally.
                 </p>
-                <div class="relative h-[295px] w-[316px] flex items-start justify-start overflow-hidden">
+                <div
+                    class="relative h-[295px] w-[316px] flex items-start justify-start overflow-hidden lg:right-[80px]">
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
                         class="w-[268px] absolute z-10 -top-[42px] right-[100px]" />
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
                         class="w-[268px] absolute left-[80px] rotate-[30deg]" />
                 </div>
-
-
             </div>
-            <div class="w-[316px] flex flex-col items-center justify-start">
-                <p class="text-[#FFF] font-DMSanss text-[20px] leading-[1]">
-                    By calming the nervous system and deepening sleep
+            <div class="w-[316px] flex flex-col items-center justify-start lg:w-[420px]">
+                <p class="text-[#FFC35A] font-crossfit font-black uppercase text-[40px] leading-[1.1] ">Fewer
+                    nighttime
+                    bathroom trips —
+                    finally.</p>
+                <p class="text-[#FFF] font-DMSanss text-[20px] leading-[1] lg:text-[24px] lg:mt-3 text-start lg:w-full">
+                    By calming the nervous <br class="hidden lg:block">system and deepening sleep
                 </p>
-                <p class="text-[#FFF] font-DMSanss text-[16px] leading-[1] mt-2">Super Natural Sleep <span
-                        class="font-extralight">
-                        helps reduce those
-                        unnecessary wake-ups to pee — so you <br>can stay asleep and wake
-                        up truly <br>refreshed.
-                    </span></p>
-                <p class="text-[#6EC8F0] font-DMSanss text-[20px] leading-[1] mt-2 font-semibold">
+                <p class="text-[#FFF] font-DMSanss text-[16px] lg:text-[20px] leading-[1] mt-2 lg:w-full lg:mt-3">Super
+                    Natural
+                    Sleep
+                    <span class="font-extralight">
+                        helps reduce <br class="hidden lg:block">those
+                        unnecessary wake-ups to <br class="hidden lg:block">pee — so you <br class="block lg:hidden">can
+                        stay asleep and <br class="hidden lg:block">wake
+                        up truly <br class="block lg:hidden">refreshed.
+                    </span>
+                </p>
+                <p
+                    class="text-[#6EC8F0] font-DMSanss text-[20px] lg:text-[24px] leading-[1] mt-2 font-semibold lg:mt-3">
                     Premium, clean, gentle, and free of harsh side effects.</p>
             </div>
         </div>

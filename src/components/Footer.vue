@@ -2,7 +2,7 @@
   <footer :class="['relative rounded-t-3xl']" :style="{ backgroundColor: color }">
     <div class="w-full h-[215px] flex flex-col justify-start items-center">
       <h2 id="footer-title"
-        class="text-white font-crossfit text-center mt-8 font-semibold text-[40px] sm:text-[20px] leading-tight"
+        class="text-white font-crossfit text-center mt-8 font-semibold text-[40px] sm:text-[20px] lg:text-[52px] leading-tight"
         :style="{ color: colortext }">
         {{ title }}
       </h2>
