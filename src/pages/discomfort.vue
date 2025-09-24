@@ -245,15 +245,16 @@ useSeo({
             </div>
         </div>
         <div
-            class="pt-[36px] pb-[84px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl w-full">
+            class="pt-[36px] pb-[84px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl w-full lg:pt-[40px] lg:pb-[40px]">
             <div class="w-full flex flex-col items-center justify-center md:w-[952px]">
                 <p
-                    class="font-crossfit text-[30px] leading-[1.11] md:text-4xl text-[#370F1E] text-center mb-2 md:mb-12 mx-8 w-[356px] md:w-[700px]">
-                    EACH INGREDIENT WAS <br>CAREFULLY SELECTED TO HELP <br>YOU SLEEP DEEPLY, NATURALLY:
+                    class="font-crossfit text-[30px] leading-[1.11] md:text-[40px] text-[#370F1E] text-center mb-2 md:mb-12 lg:mb-6 mx-8 w-[356px] md:w-[700px]">
+                    EACH INGREDIENT WAS <br class="block lg:hidden">CAREFULLY SELECTED TO HELP <br
+                        class="block lg:hidden">YOU SLEEP DEEPLY, NATURALLY:
                 </p>
 
                 <div
-                    class="w-[316px] mt-[14px] md:w-[1000px] flex flex-col items-center justify-center md:flex-row md:h-[287px] md:mt-0 md:gap-6">
+                    class="w-[316px] mt-[14px] md:w-[1000px] flex flex-col items-center justify-center md:flex-row md:h-[287px] md:mt-0 md:gap-6 lg:h-[260px]">
                     <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2  pb-2 border-b-2 md:flex-col md:border-b-0"
                         style="border-color: #FFE1AA">
                         <div
@@ -339,7 +340,7 @@ useSeo({
                     <div class="flex justify-center">
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
-                            class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px]">
+                            class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px] lg:mt-0">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -351,7 +352,8 @@ useSeo({
                 </div>
             </div>
         </div>
-        <div class="w-full flex flex-row items-center justify-center gap-3 bg-[#FFF] pt-[40px] pb-[80px]">
+        <div
+            class="w-full flex flex-row items-center justify-center gap-3 bg-[#FFF] pt-[40px] pb-[80px] lg:pt-[62px] lg:pb-[106px]">
             <svg width="82" height="81" viewBox="0 0 82 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_2972)">
                     <path
