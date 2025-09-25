@@ -10,6 +10,7 @@ const routes = [
   { path: '/about',             name: 'about',        component: () => import('../pages/about.vue') },
   { path: '/maturesleep',       name: 'elderly',      component: () => import('../pages/elderly.vue') },
   { path: '/discomfort',        name:'discomfort',    component: () => import('../pages/discomfort.vue') },
+  { path: '/menopause',        name:'menopause',    component: () => import('../pages/menopause.vue') },
   { path: '/vsleep',            name:'vsl',           component: () => import('../pages/vsl.vue')},
   { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
   { path: '/sleep', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
