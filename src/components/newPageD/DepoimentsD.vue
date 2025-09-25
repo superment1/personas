@@ -1,55 +1,68 @@
 <script setup>
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 
-const testimonials = ref([
-    {
-        avatarDesk: new URL('@/assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
-        avatarMobile: new URL('@/assets/image/newPageD/ligiani.png', import.meta.url).href,
-        title: 'From stressed to relaxed.',
-        testimonial: 'I used to arrive very stressed from work and still I couldn\'t rest… Now I\'m finally able to relax and sleep again.',
-        name: 'Ligiani G., 44',
-        city: 'Boston, MA'
+
+const props = defineProps({
+    primary: {
+        type: String,
+        default: "Why People Love Super Relax."
     },
-    {
-        avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
-        avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
-        title: 'I am enjoying it!!',
-        testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
-        name: 'Danielle A., 37',
-        city: 'Los Angeles, CA'
+    subtitle: {
+        type: String,
+        default: '4.9/5 (160+ Reviews) | 98% Recommend'
     },
-    {
-        avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
-        avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
-        title: 'Good both day & night.',
-        testimonial: 'I used to wake up at night to pee and then couldn’t fall back asleep. Now I sleep through and have way more energy in the day.',
-        name: 'Eliseu C., 40',
-        city: 'Fort Lauderdale, FL'
-    },
-    {
-        avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
-        avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
-        title: 'Eased the pain in my legs.',
-        testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
-        name: 'Bruna R., 38',
-        city: 'New York, NY'
-    },
-    {
-        avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
-        avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
-        title: 'Didn’t expect it to work this well.',
-        testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
-        name: 'Nuala O., 35',
-        city: 'Miami, FL'
-    },
-])
+    testimonials: {
+    type: Array,
+    default: ()=>[
+        {
+            avatarDesk: new URL('@/assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
+            avatarMobile: new URL('@/assets/image/newPageD/ligiani.png', import.meta.url).href,
+            title: 'From stressed to relaxed.',
+            testimonial: 'I used to arrive very stressed from work and still I couldn\'t rest… Now I\'m finally able to relax and sleep again.',
+            name: 'Ligiani G., 44',
+            city: 'Boston, MA'
+        },
+        {
+            avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
+            avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
+            title: 'I am enjoying it!!',
+            testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
+            name: 'Danielle A., 37',
+            city: 'Los Angeles, CA'
+        },
+        {
+            avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
+            avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
+            title: 'Good both day & night.',
+            testimonial: 'I used to wake up at night to pee and then couldn’t fall back asleep. Now I sleep through and have way more energy in the day.',
+            name: 'Eliseu C., 40',
+            city: 'Fort Lauderdale, FL'
+        },
+        {
+            avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
+            avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
+            title: 'Eased the pain in my legs.',
+            testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
+            name: 'Bruna R., 38',
+            city: 'New York, NY'
+        },
+        {
+            avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
+            avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
+            title: 'Didn’t expect it to work this well.',
+            testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
+            name: 'Nuala O., 35',
+            city: 'Miami, FL'
+        },
+    ]
+    }
+})
 
 const track = ref(null)
 const itemEls = ref([])
 const current = ref(0)
-const spacer = ref(0) // espaço nas extremidades
+const spacer = ref(0) 
 
-// centraliza no índice i
 function centerToIndex(i, behavior = 'smooth') {
     const el = track.value, item = itemEls.value[i]
     if (!el || !item) return
@@ -57,7 +70,6 @@ function centerToIndex(i, behavior = 'smooth') {
     el.scrollTo({ left: offset, behavior })
 }
 
-// acha o card mais próximo do centro do viewport
 function nearestIndex() {
     const el = track.value
     if (!el) return 0
@@ -127,12 +139,12 @@ onBeforeUnmount(() => ro?.disconnect?.())
 
 <template>
     <div class="bg-[#E1DCCD] w-full flex flex-col items-center py-7 gap-y-2 lg:py-[84px]">
-        <p class="text-center text-[#370F1E] font-crossfit font-bold leading-[1.08] text-[32px] lg:text-[60px]">
-            Why People Love<br class="block lg:hidden" />Super Relax.
+        <p class="text-center text-[#370F1E] w-[246px] lg:w-full font-crossfit font-bold leading-[1.08] text-[32px] lg:text-[60px]">
+            {{ props.primary }}
         </p>
         <p
             class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] lg:text-[32px] mt-2 lg:mt-[34px]">
-            4.9/5 (160+ Reviews) | 98% Recommend
+            {{props.subtitle}}
         </p>
 
         <!-- trilho -->
@@ -144,13 +156,13 @@ onBeforeUnmount(() => ro?.disconnect?.())
             <div class="shrink-0" :style="{ width: spacer + 'px' }" />
             <div v-for="(t, i) in testimonials" :key="i" :ref="el => (itemEls[i] = el)"
                 class="shrink-0 w-[319px] lg:w-[920px] snap-center">
-                <div class="shrink-0 w-[301px] h-[219px] lg:w-[920px] lg:h-[480px] snap-center bg-[#FFFAF0] rounded-xl 
-                    flex flex-col items-start justify-start pt-[31px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
+                <div class="shrink-0 w-[301px] h-[219px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
+                    flex flex-col items-start pt-[31px] pb-[20px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
                     <p class="text-[#370F1E] font-crossfit font-bold text-[20px] lg:text-[52px] leading-[1.2]">{{
                         t.title }}
                     </p>
                     <p
-                        class="text-[#370F1E] font-DMSans font-regular text-[13px] lg:text-[36px] leading-[1.15] lg:mt-[14px]">
+                        class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[36px] leading-[1.15] lg:mt-[14px]">
                         {{
                             t.testimonial }}</p>
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">

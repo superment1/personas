@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
         ></div>
         <!-- Card -->
         <div
-          class="relative z-10 sm:max-w-[810px] max-w-[340px] rounded-2xl bg-[#370F1E] p-8 sm:p-12 shadow-xl"
+          class="relative z-10 lg:max-w-[810px] max-w-[340px] rounded-2xl bg-[#370F1E] p-8 lg:p-12 shadow-xl"
           role="document"
         >
         <div class="flex items-center gap-3">
@@ -97,9 +97,9 @@ onBeforeUnmount(() => {
             <path d="M44.2312 50.6975H42.7462C42.131 50.6975 41.6324 51.2071 41.6324 51.8357V52.5628C41.6324 53.1914 42.131 53.701 42.7462 53.701H44.2312C44.8464 53.701 45.345 53.1914 45.345 52.5628V51.8357C45.345 51.2071 44.8464 50.6975 44.2312 50.6975Z" fill="#E1DCCD"/>
           </svg>
           <div class="flex-col">
-            <div class="font-crossfit text-[37px] leading-none sm:text-[82px] text-[#FFDC03]">{{ title }}</div>
-            <div class="font-crossfit leading-none text-[24px] sm:text-[64px] text-[#fff]">{{ subtitle }}</div>
-            <div class="text-[11px] sm:text-[25px] pt-[23px] text-[#fff] font-normal font-gelasio italic leading-[1]">
+            <div class="font-crossfit text-[37px] leading-none lg:text-[82px] text-[#FFDC03]">{{ title }}</div>
+            <div class="font-crossfit leading-none text-[24px] lg:text-[64px] text-[#fff]">{{ subtitle }}</div>
+            <div class="text-[11px] lg:text-[25px] pt-[23px] text-[#fff] font-normal font-gelasio italic leading-[1]">
               <!-- Slot NOMEADO 'message'; se não vier slot, cai no fallback da prop -->
               <slot name="message">
                 <p v-if="message" v-html="message"></p>
@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
           <div class="mt-5 items-center gap-3">
             <slot name="actions">
               <button
-                  class="btn-attn w-full text-[25px] sm:text-[50px] rounded-[7px] sm:rounded-[15px] bg-[#FFDC03] text-[#370F1E] font-crossfit font-extrabold
+                  class="btn-attn w-full text-[25px] lg:text-[50px] rounded-[7px] sm:rounded-[15px] bg-[#FFDC03] text-[#370F1E] font-crossfit font-extrabold
                         hover:brightness-95
                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FFDC03]"
                   @click="onPrimary"

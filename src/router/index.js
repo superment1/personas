@@ -16,6 +16,7 @@ const routes = [
   { path: '/sleep2', name:'sleepbetter2',   component: () => import('../pages/sleepBetter2.vue')},
   { path: '/relax',    name:'superrelax',   component: () => import('../pages/superRelax.vue') },  
   { path: '/slim',    name:'superslim',   component: () => import('../pages/superSlim.vue') },  
+  { path: '/advetorial',    name:'advetorial',   component: () => import('../pages/adVetorial.vue') },  
 ]
 
 export const router = createRouter({
@@ -52,7 +53,8 @@ router.afterEach((to) => {
     vsl:'#6EC8F0',
     vsl2:'#6EC8F0',
     sleepbetter: '#E1DCCD',
-    sleepbetter2: '#E1DCCD' 
+    sleepbetter2: '#E1DCCD',
+    advetorial: '#370F1E',
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)

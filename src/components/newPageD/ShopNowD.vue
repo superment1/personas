@@ -331,7 +331,7 @@ function toggle(index) {
                 </ShopButton>
                 <div class="w-full flex flex-row items-center justify-center gap-4 mt-5">
                     <div class="w-[50%] flex flex-row items-center justify-end gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="26" viewBox="0 0 39 26" fill="none">
+                        <svg class="w-[55px] h-[40px]" xmlns="http://www.w3.org/2000/svg" width="39" height="26" viewBox="0 0 39 26" fill="none">
                             <path
                                 d="M38.6844 10.9442C38.6844 9.74998 38.3081 8.58189 37.5902 7.63461C36.4567 6.14025 34.6544 4.60893 33.1776 3.85273C32.7014 3.60938 32.1735 3.4859 31.6393 3.4859H28.6937V13.5265C28.6937 15.1001 26.9244 16.9965 25.3495 16.9965H10.3229L11.4804 17.4039C13.4236 18.243 14.6463 19.9302 15.1965 21.9582L23.8656 21.9419C24.2722 19.9329 25.6581 18.1907 27.5353 17.4039C31.1738 15.8789 35.1271 18.1294 35.9252 21.9447C37.1095 21.9519 38.6853 22.2646 38.6853 20.6504V10.9442H38.6844ZM35.8182 10.9217H30.521V5.82028H31.5688C33.916 5.82028 35.8182 7.74277 35.8182 10.115V10.9217Z"
                                 fill="#370F1E" />
@@ -352,7 +352,7 @@ function toggle(index) {
                             <br>Shipping
                         </p>
                     </div>
-                    <div class="w-[0.5px] h-[43px] bg-[#370F1E]"></div>
+                    <div class="w-[0.5px] h-[50px] bg-[#370F1E]"></div>
                     <div class="w-[50%] flex flex-row items-center justify-start gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="48" viewBox="0 0 33 48" fill="none">
                             <path

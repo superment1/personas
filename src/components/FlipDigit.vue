@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
-const props = defineProps({ value: [String, Number] })
+const props = defineProps({ 
+  value: [String, Number],
+  flipBg: {
+    type: String,
+    default: 'linear-gradient(180deg,#FFD91F 6%,#F3C81C 54%,#D7A90F 100%)'
+  },
+  fontSize: {
+    type: [String, Number],
+    default: '16px'
+  }
+})
 
 const pad  = (v: any) => String(v).padStart(2,'0')
 const curr = ref(pad(props.value))
@@ -49,8 +59,12 @@ watch(() => pad(props.value), (nv) => {
 </script>
 
 <template>
-  <div class="card relative w-full h-full [perspective:1200px]">
-
+  <div class="card relative w-full h-full [perspective:1200px]" 
+     :style="{
+      '--flip-bg': props.flipBg,
+      '--digit-size': typeof props.fontSize === 'number' ? props.fontSize + 'px' : props.fontSize
+    }"
+  >
     <div class="absolute inset-x-0 top-0 h-1/2 overflow-hidden z-0">
       <div class="face face-skin">
         <span class="digit absolute left-1/2 -translate-x-1/2 top-full -translate-y-1/2">{{ curr }}</span>
@@ -93,22 +107,26 @@ watch(() => pad(props.value), (nv) => {
        transform-style:preserve-3d; }
 
 .face-skin{ position:relative;
-  background:linear-gradient(180deg,#FFD91F 6%,#F3C81C 54%,#D7A90F 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.55),
-              inset 0 -2px 0 rgba(0,0,0,.15),
-              0 8px 16px rgba(0,0,0,.18);
+  background: var(--flip-bg, linear-gradient(180deg,#FFD91F 6%,#F3C81C 54%,#D7A90F 100%));
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.18);
 }
 
 .digit{
-  position:absolute; z-index:2;        
+  position:absolute;
+  z-index:2;        
   color:#fff;
-  font-weight:800;
-  font-size: 1em;     
-  line-height:.85;
-  text-shadow:0 2px 0 rgba(0,0,0,.18), 0 8px 12px rgba(0,0,0,.28);
+  font-size: var(--digit-size, 16px);  
+  line-height:1;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25), 0 2px 4px rgba(0,0,0,.25); 
   mix-blend-mode: normal;
-  pointer-events:none; user-select:none;
+  pointer-events:none; 
+  user-select:none;
+  letter-spacing: 0.5px;            /* mais respiro quando pequeno */
+  -webkit-font-smoothing: antialiased; /* renderização mais limpa */
+  mix-blend-mode: normal;
+
 }
+
 .anim-top    { animation: flipTop 300ms ease-in forwards; }
 .anim-bottom { animation: flipBottom 300ms ease-out 300ms forwards; }
 
