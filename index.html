@@ -41,6 +41,13 @@
         window.addEventListener('touchstart', loadAll, { passive:true });
       })();
     </script>
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TMKKCTK3');</script>
+    <!-- End Google Tag Manager -->
     <script>
       (function () {
         var color = location.pathname.includes('/sleep')
@@ -70,6 +77,12 @@
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6Z2ZN9H"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMKKCTK3"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="app"></div>
     <div id="splash-hero"
         style="position:fixed;inset:0;z-index:9999;overflow:hidden;background:#E1DCCD;pointer-events:none">
@@ -128,6 +141,7 @@
           privacypolicy:  { avif: "/assets/posterPrivacyPolicy.avif", webp: "/assets/posterPrivacyPolicy.webp" },
           sleep:          { avif: "/assets/poster_sleep.avif",        webp: "/assets/poster_sleep.webp" },
           sleep2:         { avif: "/assets/poster_sleep.avif",        webp: "/assets/poster_sleep.webp" },
+          advetorial:     { avif: "/assets/poster_advetorial.avif",   webp: "/assets/poster_advetorial.webp" },
         };
         const assets = splashMap[route] || splashMap['sleepnatural'];
         splash.innerHTML = `

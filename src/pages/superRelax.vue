@@ -386,9 +386,9 @@ onBeforeUnmount(() => {
               </ShopButton>
             </div>
           </div>
-          <div class="px-6">
+          <div class="px-6 flex justify-center">
             <div
-              class="w-[320px] lg:w-[500px] justify-self-center lg:mt-8 mt-[12px] flex flex-row items-center justify-between px-5">
+              class="w-[320px] lg:w-[500px] lg:mt-8 mt-[12px] flex flex-row items-center justify-between px-5">
               <div class="flex flex-row items-center gap-6 w-[200px] lg:w-[210px]">
                 <svg class="lg:w-[60px] lg:h-[50px]" xmlns="http://www.w3.org/2000/svg" width="32" height="26"
                   viewBox="0 0 43 28" fill="none">
