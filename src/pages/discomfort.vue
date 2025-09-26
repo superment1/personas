@@ -114,14 +114,15 @@ useSeo({
                     formula that
                     feels good
                     to take:</p>
-                <div class="col-span-2 grid grid-cols-1 mt-[16px] gap-[23px] lg:w-[804px] lg:grid-cols-6">
+                <div
+                    class="col-span-2 grid grid-cols-1 mt-[16px] gap-[23px] lg:w-[822px] lg:grid-cols-6 lg:gap-y-[17px]">
                     <div
                         class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col lg:flex-col">
                             <img src="@/assets/image/discomfort/digestion.png" alt="">
                             <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Soothes
                                 digestion
-                                <br>and
+                                <br class="block lg:hidden">and
                                 relieves reflux
                             </p>
                         </div>
@@ -135,7 +136,8 @@ useSeo({
                         class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/face.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Reduces
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold lg:w-[230px]">
+                                Reduces
                                 coughing
                                 and throat dryness
                             </p>
@@ -149,7 +151,8 @@ useSeo({
                         class="mt-[1px] lg:mt-0 p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/psyc.png" alt="">
-                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Calms the
+                            <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold lg:w-[230px]">
+                                Calms the
                                 mind
                                 and eases anxiety
                             </p>
@@ -160,7 +163,7 @@ useSeo({
                             so you can unwind and fall asleep faster.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:h-[175px] lg:col-span-3">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/restle.png" alt="">
                             <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Relieves
@@ -171,10 +174,10 @@ useSeo({
                         <p class="font-DMSans text-[16px] leading-[1.12] text-[#525252] tracking-tight"><span
                                 class="italic">Corydalis</span> helps reduce minor aches and body agitation that
                             make it
-                            hard <br>to stay asleep.</p>
+                            hard <br class="block lg:hidden">to stay asleep.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-3">
+                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:h-[175px] lg:col-span-3">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/cloud.png" alt="">
                             <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Supports
@@ -191,7 +194,7 @@ useSeo({
                 <div class="col-span-2 w-full justify-items-center">
                     <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                         :showIcon=false
-                        class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px]">
+                        class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px] lg:mt-[27px]">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
@@ -202,7 +205,7 @@ useSeo({
             </div>
         </div>
         <div
-            class="w-full h-full flex flex-col items-center justify-end pt-[551px] lg:pt-[455px] pb-[100px] bg-[#370F1E] rounded-3xl lg:grid lg:grid-cols-2">
+            class="w-full h-full flex flex-col items-center justify-end pt-[551px] lg:pt-[427px] pb-[100px] bg-[#370F1E] rounded-3xl lg:grid lg:grid-cols-2">
             <div class="w-[316px] flex flex-col items-center justify-end lg:w-full lg:items-end ">
                 <p
                     class="text-[#FFC35A] font-crossfit-light font-black text-[30px] leading-[1.1] uppercase block lg:hidden">
@@ -214,7 +217,7 @@ useSeo({
                     finally.
                 </p>
                 <div
-                    class="relative h-[295px] w-[316px] flex items-start justify-start overflow-hidden lg:right-[80px]">
+                    class="relative h-[295px] w-[316px] flex items-start justify-start overflow-hidden lg:right-[60px]">
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
                         class="w-[268px] absolute z-10 -top-[42px] right-[100px]" />
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
@@ -230,7 +233,8 @@ useSeo({
                 <p class="text-[#FFF] font-DMSanss text-[20px] leading-[1] lg:text-[24px] lg:mt-3 text-start lg:w-full">
                     By calming the nervous <br class="hidden lg:block">system and deepening sleep
                 </p>
-                <p class="text-[#FFF] font-DMSanss text-[16px] lg:text-[20px] leading-[1] mt-2 lg:w-full lg:mt-3">Super
+                <p class="text-[#FFF] font-DMSanss text-[16px] lg:text-[20px] leading-[1] mt-2 lg:w-full lg:mt-[8px]">
+                    Super
                     Natural
                     Sleep
                     <span class="font-extralight">
@@ -261,7 +265,7 @@ useSeo({
                         <div
                             class="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                             <img src="@/assets/image/sleepWomam/marshmallow-root.png" alt="Marshmallow Root"
-                                class="max-w-full max-h-full object-contain" />
+                                class="max-w-full max-h-full lg:w-32 object-contain" />
                         </div>
                         <div class="flex flex-col items-start md:items-center justify-start md:w-[200px]">
                             <h3 class="text-[#525252] font-crossfit text-[20px] md:text-[24px] md:h-[32px]">Marshmallow
@@ -310,7 +314,7 @@ useSeo({
                         <div
                             class="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
                             <img src="@/assets/image/sleepWomam/corydalis.png" alt="Corydalis"
-                                class="max-w-full max-h-full object-contain" />
+                                class="max-w-full max-h-full lg:w-32 object-contain" />
                         </div>
                         <div class="flex flex-col items-start md:items-center justify-start">
                             <h3 class="text-[#525252] font-crossfit text-[20px] md:text-[24px] md:h-[32px]">Corydalis
@@ -325,13 +329,14 @@ useSeo({
                         <div
                             class="w-14 h-14 md:w-32 md:h-32 flex items-center justify-center mr-6 flex-shrink-0 md:mb-3 md:mr-0">
                             <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
-                                class="w-12 h-12 object-contain" />
+                                class="w-12 h-12 lg:w-24 lg:h-24 object-contain" />
                         </div>
                         <div class="flex flex-col items-start md:items-center justify-start">
                             <h3 class="text-[#525252] font-crossfit text-[20px] md:text-[24px] md:h-[32px]">Prickly Pear
                             </h3>
-                            <p class="text-[#525252] md:text-center text-[16px] leading-[1.08em] md:text-[18px]">
-                                supports inflammation <br>balance & sleep rhythm
+                            <p
+                                class="text-[#525252] md:text-center text-[16px] leading-[1.08em] md:text-[18px] lg:w-[200px]">
+                                supports inflammation <br class="block lg:hidden">balance & sleep rhythm
                             </p>
                         </div>
                     </div>
