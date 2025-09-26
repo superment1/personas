@@ -21,7 +21,7 @@ useSeo({
             <Header color="#370F1E" :imageSrc="logoHeader" />
             <SleepSection />
         </div>
-        <div class="w-full h-[60px] bg-[#370F1E] flex items-center justify-center">
+        <div class="w-full h-[60px] bg-[#370F1E] flex items-start justify-center pt-[16px] lg:pt-[2px] lg:items-center">
             <span
                 class="font-crossfit-light text-[#E1DCCD] text-[20px] lg:text-[28px] font-bold leading-[1.1] tracking-[0.4px]">CLEAN
             </span>
