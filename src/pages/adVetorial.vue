@@ -161,7 +161,7 @@ useSeo({
           <img class="lg:hidden" src="/assets/bottle-selo.webp" alt="bottle">
           <img class="hidden lg:block w-[607px]" src="/assets/bottle-selo-desk.webp" alt="bottle">
         </div>
-      <ShopButton type="button" id="buy-button" productId="prod_T2jNgj5cCjXcvG" textColorClass="text-[#370F1E]"
+      <ShopButton type="button" id="buy-button" paymentLink="/relax" textColorClass="text-[#370F1E]"
         :showIcon="false"
         class="botao-shop font-bold font-crossfit !m-0 text-[20px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
         Try Super Relax Risk-Free

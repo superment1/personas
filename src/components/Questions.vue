@@ -13,18 +13,18 @@ const anchorId ='shop-relax'
 </script>
 
 <template>
-    <section class="bg-[#FFFAF0] justify-items-center py-[36px] lg:py-[60px] px-[35px] w-full">
-    <h2 class="text-[32px] lg:text-[60px] leading-[1] px-[30px] text-center text-[#370F1E] font-crossfit mb-4 lg:mb-12">{{ title }}</h2>
+    <section class="bg-[#FFFAF0] justify-items-center py-[36px] lg:py-[60px] px-[46px] w-full">
+    <h2 class="text-[32px] lg:text-[60px] leading-[1] px-[50px] text-center text-[#370F1E] font-crossfit mb-6 lg:mb-12">{{ title }}</h2>
 
     <ul class="font-sans border-t border-current max-w-[950px]">
-      <li v-for="(item, i) in items" :key="i" class="pt-[40px]">
-        <p class="text-sm lg:text-[26px] font-bold leading-[1] text-[#370F1E]">{{ item.question }}</p>
-        <p class="text-sm lg:text-[26px] border-b pt-[30px] pb-[38px] leading-[1] border-current text-[#370F1E]">{{ item.resp }}</p>
+      <li v-for="(item, i) in items" :key="i" class="lg:pt-[40px] pt-[12px]">
+        <p class="text-[13px] lg:text-[26px] font-bold leading-[1] text-[#370F1E]">{{ item.question }}</p>
+        <p class="text-[13px] lg:text-[26px] border-b pt-[19px] pb-[14px] leading-[1] border-current text-[#370F1E]">{{ item.resp }}</p>
       </li>
     </ul>
     <div class="flex mt-6 lg:mt-[60px] lg:w-[650px]  justify-center">
         <ShopButton 
-            :anchorId="anchorId" 
+            paymentLink="/relax" 
             title="Try Super Relax Risk-Free"  
             textColorClass="text-[#370F1E]"
             iconColorClass="text-[#370F1E]"
