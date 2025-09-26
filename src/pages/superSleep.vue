@@ -10,6 +10,7 @@ import BannerModal from '../components/BannerModal.vue';
 import VslBadges from '../components/VslBadges.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
+import Ingredients from '../components/sleepSupermentComponents/Ingredients.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
@@ -175,7 +176,6 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
-
   </section>
   <section class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande">
     <picture class="absolute inset-0 z-0 w-full h-full">
@@ -233,7 +233,15 @@ onBeforeUnmount(() => {
 
     </div>
   </section>
-  <section class="ingredients relative z-10 bg-[#FFFAF0]">
+  <section>
+    <Ingredients 
+      bgImage="/assets/ingredientBg.webp"
+      primary="The ancient American secret for restorative sleep and vitality."
+      secondary="Now science-backed and boosted specially for you."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality in a long term."
+      symbol="/assets/symbol.webp"/>
+  </section>
+  <!-- <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title">
       <p>The ingredients you can trust.</p>
     </div>
@@ -246,7 +254,7 @@ onBeforeUnmount(() => {
         <IngredientsCarousel />
       </LazyIsland>
     </div>
-  </section>
+  </section> -->
   <LazyIsland>
     <Stress />
   </LazyIsland>

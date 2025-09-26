@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
       </picture>
 
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
-        <div class="px-12">
+        <div class="px-[50px]">
           <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
             <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful Plant-Based
              <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
@@ -312,8 +312,8 @@ onBeforeUnmount(() => {
             <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">Sleep
                 Peacefully All Night.</span> </p>
           </div>
-          <div class="flex flex-col px-6 lg:px-12">
-            <div class="flex pt-[24px] pb-[20px] lg:pb-[22px] gap-[5px] ">
+          <div class="flex flex-col px-[50px] lg:px-12">
+            <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">
               <svg class="lg:w-[30px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" width="22" height="90"
                 viewBox="0 0 19 81" fill="none">
                 <path
@@ -324,16 +324,8 @@ onBeforeUnmount(() => {
                   stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
                 <path
                   d="M12.9286 44.3215C12.8581 44.0455 12.4958 43.9164 12.2291 44.0633C11.4995 44.4683 10.6441 44.6998 9.71819 44.6998C8.79232 44.6998 7.93689 44.4639 7.20726 44.0633C6.93553 43.9119 6.57827 44.0455 6.50782 44.3215C6.31661 45.0604 5.89392 45.7637 5.24481 46.3424C4.59065 46.921 3.80064 47.2905 2.96031 47.4596C2.64833 47.522 2.5024 47.8425 2.66846 48.0784C3.12636 48.7238 3.38802 49.4805 3.38802 50.2996C3.38802 51.1186 3.12133 51.8754 2.66846 52.5208C2.49737 52.7612 2.64833 53.0772 2.96031 53.1395C3.79561 53.3087 4.59065 53.6826 5.24481 54.2568C5.89896 54.831 6.31661 55.5343 6.50782 56.2777C6.57827 56.5537 6.94057 56.6828 7.20726 56.5359C7.93689 56.1308 8.79232 55.8993 9.71819 55.8993C10.6441 55.8993 11.4995 56.1353 12.2291 56.5359C12.5008 56.6872 12.8581 56.5537 12.9286 56.2777C13.1198 55.5388 13.5425 54.8355 14.1916 54.2568C14.8407 53.6781 15.6357 53.3087 16.4761 53.1395C16.7881 53.0772 16.934 52.7567 16.7679 52.5208C16.31 51.8754 16.0484 51.1186 16.0484 50.2996C16.0484 49.4805 16.3151 48.7238 16.7679 48.0784C16.939 47.838 16.7881 47.522 16.4761 47.4596C15.6408 47.2905 14.8457 46.9166 14.1916 46.3424C13.5374 45.7637 13.1198 45.0648 12.9286 44.3215Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.79494 66L5.14311 74.5109C5.07769 74.7157 5.25381 74.916 5.49031 74.916H7.9308C8.1673 74.916 8.33839 75.1119 8.278 75.3166L7.09047 79.4074C6.99486 79.7368 7.46283 79.9505 7.71443 79.6923L14.2157 72.2319C14.417 72.0226 14.2509 71.7066 13.944 71.7066H11.3525C11.0808 71.7066 10.9047 71.4484 11.0355 71.2348L14.1452 66.4718C14.2761 66.2582 14.105 66 13.8282 66H7.79494Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.30681 78.6684C4.56944 77.8716 2.59692 75.5925 2.59692 72.9039C2.59692 70.2153 4.63989 67.8605 7.45274 67.0994"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M13.2496 67.8473C15.0963 68.9334 16.314 70.7941 16.314 72.904C16.314 76.2558 13.2446 78.9711 9.45551 78.9711C9.12844 78.9711 8.80639 78.9489 8.48938 78.9133"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />             
+               
                 <path
                   d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z"
                   stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
@@ -373,9 +365,6 @@ onBeforeUnmount(() => {
                 <li>
                   <p>Mood, Focus & Energy </p>
                 </li>
-                <li>
-                  <p>Calm by Day, Rest by Night </p>
-                </li>
               </ul>
             </div>
             <div class="">
@@ -386,9 +375,9 @@ onBeforeUnmount(() => {
               </ShopButton>
             </div>
           </div>
-          <div class="px-6 flex justify-center">
+          <div class="px-[50px] flex justify-center">
             <div
-              class="w-[320px] lg:w-[500px] lg:mt-8 mt-[12px] flex flex-row items-center justify-between px-5">
+              class="w-full lg:w-[500px] lg:mt-8 mt-[12px] flex flex-row items-center justify-between">
               <div class="flex flex-row items-center gap-6 w-[200px] lg:w-[210px]">
                 <svg class="lg:w-[60px] lg:h-[50px]" xmlns="http://www.w3.org/2000/svg" width="32" height="26"
                   viewBox="0 0 43 28" fill="none">
@@ -460,7 +449,7 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E] relative">
-    <div class="sm:hidden px-[30px] pt-[26px] pb-[36px]">
+    <div class="sm:hidden px-[40px] pt-[26px] pb-[36px]">
       <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted-2">
     </div>
     <div class="hidden px-40 py-20 sm:flex">
