@@ -162,7 +162,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
                         t.title }}
                     </p>
                     <p
-                        class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[36px] leading-[1.15] lg:mt-[14px]">
+                        class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">
                         {{
                             t.testimonial }}</p>
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">

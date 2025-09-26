@@ -41,7 +41,8 @@ const props = defineProps({
   showIcon: {
     type: Boolean,
     default: true
-  }
+  },
+  to: String
 })
 
 const attrs = useAttrs()
@@ -95,6 +96,10 @@ const handleClick = async () => {
 
   if (props.paymentLink) {
     window.location.href = props.paymentLink
+    return
+  }
+  if (props.to) {
+    router.push(props.to)
     return
   }
 

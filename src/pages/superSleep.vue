@@ -350,7 +350,7 @@ onBeforeUnmount(() => {
     <NotificationDisplay />
   </LazyIsland>
   <!-- <BannerModal /> -->
-  <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
+  <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
     :disable-backdrop-close="true" :disable-esc="false">
     <template #message>
       <p>
@@ -358,7 +358,7 @@ onBeforeUnmount(() => {
           </span> to shop now <br> — today only.</span>
       </p>
     </template>
-  </BannerRetention>
+  </BannerRetention> -->
 </template>
 <style>
 html {
