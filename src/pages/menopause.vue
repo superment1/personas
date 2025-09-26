@@ -282,7 +282,7 @@ useSeo({
         </div>
         <div class="flex flex-col items-center justify-start gap-6 pb-[20px] lg:grid grid-cols-3">
             <div
-                class="w-[316px] lg:w-[302px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="98" height="85" viewBox="0 0 98 85" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2323)">
@@ -337,7 +337,7 @@ useSeo({
                 </p>
             </div>
             <div
-                class="w-[316px] lg:w-[302px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="92" height="92" viewBox="0 0 92 92" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2328)">
@@ -390,7 +390,7 @@ useSeo({
                 </p>
             </div>
             <div
-                class="w-[316px] lg:w-[302px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="88" height="92" viewBox="0 0 88 92" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2333)">
