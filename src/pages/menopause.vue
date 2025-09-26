@@ -33,7 +33,7 @@ useSeo({
                     <div class="flex justify-center lg:col-span-1">
                         <div class="-mt-16 -ml-12 lg:-mt-18 lg:-ml-2">
                             <img src="@/assets/image/sleepWomam/product.png" alt="Super Natural Sleep"
-                                class="w-[260px] h-[294px] lg:w-full lg:h-full object-cover">
+                                class="w-[260px] h-[294px] lg:w-[394px] lg:h-[432px] object-cover">
                         </div>
                     </div>
                     <div
@@ -66,7 +66,7 @@ useSeo({
                 </div>
             </div>
         </div>
-        <div class="w-[316px] lg:w-full grid grid-cols-1 pt-[30px] pb-[60px] lg:grid-cols-2 lg:pt-[20px]">
+        <div class="w-[316px] lg:w-full grid grid-cols-1 pt-[30px] pb-[60px] lg:grid-cols-2 lg:pt-[8px]">
             <p class="block lg:hidden font-gelasio italic text-[28px] leading-[1.1] text-[#370F1E]">You’re not just
                 aging. </p>
             <p class="block lg:hidden font-gelasio italic text-[28px] leading-[1.1] text-[#6EC8F0]">Your sleep is
@@ -282,7 +282,7 @@ useSeo({
         </div>
         <div class="flex flex-col items-center justify-start gap-6 pb-[20px] lg:grid grid-cols-3">
             <div
-                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 lg:bg-fuchsia-50/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="98" height="85" viewBox="0 0 98 85" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2323)">
@@ -337,7 +337,7 @@ useSeo({
                 </p>
             </div>
             <div
-                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 lg:bg-fuchsia-50/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="92" height="92" viewBox="0 0 92 92" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2328)">
@@ -390,7 +390,7 @@ useSeo({
                 </p>
             </div>
             <div
-                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] h-[164px] lg:h-[198px] pb-[20px] bg-blue-100/20 lg:bg-fuchsia-50/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg class="block lg:hidden" width="88" height="92" viewBox="0 0 88 92" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2333)">
