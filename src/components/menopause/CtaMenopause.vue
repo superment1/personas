@@ -2,7 +2,7 @@
     <!-- Final CTA Section -->
     <section id="cta-section" class="relative rounded-t-3xl bg-[#63CFF2]">
         <div
-            class="w-full px-0 pt-[44px] h-[877px] lg:h-[650px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/discomfort/banner-produto-1-desk.webp')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
+            class="w-full px-0 pt-[44px] h-[877px] lg:h-[615px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/menopause/banner-produto-1-desk.webp')] bg-cotain bg-[90%_00%] lg:bg-[90%_30%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-[full] flex items-center justify-center">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[316px]">
@@ -42,23 +42,27 @@
                     <div class="col-span-1 flex flex-col items-end justify-start">
                         <div class="flex flex-col items-center justify-end relative">
                             <img src="@/assets/image/discomfort/price-thin.png"
-                                class="w-[123px] h-[236px] lg:w-[133px] lg:h-[255px] left-[40px] top-[80px] relative z-10" />
+                                class="w-[123px] h-[236px] lg:w-[133px] lg:h-[255px] left-[35px] top-[50px] relative z-10" />
                             <img src="@/assets/image/discomfort/free.png"
-                                class="h-[90px] w-[93px] ml-[220px] relative z-1 top-[55px] right-[50px]" />
+                                class="h-[90px] w-[93px] ml-[220px] relative z-1 top-[25px] right-[55px]" />
                         </div>
                     </div>
-                    <div class="col-span-1 flex flex-col items-start justify-center pt-[80px]">
-                        <p class="font-crossfit text-[#FFC35A] text-[40px] font-black leading-[1.1]">SHOP NOW</p>
-                        <p class="font-DMSans text-[28px] leading-[1.1] text-[#370F1E] mt-2">Comfortable, restorative
-                            sleep
-                            <br>starts here
+                    <div class="col-span-1 flex flex-col items-start justify-center pt-[20px]">
+                        <p class="font-gelasio italic text-[#FFF] text-[32px] font-black leading-[1.1]">SHOP NOW</p>
+                        <p class="font-gelasio italic text-[48px] leading-[1.1] text-[#370F1E] mt-[12px]">Your best
+                            nights
                         </p>
-                        <p class="font-crossfit text-[#FFF] text-[52px] leading-[1.1] uppercase font-black mt-2">No more
-                            reflux. No <br>more restlessness. </p>
-                        <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-[140px] mt-2" />
+                        <p class="font-gelasio italic text-[28px] leading-[1.1] text-[#FFF] mt-[2px]">and brighter
+                            mornings
+                            <br>- start now
+                        </p>
+                        <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-[140px] mt-[7px]" />
+                        <p class="font-gelasio italic text-[28px] leading-[1.1] text-[#370F1E] mt-[26px]">Try it today
+                            with
+                            our <br>First Trial Offer.</p>
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
-                            class="w-[343px] h-[50px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[20px] mt-[24px] ">
+                            class="w-[343px] h-[50px] bg-[#E6B4FF] rounded-full font-bold hover:bg-[#E6B4FF]/70 transition font-DMSans text-[20px] mt-[25px] ">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
