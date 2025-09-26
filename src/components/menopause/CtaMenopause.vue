@@ -5,7 +5,7 @@
             class="w-full px-0 pt-[44px] h-[877px] lg:h-[650px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/discomfort/banner-produto-1-desk.webp')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-[full] flex items-center justify-center">
                 <!-- Mobile Layout -->
-                <div class="block md:hidden w-[330px]">
+                <div class="block md:hidden w-[316px]">
                     <p class="text-[#FFF] font-gelasio text-[32px] leading-[1.1] italic font-bold">
                         SHOP NOW
                     </p>

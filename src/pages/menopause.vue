@@ -29,30 +29,31 @@ useSeo({
         </div>
         <div class="pb-8 pt-12 bg-white">
             <div class="w-full flex flex-col items-center justify-start">
-                <div class="grid lg:grid-cols-5 flex flex-col items-center justify-center lg:items-start">
-                    <div class="flex justify-center lg:col-span-2">
+                <div class="grid lg:grid-cols-2 flex flex-col items-center justify-center lg:items-start lg:mr-[50px]">
+                    <div class="flex justify-center lg:col-span-1">
                         <div class="-mt-16 -ml-12 lg:-mt-18 lg:-ml-2">
                             <img src="@/assets/image/sleepWomam/product.png" alt="Super Natural Sleep"
                                 class="w-[260px] h-[294px] lg:w-full lg:h-full object-cover">
                         </div>
                     </div>
                     <div
-                        class="flex flex-col items-start justify-start lg:col-span-3 w-[316px] -mt-2 lg:w-[398px] lg:items-start">
-                        <p class="font-gelasio italic font-normal text-[32px] text-[#370f1e] leading-[1] text-start">
+                        class="flex flex-col items-start justify-start lg:col-span-1 w-[316px] -mt-2 lg:w-[398px] lg:items-start">
+                        <p
+                            class="font-gelasio italic font-normal text-[32px] text-[#370f1e] leading-[1] text-start lg:text-[40px]">
                             Super Natural <br>Sleep helps you:
                         </p>
                         <p
                             class="text-[20px] font-normal text-[#525252] lg:text-[1.5rem] leading-[1] h-[60px] mt-2 lg:h-[65px] w-[316px] lg:w-[370px] lg:text-[24px]">
                             fall asleep, stay asleep, and wake up truly rested — without
                             melatonin, meds, or next-day fog.</p>
-                        <div class="w-[316px] h-[1px] bg-[#D78CFF] mt-3"></div>
+                        <div class="w-[316px] h-[1px] bg-[#D78CFF] mt-3 lg:w-[370px] lg:mt-4 lg:bg-[#FFA50A]"></div>
                         <p
                             class="text-[#726f6f] text-[16px] lg:text-[20px] font-light leading-[1.2rem] mx-0 mt-[13px] w-[316px] lg:w-[390px] lg:leading-[1.2em]">
                             Clean, non-sedative formula. No melatonin. Made in FDA & GMP-certified U.S. labs.
                         </p>
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
-                            class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] mt-[24px] ">
+                            class="w-[316px] text-[18px] lg:w-[347px] lg:text-[20px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans mt-[24px] ">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -65,109 +66,147 @@ useSeo({
                 </div>
             </div>
         </div>
-        <div class="w-[316px] grid grid-cols-1 pt-[30px] pb-[60px]">
-            <p class="font-gelasio italic text-[28px] leading-[1.1] text-[#370F1E]">You’re not just aging. </p>
-            <p class="font-gelasio italic text-[28px] leading-[1.1] text-[#6EC8F0]">Your sleep is changing. </p>
-            <p class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-3">You go to bed tired, but
+        <div class="w-[316px] lg:w-full grid grid-cols-1 pt-[30px] pb-[60px] lg:grid-cols-2 lg:pt-[20px]">
+            <p class="block lg:hidden font-gelasio italic text-[28px] leading-[1.1] text-[#370F1E]">You’re not just
+                aging. </p>
+            <p class="block lg:hidden font-gelasio italic text-[28px] leading-[1.1] text-[#6EC8F0]">Your sleep is
+                changing. </p>
+            <p class="block lg:hidden font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-3">You go to
+                bed tired, but
                 wake up
                 hot, restless, or wide awake at 3AM. Your hormones are shifting, and
                 it’s disrupting your sleep.</p>
-            <img src="@/assets/image/menopause/menopause.webp" alt="menopause" class="w-full h-[252px] rounded mt-5">
-            <span class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-3 font-semibold">Super
-                Natural Sleep
-                <span class="font-light">
-                    was
-                    made for you. It calms your mind, eases tension, and helps you sleep deeply — all
-                    night, naturally.
+            <div class="col-span-1 flex flex-col items-end justify-start">
+                <img src="@/assets/image/menopause/menopause.webp" alt="menopause"
+                    class="w-full h-[252px] lg:w-[477px] lg:h-[383px] rounded mt-5"></img>
+            </div>
+            <div class="mt-3 col-span-1 flex flex-col items-start justify-start lg:pt-[43px] lg:pl-[40px]">
+                <p class="hidden lg:block font-gelasio italic text-[40px] leading-[1.08] text-[#370F1E]">You’re not just
+                    aging </p>
+                <p class="hidden lg:block font-gelasio italic text-[32px] leading-[1.10] text-[#6EC8F0]">— your sleep is
+                    changing. </p>
+                <p
+                    class="hidden lg:block font-DMSans text-[20px] text-extralight leading-[1.2] text-[#525252] tracking lg:w-[444px] mt-[12px]">
+                    You go to bed tired, but wake up hot, restless, or wide awake at 3AM. Your hormones are shifting,
+                    and it’s disrupting your sleep.</p>
+                <span
+                    class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] font-semibold lg:text-[20px] lg:w-[444px] mt-[12px]">Super
+                    Natural Sleep
+                    <span class="font-light">
+                        was
+                        made for you. It calms your mind, eases tension, and helps you sleep deeply — all
+                        night, naturally.
+                    </span>
                 </span>
-            </span>
-            <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]" :showIcon=false
-                class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] mt-[36px] ">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
-                        fill="#083D4F" />
-                </svg>
-                Shop: First Trial Special Offer
-            </ShopButton>
+                <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
+                    :showIcon=false
+                    class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] mt-[36px] lg:mt-[26px]">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
+                            fill="#083D4F" />
+                    </svg>
+                    Shop: First Trial Special Offer
+                </ShopButton>
+            </div>
         </div>
         <div
             class="pt-[36px] pb-[44px] md:pt-16 bg-[#FBEFFF] flex flex-col items-center justify-center  relative z-20 rounded-3xl w-full lg:pt-[40px] lg:pb-[40px]">
-            <div class="w-full flex flex-col items-center justify-center md:w-[952px]">
+            <div class="w-full flex flex-col items-center justify-center md:w-full">
                 <p
-                    class="font-gelasio italic text-[30px] leading-[1.11] md:text-[40px] text-[#370F1E] text-center mb-2 md:mb-12 lg:mb-6 mx-8 w-[356px] md:w-[700px]">
+                    class="font-gelasio italic text-[30px] leading-[1.11] text-[#370F1E] text-center mb-2 md:mb-12 lg:mb-6 mx-8 w-[356px] md:w-full">
                     Carefully chosen ingredients for deep, restful sleep:
                 </p>
 
-                <div class=" flex flex-col justify-start items-center gap-1 w-full ">
+                <div
+                    class=" flex flex-col justify-start items-center gap-1 w-full lg:flex-row lg:justify-center lg:gap-6">
                     <div
-                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] inline-flex justify-center items-center gap-4">
-                        <div class="w-14 h-14 relative">
-                            <img class="w-14 h-14 left-[3px] top-[1.71px] absolute"
+                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] lg:h-[270px] lg:w-[168px] inline-flex justify-center items-center lg:justify-start gap-4 lg:gap-0 lg:flex-col lg:border-0">
+                        <div class="w-14 h-14 lg:w-32 lg:h-32 relative">
+                            <img class="w-14 h-14 lg:w-28 lg:h-28 left-[3px] top-[1.71px] absolute"
                                 src="@/assets/image/sleepWomam/passionflower.png" alt="Passionflower" />
                         </div>
-                        <div class="w-56 inline-flex flex-col justify-start items-start gap-1">
-                            <div class="justify-start font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
+                        <div
+                            class="w-56 inline-flex flex-col justify-start items-start lg:justify-start lg:items-center gap-1 lg:gap-0">
+                            <div class="justify-center font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
                                 Passionflower</div>
-                            <div class="justify-start font-DMSans text-[16px] leading-[1.15] text-[#525252]">
-                                Calms a racing mind and supports emotional balance, so you can fall asleep peacefully.
+                            <div
+                                class="justify-center font-DMSans text-[16px] leading-[1.15] text-[#525252] lg:text-center">
+                                Calms a racing mind <br class="hidden lg:block">and supports <br
+                                    class="hidden lg:block">emotional balance, <br class="hidden lg:block">so you can
+                                fall asleep peacefully.
                             </div>
                         </div>
                     </div>
                     <div
-                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] inline-flex justify-center items-center gap-4">
-                        <img class="w-14 h-14" src="@/assets/image/sleepWomam/california-poppy.png"
+                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] lg:h-[270px] lg:w-[168px] inline-flex justify-center items-center lg:justify-start gap-4 lg:flex-col lg:border-0">
+                        <img class="w-14 h-14 lg:w-28 lg:h-28" src="@/assets/image/sleepWomam/california-poppy.png"
                             alt="California Poppy" />
-                        <div class="w-56 inline-flex flex-col justify-start items-start gap-1">
-                            <div class="justify-start font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
+                        <div
+                            class="w-56 inline-flex flex-col justify-start items-start lg:justify-start lg:items-center gap-1 lg:gap-0">
+                            <div class="justify-center font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
                                 California Poppy</div>
-                            <div class="justify-start font-DMSans text-[16px] leading-[1.15] text-[#525252]">
-                                Relaxes your body and eases restlessness, helping you stay asleep longer.</div>
+                            <div
+                                class="justify-center font-DMSans lg:text-center text-[16px] leading-[1.15] text-[#525252]">
+                                Relaxes your body and <br class="hidden lg:block">eases restlessness, <br
+                                    class="hidden lg:block">helping you stay <br class="hidden lg:block">asleep longer.
+                            </div>
                         </div>
                     </div>
                     <div
-                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] inline-flex justify-center items-center gap-4">
-                        <div class="w-14 h-14 relative overflow-hidden">
-                            <div class="w-14 h-18   absolute overflow-hidden">
-                                <img class="w-20 h-18 origin-top-left"
+                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] lg:h-[270px] lg:w-[185px] inline-flex justify-center items-center lg:justify-start gap-4 lg:flex-col lg:border-0">
+                        <div class="w-14 h-14 lg:w-32 lg:h-28 relative overflow-hidden">
+                            <div class="w-14 h-18 lg:w-32 lg:h-28 absolute overflow-hidden">
+                                <img class="w-20 h-18 lg:w-28 lg:h-28 origin-top-left"
                                     src="@/assets/image/sleepWomam/marshmallow-root.png" alt="Marshmallow Root" />
                             </div>
                         </div>
-                        <div class="w-56 inline-flex flex-col justify-start items-start gap-1">
-                            <div class="justify-start font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
+                        <div
+                            class="w-56 inline-flex flex-col justify-start items-start lg:justify-center lg:items-center gap-1 lg:gap-0">
+                            <div class="justify-center font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
                                 Marshmallow Root</div>
-                            <div class="justify-start font-DMSans text-[16px] leading-[1.15] text-[#525252]">
-                                Soothes the throat and digestion, easing discomfort that can wake you in the night.
+                            <div
+                                class="justify-center font-DMSans lg:text-center text-[16px] leading-[1.15] text-[#525252]">
+                                Soothes the throat <br class="hidden lg:block">and digestion, <br
+                                    class="hidden lg:block">easing discomfort <br class="hidden lg:block">that can wake
+                                you in <br class="hidden lg:block">the night.
                             </div>
                         </div>
                     </div>
                     <div
-                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] inline-flex justify-center items-center gap-4">
-                        <div class="w-16 h-16 relative overflow-hidden">
-                            <img class="w-16 h-16 left-[-8px]  absolute" src="@/assets/image/sleepWomam/corydalis.png"
-                                alt="Corydalis" />
+                        class="px-3.5 py-2 border-b-2 border-blue-100 w-[316px] lg:h-[270px] lg:w-[168px] inline-flex justify-center items-center lg:justify-center gap-4 lg:flex-col lg:border-0">
+                        <div class="w-16 h-16 lg:w-24 lg:h-24 relative overflow-hidden">
+                            <img class="w-16 h-16 lg:w-24 lg:h-24 left-[-8px]  absolute"
+                                src="@/assets/image/sleepWomam/corydalis.png" alt="Corydalis" />
                         </div>
-                        <div class="w-56 inline-flex flex-col justify-start items-start gap-1">
-                            <div class="justify-start font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
+                        <div
+                            class="w-56 inline-flex flex-col justify-start items-start lg:justify-center lg:items-center gap-1 lg:gap-0 lg:mt-1">
+                            <div class="justify-center font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
                                 Corydalis</div>
-                            <div class="justify-start font-DMSans text-[16px] leading-[1.15] text-[#525252]">
-                                Eases minor aches and tension, so your body can fully let go and rest.</div>
+                            <div
+                                class="justify-center font-DMSans lg:text-center text-[16px] leading-[1.15] text-[#525252]">
+                                Eases minor <br class="hidden lg:block">aches and <br class="hidden lg:block">tension,
+                                so your <br class="hidden lg:block">body can fully <br class="hidden lg:block">let go
+                                and rest.</div>
                         </div>
                     </div>
-                    <div class="px-3.5 flex flex-col justify-start items-start gap-4">
-                        <div class="py-2 inline-flex justify-center items-center gap-4">
-                            <div class="w-14 h-14 relative">
-                                <img class="w-12 h-12 left-[3px]  absolute"
-                                    src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear" />
-                            </div>
-                            <div class="w-56 inline-flex flex-col justify-start items-start gap-1">
-                                <div class="justify-start font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
-                                    Prickly Pear</div>
-                                <div class="justify-start font-DMSans text-[16px] leading-[1.15] text-[#525252]">
-                                    Supports digestion and inflammation balance to keep your sleep steady through
-                                    <br>the
-                                    night.
-                                </div>
+                    <div
+                        class="px-3.5 py-2 inline-flex justify-center items-center lg:justify-start lg:w-[168px] lg:h-[270px] gap-4 lg:gap-4 lg:flex-col lg:border-0">
+                        <div class="w-14 h-14 lg:w-28 lg:h-28 relative">
+                            <img class="w-12 h-12 lg:w-24 lg:h-24 left-[3px]  absolute"
+                                src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear" />
+                        </div>
+                        <div
+                            class="w-56 inline-flex flex-col justify-start items-start lg:justify-center lg:items-center gap-1 lg:gap-0">
+                            <div class="justify-center font-gelasio italic text-[20px] leading-[1.1] text-[#525252]">
+                                Prickly Pear</div>
+                            <div
+                                class="justify-center font-DMSans lg:text-center text-[16px] leading-[1.15] text-[#525252]">
+                                Supports digestion <br class="hidden lg:block">and inflammation <br
+                                    class="hidden lg:block">balance to keep your <br class="hidden lg:block">sleep
+                                steady through
+                                <br>the
+                                night.
                             </div>
                         </div>
                     </div>
@@ -177,7 +216,7 @@ useSeo({
                     <div class="flex justify-center">
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
-                            class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] mt-[24px] ">
+                            class="w-[316px] lg:w-[347px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] lg:text-[20px] mt-[24px] ">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -190,34 +229,58 @@ useSeo({
                 </div>
             </div>
         </div>
-        <div class="w-[316px] grid grid-cols-1 pt-[59px] pb-[60px]">
-            <p class="font-gelasio italic text-[32px] leading-[1] text-[#370F1E]">Sleep support that respects
+        <div class="w-[316px] grid grid-cols-1 pt-[59px] pb-[60px] lg:grid-cols-2 lg:pt-[40px] lg:w-full">
+            <p class="block lg:hidden font-gelasio italic text-[32px] leading-[1] text-[#370F1E]">Sleep support that
+                respects
                 <span class="text-[#6EC8F0]">your
                     body.</span>
             </p>
-            <p class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-[12px]">Super Natural Sleep is
+            <p class="block lg:hidden font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-[12px]">Super
+                Natural Sleep is
                 melatonin-free — because melatonin can disrupt your rhythm, cause grogginess, and lose effectiveness
                 over time.</p>
-            <img src="@/assets/image/menopause/menopause-sleeping.webp" alt="menopause"
-                class="w-full h-[200px] rounded mt-[17px]">
-            <span class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-[18px]">Instead, we use
-                gentle,
-                plant-based ingredients chosen to calm your body and mind — without sedation, side effects, or morning
-                fog.
-            </span>
-            <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]" :showIcon=false
-                class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] mt-[23px] ">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
-                        fill="#083D4F" />
-                </svg>
-                Shop: First Trial Special Offer
-            </ShopButton>
+            <div class="block lg:hidden col-span-1">
+                <img src="@/assets/image/menopause/menopause-sleeping.webp" alt="menopause"
+                    class="w-full h-[200px] rounded mt-[17px]">
+            </div>
+            <div class="hidden lg:flex col-span-1 flex-col items-end justify-end">
+                <img src="@/assets/image/menopause/menopause-sleeping-desk.webp" alt="menopause"
+                    class="rounded-[10px] mt-[20px] h-[462px] w-[465px]">
+            </div>
+            <div class="col-span-1 lg:pt-[93px] lg:pl-[40px]">
+                <p class="hidden lg:block font-gelasio italic text-[40px] leading-[1] text-[#370F1E]">Sleep support
+                    that <br>respects <span class="text-[#6EC8F0]">your body</span></p>
+                <span class="hidden lg:block font-DMSans text-[20px] leading-[1.2] text-[#525252] mt-[9px]">Super
+                    Natural
+                    Sleep is melatonin-free — because <br>melatonin can disrupt bryour rhythm, cause <br> grogginess,
+                    and
+                    lose
+                    effectiveness over time.</span>
+                <p
+                    class="font-DMSans text-[16px] leading-[1.2] font-light text-[#525252] mt-[18px] lg:text-[20px] lg:mt-[12px]">
+                    Instead,
+                    we use
+                    gentle,
+                    plant-based ingredients <br>chosen to calm your body and mind — without <br>sedation, side effects,
+                    or
+                    morning
+                    fog.
+                </p>
+                <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
+                    :showIcon=false
+                    class="w-[316px] lg:w-[343px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] lg:text-[20px] mt-[23px] lg:mt-[24px] ">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
+                            fill="#083D4F" />
+                    </svg>
+                    Shop: First Trial Special Offer
+                </ShopButton>
+            </div>
         </div>
-        <div class="flex flex-col items-center justify-start gap-6 pb-[20px]">
+        <div class="flex flex-col items-center justify-start gap-6 pb-[20px] lg:grid grid-cols-3">
             <div
-                class="w-[316px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px]  pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg width="98" height="85" viewBox="0 0 98 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2323)">
                         <path
@@ -240,12 +303,13 @@ useSeo({
                         </filter>
                     </defs>
                 </svg>
-                <p class="font-DMSans text-[20px] leading-[1.08] text-[#525252] text-center">You deserve sleep that
+                <p class="font-DMSans text-[20px] lg:text-[24px] leading-[1.08] text-[#525252] text-center">You deserve
+                    sleep that
                     works <br>with you — not against
                     you</p>
             </div>
             <div
-                class="w-[316px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2328)">
                         <path
@@ -269,12 +333,13 @@ useSeo({
                     </defs>
                 </svg>
 
-                <p class="font-DMSans text-[20px] leading-[1.08] text-[#525252] text-center">No melatonin. No sedatives.
+                <p class="font-DMSans text-[20px] lg:text-[24px] leading-[1.08] text-[#525252] text-center">No
+                    melatonin. No sedatives.
                     <br>No side effects.
                 </p>
             </div>
             <div
-                class="w-[316px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 flex flex-col justify-center items-center">
+                class="w-[316px] lg:w-[302px] pb-[20px] bg-blue-100/20 rounded-lg outline outline-1 outline-offset-[-1px] outline-purple-400 lg:outline-blue-400 flex flex-col justify-center items-center">
                 <svg width="88" height="92" viewBox="0 0 88 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_2333)">
                         <path
@@ -298,18 +363,22 @@ useSeo({
                     </defs>
                 </svg>
 
-                <p class="font-DMSans text-[20px] leading-[1.08] text-[#525252] text-center">Just real sleep, and the
+                <p class="font-DMSans text-[20px] lg:text-[24px] leading-[1.08] text-[#525252] text-center">Just real
+                    sleep, and the
                     energy <br>to feel like yourself again.</p>
             </div>
-            <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]" :showIcon=false
-                class="w-[316px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px]">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
-                        fill="#083D4F" />
-                </svg>
-                Shop: First Trial Special Offer
-            </ShopButton>
+            <div class="col-span-3 flex flex-col items-center">
+                <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
+                    :showIcon=false
+                    class="w-[316px] lg:w-[343px] bg-[#6EC8F0] rounded-full font-bold hover:bg-[#6EC8F0]/70 transition font-DMSans text-[18px] lg:text-[20px]">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H19.5V17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H1.5V2H4.75L5.7 4Z"
+                            fill="#083D4F" />
+                    </svg>
+                    Shop: First Trial Special Offer
+                </ShopButton>
+            </div>
         </div>
         <div
             class="w-full flex flex-col items-center justify-start bg-[#FFF] pt-[40px] pb-[90px] lg:pt-[62px] lg:pb-[106px]">
