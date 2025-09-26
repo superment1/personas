@@ -2,25 +2,25 @@
     <!-- Final CTA Section -->
     <section id="cta-section" class="relative rounded-t-3xl bg-[#63CFF2]">
         <div
-            class="w-full px-0 py-9 pb-[70px] h-[750px] lg:h-[650px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/discomfort/banner-produto-1-desk.webp')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
+            class="w-full px-0 pt-[32px] pb-[70px] h-[760px] lg:h-[650px] rounded-t-3xl bg-[url('@/assets/image/discomfort/banner-produto-1.webp')] md:bg-[url('@/assets/image/discomfort/banner-produto-1-desk.webp')] bg-cotain bg-[90%_0%] md:bg-cover md:bg-top bg-no-repeat">
             <div class="w-[full] flex items-center justify-center">
                 <!-- Mobile Layout -->
                 <div class="block md:hidden w-[330px]">
                     <h2 class="text-[#FFC35A] font-crossfit text-[40px]">
                         SHOP NOW
                     </h2>
-                    <p class="font-DMSans text-[24px] text-[#370F1E] leading-[1.1em] font-medium">Comfortable,
+                    <p class="font-DMSans text-[24px] text-[#370F1E] leading-[1.1] font-medium">Comfortable,
                         restorative <br>sleep starts here</br></p>
-                    <p class="font-crossfit text-[#FFF] text-[40px] leading-[1.1em] mt-1">NO MORE REFLUX. NO MORE
+                    <p class="font-crossfit text-[#FFF] text-[40px] leading-[1.1] mt-[7px]">NO MORE REFLUX. NO MORE
                         RESTLESSNESS.</p>
-                    <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26 mt-2" />
+                    <img src="@/assets/image/sleepWomam/stripe_logo.svg" class="w-26 mt-[7px]" />
                     <div class="flex flex-col items-center justify-end w-[316px]">
                         <img src="@/assets/image/discomfort/price-thin.png"
                             class="w-[123px] h-[236px] ml-[190px] relative z-10" />
                         <img src="@/assets/image/discomfort/free.png"
                             class="h-[90px] w-[93px] ml-[220px] -mt-7 relative z-1" />
                     </div>
-                    <div class="mt-20">
+                    <div class="mt-[75px]">
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
                             class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px] ">

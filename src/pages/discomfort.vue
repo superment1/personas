@@ -87,7 +87,7 @@ useSeo({
                 </ShopButton>
             </div>
         </div>
-        <div class="relative flex flex-col items-center justify-start w-full h-[755px] lg:h-[250px]">
+        <div class="relative flex flex-col items-center justify-start w-full h-[732px] lg:h-[250px]">
             <div class="absolute z-20 w-[316px] lg:w-[804px] grid lg:grid-cols-2">
                 <div class="hidden lg:flex flex-col items-end justify-start col-span-2 lg:col-span-1">
                     <p
@@ -98,23 +98,23 @@ useSeo({
                         to take:</p>
                 </div>
                 <div
-                    class="h-[260px] lg:w-[402px] lg:h-[100px] relative -top-[110px] right-[15px] lg:-top-[180px] lg:left-[80px] col-span-2 lg:col-span-1">
+                    class="h-[260px] lg:w-[402px] lg:h-[100px] relative -top-[68px] right-[45px] lg:-top-[180px] lg:left-[80px] col-span-2 lg:col-span-1">
                     <picture class="flex flex-row items-start justify-end">
                         <!-- Imagem para telas grandes -->
                         <source srcset="@/assets/image/discomfort/embalagem-1-desk.webp" media="(min-width:1024px)">
 
                         <!-- Imagem padrão (mobile) -->
-                        <img src="@/assets/image/discomfort/embalagem-1.png" alt="frasco"
-                            class="w-[298px] h-[410px] rotate-[5deg]">
+                        <img src="@/assets/image/discomfort/frasco-com-sombra.webp" alt="frasco"
+                            class="w-[268px] h-[294px] lg:w-[298px] lg:h-[410px] lg:rotate-[5deg]">
                     </picture>
                 </div>
                 <p
-                    class="text-[#370F1E] text-[32px] font-crossfit font-bold leading-[1] uppercase block lg:hidden col-span-2">
+                    class="text-[#370F1E] text-[32px] font-crossfit font-bold leading-[1] uppercase block lg:hidden col-span-2 relative z-20 -mt-[16px]">
                     Finally, a sleep
                     formula that
                     feels good
                     to take:</p>
-                <div class="col-span-2 grid grid-cols-1 mt-[16px] gap-[25px] lg:w-[804px] lg:grid-cols-6">
+                <div class="col-span-2 grid grid-cols-1 mt-[16px] gap-[23px] lg:w-[804px] lg:grid-cols-6">
                     <div
                         class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col lg:flex-col">
@@ -146,7 +146,7 @@ useSeo({
                             uninterrupted breathing while you sleep.</p>
                     </div>
                     <div
-                        class="p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
+                        class="mt-[1px] lg:mt-0 p-[20px] bg-white rounded-lg shadow-[0px_0px_18px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1 lg:col-span-2">
                         <div class="flex flex-row items-start justify-center gap-3 lg:flex-col">
                             <img src="@/assets/image/discomfort/psyc.png" alt="">
                             <p class="font-DMSans text-[20px] leading-[1.04] text-[#370F1E] font-bold">Calms the
@@ -202,7 +202,7 @@ useSeo({
             </div>
         </div>
         <div
-            class="w-full h-full flex flex-col items-center justify-end pt-[555px] lg:pt-[455px] pb-[100px] bg-[#370F1E] rounded-3xl lg:grid lg:grid-cols-2">
+            class="w-full h-full flex flex-col items-center justify-end pt-[551px] lg:pt-[455px] pb-[100px] bg-[#370F1E] rounded-3xl lg:grid lg:grid-cols-2">
             <div class="w-[316px] flex flex-col items-center justify-end lg:w-full lg:items-end ">
                 <p
                     class="text-[#FFC35A] font-crossfit-light font-black text-[30px] leading-[1.1] uppercase block lg:hidden">
@@ -218,11 +218,12 @@ useSeo({
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
                         class="w-[268px] absolute z-10 -top-[42px] right-[100px]" />
                     <img src="@/assets/image/discomfort/embalagem-1.png" alt=""
-                        class="w-[268px] absolute left-[80px] rotate-[30deg]" />
+                        class="w-[268px] absolute -top-[4px] left-[80px] rotate-[30deg]" />
                 </div>
             </div>
-            <div class="w-[316px] flex flex-col items-center justify-start lg:w-[420px]">
-                <p class="text-[#FFC35A] font-crossfit font-black uppercase text-[40px] leading-[1.1] ">Fewer
+            <div class="w-[316px] flex flex-col items-center justify-start lg:w-[420px] -mt-[8px] lg:mt-0">
+                <p class="hidden lg:block text-[#FFC35A] font-crossfit font-black uppercase text-[40px] leading-[1.1] ">
+                    Fewer
                     nighttime
                     bathroom trips —
                     finally.</p>
@@ -240,12 +241,12 @@ useSeo({
                     </span>
                 </p>
                 <p
-                    class="text-[#6EC8F0] font-DMSanss text-[20px] lg:text-[24px] leading-[1] mt-2 font-semibold lg:mt-3">
+                    class="text-[#6EC8F0] font-DMSanss text-[20px] lg:text-[24px] leading-[1] mt-[12px] font-semibold lg:mt-3">
                     Premium, clean, gentle, and free of harsh side effects.</p>
             </div>
         </div>
         <div
-            class="pt-[36px] pb-[84px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl w-full lg:pt-[40px] lg:pb-[40px]">
+            class="pt-[40px] pb-[40px] md:pt-16 bg-[#FFFAF0] flex flex-col items-center justify-center -mt-10 relative z-20 rounded-3xl w-full lg:pt-[40px] lg:pb-[40px]">
             <div class="w-full flex flex-col items-center justify-center md:w-[952px]">
                 <p
                     class="font-crossfit text-[30px] leading-[1.11] md:text-[40px] text-[#370F1E] text-center mb-2 md:mb-12 lg:mb-6 mx-8 w-[356px] md:w-[700px]">
@@ -254,7 +255,7 @@ useSeo({
                 </p>
 
                 <div
-                    class="w-[316px] mt-[14px] md:w-[1000px] flex flex-col items-center justify-center md:flex-row md:h-[287px] md:mt-0 md:gap-6 lg:h-[260px]">
+                    class="w-[316px] mt-[11px] md:w-[1000px] flex flex-col items-center justify-center md:flex-row md:h-[287px] md:mt-0 md:gap-6 lg:h-[260px]">
                     <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2  pb-2 border-b-2 md:flex-col md:border-b-0"
                         style="border-color: #FFE1AA">
                         <div
@@ -271,7 +272,7 @@ useSeo({
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center py-2 h-[96px] md:flex-col md:border-b-0
+                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center py-2  h-[80px] md:flex-col md:border-b-0
                     border-b-2 " style="border-color: #FFE1AA">
                         <div
                             class="w-16 h-16 md:w-[128px] md:h-[128px] flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
@@ -288,7 +289,7 @@ useSeo({
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-3  pb-2 border-b-2 md:flex-col md:border-b-0"
+                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  py-[7px] border-b-2 md:flex-col md:border-b-0"
                         style="border-color: #FFE1AA">
                         <div
                             class="w-16 h-16 md:w-[124px] md:h-[124px] flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
@@ -304,7 +305,7 @@ useSeo({
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  pt-2  pb-2 border-b-2 md:flex-col md:border-b-0"
+                    <div class="flex items-center w-[316px] md:w-[168px] md:h-[287px] md:flex-col md:items-center  py-[7px] border-b-2 md:flex-col md:border-b-0"
                         style="border-color: #FFE1AA">
                         <div
                             class="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center mr-4 flex-shrink-0 md:mb-3 md:mr-0">
@@ -324,7 +325,7 @@ useSeo({
                         <div
                             class="w-14 h-14 md:w-32 md:h-32 flex items-center justify-center mr-6 flex-shrink-0 md:mb-3 md:mr-0">
                             <img src="@/assets/image/sleepWomam/prickly-pear.png" alt="Prickly Pear"
-                                class="max-w-full max-h-full object-contain" />
+                                class="w-12 h-12 object-contain" />
                         </div>
                         <div class="flex flex-col items-start md:items-center justify-start">
                             <h3 class="text-[#525252] font-crossfit text-[20px] md:text-[24px] md:h-[32px]">Prickly Pear
@@ -336,11 +337,11 @@ useSeo({
                     </div>
                 </div>
 
-                <div class="text-center pt-1">
+                <div class="text-center">
                     <div class="flex justify-center">
                         <ShopButton id="buy-button" productId="prod_SbKYsQrxStW8wB" textColorClass="text-[#083D4F]"
                             :showIcon=false
-                            class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[24px] lg:mt-0">
+                            class="w-[316px] bg-[#FFC35A] rounded-full font-bold hover:bg-[#FFC63a]/70 transition font-DMSans text-[18px] mt-[22px] lg:mt-0">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -353,7 +354,7 @@ useSeo({
             </div>
         </div>
         <div
-            class="w-full flex flex-row items-center justify-center gap-3 bg-[#FFF] pt-[40px] pb-[80px] lg:pt-[62px] lg:pb-[106px]">
+            class="w-full flex flex-row items-center justify-center gap-3 bg-[#FFF] pt-[60px] pb-[100px] lg:pt-[62px] lg:pb-[106px]">
             <svg width="82" height="81" viewBox="0 0 82 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_2972)">
                     <path
