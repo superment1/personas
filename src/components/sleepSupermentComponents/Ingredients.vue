@@ -23,10 +23,10 @@
 
 <template>
     <section
-        class="relative overflow-hidden min-h-[961px] bg-no-repeat bg-cover"
+        class="relative overflow-hidden bg-no-repeat bg-cover"
         :style="{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }"
     >
-    <div class="relative flex flex-col text-center leading-[1] z-10 min-h-[660px] justify-between px-[50px] py-8">
+    <div class="relative flex flex-col text-center leading-[1] z-10 min-h-[650px] justify-between px-[50px] py-8">
         <h1 class="text-white font-crossfit text-[32px] lg:text-[56px] leading-tight">
             {{ primary }}
         </h1>
@@ -34,12 +34,12 @@
             {{ secondary }}
         </h2>
     </div>
-    <div class="flex px-[40px] gap-8">
+    <div class="flex px-[40px] pb-[35px] gap-8">
         <img v-if="symbol"
             :src="symbol"
             :alt="primary || 'symbol'"
             class="w-[113px] h-[125px] object-contain" >
-        <p class="text-white/90 px-[10px] font-gelasio italic text-[14px] lg:text-[20px]">
+        <p class="text-white/90 font-gelasio italic text-[14px] lg:text-[20px]">
             {{ subtitle }}
         </p>
     </div>
