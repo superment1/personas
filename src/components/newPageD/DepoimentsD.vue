@@ -11,6 +11,9 @@ const props = defineProps({
         type: String,
         default: '4.9/5 (160+ Reviews) | 98% Recommend'
     },
+    extraText:{
+        type: String,
+    },
     testimonials: {
         type: Array,
         default: () => [
@@ -82,10 +85,7 @@ function nearestIndex() {
     })
     return best
 }
-
 function updateCurrent() { current.value = nearestIndex() }
-
-// drag por Pointer Events
 let dragging = false, startX = 0, startLeft = 0
 function onPointerDown(e) {
     dragging = true
@@ -108,8 +108,6 @@ function onPointerCancel(e) {
     track.value?.releasePointerCapture?.(e.pointerId)
     centerToIndex(nearestIndex())
 }
-
-// recalcula o spacer para centralizar 1º e último
 function recomputeSpacer() {
     const el = track.value
     const first = itemEls.value?.[0]
@@ -120,7 +118,6 @@ function recomputeSpacer() {
     // recenter no atual sem animação
     centerToIndex(current.value, 'auto')
 }
-
 let ro, ticking = false
 function onScroll() {
     if (ticking) return
@@ -147,6 +144,11 @@ onBeforeUnmount(() => ro?.disconnect?.())
             class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] md:text-[22px] lg:text-[32px] mt-2 lg:mt-[34px]">
             {{ props.subtitle }}
         </p>
+        <div v-if="extraText" class="text-center px-[35px] text-[12px] leading-[14px]">
+            <p>
+                {{ props.extraText }}
+            </p>
+        </div>
 
         <!-- trilho -->
         <div ref="track" class="w-full max-w-[1150px] mt-4 md:mt-[25px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
