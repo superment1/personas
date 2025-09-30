@@ -23,8 +23,8 @@ const props = defineProps({
                 city: 'Boston, MA'
             },
             {
-                avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
-                avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
+                avatarDesk: '',
+                avatarMobile: '',
                 title: 'I am enjoying it!!',
                 testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
                 name: 'Danielle A., 37',
@@ -166,9 +166,20 @@ onBeforeUnmount(() => ro?.disconnect?.())
                         class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">
                         {{ t.testimonial }}</p>
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">
-                        <img :src="t.avatarMobile" :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
+                        <template v-if="t.avatarMobile">
+                            <img 
+                            :src="t.avatarMobile" 
+                            :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
                             alt="avatar"
                             class="w-[48px] h-[48px] md:w-[86px] md:h-[86px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
+                        </template>                        
+                        <template v-else>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="w-[48px] h-[48px]">
+                                <circle cx="24" cy="24" r="24" fill="#E1DCCD"/>
+                                <circle cx="24" cy="16" r="8" fill="#C1BAA5"/>
+                                <ellipse cx="24" cy="36" rx="15" ry="9" fill="#C1BAA5"/>
+                            </svg>
+                        </template>
                         <div class="flex flex-col items-start justify-center ml-3 pt-1">
                             <p
                                 class="text-[#370F1E] font-gelasio font-bold italic text-[14px] md:text-[24px] lg:text-[34px] leading-[0.96]">

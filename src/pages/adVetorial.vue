@@ -21,8 +21,8 @@ const testimonials = [
     city: 'Boston, MA'
   },
   {
-    avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
-    avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
+    avatarDesk: '',
+    avatarMobile: '',
     title: 'Calm & Mood',
     testimonial: 'I’m less worried and way more patient. Even my family noticed I’m calmer, and I finally feel like myself again.',
     name: 'Danielle A., 37',
@@ -44,22 +44,6 @@ const testimonials = [
     name: 'Bruna R., 38',
     city: 'New York, NY'
   },
-  // {
-  //     avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
-  //     avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
-  //     title: 'Eased the pain in my legs.',
-  //     testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
-  //     name: 'Bruna R., 38',
-  //     city: 'New York, NY'
-  // },
-  // {
-  //     avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
-  //     avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
-  //     title: 'Didn’t expect it to work this well.',
-  //     testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
-  //     name: 'Nuala O., 35',
-  //     city: 'Miami, FL'
-  // },
 ]
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',

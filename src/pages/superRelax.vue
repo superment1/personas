@@ -23,7 +23,6 @@ useSeo({
 })
 
 const anchorId = 'shop-now-d'
-
 const modalOpen = ref(false)
 
 const BACK_STATE = { exitGuard: true }
@@ -46,7 +45,6 @@ function disableBackExitGuard() {
   window.removeEventListener('popstate', onBackPress)
 }
 
-// cooldown e gatilhos
 const COOLDOWN_MS = 20000
 const TOP_ZONE = 8
 let lastShown = 0
@@ -377,9 +375,10 @@ onBeforeUnmount(() => {
           </div>
           <div class="px-[50px] flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-full md:w-[540px] lg:mt-8 mt-[12px] flex flex-row items-center justify-betwween md:justify-start lg:justify-betwween ">
-              <div class="flex flex-row items-center gap-6 w-full md:w-[260px]">
-                <svg class="md:w-[70px] md:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
+              class="w-[260px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+              <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
+                <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
+
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -403,9 +402,10 @@ onBeforeUnmount(() => {
               </div>
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
-              <div class="flex flex-row items-center justify-end gap-4 w-full md:w-[270px]">
-                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg"
-                  width="25" height="43" viewBox="0 0 33 48" fill="none">
+              <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
+                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
+
+                  viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
                     fill="#370F1E" />
