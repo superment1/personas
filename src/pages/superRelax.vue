@@ -459,12 +459,15 @@ onBeforeUnmount(() => {
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
       <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
-        <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+        <img class="lg:hidden w-[120px] h-[138px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
+          loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
         <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
-          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px]">But here’s the <br>good news:</p>
-          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in
+          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
+          </p>
+          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">You don’t have to stay
+            in
             <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.
           </p>
         </div>
