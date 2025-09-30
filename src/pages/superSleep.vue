@@ -225,21 +225,39 @@ onBeforeUnmount(() => {
     </div>
     <div class="img-non">
       <picture>
-        <source type="image/webp" srcset="/assets/capsula-flores-324.webp 1x, 
-          /assets/capsula-flores-648.webp 2x" sizes="324px">
-        <img src="/assets/capsula-flores-324.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
+        <img src="/assets/capsula-flores1-324.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
           decoding="async" class="image-forming" style="max-width:324px;height:auto" />
       </picture>
 
     </div>
   </section>
-  <section>
+  <section class="lg:hidden">
     <Ingredients 
-      bgImage="/assets/ingredientBg.webp"
+      bgImage="/assets/ingredientBg1.webp"
       primary="The ancient American secret for restorative sleep and vitality."
       secondary="Now science-backed and boosted specially for you."
-      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality in a long term."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
       symbol="/assets/symbol.webp"/>
+  </section>
+  <section class="hidden lg:block justify-center">
+    <Ingredients 
+      bgImage="/assets/ingredientBg2.webp"
+      primary="The ancient American secret for restorative sleep and vitality."
+      secondary="Now science-backed and boosted specially for you."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
+      symbol="/assets/symbol.webp"/>
+  </section>
+   <section class="testimonials">
+    <p class="title">What Supersleepers are saying.</p>
+    <div class="assessment">
+      <p class="notice">Rated 4.9/5.0</p>
+      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
+    </div>
+    <div class="testimonials">
+      <LazyIsland>
+        <TestimonialsCarousel />
+      </LazyIsland>
+    </div>
   </section>
   <!-- <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title">
@@ -258,7 +276,7 @@ onBeforeUnmount(() => {
   <LazyIsland>
     <Stress />
   </LazyIsland>
-  <section class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[25px] md:pt-[40px]">
+  <section class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[35px] md:pt-[40px]">
     <div class="imagem-centralizada">
       <img src="../assets/image/sleepSuperment/moca.webp" loading="lazy" alt="Mulher com pílula" />
 
@@ -299,18 +317,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </section>
-  <section class="testimonials">
-    <p class="title">What Supersleepers are saying.</p>
-    <div class="assessment">
-      <p class="notice">Rated 4.9/5.0</p>
-      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
-    </div>
-    <div class="testimonials">
-      <LazyIsland>
-        <TestimonialsCarousel />
-      </LazyIsland>
-    </div>
-  </section>
+ 
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
     <picture>
@@ -329,9 +336,9 @@ onBeforeUnmount(() => {
 
   </section>
 
-  <LazyIsland>
+  <!-- <LazyIsland>
     <Frascos />
-  </LazyIsland>
+  </LazyIsland> -->
   <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">

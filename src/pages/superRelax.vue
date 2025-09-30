@@ -147,9 +147,9 @@ onBeforeUnmount(() => {
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-[50px]">
           <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
-            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
-              Plant-Based
-              <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
+            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[16px] font-bold">A Powerful Plant-Based
+             <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
+
             </h1>
             <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
               <br>Plant-Based
@@ -294,7 +294,9 @@ onBeforeUnmount(() => {
                   </linearGradient>
                 </defs>
               </svg>
-              <p class="text-[13px] md:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+
+              <p class="text-[13px] md:text-[22px] leading-[16px] lg:leading-[22px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+
                 <span class="font-medium">Recommend.</span>
               </p>
             </div>
@@ -307,61 +309,41 @@ onBeforeUnmount(() => {
                 Peacefully All Night.</span> </p>
           </div>
           <div class="flex flex-col px-[50px] lg:px-12">
-            <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">
-              <svg class="lg:w-[30px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" width="22" height="90"
-                viewBox="0 0 19 81" fill="none">
-                <path
-                  d="M8.99362 48.8975C9.33579 47.7402 10.0805 46.9211 10.9963 46.3914C11.0517 46.3603 11.0416 46.2846 10.9762 46.2712C8.7068 45.7104 6.11032 46.6897 5.18445 49.0088C4.72151 50.1661 4.89763 51.4659 5.65745 52.4897C7.17709 54.5507 9.96478 54.9602 12.0178 53.9364C12.0732 53.9097 12.0631 53.834 12.0027 53.8162C10.9712 53.4913 10.0252 52.8503 9.38108 51.7953C8.84266 50.9095 8.70177 49.8679 8.98859 48.8975H8.99362Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M9.71819 54.4927C12.3388 54.4927 14.4633 52.6134 14.4633 50.2951C14.4633 47.9769 12.3388 46.0975 9.71819 46.0975C7.09754 46.0975 4.97308 47.9769 4.97308 50.2951C4.97308 52.6134 7.09754 54.4927 9.71819 54.4927Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M12.9286 44.3215C12.8581 44.0455 12.4958 43.9164 12.2291 44.0633C11.4995 44.4683 10.6441 44.6998 9.71819 44.6998C8.79232 44.6998 7.93689 44.4639 7.20726 44.0633C6.93553 43.9119 6.57827 44.0455 6.50782 44.3215C6.31661 45.0604 5.89392 45.7637 5.24481 46.3424C4.59065 46.921 3.80064 47.2905 2.96031 47.4596C2.64833 47.522 2.5024 47.8425 2.66846 48.0784C3.12636 48.7238 3.38802 49.4805 3.38802 50.2996C3.38802 51.1186 3.12133 51.8754 2.66846 52.5208C2.49737 52.7612 2.64833 53.0772 2.96031 53.1395C3.79561 53.3087 4.59065 53.6826 5.24481 54.2568C5.89896 54.831 6.31661 55.5343 6.50782 56.2777C6.57827 56.5537 6.94057 56.6828 7.20726 56.5359C7.93689 56.1308 8.79232 55.8993 9.71819 55.8993C10.6441 55.8993 11.4995 56.1353 12.2291 56.5359C12.5008 56.6872 12.8581 56.5537 12.9286 56.2777C13.1198 55.5388 13.5425 54.8355 14.1916 54.2568C14.8407 53.6781 15.6357 53.3087 16.4761 53.1395C16.7881 53.0772 16.934 52.7567 16.7679 52.5208C16.31 51.8754 16.0484 51.1186 16.0484 50.2996C16.0484 49.4805 16.3151 48.7238 16.7679 48.0784C16.939 47.838 16.7881 47.522 16.4761 47.4596C15.6408 47.2905 14.8457 46.9166 14.1916 46.3424C13.5374 45.7637 13.1198 45.0648 12.9286 44.3215Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
 
-                <path
-                  d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.2649 4.15601C6.13272 3.39929 4.759 3.13666 3.45573 3.36367C3.16891 4.89493 3.63688 6.53302 4.86467 7.71707C6.09246 8.90112 7.78822 9.35071 9.37831 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M11.4916 4.15161C12.6188 3.39934 13.9975 3.13671 15.2958 3.36373C15.5826 4.89499 15.1146 6.53307 13.8868 7.71713C12.659 8.90118 10.9633 9.35076 9.37317 9.07478"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M4.27579 7.03601C2.9222 7.27193 1.75479 8.0242 1 9.07472C1.92084 10.3522 3.45055 11.1935 5.18657 11.1935C6.92258 11.1935 8.45229 10.3567 9.37313 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M14.4755 7.03601C15.8291 7.27193 16.9965 8.0242 17.7513 9.07472C16.8305 10.3522 15.3008 11.1935 13.5647 11.1935C11.8287 11.1935 10.299 10.3567 9.37817 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M8.88368 34.1788C12.6854 34.1788 15.7674 31.4525 15.7674 28.0894C15.7674 24.7263 12.6854 22 8.88368 22C5.08193 22 2 24.7263 2 28.0894C2 31.4525 5.08193 34.1788 8.88368 34.1788Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M12.2551 28.0896C12.5016 28.0896 12.6878 28.281 12.6576 28.4947C12.4312 30.1595 10.831 31.4504 8.88366 31.4504C6.9363 31.4504 5.33615 30.1595 5.10971 28.4947C5.07952 28.281 5.27073 28.0896 5.51227 28.0896H12.25H12.2551Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M8.11388 25.9706C7.81699 25.4988 7.25342 25.1738 6.59927 25.1738C5.94512 25.1738 5.38154 25.4988 5.08466 25.9706"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
-                <path
-                  d="M12.6879 25.9706C12.391 25.4988 11.8275 25.1738 11.1733 25.1738C10.5192 25.1738 9.95558 25.4988 9.65869 25.9706"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
-              </svg>
+            <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">             
               <ul
-                class="text-[#370F1E] relative bottom-[3px] gap-[2px] text-[14px] md:text-[18px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
-                <li>
+                class="text-[#370F1E] relative bottom-[3px] gap-[4px] text-[14px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
+                <li class="flex gap-2 items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
+                    <path d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M7.2649 4.15601C6.13272 3.39929 4.759 3.13666 3.45573 3.36367C3.16891 4.89493 3.63688 6.53302 4.86467 7.71707C6.09246 8.90112 7.78822 9.35071 9.37831 9.07472" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M11.4916 4.15161C12.6188 3.39934 13.9975 3.13671 15.2958 3.36373C15.5826 4.89499 15.1146 6.53307 13.8868 7.71713C12.659 8.90118 10.9633 9.35076 9.37317 9.07478" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M4.27579 7.03601C2.9222 7.27193 1.75479 8.0242 1 9.07472C1.92084 10.3522 3.45055 11.1935 5.18657 11.1935C6.92258 11.1935 8.45229 10.3567 9.37313 9.07472" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M14.4755 7.03601C15.8291 7.27193 16.9965 8.0242 17.7513 9.07472C16.8305 10.3522 15.3008 11.1935 13.5647 11.1935C11.8287 11.1935 10.299 10.3567 9.37817 9.07472" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                  </svg>
+                  
                   <p>Stress, Anxiety & Exhaustion Relief </p>
                 </li>
-                <li>
+                <li class="flex gap-3 items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                    <path d="M7.88368 13.1788C11.6854 13.1788 14.7674 10.4525 14.7674 7.08941C14.7674 3.72632 11.6854 1 7.88368 1C4.08193 1 1 3.72632 1 7.08941C1 10.4525 4.08193 13.1788 7.88368 13.1788Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M11.2551 7.0896C11.5016 7.0896 11.6878 7.28101 11.6576 7.49467C11.4312 9.15947 9.83102 10.4504 7.88366 10.4504C5.9363 10.4504 4.33615 9.15947 4.10971 7.49467C4.07952 7.28101 4.27073 7.0896 4.51227 7.0896H11.25H11.2551Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M7.11388 4.97062C6.81699 4.49878 6.25342 4.17383 5.59927 4.17383C4.94512 4.17383 4.38154 4.49878 4.08466 4.97062" stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round"/>
+                    <path d="M11.6879 4.97062C11.391 4.49878 10.8275 4.17383 10.1733 4.17383C9.51915 4.17383 8.95558 4.49878 8.65869 4.97062" stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round"/>
+                  </svg>
                   <p>Pain & Inflammation Reduction</p>
                 </li>
-                <li>
+                <li class="flex gap-3  items-center" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                      <path d="M6.99362 5.89752C7.33579 4.74017 8.08052 3.92113 8.99633 3.39142C9.05168 3.36026 9.04162 3.28459 8.9762 3.27124C6.7068 2.71037 4.11032 3.68966 3.18445 6.0088C2.72151 7.16614 2.89763 8.46593 3.65745 9.48974C5.17709 11.5507 7.96478 11.9602 10.0178 10.9364C10.0732 10.9097 10.0631 10.834 10.0027 10.8162C8.97117 10.4913 8.02517 9.85029 7.38108 8.79533C6.84266 7.90952 6.70177 6.86791 6.98859 5.89752H6.99362Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                      <path d="M7.71819 11.4927C10.3388 11.4927 12.4633 9.6134 12.4633 7.29513C12.4633 4.97686 10.3388 3.09753 7.71819 3.09753C5.09754 3.09753 2.97308 4.97686 2.97308 7.29513C2.97308 9.6134 5.09754 11.4927 7.71819 11.4927Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                      <path d="M10.9286 1.32145C10.8581 1.04547 10.4958 0.916385 10.2291 1.06328C9.49949 1.46835 8.64407 1.69982 7.71819 1.69982C6.79232 1.69982 5.93689 1.4639 5.20726 1.06328C4.93553 0.911934 4.57827 1.04547 4.50782 1.32145C4.31661 2.06037 3.89392 2.76368 3.24481 3.34236C2.59065 3.92103 1.80064 4.29049 0.960308 4.45964C0.648329 4.52196 0.502403 4.84245 0.668457 5.07837C1.12636 5.72381 1.38802 6.48054 1.38802 7.29958C1.38802 8.11863 1.12133 8.87535 0.668457 9.52079C0.497371 9.76116 0.648329 10.0772 0.960308 10.1395C1.79561 10.3087 2.59065 10.6826 3.24481 11.2568C3.89896 11.831 4.31661 12.5343 4.50782 13.2777C4.57827 13.5537 4.94057 13.6828 5.20726 13.5359C5.93689 13.1308 6.79232 12.8993 7.71819 12.8993C8.64407 12.8993 9.49949 13.1353 10.2291 13.5359C10.5008 13.6872 10.8581 13.5537 10.9286 13.2777C11.1198 12.5388 11.5425 11.8355 12.1916 11.2568C12.8407 10.6781 13.6357 10.3087 14.4761 10.1395C14.7881 10.0772 14.934 9.75671 14.7679 9.52079C14.31 8.87535 14.0484 8.11863 14.0484 7.29958C14.0484 6.48054 14.3151 5.72381 14.7679 5.07837C14.939 4.838 14.7881 4.52196 14.4761 4.45964C13.6408 4.29049 12.8457 3.91658 12.1916 3.34236C11.5374 2.76368 11.1198 2.06483 10.9286 1.32145Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    </svg>
                   <p>Mood, Focus & Energy </p>
                 </li>
               </ul>
             </div>
-            <div class="">
+            <div class="pt-[22px]">
               <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
                 :showIcon="false"
                 class="botao-shop font-bold !m-0 text-[18px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem] md:max-w-[540px] ">
@@ -371,9 +353,11 @@ onBeforeUnmount(() => {
           </div>
           <div class="px-[50px] flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-full md:w-[540px] lg:mt-8 mt-[12px] flex flex-row items-center justify-betwween md:justify-start lg:justify-betwween ">
-              <div class="flex flex-row items-center gap-6 w-[200px] md:w-[250px]">
-                <svg class="md:w-[60px] md:h-[50px]" xmlns="http://www.w3.org/2000/svg" width="32" height="26"
+
+              class="w-[30px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+              <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
+                <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
+
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -397,8 +381,9 @@ onBeforeUnmount(() => {
               </div>
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
-              <div class="flex flex-row items-center justify-end gap-6 w-[200px] md:w-[270px]">
-                <svg class="md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="22" height="33"
+              <div class="flex flex-row items-center justify-end gap-4 w-[120px] lg:w-[240px]">
+                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
+
                   viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -550,12 +535,12 @@ onBeforeUnmount(() => {
 
   <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/tabela_relax.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela_relax1.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
           class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
-      <img src="/assets/tabela_relax_desk.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela_relax1_desk.webp" alt="table" loading="lazy">
       <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>

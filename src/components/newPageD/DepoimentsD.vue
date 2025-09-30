@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 
 
@@ -159,28 +159,23 @@ onBeforeUnmount(() => ro?.disconnect?.())
                 class="shrink-0 w-[319px] md:w-[640px] lg:w-[920px] snap-center">
                 <div class="shrink-0 w-[301px] md:w-[640px] h-[219px] md:h-[280px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
                     flex flex-col items-start pt-[31px] pb-[20px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
-                    <p
-                        class="text-[#370F1E] font-crossfit font-bold text-[20px] md:text-[36px] lg:text-[52px] leading-[1.2]">
-                        {{
-                            t.title }}
+
+                    <p class="text-[#370F1E] font-crossfit font-bold text-[20px] lg:text-[52px] leading-[1.2]">{{ t.title }}
                     </p>
                     <p
-                        class="text-[#370F1E] font-DMSans font-regular text-[12px] md:text-[22px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">
-                        {{
-                            t.testimonial }}</p>
+                        class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">
+                        {{ t.testimonial }}</p>
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">
                         <img :src="t.avatarMobile" :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
                             alt="avatar"
                             class="w-[48px] h-[48px] md:w-[86px] md:h-[86px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
-                        <div class="flex flex flex-col items-start justify-center ml-3 pt-1">
+                        <div class="flex flex-col items-start justify-center ml-3 pt-1">
                             <p
                                 class="text-[#370F1E] font-gelasio font-bold italic text-[14px] md:text-[24px] lg:text-[34px] leading-[0.96]">
-                                {{ t.name
-                                }}</p>
+                                {{ t.name }}</p>
                             <p
                                 class="text-[#370F1E] font-gelasio font-regular italic text-[13px] md:text-[22px] lg:text-[32px] leading-[1.15] mt-[2px]">
-                                {{
-                                    t.city }}</p>
+                                {{ t.city }}</p>
                             <svg class="block md:hidden" xmlns="http://www.w3.org/2000/svg" width="54" height="8"
                                 viewBox="0 0 54 8" fill="none">
                                 <path
