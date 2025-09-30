@@ -8,7 +8,7 @@ import StopWatch2 from '../components/StopWatch2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { ref } from 'vue'
 
-const durationMs = 10 * 60 * 10000             
+const durationMs =  120 * 60 * 1000             
 const persistKey  = 'super-sleep-offer-timer'
 
 const testimonials = [
@@ -41,7 +41,7 @@ const testimonials = [
     avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
     title: 'No Grogginess',
     testimonial: 'I’ve tried many things to help me sleep, including melatonin and pills. They all made me dependent, and also completely foggy the next day. With Super Relax I sleep easy and wake up rested, clear, and ready to go.',
-    name: 'Laura P., XX',
+    name: 'Bruna R., 38',
     city: 'New York, NY'
   },
   // {
@@ -66,6 +66,7 @@ useSeo({
   description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
   keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
 })
+const imgSrc = "/assets/depo.webp" 
 </script>
 
 <template>
@@ -95,11 +96,20 @@ useSeo({
       <h1 class="text-[20px] lg:text-[50px] leading-[1] lg:leading-[1.1] font-bold font-gelasio italic text-[#370F1E]">7 Reasons More People <br>Are Quitting Anxiety Meds<br><span class="text-[#4DBCB6]"> for a Natural Way to Sleep<br> Deep and Stay Calm</span></h1>
     </div>
     <div class="flex font-gelasio gap-2 items-center pt-[12px] lg:pt-[26px] pb-[24px] lg:pb-[60px] italic border-b">
-      <svg class="lg:w-[59px] lg:h-[59px]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <circle cx="11.6182" cy="11.6182" r="11.6182" fill="#E1DCCD"/>
-        <circle cx="11.6182" cy="7.74549" r="3.87275" fill="#C1BAA5"/>
-        <ellipse cx="11.6182" cy="17.4274" rx="7.2614" ry="4.35684" fill="#C1BAA5"/>
-      </svg>
+      <div class="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-1 ring-black/10">
+        <template v-if="imgSrc">
+          <img :src="imgSrc" 
+          class="absolute inset-0 w-[48px] h-full object-contain origin-top scale-150" width="48" alt="avatar" />
+        </template>
+        <template v-else>
+          <svg class="lg:w-[59px] lg:h-[59px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <circle cx="11.6182" cy="11.6182" r="11.6182" fill="#E1DCCD"/>
+            <circle cx="11.6182" cy="7.74549" r="3.87275" fill="#C1BAA5"/>
+            <ellipse cx="11.6182" cy="17.4274" rx="7.2614" ry="4.35684" fill="#C1BAA5"/>
+          </svg>
+        </template>
+      </div>
+
       <div class="flex-col leading-[1] text-[#370F1E]">
         <p class="font-semibold text-[8px] lg:text-[18px]">By Sarah M.</p>
         <p class="font-normal text-[7px]  lg:text-[16px]">Last updated Sep. 24, 2025</p>
@@ -114,37 +124,37 @@ useSeo({
       { 
         title: '1. Quiet anxiety and racing thoughts. ', 
         subtitle: 'Stress keeps your body in constant high alert and your mind refuses to switch off. That’s why you lie awake replaying worries night after night. Super Relax, with Passionflower and Prickly Pear, gently calms the nervous system, eases anxiety, and helps you finally feel at peace.', 
-        image: '/assets/vetorial.webp' 
+        image: '/assets/1.webp' 
       },
       { 
         title: '2. Sleep deeply and wake up clear.', 
         subtitle: 'Broken nights leave you drained, and pills only sedate without restoring real rest. Super Relax works with your body’s natural rhythm so sleep flows from bedtime until morning. You wake up refreshed, energized, and ready to take on the day, without grogginess.', 
-        image: '/assets/vetorial.webp' 
+        image: '/assets/2.webp' 
       },
       { 
         title: '3. Restore energy and focus during the day.', 
         subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
-        image: '/assets/vetorial.webp'
+        image: '/assets/3.webp'
       },
       { 
         title: '4. Relieve muscle pain and body tension.', 
         subtitle: 'Stress doesn’t just affect your mind, it builds in your body. Stiff shoulders, sore back, and nerve pain are all signs your system is overloaded. Super Relax, with Corydalis, helps release tight muscles, ease discomfort, and unlock the physical calm your body needs so your mind can finally relax.', 
-        image: '/assets/vetorial.webp'
+        image: '/assets/4.webp'
       },
       { 
         title: '5. Restore balance naturally and safely.', 
         subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you can trust.', 
-        image: '/assets/vetorial.webp'
+        image: '/assets/5.webp'
       },
       { 
         title: '6. Fix the root cause, not just the symptoms.', 
         subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
-        image: '/assets/vetorial.webp'
+        image: '/assets/6.webp'
       },
       { 
         title: '7. Guaranteed results or your money back.', 
         subtitle: 'We stand behind every bottle. Try Super Relax for up to 120 days. If you don’t feel calmer, clearer, and more rested, you get every cent back. No hassle, no fine print, just results. Love it, or it’s free.', 
-        image: '/assets/vetorial.webp'
+        image: '/assets/7.webp'
       },
 
     ]"

@@ -300,7 +300,7 @@ onBeforeUnmount(() => {
                   </linearGradient>
                 </defs>
               </svg>
-              <p class="text-[13px] leading-[16px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+              <p class="text-[13px] leading-[16px] lg:leading-[22px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
                 <span class="font-medium">Recommend.</span>
               </p>
             </div>
@@ -518,12 +518,12 @@ onBeforeUnmount(() => {
 
   <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/tabela_relax.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela_relax1.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
           class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
-      <img src="/assets/tabela_relax_desk.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela_relax1_desk.webp" alt="table" loading="lazy">
       <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>

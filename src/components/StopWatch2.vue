@@ -3,7 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import FlipDigit from './FlipDigit.vue'
 
 const props = defineProps({
-  durationMs: { type: Number, default: 8 * 60 * 1000 },
+  durationMs: { type: Number, default: 3 * 60 * 10000},
   startOn:    { type: String,  default: 'mount' },
   persistKey: { type: String,  default: '' }
 })
@@ -105,7 +105,7 @@ onBeforeUnmount(() => t && clearInterval(t))
   height: 18px;
   flex-shrink: 0;
   border-radius: 2px;
-  background: linear-gradient(132deg, #A2FFFA 2.9%, #004E4A 94.39%);
+  background: linear-gradient(132deg, #FFDC03 2.9%, #C9B11C 94.39%);
   display: flex;
   align-items: center;
   justify-content: center;

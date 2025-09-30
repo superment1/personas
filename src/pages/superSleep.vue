@@ -239,6 +239,14 @@ onBeforeUnmount(() => {
       subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
       symbol="/assets/symbol.webp"/>
   </section>
+  <section class="hidden lg:block justify-center">
+    <Ingredients 
+      bgImage="/assets/ingredientBg2.webp"
+      primary="The ancient American secret for restorative sleep and vitality."
+      secondary="Now science-backed and boosted specially for you."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
+      symbol="/assets/symbol.webp"/>
+  </section>
    <section class="testimonials">
     <p class="title">What Supersleepers are saying.</p>
     <div class="assessment">
