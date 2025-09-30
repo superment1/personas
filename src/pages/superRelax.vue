@@ -464,17 +464,17 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 md:gap-10 pt-[20px] pl-16 md:px-40 w-full">
-        <img class="md:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
-        <img class="hidden md:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
+        <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+        <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
-        <div class="flex flex-col text-[#370F1E] gap-[10px] md:gap-[20px]">
-          <p class="font-crossfit leading-[1] md:text-[76px] text-[26px]">But here’s the <br>good news:</p>
-          <p class="font-gelasio italic leading-[1.3] md:text-[40px] text-[14px]">You don’t have to stay in
+        <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
+          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px]">But here’s the <br>good news:</p>
+          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in
             <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.
           </p>
         </div>
-        <div class="pointer-events-none -z-10 absolute bottom-[-55px] md:bottom-[-120px] left-0 w-full h-32 md:h-80
+        <div class="pointer-events-none -z-10 absolute bottom-[-55px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
                 bg-[#FFDC03]
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
@@ -517,27 +517,30 @@ onBeforeUnmount(() => {
   </section>
   <DepoimentsD />
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
-    <div class="font-crossfit text-[32px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="lg:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
+    <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
+      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
-      <p class="hidden lg:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
+      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">
       <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">100% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported reduced<br>anxiety
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
+          reduced<br>anxiety
           and greater
           relaxation.</span>
       </div>
       <div class="flex pl-[17px] pt-[5px] lg:self-center items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">75% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported better<br> sleep
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
+          better<br> sleep
           quality.</span>
       </div>
       <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">0% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">experienced grogginess <br> or
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">experienced grogginess
+          <br> or
           unwanted side
           effects.</span>
       </div>
