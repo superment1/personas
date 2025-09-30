@@ -464,40 +464,40 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
-        <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
-        <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+      <div class="flex relative z-30 bg-[#FFDC03] gap-6 md:gap-10 pt-[20px] pl-16 md:px-40 w-full">
+        <img class="md:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+        <img class="hidden md:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
-        <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
-          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px]">But here’s the <br>good news:</p>
-          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in
+        <div class="flex flex-col text-[#370F1E] gap-[10px] md:gap-[20px]">
+          <p class="font-crossfit leading-[1] md:text-[76px] text-[26px]">But here’s the <br>good news:</p>
+          <p class="font-gelasio italic leading-[1.3] md:text-[40px] text-[14px]">You don’t have to stay in
             <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.
           </p>
         </div>
-        <div class="pointer-events-none -z-10 absolute bottom-[-55px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
+        <div class="pointer-events-none -z-10 absolute bottom-[-55px] md:bottom-[-120px] left-0 w-full h-32 md:h-80
                 bg-[#FFDC03]
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] lg:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] lg:text-[60px]">
+      <div class="pt-[74px] md:pt-[180px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
       <div class="flex justify-center">
-        <img class="w-[230px] lg:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
           alt="bottle">
-        <!-- <img class="hidden lg:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
+        <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
-          class="flex-col relative right-6 self-center w-[150px] lg:w-[400px] text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
-          <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
+          class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
           <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-8 lg:px-40">
-        <img class="lg:hidden block" src="/assets/box41.webp" alt="blocks">
-        <img class="hidden lg:block" src="/assets/box4_desk1.webp" alt="blocks">
+      <div class="px-8 md:px-40">
+        <img class="md:hidden block" src="/assets/box41.webp" alt="blocks">
+        <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
 
