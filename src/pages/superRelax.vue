@@ -139,16 +139,9 @@ onBeforeUnmount(() => {
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:1024px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
-        <img
-          id="hero-lcp"
-          src="/assets/hero_relax_new1.webp"
-          width="1280" height="800"
-          alt="relax-hero"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          class="absolute inset-0 z-0 w-full h-full object-cover" />
+        <source media="(min-width:764px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
+        <img id="hero-lcp" src="/assets/hero_relax_new1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
+          fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
 
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
@@ -156,6 +149,7 @@ onBeforeUnmount(() => {
           <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
             <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[16px] font-bold">A Powerful Plant-Based
              <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
+
             </h1>
             <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
               <br>Plant-Based
@@ -300,7 +294,9 @@ onBeforeUnmount(() => {
                   </linearGradient>
                 </defs>
               </svg>
-              <p class="text-[13px] leading-[16px] lg:leading-[22px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+
+              <p class="text-[13px] md:text-[22px] leading-[16px] lg:leading-[22px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+
                 <span class="font-medium">Recommend.</span>
               </p>
             </div>
@@ -308,11 +304,12 @@ onBeforeUnmount(() => {
         </div>
         <div>
           <div
-            class="font-crossfit px-0 lg:px-12 pt-[18px] lg:pt-[62px] text-[29px] lg:text-[51px] leading-[31px] lg:leading-[57px] justify-center items-center text-center lg:text-start">
+            class="font-crossfit px-0 md:px-12 pt-[18px] md:pt-[62px] text-[29px] md:text-[51px] leading-[31px] md:leading-[57px] justify-center items-center text-center md:text-start">
             <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">Sleep
                 Peacefully All Night.</span> </p>
           </div>
           <div class="flex flex-col px-[50px] lg:px-12">
+
             <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">             
               <ul
                 class="text-[#370F1E] relative bottom-[3px] gap-[4px] text-[14px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
@@ -324,6 +321,7 @@ onBeforeUnmount(() => {
                     <path d="M4.27579 7.03601C2.9222 7.27193 1.75479 8.0242 1 9.07472C1.92084 10.3522 3.45055 11.1935 5.18657 11.1935C6.92258 11.1935 8.45229 10.3567 9.37313 9.07472" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
                     <path d="M14.4755 7.03601C15.8291 7.27193 16.9965 8.0242 17.7513 9.07472C16.8305 10.3522 15.3008 11.1935 13.5647 11.1935C11.8287 11.1935 10.299 10.3567 9.37817 9.07472" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
                   </svg>
+                  
                   <p>Stress, Anxiety & Exhaustion Relief </p>
                 </li>
                 <li class="flex gap-3 items-center">
@@ -348,16 +346,18 @@ onBeforeUnmount(() => {
             <div class="pt-[22px]">
               <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
                 :showIcon="false"
-                class="botao-shop font-bold !m-0 text-[18px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+                class="botao-shop font-bold !m-0 text-[18px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem] md:max-w-[540px] ">
                 Yes, I Want to Relax Now
               </ShopButton>
             </div>
           </div>
-          <div class="px-[50px] flex justify-center">
+          <div class="px-[50px] flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-[30ppx] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row items-center justify-between">
+
+              class="w-[30px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
               <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
                 <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
+
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -376,13 +376,14 @@ onBeforeUnmount(() => {
                     fill="#370F1E" />
                 </svg>
                 <div>
-                  <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
+                  <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
                 </div>
               </div>
-              <div class="w-[1px] h-[42px] lg:h-[70px] bg-[#370F1E]"></div>
+              <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
               <div class="flex flex-row items-center justify-end gap-4 w-[120px] lg:w-[240px]">
-                <svg class="lg:w-[55px] lg:h-[70px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
+                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
+
                   viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -416,11 +417,23 @@ onBeforeUnmount(() => {
                     fill="#370F1E" />
                 </svg>
                 <div>
-                  <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
+                  <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
                 </div>
               </div>
             </div>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
 
@@ -451,24 +464,25 @@ onBeforeUnmount(() => {
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] lg:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] lg:text-[60px]">
+      <div class="pt-[74px] md:pt-[180px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
       <div class="flex justify-center">
-        <img class="w-[230px] lg:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy" alt="bottle">
-        <!-- <img class="hidden lg:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
+          alt="bottle">
+        <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
-          class="flex-col relative right-6 self-center w-[150px] lg:w-[400px] text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
-          <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
+          class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
           <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-8 lg:px-40">
-        <img class="lg:hidden block" src="/assets/box41.webp" alt="blocks">
-        <img class="hidden lg:block" src="/assets/box4_desk1.webp" alt="blocks">
+      <div class="px-8 md:px-40">
+        <img class="md:hidden block" src="/assets/box41.webp" alt="blocks">
+        <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
 
@@ -488,27 +502,30 @@ onBeforeUnmount(() => {
   </section>
   <DepoimentsD />
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
-    <div class="font-crossfit text-[32px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="lg:hidden leading-[34.7px]">What Customers<br>Experience With <br><span
-          class="text-[#4DBCB6]">Super Relax:</span></p>
-      <p class="hidden lg:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
+    <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
+      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
+          Relax:</span></p>
+      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">
       <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">100% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported reduced<br>anxiety
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
+          reduced<br>anxiety
           and greater
           relaxation.</span>
       </div>
       <div class="flex pl-[17px] pt-[5px] lg:self-center items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">75% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported better<br> sleep
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
+          better<br> sleep
           quality.</span>
       </div>
       <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">0% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">experienced grogginess <br> or
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">experienced grogginess
+          <br> or
           unwanted side
           effects.</span>
       </div>
@@ -536,7 +553,8 @@ onBeforeUnmount(() => {
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]" textColorClass="text-[#FFDC03]" :showIcon="true"
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]"
+          textColorClass="text-[#FFDC03]" :showIcon="true"
           class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
           Get Calm, Clarity & Rest Now
         </ShopButton>

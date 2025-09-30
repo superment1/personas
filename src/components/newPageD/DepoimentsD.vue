@@ -12,56 +12,56 @@ const props = defineProps({
         default: '4.9/5 (160+ Reviews) | 98% Recommend'
     },
     testimonials: {
-    type: Array,
-    default: ()=>[
-        {
-            avatarDesk: new URL('@/assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
-            avatarMobile: new URL('@/assets/image/newPageD/ligiani.png', import.meta.url).href,
-            title: 'From stressed to relaxed.',
-            testimonial: 'I used to arrive very stressed from work and still I couldn\'t rest… Now I\'m finally able to relax and sleep again.',
-            name: 'Ligiani G., 44',
-            city: 'Boston, MA'
-        },
-        {
-            avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
-            avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
-            title: 'I am enjoying it!!',
-            testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
-            name: 'Danielle A., 37',
-            city: 'Los Angeles, CA'
-        },
-        {
-            avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
-            avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
-            title: 'Good both day & night.',
-            testimonial: 'I used to wake up at night to pee and then couldn’t fall back asleep. Now I sleep through and have way more energy in the day.',
-            name: 'Eliseu C., 40',
-            city: 'Fort Lauderdale, FL'
-        },
-        {
-            avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
-            avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
-            title: 'Eased the pain in my legs.',
-            testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
-            name: 'Bruna R., 38',
-            city: 'New York, NY'
-        },
-        {
-            avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
-            avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
-            title: 'Didn’t expect it to work this well.',
-            testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
-            name: 'Nuala O., 35',
-            city: 'Miami, FL'
-        },
-    ]
+        type: Array,
+        default: () => [
+            {
+                avatarDesk: new URL('@/assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
+                avatarMobile: new URL('@/assets/image/newPageD/ligiani.png', import.meta.url).href,
+                title: 'From stressed to relaxed.',
+                testimonial: 'I used to arrive very stressed from work and still I couldn\'t rest… Now I\'m finally able to relax and sleep again.',
+                name: 'Ligiani G., 44',
+                city: 'Boston, MA'
+            },
+            {
+                avatarDesk: new URL('@/assets/image/newPageD/danielle-desk.png', import.meta.url).href,
+                avatarMobile: new URL('@/assets/image/newPageD/danielle.png', import.meta.url).href,
+                title: 'I am enjoying it!!',
+                testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
+                name: 'Danielle A., 37',
+                city: 'Los Angeles, CA'
+            },
+            {
+                avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
+                avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
+                title: 'Good both day & night.',
+                testimonial: 'I used to wake up at night to pee and then couldn’t fall back asleep. Now I sleep through and have way more energy in the day.',
+                name: 'Eliseu C., 40',
+                city: 'Fort Lauderdale, FL'
+            },
+            {
+                avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
+                avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
+                title: 'Eased the pain in my legs.',
+                testimonial: 'I just started but already feel less pain in my legs, which also helped me to rest at night.',
+                name: 'Bruna R., 38',
+                city: 'New York, NY'
+            },
+            {
+                avatarDesk: new URL('@/assets/image/newPageD/nuala-desk.png', import.meta.url).href,
+                avatarMobile: new URL('@/assets/image/newPageD/nuala.png', import.meta.url).href,
+                title: 'Didn’t expect it to work this well.',
+                testimonial: 'I wasn’t expecting much, but I’m sleeping better and waking up with more energy.',
+                name: 'Nuala O., 35',
+                city: 'Miami, FL'
+            },
+        ]
     }
 })
 
 const track = ref(null)
 const itemEls = ref([])
 const current = ref(0)
-const spacer = ref(0) 
+const spacer = ref(0)
 
 function centerToIndex(i, behavior = 'smooth') {
     const el = track.value, item = itemEls.value[i]
@@ -139,25 +139,27 @@ onBeforeUnmount(() => ro?.disconnect?.())
 
 <template>
     <div class="bg-[#E1DCCD] w-full flex flex-col items-center py-7 gap-y-2 lg:py-[84px]">
-        <p class="text-center text-[#370F1E] w-[246px] lg:w-full font-crossfit font-bold leading-[1.08] text-[32px] lg:text-[60px]">
+        <p
+            class="text-center text-[#370F1E] w-[246px] md:w-full font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[60px]">
             {{ props.primary }}
         </p>
         <p
-            class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] lg:text-[32px] mt-2 lg:mt-[34px]">
-            {{props.subtitle}}
+            class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] md:text-[22px] lg:text-[32px] mt-2 lg:mt-[34px]">
+            {{ props.subtitle }}
         </p>
 
         <!-- trilho -->
-        <div ref="track" class="w-full max-w-[1150px] mt-4 lg:mt-[25px] px-4 flex gap-2 lg:gap-20 overflow-x-auto scroll-smooth
+        <div ref="track" class="w-full max-w-[1150px] mt-4 md:mt-[25px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
              snap-x snap-mandatory select-none cursor-grab active:cursor-grabbing
              scrollbar-hide" @pointerdown="onPointerDown" @pointermove="onPointerMove" @pointerup="onPointerUp"
             @pointercancel="onPointerCancel" @scroll.passive="onScroll">
             <!-- spacers nas pontas (não têm snap) -->
             <div class="shrink-0" :style="{ width: spacer + 'px' }" />
             <div v-for="(t, i) in testimonials" :key="i" :ref="el => (itemEls[i] = el)"
-                class="shrink-0 w-[319px] lg:w-[920px] snap-center">
-                <div class="shrink-0 w-[301px] h-[219px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
+                class="shrink-0 w-[319px] md:w-[640px] lg:w-[920px] snap-center">
+                <div class="shrink-0 w-[301px] md:w-[640px] h-[219px] md:h-[280px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
                     flex flex-col items-start pt-[31px] pb-[20px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
+
                     <p class="text-[#370F1E] font-crossfit font-bold text-[20px] lg:text-[52px] leading-[1.2]">{{ t.title }}
                     </p>
                     <p
@@ -166,15 +168,15 @@ onBeforeUnmount(() => ro?.disconnect?.())
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">
                         <img :src="t.avatarMobile" :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
                             alt="avatar"
-                            class="w-[48px] h-[48px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
+                            class="w-[48px] h-[48px] md:w-[86px] md:h-[86px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
                         <div class="flex flex-col items-start justify-center ml-3 pt-1">
                             <p
-                                class="text-[#370F1E] font-gelasio font-bold italic text-[14px] lg:text-[34px] leading-[0.96]">
+                                class="text-[#370F1E] font-gelasio font-bold italic text-[14px] md:text-[24px] lg:text-[34px] leading-[0.96]">
                                 {{ t.name }}</p>
                             <p
-                                class="text-[#370F1E] font-gelasio font-regular italic text-[13px] lg:text-[32px] leading-[1.15] mt-[2px]">
+                                class="text-[#370F1E] font-gelasio font-regular italic text-[13px] md:text-[22px] lg:text-[32px] leading-[1.15] mt-[2px]">
                                 {{ t.city }}</p>
-                            <svg class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="54" height="8"
+                            <svg class="block md:hidden" xmlns="http://www.w3.org/2000/svg" width="54" height="8"
                                 viewBox="0 0 54 8" fill="none">
                                 <path
                                     d="M4.5824 0.379751L5.33963 2.71317H7.79239C8.18541 2.71317 8.35003 3.2173 8.03108 3.44776L6.04748 4.8902L6.8047 7.22361C6.92611 7.59811 6.49811 7.90882 6.17917 7.67836L4.19556 6.23592L2.21195 7.67836C1.89301 7.90882 1.46501 7.59811 1.58641 7.22361L2.34364 4.8902L0.360033 3.44776C0.0410919 3.2173 0.205707 2.71317 0.598725 2.71317H3.05149L3.80871 0.379751C3.93012 0.00525226 4.45894 0.00525226 4.58035 0.379751H4.5824Z"
@@ -192,7 +194,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
                                     d="M49.8514 0.379629L50.6087 2.71304H53.0614C53.4545 2.71304 53.6191 3.21718 53.3001 3.44764L51.3165 4.89008L52.0737 7.22349C52.1951 7.59799 51.7672 7.9087 51.4482 7.67824L49.4646 6.2358L47.481 7.67824C47.1621 7.9087 46.7341 7.59799 46.8555 7.22349L47.6127 4.89008L45.6291 3.44764C45.3101 3.21718 45.4747 2.71304 45.8678 2.71304H48.3205L49.0778 0.379629C49.1992 0.00513019 49.728 0.00513019 49.8494 0.379629H49.8514Z"
                                     fill="#370F1E" />
                             </svg>
-                            <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="133" height="20"
+                            <svg class="hidden md:block" xmlns="http://www.w3.org/2000/svg" width="133" height="20"
                                 viewBox="0 0 133 20" fill="none">
                                 <path
                                     d="M11.1261 1.01248L13.0053 6.80334H19.0923C20.0677 6.80334 20.4762 8.05446 19.6847 8.62639L14.762 12.2061L16.6412 17.997C16.9425 18.9264 15.8803 19.6975 15.0888 19.1255L10.166 15.5458L5.24329 19.1255C4.45177 19.6975 3.3896 18.9264 3.69089 17.997L5.57011 12.2061L0.64737 8.62639C-0.144151 8.05446 0.264376 6.80334 1.23973 6.80334H7.32678L9.206 1.01248C9.50729 0.0830802 10.8197 0.0830802 11.121 1.01248H11.1261Z"
