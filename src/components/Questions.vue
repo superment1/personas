@@ -7,7 +7,11 @@ defineProps({
     type: Array,
     default: () => []
   },
-  auxText: String
+  auxText: String,
+  showCta: {
+    type: Boolean,
+    default: true
+  }
 })
 const anchorId ='shop-relax'
 </script>
@@ -22,7 +26,7 @@ const anchorId ='shop-relax'
         <p class="text-[13px] lg:text-[26px] border-b pt-[19px] pb-[14px] leading-[1] border-current text-[#370F1E]">{{ item.resp }}</p>
       </li>
     </ul>
-    <div class="flex mt-6 lg:mt-[60px] lg:w-[650px]  justify-center">
+    <div v-if="showCta" class="flex mt-6 lg:mt-[60px] lg:w-[650px]  justify-center">
         <ShopButton 
             paymentLink="/relax" 
             title="Try Super Relax Risk-Free"  
@@ -30,7 +34,6 @@ const anchorId ='shop-relax'
             iconColorClass="text-[#370F1E]"
             :custom-class="'bg-[#FFDC03] lg:h-[100px] shadow-lg lg:text-[33px] font-bold w-full gap-2 mx-0'"/>
     </div>
-  
     <p v-if="auxText" class="mt-6 text-[9px] lg:w-[509px] leading-[1] lg:text-[16px] text-[#370F1E]">
       {{ auxText }}
     </p>

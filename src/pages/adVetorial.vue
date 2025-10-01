@@ -237,7 +237,7 @@ const imgSrc = "/assets/depo.webp"
     :testimonials="testimonials"/>
   </section>
   <section class=" bg-[#FFFAF0]">
-    <Questions 
+    <Questions :show-cta="true" 
       title="Everything You Need to Know"
       :items="[
         { question: 'Q: Will this make me groggy the next day?', resp: 'No. Super Relax has no melatonin or sedatives. 0% reported grogginess.' },

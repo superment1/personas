@@ -12,24 +12,24 @@ const props = defineProps({
 
 <template>
   <section
-    class="relative flex flex-col justify-end text-center px-6 py-[23px] min-h-[620px] bg-cover"
+    class="relative flex flex-col justify-end text-center min-h-[620px] lg:min-h-[832px] bg-cover"
     :style="{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }"
   >
-    <div class="max-w-3xl flex flex-col items-center text-white z-10">
-      <div v-if="logo" class="w-[80px] h-[15px]">
+    <div class="max-w-3xl flex flex-col items-center  px-6 lg:px-0 py-[23px] text-white z-10">
+      <div v-if="logo" class="w-[80px] h-[15px] lg:w-[201px] lg:h-[38px]">
         <img :src="logo" alt="">
       </div>
       <div class="flex flex-col gap-[298px] pt-[42px] pb-[13px]">
-        <h1 v-if="primary" class="font-gelasio font-bold italic text-[20px] lg:text-5xl">
+        <h1 v-if="primary" class="font-gelasio font-bold italic text-[20px] lg:text-[28px]">
         {{ primary }}
         </h1>
-        <h2 v-if="secondary" class="font-gelasio px-[30px] italic text-[16px] lg:text-3xl leading-[1]">
+        <h2 v-if="secondary" class="font-gelasio px-[30px] lg:px-0 italic text-[16px] lg:text-[32px] leading-[1]">
           {{ secondary }}
         </h2>
       </div>
       
-      <div v-if="extraTexts.length" class="flex flex-col gap-4 mt-4 leading-[14px]">
-        <p v-for="(text, i) in extraTexts" :key="i" class="text-[13px] lg:text-base">
+      <div v-if="extraTexts.length" class="flex flex-col gap-4 lg:gap-[32px] mt-4 leading-[14px] lg:leading-[24px]">
+        <p v-for="(text, i) in extraTexts" :key="i" class="text-[13px] lg:text-[24px]">
           {{ text }}
         </p>
       </div>

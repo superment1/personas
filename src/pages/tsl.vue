@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import '../styles/superSleep.scss';
 import { useSeo } from '../composables/useSeo';
-import { defineAsyncComponent } from 'vue'
 import BgText from '../components/BgText.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-import SuperFooter2 from '../components/SuperFooter2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import ShopNowTsl from '../components/ShopNowTsl.vue';
+import Faq from '../components/Faq.vue';
 
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
-
+const anchorId = 'shop-now-tsl'
 </script>
 
 <template>
   <section>
-    <BgText
+    <BgText class="lg:hidden"
       logo="/assets/logo-email.png"
       bgImage="/assets/sunset-tsl2.webp"
       primary="America’s Forgotten Secret for Restorative Sleep." 
@@ -23,36 +21,58 @@ const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
           'For over 200 years, America has been hiding a secret more valuable than gold. Not a treasure buried deep in the mountains… but a natural gift, blooming in plain sight. A delicate golden flower once trusted by Native Californians to bring calm to the mind, rest to the body, and strength for the day ahead.', 
           'Long before sleep labs and prescription pills, the tribes of California discovered something extraordinary. They knew that true rest isn’t about sedation. True rest is balance a calm mind, a quiet heart, and the power to rise with the dawn, clear and strong.'
       ]"
-    >
-    </BgText>
+    />
+    <BgText class="hidden lg:block justify-items-center"
+      logo="/assets/logo-email.png"
+      bgImage="/assets/sunset-tsl2-desk.webp"
+      primary="America’s Forgotten Secret for Restorative Sleep." 
+      secondary="A timeless gift of the Earth, whispered from warrior to healer, now reborn for your nights." 
+      :extraTexts="[
+          'For over 200 years, America has been hiding a secret more valuable than gold. Not a treasure buried deep in the mountains… but a natural gift, blooming in plain sight. A delicate golden flower once trusted by Native Californians to bring calm to the mind, rest to the body, and strength for the day ahead.', 
+          'Long before sleep labs and prescription pills, the tribes of California discovered something extraordinary. They knew that true rest isn’t about sedation. True rest is balance a calm mind, a quiet heart, and the power to rise with the dawn, clear and strong.'
+      ]"
+    />
   </section>
-  <section class="flex justify-end">
-    <BgText
+  <section>
+    <BgText class="lg:hidden"
       bgImage="/assets/tribo-tsl.webp"
       secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." 
       :extraTexts="[
         'For generations, it was used to ease racing thoughts, quiet the nervous system, and guide the body into nights of deep, refreshing rest. Warriors trusted it to let them sleep without weakness — waking sharp and ready when the sun rose.'
           ]"
-    >
-    </BgText>
+    />
+    <BgText class="hidden justify-items-center flex-col items-center lg:flex "
+      bgImage="/assets/tribo-tsl-desk.webp"
+      secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." 
+      :extraTexts="[
+        'For generations, it was used to ease racing thoughts, quiet the nervous system, and guide the body into nights of deep, refreshing rest. Warriors trusted it to let them sleep without weakness — waking sharp and ready when the sun rose.'
+          ]"
+    />
   </section>
-  <section class="flex justify-end">
-    <BgText
-      class="min-h-[690px]"
+  <section>
+    <BgText class="min-h-[690px] flex justify-end lg:hidden"
       bgImage="/assets/camp-tsl.webp"
       secondary="But then the world forgot." 
       :extraTexts="[
         'The Gold Rush came, the lands were broken, and this treasure of nature was left behind. This flower became nothing more than a roadside bloom, while millions of people lay awake through the night. Tossing, turning, fighting thoughts that never stop. Reaching for pills that sedate but steal the morning. Struggling through days that feel heavier and heavier.'
           ]"
-    >
-    </BgText>
+    />
+    <BgText class="min-h-[690px] items-center justify-end hidden lg:flex"
+      bgImage="/assets/camp-tsl-desk.webp"
+      secondary="But then the world forgot." 
+      :extraTexts="[
+        'The Gold Rush came, the lands were broken, and this treasure of nature was left behind. This flower became nothing more than a roadside bloom, while millions of people lay awake through the night. Tossing, turning, fighting thoughts that never stop. Reaching for pills that sedate but steal the morning. Struggling through days that feel heavier and heavier.'
+          ]"
+    />
   </section>
   <section class="">
     <BgText
-      class="min-h-[534px]"
+      class="min-h-[534px] lg:hidden"
       bgImage="/assets/wom-tsl.webp"
-    >
-    </BgText>
+    />
+    <BgText class="hidden lg:flex bg-center"
+      bgImage="/assets/wom-tsl-desk.webp"
+    />
   </section>
   <section>
     <div class="bg-[#370F1E] px-[40px] pt-[26px] pb-[24px] text-center text-[#fff] justify-center">
@@ -248,16 +268,35 @@ const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
     subtitle="4.9/5 (160+ Reviews) | 98% Recommend"
     extraText="Thousands of people who once dreaded bedtime now look forward to it. They’re sleeping calmly through the night. They’re waking up refreshed instead of exhausted. They’re living their days with more energy, more patience, more joy."
     />
+  <section>
+    <div class="bg-[#FFFAF0]  pt-[32px] pb-[31px]">
+      <div class="px-[40px] gap-[26px]  flex flex-col">
+        <h1 class="font-crossfit leading-[1] text-[36px] text-[#3D0B1E] text-center">
+          And now it’s your turn.
+        </h1>
+        <div class="flex gap-[20px] pb-[6px]">
+          <img src="/assets/woman1.webp" class="w-[154px]" alt="">
+          <img src="/assets/man-1.webp" class="w-[154px]" alt="">
+        </div>
+        <div class="px-[20px] text-[#3D0B1E] text-center pb-[20px] pt-[18px] leading-[1] rounded-[10px] text-[12px] bg-[#6EC8F0]">
+          Imagine what your mornings could feel like after nights of deep, natural rest. Imagine stress slipping away. Imagine your body repairing, your energy restored, your mind clear. This isn’t just sleep — this is renewal.
+        </div>
+        <div class="flex pt-[7px] pb-[6px] gap-[20px]">
+          <img src="/assets/man-old.webp" class="w-[154px]" alt="">
+          <img src="/assets/woman-old.webp" class="w-[154px]" alt="">
+        </div>
+        <div class="bg-[#FFDC03] text-[#3D0B1E] text-[14px] font-bold text-center rounded-full py-[10px] px-[15px]">
+          Begin Your Journey to Restorative Sleep
+        </div>
+      </div>
+    </div>
+  </section>
   <ShopNowTsl id="shop-now-tsl"/>
   <section>
     <BgText
       class="min-h-[584px] !justify-start !pt-0"
       content-class="mt-0"
       bgImage="/assets/ind-tsl.webp"
-      :extraTexts="[
-        'Because sleep should never be a gamble. It should be a treasure.',
-        'And now, the old American secret of the California Poppy can be yours — tonight, tomorrow, and for every night that follows.'
-      ]"
     >
     </BgText>
   </section>
@@ -279,17 +318,31 @@ const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
         <h1
           class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold font-crossfit">
           Frequently asked questions:</h1>
-        <LazyIsland>
           <div class="faq-wrap">
-            <FAQ />
+            <Faq />
           </div>
-        </LazyIsland>
       </div>
     </div>
   </div>
-  <div class="bg-[#350e1d] w-full">
-    <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
-      <SuperFooter2 />
+  <div class="bg-[#350e1d] px-[40px] pb-[30px] w-full">
+    <div class="flex flex-col gap-3 items-center">
+      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem] font-crossfit">
+        <span class="inline-flex items-baseline">SUPERMENT<sub class="font-sans text-sm leading-none font-thin">®</sub></span>
+      </div>
+      <p class="label-reserved text-[#fffaf0] text-[8px] text-center">
+        © Super Natural Sleep Research 2025.<br> All Rights Reserved.
+      </p>
+      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[700px]">
+        Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and guide the user into deep, 
+        restorative sleep. It does not contain melatonin or harsh chemicals. 
+        Super Natural Sleep is manufactured in the United States by an FDA registered and 
+        GMP-compliant laboratory. All product's quality, safety, and compliance certifications are 
+        managed by our manufacturing partner. This product is not intended to diagnose, treat, 
+        cure or prevent any disease. Always consult your physician before starting any dietary 
+        supplement, especially if you are taking medications, are pregnant, or have a medical 
+        condition.
+        Super Natural Sleep is part of the commercial portfolio of Superment.
+      </p>
     </div>
   </div>
 </template>
