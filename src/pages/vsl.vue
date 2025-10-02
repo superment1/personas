@@ -682,7 +682,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <BannerRetention
+  <!-- <BannerRetention
     v-model:open="modalOpen"
     title="WAIT!"
     subtitle="LOW STOCK WARNING!"
@@ -697,6 +697,6 @@ onBeforeUnmount(() => {
       Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
     </p>
   </template>
-</BannerRetention>
+</BannerRetention> -->
 
 </template>

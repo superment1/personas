@@ -655,12 +655,12 @@ onBeforeUnmount(() => {
     </div>
     <NotificationDisplay />
   </div>
-  <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
+  <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
     :disable-backdrop-close="true" :disable-esc="false">
     <template #message>
       <p class="text-[#fff] sm:text-[31px] text-[16px]">Get <span class="text-[#FFDC03] sm:text-[28px]">20% OFF </span>
         to shop now <br> — today only.>
       </p>
     </template>
-  </BannerRetention>
+  </BannerRetention> -->
 </template>

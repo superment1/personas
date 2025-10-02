@@ -18,6 +18,7 @@ const routes = [
   { path: '/relax',    name:'superrelax',   component: () => import('../pages/superRelax.vue') },  
   { path: '/slim',    name:'superslim',   component: () => import('../pages/superSlim.vue') },  
   { path: '/advetorial',    name:'advetorial',   component: () => import('../pages/adVetorial.vue') },  
+  { path: '/tsl',    name:'tsl',   component: () => import('../pages/tsl.vue') },  
 ]
 
 export const router = createRouter({
