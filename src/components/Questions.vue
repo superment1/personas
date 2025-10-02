@@ -23,7 +23,7 @@ const anchorId ='shop-relax'
     <ul class="font-sans border-t border-current max-w-[950px]">
       <li v-for="(item, i) in items" :key="i" class="lg:pt-[40px] pt-[12px]">
         <p class="text-[13px] lg:text-[26px] font-bold leading-[1] text-[#370F1E]">{{ item.question }}</p>
-        <p class="text-[13px] lg:text-[26px] border-b pt-[19px] pb-[14px] leading-[1] border-current text-[#370F1E]">{{ item.resp }}</p>
+        <p class="text-[13px] lg:text-[26px] border-b pt-[19px] pb-[14px] lg:pb-[34px] leading-[1] border-current text-[#370F1E]">{{ item.resp }}</p>
       </li>
     </ul>
     <div v-if="showCta" class="flex mt-6 lg:mt-[60px] lg:w-[650px]  justify-center">

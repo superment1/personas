@@ -144,7 +144,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
             class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] md:text-[22px] lg:text-[32px] mt-2 lg:mt-[34px]">
             {{ props.subtitle }}
         </p>
-        <div v-if="extraText" class="text-center px-[35px] text-[12px] leading-[14px]">
+        <div v-if="extraText" class="text-center px-[35px] lg:px-0 text-[12px] lg:text-[24px] leading-[14px] lg:leading-[23px] max-w-[700px]">
             <p>
                 {{ props.extraText }}
             </p>

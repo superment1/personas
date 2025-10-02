@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section
+  <div
     class="relative flex flex-col justify-end text-center min-h-[620px] lg:min-h-[832px] bg-cover"
     :style="{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }"
   >
@@ -34,5 +34,5 @@ const props = defineProps({
         </p>
       </div>
     </div>
-  </section>
+  </div>
 </template>
