@@ -6,9 +6,9 @@ const props = defineProps({
   bottles: {
     type: Array,
     default: () => [
-      { imgBottle: '/assets/nn1_1.webp', imgIcon: '/assets/group_467-desk.webp', textButton: 'Boston, MA' },
-      { imgBottle: '/assets/nn2_tsl.webp', imgIcon: '/assets/group_467.webp', textButton: 'Boston, MA' },
-      { imgBottle: '/assets/nn3.webp', imgIcon: '/assets/group_467.webp', textButton: 'Boston, MA' }
+      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467-desk.webp',productId:'prod_T2jNgj5cCjXcvG' , iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: ' 1 Bottle: A 30-day supply to \n experience the difference.' },
+      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo_3.webp',productId:'prod_T2jOmiPYB2SrZd' , iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none" ,textButton: '3 Bottles: Our most popular\n option steady support for\n months of deep rest.' },
+      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo_6.webp',productId:'prod_T2jPp4I1S0cfol' , iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: '6 Bottles: The best value, ensuring\n you never run out of calm nights.' }
     ]
   }
 })
@@ -136,25 +136,25 @@ onBeforeUnmount(() => {
       :ref="el => (itemEls[i] = el as HTMLElement)"
       class="shrink-0 min-w-full snap-center flex justify-center items-center"
     >
-      <div class="bg-[#90DAF4] rounded-[34px] grid justify-items-center gap-4 py-6 w-full flex justify-center">
-        <div class="relative w-[500px] mx-auto">
-          <img :src="t.imgBottle" class="block w-[500px] h-auto mx-auto" />
+      <div class="bg-[#90DAF4] rounded-[34px] max-w-[655px] max-h-[634px] grid justify-items-center gap-4 w-full flex justify-center">
+        <div class="relative mx-auto max-h-[655px]">
+          <img :src="t.imgBottle" class="block h-auto mx-auto" />
           <img v-if="t.imgIcon" :src="t.imgIcon"
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] z-10 pointer-events-none" />
+            :class="[t.iconBaseClass]" />
           <ShopButton
-            textColorClass="text-[#370F1E]"
+            textColorClass="text-[#370F1E]" 
             iconColorClass="text-[#370F1E]"
             :show-icon="false"
-            productId="prod_T2jNgj5cCjXcvG"
-            class="relative left-1/2 -translate-x-1/2 bottom-4 z-20
-                   h-[72px] w-[321px] md:w-[361px]
+            productId={{productId}}
+            class="relative left-1/2 -translate-x-1/2 translate-y-[-175px] bottom-4 z-20
+                   h-[72px] w-[321px] md:w-[367px]
                    bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                    shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
                    !rounded-[13px] justify-center"
           >
             <div class="flex flex-row items-center justify-center gap-3">
-              <span class="font-DMSans text-[18px] md:text-[20px] font-bold text-[#370F1E]">
-                1 Bottle: A 30-day supply to<br />experience the difference.
+              <span class="font-DMSans leading-[1] whitespace-pre-line text-[18px] md:text-[20px] font-bold text-[#370F1E]">
+               {{ t.textButton }}
               </span>
             </div>
           </ShopButton>

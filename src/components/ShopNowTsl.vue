@@ -38,9 +38,9 @@ const anchorId = 'shop-now-tsl'
 </script>
 <template>
     <div class="bg-[#6EC8F0] w-full h-full flex flex-col items-center justify-start pt-[32px] pb-10 lg:py-[95px]">
-        <div class="max-w-[814px]">
+        <div class="lg:max-w-[814px] max-w-[331px] ">
             <p
-                class="text-[#370F1E] px-[55px] text-center font-crossfit pb-[35px] text-[32px] md:text-[50px] font-bold leading-[1.1] lg:text-[60px]">
+                class="text-[#370F1E] text-center font-crossfit pb-[35px] text-[32px] md:text-[50px] font-bold leading-[1.1] lg:text-[60px]">
                 That’s why we’ve made it easy for you to begin today.
             </p>
             <div class="hidden lg:block">
@@ -48,9 +48,9 @@ const anchorId = 'shop-now-tsl'
             </div>
             <div class="lg:hidden flex flex-col gap-8">
                 <div
-                    class="w-[351px] md:w-[420px] h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
+                    class=" h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative">
-                        <img src="/assets/nn1_1.webp" alt="" class="block w-full h-auto" />
+                        <img src="/assets/n1.webp" alt="" class="block w-full h-auto" />
                         <img
                         src="/assets/group_467.webp"
                         alt=""
@@ -60,10 +60,10 @@ const anchorId = 'shop-now-tsl'
                         <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                             productId="prod_T2jNgj5cCjXcvG"
                             class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
-                                h-[72px] w-[321px] md:w-[361px]
+                                h-[72px] 
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
-                                !rounded-[13px] justify-center">
+                                !rounded-[13px] justify-center !px-8">
                             <div class="flex flex-row items-center justify-center gap-3">                        
                                 <span class="font-DMSans text-[18px] md:text-[20px] leading-[1.2] font-bold text-[#370F1E]">
                                     1 Bottle: A 30-day supply to<br> experience the difference.
@@ -73,18 +73,18 @@ const anchorId = 'shop-now-tsl'
                     </div>                               
                 </div>
                 <div
-                    class="w-[351px] md:w-[420px] h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
+                    class="h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative h-[405px]">
-                        <img src="/assets/nn2_tsl.webp" alt="" class="block w-full h-auto" />
+                        <img src="/assets/n3.webp" alt="" class="block w-full h-auto" />
                         <img
                         src="/assets/group_446.webp"
                         alt=""
-                        class="absolute top-[140px] right-[15px] -translate-x-1/2 -translate-y-[78%] z-10
+                        class="absolute top-[140px] right-[11px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
-                        />
+                        />                        
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
                             class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
-                                h-[94px] w-[321px] md:w-[361px]
+                                h-[94px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
                                 !rounded-[13px] justify-center">
@@ -94,22 +94,21 @@ const anchorId = 'shop-now-tsl'
                                 </span>
                             </div>
                         </ShopButton>     
-                    </div>
-                                
+                    </div>                                
                 </div>
                 <div
-                    class="w-[351px] md:w-[420px] h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
+                    class="h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative h-[382px]">
-                        <img src="/assets/nn3.webp" alt="" class="block w-full h-auto" />
+                        <img src="/assets/n6.webp" alt="" class="block w-full h-auto" />
                         <img
                         src="/assets/group_447.webp"
                         alt=""
-                        class="absolute top-[120px] -right-[9px] -translate-x-1/2 -translate-y-[78%] z-10
+                        class="absolute top-[115px] -right-[13px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
                         />
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
                             class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
-                                h-[72px] w-[321px] md:w-[361px]
+                                h-[72px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
                                 !rounded-[13px] justify-center">
@@ -122,9 +121,7 @@ const anchorId = 'shop-now-tsl'
                     </div>                               
                 </div> 
             </div>
-
-            <!-- desktop -->
-            
+            <!-- desktop -->            
             <div class="">
                 <Questions :show-cta="false" class="bg-[#6EC8F0] pt-3 pb-[30px]"
                     :items="[
@@ -136,9 +133,9 @@ const anchorId = 'shop-now-tsl'
                     ]"    
                 />
             </div>  
-            <div class="text-center text-[12px] justify-items-center px-[40px]">
+            <div class="text-center text-[12px] justify-items-center">
                 <div
-                    class="font-crossfit w-full leading-[1.2] text-[#370F1E] items-center px-[20px] text-[32px] lg:text-[50px] gap-3">
+                    class="font-crossfit w-full leading-[1.2] px-2 text-[#370F1E] items-center text-[32px] lg:text-[50px] gap-3">
                         Bring the California Poppy Into Your Night
                 </div>
                     <p class="lg:hidden leading-[1] text-[#370F1E] lg:text-[24px] pb-[15px] pt-[28px]">And to make your choice completely risk-free, every <br>order is protected by our up<span class="font-bold"> to 120-day, money-<br>back guarantee.</span>
