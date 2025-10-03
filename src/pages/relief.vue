@@ -6,15 +6,15 @@ import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
-import ShopNowD from '../components/newPageD/ShopNowD.vue';
+import ShopNowRelief from '../components/ShopNowRelief.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter2 from '../components/SuperFooter2.vue';
+import Faq from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
-const NotificationDisplay2 = defineAsyncComponent(() => import('../components/NotificationDisplay2.vue'))
-const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
+// const NotificationDisplay2 = defineAsyncComponent(() => import('../components/NotificationDisplay2.vue'))
+
 
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
@@ -118,6 +118,104 @@ onBeforeUnmount(() => {
   disableBackExitGuard()
 })
 
+const testimonials = [
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'It gave me back my focus.',
+    testimonial: 'Neuropathy made it hard to concentrate — the tingling and stabbing pain were always there. Now it’s calmer, and I can finally stay productive again.',
+    name: 'Kevin L., 46',
+    city: 'Seattle, WA'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'The pain isn’t holding me back.',
+    testimonial: 'I used to dread going out, afraid the pain in my legs would flare up. Now it feels calmer, and I’m not anxious about leaving the house.',
+    name: 'Marisa P., 51',
+    city: 'Austin, TX'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'Finally sleeping through the pain.',
+    testimonial: 'For years, burning in my feet woke me up every night. Now the pain is quieter, and I wake up feeling human again.',
+    name: 'Robert H., 62',
+    city: 'Chicago, IL'
+  },
+  {
+    avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
+    avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
+    title: 'Good both day & night.',
+    testimonial: 'Neuropathy kept me restless and sore. Now the pain is quieter, I sleep longer, and I feel sharper at work.',
+    name: 'Eliseu C., 40',
+    city: 'Fort Lauderdale, FL'
+  },
+  {
+    avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
+    avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
+    title: 'The burning is finally easing.',
+    testimonial: 'It’s still early, but I already notice less burning and tingling in my legs. Sleeping better at night has made a huge difference in how I feel during the day.',
+    name: 'Bruna R., 38',
+    city: 'New York, NY'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'She’s back to being herself again.',
+    testimonial: 'For years, my mom couldn’t play with her grandkids because of nerve pain. Now she walks, laughs, and even chases them — seeing her smile is the best gift for us.',
+    name: 'Patricia M., 42',
+    city: 'Denver, CO'
+  },
+]
+
+const asks = ref([
+  { 
+    question: 'What is Super Relax?', 
+    answer: 'Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.', 
+    open: true 
+  },
+  { 
+    question: 'What are the ingredients?', 
+    answer: `The formula combines 5 science-backed botanicals:
+          • Passionflower – Calms a restless mind so you can slow down and find peace.
+          •  California Poppy – Relaxes the body and supports restorative sleep without sedation.
+          •  Corydalis – Helps ease physical tension and nighttime nerve discomfort.
+          •  Prickly Pear – Supports healthy stress response for deeper rest and recovery.
+          •  Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`, 
+    open: false 
+  },
+  { 
+    question: 'Is Super Relax safe?', 
+    answer:' Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.', 
+    open: false 
+  },
+  { 
+    question: 'How do I take it?', 
+    answer: 'Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep. You can also take 1–2 capsules as needed during stressful or high-discomfort moments to ease tension and support focus. Safe for daily use and non-habit forming.', 
+    open: false 
+  },
+  { 
+    question: 'How long does shipping take?', 
+    answer: 'Orders are processed within 24 hours and typically arrive in 3–5 business days within the U.S. You’ll receive tracking information as soon as your order ships.', 
+    open: false 
+  },
+  { 
+    question: 'How can I reach you if I have questions?', 
+    answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.', 
+    open: false 
+  },
+  { 
+    question: 'What if I’m not satisfied?', 
+    answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk.', 
+    open: false 
+  },
+  { 
+    question: 'Are there any side effects?', 
+    answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.', 
+    open: false 
+  },
+])
 </script>
 
 <template>
@@ -141,18 +239,14 @@ onBeforeUnmount(() => {
         <img id="hero-lcp" src="/assets/hero_relax_new1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
           fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
-
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-[50px]">
           <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
-            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
-              Plant-Based
-              <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
-
+            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">
+              Repair overactive nerves,<br> feel steady by day, and<br> sleep peacefully at night.
             </h1>
-            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
-              <br>Plant-Based
-              Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span>
+            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">
+              Repair overactive nerves, feel steady by day, and sleep peacefully at night.
             </h1>
             <div class="font-gelasio">
               <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" width="69" height="17" viewBox="0 0 69 17"
@@ -300,14 +394,23 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </div>
-        <div>
+        <div class="flex flex-col justify-center items-center">
           <div
-            class="font-crossfit px-0 md:px-12 pt-[18px] md:pt-[62px] text-[29px] md:text-[51px] leading-[31px] md:leading-[57px] justify-center items-center text-center md:text-start">
-            <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">Sleep
-                Peacefully All Night.</span> </p>
+            class="flex font-crossfit px-0 pt-[18px] md:pt-[62px] text-[26px] md:text-[49px] leading-[31px] md:leading-[57px] text-center md:text-start">
+            <p class="lg:hidden max-w-[330px] text-[#370F1E]">
+              Finally, Real Relief for Burning, Tingling & Numbness <span class="text-white">— 
+              
+              From the Inside Out.
+              </span> 
+            </p>
+            <p class="hidden lg:block lg:pl-[50px] text-[#370F1E]">
+              Finally, Real Relief for Burning, Tingling & Numbness <span class="text-white"><br>— 
+              
+              From the Inside Out.
+              </span> 
+            </p>
           </div>
-          <div class="flex flex-col px-[50px] lg:px-12">
-
+          <div class="flex flex-col lg:px-12 w-full px-[45px]">
             <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">
               <ul
                 class="text-[#370F1E] relative bottom-[3px] gap-[4px] text-[14px] md:text-[18px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
@@ -330,7 +433,7 @@ onBeforeUnmount(() => {
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
                   </svg>
 
-                  <p>Stress, Anxiety & Exhaustion Relief </p>
+                  <p>Relief from Nerve Discomfort</p>
                 </li>
                 <li class="flex gap-3 items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
@@ -347,7 +450,7 @@ onBeforeUnmount(() => {
                       d="M11.6879 4.97062C11.391 4.49878 10.8275 4.17383 10.1733 4.17383C9.51915 4.17383 8.95558 4.49878 8.65869 4.97062"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
                   </svg>
-                  <p>Pain & Inflammation Reduction</p>
+                  <p>Pain & Inflammation Support</p>
                 </li>
                 <li class="flex gap-3  items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
@@ -361,7 +464,7 @@ onBeforeUnmount(() => {
                       d="M10.9286 1.32145C10.8581 1.04547 10.4958 0.916385 10.2291 1.06328C9.49949 1.46835 8.64407 1.69982 7.71819 1.69982C6.79232 1.69982 5.93689 1.4639 5.20726 1.06328C4.93553 0.911934 4.57827 1.04547 4.50782 1.32145C4.31661 2.06037 3.89392 2.76368 3.24481 3.34236C2.59065 3.92103 1.80064 4.29049 0.960308 4.45964C0.648329 4.52196 0.502403 4.84245 0.668457 5.07837C1.12636 5.72381 1.38802 6.48054 1.38802 7.29958C1.38802 8.11863 1.12133 8.87535 0.668457 9.52079C0.497371 9.76116 0.648329 10.0772 0.960308 10.1395C1.79561 10.3087 2.59065 10.6826 3.24481 11.2568C3.89896 11.831 4.31661 12.5343 4.50782 13.2777C4.57827 13.5537 4.94057 13.6828 5.20726 13.5359C5.93689 13.1308 6.79232 12.8993 7.71819 12.8993C8.64407 12.8993 9.49949 13.1353 10.2291 13.5359C10.5008 13.6872 10.8581 13.5537 10.9286 13.2777C11.1198 12.5388 11.5425 11.8355 12.1916 11.2568C12.8407 10.6781 13.6357 10.3087 14.4761 10.1395C14.7881 10.0772 14.934 9.75671 14.7679 9.52079C14.31 8.87535 14.0484 8.11863 14.0484 7.29958C14.0484 6.48054 14.3151 5.72381 14.7679 5.07837C14.939 4.838 14.7881 4.52196 14.4761 4.45964C13.6408 4.29049 12.8457 3.91658 12.1916 3.34236C11.5374 2.76368 11.1198 2.06483 10.9286 1.32145Z"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
                   </svg>
-                  <p>Mood, Focus & Energy </p>
+                  <p>Calm, Focus & Restorative Sleep </p>
                 </li>
               </ul>
             </div>
@@ -369,11 +472,11 @@ onBeforeUnmount(() => {
               <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
                 :showIcon="false"
                 class="botao-shop font-bold !m-0 text-[18px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem] md:max-w-[540px] ">
-                Yes, I Want to Relax Now
+                Yes, I Want Nerve Relief Now
               </ShopButton>
             </div>
           </div>
-          <div class="px-[50px] flex justify-center md:justify-start lg:justify-center">
+          <div class="flex justify-start lg:justify-center">
             <div
               class="w-[260px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
               <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
@@ -401,10 +504,8 @@ onBeforeUnmount(() => {
                 </div>
               </div>
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
-
               <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
                 <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
-
                   viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -445,30 +546,101 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-
     </div>
   </section>
-  <section class="bg-[#370F1E] relative">
-    <div class="sm:hidden px-[40px] pt-[26px] pb-[36px]">
-      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted-2">
-    </div>
-    <div class="hidden px-40 py-20 sm:flex">
-      <img src="/assets/why_exhausted_desktop.webp" loading="lazy" alt="exhausted-2">
+  <section class="bg-[#370F1E] justify-center flex-col relative ">
+    <div class="px-[40px] pt-[26px] ">
+      <h1 class="text-[32px] text-white text-center leading-[1] font-crossfit">
+        Living with Nerve Pain<span class="text-[#FFDC03]"> Feels Endless.</span>
+      </h1>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-1">
+        <ul class="flex flex-col text-[16px] gap-[35px]">
+          <li class="text-center font-gelasio italic text-white">
+            <p class="pt-[36px] pb-[10px]">It’s like walking on broken glass.</p>
+            <img src="/assets/glass.webp" alt="">
+          </li>
+          <li class="text-center font-gelasio italic text-white">
+            <p class="pb-[10px] px-8">Like thousands of tiny needles in your feet.</p>
+            <img src="/assets/preg.webp" alt="">
+          </li>
+          <li class="text-center font-gelasio italic text-white">
+            <p class="pb-[10px]">Like electric shocks out of nowhere</p>
+            <img src="/assets/man0.webp" alt="">
+          </li>
+        </ul>
+      </div>
+      <div class="pt-[30px] pb-[30px]">
+        <div class="bg-[#4F2A38] py-[14px] px-[20px] text-[12px] text-center text-white rounded-[15px]">
+          <ul class="flex flex-col gap-3">
+            <li class="border-b pb-2 border-[#370F1E]">
+              Burning feet at night that wake you up.
+            </li>
+            <li class="border-b pb-2 border-[#370F1E]">
+              Tingling hands that make you drop things.
+            </li>
+            <li>
+              Numbness that makes it hard to feel the ground beneath you.
+            </li>
+          </ul>          
+        </div>
+        <div class="flex gap-[26px] pb-[54px] pt-[35px]">
+          <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" 
+            src="/assets/wm.webp"
+            loading="lazy" alt="exhausted">
+          <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+            alt="exhausted"></img>
+          <div class="flex flex-col text-white gap-[10px] lg:gap-[20px]">
+            <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">
+              Over time, this <span class="text-[#FFDC03]"> invisible thief </span> <br>steals your energy, your focus, and even the joys of everyday life — cooking, driving, playing with your grandkids, or just getting a good night’s sleep.
+            </p>
+          </div>
+        </div>          
+        <h1 class="text-[32px]  pb-[20px] text-white text-center leading-[1] font-crossfit">
+          Why It Gets <br><span class="text-[#FFDC03]"> Worse Over Time.</span>
+        </h1>
+        <img src="/assets/relief.webp" class="py-[20px]" alt="">
+         <h1 class="text-[32px] pt-[20px] pb-[37px] text-white text-center leading-[1] font-crossfit">
+          Why Most Solutions <span class="text-[#FFDC03]"> Fail</span>
+        </h1>
+        <div class="bg-[#4F2A38] pt-[18px] pb-[12px] px-[20px] text-[12px] text-center text-white rounded-[15px]">
+          <ul class="flex flex-col leading-[1.3] gap-3">
+            <li class="border-b pb-[14px] border-[#370F1E]">
+             <span class="font-black "> Drugs (Gabapentin, Lyrica, Cymbalta):</span><br>
+              Mask the pain, cause side effects, never repair the nerves.
+            </li>
+            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+              <span class="font-black ">Compression socks:</span><br>
+              Help with swelling, not nerve pain.
+            </li>
+            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+              <span class="font-black ">Cheap creams & gadgets:</span><br>
+              Distract for minutes, no real relief.
+            </li>
+            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+                <span class="font-black ">Injections & surgeries:</span><br>
+              Expensive, risky, out of reach.
+            </li>
+             <li class="font-gelasio italic pt-[4px] text-[16px] pb-2 ">
+              None of these<span class="text-[#FFDC03] font-bold"> fix the root cause.</span>
+            </li>
+          </ul>  
+        </div>
+         <img src="/assets/data.webp" class="pt-[20px]" alt="">        
+      </div>
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
-        <img class="lg:hidden w-[120px] h-[138px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
+      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-10 pr-8 lg:px-40 w-full">
+        <img class="lg:hidden w-[123x] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
           loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
         <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
           <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
           </p>
-          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">You don’t have to stay
-            in
-            <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.
+          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">
+            Nerve pain doesn’t have to control your life. With gentle, plant-based support, your body can feel calmer and more comfortable again.
           </p>
         </div>
         <div class="pointer-events-none -z-10 absolute bottom-[-55px] lg:bottom-[-120px] left-0 w-full h-32 lg:h-80
@@ -476,14 +648,33 @@ onBeforeUnmount(() => {
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] md:pt-[180px]">
+      <div class="pt-[74px] px-[30px] flex-col flex justify-center md:pt-[180px]">
         <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
-          Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
-      </div>
+          The Breakthrough: Repair Nerves from the Inside Out</p>
+        <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[14px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
+        <div class="bg-[#96E3DF] pt-[16px] pb-[12px] px-[20px] text-[12px] text-center text-[#370F1E] rounded-[15px]">
+          <ul class="flex flex-col leading-[1.4] gap-3">
+            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+              <span class="font-black ">Calms overactive nerve signals:</span><br>
+              Stops the burning and tingling from escalating.
+            </li>
+            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+              <span class="font-black ">Reduces inflammation:</span><br>
+              Lowers pain triggers so your nerves can finally rest.
+            </li>
+            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+                <span class="font-black ">Supports nerve repair & protection:</span><br>
+              Helps restore the protective layer (myelin) so you feel steady again.
+            </li>
+             <li class="font-gelasio italic pt-[4px] text-[16px] pb-2 ">
+              Backed by science. Inspired by nature. Proven in real lives.
+            </li>
+          </ul>  
+        </div>
+      </div>     
       <div class="flex justify-center">
         <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
           alt="bottle">
-        <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
           class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
@@ -492,8 +683,16 @@ onBeforeUnmount(() => {
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
+      <div class="text-center  text-[#370F1E]">
+        <h1 class="font-crossfit text-[32px]">
+          Real-Life Benefits
+        </h1>
+        <p class="text-[14px] pb-[15px]">
+          With Super Relax, customers report:
+        </p>
+      </div>
       <div class="px-8 md:px-40">
-        <img class="md:hidden block" src="/assets/box41.webp" alt="blocks">
+        <img class="md:hidden block" src="/assets/group_41.webp" alt="blocks">
         <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
@@ -501,10 +700,10 @@ onBeforeUnmount(() => {
   </section>
   <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="font-crossfit text-[#370F1E] text-center ">
-      <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven
-          to Restore <br> Calm and Clarity.</span></p>
-      <p class="hidden leading-[1] text-[60px] lg:block">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven
-          to Restore Calm and Clarity.</span></p>
+      <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> 
+       Proven to Ease Nerve Discomfort.</span></p>
+      <p class="hidden leading-[1] text-[60px] lg:block">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> 
+         Proven to Ease Nerve Discomfort.</span></p>
     </div>
     <div class="carrossel-ingredients">
       <LazyIsland>
@@ -512,7 +711,9 @@ onBeforeUnmount(() => {
       </LazyIsland>
     </div>
   </section>
-  <DepoimentsD />
+  <DepoimentsD  
+    :testimonials="testimonials"
+  />
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
       <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
@@ -543,7 +744,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </section>
-  <ShopNowD id="shop-now-d" />
+  <ShopNowRelief id="shop-now-d" />
 
   <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
     <div class="lg:hidden">
@@ -567,8 +768,8 @@ onBeforeUnmount(() => {
       <div class="pt-[30px]">
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]"
           textColorClass="text-[#FFDC03]" :showIcon="true"
-          class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
-          Get Calm, Clarity & Rest Now
+          class="botao-shop font-bold !gap-2 !m-0 text-[13px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
+          Turn Down the Pain, Bring Back Your Rest
         </ShopButton>
       </div>
     </div>
@@ -586,7 +787,7 @@ onBeforeUnmount(() => {
           Frequently asked questions:</h1>
         <LazyIsland>
           <div class="faq-wrap">
-            <FAQ />
+            <Faq :asks="asks" />
           </div>
         </LazyIsland>
       </div>
@@ -597,9 +798,9 @@ onBeforeUnmount(() => {
       <SuperFooter2 />
     </div>
   </div>
-  <LazyIsland>
+  <!-- <LazyIsland>
     <NotificationDisplay2 />
-  </LazyIsland>
+  </LazyIsland> -->
   <!-- <BannerModal /> -->
   <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
     :disable-backdrop-close="true" :disable-esc="false">
