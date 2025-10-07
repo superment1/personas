@@ -320,8 +320,8 @@ function toggle(index) {
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span class="font-DMSans text-[18px] md:text-[20px] font-bold text-[#370F1E]">
-                            Claim My Offer & Relax Now
+                        <span class="font-DMSans text-[14px] md:text-[20px] font-bold text-[#370F1E]">
+                            Claim My Bottle — Feel Relief in Days
                         </span>
                     </div>
                 </ShopButton>
@@ -585,8 +585,8 @@ function toggle(index) {
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span class="font-DMSans text-[33px] font-bold text-[#370F1E]">
-                            Claim My Offer & Relax Now
+                        <span class="font-DMSans text-[20px] font-bold text-[#370F1E]">
+                            Claim My Bottle — Feel Relief in Days
                         </span>
                     </div>
                 </ShopButton>

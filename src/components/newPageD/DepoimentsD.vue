@@ -29,7 +29,7 @@ const props = defineProps({
                 avatarDesk: '',
                 avatarMobile: '',
                 title: 'I am enjoying it!!',
-                testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
+                testimonial: 'I feel less worried now and not snapping so much at my friends. Honestly more calm overall.',
                 name: 'Danielle A., 37',
                 city: 'Los Angeles, CA'
             },

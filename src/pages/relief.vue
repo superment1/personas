@@ -548,84 +548,92 @@ const asks = ref([
       </div>
     </div>
   </section>
-  <section class="bg-[#370F1E] justify-center flex-col relative ">
-    <div class="px-[40px] pt-[26px] ">
-      <h1 class="text-[32px] text-white text-center leading-[1] font-crossfit">
+  <section class="bg-[#370F1E] relative ">
+    <div class="px-[40px] pt-[26px] lg:pt-[78px] justify-center flex-col flex items-center ">
+      <h1 class="text-[32px] lg:text-[60px] text-white text-center leading-[1] font-crossfit">
         Living with Nerve Pain<span class="text-[#FFDC03]"> Feels Endless.</span>
       </h1>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-1">
-        <ul class="flex flex-col text-[16px] gap-[35px]">
-          <li class="text-center font-gelasio italic text-white">
-            <p class="pt-[36px] pb-[10px]">It’s like walking on broken glass.</p>
-            <img src="/assets/glass.webp" alt="">
+      <div class="max-w-[976px]">
+        <ul class="flex flex-col text-[16px] lg:text-[50px] gap-[35px]">
+          <li class="lg:grid lg:grid-cols-2 gap-8 lg:pt-[95px] items-center lg:[&>p]:order-2 lg:[&>img]:order-1 text-center font-gelasio italic text-white">
+            <p class="pt-[36px] pb-[10px] lg:px-10">It’s like walking on broken glass.</p>
+            <img class="lg:hidden block" src="/assets/glass.webp" alt="">
+            <img class="hidden lg:block" src="/assets/man0_desk.webp" alt="">
+            
           </li>
-          <li class="text-center font-gelasio italic text-white">
+          <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-1 lg:[&>img]:order-2 text-center lg:text-start font-gelasio italic text-white">
             <p class="pb-[10px] px-8">Like thousands of tiny needles in your feet.</p>
-            <img src="/assets/preg.webp" alt="">
+            <img  class="lg:hidden block"src="/assets/preg.webp" alt="">
+            <img class="hidden lg:block" src="/assets/glass_desk.webp" alt="">
           </li>
-          <li class="text-center font-gelasio italic text-white">
-            <p class="pb-[10px]">Like electric shocks out of nowhere</p>
-            <img src="/assets/man0.webp" alt="">
+          <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-2 lg:[&>img]:order-1 text-center lg:text-start font-gelasio italic text-white">
+            <p class="pb-[10px] lg:px-10">Like electric shocks out of nowhere</p>
+            <img  class="lg:hidden block" src="/assets/man0.webp" alt="">
+            <img class="hidden lg:block" src="/assets/preg_desk.webp" alt="">
+           
           </li>
         </ul>
       </div>
-      <div class="pt-[30px] pb-[30px]">
-        <div class="bg-[#4F2A38] py-[14px] px-[20px] text-[12px] text-center text-white rounded-[15px]">
-          <ul class="flex flex-col gap-3">
-            <li class="border-b pb-2 border-[#370F1E]">
+      <div class="pt-[30px] max-w-[976px] lg:pt-[60px] pb-[30px]">
+        <div class="bg-[#4F2A38] py-[14px] lg:pt-[45px] lg:pb-[40px] px-[20px] text-[12px] lg:text-[36px] text-center text-white rounded-[15px]">
+          <ul class="flex flex-col gap-3 lg:gap-7">
+            <li class="border-b lg:border-b-[3px] pb-2 lg:pb-[30px] border-[#370F1E]">
               Burning feet at night that wake you up.
             </li>
-            <li class="border-b pb-2 border-[#370F1E]">
+            <li class="border-b lg:border-b-[3px] pb-2 lg:pb-[30px] border-[#370F1E]">
               Tingling hands that make you drop things.
             </li>
-            <li>
+            <li class="lg:px-10">
               Numbness that makes it hard to feel the ground beneath you.
             </li>
           </ul>          
         </div>
-        <div class="flex gap-[26px] pb-[54px] pt-[35px]">
-          <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" 
-            src="/assets/wm.webp"
-            loading="lazy" alt="exhausted">
-          <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+        <div class="flex gap-[26px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
+          <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" src="/assets/wm.webp" loading="lazy" alt="exhausted">
+          <img class="hidden lg:block w-[500px] h-[525px] " src="/assets/wm_desk.webp" width="504" height="525" loading="lazy"
             alt="exhausted"></img>
           <div class="flex flex-col text-white gap-[10px] lg:gap-[20px]">
             <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">
-              Over time, this <span class="text-[#FFDC03]"> invisible thief </span> <br>steals your energy, your focus, and even the joys of everyday life — cooking, driving, playing with your grandkids, or just getting a good night’s sleep.
+              Over time, this <span class="text-[#FFDC03]"><br> invisible thief </span> <br>steals your energy, your focus, and even the joys of everyday life — cooking, driving, playing with your grandkids, or just getting a good night’s sleep.
             </p>
           </div>
         </div>          
-        <h1 class="text-[32px]  pb-[20px] text-white text-center leading-[1] font-crossfit">
+        <h1 class="lg:hidden text-[32px] pb-[20px] text-white text-center leading-[1] font-crossfit">
           Why It Gets <br><span class="text-[#FFDC03]"> Worse Over Time.</span>
         </h1>
-        <img src="/assets/relief.webp" class="py-[20px]" alt="">
-         <h1 class="text-[32px] pt-[20px] pb-[37px] text-white text-center leading-[1] font-crossfit">
+        <h1 class="hidden lg:block text-[60px] pb-[20px] text-white text-center leading-[1] font-crossfit">
+          Why It Gets <span class="text-[#FFDC03]"> Worse Over Time.</span>
+        </h1>
+        <img src="/assets/relief.webp" class="lg:hidden py-[20px]" alt="">
+        <img src="/assets/relief_desk.webp" class="hidden lg:block py-[20px]" alt="">
+         <h1 class="text-[32px] lg:text-[60px] pt-[20px] pb-[37px] lg:pt-[60px] lg:pb-[67px] text-white text-center leading-[1] font-crossfit">
           Why Most Solutions <span class="text-[#FFDC03]"> Fail</span>
         </h1>
-        <div class="bg-[#4F2A38] pt-[18px] pb-[12px] px-[20px] text-[12px] text-center text-white rounded-[15px]">
-          <ul class="flex flex-col leading-[1.3] gap-3">
-            <li class="border-b pb-[14px] border-[#370F1E]">
+        <div class="bg-[#4F2A38] pt-[18px] lg:pt-[70px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-white rounded-[15px]">
+          <ul class="flex flex-col leading-[1.3] lg:leading-[1.4] gap-3 lg:gap-[30px]">
+            <li class="border-b-[3px] pb-[14px] lg:pb-[37px] border-[#370F1E] lg:px-[100px]">
              <span class="font-black "> Drugs (Gabapentin, Lyrica, Cymbalta):</span><br>
               Mask the pain, cause side effects, never repair the nerves.
             </li>
-            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
               <span class="font-black ">Compression socks:</span><br>
               Help with swelling, not nerve pain.
             </li>
-            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
               <span class="font-black ">Cheap creams & gadgets:</span><br>
               Distract for minutes, no real relief.
             </li>
-            <li class="border-b pb-[15px] pt-[4px] border-[#370F1E]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
                 <span class="font-black ">Injections & surgeries:</span><br>
               Expensive, risky, out of reach.
             </li>
-             <li class="font-gelasio italic pt-[4px] text-[16px] pb-2 ">
+             <li class="font-gelasio italic pt-[4px] text-[16px] lg:text-[40px] pb-2 lg:pb-[50px] lg:pt-[15px] ">
               None of these<span class="text-[#FFDC03] font-bold"> fix the root cause.</span>
             </li>
           </ul>  
         </div>
-         <img src="/assets/data.webp" class="pt-[20px]" alt="">        
+         <img src="/assets/data.webp" class="lg:hidden pt-[20px]" alt="">        
+         <img src="/assets/data_desk.webp" class="lg:block hidden pt-[20px]" alt="">      
       </div>
     </div>
   </section>
@@ -648,33 +656,32 @@ const asks = ref([
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] px-[30px] flex-col flex justify-center md:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
+      <div class="pt-[74px] px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[180px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] px-[70px] md:text-[60px]">
           The Breakthrough: Repair Nerves from the Inside Out</p>
-        <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[14px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
-        <div class="bg-[#96E3DF] pt-[16px] pb-[12px] px-[20px] text-[12px] text-center text-[#370F1E] rounded-[15px]">
-          <ul class="flex flex-col leading-[1.4] gap-3">
-            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+        <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
+        <div class="bg-[#96E3DF] pt-[16px] lg:pt-[65px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-[#370F1E] rounded-[15px]">
+          <ul class="flex flex-col leading-[1.4] gap-3 lg:gap-[40px]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
               <span class="font-black ">Calms overactive nerve signals:</span><br>
               Stops the burning and tingling from escalating.
             </li>
-            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
               <span class="font-black ">Reduces inflammation:</span><br>
               Lowers pain triggers so your nerves can finally rest.
             </li>
-            <li class="border-b pb-[15px] pt-[4px] border-[#4DBCB6]">
+            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
                 <span class="font-black ">Supports nerve repair & protection:</span><br>
               Helps restore the protective layer (myelin) so you feel steady again.
             </li>
-             <li class="font-gelasio italic pt-[4px] text-[16px] pb-2 ">
+             <li class="font-gelasio italic pt-[4px] lg:pb-[48px] text-[16px] lg:text-[40px] lg:px-[30px] pb-2 ">
               Backed by science. Inspired by nature. Proven in real lives.
             </li>
           </ul>  
         </div>
       </div>     
       <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
-          alt="bottle">
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"alt="bottle">
         <div
           class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
@@ -684,16 +691,20 @@ const asks = ref([
         </div>
       </div>
       <div class="text-center  text-[#370F1E]">
-        <h1 class="font-crossfit text-[32px]">
+        <h1 class="font-crossfit text-[32px] lg:text-[60px]">
           Real-Life Benefits
         </h1>
-        <p class="text-[14px] pb-[15px]">
+        <p class="text-[14px] lg:pt-[30px] lg:text-[36px] pb-[15px] lg:pb-[35px]">
           With Super Relax, customers report:
         </p>
       </div>
       <div class="px-8 md:px-40">
-        <img class="md:hidden block" src="/assets/group_41.webp" alt="blocks">
-        <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
+        <img class="md:hidden block pb-10" src="/assets/group_41.webp" alt="blocks">
+        <img class="hidden md:block pb-20" src="/assets/group_419_desk.webp" alt="blocks">
+        <div class="border-t-2 pt-[14px] lg:pt-[45px] leading-[1] border-[#370F1E] text-[#370F1E] pr-10 lg:pr-40 lg:text-[40px] text-[13px]">
+          <p class="font-bold pb-4 lg:pb-[60px]">Why Super Relax</p>
+          <p>Freedom from burning, tingling, and numbness. Confidence to move through your day without fear of flare-ups. Peaceful nights with less pain and more rest. A calmer, steadier you — inside and out.</p>
+        </div>
       </div>
     </div>
 

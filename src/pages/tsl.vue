@@ -111,7 +111,7 @@ const asks = ref([
   </section>
   <section class="">
     <BgText
-      class="min-h-[534px] lg:hidden"
+      class="!min-h-[534px] lg:hidden"
       bgImage="/assets/wom-tsl.webp"
     />
     <BgText class="hidden lg:flex bg-center"
@@ -121,8 +121,9 @@ const asks = ref([
   <section>
     <div class="bg-[#370F1E] px-[40px] pt-[26px] lg:py-[40px] pb-[24px] text-center text-[#fff] flex flex-col items-center justify-center">
       <div class="max-w-[702px]">
-        <h1 class="font-crossfit leading-[1.1] px-[35px] text-[32px] lg:text-[50px] text-[#6EC8F0]">It doesn’t have to be this way.</h1>
-          <p class="text-[12px] lg:text-[24px] pt-[26px] leading-[1.1] pb-[10px] lg:pb-[25px] px-[10px] lg:px-0">Because today, this old American secret has returned — inside every capsule of<span class="text-[#6EC8F0] font-black">Super Natural Sleep.</span></p>
+        <h1 class="font-crossfit leading-[1.1] px-[35px] text-[32px] lg:text-[50px] text-[#6EC8F0]">
+          It doesn’t have to be this way.</h1>
+          <p class="text-[12px] lg:text-[24px] pt-[26px] leading-[1.1] pb-[10px] lg:pb-[25px] px-[10px] lg:px-0">Because today, this old American secret has returned — inside every capsule of <span class="text-[#6EC8F0] font-black">Super Natural Sleep.</span></p>
           <p class="text-[12px] lg:text-[24px] leading-[1.1] px-[5px]">At the heart of this gentle, powerful formula lies the California Poppy, blended with other carefully chosen botanicals to quiet the mind, relax the body, and prepare you for the kind of deep sleep that restores health, mood, energy, and focus.</p>
       </div>
         </div>
@@ -225,7 +226,7 @@ const asks = ref([
           textColorClass="text-[#370F1E]"
           class="inline-flex w-fit !h-[40px] !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent !shadow-none !ring-0 !p-0"
           :showIcon="false">
-          <div class="flex flex-row items-center bg-[#FFDC03] !h-[40px] lg:w-[582px] w-[328px] lg:!h-[72px] px-[35px] lg:px-[40px] py-[7px] rounded-full justify-center gap-3">
+          <div class="flex flex-row items-center bg-[#FFDC03] !h-[40px] lg:w-[582px] w-[328px] lg:!h-[72px] px-[30px] lg:px-[40px] py-[7px] rounded-full justify-center gap-3">
             <svg class="w-[32px]" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 27 27" fill="none">
                 <g clip-path="url(#clip0_142_375)">
                     <path
@@ -366,18 +367,25 @@ const asks = ref([
   </section>
   <ShopNowTsl id="shop-now-tsl"/>
   <section>
-    <BgText
-      class="lg:hidden min-h-[584px] !justify-start !pt-0"
-      content-class="mt-0"
-      bgImage="/assets/ind-tsl.webp"
-    />
+    <div class="lg:hidden relative   flex min-h-[584px]">
+      <img src="/assets/_ndia.webp"
+          class="absolute inset-0 w-full h-full object-cover" alt="">
+      <div class="relative z-10 flex flex-col pt-[30px] items-center text-center px-12">
+        <p class="text-white text-[12px] leading-[1] text-center">
+          Because sleep should never be a gamble. It should <br> be a treasure.
+          <br><br>
+          And now, the old American secret of the California Poppy can be yours — tonight, tomorrow, and for every night that follows.
+        </p>
+      </div>  
+    </div>
     <BgText 
     class="hidden lg:block"
       bgImage="/assets/ind-tsl-desk.webp"
     />
   </section>
   <section class="bg-[#FFDC03] pb-[37px] lg:pb-[75px] pt-[26px] lg:pt-[62px] justify-items-center px-[35px]">
-    <p class="text-center lg:pb-[52px] px-[15px] pb-[32px] leading-[1] lg:leading-[1.1] max-w-[813px] lg:text-[32px] font-gelasio text-[#3D0B1E] italic">Don’t wait. Supplies are limited, and every day spent without restful sleep is a day lost to fatigue, stress, and struggle.
+    <p class="text-center lg:pb-[52px] px-[15px] pb-[32px] leading-[1] lg:leading-[1.1] max-w-[813px] lg:text-[32px] font-gelasio text-[#3D0B1E] italic">
+      Don’t wait. Supplies are limited, and every day spent without restful sleep is a day lost to fatigue, stress, and struggle.
       <br><br>Order now, and let nature’s forgotten treasure restore the rest you’ve been searching for.
     </p>
     <div class="w-full flex justify-center">

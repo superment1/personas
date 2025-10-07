@@ -59,11 +59,11 @@ const anchorId = 'shop-now-tsl'
                         />
                         <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                             productId="prod_T2jNgj5cCjXcvG"
-                            class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
+                            class="absolute inset-x-0 bottom-4 z-20
                                 h-[72px] 
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
-                                !rounded-[13px] justify-center !px-8">
+                                !rounded-[13px] justify-center justify-self-center !px-8">
                             <div class="flex flex-row items-center justify-center gap-3">                        
                                 <span class="font-DMSans text-[18px] md:text-[20px] leading-[1.2] font-bold text-[#370F1E]">
                                     1 Bottle: A 30-day supply to<br> experience the difference.
@@ -83,7 +83,7 @@ const anchorId = 'shop-now-tsl'
                                 w-[44px] pointer-events-none"
                         />                        
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
-                            class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
+                            class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[94px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
@@ -107,7 +107,7 @@ const anchorId = 'shop-now-tsl'
                                 w-[44px] pointer-events-none"
                         />
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
-                            class="absolute left-1/2 -translate-x-1/2 bottom-4 z-20
+                            class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[72px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
