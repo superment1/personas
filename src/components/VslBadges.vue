@@ -5,7 +5,8 @@ import ShopButton from './ShopButton.vue';
 const props = defineProps({
   durationMs: { type: Number, default: 7*60*1000 },
   startOn:    { type: String,  default: 'mount' },
-  persistKey: { type: String,  default: '' }
+  persistKey: { type: String,  default: '' },
+  bgCollor: { type: String, default: 'bg-[#6EC8F0]' }
 })
 
 const emit = defineEmits<{ (e: 'expired'): void }>()
@@ -14,8 +15,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
 <template>
     <div
-        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start 
-        py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]">
+        :class="['w-full flex flex-col items-center justify-start py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]', props.bgCollor]">
          
         <!-- HEADER COM CONTADOR -->
         <div
@@ -51,7 +51,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
         <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center justify-start xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
             <div
-                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:w-[600px] xl:h-[600px] xl:pb-4">
+                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:w-[600px] xl:h-[600px] xl:pb-4">
                 <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block xl:hidden">
                 <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden xl:block h-auto w-[110%] max-w-[900px]">
 
@@ -99,7 +99,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 class="w-[350px] flex flex-row items-center justify-between py-3 sm:w-[460px] xl:w-[600px] xl:h-[615px] xl:gap-4 xl:justify-between xl:flex-col justify-start">
                 <div class="flex flex-row items-center justify-between gap-3 xl:flex-row items-center justify-start">
                     <div
-                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3 ml-4 sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
@@ -145,7 +145,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         </ShopButton>
                     </div>
                     <div
-                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
                             class="w-[200px] h-[180px] -mt-3  sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
@@ -193,7 +193,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 </div>
                 <!-- ICONES DESK -->
                 <div
-                    class="hidden xl:flex bg-[#90DAF4] rounded-[30px] w-[600px] h-[176px] flex flex-row items-center justify-center px-10 gap-6 w-[615px]">
+                    class="hidden xl:flex bg-[#ffffff3f] rounded-[30px] w-[600px] h-[176px] flex flex-row items-center justify-center px-10 gap-6 w-[615px]">
                     <div class="flex flex-row gap-7 items-center justify-center w-[250px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74" height="50" viewBox="0 0 74 50" fill="none">
                             <path
@@ -258,7 +258,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
         <!-- ICONES MOBILE -->
         <div
-            class="w-[350px] h-[100px] sm:w-[460px] bg-[#90DAF4] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
+            class="w-[350px] h-[100px] sm:w-[460px] bg-[#ffffff3f] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
             <div class="flex flex-row items-center justify-center gap-4 w-[200px] sm:gap-6 sm:justify-start">
                 <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
                     <path

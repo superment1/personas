@@ -189,53 +189,52 @@ const testimonials = [
   {
     avatarDesk: '',
     avatarMobile: '',
-    title: 'It gave me back my focus.',
-    testimonial: 'Neuropathy made it hard to concentrate — the tingling and stabbing pain were always there. Now it’s calmer, and I can finally stay productive again.',
-    name: 'Kevin L., 46',
-    city: 'Seattle, WA'
+    title: 'Stress was eating me alive at work.',
+    testimonial: 'Back-to-back Zoom calls, constant Slack pings — I felt like I couldn’t breathe. After a few weeks, I’m not snapping at my coworkers anymore, and I can actually close my laptop without shaking.',
+    name: 'Emily J., 34',
+    city: 'San Francisco, CA'
   },
   {
     avatarDesk: '',
     avatarMobile: '',
-    title: 'The pain isn’t holding me back.',
-    testimonial: 'I used to dread going out, afraid the pain in my legs would flare up. Now it feels calmer, and I’m not anxious about leaving the house.',
-    name: 'Marisa P., 51',
-    city: 'Austin, TX'
+    title: 'I hit burnout hard.',
+    testimonial: 'I run a small design studio and was pulling 12-hour days. My chest was tight, my patience gone. This helped me feel level again — I don’t explode over emails like I used to.',
+    name: 'David P., 40',
+    city: 'Brooklyn, NY'
   },
   {
     avatarDesk: '',
     avatarMobile: '',
-    title: 'Finally sleeping through the pain.',
-    testimonial: 'For years, burning in my feet woke me up every night. Now the pain is quieter, and I wake up feeling human again.',
-    name: 'Robert H., 62',
+    title: 'Anxiety ruled my mornings.',
+    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
+    name: 'Laura M., 45',
     city: 'Chicago, IL'
   },
   {
     avatarDesk: '',
     avatarMobile: '',
-    title: 'Good both day & night.',
-    testimonial: 'Neuropathy kept me restless and sore. Now the pain is quieter, I sleep longer, and I feel sharper at work.',
-    name: 'Eliseu C., 40',
-    city: 'Fort Lauderdale, FL'
-  },
-  {
-    avatarDesk: '',
-    avatarMobile: '',
-    title: 'The burning is finally easing.',
-    testimonial: 'It’s still early, but I already notice less burning and tingling in my legs. Sleeping better at night has made a huge difference in how I feel during the day.',
-    name: 'Bruna R., 38',
-    city: 'New York, NY'
-  },
-  {
-    avatarDesk: '',
-    avatarMobile: '',
-    title: 'She’s back to being herself again.',
-    testimonial: 'For years, my mom couldn’t play with her grandkids because of nerve pain. Now she walks, laughs, and even chases them — seeing her smile is the best gift for us.',
-    name: 'Patricia M., 42',
+    title: 'I was always on edge at home.',
+    testimonial: 'My kids noticed before I did — I was irritable, snapping at the smallest things. Now the tension’s dialed down, and I can actually enjoy being with them after work.',
+    name: 'Michael H., 37',
     city: 'Denver, CO'
   },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'Deadlines used to crush me.',
+    testimonial: 'Every end of month I’d get headaches and shut down from the pressure. Now I still work hard, but I don’t fall apart — I can think straight under stress.',
+    name: 'Sofia R., 43',
+    city: 'Miami, FL'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'I felt wired but drained.',
+    testimonial: 'Like my body was stuck in overdrive. After using this, I’m calmer and no longer pacing the house at night after a long day.',
+    name: 'Anthony D., 50',
+    city: 'Austin, TX'
+  },
 ]
-
 </script>
 
 <template>
@@ -247,10 +246,9 @@ const testimonials = [
     </header>
     <!-- mobile -->
     <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-[972px]">
-      <div
-        class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px] sm:pt-[80px]">
+      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[36px] sm:pt-[80px]">
         <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[306px] h-[574px]">
-          <div class="sm:hidden font-crossfit leading-none text-[40px] sm:text-[80px]">
+          <div class="sm:hidden font-crossfit leading-none text-[50px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
               THE SECRET THAT ENDED 
               <span class="text-[#370F1E]">
@@ -271,7 +269,7 @@ const testimonials = [
             </h1>
           </div>
 
-          <div class="relative z-10 pt-[28px] sm:pt-0">
+          <div class="relative z-10 pt-[16px] sm:pt-0">
             <div
               class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
                     sm:max-w-[649px] sm:h-[437px] sm:max-h-[812px] overflow-hidden"
@@ -458,7 +456,7 @@ const testimonials = [
       </div>
     </main>
 
-    <div class="sm:hidden w-full h-[143px] sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
+    <div class="sm:hidden w-full h-[158px] justify-center sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
       <div class="flex max-w-[349px] mx-auto flex-col sm:gap-[40px]">
         <div class="2 flex flex-row">
           <svg xmlns="http://www.w3.org/2000/svg" width="115" height="118" viewBox="0 0 115 118" fill="none">
@@ -606,6 +604,7 @@ const testimonials = [
     <!-- v-show="showAfterVideo" -->
     <div class="">
      <VslBadges
+        bgCollor="bg-[#4DBCB6]"
         id="id-vsl-badges"
         :duration-ms="7 * 60 * 1000"
         start-on="video-ended"

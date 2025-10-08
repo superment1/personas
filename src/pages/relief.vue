@@ -117,7 +117,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('pagehide', onPageHide)
   disableBackExitGuard()
 })
-
 const testimonials = [
   {
     avatarDesk: '',
@@ -144,16 +143,16 @@ const testimonials = [
     city: 'Chicago, IL'
   },
   {
-    avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
-    avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
+    avatarDesk: '',
+    avatarMobile: '',
     title: 'Good both day & night.',
     testimonial: 'Neuropathy kept me restless and sore. Now the pain is quieter, I sleep longer, and I feel sharper at work.',
     name: 'Eliseu C., 40',
     city: 'Fort Lauderdale, FL'
   },
   {
-    avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
-    avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
+    avatarDesk: '',
+    avatarMobile: '',
     title: 'The burning is finally easing.',
     testimonial: 'It’s still early, but I already notice less burning and tingling in my legs. Sleeping better at night has made a huge difference in how I feel during the day.',
     name: 'Bruna R., 38',
