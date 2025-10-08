@@ -168,7 +168,6 @@ const testimonials = [
     city: 'Denver, CO'
   },
 ]
-
 const asks = ref([
   { 
     question: 'What is Super Relax?', 
@@ -241,7 +240,7 @@ const asks = ref([
       </picture>
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-[50px]">
-          <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
+          <div class="text-[#370F1E] gap-[137px] lg:gap-[20px] flex flex-col">
             <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">
               Repair overactive nerves,<br> feel steady by day, and<br> sleep peacefully at night.
             </h1>
@@ -398,14 +397,12 @@ const asks = ref([
           <div
             class="flex font-crossfit px-0 pt-[18px] md:pt-[62px] text-[26px] md:text-[49px] leading-[31px] md:leading-[57px] text-center md:text-start">
             <p class="lg:hidden max-w-[330px] text-[#370F1E]">
-              Finally, Real Relief for Burning, Tingling & Numbness <span class="text-white">— 
-              
+              Finally, Real Relief for<br> Burning, Tingling & Numbness <span class="text-white">               
               From the Inside Out.
               </span> 
             </p>
             <p class="hidden lg:block lg:pl-[50px] text-[#370F1E]">
-              Finally, Real Relief for Burning, Tingling & Numbness <span class="text-white"><br>— 
-              
+              Finally, Real Relief for Burning, Tingling & Numbness <span class="text-white"><br>              
               From the Inside Out.
               </span> 
             </p>
@@ -453,16 +450,10 @@ const asks = ref([
                   <p>Pain & Inflammation Support</p>
                 </li>
                 <li class="flex gap-3  items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
-                    <path
-                      d="M6.99362 5.89752C7.33579 4.74017 8.08052 3.92113 8.99633 3.39142C9.05168 3.36026 9.04162 3.28459 8.9762 3.27124C6.7068 2.71037 4.11032 3.68966 3.18445 6.0088C2.72151 7.16614 2.89763 8.46593 3.65745 9.48974C5.17709 11.5507 7.96478 11.9602 10.0178 10.9364C10.0732 10.9097 10.0631 10.834 10.0027 10.8162C8.97117 10.4913 8.02517 9.85029 7.38108 8.79533C6.84266 7.90952 6.70177 6.86791 6.98859 5.89752H6.99362Z"
-                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                    <path
-                      d="M7.71819 11.4927C10.3388 11.4927 12.4633 9.6134 12.4633 7.29513C12.4633 4.97686 10.3388 3.09753 7.71819 3.09753C5.09754 3.09753 2.97308 4.97686 2.97308 7.29513C2.97308 9.6134 5.09754 11.4927 7.71819 11.4927Z"
-                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                    <path
-                      d="M10.9286 1.32145C10.8581 1.04547 10.4958 0.916385 10.2291 1.06328C9.49949 1.46835 8.64407 1.69982 7.71819 1.69982C6.79232 1.69982 5.93689 1.4639 5.20726 1.06328C4.93553 0.911934 4.57827 1.04547 4.50782 1.32145C4.31661 2.06037 3.89392 2.76368 3.24481 3.34236C2.59065 3.92103 1.80064 4.29049 0.960308 4.45964C0.648329 4.52196 0.502403 4.84245 0.668457 5.07837C1.12636 5.72381 1.38802 6.48054 1.38802 7.29958C1.38802 8.11863 1.12133 8.87535 0.668457 9.52079C0.497371 9.76116 0.648329 10.0772 0.960308 10.1395C1.79561 10.3087 2.59065 10.6826 3.24481 11.2568C3.89896 11.831 4.31661 12.5343 4.50782 13.2777C4.57827 13.5537 4.94057 13.6828 5.20726 13.5359C5.93689 13.1308 6.79232 12.8993 7.71819 12.8993C8.64407 12.8993 9.49949 13.1353 10.2291 13.5359C10.5008 13.6872 10.8581 13.5537 10.9286 13.2777C11.1198 12.5388 11.5425 11.8355 12.1916 11.2568C12.8407 10.6781 13.6357 10.3087 14.4761 10.1395C14.7881 10.0772 14.934 9.75671 14.7679 9.52079C14.31 8.87535 14.0484 8.11863 14.0484 7.29958C14.0484 6.48054 14.3151 5.72381 14.7679 5.07837C14.939 4.838 14.7881 4.52196 14.4761 4.45964C13.6408 4.29049 12.8457 3.91658 12.1916 3.34236C11.5374 2.76368 11.1198 2.06483 10.9286 1.32145Z"
-                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6.19801 1L3.54618 9.51093C3.48076 9.71569 3.65688 9.916 3.89338 9.916H6.33387C6.57037 9.916 6.74145 10.1119 6.68107 10.3166L5.49353 14.4074C5.39793 14.7368 5.8659 14.9505 6.11749 14.6923L12.6188 7.23185C12.82 7.02264 12.654 6.7066 12.347 6.7066H9.75558C9.48386 6.7066 9.30774 6.44842 9.43857 6.23476L12.5483 1.47184C12.6791 1.25818 12.508 1 12.2313 1H6.19801Z" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M5.70989 13.6684C2.97252 12.8716 1 10.5925 1 7.90389C1 5.21529 3.04296 2.86054 5.85581 2.09937" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
+                    <path d="M11.6527 2.84723C13.4994 3.93335 14.7171 5.79401 14.7171 7.90393C14.7171 11.2558 11.6476 13.9711 7.85859 13.9711C7.53151 13.9711 7.20947 13.9488 6.89246 13.9132" stroke="white" stroke-width="0.79845" stroke-miterlimit="10"/>
                   </svg>
                   <p>Calm, Focus & Restorative Sleep </p>
                 </li>
@@ -476,12 +467,11 @@ const asks = ref([
               </ShopButton>
             </div>
           </div>
-          <div class="flex justify-start lg:justify-center">
+          <div class="flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-[260px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+              class="w-[270px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
               <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
-                <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
-
+                <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="35" height="27"
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -504,8 +494,8 @@ const asks = ref([
                 </div>
               </div>
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
-              <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
-                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
+              <div class="flex flex-row items-center justify-end gap-4 w-[120px] md:w-[270px] lg:w-[240px]">
+                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="35"
                   viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -588,7 +578,7 @@ const asks = ref([
             </li>
           </ul>          
         </div>
-        <div class="flex gap-[26px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
+        <div class="flex gap-[17px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
           <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" src="/assets/wm.webp" loading="lazy" alt="exhausted">
           <img class="hidden lg:block w-[500px] h-[525px] " src="/assets/wm_desk.webp" width="504" height="525" loading="lazy"
             alt="exhausted"></img>
@@ -599,10 +589,10 @@ const asks = ref([
           </div>
         </div>          
         <h1 class="lg:hidden text-[32px] pb-[20px] text-white text-center leading-[1] font-crossfit">
-          Why It Gets <br><span class="text-[#FFDC03]"> Worse Over Time.</span>
+          Why It Gets <br><span class="text-[#FFDC03]"> Worse Over Time</span>
         </h1>
         <h1 class="hidden lg:block text-[60px] pb-[20px] text-white text-center leading-[1] font-crossfit">
-          Why It Gets <span class="text-[#FFDC03]"> Worse Over Time.</span>
+          Why It Gets <span class="text-[#FFDC03]"> Worse Over Time</span>
         </h1>
         <img src="/assets/relief.webp" class="lg:hidden py-[20px]" alt="">
         <img src="/assets/relief_desk.webp" class="hidden lg:block py-[20px]" alt="">
@@ -611,19 +601,19 @@ const asks = ref([
         </h1>
         <div class="bg-[#4F2A38] pt-[18px] lg:pt-[70px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-white rounded-[15px]">
           <ul class="flex flex-col leading-[1.3] lg:leading-[1.4] gap-3 lg:gap-[30px]">
-            <li class="border-b-[3px] pb-[14px] lg:pb-[37px] border-[#370F1E] lg:px-[100px]">
+            <li class="border-b pb-[14px] lg:pb-[37px] border-[#370F1E] lg:px-[100px]">
              <span class="font-black "> Drugs (Gabapentin, Lyrica, Cymbalta):</span><br>
-              Mask the pain, cause side effects, never repair the nerves.
+              Mask the pain, cause side effects, never repair<br> the nerves.
             </li>
-            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
+            <li class="border-b pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
               <span class="font-black ">Compression socks:</span><br>
               Help with swelling, not nerve pain.
             </li>
-            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
+            <li class="border-b pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
               <span class="font-black ">Cheap creams & gadgets:</span><br>
               Distract for minutes, no real relief.
             </li>
-            <li class="border-b-[3px] pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
+            <li class="border-b pb-[15px] lg:pb-[37px] pt-[4px] border-[#370F1E]">
                 <span class="font-black ">Injections & surgeries:</span><br>
               Expensive, risky, out of reach.
             </li>
@@ -639,7 +629,7 @@ const asks = ref([
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-10 pr-8 lg:px-40 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-4 lg:gap-10 pt-[20px] pl-8 pr-8 lg:px-40 w-full">
         <img class="lg:hidden w-[123x] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
           loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
@@ -657,21 +647,21 @@ const asks = ref([
         </div>
       </div>
       <div class="pt-[74px] px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] px-[70px] md:text-[60px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           The Breakthrough: Repair Nerves from the Inside Out</p>
         <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
         <div class="bg-[#96E3DF] pt-[16px] lg:pt-[65px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-[#370F1E] rounded-[15px]">
           <ul class="flex flex-col leading-[1.4] gap-3 lg:gap-[40px]">
-            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
-              <span class="font-black ">Calms overactive nerve signals:</span><br>
+            <li class="border-b pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
+              <span class="font-black ">Calms overactive nerve signals</span><br>
               Stops the burning and tingling from escalating.
             </li>
-            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
-              <span class="font-black ">Reduces inflammation:</span><br>
+            <li class="border-b pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
+              <span class="font-black ">Reduces inflammation</span><br>
               Lowers pain triggers so your nerves can finally rest.
             </li>
-            <li class="border-b-[3px] pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
-                <span class="font-black ">Supports nerve repair & protection:</span><br>
+            <li class="border-b pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
+                <span class="font-black ">Supports nerve repair & protection</span><br>
               Helps restore the protective layer (myelin) so you feel steady again.
             </li>
              <li class="font-gelasio italic pt-[4px] lg:pb-[48px] text-[16px] lg:text-[40px] lg:px-[30px] pb-2 ">

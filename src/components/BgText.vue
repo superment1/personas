@@ -19,7 +19,7 @@ const props = defineProps({
       <div v-if="logo" class="w-[80px] h-[15px] lg:w-[201px] lg:h-[38px]">
         <img :src="logo" alt="">
       </div>
-      <div class="flex flex-col gap-[298px] pt-[42px] pb-[13px]">
+      <div class="flex flex-col gap-[298px] pt-[42px]">
         <h1 v-if="primary" class="font-gelasio font-bold italic text-[20px] lg:text-[28px]">
         {{ primary }}
         </h1>
@@ -29,7 +29,7 @@ const props = defineProps({
       </div>
       
       <div v-if="extraTexts.length" class="flex flex-col gap-4 lg:gap-[32px] mt-4 leading-[14px] lg:leading-[24px]">
-        <p v-for="(text, i) in extraTexts" :key="i" class="text-[13px] lg:text-[24px]">
+        <p v-for="(text, i) in extraTexts" :key="i" class="text-[13px] whitespace-pre-line lg:text-[24px]">
           {{ text }}
         </p>
       </div>
