@@ -195,7 +195,6 @@ function toggle(index) {
                 </p>
                 <div
                     class="bg-[url('@/assets/image/newPageD/nn1_2.webp')] w-[317px] h-[260px] bg-cover bg-center flex items-center justify-between">
-
                     <svg class="mt-7" xmlns="http://www.w3.org/2000/svg" width="97" height="97" viewBox="0 0 97 97"
                         fill="none">
                         <path
@@ -391,7 +390,6 @@ function toggle(index) {
                     </div>
                 </div>
             </div>
-
             <!-- FRASCOS PEQUENOS -->
             <div class="w-[351px] md:w-[420px] h-full rounded-[30px] grid grid-cols-2 gap-2 md:gap-5 mt-4">
                 <div
@@ -470,7 +468,6 @@ function toggle(index) {
                 class="w-[600px] h-[619px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start pb-[34px] pt-[37px]">
                 <div
                     class="relative bg-[url('@/assets/image/newPageD/nn1-desk.png')] w-[450px] h-[465px] bg-cover bg-center flex items-center justify-between">
-
                     <svg class="absolute top-[115px] right-[350px]" xmlns="http://www.w3.org/2000/svg" width="140"
                         height="140" viewBox="0 0 127 127" fill="none">
                         <path
@@ -568,7 +565,10 @@ function toggle(index) {
                             fill="#370F1E" />
                     </svg>
                 </div>
-                <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
+                <ShopButton 
+                    textColorClass="text-[#370F1E]" 
+                    iconColorClass="text-[#370F1E]" 
+                    :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
                     class="h-[75px] w-[523px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
                     <div class="flex flex-row items-center justify-center gap-3">

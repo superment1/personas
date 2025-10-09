@@ -290,7 +290,7 @@ const testimonials = [
       <!-- v-show="showAfterVideo"  -->
       <div class="bg-[#370F1E]  border-none">
         <div
-          class="overflow-hidden max-w-[100%] xl:max-w-[65%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
+          class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
             <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
                 class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
@@ -622,7 +622,7 @@ const testimonials = [
     />
     <!-- DESKTOP v-show="showAfterVideo"  -->
     
-    <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
+    <div class="bg-[#FFFAF0] w-full py-[54px] sm:px-10 items-center justify-start">
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
