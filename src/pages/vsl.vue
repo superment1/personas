@@ -241,7 +241,7 @@ onBeforeUnmount(() => {
       <!-- v-show="showAfterVideo"  -->
       <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
         <div
-          class="overflow-hidden max-w-[100%] xl:max-w-[65%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
+          class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
             <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
                 class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day

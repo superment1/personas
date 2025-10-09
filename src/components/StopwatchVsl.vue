@@ -116,7 +116,7 @@ onBeforeUnmount(() => t && clearInterval(t))
                   before:top-1/2 before:-translate-y-1/2 before:h-px
                   before:bg-black/20 before:pointer-events-none"
           >
-            <FlipDigit :value="mm" font-size="61px"/>
+            <FlipDigit :value="mm" font-size="100"/>
           </div>
           <span class="label">Minutes</span>
         </div>
@@ -132,7 +132,7 @@ onBeforeUnmount(() => t && clearInterval(t))
                   before:top-1/2 before:-translate-y-1/2 before:h-px
                   before:bg-black/20 before:pointer-events-none"
           >
-            <FlipDigit :value="ss" font-size="61px"/>
+            <FlipDigit :value="ss" font-size="100"/>
           </div>
           <span class="label">Seconds</span>
         </div>
