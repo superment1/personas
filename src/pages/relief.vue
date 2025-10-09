@@ -538,7 +538,7 @@ const asks = ref([
     </div>
   </section>
   <section class="bg-[#370F1E] relative ">
-    <div class="px-[40px] pt-[26px] lg:pt-[78px] justify-center flex-col flex items-center ">
+    <div class="px-[36px] pt-[26px] lg:pt-[78px] justify-center flex-col flex items-center ">
       <h1 class="text-[32px] lg:text-[60px] text-white text-center leading-[1] font-crossfit">
         Living with Nerve Pain<span class="text-[#FFDC03]"> Feels Endless.</span>
       </h1>
@@ -547,8 +547,7 @@ const asks = ref([
           <li class="lg:grid lg:grid-cols-2 gap-8 lg:pt-[95px] items-center lg:[&>p]:order-2 lg:[&>img]:order-1 text-center font-gelasio italic text-white">
             <p class="pt-[36px] pb-[10px] lg:px-10">It’s like walking on broken glass.</p>
             <img class="lg:hidden block" src="/assets/glass.webp" alt="">
-            <img class="hidden lg:block" src="/assets/man0_desk.webp" alt="">
-            
+            <img class="hidden lg:block" src="/assets/man0_desk.webp" alt="">            
           </li>
           <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-1 lg:[&>img]:order-2 text-center lg:text-start font-gelasio italic text-white">
             <p class="pb-[10px] px-8">Like thousands of tiny needles in your feet.</p>
@@ -556,15 +555,36 @@ const asks = ref([
             <img class="hidden lg:block" src="/assets/glass_desk.webp" alt="">
           </li>
           <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-2 lg:[&>img]:order-1 text-center lg:text-start font-gelasio italic text-white">
-            <p class="pb-[10px] lg:px-10">Like electric shocks out of nowhere</p>
+            <p class="pb-[10px] lg:px-10">Like electric shocks out of nowhere.</p>
             <img  class="lg:hidden block" src="/assets/man0.webp" alt="">
-            <img class="hidden lg:block" src="/assets/preg_desk.webp" alt="">
-           
+            <img class="hidden lg:block" src="/assets/preg_desk.webp" alt="">           
+          </li>
+          <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-1 lg:[&>img]:order-2 text-center lg:text-start font-gelasio italic text-white">
+            <p class="pb-[10px] px-8">Burning feet at night that wake you up.</p>
+            <img  class="lg:hidden block"src="/assets/feet2.webp" alt="">
+            <img class="hidden lg:block" src="/assets/feet-desk.webp" alt="">
+          </li>
+          <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-2 lg:[&>img]:order-1 text-center lg:text-start font-gelasio italic text-white">
+            <p class="pb-[10px] lg:px-10">Tingling hands that make you drop things.</p>
+            <img  class="lg:hidden block" src="/assets/papel.webp" alt="">
+            <img class="hidden lg:block" src="/assets/papel-desk.webp" alt="">           
+          </li>
+          <li class="lg:grid lg:grid-cols-2 gap-8 items-center lg:[&>p]:order-1 lg:[&>img]:order-2 text-center lg:text-start font-gelasio italic text-white">
+            <p class="pb-[10px] px-8">Like electric shocks out of nowhere.</p>
+            <img  class="lg:hidden block"src="/assets/feet1.webp" alt="">
+            <img class="hidden lg:block" src="/assets/feet2-desk.webp" alt="">
           </li>
         </ul>
+        <img src="/assets/data.webp" class="lg:hidden pb-[39px] pt-[20px]" alt="">        
+        <img src="/assets/data_desk.webp" class="lg:block hidden py-[20px]" alt="">   
+         <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
+            :showIcon="false"
+            class="botao-shop font-bold !m-0 text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+            I Can’t Live Like This Anymore
+          </ShopButton>   
       </div>
-      <div class="pt-[30px] max-w-[976px] lg:pt-[60px] pb-[30px]">
-        <div class="bg-[#4F2A38] py-[14px] lg:pt-[45px] lg:pb-[40px] px-[20px] text-[12px] lg:text-[36px] text-center text-white rounded-[15px]">
+      <div class="pt-[8px] max-w-[976px] lg:pt-[60px] pb-[40px]">
+        <!-- <div class="bg-[#4F2A38] py-[14px] lg:pt-[45px] lg:pb-[40px] px-[20px] text-[12px] lg:text-[36px] text-center text-white rounded-[15px]">
           <ul class="flex flex-col gap-3 lg:gap-7">
             <li class="border-b lg:border-b-[3px] pb-2 lg:pb-[30px] border-[#370F1E]">
               Burning feet at night that wake you up.
@@ -576,7 +596,7 @@ const asks = ref([
               Numbness that makes it hard to feel the ground beneath you.
             </li>
           </ul>          
-        </div>
+        </div> -->
         <div class="flex gap-[17px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
           <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" src="/assets/wm.webp" loading="lazy" alt="exhausted">
           <img class="hidden lg:block w-[500px] h-[525px] " src="/assets/wm_desk.webp" width="504" height="525" loading="lazy"
@@ -619,10 +639,13 @@ const asks = ref([
              <li class="font-gelasio italic pt-[4px] text-[16px] lg:text-[40px] pb-2 lg:pb-[50px] lg:pt-[15px] ">
               None of these<span class="text-[#FFDC03] font-bold"> fix the root cause.</span>
             </li>
-          </ul>  
+          </ul>     
         </div>
-         <img src="/assets/data.webp" class="lg:hidden pt-[20px]" alt="">        
-         <img src="/assets/data_desk.webp" class="lg:block hidden pt-[20px]" alt="">      
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
+            :showIcon="false"
+            class="botao-shop font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
+            Turn Down the Pain, Bring Back Your Rest
+        </ShopButton>   
       </div>
     </div>
   </section>
@@ -688,8 +711,8 @@ const asks = ref([
         </p>
       </div>
       <div class="px-8 md:px-40">
-        <img class="md:hidden block pb-10" src="/assets/group_41.webp" alt="blocks">
-        <img class="hidden md:block pb-20" src="/assets/group_419_desk.webp" alt="blocks">
+        <img class="md:hidden block pb-10" src="/assets/group_box.webp" alt="blocks">
+        <img class="hidden md:block pb-20" src="/assets/group_box_desk.webp" alt="blocks">
         <div class="border-t-2 pt-[14px] lg:pt-[45px] leading-[1] border-[#370F1E] text-[#370F1E] pr-10 lg:pr-40 lg:text-[40px] text-[13px]">
           <p class="font-bold pb-4 lg:pb-[60px]">Why Super Relax</p>
           <p>Freedom from burning, tingling, and numbness. Confidence to move through your day without fear of flare-ups. Peaceful nights with less pain and more rest. A calmer, steadier you — inside and out.</p>
@@ -701,7 +724,7 @@ const asks = ref([
   <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="font-crossfit text-[#370F1E] text-center ">
       <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> 
-       Proven to Ease Nerve Discomfort.</span></p>
+       Proven to Ease Nerve<br> Discomfort.</span></p>
       <p class="hidden leading-[1] text-[60px] lg:block">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> 
          Proven to Ease Nerve Discomfort.</span></p>
     </div>
@@ -736,11 +759,9 @@ const asks = ref([
           quality.</span>
       </div>
       <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">0% </span>
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">0%</span>
         <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">experienced grogginess
-          <br> or
-          unwanted side
-          effects.</span>
+          <br> or unwanted side effects.</span>
       </div>
     </div>
   </section>

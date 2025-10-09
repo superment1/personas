@@ -14,10 +14,10 @@ defineProps({
         :class="['flex flex-col gap-4 lg:gap-14',
          i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row']"
       ><div class="flex flex-col gap-4 ">
-        <h3 class="text-[16px] lg:text-[40px] leading-[1] font-gelasio italic font-bold text-[#370F1E]">
+        <h3 class="text-[16px] lg:text-[40px] leading-[1.2] whitespace-pre-line font-gelasio italic font-bold text-[#370F1E]">
           {{ item.title }}
         </h3>
-        <p class="text-[12px] lg:text-[26px] text-[#370F1E] font-gelasio italic leading-[1.3] pb-[7px]">{{ item.subtitle }}</p>
+        <p class="text-[12px] lg:text-[26px] text-[#370F1E] whitespace-pre-line font-gelasio italic leading-[1.3] pb-[7px]">{{ item.subtitle }}</p>
       </div>
          <img
           :src="item.image"

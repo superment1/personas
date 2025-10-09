@@ -609,7 +609,13 @@ const testimonials = [
         :duration-ms="7 * 60 * 1000"
         start-on="video-ended"
         @expired="onCountdownExpired"
-      />
+        porductId1="prod_T2jNgj5cCjXcvG"
+        porductId3="prod_T2jOmiPYB2SrZd"
+        porductId6="prod_T2jPp4I1S0cfol"
+        bottle="/assets/nn1Relax.webp"      
+        combo3="/assets/bottle3.webp"     
+        combo6="/assets/bottle6.webp"   
+        />
     </div> 
     <DepoimentsD  
         :testimonials="testimonials"
@@ -620,9 +626,9 @@ const testimonials = [
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
-            Scientific <br> references:</h1>
+            Scientific references</h1>
           <h1 class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-start sm:text-[68px] ">
-            Scientific references:</h1>
+            Scientific references</h1>
         </div>
         <ul class="w-full columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
@@ -699,19 +705,10 @@ const testimonials = [
               class="font-sans text-sm leading-none font-thin">®</sub></span>
         </div>
         <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
-          © Super Natural Sleep Research 2025.<br> All Rights Reserved.
+         © Super Relax Research 2025. <br>All Rights Reserved.
         </p>
-        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3">
-          Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and
-          guide the user into deep,
-          restorative sleep. It does not contain melatonin or harsh chemicals.
-          Super Natural Sleep is manufactured in the United States by an FDA registered and
-          GMP-compliant laboratory. All product's quality, safety, and compliance certifications are
-          managed by our manufacturing partner. This product is not intended to diagnose, treat,
-          cure or prevent any disease. Always consult your physician before starting any dietary
-          supplement, especially if you are taking medications, are pregnant, or have a medical
-          condition.
-          Super Natural Sleep is part of the commercial portfolio of Superment.
+        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
+          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
         </p>
       </div>
     </div>
