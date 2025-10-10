@@ -17,7 +17,7 @@ const anchorId ='shop-relax'
 </script>
 
 <template>
-    <section class="justify-items-center py-[36px] px-[35px] lg:px-0 lg:py-[60px] w-full">
+    <section class="justify-items-center py-[36px] lg:px-0 lg:py-[60px] w-full">
     <h2 class="text-[32px] lg:text-[60px] leading-[1] px-[50px] text-center text-[#370F1E] font-crossfit mb-6 lg:mb-12">{{ title }}</h2>
 
     <ul class="font-sans border-t border-[#370F1E] max-w-[950px]">

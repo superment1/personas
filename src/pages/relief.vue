@@ -644,7 +644,7 @@ const asks = ref([
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
             :showIcon="false"
             class="botao-shop font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
-            Turn Down the Pain, Bring Back Your Rest
+            Show Me How to End This Pain
         </ShopButton>   
       </div>
     </div>
@@ -814,9 +814,18 @@ const asks = ref([
       </div>
     </div>
   </div>
-  <div class="bg-[#350e1d] w-full">
-    <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
-      <SuperFooter2 />
+  <div class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
+    <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
+      <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
+        <span class="inline-flex text-center items-baseline">SUPERMENT<sub
+            class="font-sans text-sm leading-none font-thin">®</sub></span>
+      </div>
+      <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
+        © Super Relax Research 2025. <br>All Rights Reserved.
+      </p>
+      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
+        Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
+      </p>
     </div>
   </div>
   <!-- <LazyIsland>

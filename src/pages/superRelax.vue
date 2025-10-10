@@ -144,7 +144,7 @@ onBeforeUnmount(() => {
 
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-[50px]">
-          <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
+          <div class="text-[#370F1E] gap-[137px] lg:gap-[20px] flex flex-col">
             <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
               Plant-Based
               <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
@@ -404,7 +404,6 @@ onBeforeUnmount(() => {
 
               <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
                 <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
-
                   viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"

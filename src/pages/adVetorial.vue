@@ -240,7 +240,7 @@ const imgSrc = "/assets/depo.webp"
     primary= 'What Real Users Are Saying'
     :testimonials="testimonials"/>
   </section>
-  <section class=" bg-[#FFFAF0]">
+  <section class=" bg-[#FFFAF0] px-[35px]">
     <Questions :show-cta="true" 
       title="Everything You Need to Know"
       :items="[
