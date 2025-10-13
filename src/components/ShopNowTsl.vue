@@ -58,12 +58,12 @@ const anchorId = 'shop-now-tsl'
                                 w-[90%] pointer-events-none"
                         />
                         <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
-                            productId="prod_T2jNgj5cCjXcvG"
-                            class="absolute inset-x-0 bottom-4 z-20
-                                h-[72px] 
+                            productId="prod_SbKYsQrxStW8wB"
+                            class="absolute inset-x-0 mx-auto bottom-4 z-20
+                                h-[72px] max-w-[307px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                                 shadow-[0px_4px_10px_0px_rgba(110,200,240)]
-                                !rounded-[13px] justify-center justify-self-center !px-[36px]">
+                                !rounded-[13px] justify-center justify-self-center !px-[32px]">
                             <div class="flex flex-row items-center justify-center gap-3">                        
                                 <span class="font-DMSans text-[18px] md:text-[20px] leading-[1.2] font-bold text-[#370F1E]">
                                     1 Bottle: A 30-day supply to<br> experience the difference.
@@ -82,7 +82,7 @@ const anchorId = 'shop-now-tsl'
                         class="absolute top-[140px] right-[11px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
                         />                        
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
                             class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[94px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
@@ -106,7 +106,7 @@ const anchorId = 'shop-now-tsl'
                         class="absolute top-[115px] -right-[13px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
                         />
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
                             class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[72px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]

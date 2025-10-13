@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 import BannerRetention from '../components/BannerRetention.vue'
 import FAQ from '../components/Faq.vue';
 import SuperFooter from '../components/SuperFooter.vue';
-import VslBadges from '../components/VslBadges.vue';
+import VslBadgeSleep from '../components/VslBadgeSleep.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 import { useSeo } from '../composables/useSeo';
 
@@ -554,7 +554,7 @@ onBeforeUnmount(() => {
     </div>
     <!-- v-show="showAfterVideo" -->
     <div class="">
-     <VslBadges
+     <VslBadgeSleep
         id="id-vsl-badges"
         :duration-ms="7 * 60 * 1000"
         start-on="video-ended"

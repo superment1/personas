@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import VslRelax2 from '../pages/vslRelax2.vue'
 
 const routes = [
   { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
@@ -57,6 +58,8 @@ router.afterEach((to) => {
     privacypolicy:'#E1DCCD',
     vsl:'#6EC8F0',
     vsl2:'#6EC8F0',
+    vslrelax:'#4dbcb6',
+    vslrlax2: '#4dbcb6',
     sleepbetter: '#E1DCCD',
     sleepbetter2: '#E1DCCD',
     advetorial: '#370F1E',

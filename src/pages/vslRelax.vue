@@ -3,7 +3,7 @@ import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import FAQ from '../components/Faq.vue';
-import VslBadges from '../components/VslBadges.vue';
+import VslBadgesRelax from '../components/VslBadgesRelax.vue';
 import { useSeo } from '../composables/useSeo';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 
@@ -187,16 +187,16 @@ onBeforeUnmount(() => {
 })
 const testimonials = [
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: '/assets/emily.webp',
+    avatarMobile: '/assets/emily.webp',
     title: 'Stress was eating me alive at work.',
     testimonial: 'Back-to-back Zoom calls, constant Slack pings — I felt like I couldn’t breathe. After a few weeks, I’m not snapping at my coworkers anymore, and I can actually close my laptop without shaking.',
     name: 'Emily J., 34',
     city: 'San Francisco, CA'
   },
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: '/assets/david.webp',
+    avatarMobile: '/assets/david.webp',
     title: 'I hit burnout hard.',
     testimonial: 'I run a small design studio and was pulling 12-hour days. My chest was tight, my patience gone. This helped me feel level again — I don’t explode over emails like I used to.',
     name: 'David P., 40',
@@ -211,16 +211,16 @@ const testimonials = [
     city: 'Chicago, IL'
   },
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: '/assets/michael.webp',
+    avatarMobile: '/assets/michael.webp',
     title: 'I was always on edge at home.',
     testimonial: 'My kids noticed before I did — I was irritable, snapping at the smallest things. Now the tension’s dialed down, and I can actually enjoy being with them after work.',
     name: 'Michael H., 37',
     city: 'Denver, CO'
   },
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: '/assets/sofia.webp',
+    avatarMobile: '/assets/sofia.webp',
     title: 'Deadlines used to crush me.',
     testimonial: 'Every end of month I’d get headaches and shut down from the pressure. Now I still work hard, but I don’t fall apart — I can think straight under stress.',
     name: 'Sofia R., 43',
@@ -247,7 +247,7 @@ const testimonials = [
     <!-- mobile -->
     <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-[972px]">
       <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[36px] sm:pt-[80px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[306px] h-[574px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[555px] h-[574px]">
           <div class="sm:hidden font-crossfit leading-none text-[50px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
               THE SECRET THAT ENDED 
@@ -260,19 +260,21 @@ const testimonials = [
             </p>
           </div>
 
-          <div class="hidden sm:block font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
-            <h1 class="text-[#fff] leading-[0.875] items-center">
+          <div class="hidden sm:block max-w-[500px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[95px]">
+            <h1 class="text-[#fff] uppercase leading-[0.875] items-center">
               THE SECRET THAT ENDED 
               <br><span class="text-[#370F1E]">
                 MY YEARS OF ANXIETY
               </span>
             </h1>
+             <p class="pt-[35px] text-[#370F1E] leading-[0.9] font-gelasio italic text-[40px]" >
+                And gave me back the clarity and peace I lost <br></br>to stress and burnout.
+            </p>
           </div>
-
           <div class="relative z-10 pt-[16px] sm:pt-0">
             <div
               class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
-                    sm:max-w-[649px] sm:h-[437px] sm:max-h-[812px] overflow-hidden"
+                    sm:max-w-[649px] sm:w-[400px] sm:h-[500px] sm:max-h-[812px] overflow-hidden"
             >
               <vturb-smartplayer
                 id="vid-68aa4210166658ec2475a56e"
@@ -288,22 +290,11 @@ const testimonials = [
         </div>
       </div>
       <!-- v-show="showAfterVideo"  -->
-      <div class="bg-[#370F1E]  border-none">
-        <div
-          class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
-          <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
+      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+        <div class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
+          <div class="inline-flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
+            <p>Made in the USA <span class="espacada px-2">|</span> Save up to 58% <span class="espacada px-2">|</span> 120-Day Money-Back Guarantee <span class="espacada px-2">|</span> 100% Plant-Based <span class="espacada px-2">|</span> Science-Backed <span class="espacada px-2">|</span> Non-Sedative <span class="espacada px-2">|</span> Non-Habit Forming  <span class="espacada px-2">|</span> Caffeine-Free <span class="espacada px-2">|</span> Gluten, Soy & Dairy-Free <span class="espacada px-2">|</span> Free Shipping <span class="espacada px-2">|</span> GMP-Certified Facility <span class="espacada px-2">|</span></p> 
+            <p>Made in the USA <span class="espacada px-2">|</span> Save up to 58% <span class="espacada px-2">|</span> 120-Day Money-Back Guarantee <span class="espacada px-2">|</span> 100% Plant-Based <span class="espacada px-2">|</span> Science-Backed <span class="espacada px-2">|</span> Non-Sedative <span class="espacada px-2">|</span> Non-Habit Forming  <span class="espacada px-2">|</span> Caffeine-Free <span class="espacada px-2">|</span> Gluten, Soy & Dairy-Free <span class="espacada px-2">|</span> Free Shipping <span class="espacada px-2">|</span> GMP-Certified Facility <span class="espacada px-2">|</span></p> 
           </div>
         </div>
       </div>
@@ -602,8 +593,8 @@ const testimonials = [
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div class="">
-     <VslBadges
+    <div v-show="showAfterVideo" class="">
+     <VslBadgesRelax
         bgCollor="bg-[#4DBCB6]"
         id="id-vsl-badges"
         :duration-ms="7 * 60 * 1000"
@@ -617,12 +608,12 @@ const testimonials = [
         combo6="/assets/bottle6.webp"   
         />
     </div> 
-    <DepoimentsD  
+    <DepoimentsD v-show="showAfterVideo"
         :testimonials="testimonials"
     />
     <!-- DESKTOP v-show="showAfterVideo"  -->
     
-    <div class="bg-[#FFFAF0] w-full py-[54px] sm:px-10 items-center justify-start">
+    <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full py-[54px] sm:px-10 items-center justify-start">
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
@@ -633,60 +624,72 @@ const testimonials = [
         <ul class="w-full columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Montana State
-                  University</strong> 
-                <p>Study by Montana State researcher finds sleep deprivation makes people less
-                happy, more anxious. (n.d.)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Akhondzadeh, S., et al. (2001) – </strong> 
+                <span>Passionflower in the treatment of generalized anxiety: A double-blind randomized trial with oxazepam. Journal of Clinical Pharmacy and Therapeutics, 26(5), 363–367. [Result: Passiflora incarnata was as effective as oxazepam in reducing anxiety, with fewer side effects.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Colten, H. R., &
-                  Altevogt, B. M. (Eds.)</strong> 
-                  <p>Sleep disorders and sleep deprivation: An unmet public health
-                problem. (2006)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Movafegh, A., et al. (2008) – </strong> 
+                <span>Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: A double-blind, placebo-controlled study. Anesthesia & Analgesia, 106(6), 1728–1732. [Result: Significant anxiolytic effect compared with placebo.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Sleep Foundation
-                </strong> <p> How sleep deprivation affects your heart. (n.d.)</p></h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
-            <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Calhoun, D. A., &
-                  Harding, S. M.</strong> <p> Sleep and hypertension. (2010)</p></h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
-            <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Mesarwi, O., Polak,
-                  J., Jun, J., & Polotsky, V. Y.</strong> <p> Sleep disorders and the development of insulin resistance
-                and obesity. (2013)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Hanus, M., et al. (2004) – </strong> 
+                <span>Efficacy of a fixed combination of Eschscholzia californica and Crataegus oxyacantha in mild-to-moderate anxiety disorders: A double-blind, placebo-controlled trial. Fundamental & Clinical Pharmacology, 18(5), 527–532. [Result: Combination including California poppy improved anxiety vs. placebo.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Spiegel, K.,
-                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> <p> Effects of poor and short sleep on glucose
-                metabolism and obesity risk. (2009)</p></h1>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Zhu, Y., et al. (2015) – </strong> 
+                <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and GABA pathways.]</span>
+              </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px]  leading-[1.3]"><strong>Ungvari, Z.,
-                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> <p> Imbalanced
-                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</p></h1>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>EMA Herbal Monograph (2016) – </strong> 
+                <span> Althaea officinalis root. European Medicines Agency, Committee on Herbal Medicinal Products (HMPC). [Result: Recognized for soothing, anti-inflammatory traditional use; limited clinical data for stress, but supports calming and restorative effects.]</span>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Galati, E. M., et al. (2002) –</strong> 
+                <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and GABA pathways.]</span>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Zhu, Y., et al. (2015) – </strong> 
+                <span>Biological effects of Opuntia ficus-indica (L.) Mill. (Cactaceae) waste matter. Note I: Antioxidant and anti-inflammatory activity. Journal of Ethnopharmacology, 79(1), 17–21. [Result: Extracts reduced oxidative stress and inflammation, pathways linked with stress and mood regulation.]</span>
+              </h1>
+            </div>
+          </li>
+           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Park, E. H., & Kahng, J. H. (1999) – </strong> 
+                <span>Suppression of immunological and inflammatory responses by cactus (Opuntia ficus-indica). Archives of Pharmacal Research, 22(4), 404–407. [Result: Demonstrated anti-inflammatory effects relevant for stress resilience.]</span>
+              </h1>
             </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
+    <div class="bg-[#fffaf0] w-full pb-[45px] pt-[40px] flex flex-col">
       <div class="px-0 sm:px-10 flex flex-col">
         <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
           <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">

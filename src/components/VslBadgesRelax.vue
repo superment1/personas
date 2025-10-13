@@ -142,8 +142,10 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
                                         3 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]  ">$32</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
+                                            $39</span><span
+                                            class="font-gelasio font-thin italic"> 
+                                            each</span>
                                     </span>
                                 </div>
                             </div>
@@ -187,10 +189,12 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
-                                        6 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">$26</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">
+                                        Buy 6 <br>
+                                        <span class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
+                                        $29</span>
+                                        <span class="font-gelasio font-thin italic">
+                                        each</span>
                                     </span>
                                 </div>
                             </div>
@@ -265,7 +269,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
         <!-- ICONES MOBILE -->
         <div
             class="w-[350px] h-[100px] sm:w-[460px] bg-[#ffffff3f] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
-            <div class="flex flex-row items-center justify-center gap-4 w-[200px] sm:gap-6 sm:justify-start">
+            <div class="flex flex-row items-center justify-start pl-[5px] gap-4 w-[200px] sm:gap-6 sm:justify-start">
                 <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
                     <path
                         d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -284,7 +288,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px]">Free U.S. <br>Shipping</span>
+                    <span class="font-DMSans text-[#370F1E] text-[15px] sm:text-[18px]">Free U.S. <br>Shipping</span>
                 </div>
             </div>
             <div class="w-[1px] h-[80px] bg-[#370F1E]"></div>
@@ -322,7 +326,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px] ">Money-Back<br>Guarantee</span>
+                    <span class="font-DMSans text-[#370F1E] text-[15px] sm:text-[18px] ">Money-Back<br>Guarantee</span>
                 </div>
             </div>
         </div>
