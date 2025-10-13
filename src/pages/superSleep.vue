@@ -7,7 +7,7 @@ import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
-import VslBadges from '../components/VslBadges.vue';
+import VslBadgeSleep from '../components/VslBadgeSleep.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
 import Ingredients from '../components/sleepSupermentComponents/Ingredients.vue';
@@ -339,7 +339,10 @@ onBeforeUnmount(() => {
   <!-- <LazyIsland>
     <Frascos />
   </LazyIsland> -->
-  <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
+  <VslBadgeSleep 
+  id="id-vsl-badges" 
+  :duration-ms="7 * 60 * 1000" 
+  start-on="mount" @expired="onCountdownExpired" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[330px] sm:max-w-[700px] mx-auto">

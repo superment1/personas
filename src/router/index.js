@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import VslRelax2 from '../pages/vslRelax2.vue'
 
 const routes = [
   { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
@@ -10,15 +11,18 @@ const routes = [
   { path: '/about',             name: 'about',        component: () => import('../pages/about.vue') },
   { path: '/maturesleep',       name: 'elderly',      component: () => import('../pages/elderly.vue') },
   { path: '/discomfort',        name:'discomfort',    component: () => import('../pages/discomfort.vue') },
-  { path: '/menopause',        name:'menopause',    component: () => import('../pages/menopause.vue') },
+  { path: '/menopause',         name:'menopause',     component: () => import('../pages/menopause.vue') },
   { path: '/vsleep',            name:'vsl',           component: () => import('../pages/vsl.vue')},
   { path: '/vsleep2',           name:'vsl2',          component: () => import('../pages/vsl2.vue')},
-  { path: '/sleep', name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
-  { path: '/sleep2', name:'sleepbetter2',   component: () => import('../pages/sleepBetter2.vue')},
-  { path: '/relax',    name:'superrelax',   component: () => import('../pages/superRelax.vue') },  
-  { path: '/slim',    name:'superslim',   component: () => import('../pages/superSlim.vue') },  
-  { path: '/advetorial',    name:'advetorial',   component: () => import('../pages/adVetorial.vue') },  
-  { path: '/tsl',    name:'tsl',   component: () => import('../pages/tsl.vue') },  
+  { path: '/sleep',             name:'sleepbetter',   component: () => import('../pages/sleepBetter.vue')},
+  { path: '/sleep2',            name:'sleepbetter2',  component: () => import('../pages/sleepBetter2.vue')},
+  { path: '/relax',             name:'superrelax',    component: () => import('../pages/superRelax.vue') },  
+  { path: '/slim',              name:'superslim',     component: () => import('../pages/superSlim.vue') },  
+  { path: '/advetorial',        name:'advetorial',    component: () => import('../pages/adVetorial.vue') },  
+  { path: '/tsl',               name:'tsl',           component: () => import('../pages/tsl.vue') },  
+  { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
+  { path: '/vslrelax',            name:'vslrelax',        component: () => import('../pages/vslRelax.vue') },  
+  { path: '/vslrelax2',            name:'vslrelax2',        component: () => import('../pages/vslRelax2.vue') },  
 ]
 
 export const router = createRouter({
@@ -54,9 +58,14 @@ router.afterEach((to) => {
     privacypolicy:'#E1DCCD',
     vsl:'#6EC8F0',
     vsl2:'#6EC8F0',
+    vslrelax:'#4dbcb6',
+    vslrlax2: '#4dbcb6',
     sleepbetter: '#E1DCCD',
     sleepbetter2: '#E1DCCD',
     advetorial: '#370F1E',
+    tsl:'#E1DCCD',
+    relief: '#E1DCCD'
+
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)

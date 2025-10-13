@@ -6,7 +6,7 @@ import SuperFooter from '../components/SuperFooter.vue';
 import BeyoundC from '../components/pageC/BeyoundC.vue'
 import CtaPageC from '../components/pageC/CtaPageC.vue';
 import IngredientsC from '../components/pageC/IngredientsC.vue';
-import VslBadges from '../components/VslBadges.vue';
+import VslBadgeSleep from '../components/VslBadgeSleep.vue';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
 import { useSeo } from '../composables/useSeo';
 
@@ -244,7 +244,7 @@ function onCountdownExpired() { }
         </div>
       </div>
       <div class="">
-        <VslBadges @expired="onCountdownExpired" />
+        <VslBadgeSleep @expired="onCountdownExpired" />
       </div>
       <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
         <div class="px-0 flex flex-col items-center justify-start">

@@ -2,79 +2,22 @@
 import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import BannerRetention from '../components/BannerRetention.vue'
 import FAQ from '../components/Faq.vue';
-import SuperFooter from '../components/SuperFooter.vue';
-import VslBadgeSleep from '../components/VslBadgeSleep.vue';
-import TestimonialsCarousel from '../components/TestimonialsCarousel.vue';
-import { useSeo } from '../composables/useSeo';
-
-  useSeo({
-    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
-    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
-    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
-  })
+import BannerRetention from '../components/BannerRetention.vue'
 
 const router = useRouter()
-const modalOpen = ref(false)
-const showAfterVideo = ref(false)
 
-const urlPath = '/sleepnatural'
+const REDIRECT_URL = '/sleepnatual'
 
-function openModal() { modalOpen.value = true }
-function goToPage() { router.push(urlPath) }
-
-const BACK_STATE = { exitGuard: true }
-let backGuardActive = false
-
-function onBackPress(e: PopStateEvent) {
-  if (!backGuardActive) return
-  history.pushState(BACK_STATE, document.title, location.href)
-  openExitModal(true)
+function onVideoEnded() {
+  router.push(REDIRECT_URL)
 }
 
-function enableBackExitGuard() {
-  if (backGuardActive) return
-  backGuardActive = true
-  history.pushState(BACK_STATE, document.title, location.href)
-  window.addEventListener('popstate', onBackPress)
+const showPlayOverlay = ref(true)
+function hideOverlayAndLetUserPlay() {
+  showPlayOverlay.value = false
 }
 
-function disableBackExitGuard() {
-  if (!backGuardActive) return
-  backGuardActive = false
-  window.removeEventListener('popstate', onBackPress)
-}
-
-const COOLDOWN_MS = 20000
-const TOP_ZONE = 8
-let lastShown = 0
-let lastY = 9999
-let io
-
-const AFTER_VIDEO_GRACE_MS = 10000
-let afterVideoUntil = 0
-
-function onCountdownExpired() {
-  modalOpen.value = true
-  lastShown = Date.now()
-}
-
-function openExitModal(force = false) {
-  const now = Date.now()
-  if (modalOpen.value) return
-  if (!force) {
-    if (now < afterVideoUntil) return
-    if (showAfterVideo.value) return
-    if (now - lastShown < COOLDOWN_MS) return
-  }
-
-  modalOpen.value = true
-  lastShown = now
-}
-function onPageHide() {
-  openExitModal()
-}
 function loadVturbOnce() {
   const id = 'vturb-script-68aa4210166658ec2475a56e'
   if (document.getElementById(id)) return
@@ -85,60 +28,9 @@ function loadVturbOnce() {
   document.head.appendChild(s)
 }
 
-function onMouseMove(e: MouseEvent) {
-  const goingUp = e.clientY < lastY
-  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true) 
-  lastY = e.clientY
-}
 
-function onMouseOut(e: MouseEvent) {
-  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true) 
-}
-
-function onVisibilityChange() {
-  if (document.visibilityState === 'hidden') openExitModal()
-}
-function onWindowBlur() {
-  openExitModal()
-}
-
-function onPopState() {
-  openExitModal()
-}
-function onVideoEnded() {
-  showAfterVideo.value = true
-  afterVideoUntil = Date.now() + AFTER_VIDEO_GRACE_MS
-}
-
-let lastScrollY = window.scrollY || 0
-let lastScrollT = performance.now()
-
-function onScroll() {
-  const y = window.scrollY
-  const t = performance.now()
-
-  const dy = lastScrollY - y        
-  const dt = Math.max(t - lastScrollT, 1)
-  const vel = dy / dt                 
-
-  if (dy > 120 && vel > 0.6) openExitModal()
-  if (y <= 12 && dy > 0) openExitModal()
-
-  lastScrollY = y
-  lastScrollT = t
-}
-
-const showPlayOverlay = ref(true)
-function hideOverlayAndLetUserPlay() {
-  showPlayOverlay.value = false
-}
-
-let fsHandlerAdded = false
-
-function onModalClose() {
-  lastShown = 0
-}
 const hasStarted = ref(false)
+let io: IntersectionObserver | null = null
 
 let readyHandler: any
 let playHandler: any
@@ -147,45 +39,44 @@ let endedHandler: any
 onMounted(() => {
   loadVturbOnce()
 
-  // ====== Exit-intent listeners ======
-  window.addEventListener('mousemove', onMouseMove, { passive: true })
-  document.addEventListener('mouseout', onMouseOut, { passive: true })
-  document.addEventListener('visibilitychange', onVisibilityChange)
-  window.addEventListener('blur', onWindowBlur)
+  const playerEl = document.getElementById('vid-68aa4210166658ec2475a56e') as any
+  if (!playerEl) return
 
-  window.addEventListener('popstate', onPopState)
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('pagehide', onPageHide)
-
-   const el = document.getElementById('vid-68aa4210166658ec2475a56e')
-  if (!el) return
-
-  const onReady = () => {
-    el.addEventListener('video:play', () => {
+  const onPlayerReady = () => {
+    playerEl.addEventListener('video:play', () => {
+      hasStarted.value = true
       showPlayOverlay.value = false
     })
 
-    el.addEventListener('video:ended', () => {
-      showPlayOverlay.value = false
-      showAfterVideo.value = true
-    }, { once: true })
-  }
-  if (window.matchMedia?.('(pointer: coarse)').matches) {
-    enableBackExitGuard()
-  }
-  el.addEventListener('player:ready', onReady, { once: true })
-  document.addEventListener('player:ready', onReady, { once: true })
+    playerEl.addEventListener('video:play', playHandler)
+    endedHandler = () => onVideoEnded()
+    playerEl.addEventListener('video:ended', endedHandler)
 
+    if ('IntersectionObserver' in window) {
+      io = new IntersectionObserver(([entry]) => {
+        if (!hasStarted.value) return
+        if (entry?.isIntersecting) { playerEl.play?.()
+        } else {
+          playerEl.pause?.()
+        }
+      }, { threshold: 0.25 })
+      io.observe(playerEl)
+    }
+  }
+  readyHandler = onPlayerReady
+  playerEl.addEventListener('player:ready', readyHandler)
+  document.addEventListener('player:ready', readyHandler, { once: true })
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', onMouseMove)
-  document.removeEventListener('mouseout', onMouseOut)
-  document.removeEventListener('visibilitychange', onVisibilityChange)
-  window.removeEventListener('blur', onWindowBlur)
-  window.removeEventListener('popstate', onPopState)
-  window.removeEventListener('scroll', onScroll)
-  disableBackExitGuard()
+  const el = document.getElementById('vid-68aa4210166658ec2475a56e') as any
+  if (el) {
+    if (playHandler) el.removeEventListener('video:play', playHandler)
+    if (endedHandler) el.removeEventListener('video:ended', endedHandler)
+    if (readyHandler) el.removeEventListener('player:ready', readyHandler)
+  }
+  document.removeEventListener('player:ready', readyHandler as any)
+  io?.disconnect()
 })
 
 </script>
@@ -238,27 +129,7 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-      <!-- v-show="showAfterVideo"  -->
-      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
-        <div
-          class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
-          <div class="flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-            <p>Made in the USA <span class="espacada px-2">|</span> Clean, natural, no fillers <span
-                class="espacada px-2">|</span> Save up to 57% <span class="espacada px-2">|</span> Up to 120-day
-              money-back guarantee <span class="espacada px-2">|</span> Real reviews rated 4.9/5.0 <span
-                class="espacada px-2">|</span> Free U.S shipping <span class="espacada px-2">|</span> </p>
-          </div>
-        </div>
-      </div>
-      <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[219px] flex-col bg-[#370F1E]">
+       <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[219px] flex-col bg-[#370F1E]">
         <div class="flex px-10 flex-col items-center sm:pt-[8px] sm:gap-[38px]">
           <div class="2 flex flex-row sm:w-[1260px] sm:max-w-[100%] max-w-[349px] ">
             <svg xmlns="http://www.w3.org/2000/svg" width="111" height="111" viewBox="0 0 111 111" fill="none">
@@ -398,11 +269,10 @@ onBeforeUnmount(() => {
             </svg>
           </div>
           <div class="sm:w-[1260px] sm:max-w-[100%] max-w-[349px]">
-            <p
-              class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[17px]">
+            <p class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[17px]">
               Certified by the highest standards of America.
             </p>
-          </div>
+          </div> 
         </div>
       </div>
     </main>
@@ -547,38 +417,12 @@ onBeforeUnmount(() => {
           </svg>
         </div>
         <p class="font-gelasio text-center font-normal relative bottom-4 italic text-[#fff] text-[13px] sm:text-[30px]">
-          Certified by the highest standards of America.
+         Certified by the highest standards of America.
         </p>
-      </div>
-
-    </div>
-    <!-- v-show="showAfterVideo" -->
-    <div class="">
-     <VslBadgeSleep
-        id="id-vsl-badges"
-        :duration-ms="7 * 60 * 1000"
-        start-on="video-ended"
-        @expired="onCountdownExpired"
-      />
-    </div>
-
-    <!-- DESKTOP v-show="showAfterVideo"  -->
-    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
-      <div class="w-[349px] mx-auto pt-[36px] font-crossfit font-medium  text-center justify-self-center">
-        <p class="title pt-[20px] text-[#fff] font-semibold text-[34px] leading-none">Every day, more people</p>
-        <p class="text-[#6EC8F0] font-semibold leading-[1.3] text-[34px] pb-[32px]"> finally sleep again.</p>
-        <div class="bg-white/10 font-gelasio px-3 pb-[17px] pt-[10px] text-[#fff] rounded-[20px]">
-          <p class="notice leading-[1.2] text-[18px]"><strong>Rated</strong> 4.9/5.0</p>
-          <p class="description leading-[1.2] text-[17px]"><strong>98%</strong> would recommend it for deeper,<br>better
-            sleep.</p>
-        </div>
-      </div>
-      <div class="max-w-[349px] sm:max-w-[1260px] mx-auto items-center">
-        <TestimonialsCarousel />
       </div>
     </div>
     <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
-      <div class="px-0 flex flex-col items-center justify-start">
+      <div class="px-0 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
             Scientific <br> references:</h1>
@@ -641,24 +485,19 @@ onBeforeUnmount(() => {
         </ul>
       </div>
     </div>
-    <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
-      <div class="px-0 sm:px-10 flex flex-col">
+     <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
+      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
         <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
-          <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
+          <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
             Frequently asked <br>
             questions:</h1>
-          <h1 class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
+          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
             Frequently asked questions:</h1>
           <FAQ />
         </div>
       </div>
-    </div>
-    <div v-show="showAfterVideo" class="bg-[#350E1D] w-full items-center">
-      <div class="max-w-[349px] mx-auto">
-        <SuperFooter />
-      </div>
-    </div>
-    <div v-show="!showAfterVideo" class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
+    </div>    
+    <div class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
       <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
           <span class="inline-flex text-center items-baseline">SUPERMENT<sub
@@ -682,21 +521,5 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- <BannerRetention
-    v-model:open="modalOpen"
-    title="WAIT!"
-    subtitle="LOW STOCK WARNING!"
-    buttonText="Yes, stay on this page!"
-    :disable-backdrop-close="true"
-    :disable-esc="false"
-  >
-  <template #message>
-    <p>
-      <span class="text-[#FFDC03]">Super Natural Sleep</span> is selling out fast!<br>
-      Secure your order today to avoid any disappointment.<br><br>
-      Get our <q class="text-[#FFDC03]">Best Value</q> 6-bottle pack and enjoy your best natural sleep ever!
-    </p>
-  </template>
-</BannerRetention> -->
 
 </template>

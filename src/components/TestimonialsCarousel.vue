@@ -1,5 +1,5 @@
-<script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+<script setup lang="ts">
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick  } from 'vue'
 import ArrowCircle from '../components/ArrowCircle.vue'
 
 const items = [
@@ -14,18 +14,16 @@ const items = [
 ]
 
 const currentIndex = ref(0)
-const step = ref(1) // mobile: 1, lg+: 3
+const step = ref(1)
 
 function updStep() {
   step.value = window.matchMedia('(min-width:1024px)').matches ? 3 : 1
-  step.value = 1
+ 
 }
-onMounted(() => {
-  updStep()
-  window.addEventListener('resize', updStep)
-  playVisible()
-})
-onBeforeUnmount(() => window.removeEventListener('resize', updStep))
+function tryPlay(e) {
+  const el = e.target
+  if (el && el.play) el.play().catch(() => {})
+}
 
 const len = items.length
 const i0 = computed(() => (currentIndex.value + 0) % len)
@@ -40,6 +38,28 @@ const v2 = ref(null)
 function prev() { currentIndex.value = (currentIndex.value - step.value + len) % len }
 function next() { currentIndex.value = (currentIndex.value + step.value) % len }
 
+function safePlay(el: HTMLVideoElement | null) {
+  if (!el) return
+  el.muted = true
+  ;(el as any).playsInline = true
+  ;(el as any).webkitPlaysInline = true
+
+  const doPlay = () => el.play().catch(() => {})
+  if (el.readyState >= 2) {
+    doPlay()
+  } else {
+    const onCanPlay = () => { doPlay(); el.removeEventListener('canplay', onCanPlay) }
+    el.addEventListener('canplay', onCanPlay, { once: true })
+  }
+}
+
+function pauseAll() {
+  ;[vm.value, v0.value, v1.value, v2.value].forEach((el) => {
+    try { el?.pause() } catch {}
+  })
+}
+
+
 function playVisible() {
   // tenta dar play nos vídeos visíveis
   const els = [vm.value, v0.value, v1.value, v2.value]
@@ -53,6 +73,13 @@ watch(currentIndex, () => {
   // dá um microtempo para trocar DOM
   setTimeout(playVisible, 60)
 })
+onMounted(() => {
+  updStep()
+  window.addEventListener('resize', updStep)
+  playVisible()
+})
+onBeforeUnmount(() => window.removeEventListener('resize', updStep))
+
 </script>
 
 <template>
@@ -77,11 +104,13 @@ watch(currentIndex, () => {
         </template>
         <template v-else>
           <video ref="vm" :src="items[i0].url" 
-          autoplay muted
-          preload="none"
-          loop 
-          playsinline 
+          muted
+          playsinline
+          autoplay
+          loop
+          preload="metadata"
           controls
+          @canplay="tryPlay($event)"
           class="w-full h-full object-contain"></video>
         </template>
       </div>
@@ -97,12 +126,13 @@ watch(currentIndex, () => {
             <video 
             ref="v0" 
             :src="items[i0].url"
-            preload="none"
-            autoplay 
-            muted 
-            loop 
-            playsinline 
+            muted
+            playsinline
+            autoplay
+            loop
+            preload="metadata"
             controls
+            @canplay="tryPlay($event)"
             class="w-full h-full object-contain"></video>
           </template>
         </div>

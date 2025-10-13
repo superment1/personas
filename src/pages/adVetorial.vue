@@ -31,16 +31,16 @@ const testimonials = [
   {
     avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
-    title: 'Sleep & Energy',
-    testimonial: 'I used to wake up at night and drag through my mornings. Now I sleep through, and I have energy and more focus to do everything I need better.',
+    title: 'Calm & Clarity',
+    testimonial: 'I used to wake up already anxious, and spend the whole day feeling tense and on edge. Since taking Super Relax, I feel calmer, more patient, and way more in control of my reactions — even when things get chaotic.',
     name: 'Eliseu C., 40',
     city: 'Fort Lauderdale, FL'
   },
   {
     avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
-    title: 'No Grogginess',
-    testimonial: 'I’ve tried many things to help me sleep, including melatonin and pills. They all made me dependent, and also completely foggy the next day. With Super Relax I sleep easy and wake up rested, clear, and ready to go.',
+    title: 'No More Burnout Fog',
+    testimonial: 'I’ve tried meds to calm down before, but they either made me numb or completely drained the next day. With Super Relax, I stay clear-headed, sleep deeply, and still wake up myself — just less overwhelmed.',
     name: 'Bruna R., 38',
     city: 'New York, NY'
   },
@@ -59,7 +59,7 @@ const imgSrc = "/assets/depo.webp"
       <div class="flex gap-4 lg:gap-24 items-center text-white">
         <h1 class="font-gelasio text-[8px] lg:text-[20px] uppercase italic "> Today Only ⚡</h1>
         <div class="bg-white text-[10px] font-medium lg:text-[20px] text-[#370F1E] rounded-[20px] py-1 px-3 lg:px-14">
-          Save up to X% + Free Shipping
+          Save up to 58% + Free Shipping
         </div>
         <div class="flex flex-col">
           <p class="uppercase italic font-medium font-gelasio text-[8px] lg:text-[16px]">
@@ -77,9 +77,10 @@ const imgSrc = "/assets/depo.webp"
   </section>
   <section class="px-[35px] pt-[25px] lg:pt-[60px] max-w-[950px] mx-auto">
     <div>
-      <h1 class="text-[20px] lg:text-[50px] leading-[1] lg:leading-[1.1] font-bold font-gelasio italic text-[#370F1E]">7 Reasons More People <br>Are Quitting Anxiety Meds<br><span class="text-[#4DBCB6]"> for a Natural Way to Sleep<br> Deep and Stay Calm</span></h1>
+      <h1 class="text-[20px] lg:text-[50px] leading-[1] lg:leading-[1.1] font-bold font-gelasio italic text-[#370F1E]">
+        7 Reasons Why I Quit Anxiety Meds for a Natural Way to<br><span class="text-[#4DBCB6]"> Sleep Deep and Stay Calm</span></h1>
     </div>
-    <div class="flex font-gelasio gap-2 items-center pt-[12px] lg:pt-[26px] pb-[24px] lg:pb-[60px] italic border-b">
+    <div class="flex font-gelasio gap-2 items-center pt-[20px] lg:pt-[26px] pb-[24px] lg:pb-[60px] italic border-b">
       <div class="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-1 ring-black/10">
         <template v-if="imgSrc">
           <img :src="imgSrc" 
@@ -99,10 +100,10 @@ const imgSrc = "/assets/depo.webp"
         <p class="font-normal text-[7px]  lg:text-[16px]">Last updated Sep. 24, 2025</p>
       </div>
     </div>
-    <img class="pt-[23px] lg:hidden" src="/assets/tabela.webp" alt="table">
-    <img class="pt-[60px] hidden lg:block" src="/assets/tabela_desk.webp" alt="table">
+    <img class="pt-[23px] lg:hidden" src="/assets/tabelaAdv.webp" alt="table">
+    <img class="pt-[60px] hidden lg:block" src="/assets/tabelaAdv.webp" alt="table">
   </section>
-  <section class="px-[35px] max-w-[950px] mx-auto py-[24px] lg:py-[60px]">
+  <section class="px-[35px] max-w-[950px] mx-auto pb-[30px] pt-[24px] lg:py-[60px]">
     <infoBlock 
     :items="[
       { 
@@ -111,12 +112,12 @@ const imgSrc = "/assets/depo.webp"
         image: '/assets/1.webp' 
       },
       { 
-        title: '2. Sleep deeply and wake up clear.', 
-        subtitle: 'Broken nights leave you drained, and pills only sedate without restoring real rest. Super Relax works with your body’s natural rhythm so sleep flows from bedtime until morning. You wake up refreshed, energized, and ready to take on the day, without grogginess.', 
-        image: '/assets/2.webp' 
+        title: '2. Fix the root cause, not just the symptoms.', 
+        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
+        image: '/assets/6.webp'
       },
       { 
-        title: '3. Restore energy and focus during the day.', 
+        title: '3. Restore energy and focus during \n the day.', 
         subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
         image: '/assets/3.webp'
       },
@@ -127,16 +128,17 @@ const imgSrc = "/assets/depo.webp"
       },
       { 
         title: '5. Restore balance naturally and safely.', 
-        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you can trust.', 
+        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you \ncan trust.', 
         image: '/assets/5.webp'
       },
       { 
-        title: '6. Fix the root cause, not just the symptoms.', 
-        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
-        image: '/assets/6.webp'
+        title: '6. Sleep deeply and wake up clear.', 
+        subtitle: 'Broken nights leave you drained, and pills only sedate without restoring real rest. Super Relax works with your body’s natural rhythm so sleep flows from bedtime until morning. You wake up refreshed, energized, and ready to take on the day, without grogginess.', 
+        image: '/assets/2.webp' 
       },
+
       { 
-        title: '7. Guaranteed results or your money back.', 
+        title: '7. Guaranteed results or your \n money back.', 
         subtitle: 'We stand behind every bottle. Try Super Relax for up to 120 days. If you don’t feel calmer, clearer, and more rested, you get every cent back. No hassle, no fine print, just results. Love it, or it’s free.', 
         image: '/assets/7.webp'
       },
@@ -149,10 +151,10 @@ const imgSrc = "/assets/depo.webp"
       <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] px-3 lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
           Stress and Sleepless Nights End Here. Order Super Relax Today.
       </h1>
-      <div class="lg:w-[607px]"> 
+      <div class="lg:w-[607px] pt-[20px]"> 
         
-        <div class="justify-items-center">
-          <img class="lg:hidden" src="/assets/bottle-selo.webp" alt="bottle">
+        <div class="justify-items-center pb-[20px]">
+          <img class="lg:hidden" src="/assets/bottle-selo-adv.webp" alt="bottle">
           <img class="hidden lg:block w-[607px]" src="/assets/bottle-selo-desk.webp" alt="bottle">
         </div>
       <ShopButton type="button" id="buy-button" paymentLink="/relax" textColorClass="text-[#370F1E]"
@@ -163,11 +165,11 @@ const imgSrc = "/assets/depo.webp"
       </div>
       
     </div>
-    <div class="px-[35px]">
+    <div class="flex justify-center md:justify-start lg:justify-center">
       <div
-        class="w-[320px] lg:w-[500px] justify-self-center lg:mt-8 mt-[12px] flex flex-row items-center justify-between px-5">
-        <div class="flex flex-row items-center gap-6 w-[200px] lg:w-[210px]">
-          <svg class="lg:w-[60px] lg:h-[50px]" xmlns="http://www.w3.org/2000/svg" width="32" height="26"
+        class="w-[270px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+        <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
+          <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="35" height="27"
             viewBox="0 0 43 28" fill="none">
             <path
               d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -186,12 +188,14 @@ const imgSrc = "/assets/depo.webp"
               fill="#370F1E" />
           </svg>
           <div>
-            <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
+            <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
           </div>
         </div>
-        <div class="w-[1px] h-[42px] lg:h-[70px] bg-[#370F1E]"></div>
-        <div class="flex flex-row items-center justify-end gap-6 w-[200px] lg:w-[240px]">
-          <svg class="lg:w-[50px] lg:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="22" height="33"
+        <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
+
+        <div class="flex flex-row items-center justify-end gap-4 w-[120px] md:w-[270px] lg:w-[240px]">
+          <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="35"
+
             viewBox="0 0 33 48" fill="none">
             <path
               d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -225,7 +229,7 @@ const imgSrc = "/assets/depo.webp"
               fill="#370F1E" />
           </svg>
           <div>
-            <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
+            <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
           </div>
         </div>
       </div>
@@ -236,7 +240,7 @@ const imgSrc = "/assets/depo.webp"
     primary= 'What Real Users Are Saying'
     :testimonials="testimonials"/>
   </section>
-  <section class=" bg-[#FFFAF0]">
+  <section class=" bg-[#FFFAF0] px-[35px]">
     <Questions :show-cta="true" 
       title="Everything You Need to Know"
       :items="[
@@ -256,7 +260,7 @@ const imgSrc = "/assets/depo.webp"
             class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
       <p class="label-reserved leading-[1] text-center italic text-[9px] font-gelasio text-[#fffaf0]">
-        © Super Natural Sleep Research 2025. <br> All Rights Reserved.
+        © Super Relax Research 2025.<br>All Rights Reserved.
       </p>
       <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[950px]">
         Super Relax is a supplement formulated with natural ingredients designed to support the nervous system and help

@@ -29,7 +29,7 @@ const props = defineProps({
                 avatarDesk: '',
                 avatarMobile: '',
                 title: 'I am enjoying it!!',
-                testimonial: 'I feel less worried now and not snapping so much at my relatives. Honestly more calm overall.',
+                testimonial: 'I feel less worried now and not snapping so much at my friends. Honestly more calm overall.',
                 name: 'Danielle A., 37',
                 city: 'Los Angeles, CA'
             },
@@ -162,7 +162,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
                 <div class="shrink-0 w-[301px] md:w-[640px] h-[219px] md:h-[280px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
                     flex flex-col items-start pt-[31px] pb-[20px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
 
-                    <p class="text-[#370F1E] font-crossfit font-bold text-[20px] lg:text-[52px] leading-[1.2]">{{ t.title }}
+                    <p class="text-[#370F1E] font-crossfit font-bold text-[17px] lg:text-[52px] leading-[1.2]">{{ t.title }}
                     </p>
                     <p
                         class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">

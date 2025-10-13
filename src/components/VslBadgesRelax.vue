@@ -5,23 +5,27 @@ import ShopButton from './ShopButton.vue';
 const props = defineProps({
   durationMs: { type: Number, default: 7*60*1000 },
   startOn:    { type: String,  default: 'mount' },
-  persistKey: { type: String,  default: '' }
+  persistKey: { type: String,  default: '' },
+  bgCollor: { type: String, default: 'bg-[#6EC8F0]' },
+  porductId1: { type: String, default: 'prod_SbKYsQrxStW8wB' },
+  porductId3: { type: String, default: 'prod_SbKa8ag01A2TGX' },
+  porductId6: { type: String, default: 'prod_SbKaRuJpDVBEzx' },
+  bottle: { type: String, default: '/assets/NN1sleep.webp' },
+  combo3:  { type: String, default: '/assets/nn2Sleep.webp' },
+  combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
 })
 
 const emit = defineEmits<{ (e: 'expired'): void }>()
 
 </script>
-
 <template>
     <div
-        class="w-full bg-[#6EC8F0] flex flex-col items-center justify-start 
-        py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]">
-         
-        <!-- HEADER COM CONTADOR -->
+        :class="['w-full flex flex-col items-center justify-start py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]', props.bgCollor]">         
+        <!-- HEADER COM CONTADOR -->    
         <div
             class="w-[350px] sm:w-[460px] xl:w-[700px] flex flex-row items-center justify-between pt-4 pb-12 xl:pb-[146px] xl:pt-[46px] xl:mr-40">
            
-            <div class="w">
+            <div class="1">
                 <span class="text-[#370F1E] font-crossfit text-[61px] sm:text-[82px] xl:text-[148px] font-bold leading-[0.87]">SHOP
                     <br>NOW</span>
                 <div class="flex flex-row justify-between items-center">
@@ -48,16 +52,16 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 @expired="$emit('expired')"
             />
         </div>
-        <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center justify-start xl:flex-row justify-between">
+        <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
             <div
-                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] bg-[#90DAF4] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:w-[600px] xl:h-[600px] xl:pb-4">
-                <img src="@/assets/image/vsl/NN1.png" alt="bagde VSL" class="w-96 h-78 block xl:hidden">
-                <img src="@/assets/image/NN1.png" alt="bagde VSL" class="hidden xl:block h-auto w-[110%] max-w-[900px]">
+                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] xl:w-[600px] xl:h-[587px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:pb-4">
+                <img :src=bottle alt="bagde VSL" class="w-96 h-auto block xl:hidden">
+                <img :src=bottle alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
 
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
-                    productId="prod_SbKYsQrxStW8wB"
-                    class="h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-center sm:w-[406px] sm:h-[60px] xl:w-[506px] xl:h-[70px] xl:text-[54px] xl:-mt-10">
+                    :productId=porductId1
+                    class="relative top-[-50px] xl:top-[-94px] h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] xl:py-[7px] justify-center sm:w-[406px] sm:h-[60px] xl:w-[95%] xl:h-[70px] xl:text-[54px]">
                     <div class="flex flex-row items-center justify-center">
                         <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                             viewBox="0 0 47 48" fill="none">
@@ -96,14 +100,15 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
             </div>
             <!-- FRASCOS PEQUENOS -->
             <div
-                class="w-[350px] flex flex-row items-center justify-between py-3 sm:w-[460px] xl:w-[600px] xl:h-[615px] xl:gap-4 xl:justify-between xl:flex-col justify-start">
-                <div class="flex flex-row items-center justify-between gap-3 xl:flex-row items-center justify-start">
+                class="w-[350px] flex flex-row items-center justify-between py-3 xl:py-0 sm:w-[460px] xl:w-[600px] xl:h-[580px] xl:gap-6 xl:justify-between xl:flex-col justify-start">
+                <div class="flex flex-row items-center justify-between gap-3 xl:flex-row justify-start">
                     <div
-                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
-                        <img src="@/assets/image/vsl/NN2.png" alt="bagde VSL"
-                            class="w-[200px] h-[180px] -mt-3 ml-4 sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
-                            class="h-[66px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] -mt-[14px]">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:w-[300px] xl:h-[410px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
+                        <img :src=combo3 alt="bagde VSL"
+                            class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" 
+                        :productId=porductId3
+                            class="h-[66px] relative top-[-77px] sm:top-[-104px] lg:top-[-120px]  py-[10px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] ">
                             <div class="flex flex-row items-start justify-end">
                                 <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                                     viewBox="0 0 47 48" fill="none">
@@ -137,19 +142,22 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
                                         3 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]  ">$32</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
+                                            $39</span><span
+                                            class="font-gelasio font-thin italic"> 
+                                            each</span>
                                     </span>
                                 </div>
                             </div>
                         </ShopButton>
                     </div>
                     <div
-                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:h-[415px] xl:w-[300px] xl:h-[415px] bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
-                        <img src="@/assets/image/vsl/NN3.png" alt="bagde VSL"
-                            class="w-[200px] h-[180px] -mt-3  sm:w-[210px] sm:h-[210px] xl:w-[400px] xl:h-[400px]">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
-                            class="h-[66px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] -mt-[14px]">
+                        class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:w-[300px] xl:h-[410px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
+                        <img :src=combo6 alt="bagde VSL"
+                            class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" 
+                        :productId=porductId6
+                            class="h-[66px] relative top-[-77px] sm:top-[-104px] lg:top-[-120px] py-[10px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] ">
                             <div class="flex flex-row items-start justify-end">
                                 <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                                     viewBox="0 0 47 48" fill="none">
@@ -181,10 +189,12 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
-                                        6 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">$26</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">
+                                        Buy 6 <br>
+                                        <span class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
+                                        $29</span>
+                                        <span class="font-gelasio font-thin italic">
+                                        each</span>
                                     </span>
                                 </div>
                             </div>
@@ -193,7 +203,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 </div>
                 <!-- ICONES DESK -->
                 <div
-                    class="hidden xl:flex bg-[#90DAF4] rounded-[30px] w-[600px] h-[176px] flex flex-row items-center justify-center px-10 gap-6 w-[615px]">
+                    class="hidden xl:flex bg-[#ffffff3f] rounded-[30px] w-[600px] h-[176px] flex-row items-center justify-center px-10 gap-6">
                     <div class="flex flex-row gap-7 items-center justify-center w-[250px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74" height="50" viewBox="0 0 74 50" fill="none">
                             <path
@@ -258,8 +268,8 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
 
         <!-- ICONES MOBILE -->
         <div
-            class="w-[350px] h-[100px] sm:w-[460px] bg-[#90DAF4] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
-            <div class="flex flex-row items-center justify-center gap-4 w-[200px] sm:gap-6 sm:justify-start">
+            class="w-[350px] h-[100px] sm:w-[460px] bg-[#ffffff3f] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
+            <div class="flex flex-row items-center justify-start pl-[5px] gap-4 w-[200px] sm:gap-6 sm:justify-start">
                 <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
                     <path
                         d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -278,11 +288,10 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px]">Free U.S. <br>Shipping</span>
+                    <span class="font-DMSans text-[#370F1E] text-[15px] sm:text-[18px]">Free U.S. <br>Shipping</span>
                 </div>
             </div>
             <div class="w-[1px] h-[80px] bg-[#370F1E]"></div>
-
             <div class="flex flex-row items-center justify-end gap-4 w-[200px] sm:justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="48" viewBox="0 0 33 48" fill="none">
                     <path
@@ -317,7 +326,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         fill="#370F1E" />
                 </svg>
                 <div>
-                    <span class="font-DMSans text-[#370F1E] text-[16px] sm:text-[18px] ">Money-Back<br>Guarantee</span>
+                    <span class="font-DMSans text-[#370F1E] text-[15px] sm:text-[18px] ">Money-Back<br>Guarantee</span>
                 </div>
             </div>
         </div>
