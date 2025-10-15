@@ -613,7 +613,7 @@ const testimonials = [
     />
     <!-- DESKTOP v-show="showAfterVideo"  -->
     
-    <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full py-[54px] sm:px-10 items-center justify-start">
+    <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">

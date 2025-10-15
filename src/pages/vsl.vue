@@ -553,7 +553,7 @@ onBeforeUnmount(() => {
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div class="">
+    <div v-show="showAfterVideo" class="">
      <VslBadgeSleep
         id="id-vsl-badges"
         :duration-ms="7 * 60 * 1000"

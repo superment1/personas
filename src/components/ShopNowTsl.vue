@@ -52,12 +52,13 @@ const anchorId = 'shop-now-tsl'
                     <div class="relative">
                         <img src="/assets/n1.webp" alt="" class="block w-full h-auto" />
                         <img
-                        src="/assets/group_467.webp"
+                        src="/assets/group_467_tsl1.webp"
                         alt=""
                         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[90%] pointer-events-none"
                         />
-                        <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
+                        <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" 
+                            :show-icon="false"
                             productId="prod_SbKYsQrxStW8wB"
                             class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[72px] max-w-[307px]
@@ -77,12 +78,14 @@ const anchorId = 'shop-now-tsl'
                     <div class="relative h-[385px]">
                         <img src="/assets/n3.webp" alt="" class="block w-full h-auto" />
                         <img
-                        src="/assets/group_446.webp"
+                        src="/assets/selo3.webp"
                         alt=""
                         class="absolute top-[140px] right-[11px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
                         />                        
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
+                        <ShopButton textColorClass=" text-[#370F1E]" 
+                        :show-icon="false" 
+                        productId="prod_SbKa8ag01A2TGX"
                             class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[94px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
@@ -101,12 +104,14 @@ const anchorId = 'shop-now-tsl'
                     <div class="relative h-[365px]">
                         <img src="/assets/n6.webp" alt="" class="block w-full h-auto" />
                         <img
-                        src="/assets/group_447.webp"
+                        src="/assets/selo6.webp"
                         alt=""
                         class="absolute top-[115px] -right-[13px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none"
                         />
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
+                        <ShopButton textColorClass=" text-[#370F1E]" 
+                        :show-icon="false" 
+                        productId="prod_SbKaRuJpDVBEzx"
                             class="absolute inset-x-0 mx-auto bottom-4 z-20
                                 h-[72px] max-w-[310px]
                                 bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
@@ -136,7 +141,7 @@ const anchorId = 'shop-now-tsl'
             <div class="text-center text-[12px] justify-items-center">
                 <div
                     class="font-crossfit w-full leading-[1.2] px-2 text-[#370F1E] items-center text-[32px] lg:text-[50px] gap-3">
-                        Bring the California Poppy Into Your Night
+                        Bring the California Poppy Into Your Night.
                 </div>
                     <p class="lg:hidden leading-[1] text-[#370F1E] lg:text-[24px] pb-[15px] pt-[28px]">And to make your choice completely risk-free, every <br>order is protected by our up<span class="font-bold"> to 120-day, money-<br>back guarantee.</span>
                         <br><br> Try Super Natural Sleep. If you don’t feel the difference — if<br> your nights aren’t calmer, if your mornings aren’t brighter —<br> just send the unopened bottles back. You’ll receive a<br> refund for them.</p>
