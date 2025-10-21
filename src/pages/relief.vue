@@ -394,8 +394,7 @@ const asks = ref([
           <div
             class="flex font-crossfit px-0 pt-[18px] md:pt-[62px] text-[26px] md:text-[49px] leading-[31px] md:leading-[57px] text-center md:text-start">
             <p class="lg:hidden max-w-[330px] text-[#370F1E]">
-              Finally, Real Relief for<br> Burning, Tingling & Numbness <span class="text-white">               
-              From the Inside Out.
+             End Nerve Pain at the Source.<span class="text-white"> Stop the Burning, Tingling<br> & Numbness Naturally.
               </span> 
             </p>
             <p class="hidden lg:block lg:pl-[50px] text-[#370F1E]">
@@ -785,7 +784,7 @@ const asks = ref([
       <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[30px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">

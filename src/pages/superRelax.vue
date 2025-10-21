@@ -10,6 +10,7 @@ import ShopNowD from '../components/newPageD/ShopNowD.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter2 from '../components/SuperFooter2.vue';
+import CarouselImage from '../components/CarouselImage.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
@@ -448,17 +449,19 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E] relative">
-    <div class="sm:hidden px-[40px] pt-[26px] pb-[36px]">
-      <h1 class="pb-[35px] font-crossfit text-center px-[36px] leading-[1] text-[32px] text-[#fff]">
+    <div class="px-[40px] lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
+      <h1 class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[36px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
         Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span>  and Wired by Night.
       </h1>
-      <img src="/assets/why_exhausted1.webp" loading="lazy" alt="exhausted-2">
-      <div class="pt-[26px] pb-[36px]">
-        <img src="/assets/data_mobile.webp"  loading="lazy" alt="data-2">
+      <img src="/assets/why_exhausted1.webp" class="lg:hidden" loading="lazy" alt="exhausted-2">
+      <img src="/assets/why_exhausted_desk.webp" class="hidden lg:flex mb-[50px]" loading="lazy" alt="exhausted-2">
+      <div>
+        <CarouselImage/>
       </div>
-    </div>
-    <div class="hidden px-40 py-20 sm:flex">
-      <img src="/assets/why_exhausted_desk.webp" loading="lazy" alt="exhausted-2">
+      <div class="pt-[26px] lg:pt-[80px] pb-[36px]">
+        <img src="/assets/data_mobile.webp" class="lg:hidden"  loading="lazy" alt="data-2">
+        <img src="/assets/data_desk_relax.webp" class="hidden lg:flex"  loading="lazy" alt="data-2">
+      </div>
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
@@ -567,7 +570,7 @@ onBeforeUnmount(() => {
       <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[30px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">

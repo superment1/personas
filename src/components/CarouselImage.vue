@@ -2,38 +2,33 @@
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 
 const props = defineProps<{
-  images?: string[]
+  images?: { mobile: string; desktop: string; alt?: string }[]
   initialIndex?: number
   autoplayMs?: number
 }>()
 
 // defaults
 const images = props.images ?? [
-  '/assets/passion_flower_relax.webp',
-  '/assets/marshmallow.webp',
-  '/assets/corydalis-128.webp',
-  '/assets/california_poppy_relax.webp',
-  '/assets/prickly-pear-128.webp'
+  { mobile: '/assets/relaxfum.webp', desktop: '/assets/relaxfum-desk.webp', alt: 'Relax fum'},
+  { mobile: '/assets/relaxbar.webp', desktop: '/assets/relaxbar-desk.webp', alt: 'Relax fum'},
+  { mobile: '/assets/relaxpc.webp', desktop: '/assets/relaxpc-desk.webp', alt: 'Relax fum'},
+  { mobile: '/assets/relaxcaf.webp', desktop: '/assets/relaxcaf-desk.webp', alt: 'Relax fum'},
+  { mobile: '/assets/relaxmob.webp', desktop: '/assets/relaxmob-desk.webp', alt: 'Relax fum'}
 ]
-const AUTOPLAY_INTERVAL = props.autoplayMs ?? 2000
 
-const currentIndex = ref(
-  Math.min(Math.max(props.initialIndex ?? 0, 0), Math.max(images.length - 1, 0))
-)
-
+const AUTOPLAY_INTERVAL = props.autoplayMs ?? 3000
+const currentIndex = ref(0)
 const carouselContainer = ref<HTMLDivElement | null>(null)
-
-const CARD_WIDTH = 260
-const GAP = 16
-const EFFECTIVE_WIDTH = CARD_WIDTH + GAP
 const sidePadding = ref(0)
 
 const computeSidePadding = () => {
   const el = carouselContainer.value
   if (!el) return
-  sidePadding.value = Math.max(el.offsetWidth / 2 - EFFECTIVE_WIDTH / 2 - 8, 0)
+  const firstCard = el.querySelector<HTMLElement>('[data-index="0"]')
+  if (!firstCard) return
+  const cardWidth = firstCard.offsetWidth
+  sidePadding.value = Math.max(el.offsetWidth / 2 - cardWidth / 2, 0)
 }
-
 const scrollToIndex = (index: number) => {
   const el = carouselContainer.value
   if (!el) return
@@ -42,7 +37,6 @@ const scrollToIndex = (index: number) => {
 
   const elRect = el.getBoundingClientRect()
   const cardRect = cardEl.getBoundingClientRect()
-
   const currentScroll = el.scrollLeft
   const cardCenter = cardRect.left + cardRect.width / 2
   const containerCenter = elRect.left + el.offsetWidth / 2
@@ -51,21 +45,18 @@ const scrollToIndex = (index: number) => {
   el.scrollTo({ left: currentScroll + delta, behavior: 'smooth' })
   currentIndex.value = index
 }
-
 let autoplayTimer: number | null = null
 const next = () => {
   if (!images.length) return
   const nextIndex = (currentIndex.value + 1) % images.length
   scrollToIndex(nextIndex)
 }
-
 const startAutoplay = () => {
   stopAutoplay()
   if (AUTOPLAY_INTERVAL > 0) {
     autoplayTimer = window.setInterval(next, AUTOPLAY_INTERVAL)
   }
 }
-
 const stopAutoplay = () => {
   if (autoplayTimer) {
     clearInterval(autoplayTimer)
@@ -76,7 +67,6 @@ const stopAutoplay = () => {
 const onScroll = () => {
   const el = carouselContainer.value
   if (!el) return
-
   const cardEls = el.querySelectorAll<HTMLElement>('[data-index]')
   let closestIndex = 0
   let smallestDistance = Infinity
@@ -110,8 +100,11 @@ onMounted(() => {
   }
 
   nextTick(() => {
-    scrollToIndex(currentIndex.value)
-    startAutoplay()
+    computeSidePadding()
+    requestAnimationFrame(() => {
+      scrollToIndex(0)
+      startAutoplay()
+    })
   })
 
   window.addEventListener('resize', onResize, { passive: true })
@@ -129,41 +122,44 @@ onBeforeUnmount(() => {
   <div class="relative overflow-hidden w-full flex justify-center items-center">
     <div
       ref="carouselContainer"
-      class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory"
+      class="w-full max-w-[1000px] overflow-x-auto pb-6 pt-[45px] overflow-y-hidden scroll-smooth carousel-container snap-x snap-mandatory"
       @mouseenter="stopAutoplay"
       @mouseleave="startAutoplay"
       @touchstart.passive="stopAutoplay"
       @touchend.passive="startAutoplay"
     >
-      <div class="flex w-max space-x-4 items-center relative z-0">
+      <div class="flex w-max items-center relative z-0 gap-x-[24px] md:gap-x-6">
         <div class="shrink-0 pointer-events-none" :style="{ width: sidePadding + 'px' }"></div>
 
         <div
-          v-for="(src, index) in images"
+          v-for="(img, index) in images"
           :key="index"
           :data-index="index"
-          class="relative flex-none origin-center snap-center w-[220px] md:w-[260px] mx-0 text-center transition-all duration-300 ease-in-out cursor-pointer"
+          class="relative flex-none origin-center snap-center w-[296px] md:w-[883px] mx-0 text-center transition-all duration-300 ease-in-out cursor-pointer"
           @click="scrollToIndex(index)"
         >
           <div
             class="transform origin-center transition-all duration-300 ease-in-out"
             :class="{
-              'scale-110 opacity-100 z-[1]': index === currentIndex,
-              'scale-90 opacity-40 z-0': index !== currentIndex
+              ' opacity-100 z-[1]': index === currentIndex,
+              ' opacity-40 z-0': index !== currentIndex
             }"
           >
-            <div class="shadow rounded-2xl">
-              <img
-                :src="src"
-                loading="lazy"
-                decoding="async"
-                class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl"
-                alt=""
-              />
+            <div class="shadow rounded-[20px] overflow-hidden w-full">
+              <picture>
+                <source media="(min-width:768px)" :srcset="img.desktop" />
+                <img
+                  :src="img.mobile"
+                  :alt="img.alt || ''"
+                  loading="lazy"
+                  decoding="async"
+                  class="block w-full h-auto md:h-[424px] object-cover"
+                />
+              </picture>
+
             </div>
           </div>
         </div>
-
         <div class="shrink-0 pointer-events-none" :style="{ width: sidePadding + 'px' }"></div>
       </div>
     </div>
