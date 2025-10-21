@@ -132,92 +132,74 @@ onBeforeUnmount(() => {
 <template>
   <SuperHeader2 :show-redirect="false" />
   <section id="super-sleep-pequeno"
-    class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden">
+    class="relative overflow-hidden w-full aspect-[14/15] min-h-[438px] block sm:hidden">
     <picture class="absolute inset-0 z-0">
-      <!-- AVIF preferido -->
-      <source type="image/avif" srcset="/assets/hero-m-768.avif 768w" sizes="100vw" />
-
-      <!-- WebP fallback responsivo -->
-      <source type="image/webp" srcset="/assets/hero-m-360.webp 360w,
-                /assets/hero-m-480.webp 480w,
-                /assets/hero-m-640.webp 640w,
-                /assets/hero-m-768.webp 768w,
-                /assets/hero-m-960.webp 960w" sizes="100vw" />
-
-      <img src="/assets/hero-m-768.webp" alt="Super Natural Sleep no travesseiro"
-        class="w-full h-full object-cover object-[50%_50%]" width="768" height="820" loading="eager"
+      <img src="/assets/newSleep.webp" alt="Super Natural Sleep no travesseiro"
+        class="w-full h-full object-cover object-[50%_100%]" width="768" height="820" loading="eager"
         fetchpriority="high" decoding="async" />
     </picture>
     <div class="">
       <div class="title-super-natural-sleep relative z-10">
-        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[34px]">Say good night<br>to insomnia.</span>
       </div>
-      <div class="description !pl-[35px] relative z-10">
-        <span class="description">Try our premium <br> natural sleep formula,</span>
-        <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
-          class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
-          <div
-            class="bg-[#370F1E] text-[20px] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[175px] font-crossfit h-9">
-            <span class="relative inline-block text-[#ecd68b]
-            before:content-[''] before:absolute before:-left-1 before:-right-1
-            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
-            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span
-              class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP
-              REST</span>
+      <div class="description !pl-[50px] relative z-10">
+        <span class="description !text-[#fff] !leading-[1.3] !mt-[18px] !text-[13px]">Try our premium plant-based formula, specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
+        <div class="w-full flex flex-col items-center justify-center">
+          <span class="w-full mt-[39px] leading-[17px] py-[6px] border-y font-gelasio max-w-[130px] italic text-center text-[#fff] text-[13px] font-bold">30% off <br> for a limited time!</span>
+          <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
+            class="botao-shop !h-[37px] rounded-md !hover:bg-none !px-0 !pb-0 !bg-transparent mt-[24px]">
+            <div
+              class="bg-[#370F1E] text-[18px] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[153px] font-crossfit h-[31px]">
+              <span class="relative inline-block text-[#FFF4B3]
+              before:content-[''] before:absolute before:-left-1 before:-right-1
+              before:top-1/2 before:h-[1px] before:bg-[#1E010C]
+              before:-translate-y-1/2 before:rotate-[25deg] before:rounded-full">$60</span><span
+                class="text-[#FFDC03]">$42</span><span class="text-[#FFDC03]">|</span><span class="text-[#FFDC03]">SHOP NOW</span>
+            </div>
+
+          </ShopButton>
+          <div class="place-self-center">
+            <span class="stripe justify-items-center">
+              <img loading="lazy" alt="logo-stripe" src="/assets/stripelogo1.webp"></img>
+            </span>
           </div>
 
-        </ShopButton>
-        <div class="place-self-center">
-          <span class="stripe justify-items-center">
-            <img loading="lazy" alt="logo-stripe" src="../assets/image/sleepSuperment/stripe.png"></img>
-          </span>
         </div>
+       
       </div>
     </div>
   </section>
-  <section class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande">
+  <section class="relative overflow-hidden w-full h-[392px] hidden sm:block" id="super-sleep-grande">
     <picture class="absolute inset-0 z-0 w-full h-full">
-      <source media="(min-width: 640px)" type="image/avif" srcset="../assets/image/sleepSuperment/BannerPaginaD2.avif"
-        sizes="100vw" />
-      <!-- WebP fallback (desktop) -->
-      <source media="(min-width: 640px)" type="image/webp" srcset="../assets/image/sleepSuperment/BannerPaginaD2.webp"
-        sizes="100vw" />
-
-      <!-- Fallback final -->
-      <img src="../assets/image/sleepSuperment/BannerPaginaD2.webp" alt="bg-desktop" width="1600" height="900"
+      <img src="/assets/newSleepDesk.webp" alt="bg-desktop" width="1600" height="900"
         loading="lazy" decoding="async" fetchpriority="low" class="w-full h-full object-cover object-top" />
     </picture>
     <div class="flex flex-row title md:relative gap-52">
       <div class="flex flex-col z-10">
-        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[42px]">Say good night<br>to insomnia.</span>
         <div class="description">
-          <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a
-            limited time!</span>
+          <span class="description !leading-[1.3] !text-[18px] !text-[#fff]">Try our premium plant-based formula, specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
         </div>
       </div>
-      <div class="button relative bottom-20">
+      <div class="button relative bottom-[110px]">
+        <span class="px-4 py-1 mb-[34px] border-y-2 font-gelasio italic text-center text-[#fff] text-[16px] font-bold">30% off<br> for a limited time!</span>
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
-          <div
-            class="bg-[#370F1E] text-[1.2rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[165px] font-crossfit h-9">
-            <span class="relative inline-block text-[#ecd68b]
+          <div class="bg-[#370F1E] text-[24px] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[220px] font-crossfit h-[48px]">
+            <span class="relative inline-block text-[#FFF4B3]
             before:content-[''] before:absolute before:-left-1 before:-right-1
-            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
-            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span
-              class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP
-              REST</span>
+            before:top-1/2 before:h-[1px] before:bg-[#1E010C]
+            before:-translate-y-1/2 before:rotate-[25deg] before:rounded-full">$60</span><span
+              class="text-[#FFDC03]">$42</span><span class="text-[#FFDC03]">|</span><span class="text-[#FFDC03]">SHOP NOW</span>
           </div>
         </ShopButton>
-        <img src="../assets/image/sleepSuperment/stripe.png" loading="lazy" alt="logo-stripe"
-          class="self-center md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
+        <img src="/assets/stripelogo.webp" loading="lazy" alt="logo-stripe"
+          class="self-center md:bottom-[-7px] md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
 
   </section>
-  <section class="non-habit-forming">
+  <section class="non-habit-forming sm:gap-[44px]">
     <div class="description-forming">
       <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without
         anything harmful."</p>
@@ -250,7 +232,7 @@ onBeforeUnmount(() => {
    <section class="testimonials">
     <p class="title">What Supersleepers are saying.</p>
     <div class="assessment">
-      <p class="notice">Rated 4.9/5.0</p>
+      <p class="notice">Rated 4.9/5.0 from +750 reviews</p>
       <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
     </div>
     <div class="testimonials">
@@ -307,7 +289,7 @@ onBeforeUnmount(() => {
         class="botao-shop rounded-md !hover:bg-none pb-4 pt-[20px] !px-0 !bg-transparent">
         <div
           class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
-          <span class="text-[#ffdf01]">SHOP REST</span>
+          <span class="text-[#FFDC03]">SHOP REST</span>
         </div>
       </ShopButton>
       <div>

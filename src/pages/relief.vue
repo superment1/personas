@@ -5,11 +5,9 @@ import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
-import BannerModal from '../components/BannerModal.vue';
 import ShopNowRelief from '../components/ShopNowRelief.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import SuperFooter2 from '../components/SuperFooter2.vue';
 import Faq from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
@@ -578,8 +576,9 @@ const asks = ref([
         <img src="/assets/data.webp" class="lg:hidden pb-[39px] pt-[20px]" alt="">        
         <img src="/assets/data_desk.webp" class="lg:block hidden py-[20px]" alt="">   
          <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
-            :showIcon="false"
-            class="botao-shop font-bold !m-0 text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+            iconColorClass="text-[#370F1E]"
+            :showIcon="true"
+            class="botao-shop gap-2 font-bold !m-0 text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
             I Can’t Live Like This Anymore
           </ShopButton>   
       </div>
@@ -642,8 +641,9 @@ const asks = ref([
           </ul>     
         </div>
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
-            :showIcon="false"
-            class="botao-shop font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
+            iconColorClass="text-[#370F1E]"
+            :showIcon="true"
+            class="botao-shop gap-3 font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
             Show Me How to End This Pain
         </ShopButton>   
       </div>
@@ -652,9 +652,9 @@ const asks = ref([
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
       <div class="flex relative z-30 bg-[#FFDC03] gap-4 lg:gap-10 pt-[20px] pl-8 pr-8 lg:px-40 w-full">
-        <img class="lg:hidden w-[123px] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
+        <img class="lg:hidden w-[123px] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/womam_pills.webp"
           loading="lazy" alt="exhausted">
-        <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+        <img class="hidden lg:block" src="/assets/womam_pills_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
         <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
           <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
@@ -668,10 +668,10 @@ const asks = ref([
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-        <p class="pt-[74px] font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
+        <p class="pt-[74px] lg:pt-[160px] font-crossfit max-w-[340px] lg:max-w-[920px] self-center text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           The Breakthrough: Repair Nerves from the Inside Out
         </p>
-      <div class=" px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[180px]">
+      <div class=" px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[45px]">
         <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
         <div class="bg-[#96E3DF] pt-[16px] lg:pt-[65px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-[#370F1E] rounded-[15px]">
           <ul class="flex flex-col leading-[1.4] gap-3 lg:gap-[40px]">
@@ -792,7 +792,7 @@ const asks = ref([
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03] sm:h-[54px] sm:w-auto"
           textColorClass="text-[#FFDC03]" :showIcon="true"
           class="botao-shop font-bold sm:!gap-6 !gap-3 !m-0 text-[13px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-0 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
-          Get Calm, Clarity & Rest Now
+          Turn Down the Pain, Bring Back My Rest
         </ShopButton>
       </div>
     </div>

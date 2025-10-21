@@ -449,10 +449,16 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#370F1E] relative">
     <div class="sm:hidden px-[40px] pt-[26px] pb-[36px]">
-      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted-2">
+      <h1 class="pb-[35px] font-crossfit text-center px-[36px] leading-[1] text-[32px] text-[#fff]">
+        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span>  and Wired by Night.
+      </h1>
+      <img src="/assets/why_exhausted1.webp" loading="lazy" alt="exhausted-2">
+      <div class="pt-[26px] pb-[36px]">
+        <img src="/assets/data_mobile.webp"  loading="lazy" alt="data-2">
+      </div>
     </div>
     <div class="hidden px-40 py-20 sm:flex">
-      <img src="/assets/why_exhausted_desktop.webp" loading="lazy" alt="exhausted-2">
+      <img src="/assets/why_exhausted_desk.webp" loading="lazy" alt="exhausted-2">
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
@@ -511,7 +517,8 @@ onBeforeUnmount(() => {
       </LazyIsland>
     </div>
   </section>
-  <DepoimentsD />
+  <DepoimentsD  
+  subtitle="4.9/5 (460+ Reviews) | 98% Recommend"/>
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
       <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super

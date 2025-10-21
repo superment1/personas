@@ -9,7 +9,7 @@ const props = defineProps({
     },
     subtitle: {
         type: String,
-        default: '4.9/5 (160+ Reviews) | 98% Recommend'
+        default: '4.9/5 (820+ Reviews) | 98% Recommend'
     },
     extraText:{
         type: String,
