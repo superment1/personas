@@ -3,21 +3,76 @@ import '../styles/superSleep.scss';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import FAQ from '../components/Faq.vue';
-import BannerRetention from '../components/BannerRetention.vue'
+import VslBadgesRelax from '../components/VslBadgesRelax.vue';
+import { useSeo } from '../composables/useSeo';
+import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
+
+  useSeo({
+    title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
+    description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
+    keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
+  })
 
 const router = useRouter()
+const modalOpen = ref(false)
+const showAfterVideo = ref(false)
 
-const REDIRECT_URL = '/sleepnatual'
+const urlPath = '/sleepnatural'
 
-function onVideoEnded() {
-  router.push(REDIRECT_URL)
+function openModal() { modalOpen.value = true }
+function goToPage() { router.push(urlPath) }
+
+const BACK_STATE = { exitGuard: true }
+let backGuardActive = false
+
+function onBackPress(e: PopStateEvent) {
+  if (!backGuardActive) return
+  history.pushState(BACK_STATE, document.title, location.href)
+  openExitModal(true)
 }
 
-const showPlayOverlay = ref(true)
-function hideOverlayAndLetUserPlay() {
-  showPlayOverlay.value = false
+function enableBackExitGuard() {
+  if (backGuardActive) return
+  backGuardActive = true
+  history.pushState(BACK_STATE, document.title, location.href)
+  window.addEventListener('popstate', onBackPress)
 }
 
+function disableBackExitGuard() {
+  if (!backGuardActive) return
+  backGuardActive = false
+  window.removeEventListener('popstate', onBackPress)
+}
+
+const COOLDOWN_MS = 20000
+const TOP_ZONE = 8
+let lastShown = 0
+let lastY = 9999
+let io
+
+const AFTER_VIDEO_GRACE_MS = 10000
+let afterVideoUntil = 0
+
+function onCountdownExpired() {
+  modalOpen.value = true
+  lastShown = Date.now()
+}
+
+function openExitModal(force = false) {
+  const now = Date.now()
+  if (modalOpen.value) return
+  if (!force) {
+    if (now < afterVideoUntil) return
+    if (showAfterVideo.value) return
+    if (now - lastShown < COOLDOWN_MS) return
+  }
+
+  modalOpen.value = true
+  lastShown = now
+}
+function onPageHide() {
+  openExitModal()
+}
 function loadVturbOnce() {
   const id = 'vturb-script-68aa4210166658ec2475a56e'
   if (document.getElementById(id)) return
@@ -28,9 +83,60 @@ function loadVturbOnce() {
   document.head.appendChild(s)
 }
 
+function onMouseMove(e: MouseEvent) {
+  const goingUp = e.clientY < lastY
+  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true) 
+  lastY = e.clientY
+}
 
+function onMouseOut(e: MouseEvent) {
+  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true) 
+}
+
+function onVisibilityChange() {
+  if (document.visibilityState === 'hidden') openExitModal()
+}
+function onWindowBlur() {
+  openExitModal()
+}
+
+function onPopState() {
+  openExitModal()
+}
+function onVideoEnded() {
+  showAfterVideo.value = true
+  afterVideoUntil = Date.now() + AFTER_VIDEO_GRACE_MS
+}
+
+let lastScrollY = window.scrollY || 0
+let lastScrollT = performance.now()
+
+function onScroll() {
+  const y = window.scrollY
+  const t = performance.now()
+
+  const dy = lastScrollY - y        
+  const dt = Math.max(t - lastScrollT, 1)
+  const vel = dy / dt                 
+
+  if (dy > 120 && vel > 0.6) openExitModal()
+  if (y <= 12 && dy > 0) openExitModal()
+
+  lastScrollY = y
+  lastScrollT = t
+}
+
+const showPlayOverlay = ref(true)
+function hideOverlayAndLetUserPlay() {
+  showPlayOverlay.value = false
+}
+
+let fsHandlerAdded = false
+
+function onModalClose() {
+  lastShown = 0
+}
 const hasStarted = ref(false)
-let io: IntersectionObserver | null = null
 
 let readyHandler: any
 let playHandler: any
@@ -39,46 +145,96 @@ let endedHandler: any
 onMounted(() => {
   loadVturbOnce()
 
-  const playerEl = document.getElementById('vid-68aa4210166658ec2475a56e') as any
-  if (!playerEl) return
+  // ====== Exit-intent listeners ======
+  window.addEventListener('mousemove', onMouseMove, { passive: true })
+  document.addEventListener('mouseout', onMouseOut, { passive: true })
+  document.addEventListener('visibilitychange', onVisibilityChange)
+  window.addEventListener('blur', onWindowBlur)
 
-  const onPlayerReady = () => {
-    playerEl.addEventListener('video:play', () => {
-      hasStarted.value = true
+  window.addEventListener('popstate', onPopState)
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('pagehide', onPageHide)
+
+   const el = document.getElementById('vid-68aa4210166658ec2475a56e')
+  if (!el) return
+
+  const onReady = () => {
+    el.addEventListener('video:play', () => {
       showPlayOverlay.value = false
     })
 
-    playerEl.addEventListener('video:play', playHandler)
-    endedHandler = () => onVideoEnded()
-    playerEl.addEventListener('video:ended', endedHandler)
-
-    if ('IntersectionObserver' in window) {
-      io = new IntersectionObserver(([entry]) => {
-        if (!hasStarted.value) return
-        if (entry?.isIntersecting) { playerEl.play?.()
-        } else {
-          playerEl.pause?.()
-        }
-      }, { threshold: 0.25 })
-      io.observe(playerEl)
-    }
+    el.addEventListener('video:ended', () => {
+      showPlayOverlay.value = false
+      showAfterVideo.value = true
+    }, { once: true })
   }
-  readyHandler = onPlayerReady
-  playerEl.addEventListener('player:ready', readyHandler)
-  document.addEventListener('player:ready', readyHandler, { once: true })
+  if (window.matchMedia?.('(pointer: coarse)').matches) {
+    enableBackExitGuard()
+  }
+  el.addEventListener('player:ready', onReady, { once: true })
+  document.addEventListener('player:ready', onReady, { once: true })
+
 })
 
 onBeforeUnmount(() => {
-  const el = document.getElementById('vid-68aa4210166658ec2475a56e') as any
-  if (el) {
-    if (playHandler) el.removeEventListener('video:play', playHandler)
-    if (endedHandler) el.removeEventListener('video:ended', endedHandler)
-    if (readyHandler) el.removeEventListener('player:ready', readyHandler)
-  }
-  document.removeEventListener('player:ready', readyHandler as any)
-  io?.disconnect()
+  window.removeEventListener('mousemove', onMouseMove)
+  document.removeEventListener('mouseout', onMouseOut)
+  document.removeEventListener('visibilitychange', onVisibilityChange)
+  window.removeEventListener('blur', onWindowBlur)
+  window.removeEventListener('popstate', onPopState)
+  window.removeEventListener('scroll', onScroll)
+  disableBackExitGuard()
 })
-
+const testimonials = [
+  {
+    avatarDesk: '/assets/emily.webp',
+    avatarMobile: '/assets/emily.webp',
+    title: 'Stress was eating me alive at work.',
+    testimonial: 'Back-to-back Zoom calls, constant Slack pings — I felt like I couldn’t breathe. After a few weeks, I’m not snapping at my coworkers anymore, and I can actually close my laptop without shaking.',
+    name: 'Emily J., 34',
+    city: 'San Francisco, CA'
+  },
+  {
+    avatarDesk: '/assets/david.webp',
+    avatarMobile: '/assets/david.webp',
+    title: 'I hit burnout hard.',
+    testimonial: 'I run a small design studio and was pulling 12-hour days. My chest was tight, my patience gone. This helped me feel level again — I don’t explode over emails like I used to.',
+    name: 'David P., 40',
+    city: 'Brooklyn, NY'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'Anxiety ruled my mornings.',
+    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
+    name: 'Laura M., 45',
+    city: 'Chicago, IL'
+  },
+  {
+    avatarDesk: '/assets/michael.webp',
+    avatarMobile: '/assets/michael.webp',
+    title: 'I was always on edge at home.',
+    testimonial: 'My kids noticed before I did — I was irritable, snapping at the smallest things. Now the tension’s dialed down, and I can actually enjoy being with them after work.',
+    name: 'Michael H., 37',
+    city: 'Denver, CO'
+  },
+  {
+    avatarDesk: '/assets/sofia.webp',
+    avatarMobile: '/assets/sofia.webp',
+    title: 'Deadlines used to crush me.',
+    testimonial: 'Every end of month I’d get headaches and shut down from the pressure. Now I still work hard, but I don’t fall apart — I can think straight under stress.',
+    name: 'Sofia R., 43',
+    city: 'Miami, FL'
+  },
+  {
+    avatarDesk: '',
+    avatarMobile: '',
+    title: 'I felt wired but drained.',
+    testimonial: 'Like my body was stuck in overdrive. After using this, I’m calmer and no longer pacing the house at night after a long day.',
+    name: 'Anthony D., 50',
+    city: 'Austin, TX'
+  },
+]
 </script>
 
 <template>
@@ -89,32 +245,42 @@ onBeforeUnmount(() => {
       </div>
     </header>
     <!-- mobile -->
-    <main class="flex-1 bg-[#6EC8F0] flex flex-col justify-center h-[972px]">
-      <div
-        class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[24px] sm:pb-0 pt-[32px] sm:pt-[80px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[306px] h-[574px]">
-          <div class="sm:hidden font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
-            <h1 class="text-[#fff] leading-[0.9] items-center">
-              The solution that
-              <span class="text-[#370F1E]">
-                finally ended my sleepless nights.
+    <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-[972px]">
+      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[44px] sm:pt-[80px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[649px] h-[746px]">
+          <div class="sm:hidden font-crossfit leading-none ">
+            <p class="text-[#370F1E] font-bold font-gelasio italic text-[18px]" >
+                The Truth Doctors Never<br> Explain About Your Neuropathy
+            </p>
+            <h1 class="text-[#370F1E] uppercase pt-[15px] pb-[33px] text-[47px] sm:text-[80px] leading-[41px] items-center">
+              Nerves repaired in only 90 days 
+              <span class="text-[#fff] ">
+               with a natural <br>3-pillar solution
               </span>
             </h1>
+            <p class="text-[#370F1E] font-gelasio italic text-[18px]" >
+                Calm, protect, and regenerate — the system used by 12,000 Americans with a 93% satisfaction rate and up to 120-day full guarantee.
+            </p>
           </div>
 
-          <div class="hidden sm:block font-crossfit uppercase leading-none text-[40px] sm:text-[80px]">
-            <h1 class="text-[#fff] leading-[0.875] items-center">
-              THE SOLUTION <br>THAT FINALLY
-              <br><span class="text-[#370F1E]">
-                ENDED MY <br>SLEEPLESS NIGHTS.
+          <div class="hidden sm:block max-w-[550px] pt-[42px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[75px]">
+            <p class="text-[#370F1E] font-bold font-gelasio leading-[26px] italic text-[30px]" >
+                The Truth Doctors Never<br> Explain About Your Neuropathy
+            </p>
+            <h1 class="text-[#370F1E] pt-[31px] pb-[76px] uppercase leading-[65px] items-center">
+              Nerves repaired in only 90 days 
+              <span class="text-[#fff] ">
+               with a natural <br>3-pillar solution
               </span>
             </h1>
+             <p class="text-[#370F1E] leading-[0.9] font-gelasio italic text-[30px]" >
+                  Calm, protect, and regenerate — the system used by 12,000 Americans with<br> a 93% satisfaction rate and up to 120-day full guarantee.
+            </p>
           </div>
-
-          <div class="relative z-10 pt-[28px] sm:pt-0">
+          <div class="relative z-10 pt-[48px] sm:pt-0">
             <div
               class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
-                    sm:max-w-[649px] sm:h-[437px] sm:max-h-[812px] overflow-hidden"
+                    sm:max-w-[649px] sm:w-[400px] sm:h-[500px] sm:max-h-[812px] overflow-hidden"
             >
               <vturb-smartplayer
                 id="vid-68aa4210166658ec2475a56e"
@@ -129,7 +295,16 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-       <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[219px] flex-col bg-[#370F1E]">
+      <!-- v-show="showAfterVideo"  -->
+      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+        <div class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
+          <div class="inline-flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
+            <p>Made in the USA <span class="espacada px-2">|</span> Save up to 58% <span class="espacada px-2">|</span> 120-Day Money-Back Guarantee <span class="espacada px-2">|</span> 100% Plant-Based <span class="espacada px-2">|</span> Science-Backed <span class="espacada px-2">|</span> Non-Sedative <span class="espacada px-2">|</span> Non-Habit Forming  <span class="espacada px-2">|</span> Caffeine-Free <span class="espacada px-2">|</span> Gluten, Soy & Dairy-Free <span class="espacada px-2">|</span> Free Shipping <span class="espacada px-2">|</span> GMP-Certified Facility <span class="espacada px-2">|</span></p> 
+            <p>Made in the USA <span class="espacada px-2">|</span> Save up to 58% <span class="espacada px-2">|</span> 120-Day Money-Back Guarantee <span class="espacada px-2">|</span> 100% Plant-Based <span class="espacada px-2">|</span> Science-Backed <span class="espacada px-2">|</span> Non-Sedative <span class="espacada px-2">|</span> Non-Habit Forming  <span class="espacada px-2">|</span> Caffeine-Free <span class="espacada px-2">|</span> Gluten, Soy & Dairy-Free <span class="espacada px-2">|</span> Free Shipping <span class="espacada px-2">|</span> GMP-Certified Facility <span class="espacada px-2">|</span></p> 
+          </div>
+        </div>
+      </div>
+      <div class="w-full relative hidden sm:flex h-[143px] justify-center sm:h-[219px] flex-col bg-[#370F1E]">
         <div class="flex px-10 flex-col items-center sm:pt-[8px] sm:gap-[38px]">
           <div class="2 flex flex-row sm:w-[1260px] sm:max-w-[100%] max-w-[349px] ">
             <svg xmlns="http://www.w3.org/2000/svg" width="111" height="111" viewBox="0 0 111 111" fill="none">
@@ -269,15 +444,16 @@ onBeforeUnmount(() => {
             </svg>
           </div>
           <div class="sm:w-[1260px] sm:max-w-[100%] max-w-[349px]">
-            <p class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[17px]">
+            <p
+              class="font-gelasio font-normal relative bottom-4 text-start italic text-[#fff] text-[13px] sm:text-[17px]">
               Certified by the highest standards of America.
             </p>
-          </div> 
+          </div>
         </div>
       </div>
     </main>
 
-    <div class="sm:hidden w-full h-[143px] sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
+    <div class="sm:hidden w-full h-[158px] justify-center sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
       <div class="flex max-w-[349px] mx-auto flex-col sm:gap-[40px]">
         <div class="2 flex flex-row">
           <svg xmlns="http://www.w3.org/2000/svg" width="115" height="118" viewBox="0 0 115 118" fill="none">
@@ -417,86 +593,120 @@ onBeforeUnmount(() => {
           </svg>
         </div>
         <p class="font-gelasio text-center font-normal relative bottom-4 italic text-[#fff] text-[13px] sm:text-[30px]">
-         Certified by the highest standards of America.
+          Certified by the highest standards of America.
         </p>
       </div>
+
     </div>
-    <div class="bg-[#FFFAF0] w-full py-[54px] items-center justify-start">
-      <div class="px-0 flex flex-col gap-0 sm:gap-[40px] items-center justify-start">
+    <!-- v-show="showAfterVideo" -->
+    <div v-show="showAfterVideo" class="">
+     <VslBadgesRelax
+        bgCollor="bg-[#4DBCB6]"
+        id="id-vsl-badges"
+        :duration-ms="7 * 60 * 1000"
+        start-on="video-ended"
+        @expired="onCountdownExpired"
+        porductId1="prod_T2jNgj5cCjXcvG"
+        porductId3="prod_T2jOmiPYB2SrZd"
+        porductId6="prod_T2jPp4I1S0cfol"
+        bottle="/assets/nn1Relax.webp"      
+        combo3="/assets/bottle3.webp"     
+        combo6="/assets/bottle6.webp"   
+        />
+    </div> 
+    <DepoimentsD v-show="showAfterVideo"
+        :testimonials="testimonials"
+    />
+    <!-- DESKTOP v-show="showAfterVideo"  -->
+    
+    <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
+      <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">
-            Scientific <br> references:</h1>
+            Scientific references</h1>
           <h1 class="text-[#350E1D] hidden sm:block w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-start sm:text-[68px] ">
-            Scientific references:</h1>
+            Scientific references</h1>
         </div>
         <ul class="w-full columns-1 gap-x-8 sm:gap-y-6 max-w-[349px] sm:max-w-[1260px] text-[#350E1D] font-sans font-medium">
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Montana State
-                  University</strong> 
-                <p>Study by Montana State researcher finds sleep deprivation makes people less
-                happy, more anxious. (n.d.)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Akhondzadeh, S., et al. (2001) – </strong> 
+                <span>Passionflower in the treatment of generalized anxiety: A double-blind randomized trial with oxazepam. Journal of Clinical Pharmacy and Therapeutics, 26(5), 363–367. [Result: Passiflora incarnata was as effective as oxazepam in reducing anxiety, with fewer side effects.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5  pt-[11px] pb-[11px] sm:pb-[17px] sm:pt-[22px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Colten, H. R., &
-                  Altevogt, B. M. (Eds.)</strong> 
-                  <p>Sleep disorders and sleep deprivation: An unmet public health
-                problem. (2006)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Movafegh, A., et al. (2008) – </strong> 
+                <span>Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: A double-blind, placebo-controlled study. Anesthesia & Analgesia, 106(6), 1728–1732. [Result: Significant anxiolytic effect compared with placebo.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Sleep Foundation
-                </strong> <p> How sleep deprivation affects your heart. (n.d.)</p></h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[26px] border-b border-[#370F1E]">
-            <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Calhoun, D. A., &
-                  Harding, S. M.</strong> <p> Sleep and hypertension. (2010)</p></h1>
-            </div>
-          </li>
-          <li class="flex gap-5  pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[16px] border-b border-[#370F1E]">
-            <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Mesarwi, O., Polak,
-                  J., Jun, J., & Polotsky, V. Y.</strong> <p> Sleep disorders and the development of insulin resistance
-                and obesity. (2013)</p>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Hanus, M., et al. (2004) – </strong> 
+                <span>Efficacy of a fixed combination of Eschscholzia californica and Crataegus oxyacantha in mild-to-moderate anxiety disorders: A double-blind, placebo-controlled trial. Fundamental & Clinical Pharmacology, 18(5), 527–532. [Result: Combination including California poppy improved anxiety vs. placebo.]</span>
               </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[22px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]"><strong>Spiegel, K.,
-                  Tasali, E., Leproult, R., & Van Cauter, E.</strong> <p> Effects of poor and short sleep on glucose
-                metabolism and obesity risk. (2009)</p></h1>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Zhu, Y., et al. (2015) – </strong> 
+                <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and GABA pathways.]</span>
+              </h1>
             </div>
           </li>
-          <li class="flex gap-5 pt-[12px] pb-[12px] sm:pb-[18px] sm:pt-[25px] border-b border-[#370F1E]">
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
-              <h1 class="text-[14px] font-normal sm:text-[16px]  leading-[1.3]"><strong>Ungvari, Z.,
-                  Fekete, M., Varga, P., Fekete, J. T., Lehoczki, A., Buda, A., … & Győrffy, B.</strong> <p> Imbalanced
-                sleep increases mortality risk by 14–34%: A meta-analysis. (2025)</p></h1>
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>EMA Herbal Monograph (2016) – </strong> 
+                <span> Althaea officinalis root. European Medicines Agency, Committee on Herbal Medicinal Products (HMPC). [Result: Recognized for soothing, anti-inflammatory traditional use; limited clinical data for stress, but supports calming and restorative effects.]</span>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Galati, E. M., et al. (2002) –</strong> 
+                <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and GABA pathways.]</span>
+              </h1>
+            </div>
+          </li>
+          <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Zhu, Y., et al. (2015) – </strong> 
+                <span>Biological effects of Opuntia ficus-indica (L.) Mill. (Cactaceae) waste matter. Note I: Antioxidant and anti-inflammatory activity. Journal of Ethnopharmacology, 79(1), 17–21. [Result: Extracts reduced oxidative stress and inflammation, pathways linked with stress and mood regulation.]</span>
+              </h1>
+            </div>
+          </li>
+           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
+            <div class="flex-col">
+              <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
+                <strong>Park, E. H., & Kahng, J. H. (1999) – </strong> 
+                <span>Suppression of immunological and inflammatory responses by cactus (Opuntia ficus-indica). Archives of Pharmacal Research, 22(4), 404–407. [Result: Demonstrated anti-inflammatory effects relevant for stress resilience.]</span>
+              </h1>
             </div>
           </li>
         </ul>
       </div>
     </div>
-     <div class="bg-[#fffaf0] w-full pb-[45px] flex flex-col">
-      <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
+    <div class="bg-[#fffaf0] w-full pb-[45px] pt-[40px] flex flex-col">
+      <div class="px-0 sm:px-10 flex flex-col">
         <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
-          <h1 class="text-center w-full sm:hidden pb-[30px] leading-none text-[#370F1E] text-[34px] font-crossfit">
+          <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
             Frequently asked <br>
             questions:</h1>
-          <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
+          <h1 class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
             Frequently asked questions:</h1>
           <FAQ />
         </div>
       </div>
-    </div>    
+    </div>
     <div class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
       <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
@@ -504,22 +714,12 @@ onBeforeUnmount(() => {
               class="font-sans text-sm leading-none font-thin">®</sub></span>
         </div>
         <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
-          © Super Natural Sleep Research 2025.<br> All Rights Reserved.
+         © Super Relax Research 2025. <br>All Rights Reserved.
         </p>
-        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3">
-          Super Natural Sleep is a supplement formulated with natural ingredients that relax the nervous system and
-          guide the user into deep,
-          restorative sleep. It does not contain melatonin or harsh chemicals.
-          Super Natural Sleep is manufactured in the United States by an FDA registered and
-          GMP-compliant laboratory. All product's quality, safety, and compliance certifications are
-          managed by our manufacturing partner. This product is not intended to diagnose, treat,
-          cure or prevent any disease. Always consult your physician before starting any dietary
-          supplement, especially if you are taking medications, are pregnant, or have a medical
-          condition.
-          Super Natural Sleep is part of the commercial portfolio of Superment.
+        <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
+          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
         </p>
       </div>
     </div>
   </div>
-
 </template>

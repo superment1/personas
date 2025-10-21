@@ -5,11 +5,9 @@ import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
-import BannerModal from '../components/BannerModal.vue';
 import ShopNowRelief from '../components/ShopNowRelief.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import SuperFooter2 from '../components/SuperFooter2.vue';
 import Faq from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
@@ -143,16 +141,16 @@ const testimonials = [
     city: 'Chicago, IL'
   },
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: new URL('../assets/image/newPageD/eliseu-desk.png', import.meta.url).href, 
+    avatarMobile:new URL('../assets/image/newPageD/eliseu.png', import.meta.url).href,
     title: 'Good both day & night.',
     testimonial: 'Neuropathy kept me restless and sore. Now the pain is quieter, I sleep longer, and I feel sharper at work.',
     name: 'Eliseu C., 40',
     city: 'Fort Lauderdale, FL'
   },
   {
-    avatarDesk: '',
-    avatarMobile: '',
+    avatarDesk: new URL('../assets/image/newPageD/bruna-desk.png', import.meta.url).href,
+    avatarMobile: new URL('../assets/image/newPageD/bruna.png', import.meta.url).href,
     title: 'The burning is finally easing.',
     testimonial: 'It’s still early, but I already notice less burning and tingling in my legs. Sleeping better at night has made a huge difference in how I feel during the day.',
     name: 'Bruna R., 38',
@@ -396,8 +394,7 @@ const asks = ref([
           <div
             class="flex font-crossfit px-0 pt-[18px] md:pt-[62px] text-[26px] md:text-[49px] leading-[31px] md:leading-[57px] text-center md:text-start">
             <p class="lg:hidden max-w-[330px] text-[#370F1E]">
-              Finally, Real Relief for<br> Burning, Tingling & Numbness <span class="text-white">               
-              From the Inside Out.
+             End Nerve Pain at the Source.<span class="text-white"> Stop the Burning, Tingling<br> & Numbness Naturally.
               </span> 
             </p>
             <p class="hidden lg:block lg:pl-[50px] text-[#370F1E]">
@@ -578,8 +575,9 @@ const asks = ref([
         <img src="/assets/data.webp" class="lg:hidden pb-[39px] pt-[20px]" alt="">        
         <img src="/assets/data_desk.webp" class="lg:block hidden py-[20px]" alt="">   
          <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
-            :showIcon="false"
-            class="botao-shop font-bold !m-0 text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+            iconColorClass="text-[#370F1E]"
+            :showIcon="true"
+            class="botao-shop gap-2 font-bold !m-0 text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
             I Can’t Live Like This Anymore
           </ShopButton>   
       </div>
@@ -597,7 +595,7 @@ const asks = ref([
             </li>
           </ul>          
         </div> -->
-        <div class="flex gap-[17px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
+        <div class="flex gap-[15px] lg:gap-[65px] pb-[54px] pt-[35px] lg:pt-[65px]">
           <img class="lg:hidden w-[170px] h-[177px] md:w-[240px] md:h-[280px]" src="/assets/wm.webp" loading="lazy" alt="exhausted">
           <img class="hidden lg:block w-[500px] h-[525px] " src="/assets/wm_desk.webp" width="504" height="525" loading="lazy"
             alt="exhausted"></img>
@@ -642,8 +640,9 @@ const asks = ref([
           </ul>     
         </div>
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
-            :showIcon="false"
-            class="botao-shop font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
+            iconColorClass="text-[#370F1E]"
+            :showIcon="true"
+            class="botao-shop gap-3 font-bold !mt-[40px] text-[14px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03]">
             Show Me How to End This Pain
         </ShopButton>   
       </div>
@@ -652,9 +651,9 @@ const asks = ref([
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
       <div class="flex relative z-30 bg-[#FFDC03] gap-4 lg:gap-10 pt-[20px] pl-8 pr-8 lg:px-40 w-full">
-        <img class="lg:hidden w-[123x] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
+        <img class="lg:hidden w-[123px] h-[152px] md:w-[240px] md:h-[280px]" src="/assets/womam_pills.webp"
           loading="lazy" alt="exhausted">
-        <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
+        <img class="hidden lg:block" src="/assets/womam_pills_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
         <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
           <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
@@ -668,9 +667,10 @@ const asks = ref([
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
-          The Breakthrough: Repair Nerves from the Inside Out</p>
+        <p class="pt-[74px] lg:pt-[160px] font-crossfit max-w-[340px] lg:max-w-[920px] self-center text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
+          The Breakthrough: Repair Nerves from the Inside Out
+        </p>
+      <div class=" px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[45px]">
         <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
         <div class="bg-[#96E3DF] pt-[16px] lg:pt-[65px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-[#370F1E] rounded-[15px]">
           <ul class="flex flex-col leading-[1.4] gap-3 lg:gap-[40px]">
@@ -767,30 +767,31 @@ const asks = ref([
   </section>
   <ShopNowRelief id="shop-now-d" />
 
-  <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
+  <section class="bg-[#370F1E] px-[37px] lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/tabela_relax1.webp" alt="table" loading="lazy">
+      <p class="font-crossfit text-center pt-10 leading-[1] pb-12 text-[31px] text-white">Why everyone is <br><span class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
+      <img src="/assets/tabela-relax3.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
           class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
-      <img src="/assets/tabela_relax1_desk.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela-relax3_desk.webp" alt="table" loading="lazy">
       <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>
-  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
+  <section class="bg-[#FFDC03] px-[37px] lg:px-40 pb-[42px]">
     <div class="justify-self-center max-w-[950px]">
       <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[30px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]"
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03] sm:h-[54px] sm:w-auto"
           textColorClass="text-[#FFDC03]" :showIcon="true"
-          class="botao-shop font-bold !gap-2 !m-0 text-[13px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
-          Turn Down the Pain, Bring Back Your Rest
+          class="botao-shop font-bold sm:!gap-6 !gap-3 !m-0 text-[13px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-0 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
+          Turn Down the Pain, Bring Back My Rest
         </ShopButton>
       </div>
     </div>

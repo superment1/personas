@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import VslRelax2 from '../pages/vslRelax2.vue'
 
 const routes = [
   { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
@@ -21,8 +20,8 @@ const routes = [
   { path: '/advetorial',        name:'advetorial',    component: () => import('../pages/adVetorial.vue') },  
   { path: '/tsl',               name:'tsl',           component: () => import('../pages/tsl.vue') },  
   { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
-  { path: '/vslrelax',            name:'vslrelax',        component: () => import('../pages/vslRelax.vue') },  
-  { path: '/vslrelax2',            name:'vslrelax2',        component: () => import('../pages/vslRelax2.vue') },  
+  { path: '/vslrelax',          name:'vslrelax',      component: () => import('../pages/vslRelax.vue') },  
+  { path: '/vslrelief',         name:'vslrelief',     component: () => import('../pages/vslRelief.vue') },  
 ]
 
 export const router = createRouter({
@@ -33,6 +32,41 @@ export const router = createRouter({
   }
 })
 
+const BLOCKED = new Set ([
+  '/tsl',
+  '/sleepnatural',
+  '/sleepingbeauty',
+  '/terms',  
+  '/privacypolicy',
+  '/faq', 
+  '/about', 
+  '/maturesleep', 
+  '/discomfort', 
+  '/menopause',
+  '/vsleep', 
+  '/vsleep2',
+  '/sleep2',
+  '/relax', 
+  '/slim', 
+  '/advetorial',
+  '/relief', 
+  '/vslrelax',
+  '/vslrelief',
+])      
+const norm = (p) => (p || '/').replace(/\/+$/, '') || '/';
+
+function applyZendesk(path) {
+  const blocked = BLOCKED.has(norm(path))
+  try { window.zE && window.zE('messenger', blocked ? 'hide' : 'show') } catch {}
+  try { window.zE && window.zE('webWidget', blocked ? 'hide' : 'show') } catch {}
+  window.__checkZendeskVisibility = () => applyZendesk(location.pathname)
+}
+
+applyZendesk(location.pathname)
+
+router.afterEach((to) => {
+  applyZendesk(to.path)
+})
 function setThemeColor(color) {
   let metaTag = document.querySelector('meta[name="theme-color"]')
   if (!metaTag) {
@@ -42,6 +76,7 @@ function setThemeColor(color) {
   }
   metaTag.setAttribute('content', color)
 }
+
 
 router.afterEach((to) => {
   const themeColorMap = {
@@ -59,7 +94,7 @@ router.afterEach((to) => {
     vsl:'#6EC8F0',
     vsl2:'#6EC8F0',
     vslrelax:'#4dbcb6',
-    vslrlax2: '#4dbcb6',
+    vslrelief: '#4dbcb6',
     sleepbetter: '#E1DCCD',
     sleepbetter2: '#E1DCCD',
     advetorial: '#370F1E',
@@ -69,4 +104,5 @@ router.afterEach((to) => {
   }
   const color = themeColorMap[to.name] || '#ffffff'
   setThemeColor(color)
+  applyZendesk(to.path)
 })

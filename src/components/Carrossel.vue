@@ -6,9 +6,9 @@ const props = defineProps({
   bottles: {
     type: Array,
     default: () => [
-      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467-desk.webp',productId:'prod_T2jNgj5cCjXcvG' , iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: ' 1 Bottle: A 30-day supply to \n experience the difference.' },
-      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo_3.webp',productId:'prod_T2jOmiPYB2SrZd' , iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none" ,textButton: '3 Bottles: Our most popular\n option steady support for\n months of deep rest.' },
-      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo_6.webp',productId:'prod_T2jPp4I1S0cfol' , iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: '6 Bottles: The best value, ensuring\n you never run out of calm nights.' }
+      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467_tsl_desk1.webp',productId:'prod_SbKYsQrxStW8wB' , iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: ' 1 Bottle: A 30-day supply to \n experience the difference.' },
+      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo3.webp',productId:'prod_SbKa8ag01A2TGX' , iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none" ,textButton: '3 Bottles: Our most popular\n option steady support for\n months of deep rest.' },
+      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo6.webp',productId:'prod_SbKaRuJpDVBEzx' , iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: '6 Bottles: The best value, ensuring\n you never run out of calm nights.' }
     ]
   }
 })
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
             textColorClass="text-[#370F1E]" 
             iconColorClass="text-[#370F1E]"
             :show-icon="false"
-            productId={{productId}}
+            :productId="t.productId"
             class="relative left-1/2 -translate-x-1/2 translate-y-[-175px] bottom-4 z-20
                    h-[72px] w-[321px] md:w-[367px]
                    bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
