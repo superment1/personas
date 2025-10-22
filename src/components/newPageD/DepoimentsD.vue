@@ -11,7 +11,7 @@ const props = defineProps({
         type: String,
         default: '4.9/5 (820+ Reviews) | 98% Recommend'
     },
-    extraText:{
+    extraText: {
         type: String,
     },
     testimonials: {
@@ -140,18 +140,21 @@ onBeforeUnmount(() => ro?.disconnect?.())
             class="text-center text-[#370F1E] w-[246px] md:w-full font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[60px]">
             {{ props.primary }}
         </p>
-        <p
-            class="text-center text-[#370F1E] font-gelasio font-semibold leading-[1.06] text-[15px] md:text-[22px] lg:text-[32px] mt-2 lg:mt-[34px]">
-            {{ props.subtitle }}
-        </p>
-        <div v-if="extraText" class="text-center px-[35px] lg:px-0 text-[12px] lg:text-[24px] leading-[14px] lg:leading-[23px] max-w-[700px]">
+        <div
+            class="bg-[#FF5E29] flex flex-col items-center justify-center rounded-[20px] px-[15px] py-[4px] mt-[1px] lg:mt-[34px]">
+            <p class="text-center text-white font-gelasio font-semibold text-[13px] md:text-[22px] lg:text-[32px]">
+                {{ props.subtitle }}
+            </p>
+        </div>
+        <div v-if="extraText"
+            class="text-[#370F1E] text-center font-medium px-[20px] mt-[8px] lg:px-0 text-[12px] lg:text-[24px] leading-[1.15] lg:leading-[23px] max-w-[700px]">
             <p>
                 {{ props.extraText }}
             </p>
         </div>
 
         <!-- trilho -->
-        <div ref="track" class="w-full max-w-[1150px] mt-4 md:mt-[25px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
+        <div ref="track" class="w-full max-w-[1150px] mt-[10px] md:mt-[25px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
              snap-x snap-mandatory select-none cursor-grab active:cursor-grabbing
              scrollbar-hide" @pointerdown="onPointerDown" @pointermove="onPointerMove" @pointerup="onPointerUp"
             @pointercancel="onPointerCancel" @scroll.passive="onScroll">
@@ -162,24 +165,24 @@ onBeforeUnmount(() => ro?.disconnect?.())
                 <div class="shrink-0 w-[301px] md:w-[640px] h-[219px] md:h-[280px] lg:w-[920px] lg:h-[480px] justify-between snap-center bg-[#FFFAF0] rounded-xl 
                     flex flex-col items-start pt-[31px] pb-[20px] px-6 gap-y-[14px] lg:py-[60px] lg:px-[70px]">
 
-                    <p class="text-[#370F1E] font-crossfit font-bold text-[17px] lg:text-[52px] leading-[1.2]">{{ t.title }}
+                    <p class="text-[#370F1E] font-crossfit font-bold text-[17px] lg:text-[52px] leading-[1.2]">{{
+                        t.title }}
                     </p>
                     <p
                         class="text-[#370F1E] font-DMSans font-regular text-[12px] lg:text-[26px] leading-[1.15] lg:mt-[14px]">
                         {{ t.testimonial }}</p>
                     <div class="flex flex-row items-start justify-start mt-2 lg:mt-[16px]">
                         <template v-if="t.avatarMobile">
-                            <img 
-                            :src="t.avatarMobile" 
-                            :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
-                            alt="avatar"
-                            class="w-[48px] h-[48px] md:w-[86px] md:h-[86px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
-                        </template>                        
+                            <img :src="t.avatarMobile" :srcset="`${t.avatarMobile} 600w, ${t.avatarDesk} 1024w`"
+                                alt="avatar"
+                                class="w-[48px] h-[48px] md:w-[86px] md:h-[86px] lg:w-[116px] lg:h-[118px] rounded-full object-cover" />
+                        </template>
                         <template v-else>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="w-[48px] h-[48px]">
-                                <circle cx="24" cy="24" r="24" fill="#E1DCCD"/>
-                                <circle cx="24" cy="16" r="8" fill="#C1BAA5"/>
-                                <ellipse cx="24" cy="36" rx="15" ry="9" fill="#C1BAA5"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none"
+                                class="w-[48px] h-[48px]">
+                                <circle cx="24" cy="24" r="24" fill="#E1DCCD" />
+                                <circle cx="24" cy="16" r="8" fill="#C1BAA5" />
+                                <ellipse cx="24" cy="36" rx="15" ry="9" fill="#C1BAA5" />
                             </svg>
                         </template>
                         <div class="flex flex-col items-start justify-center ml-3 pt-1">
