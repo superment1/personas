@@ -303,7 +303,7 @@ const asks = ref([
   <DepoimentsD primary="The results speak for themselves." subtitle="4.9/5 (750+ Reviews) | 98% Recommend"
     extraText="Thousands of people who once dreaded bedtime now look forward to it. They’re sleeping calmly through the night. They’re waking up refreshed instead of exhausted. They’re living their days with more energy, more patience, more joy." />
   <section>
-    <div class="bg-[#FFFAF0] pt-[32px] flex flex-col items-center justify-center lg:pt-[64px] pb-[31px] lg:pb-[64px]">
+    <div class="bg-[#FFFAF0] pt-[31px] flex flex-col items-center justify-center lg:pt-[64px] pb-[31px] lg:pb-[64px]">
       <div class="max-w-[330px] lg:max-w-max items-center gap-[26px]  flex flex-col">
         <h1 class="font-crossfit leading-[1] text-[36px] lg:text-[50px] text-[#370F1E] text-center">
           And now it’s your turn.
@@ -315,7 +315,7 @@ const asks = ref([
           <img src="/assets/man-1-desk.webp" class="hidden lg:block rounded-xl w-[384px] h-[320px]" alt="">
         </div>
         <div
-          class="px-[20px] text-[#370F1E] text-center pb-[20px] lg:pb-[30px] pt-[18px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
+          class="px-[20px] text-[#491529] font-semibold text-center pb-[9px] lg:pb-[30px] pt-[18px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
           Imagine what your mornings could feel like after nights of deep, natural rest. Imagine stress slipping away.
           Imagine your body repairing, your energy restored, your mind clear. This isn’t just sleep — this is renewal.
         </div>
@@ -331,8 +331,21 @@ const asks = ref([
             class="inline-flex w-fit !h-[40px] !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent !shadow-none !ring-0 !p-0"
             :showIcon="false">
             <div
-              class="flex flex-row items-center bg-[#FFDC03] !h-[40px] lg:w-[582px] w-[328px] lg:!h-[72px] px-[35px] lg:px-[40px] py-[7px] rounded-full justify-center gap-3">
-              <span class="font-DMSans text-[15px] md:text-[25px] font-bold text-[#370F1E]">
+              class="flex flex-row items-center bg-[#FFDC03] !h-[40px] lg:w-[582px] w-[326px] lg:!h-[72px] lg:px-[40px] py-[7px] rounded-full justify-center gap-1">
+              <svg class="w-[32px]" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 27 27"
+                fill="none">
+                <g clip-path="url(#clip0_142_375)">
+                  <path
+                    d="M1.3642 1.95044C0.985705 1.95044 0.678955 1.60268 0.678955 1.17359C0.678955 0.744491 0.985705 0.396729 1.3642 0.396729H4.92481C5.25465 0.396729 5.53006 0.66129 5.59521 1.01279L6.12954 3.27512H26.2283C26.6068 3.27512 26.9135 3.62288 26.9135 4.05197C26.9135 4.1118 26.9078 4.16976 26.8962 4.22586L26.0188 10.0303C26.0155 10.0593 26.0114 10.0873 26.0056 10.1154L25.1225 15.96C25.0656 16.3386 24.7762 16.606 24.448 16.6051H9.28033L9.8526 19.0254H23.7182C24.0967 19.0254 24.4035 19.3732 24.4035 19.8023C24.4035 20.2313 24.0967 20.5791 23.7182 20.5791H9.32733C9.02471 20.5791 8.74847 20.3491 8.66601 20.0023L7.73669 16.0703C7.72926 16.0442 7.72267 16.0171 7.71772 15.989L6.90961 12.5703L6.34476 10.1808C6.33734 10.1546 6.33075 10.1285 6.3258 10.1014L4.94295 4.2511V4.24923L4.39954 1.94857H1.3642V1.95044ZM21.2881 22.7751C21.0069 22.7751 20.7538 22.9041 20.5699 23.1125C20.386 23.321 20.2722 23.6089 20.2722 23.9268C20.2722 24.2446 20.386 24.5326 20.5699 24.741C20.7538 24.9495 21.0078 25.0785 21.2881 25.0785C21.5685 25.0785 21.8225 24.9495 22.0063 24.741C22.1902 24.5326 22.304 24.2446 22.304 23.9268C22.304 23.6089 22.1902 23.321 22.0063 23.1125C21.8225 22.9041 21.5685 22.7751 21.2881 22.7751ZM19.601 22.0132C20.0331 21.5233 20.6293 21.2204 21.2881 21.2204C21.947 21.2204 22.5432 21.5233 22.9753 22.0132C23.4073 22.503 23.6745 23.1789 23.6745 23.9259C23.6745 24.6728 23.4073 25.3487 22.9753 25.8385C22.5432 26.3284 21.947 26.6313 21.2881 26.6313C20.6293 26.6313 20.0331 26.3284 19.601 25.8385C19.1689 25.3487 18.9017 24.6728 18.9017 23.9259C18.9017 23.1789 19.1689 22.503 19.601 22.0132ZM12.3462 22.7751C12.0658 22.7751 11.8118 22.9041 11.628 23.1125C11.4449 23.321 11.3303 23.6089 11.3303 23.9268C11.3303 24.2446 11.4441 24.5326 11.628 24.741C11.8118 24.9495 12.0658 25.0785 12.3462 25.0785C12.6265 25.0785 12.8805 24.9495 13.0644 24.741C13.2483 24.5326 13.3621 24.2446 13.3621 23.9268C13.3621 23.6089 13.2483 23.321 13.0644 23.1125C12.8805 22.9041 12.6265 22.7751 12.3462 22.7751ZM10.6591 22.0132C11.0911 21.5233 11.6873 21.2204 12.3462 21.2204C13.005 21.2204 13.6012 21.5233 14.0333 22.0132C14.4654 22.503 14.7326 23.1789 14.7326 23.9259C14.7326 24.6728 14.4654 25.3487 14.0333 25.8385C13.6012 26.3284 13.005 26.6313 12.3462 26.6313C11.6873 26.6313 11.0911 26.3284 10.6591 25.8385C10.227 25.3487 9.9598 24.6728 9.9598 23.9259C9.9598 23.1789 10.227 22.5021 10.6591 22.0132ZM24.5271 10.7174H20.325L20.0628 15.0523H23.8724L24.5271 10.7174ZM18.9537 10.7174H13.1106L13.5204 15.0523H18.6915L18.9537 10.7174ZM11.7352 10.7174H7.89006L8.91504 15.0523H12.1458L11.736 10.7174H11.7352ZM7.52229 9.16371H11.5876L11.1777 4.82883H6.49732L7.52229 9.16371ZM12.963 9.16371H19.0469L19.3091 4.82883H12.5532L12.963 9.16371ZM20.4182 9.16371H24.7613L25.4161 4.82883H20.6796L20.4173 9.16371H20.4182Z"
+                    fill="#370F1E" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_142_375">
+                    <rect width="26.2346" height="26.2346" fill="white" transform="translate(0.678955 0.396729)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="font-DMSans font-bold text-[13px] md:text-[25px] text-[#370F1E]">
                 Begin Your Journey to Restorative Sleep
               </span>
             </div>
