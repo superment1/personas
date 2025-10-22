@@ -27,8 +27,7 @@ const props = defineProps({
 
       <div v-if="extraTexts.length" class="flex flex-col gap-4 lg:gap-[32px] mt-4 leading-[1.15] lg:leading-[24px]">
         <p v-for="(text, i) in extraTexts" :key="i"
-          class="text-[12px] whitespace-pre-line lg:text-[24px] font-extralight">
-          {{ text }}
+          class="text-[12px] whitespace-pre-line lg:text-[24px] font-extralight" v-html="text">
         </p>
       </div>
     </div>

@@ -60,8 +60,8 @@ const asks = ref([
       primary="America’s Forgotten Secret <br class='block md:hidden'>for Restorative Sleep."
       secondary="A timeless gift of the Earth, <br class='block md:hidden'>whispered from warrior to healer, <br class='block md:hidden'>now reborn for your nights."
       :extraTexts="[
-        'For over 200 years, America has been hiding a secret more valuable than gold. Not a treasure buried deep in the mountains… but a natural gift, blooming in plain sight. A delicate golden flower once trusted by Native Californians to bring calm to the mind, rest to the body, and strength for the day ahead.',
-        'Long before sleep labs and prescription pills, the tribes of California discovered something extraordinary. They knew that true rest isn’t about sedation. True rest is balance — a calm mind, a quiet heart, and the power to rise with the dawn, clear and strong.'
+        'For over 200 years, America has been hiding a secret more <br>valuable than gold. Not a treasure buried deep in the <br>mountains… but a natural gift, blooming in plain sight. A <br>delicate golden flower once trusted by Native Californians <br>to bring calm to the mind, rest to the body, and strength <br>for the day ahead.',
+        'Long before sleep labs and prescription pills, the tribes of California discovered something extraordinary. They knew <br>that true rest isn’t about sedation. True rest is balance — a <br>calm mind, a quiet heart, and the power to rise with the <br>dawn, clear and strong.'
       ]" />
     <BgText class="hidden lg:block justify-items-center" logo="/assets/logo-email.png"
       bgImage="/assets/sunset-tsl2-desk.webp" primary="America’s Forgotten Secret for Restorative Sleep."
@@ -74,7 +74,7 @@ const asks = ref([
   <section>
     <BgText class="lg:hidden" bgImage="/assets/tribo-tsl.webp"
       secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." :extraTexts="[
-        'For generations, it was used to ease racing thoughts, quiet the nervous system, and guide the body into nights of deep, refreshing rest. Warriors trusted it to let them sleep without weakness — waking sharp and ready when the sun rose.'
+        'For generations, it was used to ease racing thoughts, quiet <br>the nervous system, and guide the body into nights of <br>deep, refreshing rest. Warriors trusted it to let them sleep <br>without weakness — waking sharp and ready when the <br>sun rose.'
       ]" />
     <BgText class="hidden justify-items-center flex-col items-center lg:flex " bgImage="/assets/tribo-tsl-desk.webp"
       secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." :extraTexts="[
@@ -84,7 +84,7 @@ const asks = ref([
   <section>
     <BgText class="min-h-[690px] flex justify-end lg:hidden" bgImage="/assets/camp-tsl.webp"
       secondary="But then the world forgot." :extraTexts="[
-        'The Gold Rush came, the lands were broken, and this treasure of nature was left behind. This flower became nothing more than a roadside bloom, while millions of people lay awake through the night. Tossing, turning, fighting thoughts that never stop. Reaching for pills that sedate but steal the morning. Struggling through days that feel heavier and heavier.'
+        'The Gold Rush came, the lands were broken, and this <br>treasure of nature was left behind. This flower became <br>nothing more than a roadside bloom, while millions of <br>people lay awake through the night. Tossing, turning, <br>fighting thoughts that never stop. Reaching for pills that <br>sedate but steal the morning. Struggling through days <br>that feel heavier and heavier.'
       ]" />
     <BgText class="min-h-[690px] items-center justify-end hidden lg:flex" bgImage="/assets/camp-tsl-desk.webp"
       secondary="But then the world forgot." :extraTexts="[
@@ -358,10 +358,11 @@ const asks = ref([
   <section>
     <div class="lg:hidden relative   flex min-h-[584px]">
       <img src="/assets/_ndia.webp" class="absolute inset-0 w-full h-full object-cover" alt="">
-      <div class="relative z-10 flex flex-col pt-[30px] items-center text-center px-12">
-        <p class="text-white text-[12px] leading-[1] text-center">
+      <div class="relative z-10 flex flex-col pt-[37px] items-center text-center px-10">
+        <p class="text-white text-[12px] leading-[1.15] text-center font-extralight">
           Because sleep should never be a gamble. It should <br> be a treasure.
-          <br><br>
+        </p>
+        <p class="text-white text-[12px] leading-[1.15] text-center font-extralight mt-[14px]">
           And now, the old American secret of the California Poppy can be yours — tonight, tomorrow, and for every night
           that follows.
         </p>
@@ -378,11 +379,16 @@ const asks = ref([
     </p>
     <div class="w-full flex justify-center">
       <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
-        class="inline-flex w-fit !h-[40px] !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent !shadow-none !ring-0 !p-0"
+        class="inline-flex w-fit !h-[40px] w-[272px] !bg-transparent hover:!bg-transparent focus:!bg-transparent active:!bg-transparent !shadow-none !ring-0 !p-0"
         :showIcon="false">
         <div
-          class="flex flex-row items-center bg-[#370F1E] !h-[40px] lg:w-[582px] w-[328px] lg:!h-[75px] px-[35px] lg:px-[40px] pb-[7px] pt-[5px] rounded-full justify-center gap-3">
-          <span class="font-DMSans text-[15px] md:text-[25px] font-medium text-[#FFDC03]">
+          class="flex flex-row items-center bg-[#370F1E] !h-[40px] lg:w-[582px] w-[328px] lg:!h-[75px] lg:px-[40px] pb-[7px] pt-[5px] rounded-full justify-center gap-3">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.482104 1.09312C0.215816 1.09312 0 0.848453 0 0.546561C0 0.24467 0.215816 0 0.482104 0H2.98719C3.21925 0 3.41302 0.186133 3.45885 0.433434L3.83479 2.02511H17.9754C18.2416 2.02511 18.4575 2.26978 18.4575 2.57167C18.4575 2.61376 18.4534 2.65454 18.4453 2.694L17.828 6.77776C17.8257 6.79815 17.8228 6.81788 17.8187 6.83761L17.1974 10.9496C17.1573 11.216 16.9537 11.4041 16.7228 11.4035H6.05154L6.45417 13.1063H16.2094C16.4757 13.1063 16.6915 13.351 16.6915 13.6529C16.6915 13.9547 16.4757 14.1994 16.2094 14.1994H6.08461C5.8717 14.1994 5.67735 14.0376 5.61933 13.7936L4.9655 11.0273C4.96028 11.0088 4.95564 10.9898 4.95216 10.97L4.38361 8.56477L3.98621 6.88365C3.98099 6.86523 3.97635 6.84682 3.97287 6.82774L2.99995 2.71176V2.71044L2.61764 1.09181H0.482104V1.09312ZM14.4997 15.7444C14.3019 15.7444 14.1237 15.8352 13.9944 15.9818C13.865 16.1285 13.7849 16.3311 13.7849 16.5547C13.7849 16.7783 13.865 16.9809 13.9944 17.1276C14.1237 17.2742 14.3024 17.365 14.4997 17.365C14.6969 17.365 14.8756 17.2742 15.005 17.1276C15.1344 16.9809 15.2144 16.7783 15.2144 16.5547C15.2144 16.3311 15.1344 16.1285 15.005 15.9818C14.8756 15.8352 14.6969 15.7444 14.4997 15.7444ZM13.3127 15.2084C13.6167 14.8637 14.0361 14.6506 14.4997 14.6506C14.9632 14.6506 15.3827 14.8637 15.6867 15.2084C15.9907 15.553 16.1786 16.0285 16.1786 16.554C16.1786 17.0795 15.9907 17.5551 15.6867 17.8997C15.3827 18.2444 14.9632 18.4575 14.4997 18.4575C14.0361 18.4575 13.6167 18.2444 13.3127 17.8997C13.0087 17.5551 12.8207 17.0795 12.8207 16.554C12.8207 16.0285 13.0087 15.553 13.3127 15.2084ZM8.20854 15.7444C8.01129 15.7444 7.8326 15.8352 7.70323 15.9818C7.57444 16.1285 7.49379 16.3311 7.49379 16.5547C7.49379 16.7783 7.57386 16.9809 7.70323 17.1276C7.8326 17.2742 8.01129 17.365 8.20854 17.365C8.40579 17.365 8.58448 17.2742 8.71385 17.1276C8.84322 16.9809 8.92328 16.7783 8.92328 16.5547C8.92328 16.3311 8.84322 16.1285 8.71385 15.9818C8.58448 15.8352 8.40579 15.7444 8.20854 15.7444ZM7.02155 15.2084C7.32555 14.8637 7.745 14.6506 8.20854 14.6506C8.67208 14.6506 9.09153 14.8637 9.39553 15.2084C9.69952 15.553 9.88749 16.0285 9.88749 16.554C9.88749 17.0795 9.69952 17.5551 9.39553 17.8997C9.09153 18.2444 8.67208 18.4575 8.20854 18.4575C7.745 18.4575 7.32555 18.2444 7.02155 17.8997C6.71755 17.5551 6.52959 17.0795 6.52959 16.554C6.52959 16.0285 6.71755 15.5523 7.02155 15.2084ZM16.7785 7.26118H13.8221L13.6376 10.311H16.3179L16.7785 7.26118ZM12.8573 7.26118H8.74634L9.03467 10.311H12.6728L12.8573 7.26118ZM7.77865 7.26118H5.07341L5.79454 10.311H8.06756L7.77923 7.26118H7.77865ZM4.81466 6.16805H7.6748L7.38647 3.11823H4.09354L4.81466 6.16805ZM8.64249 6.16805H12.9228L13.1073 3.11823H8.35416L8.64249 6.16805ZM13.8876 6.16805H16.9433L17.4039 3.11823H14.0715L13.887 6.16805H13.8876Z"
+              fill="#FFDC03" />
+          </svg>
+          <span class="font-DMSans text-[14px] md:text-[25px] font-medium text-[#FFDC03]">
             Awaken Tomorrow Rested and Renewed
           </span>
         </div>
