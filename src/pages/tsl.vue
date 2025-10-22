@@ -72,10 +72,18 @@ const asks = ref([
       ]" />
   </section>
   <section>
-    <BgText class="lg:hidden" bgImage="/assets/tribo-tsl.webp"
-      secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." :extraTexts="[
-        'For generations, it was used to ease racing thoughts, quiet <br>the nervous system, and guide the body into nights of <br>deep, refreshing rest. Warriors trusted it to let them sleep <br>without weakness — waking sharp and ready when the <br>sun rose.'
-      ]" />
+    <div
+      class="lg:hidden flex flex-col items-center justify-end bg-cover bg-center w-full bg-[url('/assets/tribo-tsl.webp')] bg-top bg-no-repeat h-[649px] pb-[38px]">
+      <p class="text-white font-gelasio italic text-[16px] leading-[1.08] text-center">Their secret was a flower of
+        fire and <br>gold, carrying a spirit of peace.</p>
+      <p class="text-white font-DMSans leading-[1.15] text-[12px] font-light mt-[15px] text-center">For
+        generations, it was used to ease racing thoughts, quiet <br>the nervous system, and guide the body into nights
+        of
+        <br>deep, refreshing rest. Warriors trusted it to let them sleep <br>without weakness — waking sharp and ready
+        when
+        the <br>sun rose.
+      </p>
+    </div>
     <div
       class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/tribo-tsl-desk.webp')] bg-top bg-no-repeat h-[1565px]">
       <div class="hidden lg:flex flex-col items-center justify-center">
@@ -87,7 +95,7 @@ const asks = ref([
           the sun rose.</p>
       </div>
     </div>
-    <div class="w-full h-full bg-black pt-[50px] pb-[60px] hidden lg:flex flex-col items-center justify-center">
+    <div class="w-full h-full bg-black pt-[50px] pb-[80px] hidden lg:flex flex-col items-center justify-center">
       <p class="text-white font-gelasio italic text-[32px] leading-[1.08] text-center">But then the world forgot.</p>
       <p class="text-white font-DMSans leading-[1.15] text-[24px] font-light mt-[25px] w-[800px] text-center">The Gold
         Rush came,
@@ -103,14 +111,29 @@ const asks = ref([
     </div>
   </section>
   <section>
-    <BgText class="min-h-[690px] flex justify-end lg:hidden" bgImage="/assets/camp-tsl.webp"
-      secondary="But then the world forgot." :extraTexts="[
-        'The Gold Rush came, the lands were broken, and this <br>treasure of nature was left behind. This flower became <br>nothing more than a roadside bloom, while millions of <br>people lay awake through the night. Tossing, turning, <br>fighting thoughts that never stop. Reaching for pills that <br>sedate but steal the morning. Struggling through days <br>that feel heavier and heavier.'
-      ]" />
+    <div
+      class="lg:hidden flex flex-col items-center justify-end bg-cover bg-center w-full bg-[url('/assets/camp-tsl.webp')] bg-top bg-no-repeat h-[459px] pb-[38px]">
+    </div>
+    <div class="w-full h-full bg-black pb-[50px] flex flex-col items-center justify-center lg:hidden">
+      <p class="text-white font-gelasio italic text-[16px] leading-[1.08] text-center">But then the world forgot.</p>
+      <p class="text-white font-DMSans leading-[1.15] text-[12px] font-light mt-[20px] text-center">The Gold
+        Rush came,
+        the
+        lands
+        were broken,
+        and this <br>treasure of nature was left behind. This
+        flower became <br>nothing more than a roadside bloom, while millions of <br>people lay awake through the night.
+        Tossing,
+        turning, <br>fighting thoughts that never stop. Reaching for pills that <br>sedate but steal the morning.
+        Struggling
+        through days <br>that feel heavier and heavier.</p>
+    </div>
   </section>
   <section class="">
     <BgText class="!min-h-[534px] lg:hidden" bgImage="/assets/wom-tsl.webp" />
-    <BgText class="hidden lg:flex bg-center" bgImage="/assets/wom-tsl-desk.webp" />
+    <div
+      class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/wom-tsl-desk.webp')] bg-top bg-no-repeat h-[533px]">
+    </div>
   </section>
   <section>
     <div
@@ -134,8 +157,9 @@ const asks = ref([
   </section>
   <section class="">
     <BgText class="!min-h-[420px] lg:hidden bg-center" bgImage="/assets/superment-tsl.webp" />
-    <BgText class="hidden max-h-[534px] lg:min-h-[533px] lg:block bg-center"
-      bgImage="/assets/superment-tsl-desk.webp" />
+    <div
+      class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/superment-tsl-desk.webp')] bg-top bg-no-repeat h-[533px]">
+    </div>
   </section>
   <section class="bg-[#6EC8F0] flex flex-col items-center justify-center">
     <div class="items-center max-w-[330px] lg:px-0 lg:max-w-[814px] flex flex-col py-[32px] justify-center">
@@ -394,7 +418,7 @@ const asks = ref([
           <img src="/assets/man-1-desk.webp" class="hidden lg:block rounded-xl w-[384px] h-[320px]" alt="">
         </div>
         <div
-          class="px-[20px] text-[#491529] font-semibold text-center pb-[9px] lg:pb-[30px] pt-[18px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
+          class="px-[18px] text-[#491529] font-semibold text-center pb-[9px] lg:pb-[30px] pt-[18px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
           Imagine what your mornings could feel like after nights of deep, natural rest. Imagine stress slipping away.
           Imagine your body repairing, your energy restored, your mind clear. This isn’t just sleep — this is renewal.
         </div>
