@@ -137,24 +137,24 @@ onBeforeUnmount(() => ro?.disconnect?.())
 <template>
     <div class="bg-[#E1DCCD] w-full flex flex-col items-center py-7 gap-y-2 lg:py-[84px]">
         <p
-            class="text-center text-[#370F1E] w-[246px] md:w-full font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[60px]">
+            class="text-center text-[#370F1E] w-[246px] md:w-full font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[50px]">
             {{ props.primary }}
         </p>
         <div
-            class="bg-[#FF5E29] flex flex-col items-center justify-center rounded-[20px] px-[15px] py-[4px] mt-[1px] lg:mt-[34px]">
+            class="bg-[#FF5E29] flex flex-col items-center justify-center rounded-[28px] px-[15px] py-[4px] mt-[1px] lg:mt-[10px]">
             <p class="text-center text-white font-gelasio font-semibold text-[13px] md:text-[22px] lg:text-[32px]">
                 {{ props.subtitle }}
             </p>
         </div>
         <div v-if="extraText"
-            class="text-[#370F1E] text-center font-medium px-[20px] mt-[8px] lg:px-0 text-[12px] lg:text-[24px] leading-[1.15] lg:leading-[23px] max-w-[700px]">
+            class="text-[#370F1E] text-center font-medium px-[20px] mt-[8px] lg:mt-[18px] lg:px-0 text-[12px] lg:text-[24px] leading-[1.15] lg:leading-[1.15] max-w-[710px]">
             <p>
                 {{ props.extraText }}
             </p>
         </div>
 
         <!-- trilho -->
-        <div ref="track" class="w-full max-w-[1150px] mt-[10px] md:mt-[25px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
+        <div ref="track" class="w-full max-w-[1150px] mt-[10px] md:mt-[25px] lg:mt-[45px] px-4 flex gap-2 md:gap-10 lg:gap-20 overflow-x-auto scroll-smooth
              snap-x snap-mandatory select-none cursor-grab active:cursor-grabbing
              scrollbar-hide" @pointerdown="onPointerDown" @pointermove="onPointerMove" @pointerup="onPointerUp"
             @pointercancel="onPointerCancel" @scroll.passive="onScroll">

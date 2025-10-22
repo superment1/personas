@@ -6,9 +6,9 @@ const props = defineProps({
   bottles: {
     type: Array,
     default: () => [
-      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467_tsl_desk1.webp',productId:'prod_SbKYsQrxStW8wB' , iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: ' 1 Bottle: A 30-day supply to \n experience the difference.' },
-      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo3.webp',productId:'prod_SbKa8ag01A2TGX' , iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none" ,textButton: '3 Bottles: Our most popular\n option steady support for\n months of deep rest.' },
-      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo6.webp',productId:'prod_SbKaRuJpDVBEzx' , iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: '6 Bottles: The best value, ensuring\n you never run out of calm nights.' }
+      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467_tsl_desk1.webp', productId: 'prod_SbKYsQrxStW8wB', iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: ' 1 Bottle: \nA 30-day supply to \n experience the difference.' },
+      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo3.webp', productId: 'prod_SbKa8ag01A2TGX', iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none", textButton: '3 Bottles: \nOur most popular\n option steady support for\n months of deep rest.' },
+      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo6.webp', productId: 'prod_SbKaRuJpDVBEzx', iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: '6 Bottles: \nThe best value, ensuring\n you never run out of calm nights.' }
     ]
   }
 })
@@ -125,36 +125,24 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    ref="track"
-    class="w-full overflow-x-auto flex snap-x snap-mandatory 
-           select-none cursor-grab active:cursor-grabbing scrollbar-hide"
-  >
-    <div
-      v-for="(t, i) in bottles"
-      :key="i"
-      :ref="el => (itemEls[i] = el as HTMLElement)"
-      class="shrink-0 min-w-full snap-center flex justify-center items-center"
-    >
-      <div class="bg-[#90DAF4] rounded-[34px] max-w-[655px] max-h-[634px] grid justify-items-center gap-4 w-full flex justify-center">
+  <div ref="track" class="w-full overflow-x-auto flex snap-x snap-mandatory 
+           select-none cursor-grab active:cursor-grabbing scrollbar-hide">
+    <div v-for="(t, i) in bottles" :key="i" :ref="el => (itemEls[i] = el as HTMLElement)"
+      class="shrink-0 min-w-full snap-center flex justify-center items-center">
+      <div
+        class="bg-[#90DAF4] rounded-[34px] max-w-[655px] max-h-[834px] grid justify-items-center gap-4 w-full flex justify-center">
         <div class="relative mx-auto max-h-[655px]">
           <img :src="t.imgBottle" class="block h-auto mx-auto" />
-          <img v-if="t.imgIcon" :src="t.imgIcon"
-            :class="[t.iconBaseClass]" />
-          <ShopButton
-            textColorClass="text-[#370F1E]" 
-            iconColorClass="text-[#370F1E]"
-            :show-icon="false"
-            :productId="t.productId"
-            class="relative left-1/2 -translate-x-1/2 translate-y-[-175px] bottom-4 z-20
-                   h-[72px] w-[321px] md:w-[367px]
+          <img v-if="t.imgIcon" :src="t.imgIcon" :class="[t.iconBaseClass]" />
+          <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
+            :productId="t.productId" class="relative left-1/2 -translate-x-1/2 translate-y-[-175px] bottom-4 z-20
+                   h-[108px] w-[480px]
                    bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)]
                    shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)]
-                   !rounded-[13px] justify-center"
-          >
+                   !rounded-[24px] justify-center">
             <div class="flex flex-row items-center justify-center gap-3">
-              <span class="font-DMSans leading-[1] whitespace-pre-line text-[18px] md:text-[20px] font-bold text-[#370F1E]">
-               {{ t.textButton }}
+              <span class="font-DMSans leading-[1] whitespace-pre-line text-[24px] font-bold text-[#370F1E]">
+                {{ t.textButton }}
               </span>
             </div>
           </ShopButton>
@@ -164,13 +152,8 @@ onBeforeUnmount(() => {
   </div>
 
   <div class="flex justify-center mt-4 gap-3">
-    <button
-      v-for="(_, i) in bottles"
-      :key="`dot-${i}`"
-      @click="centerToIndex(i)"
-      class="w-3 h-3 rounded-full transition-colors"
-      :class="i === current ? 'bg-[#370F1E]' : 'bg-[#FFFAF0]'"
-    />
+    <button v-for="(_, i) in bottles" :key="`dot-${i}`" @click="centerToIndex(i)"
+      class="w-3 h-3 rounded-full transition-colors" :class="i === current ? 'bg-[#370F1E]' : 'bg-[#FFFAF0]'" />
   </div>
 
 </template>
@@ -179,10 +162,12 @@ onBeforeUnmount(() => {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .dragging {
   cursor: grabbing !important;
   scroll-behavior: auto !important;
