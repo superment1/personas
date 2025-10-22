@@ -61,7 +61,7 @@ const asks = ref([
       secondary="A timeless gift of the Earth, <br class='block md:hidden'>whispered from warrior to healer, <br class='block md:hidden'>now reborn for your nights."
       :extraTexts="[
         'For over 200 years, America has been hiding a secret more <br>valuable than gold. Not a treasure buried deep in the <br>mountains… but a natural gift, blooming in plain sight. A <br>delicate golden flower once trusted by Native Californians <br>to bring calm to the mind, rest to the body, and strength <br>for the day ahead.',
-        'Long before sleep labs and prescription pills, the tribes of California discovered something extraordinary. They knew <br>that true rest isn’t about sedation. True rest is balance — a <br>calm mind, a quiet heart, and the power to rise with the <br>dawn, clear and strong.'
+        'Long before sleep labs and prescription pills, the tribes of <br>California discovered something extraordinary. They knew <br>that true rest isn’t about sedation. True rest is balance — a <br>calm mind, a quiet heart, and the power to rise with the <br>dawn, clear and strong.'
       ]" />
     <BgText class="hidden lg:block justify-items-center" logo="/assets/logo-email.png"
       bgImage="/assets/sunset-tsl2-desk.webp" primary="America’s Forgotten Secret for Restorative Sleep."
@@ -72,8 +72,9 @@ const asks = ref([
       ]" />
   </section>
   <section>
-    <div
-      class="lg:hidden flex flex-col items-center justify-end bg-cover bg-center w-full bg-[url('/assets/tribo-tsl.webp')] bg-top bg-no-repeat h-[649px] pb-[38px]">
+    <div class="lg:hidden flex flex-col items-center justify-end 
+         bg-top bg-no-repeat w-full h-[649px] pb-[38px]"
+      style="background-image: url('/assets/tribo-tsl.webp'); background-size: 100% 100%;">
       <p class="text-white font-gelasio italic text-[16px] leading-[1.08] text-center">Their secret was a flower of
         fire and <br>gold, carrying a spirit of peace.</p>
       <p class="text-white font-DMSans leading-[1.15] text-[12px] font-light mt-[15px] text-center">For
@@ -111,8 +112,9 @@ const asks = ref([
     </div>
   </section>
   <section>
-    <div
-      class="lg:hidden flex flex-col items-center justify-end bg-cover bg-center w-full bg-[url('/assets/camp-tsl.webp')] bg-top bg-no-repeat h-[459px] pb-[38px]">
+    <div class="lg:hidden flex flex-col items-center justify-end 
+         bg-top bg-no-repeat w-full h-[493px] pb-[38px]"
+      style="background-image: url('/assets/camp-tsl.webp'); background-size: 100% 100%;">
     </div>
     <div class="w-full h-full bg-black pb-[50px] flex flex-col items-center justify-center lg:hidden">
       <p class="text-white font-gelasio italic text-[16px] leading-[1.08] text-center">But then the world forgot.</p>
@@ -131,22 +133,24 @@ const asks = ref([
   </section>
   <section class="">
     <BgText class="!min-h-[534px] lg:hidden" bgImage="/assets/wom-tsl.webp" />
-    <div
-      class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/wom-tsl-desk.webp')] bg-top bg-no-repeat h-[533px]">
+    <div class="hidden lg:flex flex-col items-center justify-center 
+         bg-top bg-no-repeat w-full h-[533px]"
+      style="background-image: url('/assets/wom-tsl-desk.webp'); background-size: 100% 100%;">
     </div>
+
   </section>
   <section>
     <div
-      class="bg-[#370F1E] px-[40px] pt-[23px] lg:py-[40px] pb-[18px] text-center text-[#fff] flex flex-col items-center justify-center">
+      class="bg-[#370F1E] px-[40px] pt-[24px] lg:py-[40px] pb-[21px] text-center text-[#fff] flex flex-col items-center justify-center">
       <div class="max-w-[702px]">
-        <h1 class="font-crossfit leading-[1.10] px-[35px] text-[32px] lg:text-[50px] text-[#6EC8F0]">
+        <h1 class="font-crossfit leading-[1.15] px-[35px] text-[32px] lg:text-[50px] text-[#6EC8F0]">
           It doesn’t have <br class="block md:hidden">to be this way.</h1>
         <p
           class="text-[12px] lg:text-[24px] pt-[21px] leading-[1.15] pb-[10px] lg:pb-[25px] px-[2px] lg:px-0 font-extralight">
           Because
           today, this old American secret has returned <br class="block md:hidden">— inside every capsule of <span
             class="text-[#6EC8F0] font-black">Super Natural Sleep.</span></p>
-        <p class="text-[12px] lg:text-[24px] leading-[1.17] px-[5px] pt-[4px] font-extralight">At the heart of this
+        <p class="text-[12px] lg:text-[24px] leading-[1.19] px-[5px] pt-[4px] font-extralight">At the heart of this
           gentle, powerful
           formula lies
           the California Poppy, blended with other carefully chosen botanicals to quiet <br class="hidden lg:block">the
@@ -418,7 +422,7 @@ const asks = ref([
           <img src="/assets/man-1-desk.webp" class="hidden lg:block rounded-xl w-[384px] h-[320px]" alt="">
         </div>
         <div
-          class="px-[18px] text-[#491529] font-semibold text-center pb-[9px] lg:pb-[30px] pt-[18px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
+          class="px-[18px] text-[#491529] font-semibold text-center py-[14px] lg:pb-[30px] lg:pt-[30px] leading-[1.2] rounded-[10px] max-w-[812px] text-[12px] lg:text-[24px] bg-[#6EC8F0]">
           Imagine what your mornings could feel like after nights of deep, natural rest. Imagine stress slipping away.
           Imagine your body repairing, your energy restored, your mind clear. This isn’t just sleep — this is renewal.
         </div>
