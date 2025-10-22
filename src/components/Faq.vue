@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue'
 
 const props = defineProps({
-  asks:{
+  asks: {
     type: Array,
     default: () => [
       {
@@ -12,16 +12,7 @@ const props = defineProps({
       },
       {
         question: 'What are the ingredients?',
-        answer: `The formula combines 5 science-backed botanicals:
-                Passionflower. Calms a restless mind so you can slow down and find peace.
-
-                California Poppy. Relaxes the body and helps you drift into restorative sleep.
-
-                Corydalis. Eases physical tension and reduces nighttime discomfort.
-
-                Prickly Pear. Supports lower stress hormones for deeper rest and recovery.
-
-                Marshmallow Root. Soothes irritation and promotes physical comfort through the night.`,
+        answer: `Super Natural Sleep is a plant-based nightly supplement built around the California Poppy — a golden flower once treasured by Native Californians for its calming properties. Combined with other carefully chosen botanicals, it helps quiet racing thoughts, relax the body, and support deep, restorative sleep.`,
         open: false
       },
       {

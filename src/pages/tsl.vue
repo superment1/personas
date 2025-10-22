@@ -116,9 +116,9 @@ const asks = ref([
          bg-top bg-no-repeat w-full h-[493px] pb-[38px]"
       style="background-image: url('/assets/camp-tsl.webp'); background-size: 100% 100%;">
     </div>
-    <div class="w-full h-full bg-black pb-[50px] flex flex-col items-center justify-center lg:hidden">
+    <div class="w-full h-full bg-black pb-[50px] pt-[4px] flex flex-col items-center justify-center lg:hidden">
       <p class="text-white font-gelasio italic text-[16px] leading-[1.08] text-center">But then the world forgot.</p>
-      <p class="text-white font-DMSans leading-[1.15] text-[12px] font-light mt-[20px] text-center">The Gold
+      <p class="text-white font-DMSans leading-[1.15] text-[12px] font-light mt-[23px] text-center">The Gold
         Rush came,
         the
         lands
@@ -132,7 +132,10 @@ const asks = ref([
     </div>
   </section>
   <section class="">
-    <BgText class="!min-h-[534px] lg:hidden" bgImage="/assets/wom-tsl.webp" />
+    <div class="lg:hidden flex-col items-center justify-center 
+         bg-top bg-no-repeat w-full h-[533px]"
+      style="background-image: url('/assets/wom-tsl.webp'); background-size: 100% 100%;">
+    </div>
     <div class="hidden lg:flex flex-col items-center justify-center 
          bg-top bg-no-repeat w-full h-[533px]"
       style="background-image: url('/assets/wom-tsl-desk.webp'); background-size: 100% 100%;">
@@ -160,9 +163,13 @@ const asks = ref([
     </div>
   </section>
   <section class="">
-    <BgText class="!min-h-[420px] lg:hidden bg-center" bgImage="/assets/superment-tsl.webp" />
-    <div
-      class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/superment-tsl-desk.webp')] bg-top bg-no-repeat h-[533px]">
+    <div class="lg:hidden flex-col items-center justify-center 
+         bg-top bg-no-repeat w-full h-[403px]"
+      style="background-image: url('/assets/superment-tsl.webp'); background-size: 100% 100%;">
+    </div>
+    <div class="hidden lg:flex flex-col items-center justify-center 
+         bg-top bg-no-repeat w-full h-[533px]"
+      style="background-image: url('/assets/superment-tsl-desk.webp'); background-size: 100% 100%;">
     </div>
   </section>
   <section class="bg-[#6EC8F0] flex flex-col items-center justify-center">
@@ -478,7 +485,9 @@ const asks = ref([
   <ShopNowTsl id="shop-now-tsl" />
   <section>
     <div
-      class="flex flex-col items-center justify-start bg-cover bg-center w-full bg-[url('/assets/_ndia.webp')] md:bg-[url('/assets/ind-tsl-desk.webp')] bg-top bg-no-repeat h-[584px] pt-[30px] md:pt-[40px]">
+      class="flex flex-col items-center justify-start 
+         w-full h-[584px] pt-[30px] md:pt-[40px] bg-[url('/assets/_ndia.webp')] md:bg-[url('/assets/ind-tsl-desk.webp')] bg-top bg-no-repeat"
+      style="background-size: 100% 100%;">
       <p class="text-white text-[12px] md:text-[24px] leading-[1.15] text-center font-extralight">
         Because sleep should never be a gamble. It should <br class="md:hidden"> be a treasure.
       </p>
