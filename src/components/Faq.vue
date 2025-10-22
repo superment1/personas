@@ -33,14 +33,12 @@ const props = defineProps({
         question: 'How do I take it?',
         answer: `To gradually restore your nervous system, take 2 capsules with water every evening before bedtime. 
 
-                  You can also take 1–2 capsules as needed during stressful moments to ease tension and maintain focus. 
-
                   Safe for daily use and non-habit forming.`,
         open: false
       },
       {
         question: 'How long does shipping take?',
-        answer: `Orders are processed within 24 hours and typically arrive in 3–5 business days within the U.S. You’ll receive tracking information as soon as your order ships.`,
+        answer: `Orders are processed within 24 hours and typically arrive within 7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
         open: false
       },
       {
@@ -50,7 +48,7 @@ const props = defineProps({
       },
       {
         question: 'What if I’m not satisfied?',
-        answer: 'We stand by our formula. That’s why every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply reach out at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk.',
+        answer: 'If you’re not happy with your results, just let us know at superhelp@superment.co and we’ll take care of you with a full refund — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
         open: false
       },
       {
