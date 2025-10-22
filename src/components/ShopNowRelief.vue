@@ -15,7 +15,7 @@ const faqs = ref([
     },
     {
         question: 'How to use',
-        answer: 'To gradually restore your nervous system, take 2 capsules with water every evening before bedtime. \n\n You can also take 1–2 capsules as needed during stressful moments to ease tension and maintain focus. \n\n Safe for daily use and non-habit forming.',
+        answer: 'To gradually restore your nervous system, take 2 capsules with water every evening before bedtime. \n\n Safe for daily use and non-habit forming.',
         open: false
     },
     {

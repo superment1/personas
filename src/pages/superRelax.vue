@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
   <SuperHeader2 :show-redirect="false" :items="[
     'Save Up To 58%',
     'Free Shipping',
-    '120-Day Money-Back Guarantee',
+    'Up to120-Day Money-Back Guarantee',
     '100% Plant-Based',
     'Science-Backed',
     'Non-Sedative',
