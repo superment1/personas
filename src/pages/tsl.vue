@@ -76,19 +76,36 @@ const asks = ref([
       secondary="Their secret was a flower of fire and gold, carrying a spirit of peace." :extraTexts="[
         'For generations, it was used to ease racing thoughts, quiet <br>the nervous system, and guide the body into nights of <br>deep, refreshing rest. Warriors trusted it to let them sleep <br>without weakness — waking sharp and ready when the <br>sun rose.'
       ]" />
-    <BgText class="hidden justify-items-center flex-col items-center lg:flex " bgImage="/assets/tribo-tsl-desk.webp"
-      secondary="Their secret was a flower of fire and gold, <br>carrying a spirit of peace." :extraTexts="[
-        'For generations, it was used to ease racing thoughts, quiet the nervous system, and guide the body into nights of deep, refreshing rest. Warriors trusted it to let them sleep without weakness — waking sharp and ready when the sun rose.'
-      ]" />
+    <div
+      class="hidden lg:flex flex-col items-center justify-center bg-cover bg-center w-full bg-[url('/assets/tribo-tsl-desk.webp')] bg-top bg-no-repeat h-[1565px]">
+      <div class="hidden lg:flex flex-col items-center justify-center">
+        <p class="text-white font-gelasio italic text-[32px] leading-[1.08] text-center">Their secret was a flower of
+          fire and gold, <br>carrying a spirit of peace.</p>
+        <p class="text-white font-DMSans leading-[1.15] text-[24px] font-light mt-[25px] w-[800px] text-center">For
+          generations, it was used to ease racing thoughts, quiet the nervous system, and guide the body into nights of
+          deep, refreshing rest. Warriors trusted it to let them sleep without weakness — waking sharp and ready when
+          the sun rose.</p>
+      </div>
+    </div>
+    <div class="w-full h-full bg-black pt-[50px] pb-[60px] hidden lg:flex flex-col items-center justify-center">
+      <p class="text-white font-gelasio italic text-[32px] leading-[1.08] text-center">But then the world forgot.</p>
+      <p class="text-white font-DMSans leading-[1.15] text-[24px] font-light mt-[25px] w-[800px] text-center">The Gold
+        Rush came,
+        the
+        lands
+        were broken,
+        and this treasure of nature <br>was left behind. This
+        flower became nothing more than a roadside bloom, <br>while millions of people lay awake through the night.
+        Tossing,
+        turning, <br>fighting thoughts that never stop. Reaching for pills that sedate but steal <br>the morning.
+        Struggling
+        through days that feel heavier and heavier.</p>
+    </div>
   </section>
   <section>
     <BgText class="min-h-[690px] flex justify-end lg:hidden" bgImage="/assets/camp-tsl.webp"
       secondary="But then the world forgot." :extraTexts="[
         'The Gold Rush came, the lands were broken, and this <br>treasure of nature was left behind. This flower became <br>nothing more than a roadside bloom, while millions of <br>people lay awake through the night. Tossing, turning, <br>fighting thoughts that never stop. Reaching for pills that <br>sedate but steal the morning. Struggling through days <br>that feel heavier and heavier.'
-      ]" />
-    <BgText class="min-h-[690px] items-center justify-end hidden lg:flex" bgImage="/assets/camp-tsl-desk.webp"
-      secondary="But then the world forgot." :extraTexts="[
-        'The Gold Rush came, the lands were broken, and this treasure of nature was left behind. This flower became nothing more than a roadside bloom, while millions of people lay awake through the night. Tossing, turning, fighting thoughts that never stop. Reaching for pills that sedate but steal the morning. Struggling through days that feel heavier and heavier.'
       ]" />
   </section>
   <section class="">
