@@ -473,19 +473,19 @@ const asks = ref([
   </section>
   <ShopNowTsl id="shop-now-tsl" />
   <section>
-    <div class="lg:hidden relative   flex min-h-[584px]">
-      <img src="/assets/_ndia.webp" class="absolute inset-0 w-full h-full object-cover" alt="">
-      <div class="relative z-10 flex flex-col pt-[37px] items-center text-center px-10">
-        <p class="text-white text-[12px] leading-[1.15] text-center font-extralight">
-          Because sleep should never be a gamble. It should <br> be a treasure.
-        </p>
-        <p class="text-white text-[12px] leading-[1.15] text-center font-extralight mt-[14px]">
-          And now, the old American secret of the California Poppy can be yours — tonight, tomorrow, and for every night
-          that follows.
-        </p>
-      </div>
+    <div
+      class="flex flex-col items-center justify-start bg-cover bg-center w-full bg-[url('/assets/_ndia.webp')] md:bg-[url('/assets/ind-tsl-desk.webp')] bg-top bg-no-repeat h-[584px] pt-[30px] md:pt-[40px]">
+      <p class="text-white text-[12px] md:text-[24px] leading-[1.15] text-center font-extralight">
+        Because sleep should never be a gamble. It should <br class="md:hidden"> be a treasure.
+      </p>
+      <p class="text-white text-[12px] md:text-[24px] leading-[1.15] text-center font-extralight mt-[14px]">
+        And now, the old American secret of the California Poppy <br class="md:hidden">can be yours — <br
+          class="hidden lg:block">tonight, tomorrow,
+        and for every
+        night
+        <br class="md:hidden">that follows.
+      </p>
     </div>
-    <BgText class="hidden lg:block" bgImage="/assets/ind-tsl-desk.webp" />
   </section>
   <section class="bg-[#FFDC03] pb-[37px] lg:pb-[75px] pt-[26px] lg:pt-[62px] justify-items-center px-[35px]">
     <p
