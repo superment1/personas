@@ -245,10 +245,10 @@ const testimonials = [
       </div>
     </header>
     <!-- mobile -->
-    <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-[972px]">
+    <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-full">
       <div
         class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[36px] sm:pt-[80px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[555px] h-[574px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[555px] h-[784px]">
           <div class="sm:hidden font-crossfit leading-none text-[50px] sm:text-[80px]">
             <h1 class="text-[#fff] leading-[0.9] items-center">
               THE SECRET THAT ENDED
@@ -274,8 +274,8 @@ const testimonials = [
             </p>
           </div>
           <div class="relative z-10 pt-[16px] sm:pt-0">
-            <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
-                    sm:max-w-[649px] sm:w-[400px] sm:h-[500px] sm:max-h-[812px] overflow-hidden">
+            <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[620px]
+                    sm:max-w-[649px] sm:w-[400px] sm:h-[712px] sm:max-h-[812px] overflow-hidden">
               <vturb-smartplayer id="vid-68fac3279a717d043c8e5235" style="
                 display:block;
                 margin:0 auto;
