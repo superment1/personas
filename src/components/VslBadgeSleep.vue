@@ -1,32 +1,50 @@
 <script setup lang="ts">
 import Stopwatch from '../components/StopwatchVsl.vue';
 import ShopButton from './ShopButton.vue';
+import { getValues } from '../composables/useCountry.js';
+import { onMounted, reactive } from 'vue'
 
 const props = defineProps({
-  durationMs: { type: Number, default: 7*60*1000 },
-  startOn:    { type: String,  default: 'mount' },
-  persistKey: { type: String,  default: '' },
-  bgCollor: { type: String, default: 'bg-[#6EC8F0]' },
-  porductId1: { type: String, default: 'prod_SbKYsQrxStW8wB' },
-  porductId3: { type: String, default: 'prod_SbKa8ag01A2TGX' },
-  porductId6: { type: String, default: 'prod_SbKaRuJpDVBEzx' },
-  bottle: { type: String, default: '/assets/NN1sleep.webp' },
-  combo3:  { type: String, default: '/assets/nn2Sleep.webp' },
-  combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
+    durationMs: { type: Number, default: 7 * 60 * 1000 },
+    startOn: { type: String, default: 'mount' },
+    persistKey: { type: String, default: '' },
+    bgCollor: { type: String, default: 'bg-[#6EC8F0]' },
+    porductId1: { type: String, default: 'prod_SbKYsQrxStW8wB' },
+    porductId3: { type: String, default: 'prod_SbKa8ag01A2TGX' },
+    porductId6: { type: String, default: 'prod_SbKaRuJpDVBEzx' },
+    combo3: { type: String, default: '/assets/nn2Sleep.webp' },
+    combo6: { type: String, default: '/assets/nn3Sleep.webp' },
 })
 
 const emit = defineEmits<{ (e: 'expired'): void }>()
+const values = reactive({
+    currentValue: '',
+    oldValue: '',
+    threeBottles: '',
+    sixBottles: '',
+    imagePath: ''
+});
+
+onMounted(async () => {
+    const res = await getValues()
+    values.currentValue = res.currentValue;
+    values.oldValue = res.oldValue;
+    values.threeBottles = res.threeBottles;
+    values.sixBottles = res.sixBottles;
+    values.imagePath = res.imagePath
+});
 
 </script>
 <template>
     <div
-        :class="['w-full flex flex-col items-center justify-start py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]', props.bgCollor]">         
-        <!-- HEADER COM CONTADOR -->    
+        :class="['w-full flex flex-col items-center justify-start py-10 pb-[54px] xl:pt-[78px] xl:pb-[130px]', props.bgCollor]">
+        <!-- HEADER COM CONTADOR -->
         <div
             class="w-[350px] sm:w-[460px] xl:w-[700px] flex flex-row items-center justify-between pt-4 pb-12 xl:pb-[146px] xl:pt-[46px] xl:mr-40">
-           
+
             <div class="1">
-                <span class="text-[#370F1E] font-crossfit text-[61px] sm:text-[82px] xl:text-[148px] font-bold leading-[0.87]">SHOP
+                <span
+                    class="text-[#370F1E] font-crossfit text-[61px] sm:text-[82px] xl:text-[148px] font-bold leading-[0.87]">SHOP
                     <br>NOW</span>
                 <div class="flex flex-row justify-between items-center">
                     <span class="text-[#370F1E] text-[12px] xl:text-[30px]">Powered by </span>
@@ -45,19 +63,15 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                 </div>
             </div>
             <div class="w-[1px] h-[124px] sm:w-[2px] sm:h-[160px] bg-[#370F1E] xl:w-[3px] xl:h-[300px]"></div>
-            <Stopwatch 
-                :duration-ms="durationMs"
-                :start-on="startOn"
-                :persist-key="persistKey"
-                @expired="$emit('expired')"
-            />
+            <Stopwatch :duration-ms="durationMs" :start-on="startOn" :persist-key="persistKey"
+                @expired="$emit('expired')" />
         </div>
         <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
             <div
                 class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] xl:w-[600px] xl:h-[587px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:pb-4">
-                <img :src=bottle alt="bagde VSL" class="w-96 h-auto block xl:hidden">
-                <img :src=bottle alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
+                <img :src=values.imagePath alt="bagde VSL" class="w-96 h-auto block xl:hidden">
+                <img :src=values.imagePath alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
 
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     :productId=porductId1
@@ -106,8 +120,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:w-[300px] xl:h-[410px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img :src=combo3 alt="bagde VSL"
                             class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" 
-                        :productId=porductId3
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" :productId=porductId3
                             class="h-[66px] relative top-[-77px] sm:top-[-104px] lg:top-[-120px]  py-[10px] w-[145px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] ">
                             <div class="flex flex-row items-start justify-end">
                                 <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
@@ -140,11 +153,10 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-1">Buy
                                         3 <br><span
                                             class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
-                                            $32</span><span
-                                            class="font-gelasio font-thin italic"> 
+                                            {{ values.threeBottles }}</span><span class="font-gelasio font-thin italic">
                                             each</span>
                                     </span>
                                 </div>
@@ -155,8 +167,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                         class="w-[170px] h-[233px] sm:w-[222px] sm:h-[262px] xl:w-[300px] xl:h-[410px] bg-[#ffffff3f] rounded-[30px] flex flex-col items-center justify-start xl:pb-4">
                         <img :src=combo6 alt="bagde VSL"
                             class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" 
-                        :productId=porductId6
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" :productId=porductId6
                             class="h-[66px] relative top-[-77px] sm:top-[-104px] lg:top-[-120px] py-[10px] w-[145px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-between sm:w-[183px] xl:w-[253px] xl:h-[165px] xl:text-[30px] ">
                             <div class="flex flex-row items-start justify-end">
                                 <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
@@ -189,12 +200,13 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                 </svg>
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
-                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-1">
                                         Buy 6 <br>
-                                        <span class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
-                                        $26</span>
+                                        <span
+                                            class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
+                                            {{ values.sixBottles }}</span>
                                         <span class="font-gelasio font-thin italic">
-                                        each</span>
+                                            each</span>
                                     </span>
                                 </div>
                             </div>
@@ -270,7 +282,8 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
         <div
             class="w-[350px] h-[100px] sm:w-[460px] bg-[#ffffff3f] rounded-[30px] mt-4 flex flex-row items-center justify-between px-5 xl:hidden">
             <div class="flex flex-row items-center justify-center gap-4 w-[200px] sm:gap-6 sm:justify-start">
-                <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28" fill="none">
+                <svg class="sm:ml-5" xmlns="http://www.w3.org/2000/svg" width="43" height="28" viewBox="0 0 43 28"
+                    fill="none">
                     <path
                         d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
                         fill="#370F1E" />

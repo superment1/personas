@@ -1,0 +1,81 @@
+let cachedCurrency = null;
+let cachedLocale = null;
+
+export async function detectUserCurrency() {
+  if (cachedCurrency) return cachedCurrency;
+
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    cachedCurrency = data.currency || 'USD';
+    return cachedCurrency;
+  } catch (e) {
+    console.warn('[currency] Falha ao detectar moeda, usando USD como padrão.', e);
+    return (cachedCurrency = 'USD');
+  }
+}
+
+export function getUserLocale() {
+  if (cachedLocale) return cachedLocale;
+  cachedLocale = navigator.language || 'en-US';
+  return cachedLocale;
+}
+
+export function formatCurrency(value, currency = 'USD') {
+  const locale = getUserLocale();
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency,
+  }).format(value);
+}
+
+export async function autoFormatCurrency(value) {
+  const currency = await detectUserCurrency();
+  return formatCurrency(value, currency);
+}
+
+export async function getValues() {
+    const currency = await detectUserCurrency();
+    let values = { 
+      currentValue: '', 
+      oldValue: '', 
+      threeBottles: '', 
+      sixBottles: '', 
+      imagePath: '', 
+      productId: '', 
+      threeBottlesProductId: '', 
+      sixBottlesProductId: ''
+    };
+
+    if (currency === 'CAD') {
+      values.oldValue = 'C$89';
+      values.currentValue = 'C$68';
+      values.threeBottles = 'C$42';
+      values.sixBottles = 'C$38';
+      values.imagePath = '/assets/NN1-CAD.webp';
+    } else if (currency === 'GBP') {
+      values.oldValue = '£50';
+      values.currentValue = 'R$38';
+      values.threeBottles = '£28';
+      values.sixBottles = '£20';
+      values.imagePath = '/assets/NN1-GBP.webp';
+    // } else if (currency === 'BRL') {
+    //   values.oldValue = 'R$98';
+    //   values.currentValue = 'R$87';
+    //   values.threeBottles = 'R$73';
+    //   values.sixBottles = 'R$65';
+    //   values.imagePath = '/assets/NN1-CAD.webp';
+    } else {
+      values.oldValue = '$60';
+      values.currentValue = '$48';
+      values.threeBottles = '$36';
+      values.sixBottles = '$26';
+      values.imagePath = '/assets/NN1-USD.webp';
+    }
+
+    return values;
+}
+
+export async function oldValue() {
+    const currency = await detectUserCurrency();
+}
