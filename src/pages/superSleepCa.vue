@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
       <div class="description !pl-[50px] relative z-10">
         <span class="description !text-[#fff] !leading-[1.3] !mt-[18px] !text-[13px]">Try our premium plant-based formula, specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
         <div class="w-full flex flex-col items-center justify-center">
-          <span class="w-full mt-[39px] leading-[17px] py-[6px] border-y font-gelasio max-w-[130px] italic text-center text-[#fff] text-[13px] font-bold">30% off <br> for a limited time!</span>
+          <span class="w-full mt-[39px] leading-[17px] py-[6px] border-y font-gelasio max-w-[130px] italic text-center text-[#fff] text-[13px] font-bold">20% off <br> for a limited time!</span>
           <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
             class="botao-shop !h-[37px] rounded-md !hover:bg-none !px-0 !pb-0 !bg-transparent mt-[24px]">
             <div
@@ -201,7 +201,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div class="button relative bottom-[110px]">
-        <span class="px-4 py-1 mb-[34px] border-y-2 font-gelasio italic text-center text-[#fff] text-[16px] font-bold">30% off<br> for a limited time!</span>
+        <span class="px-4 py-1 mb-[34px] border-y-2 font-gelasio italic text-center text-[#fff] text-[16px] font-bold">20% off<br> for a limited time!</span>
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
           class="botao-shop rounded-md !w-full !hover:bg-none !px-0 !bg-transparent">
           <div class="bg-[#370F1E] w-full  text-[24px] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md font-crossfit h-[48px]">

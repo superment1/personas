@@ -37,6 +37,7 @@ export async function autoFormatCurrency(value) {
 export async function getValues() {
     const currency = await detectUserCurrency();
     let values = { 
+      discount: '',
       currentValue: '', 
       oldValue: '', 
       threeBottles: '', 
@@ -48,14 +49,16 @@ export async function getValues() {
     };
 
     if (currency === 'CAD') {
+      values.discount = '24%'
       values.oldValue = 'C$89';
       values.currentValue = 'C$68';
       values.threeBottles = 'C$42';
       values.sixBottles = 'C$38';
       values.imagePath = '/assets/NN1-CAD.webp';
     } else if (currency === 'GBP') {
+      values.discount = '24%'
       values.oldValue = '£50';
-      values.currentValue = 'R$38';
+      values.currentValue = '£38';
       values.threeBottles = '£28';
       values.sixBottles = '£20';
       values.imagePath = '/assets/NN1-GBP.webp';
@@ -66,6 +69,7 @@ export async function getValues() {
     //   values.sixBottles = 'R$65';
     //   values.imagePath = '/assets/NN1-CAD.webp';
     } else {
+      values.discount = '20%'
       values.oldValue = '$60';
       values.currentValue = '$48';
       values.threeBottles = '$36';
