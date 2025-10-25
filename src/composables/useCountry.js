@@ -80,6 +80,15 @@ export async function getValues() {
     return values;
 }
 
+export async function getValuesShopNow() {
+    const currency = await detectUserCurrency();
+    return  { 
+      oneBottle: '/assets/group_467_tsl_desk1_' + currency +'.webp',
+      threeBottles: '/assets/Selo_3_' + currency +'.png',
+      sixBottles: '/assets/Selo_6_' + currency +'.png'
+    };
+}
+
 export async function oldValue() {
     const currency = await detectUserCurrency();
 }

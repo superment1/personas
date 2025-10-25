@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import ShopButton from './ShopButton.vue'
+import { getValuesShopNow } from '../composables/useCountry.js';
 
 const props = defineProps({
   bottles: {
     type: Array,
     default: () => [
-      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467_tsl_desk1.webp', productId: 'prod_SbKYsQrxStW8wB', iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: 'A 30-day supply to \n experience the difference.' },
-      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/selo3.webp', productId: 'prod_SbKa8ag01A2TGX', iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none", textButton: 'Our most popular option steady \nsupport for months of deep rest.' },
-      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/selo6.webp', productId: 'prod_SbKaRuJpDVBEzx', iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: 'The best value, ensuring you \nnever run out of calm nights.' }
+      { imgBottle: '/assets/n1.webp', imgIcon: '/assets/group_467_tsl_desk1_USD.webp', productId: 'prod_SbKYsQrxStW8wB', iconBaseClass: "absolute top-[30%] left-[7%] w-[550px] z-10 pointer-events-none", textButton: 'A 30-day supply to \n experience the difference.' },
+      { imgBottle: '/assets/n3.webp', imgIcon: '/assets/Selo_3_USD.png', productId: 'prod_SbKa8ag01A2TGX', iconBaseClass: "absolute top-[30%] left-[78%] w-[80px] z-10 pointer-events-none", textButton: 'Our most popular option steady \nsupport for months of deep rest.' },
+      { imgBottle: '/assets/n6.webp', imgIcon: '/assets/Selo_6_USD.png', productId: 'prod_SbKaRuJpDVBEzx', iconBaseClass: "absolute top-[30%] left-[86%] w-[80px] z-10 pointer-events-none", textButton: 'The best value, ensuring you \nnever run out of calm nights.' }
     ]
   }
 })
 
 const track = ref<HTMLElement | null>(null)
 const itemEls = ref<HTMLElement[]>([])
-const current = ref(0)
+const current = ref(0);
+
+const frascos = reactive([...props.bottles]);
 
 const updateCurrent = () => {
   if (!track.value) return
@@ -99,7 +102,12 @@ function animateScroll(el: HTMLElement, from: number, to: number, duration: numb
   requestAnimationFrame(step)
 }
 
-onMounted(() => {
+onMounted(async () => {
+  const res = await getValuesShopNow();
+  frascos.oneBottle = res.oneBottle;
+  frascos.threeBottles = res.threeBottles;
+  frascos.sixBottles = res.sixBottles;
+
   if (track.value) {
     track.value.addEventListener('scroll', updateCurrent, { passive: true })
     track.value.addEventListener('mousedown', handleDown)
@@ -127,7 +135,7 @@ onBeforeUnmount(() => {
 <template>
   <div ref="track" class="w-full overflow-x-auto flex snap-x snap-mandatory 
            select-none cursor-grab active:cursor-grabbing scrollbar-hide">
-    <div v-for="(t, i) in bottles" :key="i" :ref="el => (itemEls[i] = el as HTMLElement)"
+    <div v-for="(t, i) in frascos" :key="i" :ref="el => (itemEls[i] = el as HTMLElement)"
       class="shrink-0 min-w-full snap-center flex justify-center items-center">
       <div
         class="bg-[#90DAF4] rounded-[34px] max-w-[655px] max-h-[834px] grid justify-items-center gap-4 w-full flex justify-center">

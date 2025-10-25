@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import ShopButton from './ShopButton.vue'
 import Questions from '../components/Questions.vue';
 import Carrossel from './Carrossel.vue';
+import { getValuesShopNow } from '../composables/useCountry.js';
 
 const faqs = ref([
     {
@@ -33,7 +34,19 @@ function toggle(index) {
         open: i === index ? !faq.open : false
     }))
 }
-const anchorId = 'shop-now-tsl'
+const anchorId = 'shop-now-tsl';
+const frascos = reactive({
+    oneBottle: '/assets/group_467_tsl_desk1_USD.webp',
+    threeBottles: '/assets/Selo_3_USD.png',
+    sixBottles: '/assets/Selo_6_USD.png'
+});
+
+onMounted(async () => {
+    const res = await getValuesShopNow();
+    frascos.oneBottle = res.oneBottle;
+    frascos.threeBottles = res.threeBottles;
+    frascos.sixBottles = res.sixBottles;
+})
 
 </script>
 <template>
