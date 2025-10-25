@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
+import { ref, onMounted } from 'vue'
 import ShopButton from './ShopButton.vue'
 import Questions from '../components/Questions.vue';
 import Carrossel from './Carrossel.vue';
@@ -35,18 +35,18 @@ function toggle(index) {
     }))
 }
 const anchorId = 'shop-now-tsl';
-const frascos = reactive({
+const frascos = ref({
     oneBottle: '/assets/group_467_tsl_desk1_USD.webp',
     threeBottles: '/assets/Selo_3_USD.png',
     sixBottles: '/assets/Selo_6_USD.png'
 });
 
+
 onMounted(async () => {
     const res = await getValuesShopNow();
-    frascos.oneBottle = res.oneBottle;
-    frascos.threeBottles = res.threeBottles;
-    frascos.sixBottles = res.sixBottles;
-})
+    frascos.value = { ...res };
+});
+
 
 </script>
 <template>
@@ -63,7 +63,7 @@ onMounted(async () => {
                 <div class=" h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative">
                         <img src="/assets/n1.webp" alt="" class="block w-full h-auto" />
-                        <img src="/assets/group_467_tsl1.webp" alt="" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[78%] z-10
+                        <img :src="frascos.oneBottle" alt="" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[90%] pointer-events-none" />
                         <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                             productId="prod_SbKYsQrxStW8wB" class="absolute inset-x-0 mx-auto bottom-[10px] z-20
@@ -103,7 +103,7 @@ onMounted(async () => {
                 <div class="h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative h-[370px]">
                         <img src="/assets/n3.webp" alt="" class="block w-full h-auto" />
-                        <img src="/assets/selo3.webp" alt="" class="absolute top-[140px] right-[11px] -translate-x-1/2 -translate-y-[78%] z-10
+                        <img :src="frascos.threeBottles" alt="" class="absolute top-[140px] right-[11px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none" />
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKa8ag01A2TGX"
                             class="absolute inset-x-0 mx-auto bottom-[10px] z-20
@@ -144,7 +144,7 @@ onMounted(async () => {
                 <div class="h-full bg-[#90DAF4] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="relative h-[365px]">
                         <img src="/assets/n6.webp" alt="" class="block w-full h-auto" />
-                        <img src="/assets/selo6.webp" alt="" class="absolute top-[115px] -right-[13px] -translate-x-1/2 -translate-y-[78%] z-10
+                        <img :src="frascos.sixBottles" alt="" class="absolute top-[115px] -right-[13px] -translate-x-1/2 -translate-y-[78%] z-10
                                 w-[44px] pointer-events-none" />
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_SbKaRuJpDVBEzx"
                             class="absolute inset-x-0 mx-auto bottom-[10px] z-20

@@ -8,7 +8,7 @@ export async function detectUserCurrency() {
     const res = await fetch('https://ipapi.co/json/');
     const data = await res.json();
     cachedCurrency = data.currency || 'USD';
-    return cachedCurrency;
+    return cachedCurrency == 'BRL' ? 'USD' : cachedCurrency;
   } catch (e) {
     console.warn('[currency] Falha ao detectar moeda, usando USD como padrão.', e);
     return (cachedCurrency = 'USD');
