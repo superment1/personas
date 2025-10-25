@@ -50,10 +50,10 @@ export async function getValues() {
 
     if (currency === 'CAD') {
       values.discount = '24%'
-      values.oldValue = 'C$89';
-      values.currentValue = 'C$68';
-      values.threeBottles = 'C$42';
-      values.sixBottles = 'C$38';
+      values.oldValue = '$89';
+      values.currentValue = '$68';
+      values.threeBottles = '$42';
+      values.sixBottles = '$38';
       values.imagePath = '/assets/NN1-CAD.webp';
     } else if (currency === 'GBP') {
       values.discount = '24%'
