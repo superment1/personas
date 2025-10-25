@@ -104,9 +104,9 @@ function animateScroll(el: HTMLElement, from: number, to: number, duration: numb
 
 onMounted(async () => {
   const res = await getValuesShopNow();
-  frascos.oneBottle = res.oneBottle;
-  frascos.threeBottles = res.threeBottles;
-  frascos.sixBottles = res.sixBottles;
+  frascos[0].imgIcon = res.oneBottle;
+  frascos[1].imgIcon = res.threeBottles;
+  frascos[2].imgIcon = res.sixBottles;
 
   if (track.value) {
     track.value.addEventListener('scroll', updateCurrent, { passive: true })
