@@ -16,7 +16,7 @@ const testimonials = [
     avatarDesk: new URL('../assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
     avatarMobile: new URL('../assets/image/newPageD/ligiani.png', import.meta.url).href,
     title: 'Stress Relief',
-    testimonial: 'I’d come home tense and tired from work, and still unable to relax. With Super Relax, I actually relax, and sleep comes easily.',
+    testimonial: 'I’d come home tense and tired from work, and still unable to relax. With Super Nerve Relax, I actually relax, and sleep comes easily.',
     name: 'Ligiani G., 44',
     city: 'Boston, MA'
   },
@@ -32,7 +32,7 @@ const testimonials = [
     avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
     title: 'Calm & Clarity',
-    testimonial: 'I used to wake up already anxious, and spend the whole day feeling tense and on edge. Since taking Super Relax, I feel calmer, more patient, and way more in control of my reactions — even when things get chaotic.',
+    testimonial: 'I used to wake up already anxious, and spend the whole day feeling tense and on edge. Since taking Super Nerve Relax, I feel calmer, more patient, and way more in control of my reactions — even when things get chaotic.',
     name: 'Eliseu C., 40',
     city: 'Fort Lauderdale, FL'
   },
@@ -40,7 +40,7 @@ const testimonials = [
     avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
     title: 'No More Burnout Fog',
-    testimonial: 'I’ve tried meds to calm down before, but they either made me numb or completely drained the next day. With Super Relax, I stay clear-headed, sleep deeply, and still wake up myself — just less overwhelmed.',
+    testimonial: 'I’ve tried meds to calm down before, but they either made me numb or completely drained the next day. With Super Nerve Relax, I stay clear-headed, sleep deeply, and still wake up myself — just less overwhelmed.',
     name: 'Bruna R., 38',
     city: 'New York, NY'
   },
@@ -100,46 +100,46 @@ const imgSrc = "/assets/depo.webp"
         <p class="font-normal text-[7px]  lg:text-[16px]">Last updated Sep. 24, 2025</p>
       </div>
     </div>
-    <img class="pt-[23px] lg:hidden" src="/assets/tabelaAdv.webp" alt="table">
-    <img class="pt-[60px] hidden lg:block" src="/assets/tabelaAdv.webp" alt="table">
+    <img class="pt-[23px] lg:hidden" src="/assets/tabelaAdv1.webp" alt="table">
+    <img class="pt-[60px] hidden lg:block" src="/assets/tabelaAdv2.webp" alt="table">
   </section>
   <section class="px-[35px] max-w-[950px] mx-auto pb-[30px] pt-[24px] lg:py-[60px]">
     <infoBlock 
     :items="[
       { 
         title: '1. Quiet anxiety and racing thoughts. ', 
-        subtitle: 'Stress keeps your body in constant high alert and your mind refuses to switch off. That’s why you lie awake replaying worries night after night. Super Relax, with Passionflower and Prickly Pear, gently calms the nervous system, eases anxiety, and helps you finally feel at peace.', 
+        subtitle: 'Stress keeps your body in constant high alert and your mind refuses to switch off. That’s why you lie awake replaying worries night after night. Super Nerve Relax, with Passionflower and Prickly Pear, gently calms the nervous system, eases anxiety, and helps you finally feel at peace.', 
         image: '/assets/1.webp' 
       },
       { 
         title: '2. Fix the root cause, not just the symptoms.', 
-        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
+        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Nerve Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
         image: '/assets/6.webp'
       },
       { 
         title: '3. Restore energy and focus during \n the day.', 
-        subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
+        subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super Nerve Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
         image: '/assets/3.webp'
       },
       { 
         title: '4. Relieve muscle pain and body tension.', 
-        subtitle: 'Stress doesn’t just affect your mind, it builds in your body. Stiff shoulders, sore back, and nerve pain are all signs your system is overloaded. Super Relax, with Corydalis, helps release tight muscles, ease discomfort, and unlock the physical calm your body needs so your mind can finally relax.', 
+        subtitle: 'Stress doesn’t just affect your mind, it builds in your body. Stiff shoulders, sore back, and nerve pain are all signs your system is overloaded. Super Nerve Relax, with Corydalis, helps release tight muscles, ease discomfort, and unlock the physical calm your body needs so your mind can finally relax.', 
         image: '/assets/4.webp'
       },
       { 
         title: '5. Restore balance naturally and safely.', 
-        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you \ncan trust.', 
+        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Nerve Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you can trust.', 
         image: '/assets/5.webp'
       },
       { 
         title: '6. Sleep deeply and wake up clear.', 
-        subtitle: 'Broken nights leave you drained, and pills only sedate without restoring real rest. Super Relax works with your body’s natural rhythm so sleep flows from bedtime until morning. You wake up refreshed, energized, and ready to take on the day, without grogginess.', 
+        subtitle: 'Broken nights leave you drained, and pills only sedate without restoring real rest. Super Nerve Relax works with your body’s natural rhythm so sleep flows from bedtime until morning. You wake up refreshed, energized, and ready to take on the day, without grogginess.', 
         image: '/assets/2.webp' 
       },
 
       { 
         title: '7. Guaranteed results or your \n money back.', 
-        subtitle: 'We stand behind every bottle. Try Super Relax for up to 120 days. If you don’t feel calmer, clearer, and more rested, you get every cent back. No hassle, no fine print, just results. Love it, or it’s free.', 
+        subtitle: 'We stand behind every bottle. Try Super Nerve Relax for up to 120 days. If you don’t feel calmer, clearer, and more rested, you get every cent back. No hassle, no fine print, just results. Love it, or it’s free.', 
         image: '/assets/7.webp'
       },
 
@@ -148,19 +148,19 @@ const imgSrc = "/assets/depo.webp"
   </section>
   <section id="shop-relax" class="bg-[#4DBCB6] flex flex-col items-center justify-items-center py-[29px]">
     <div class="px-[35px] justify-items-center">
-      <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] px-3 lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
-          Stress and Sleepless Nights End Here. Order Super Relax Today.
+      <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
+          Stress and Sleepless Nights End Here. Order Super Nerve Relax Today.
       </h1>
       <div class="lg:w-[607px] pt-[20px]"> 
         
         <div class="justify-items-center pb-[20px]">
-          <img class="lg:hidden" src="/assets/bottle-selo-adv.webp" alt="bottle">
-          <img class="hidden lg:block w-[607px]" src="/assets/bottle-selo-desk.webp" alt="bottle">
+          <img class="lg:hidden" src="/assets/botleAdv2.webp" alt="bottle">
+          <img class="hidden lg:block w-[607px]" src="/assets/botleAdv2Desk.webp" alt="bottle">
         </div>
       <ShopButton type="button" id="buy-button" paymentLink="/relax" textColorClass="text-[#370F1E]"
         :showIcon="false"
         class="botao-shop font-bold font-crossfit !m-0 text-[20px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
-        Try Super Relax Risk-Free
+        Try Super Nerve Relax Risk-Free
       </ShopButton>
       </div>
       
@@ -244,10 +244,10 @@ const imgSrc = "/assets/depo.webp"
     <Questions :show-cta="true" 
       title="Everything You Need to Know"
       :items="[
-        { question: 'Q: Will this make me groggy the next day?', resp: 'No. Super Relax has no melatonin or sedatives. 0% reported grogginess.' },
+        { question: 'Q: Will this make me groggy the next day?', resp: 'No. Super Nerve Relax has no melatonin or sedatives. 0% reported grogginess.' },
         { question: 'Q: Is it addictive or habit-forming?', resp: 'Never. It’s 100% plant-based and non-habit forming.' },
         { question: 'Q: How quickly does it work?', resp: 'Some feel it the first night. Most see the best results within 2–6 weeks.' },
-        { question: 'Q: I’ve tried everything. How is this different?', resp: 'Super Relax supports mind, body, and stomach together: mental stress, physical tension, gastric discomfort.' },
+        { question: 'Q: I’ve tried everything. How is this different?', resp: 'Super Nerve Relax supports mind, body, and stomach together: mental stress, physical tension, gastric discomfort.' },
         { question: 'Q: Can I take it with my anxiety/depression medication?', resp: 'It’s all-natural, but consult your doctor if on prescription meds.' }
       ]"    
       auxText="* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary."
@@ -260,16 +260,16 @@ const imgSrc = "/assets/depo.webp"
             class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
       <p class="label-reserved leading-[1] text-center italic text-[9px] font-gelasio text-[#fffaf0]">
-        © Super Relax Research 2025.<br>All Rights Reserved.
+        © Super Nerve Relax Research 2025.<br>All Rights Reserved.
       </p>
       <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[950px]">
-        Super Relax is a supplement formulated with natural ingredients designed to support the nervous system and help
+        Super Nerve Relax is a supplement formulated with natural ingredients designed to support the nervous system and help
         the body manage stress and anxiety naturally. It promotes a calm, focused state during the day and supports
-        deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is
+        deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Nerve Relax is
         manufactured in the United States in an FDA-registered, GMP-compliant facility. All product quality, safety, and
         compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose,
         treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement,
-        especially if you are taking medications, are pregnant, or have a medical condition. Super Relax is part of the
+        especially if you are taking medications, are pregnant, or have a medical condition. Super Nerve Relax is part of the
         commercial portfolio of Superment. </p>
     </div>
 </template>

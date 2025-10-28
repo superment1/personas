@@ -3,7 +3,7 @@ import '../styles/superSleep.scss';
 import SuperHeader2 from '../components/SuperHeader2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, computed } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
 import ShopNowD from '../components/newPageD/ShopNowD.vue';
@@ -11,9 +11,10 @@ import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SuperFooter2 from '../components/SuperFooter2.vue';
 import CarouselImage from '../components/CarouselImage.vue';
+import { detectCountry } from '../composables/useCountry2.js'
+import FAQ from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const NotificationDisplay2 = defineAsyncComponent(() => import('../components/NotificationDisplay2.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
@@ -93,7 +94,59 @@ function onScroll() {
   lastScrollY = y
   lastScrollT = t
 }
-onMounted(() => {
+
+const country = ref<'US'|'UK'|'CA'>('US')
+const ready   = ref(false)
+
+const PRICE_MAP = {
+  combo3Each: { US: '$39', UK: '£35', CA: '$59' },
+  combo6Each: { US: '$29', UK: '£25', CA: '$42' },
+} as const
+
+const EACH_TXT = { US: 'each', UK: 'each', CA: 'each' } as const
+
+const prices = computed(() => {
+  const c = country.value
+  return {
+    price3: PRICE_MAP.combo3Each[c] ?? PRICE_MAP.combo3Each.US,
+    price6: PRICE_MAP.combo6Each[c] ?? PRICE_MAP.combo6Each.US,
+    each: EACH_TXT[c],
+  }
+})
+const IMAGE_MAP = {
+  bottle: {
+    US: '/assets/US/group_524.webp',
+    UK: '/assets/UK/group_UK.webp',
+    CA: '/assets/CA/group_CA.webp',
+    // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo3: {
+    US: '/assets/US/group_507.webp',
+    UK: '/assets/UK/group_3UK.webp',
+    CA: '/assets/CA/group_3CA.webp',
+    // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo6: {
+    US: '/assets/US/group_520.webp',
+    UK: '/assets/UK/group_6UK.webp',
+    CA: '/assets/CA/group_6CA.webp',
+    // BR: '/assets/br/combo6.webp',
+  }
+} as const
+
+const images = computed(() => ({
+  bottle: IMAGE_MAP.bottle[country.value] ?? IMAGE_MAP.bottle.US,
+  combo3: IMAGE_MAP.combo3[country.value] ?? IMAGE_MAP.combo3.US,
+  combo6: IMAGE_MAP.combo6[country.value] ?? IMAGE_MAP.combo6.US,
+}))
+
+onMounted(async () => {
+  const detected = await detectCountry()
+
+  console.log('[geo] Final country detected:', detected)
+
+  country.value = detected
+  ready.value = true
   // listeners de retenção
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
@@ -118,6 +171,54 @@ onBeforeUnmount(() => {
   window.removeEventListener('pagehide', onPageHide)
   disableBackExitGuard()
 })
+const faqItems = [
+      {
+        question: 'What is Super Nerve Relax?',
+        answer: `Super Nerve Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
+        open: true
+      },
+      {
+        question: 'What are the ingredients?',
+        answer: `The formula combines 5 science-backed botanicals:
+
+• Passionflower – Calms a restless mind so you can slow down and find peace.
+• California Poppy – Relaxes the body and supports restorative sleep without sedation.
+• Corydalis – Helps ease physical tension and nighttime nerve discomfort.
+• Prickly Pear – Supports healthy stress response for deeper rest and recovery.
+• Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`,
+        open: false
+      },
+      {
+        question: 'Is Super Nerve Relax safe?',
+        answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
+        open: false
+      },
+      {
+        question: 'How do I take it?',
+        answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
+        open: false
+      },
+      {
+        question: 'How long does shipping take?',
+        answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
+        open: false
+      },
+      {
+        question: 'How can I reach you if I have questions?',
+        answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
+        open: false
+      },
+      {
+        question: 'What if I’m not satisfied?',
+        answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
+        open: false
+      },
+      {
+        question: 'Are there any side effects?',
+        answer: 'Super Nerve Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
+        open: false
+      }
+    ]
 
 </script>
 
@@ -138,8 +239,8 @@ onBeforeUnmount(() => {
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:764px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_new1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
+        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax1.webp" type="image/webp">
+        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
           fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
 
@@ -450,7 +551,7 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#370F1E] relative">
     <div class="px-[40px] lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
-      <h1 class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[36px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
+      <h1 class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[30px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
         Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span>  and Wired by Night.
       </h1>
       <img src="/assets/why_exhausted1.webp" class="lg:hidden" loading="lazy" alt="exhausted-2">
@@ -466,7 +567,7 @@ onBeforeUnmount(() => {
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-[2.5rem] lg:px-40 w-full">
         <img class="lg:hidden w-[120px] h-[138px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
           loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
@@ -489,7 +590,7 @@ onBeforeUnmount(() => {
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
       <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottlenerve.webp" width="227" height="236" loading="lazy"
           alt="bottle">
         <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
@@ -524,10 +625,8 @@ onBeforeUnmount(() => {
   subtitle="4.9/5 (460+ Reviews) | 98% Recommend"/>
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
-          Relax:</span></p>
-      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
-          Relax:</span></p>
+      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super Nerve Relax:</span></p>
+      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super Nerve Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">
       <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
@@ -552,29 +651,37 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </section>
-  <ShopNowD id="shop-now-d" />
+  <ShopNowD 
+    id="shop-now-d"
+    :ready="ready"
+    :bottle="images.bottle"
+    :combo3="images.combo3"
+    :combo6="images.combo6"
+    :price3="prices.price3"
+    :price6="prices.price6"
+    />
 
   <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/tabela_relax1.webp" alt="table" loading="lazy">
+      <img src="/assets/group_455.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
-          class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
-      <img src="/assets/tabela_relax1_desk.webp" alt="table" loading="lazy">
+          class="text-[#4DBCB6]"> switching to Super Nerve Relax.</span></p>
+      <img src="/assets/tabela_relax_nerve.webp" alt="table" loading="lazy">
       <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>
   <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
     <div class="justify-self-center max-w-[950px]">
-      <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp" alt="" loading="lazy">
+      <img class="justify-self-center lg:h-[700px]" src="/assets/super_nerve.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] px-[30px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[35px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]"
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03] w-auto lg:h-[54px]"
           textColorClass="text-[#FFDC03]" :showIcon="true"
           class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
           Get Calm, Clarity & Rest Now
@@ -593,17 +700,15 @@ onBeforeUnmount(() => {
         <h1
           class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold font-crossfit">
           Frequently asked questions:</h1>
-        <LazyIsland>
           <div class="faq-wrap">
-            <FAQ />
+            <FAQ :asks="faqItems" />
           </div>
-        </LazyIsland>
       </div>
     </div>
   </div>
   <div class="bg-[#350e1d] w-full">
     <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
-      <SuperFooter2 />
+    <SuperFooter2 />
     </div>
   </div>
   <LazyIsland>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import '../styles/superSleep.scss';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, computed, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import FAQ from '../components/Faq.vue';
 import VslBadgesRelax from '../components/VslBadgesRelax.vue';
 import { useSeo } from '../composables/useSeo';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-
+import { detectCountry } from '../composables/useCountry2'
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
   description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
@@ -16,7 +16,6 @@ useSeo({
 const router = useRouter()
 const modalOpen = ref(false)
 const showAfterVideo = ref(false)
-
 const urlPath = '/sleepnatural'
 
 function openModal() { modalOpen.value = true }
@@ -125,14 +124,11 @@ function onScroll() {
   lastScrollY = y
   lastScrollT = t
 }
-
 const showPlayOverlay = ref(true)
 function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }
-
 let fsHandlerAdded = false
-
 function onModalClose() {
   lastShown = 0
 }
@@ -142,8 +138,60 @@ let readyHandler: any
 let playHandler: any
 let endedHandler: any
 
-onMounted(() => {
+const country = ref<'US'|'UK'|'CA'|'BR'>('US')
+const ready   = ref(false)
+
+const PRICE_MAP = {
+  combo3Each: { US: '$39', UK: '£35', CA: '$59', BR: '11' },
+  combo6Each: { US: '$29', UK: '£25', CA: '$42', BR: '12' },
+} as const
+
+const EACH_TXT = { US: 'each', UK: 'each', CA: 'each', BR: 'cada' } as const
+
+const prices = computed(() => {
+  const c = country.value
+  return {
+    price3: PRICE_MAP.combo3Each[c] ?? PRICE_MAP.combo3Each.US,
+    price6: PRICE_MAP.combo6Each[c] ?? PRICE_MAP.combo6Each.US,
+    each: EACH_TXT[c],
+  }
+})
+const IMAGE_MAP = {
+  bottle: {
+    US: '/assets/US/group_524.webp',
+    UK: '/assets/UK/group_UK.webp',
+    CA: '/assets/CA/group_CA.webp',
+    // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo3: {
+    US: '/assets/US/group_507.webp',
+    UK: '/assets/UK/group_3UK.webp',
+    CA: '/assets/CA/group_3CA.webp',
+    // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo6: {
+    US: '/assets/US/group_520.webp',
+    UK: '/assets/UK/group_6UK.webp',
+    CA: '/assets/CA/group_6CA.webp',
+    // BR: '/assets/br/combo6.webp',
+  }
+} as const
+
+const images = computed(() => ({
+  bottle: IMAGE_MAP.bottle[country.value] ?? IMAGE_MAP.bottle.US,
+  combo3: IMAGE_MAP.combo3[country.value] ?? IMAGE_MAP.combo3.US,
+  combo6: IMAGE_MAP.combo6[country.value] ?? IMAGE_MAP.combo6.US,
+}))
+
+onMounted(async () => {
   loadVturbOnce()
+
+  const detected = await detectCountry()
+
+  console.log('[geo] Final country detected:', detected)
+
+  country.value = detected
+  ready.value = true
 
   // ====== Exit-intent listeners ======
   window.addEventListener('mousemove', onMouseMove, { passive: true })
@@ -235,6 +283,55 @@ const testimonials = [
     city: 'Austin, TX'
   },
 ]
+const faqItems = [
+      {
+        question: 'What is Super Nerve Relax?',
+        answer: `Super Nerve Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
+        open: true
+      },
+      {
+        question: 'What are the ingredients?',
+        answer: `The formula combines 5 science-backed botanicals:
+
+• Passionflower – Calms a restless mind so you can slow down and find peace.
+• California Poppy – Relaxes the body and supports restorative sleep without sedation.
+• Corydalis – Helps ease physical tension and nighttime nerve discomfort.
+• Prickly Pear – Supports healthy stress response for deeper rest and recovery.
+• Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`,
+        open: false
+      },
+      {
+        question: 'Is Super Nerve Relax safe?',
+        answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
+        open: false
+      },
+      {
+        question: 'How do I take it?',
+        answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
+        open: false
+      },
+      {
+        question: 'How long does shipping take?',
+        answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
+        open: false
+      },
+      {
+        question: 'How can I reach you if I have questions?',
+        answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
+        open: false
+      },
+      {
+        question: 'What if I’m not satisfied?',
+        answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
+        open: false
+      },
+      {
+        question: 'Are there any side effects?',
+        answer: 'Super Nerve Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
+        open: false
+      }
+    ]
+
 </script>
 
 <template>
@@ -253,7 +350,7 @@ const testimonials = [
             <h1 class="text-[#fff] leading-[0.9] items-center">
               THE SECRET THAT ENDED
               <span class="text-[#370F1E]">
-                MY YEARS OF ANXIETY
+                MY YEARS OF ANXIETY.
               </span>
             </h1>
             <p class="pt-[15px] text-[#370F1E] font-gelasio italic text-[20px]">
@@ -266,7 +363,7 @@ const testimonials = [
             <h1 class="text-[#fff] uppercase leading-[0.875] items-center">
               THE SECRET THAT ENDED
               <br><span class="text-[#370F1E]">
-                MY YEARS OF ANXIETY
+                MY YEARS OF ANXIETY.
               </span>
             </h1>
             <p class="pt-[35px] text-[#370F1E] leading-[0.9] font-gelasio italic text-[40px]">
@@ -1011,11 +1108,24 @@ const testimonials = [
     </div>
     <!-- v-show="showAfterVideo" -->
     <div v-show="showAfterVideo" class="">
-      <VslBadgesRelax bgCollor="bg-[#4DBCB6]" id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="video-ended"
-        @expired="onCountdownExpired" porductId1="prod_T2jNgj5cCjXcvG" porductId3="prod_T2jOmiPYB2SrZd"
-        porductId6="prod_T2jPp4I1S0cfol" bottle="/assets/nn1Relax.webp" combo3="/assets/bottle3.webp"
-        combo6="/assets/bottle6.webp" />
+      <VslBadgesRelax 
+        :ready="ready"
+        bgCollor="bg-[#4DBCB6]" 
+        id="id-vsl-badges" 
+        :duration-ms="7 * 60 * 1000" 
+        start-on="video-ended"
+        @expired="onCountdownExpired" 
+        porductId1="prod_T2jNgj5cCjXcvG" 
+        porductId3="prod_T2jOmiPYB2SrZd"
+        porductId6="prod_T2jPp4I1S0cfol"
+        :bottle="images.bottle"
+        :combo3="images.combo3"
+        :combo6="images.combo6"
+        :price3="prices.price3"
+        :price6="prices.price6"
+        />
     </div>
+    <!-- v-show="showAfterVideo" -->
     <DepoimentsD v-show="showAfterVideo" :testimonials="testimonials" />
     <!-- DESKTOP v-show="showAfterVideo"  -->
 
@@ -1126,7 +1236,7 @@ const testimonials = [
             questions:</h1>
           <h1 class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
             Frequently asked questions:</h1>
-          <FAQ />
+          <FAQ :asks="faqItems" />
         </div>
       </div>
     </div>
@@ -1137,15 +1247,10 @@ const testimonials = [
               class="font-sans text-sm leading-none font-thin">®</sub></span>
         </div>
         <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
-          © Super Relax Research 2025. <br>All Rights Reserved.
+          © Super Nerve Relax Research 2025. <br>All Rights Reserved.
         </p>
         <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
-          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the
-          body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more
-          restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in
-          the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose,
-          treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement,
-          especially if you are taking medications, are pregnant, or have a medical condition.
+          Super Nerve Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Nerve Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
         </p>
       </div>
     </div>

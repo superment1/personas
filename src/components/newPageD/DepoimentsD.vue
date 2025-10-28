@@ -5,11 +5,11 @@ import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 const props = defineProps({
     primary: {
         type: String,
-        default: "Why People Love Super Relax."
+        default: "Why People Love Super Nerve Relax."
     },
     subtitle: {
         type: String,
-        default: '4.9/5 (820+ Reviews) | 98% Recommend'
+        default: '4.9/5 (460+ Reviews) | 98% Recommend'
     },
     extraText: {
         type: String,

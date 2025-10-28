@@ -7,8 +7,8 @@ import { getValuesShopNow } from '../composables/useCountry.js';
 
 const faqs = ref([
     {
-        question: 'Why Super Relax',
-        answer: 'Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
+        question: 'Why Super Nerve Relax',
+        answer: 'Super Nerve Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
         open: true
     },
     {

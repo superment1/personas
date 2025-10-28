@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Stopwatch from '../components/StopwatchVsl.vue';
 import ShopButton from './ShopButton.vue';
+import { ref  } from 'vue'
 
 const props = defineProps({
+  ready: { type: Boolean, default: false },    
   durationMs: { type: Number, default: 7*60*1000 },
   startOn:    { type: String,  default: 'mount' },
   persistKey: { type: String,  default: '' },
@@ -13,6 +15,9 @@ const props = defineProps({
   bottle: { type: String, default: '/assets/NN1sleep.webp' },
   combo3:  { type: String, default: '/assets/nn2Sleep.webp' },
   combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
+  price3: { type: String, default: '$39'},
+  price6: { type: String, default: '$29'},
+
 })
 
 const emit = defineEmits<{ (e: 'expired'): void }>()
@@ -54,7 +59,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
         </div>
         <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
-            <div
+            <div v-if="ready"
                 class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] xl:w-[600px] xl:h-[587px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:pb-4">
                 <img :src=bottle alt="bagde VSL" class="w-96 h-auto block xl:hidden">
                 <img :src=bottle alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
@@ -143,7 +148,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">Buy
                                         3 <br><span
                                             class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
-                                            $39</span><span
+                                            {{ price3 }}</span><span
                                             class="font-gelasio font-thin italic"> 
                                             each</span>
                                     </span>
@@ -192,7 +197,7 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] sm:text-[22px] xl:text-[32px] text-start ml-3">
                                         Buy 6 <br>
                                         <span class="font-gelasio italic font-bold text-[17px] sm:text-[22px] xl:text-[32px]">
-                                        $29</span>
+                                        {{ price6 }}</span>
                                         <span class="font-gelasio font-thin italic">
                                         each</span>
                                     </span>

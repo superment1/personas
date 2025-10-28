@@ -67,18 +67,12 @@ const links = [
         <span class="inline-flex items-baseline">SUPERMENT<sub
             class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
-      <p class="label-reserved">
-        © Super Relax Research 2025.
+      <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
+        © Super Nerve Relax Research 2025. <br>All Rights Reserved.
       </p>
-      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[10px] leading-[12px] text-justify mt-3 md:w-[950px]">
-        Super Relax is a supplement formulated with natural ingredients designed to support the nervous system and help
-        the body manage stress and anxiety naturally. It promotes a calm, focused state during the day and supports
-        deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is
-        manufactured in the United States in an FDA-registered, GMP-compliant facility. All product quality, safety, and
-        compliance certifications are managed by our manufacturing partner. This product is not intended to diagnose,
-        treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement,
-        especially if you are taking medications, are pregnant, or have a medical condition. Super Relax is part of the
-        commercial portfolio of Superment. </p>
+      <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
+       Super Nerve Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Nerve Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
+      </p>
     </div>
   </section>
 </template>

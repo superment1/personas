@@ -167,8 +167,8 @@ const testimonials = [
 ]
 const asks = ref([
   { 
-    question: 'What is Super Relax?', 
-    answer: 'Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.', 
+    question: 'What is Super Nerve Relax?', 
+    answer: 'Super Nerve Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.', 
     open: true 
   },
   { 
@@ -182,7 +182,7 @@ const asks = ref([
     open: false 
   },
   { 
-    question: 'Is Super Relax safe?', 
+    question: 'Is Super Nerve Relax safe?', 
     answer:' Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.', 
     open: false 
   },
@@ -208,7 +208,7 @@ const asks = ref([
   },
   { 
     question: 'Are there any side effects?', 
-    answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.', 
+    answer: 'Super Nerve Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.', 
     open: false 
   },
 ])
@@ -231,8 +231,8 @@ const asks = ref([
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:764px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_new1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
+        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax1.webp" type="image/webp">
+        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
           fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
@@ -671,7 +671,7 @@ const asks = ref([
           The Breakthrough: Repair Nerves from the Inside Out
         </p>
       <div class=" px-[30px] self-center max-w-[976px] flex-col items-center flex justify-center md:pt-[45px]">
-        <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
+        <p class="text-center leading-[1] pt-[18px] pb-[20px] text-[#370F1E] text-[14px] lg:text-[36px]">Super Nerve Relax is a<span class="font-bold"> unique, plant-based formula </span><br> that works in 3 powerful steps:</p>
         <div class="bg-[#96E3DF] pt-[16px] lg:pt-[65px] pb-[12px] px-[20px] text-[12px] lg:text-[36px] text-center text-[#370F1E] rounded-[15px]">
           <ul class="flex flex-col leading-[1.4] gap-3 lg:gap-[40px]">
             <li class="border-b pb-[15px] lg:pb-[48px] pt-[4px] border-[#4DBCB6]">
@@ -693,7 +693,7 @@ const asks = ref([
         </div>
       </div>     
       <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"alt="bottle">
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottlenerve.webp" width="227" height="236" loading="lazy"alt="bottle">
         <div
           class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
@@ -707,14 +707,14 @@ const asks = ref([
           Real-Life Benefits
         </h1>
         <p class="text-[14px] lg:pt-[30px] lg:text-[36px] pb-[15px] lg:pb-[35px]">
-          With Super Relax, customers report:
+          With Super Nerve Relax, customers report:
         </p>
       </div>
       <div class="px-8 md:px-40">
         <img class="md:hidden block pb-10" src="/assets/group_box.webp" alt="blocks">
         <img class="hidden md:block pb-20" src="/assets/group_box_desk.webp" alt="blocks">
         <div class="border-t-2 pt-[14px] lg:pt-[45px] leading-[1] border-[#370F1E] text-[#370F1E] pr-10 lg:pr-40 lg:text-[40px] text-[13px]">
-          <p class="font-bold pb-4 lg:pb-[60px]">Why Super Relax</p>
+          <p class="font-bold pb-4 lg:pb-[60px]">Why Super Nerve Relax</p>
           <p>Freedom from burning, tingling, and numbness. Confidence to move through your day without fear of flare-ups. Peaceful nights with less pain and more rest. A calmer, steadier you — inside and out.</p>
         </div>
       </div>
@@ -769,12 +769,12 @@ const asks = ref([
 
   <section class="bg-[#370F1E] px-[37px] lg:px-40 py-8">
     <div class="lg:hidden">
-      <p class="font-crossfit text-center pt-10 leading-[1] pb-12 text-[31px] text-white">Why everyone is <br><span class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
+      <p class="font-crossfit text-center pt-10 leading-[1] pb-12 text-[31px] text-white">Why everyone is <br><span class="text-[#4DBCB6]"> switching to Super Nerve Relax.</span></p>
       <img src="/assets/tabela-relax3.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
-          class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
+          class="text-[#4DBCB6]"> switching to Super Nerve Relax.</span></p>
       <img src="/assets/tabela-relax3_desk.webp" alt="table" loading="lazy">
       <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
@@ -822,10 +822,10 @@ const asks = ref([
             class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
       <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
-        © Super Relax Research 2025. <br>All Rights Reserved.
+        © Super Nerve Relax Research 2025. <br>All Rights Reserved.
       </p>
       <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
-        Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
+        Super Nerve Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Nerve Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
       </p>
     </div>
   </div>

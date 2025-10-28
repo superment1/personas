@@ -1,11 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, computed, onBeforeUnmount } from 'vue'
 import ShopButton from '../ShopButton.vue';
+
 
 const faqs = ref([
     {
-        question: 'Why Super Relax',
-        answer: 'Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
+        question: 'Why Super Nerve Relax',
+        answer: 'Super Nerve Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
         open: true
     },
     {
@@ -31,13 +32,21 @@ function toggle(index) {
         open: i === index ? !faq.open : false
     }))
 }
+
+const props = defineProps({
+    ready: { type: Boolean, default: false }, 
+    bottle: { type: String, default: '/assets/NN1sleep.webp' },
+    combo3:  { type: String, default: '/assets/nn2Sleep.webp' },
+    combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
+    price3: { type: String, default: '$39'},
+    price6: { type: String, default: '$29'},
+})
 </script>
 <template>
     <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 pb-10 lg:py-[95px]">
         <p
             class="text-[#FFF] text-center font-crossfit text-[32px] md:text-[46px] font-bold leading-[1] lg:text-[60px]">
-            Get Your <br class="block lg:hidden">Super Relax
-            Now.</p>
+            Get Your <br class="block lg:hidden">Super Nerve Relax Now.</p>
         <div class="flex flex-col items-center justify-center gap-y-0 mt-1">
             <svg class="block md:hidden" xmlns="http://www.w3.org/2000/svg" width="79" height="20" viewBox="0 0 79 20"
                 fill="none">
@@ -201,8 +210,9 @@ function toggle(index) {
                     Calm by
                     Day,
                     Rest by Night.</p>
-                <div
-                    class="bg-[url('@/assets/image/newPageD/nn1_2.webp')] w-[317px] h-[260px] bg-cover bg-center flex items-center justify-between">
+                <div class="w-[317px] h-[260px] flex items-center justify-between">
+                    <img :src=bottle alt="bagde VSL" class="w-96 relative top-[30px] h-auto block xl:hidden">
+                    <img :src=bottle alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
 
                     <svg class="mt-7" xmlns="http://www.w3.org/2000/svg" width="97" height="97" viewBox="0 0 97 97"
                         fill="none">
@@ -275,8 +285,6 @@ function toggle(index) {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <img class="relative left-[54px] top-[12px]" src="/assets/pre_o.webp" width="63" height="123"
-                        alt="">
                     <svg class="mt-12 mr-2 right-[7px] relative z-10" xmlns="http://www.w3.org/2000/svg" width="45"
                         height="45" viewBox="0 0 45 45" fill="none">
                         <circle cx="22.5" cy="22.5" r="22.5" fill="#E1DCCD" />
@@ -403,11 +411,12 @@ function toggle(index) {
             <!-- FRASCOS PEQUENOS -->
             <div class="w-[351px] md:w-[420px] h-full rounded-[30px] grid grid-cols-2 gap-2 md:gap-5 mt-4">
                 <div
-                    class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
-                    <div
-                        class="w-[170px] h-[233px] bg-[url('@/assets/image/newPageD/nn2.webp')] bg-contain bg-no-repeat flex flex-col-reverse items-center pb-[14px]">
+                    class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">                    
+                    <div class="w-[170px] h-[233px] flex flex-col items-center pb-[14px]">
+                         <img :src=combo3 alt="bagde"
+                            class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
-                            class="h-[66px] w-[145px] md:w-[175px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between ">
+                            class="!h-[66px] relative top-[-75px] !py-[30px] w-[145px] md:w-[175px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between ">
                             <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
                                     fill="none">
@@ -427,7 +436,7 @@ function toggle(index) {
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] md:text-[21px] text-start ml-3">Buy
                                         3 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]  ">$39</span><span
+                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]">{{ price3 }}</span><span
                                             class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
@@ -438,9 +447,11 @@ function toggle(index) {
                 <div
                     class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                     <div
-                        class="w-[170px] h-[233px] bg-[url('@/assets/image/newPageD/nn3.webp')] bg-contain bg-no-repeat flex flex-col-reverse items-center pb-[14px]">
-                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
-                            class="h-[66px] w-[145px] md:w-[175px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee">
+                        class="w-[170px] h-[233px]  flex flex-col items-center pb-[14px]">                     
+                        <img :src=combo6 >
+                        <ShopButton textColorClass=" text-[#370F1E]" 
+                         :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                            class="h-[66px] relative top-[-75px] !py-[30px] w-[145px] md:w-[175px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee">
                             <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
                                     fill="none">
@@ -460,7 +471,7 @@ function toggle(index) {
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] md:text-[21px] text-start ml-3">Buy
                                         6 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]">$29</span><span
+                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]"> {{ price6 }}</span><span
                                             class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
@@ -477,9 +488,9 @@ function toggle(index) {
             <div
                 class="w-[600px] h-[619px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start pb-[34px] pt-[37px]">
                 <div
-                    class="relative bg-[url('@/assets/image/newPageD/nn1-desk.png')] w-[450px] h-[465px] bg-cover bg-center flex items-center justify-between">
-
-                    <svg class="absolute top-[115px] right-[350px]" xmlns="http://www.w3.org/2000/svg" width="140"
+                    class="relative w-[565px] flex items-center justify-between">
+                    <img :src="bottle">
+                    <!-- <svg class="absolute top-[115px] right-[350px]" xmlns="http://www.w3.org/2000/svg" width="140"
                         height="140" viewBox="0 0 127 127" fill="none">
                         <path
                             d="M127 63.4999C127 98.5701 98.5701 127 63.4999 127C28.4299 127 0 98.5701 0 63.4999C0 28.4299 28.4299 0 63.4999 0C98.5701 0 127 28.4299 127 63.4999Z"
@@ -549,8 +560,8 @@ function toggle(index) {
                                 <stop offset="1" stop-color="#E4A230" />
                             </linearGradient>
                         </defs>
-                    </svg>
-                    <svg class="absolute top-1/2 left-[425px] -mt-[10px] " xmlns="http://www.w3.org/2000/svg"
+                    </svg> -->
+                    <!-- <svg class="absolute top-1/2 left-[425px] -mt-[10px] " xmlns="http://www.w3.org/2000/svg"
                         width="101" height="101" viewBox="0 0 91 91" fill="none">
                         <circle cx="45.5" cy="45.5" r="45.5" fill="#E1DCCD" />
                         <path
@@ -574,11 +585,11 @@ function toggle(index) {
                         <path
                             d="M51.1685 67.5523V48.2148C51.1685 47.0546 51.6017 46.5441 52.6691 46.5441H61.3942C61.9666 46.5441 62.4307 47.0391 62.4307 47.6115V50.7828C62.4307 51.3707 61.9666 51.8503 61.3942 51.8503H57.2173V55.9653H60.9301C61.5025 55.9653 61.9666 56.4603 61.9666 57.0327V59.8947C61.9666 60.4825 61.5025 60.9312 60.9301 60.9312H57.2173V67.2739C57.2173 67.9081 56.877 69.1612 55.6084 69.1612H52.6227C51.6017 69.1612 51.1685 68.6507 51.1685 67.5523Z"
                             fill="#370F1E" />
-                    </svg>
+                    </svg> -->
                 </div>
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     productId="prod_T2jNgj5cCjXcvG"
-                    class="h-[75px] w-[523px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded mt-[10px]">
+                    class="relative top-[-80px] !h-[75px] w-[523px] !py-[10px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] shadow-[0px_4px_10px_0px_rgba(77,188,182,1.00)] justify-center rounded">
                     <div class="flex flex-row items-center justify-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="43" viewBox="0 0 44 43" fill="none">
                             <g clip-path="url(#clip0_198_1739)">
@@ -603,10 +614,10 @@ function toggle(index) {
             <!-- FRASCOS PEQUENOS -->
             <div class="w-[570px] h-full rounded-[30px] grid grid-cols-2 gap-x-2 gap-y-1">
                 <div class="w-[270px] h-[413px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
-                    <div class="relative w-[272px] h-[275px] overflow-hidden">
-                        <img src="@/assets/image/newPageD/nn2-desk.png" alt="frasco-3"
-                            class="w-full h-full object-contain pointer-events-none" />
-                        <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
+                    <div class="relative w-[272px] h-[285px] overflow-hidden">
+                        <img :src="combo3" alt="frasco-3"
+                            class=" pointer-events-none" />
+                        <!-- <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
                             height="77" viewBox="0 0 67 67" fill="none">
                             <circle cx="33.0686" cy="33.0686" r="33.0686" fill="#E1DCCD" />
                             <circle cx="33.0701" cy="33.0686" r="28.466" stroke="#370F1E" stroke-width="1.26872" />
@@ -628,7 +639,7 @@ function toggle(index) {
                             <path
                                 d="M35.9728 49.2666V35.3163C35.9728 34.4792 36.2853 34.111 37.0553 34.111H43.3497C43.7626 34.111 44.0975 34.4681 44.0975 34.881V37.1689C44.0975 37.593 43.7626 37.9389 43.3497 37.9389H40.3364V40.9076H43.0149C43.4278 40.9076 43.7626 41.2647 43.7626 41.6776V43.7423C43.7626 44.1664 43.4278 44.49 43.0149 44.49H40.3364V49.0657C40.3364 49.5233 40.0909 50.4273 39.1758 50.4273H37.0218C36.2853 50.4273 35.9728 50.059 35.9728 49.2666Z"
                                 fill="#370F1E" />
-                        </svg>
+                        </svg> -->
                     </div>
                     <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
                         class="relative !py-[3.5rem] z-10 h-[117px] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
@@ -658,58 +669,60 @@ function toggle(index) {
                     </ShopButton>
                 </div>
                 <div class="w-[270px] h-[412px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
-                    <div class="relative w-[272px] h-[275px]">
-                        <img src="@/assets/image/newPageD/nn3-desk.png" alt="frasco-6" class="w-[279px] h-[280px]">
-                        <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
-                            height="77" viewBox="0 0 67 66" fill="none">
-                            <circle cx="33.0974" cy="32.9128" r="32.9128" fill="#E1DCCD" />
-                            <circle cx="33.0981" cy="32.9125" r="28.3319" stroke="#370F1E" stroke-width="1.26274" />
-                            <path
-                                d="M15.9899 28.5719C15.9899 28.2275 16.112 27.9609 16.7896 27.9609H19.2555C19.7998 27.9609 20.2663 28.0165 20.2663 28.9717V29.4049C20.2663 30.0714 20.3774 30.3602 20.9439 30.3602C21.5548 30.3602 21.677 30.0825 21.677 29.3716V26.2726C21.677 25.284 21.4882 25.0063 20.9661 25.0063C20.4885 25.0063 20.2774 25.2729 20.2774 25.695V25.7061C20.2774 26.1282 20.0109 26.3059 19.7221 26.3059H16.8229C16.3897 26.3059 16.2009 26.106 16.2009 25.6839V18.0973C16.2009 17.0087 16.6008 16.7199 17.6005 16.7199H24.8205C25.2426 16.7199 25.5869 17.0754 25.5869 17.4864V19.7635C25.5869 20.1744 25.2426 20.5299 24.8205 20.5299H19.5332V22.8403C20.0553 22.4404 20.8439 22.2405 21.8992 22.2405C24.2429 22.2405 26.1312 23.0847 26.1534 27.4722C26.1756 31.5487 25.1537 33.1594 21.0439 33.1594C18.0115 33.1594 15.9899 32.3596 15.9899 28.5719Z"
-                                fill="#370F1E" />
-                            <path
-                                d="M26.6442 28.5385C26.6664 26.3614 27.1552 24.9952 28.9213 24.562C27.1996 24.1621 26.6664 22.8403 26.6664 20.8964C26.6664 17.5419 28.1771 16.4756 31.8537 16.4756C35.9303 16.4756 37.0188 17.964 37.0188 20.852C37.0188 22.7403 36.4857 24.1621 34.7418 24.562C36.519 24.9841 37.0188 26.3392 37.041 28.6274C37.0744 32.1597 35.5415 33.1594 31.8537 33.1594C27.6106 33.1594 26.5998 31.6043 26.6442 28.5385ZM31.0873 22.4071C31.0873 22.918 31.2984 23.218 31.776 23.218H31.876C32.3869 23.218 32.5869 22.9292 32.5869 22.396V20.3188C32.5869 19.5635 32.4202 19.2747 31.8315 19.2747C31.1984 19.2747 31.0873 19.5635 31.0873 20.3188V22.4071ZM31.0873 29.5271C31.0873 30.0936 31.2539 30.3602 31.8537 30.3602C32.4869 30.3602 32.5869 30.0936 32.5869 29.5382V27.1057C32.5869 26.3948 32.4202 26.1504 31.876 26.1504H31.7871C31.2761 26.1504 31.0873 26.4059 31.0873 27.0945V29.5271Z"
-                                fill="#370F1E" />
-                            <path
-                                d="M40.8779 32.4818L47.7091 17.1198C47.9979 16.4645 48.3645 16.3423 48.8643 16.3423H49.5974C50.4194 16.3423 50.6194 16.6311 50.3417 17.2642L43.6992 32.3041C43.2994 33.2038 42.9772 33.4148 42.3219 33.4148H41.7443C40.9668 33.4148 40.5669 33.1816 40.8779 32.4818ZM37.4234 20.0523C37.4234 18.0307 37.5678 16.6977 40.7668 16.6977C43.9769 16.6977 44.0658 18.1195 44.0658 20.0523C44.0658 22.0516 43.9325 23.4068 40.7668 23.4068C37.4678 23.4068 37.4234 22.0294 37.4234 20.0523ZM40.3114 18.8304V21.3519C40.3114 21.6629 40.3892 21.8628 40.7668 21.8628C41.0889 21.8628 41.1778 21.6518 41.1778 21.3519V18.8082C41.1778 18.475 41.1445 18.2639 40.7668 18.2639C40.378 18.2639 40.3114 18.4639 40.3114 18.8304ZM47.287 29.6604C47.287 27.6388 47.4425 26.3059 50.6305 26.3059C53.8406 26.3059 53.9294 27.7277 53.9294 29.6604C53.9294 31.6598 53.7962 33.015 50.6305 33.015C47.3315 33.015 47.287 31.6376 47.287 29.6604ZM50.175 28.4497V30.9711C50.175 31.271 50.2639 31.471 50.6305 31.471C50.9526 31.471 51.0414 31.271 51.0414 30.9711V28.4275C51.0414 28.0831 51.0192 27.8721 50.6305 27.8721C50.2417 27.8721 50.175 28.0831 50.175 28.4497Z"
-                                fill="#370F1E" />
-                            <path
-                                d="M15.8677 43.3105C15.8677 37.5678 15.8566 34.9575 21.1105 34.9575C26.2534 34.9575 26.3089 37.2346 26.3422 43.3105C26.3422 49.0643 26.4089 51.6413 21.1105 51.6413C15.9343 51.6413 15.9343 49.4086 15.8677 43.3105ZM20.3774 39.0007V47.7202C20.3774 48.3978 20.4441 48.8421 21.1105 48.8421C21.7659 48.8421 21.8325 48.4089 21.8325 47.7202V38.9785C21.8325 38.2232 21.8325 37.8011 21.1327 37.8011C20.3996 37.8011 20.3774 38.212 20.3774 39.0007Z"
-                                fill="#370F1E" />
-                            <path
-                                d="M27.4558 50.2861V36.4015C27.4558 35.5684 27.7668 35.2019 28.5332 35.2019H34.798C35.209 35.2019 35.5422 35.5573 35.5422 35.9683V38.2454C35.5422 38.6675 35.209 39.0118 34.798 39.0118H31.7989V41.9665H34.4648C34.8757 41.9665 35.209 42.3219 35.209 42.7329V44.7878C35.209 45.2099 34.8757 45.532 34.4648 45.532H31.7989V50.0862C31.7989 50.5416 31.5545 51.4413 30.6437 51.4413H28.4999C27.7668 51.4413 27.4558 51.0748 27.4558 50.2861Z"
-                                fill="#370F1E" />
-                            <path
-                                d="M36.4374 50.2861V36.4015C36.4374 35.5684 36.7484 35.2019 37.5149 35.2019H43.7796C44.1906 35.2019 44.5238 35.5573 44.5238 35.9683V38.2454C44.5238 38.6675 44.1906 39.0118 43.7796 39.0118H40.7805V41.9665H43.4464C43.8574 41.9665 44.1906 42.3219 44.1906 42.7329V44.7878C44.1906 45.2099 43.8574 45.532 43.4464 45.532H40.7805V50.0862C40.7805 50.5416 40.5362 51.4413 39.6253 51.4413H37.4815C36.7484 51.4413 36.4374 51.0748 36.4374 50.2861Z"
-                                fill="#370F1E" />
-                        </svg>
-                    </div>
-                    <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
-                        class="h-[117px] !py-[3.5rem] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
-                        <div class="flex flex-row items-start justify-end">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
-                                fill="none">
-                                <g clip-path="url(#clip0_198_1730)">
-                                    <path
-                                        d="M1.96958 3.26134C1.36661 3.26134 0.87793 2.70732 0.87793 2.02374C0.87793 1.34015 1.36661 0.786133 1.96958 0.786133H7.64197C8.16743 0.786133 8.60619 1.2076 8.70997 1.76758L9.56122 5.37167H41.5804C42.1833 5.37167 42.672 5.92569 42.672 6.60928C42.672 6.70459 42.6628 6.79693 42.6444 6.88629L41.2467 16.1333C41.2414 16.1795 41.2349 16.2242 41.2257 16.2688L39.8188 25.5799C39.7281 26.1831 39.267 26.609 38.7442 26.6075H14.5807L15.4924 30.4633H37.5816C38.1846 30.4633 38.6732 31.0173 38.6732 31.7009C38.6732 32.3845 38.1846 32.9385 37.5816 32.9385H14.6556C14.1735 32.9385 13.7334 32.5722 13.602 32.0196L12.1215 25.7557C12.1097 25.714 12.0992 25.6708 12.0913 25.6261L10.8039 20.1797L9.90409 16.3731C9.89226 16.3314 9.88176 16.2897 9.87387 16.2465L7.67087 6.9265V6.92352L6.80516 3.25836H1.96958V3.26134ZM33.7102 36.4369C33.2623 36.4369 32.859 36.6424 32.566 36.9745C32.2731 37.3066 32.0918 37.7653 32.0918 38.2717C32.0918 38.7781 32.2731 39.2368 32.566 39.5689C32.859 39.901 33.2636 40.1065 33.7102 40.1065C34.1569 40.1065 34.5615 39.901 34.8544 39.5689C35.1474 39.2368 35.3287 38.7781 35.3287 38.2717C35.3287 37.7653 35.1474 37.3066 34.8544 36.9745C34.5615 36.6424 34.1569 36.4369 33.7102 36.4369ZM31.0225 35.2231C31.7108 34.4427 32.6606 33.9602 33.7102 33.9602C34.7598 33.9602 35.7096 34.4427 36.398 35.2231C37.0863 36.0035 37.512 37.0803 37.512 38.2702C37.512 39.4602 37.0863 40.5369 36.398 41.3173C35.7096 42.0977 34.7598 42.5802 33.7102 42.5802C32.6606 42.5802 31.7108 42.0977 31.0225 41.3173C30.3341 40.5369 29.9085 39.4602 29.9085 38.2702C29.9085 37.0803 30.3341 36.0035 31.0225 35.2231ZM19.4649 36.4369C19.0183 36.4369 18.6137 36.6424 18.3207 36.9745C18.0291 37.3066 17.8465 37.7653 17.8465 38.2717C17.8465 38.7781 18.0278 39.2368 18.3207 39.5689C18.6137 39.901 19.0183 40.1065 19.4649 40.1065C19.9116 40.1065 20.3162 39.901 20.6091 39.5689C20.902 39.2368 21.0833 38.7781 21.0833 38.2717C21.0833 37.7653 20.902 37.3066 20.6091 36.9745C20.3162 36.6424 19.9116 36.4369 19.4649 36.4369ZM16.7772 35.2231C17.4655 34.4427 18.4153 33.9602 19.4649 33.9602C20.5145 33.9602 21.4643 34.4427 22.1527 35.2231C22.841 36.0035 23.2666 37.0803 23.2666 38.2702C23.2666 39.4602 22.841 40.5369 22.1527 41.3173C21.4643 42.0977 20.5145 42.5802 19.4649 42.5802C18.4153 42.5802 17.4655 42.0977 16.7772 41.3173C16.0888 40.5369 15.6632 39.4602 15.6632 38.2702C15.6632 37.0803 16.0888 36.002 16.7772 35.2231ZM38.8703 17.228H32.1759L31.7581 24.1338H37.8272L38.8703 17.228ZM29.9913 17.228H20.6827L21.3356 24.1338H29.5735L29.9913 17.228ZM18.4915 17.228H12.3659L13.9988 24.1338H19.1457L18.4928 17.228H18.4915ZM11.78 14.7527H18.2563L17.6034 7.84688H10.1471L11.78 14.7527ZM20.4475 14.7527H30.1397L30.5574 7.84688H19.7946L20.4475 14.7527ZM32.3243 14.7527H39.2434L40.2864 7.84688H32.7408L32.323 14.7527H32.3243Z"
-                                        fill="#370F1E" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_198_1730">
-                                        <rect width="41.7941" height="41.7941" fill="white"
-                                            transform="translate(0.87793 0.786133)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <div class="flex flex-row items-center justify-end w-full">
-                                <span
-                                    class="font-DMSans text-[#370F1E] leading-[1.2] font-black text-[32px] text-start ml-3">Buy
-                                    6 <br><span class="font-gelasio italic font-bold text-[28px]  ">$29</span><span
-                                        class="font-gelasio font-thin italic"> each</span>
-                                </span>
-                            </div>
+                    <div class="w-[270px] h-[413px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
+                        <div class="relative w-[272px] h-[285px] overflow-hidden">
+                            <img :src="combo6" alt="frasco-6">
+                            <!-- <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
+                                height="77" viewBox="0 0 67 66" fill="none">
+                                <circle cx="33.0974" cy="32.9128" r="32.9128" fill="#E1DCCD" />
+                                <circle cx="33.0981" cy="32.9125" r="28.3319" stroke="#370F1E" stroke-width="1.26274" />
+                                <path
+                                    d="M15.9899 28.5719C15.9899 28.2275 16.112 27.9609 16.7896 27.9609H19.2555C19.7998 27.9609 20.2663 28.0165 20.2663 28.9717V29.4049C20.2663 30.0714 20.3774 30.3602 20.9439 30.3602C21.5548 30.3602 21.677 30.0825 21.677 29.3716V26.2726C21.677 25.284 21.4882 25.0063 20.9661 25.0063C20.4885 25.0063 20.2774 25.2729 20.2774 25.695V25.7061C20.2774 26.1282 20.0109 26.3059 19.7221 26.3059H16.8229C16.3897 26.3059 16.2009 26.106 16.2009 25.6839V18.0973C16.2009 17.0087 16.6008 16.7199 17.6005 16.7199H24.8205C25.2426 16.7199 25.5869 17.0754 25.5869 17.4864V19.7635C25.5869 20.1744 25.2426 20.5299 24.8205 20.5299H19.5332V22.8403C20.0553 22.4404 20.8439 22.2405 21.8992 22.2405C24.2429 22.2405 26.1312 23.0847 26.1534 27.4722C26.1756 31.5487 25.1537 33.1594 21.0439 33.1594C18.0115 33.1594 15.9899 32.3596 15.9899 28.5719Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M26.6442 28.5385C26.6664 26.3614 27.1552 24.9952 28.9213 24.562C27.1996 24.1621 26.6664 22.8403 26.6664 20.8964C26.6664 17.5419 28.1771 16.4756 31.8537 16.4756C35.9303 16.4756 37.0188 17.964 37.0188 20.852C37.0188 22.7403 36.4857 24.1621 34.7418 24.562C36.519 24.9841 37.0188 26.3392 37.041 28.6274C37.0744 32.1597 35.5415 33.1594 31.8537 33.1594C27.6106 33.1594 26.5998 31.6043 26.6442 28.5385ZM31.0873 22.4071C31.0873 22.918 31.2984 23.218 31.776 23.218H31.876C32.3869 23.218 32.5869 22.9292 32.5869 22.396V20.3188C32.5869 19.5635 32.4202 19.2747 31.8315 19.2747C31.1984 19.2747 31.0873 19.5635 31.0873 20.3188V22.4071ZM31.0873 29.5271C31.0873 30.0936 31.2539 30.3602 31.8537 30.3602C32.4869 30.3602 32.5869 30.0936 32.5869 29.5382V27.1057C32.5869 26.3948 32.4202 26.1504 31.876 26.1504H31.7871C31.2761 26.1504 31.0873 26.4059 31.0873 27.0945V29.5271Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M40.8779 32.4818L47.7091 17.1198C47.9979 16.4645 48.3645 16.3423 48.8643 16.3423H49.5974C50.4194 16.3423 50.6194 16.6311 50.3417 17.2642L43.6992 32.3041C43.2994 33.2038 42.9772 33.4148 42.3219 33.4148H41.7443C40.9668 33.4148 40.5669 33.1816 40.8779 32.4818ZM37.4234 20.0523C37.4234 18.0307 37.5678 16.6977 40.7668 16.6977C43.9769 16.6977 44.0658 18.1195 44.0658 20.0523C44.0658 22.0516 43.9325 23.4068 40.7668 23.4068C37.4678 23.4068 37.4234 22.0294 37.4234 20.0523ZM40.3114 18.8304V21.3519C40.3114 21.6629 40.3892 21.8628 40.7668 21.8628C41.0889 21.8628 41.1778 21.6518 41.1778 21.3519V18.8082C41.1778 18.475 41.1445 18.2639 40.7668 18.2639C40.378 18.2639 40.3114 18.4639 40.3114 18.8304ZM47.287 29.6604C47.287 27.6388 47.4425 26.3059 50.6305 26.3059C53.8406 26.3059 53.9294 27.7277 53.9294 29.6604C53.9294 31.6598 53.7962 33.015 50.6305 33.015C47.3315 33.015 47.287 31.6376 47.287 29.6604ZM50.175 28.4497V30.9711C50.175 31.271 50.2639 31.471 50.6305 31.471C50.9526 31.471 51.0414 31.271 51.0414 30.9711V28.4275C51.0414 28.0831 51.0192 27.8721 50.6305 27.8721C50.2417 27.8721 50.175 28.0831 50.175 28.4497Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M15.8677 43.3105C15.8677 37.5678 15.8566 34.9575 21.1105 34.9575C26.2534 34.9575 26.3089 37.2346 26.3422 43.3105C26.3422 49.0643 26.4089 51.6413 21.1105 51.6413C15.9343 51.6413 15.9343 49.4086 15.8677 43.3105ZM20.3774 39.0007V47.7202C20.3774 48.3978 20.4441 48.8421 21.1105 48.8421C21.7659 48.8421 21.8325 48.4089 21.8325 47.7202V38.9785C21.8325 38.2232 21.8325 37.8011 21.1327 37.8011C20.3996 37.8011 20.3774 38.212 20.3774 39.0007Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M27.4558 50.2861V36.4015C27.4558 35.5684 27.7668 35.2019 28.5332 35.2019H34.798C35.209 35.2019 35.5422 35.5573 35.5422 35.9683V38.2454C35.5422 38.6675 35.209 39.0118 34.798 39.0118H31.7989V41.9665H34.4648C34.8757 41.9665 35.209 42.3219 35.209 42.7329V44.7878C35.209 45.2099 34.8757 45.532 34.4648 45.532H31.7989V50.0862C31.7989 50.5416 31.5545 51.4413 30.6437 51.4413H28.4999C27.7668 51.4413 27.4558 51.0748 27.4558 50.2861Z"
+                                    fill="#370F1E" />
+                                <path
+                                    d="M36.4374 50.2861V36.4015C36.4374 35.5684 36.7484 35.2019 37.5149 35.2019H43.7796C44.1906 35.2019 44.5238 35.5573 44.5238 35.9683V38.2454C44.5238 38.6675 44.1906 39.0118 43.7796 39.0118H40.7805V41.9665H43.4464C43.8574 41.9665 44.1906 42.3219 44.1906 42.7329V44.7878C44.1906 45.2099 43.8574 45.532 43.4464 45.532H40.7805V50.0862C40.7805 50.5416 40.5362 51.4413 39.6253 51.4413H37.4815C36.7484 51.4413 36.4374 51.0748 36.4374 50.2861Z"
+                                    fill="#370F1E" />
+                            </svg> -->
                         </div>
-                    </ShopButton>
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                            class="h-[117px] !py-[3.5rem] w-[230px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between -mt-1">
+                            <div class="flex flex-row items-start justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_198_1730)">
+                                        <path
+                                            d="M1.96958 3.26134C1.36661 3.26134 0.87793 2.70732 0.87793 2.02374C0.87793 1.34015 1.36661 0.786133 1.96958 0.786133H7.64197C8.16743 0.786133 8.60619 1.2076 8.70997 1.76758L9.56122 5.37167H41.5804C42.1833 5.37167 42.672 5.92569 42.672 6.60928C42.672 6.70459 42.6628 6.79693 42.6444 6.88629L41.2467 16.1333C41.2414 16.1795 41.2349 16.2242 41.2257 16.2688L39.8188 25.5799C39.7281 26.1831 39.267 26.609 38.7442 26.6075H14.5807L15.4924 30.4633H37.5816C38.1846 30.4633 38.6732 31.0173 38.6732 31.7009C38.6732 32.3845 38.1846 32.9385 37.5816 32.9385H14.6556C14.1735 32.9385 13.7334 32.5722 13.602 32.0196L12.1215 25.7557C12.1097 25.714 12.0992 25.6708 12.0913 25.6261L10.8039 20.1797L9.90409 16.3731C9.89226 16.3314 9.88176 16.2897 9.87387 16.2465L7.67087 6.9265V6.92352L6.80516 3.25836H1.96958V3.26134ZM33.7102 36.4369C33.2623 36.4369 32.859 36.6424 32.566 36.9745C32.2731 37.3066 32.0918 37.7653 32.0918 38.2717C32.0918 38.7781 32.2731 39.2368 32.566 39.5689C32.859 39.901 33.2636 40.1065 33.7102 40.1065C34.1569 40.1065 34.5615 39.901 34.8544 39.5689C35.1474 39.2368 35.3287 38.7781 35.3287 38.2717C35.3287 37.7653 35.1474 37.3066 34.8544 36.9745C34.5615 36.6424 34.1569 36.4369 33.7102 36.4369ZM31.0225 35.2231C31.7108 34.4427 32.6606 33.9602 33.7102 33.9602C34.7598 33.9602 35.7096 34.4427 36.398 35.2231C37.0863 36.0035 37.512 37.0803 37.512 38.2702C37.512 39.4602 37.0863 40.5369 36.398 41.3173C35.7096 42.0977 34.7598 42.5802 33.7102 42.5802C32.6606 42.5802 31.7108 42.0977 31.0225 41.3173C30.3341 40.5369 29.9085 39.4602 29.9085 38.2702C29.9085 37.0803 30.3341 36.0035 31.0225 35.2231ZM19.4649 36.4369C19.0183 36.4369 18.6137 36.6424 18.3207 36.9745C18.0291 37.3066 17.8465 37.7653 17.8465 38.2717C17.8465 38.7781 18.0278 39.2368 18.3207 39.5689C18.6137 39.901 19.0183 40.1065 19.4649 40.1065C19.9116 40.1065 20.3162 39.901 20.6091 39.5689C20.902 39.2368 21.0833 38.7781 21.0833 38.2717C21.0833 37.7653 20.902 37.3066 20.6091 36.9745C20.3162 36.6424 19.9116 36.4369 19.4649 36.4369ZM16.7772 35.2231C17.4655 34.4427 18.4153 33.9602 19.4649 33.9602C20.5145 33.9602 21.4643 34.4427 22.1527 35.2231C22.841 36.0035 23.2666 37.0803 23.2666 38.2702C23.2666 39.4602 22.841 40.5369 22.1527 41.3173C21.4643 42.0977 20.5145 42.5802 19.4649 42.5802C18.4153 42.5802 17.4655 42.0977 16.7772 41.3173C16.0888 40.5369 15.6632 39.4602 15.6632 38.2702C15.6632 37.0803 16.0888 36.002 16.7772 35.2231ZM38.8703 17.228H32.1759L31.7581 24.1338H37.8272L38.8703 17.228ZM29.9913 17.228H20.6827L21.3356 24.1338H29.5735L29.9913 17.228ZM18.4915 17.228H12.3659L13.9988 24.1338H19.1457L18.4928 17.228H18.4915ZM11.78 14.7527H18.2563L17.6034 7.84688H10.1471L11.78 14.7527ZM20.4475 14.7527H30.1397L30.5574 7.84688H19.7946L20.4475 14.7527ZM32.3243 14.7527H39.2434L40.2864 7.84688H32.7408L32.323 14.7527H32.3243Z"
+                                            fill="#370F1E" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_198_1730">
+                                            <rect width="41.7941" height="41.7941" fill="white"
+                                                transform="translate(0.87793 0.786133)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div class="flex flex-row items-center justify-end w-full">
+                                    <span
+                                        class="font-DMSans text-[#370F1E] leading-[1.2] font-black text-[32px] text-start ml-3">Buy
+                                        6 <br><span class="font-gelasio italic font-bold text-[28px]  ">$29</span><span
+                                            class="font-gelasio font-thin italic"> each</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </ShopButton>
+                    </div>                    
                 </div>
                 <div
                     class="w-[570px] h-[178px] flex bg-[#96E3DF] rounded-[30px] flex-row items-center justify-center gap-8 mt-5">
