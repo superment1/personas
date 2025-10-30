@@ -102,15 +102,19 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                     <div  class="absolute z-20 right-[56px] sm:right-[95px] sm:top-[165px] top-[97px] w-[66px] items-center h-32 lg:w-[116px] lg:h-[226px]">
                         <div class="w-16 h-32 lg:w-[116px] lg:h-[226px] left-0 top-0 absolute bg-white lg:rounded-lg rounded-[8px]"></div>
                         <div class="w-[60px] h-[63px] lg:w-[111px] lg:h-[111px] left-[2px] top-[63px] lg:top-[112px] absolute bg-[#FFDC03] rounded-[6px]"></div>
-                        <div class="left-[9.91px]  lg:left-[13px] top-[6.11px]  lg:top-[18px] absolute justify-start text-[#4DBCB6] text-xs lg:text-[21px] font-black font-['Crossfit'] leading-3">FROM</div>
-                        <div class="left-[11.21px] lg:left-[13px] top-[70px] lg:top-[130px] absolute justify-start text-rose-950 text-xs lg:text-[21px] font-black font-['Crossfit'] leading-3">NOW</div>
-                        <div class="left-[10.69px] lg:left-[13px] top-[50px] lg:top-[90px] absolute font-gelasio italic justify-start text-[#4DBCB6] lg:text-[17px] text-[9.69px] font-normal leading-[9.88px]">one bottle</div>
-                        <div class="left-[11.21px] lg:left-[13px] top-[110px] lg:top-[200px] absolute font-gelasio italic justify-start text-rose-950 text-[9.69px] lg:text-[17px] font-normal leading-[9.88px]">one bottle</div>
-                        <div class="left-[10.29px] lg:left-[13px] top-[18px] lg:top-[45px] absolute justify-start text-[#4DBCB6] text-3xl lg:text-[54px] font-black font-['Crossfit'] leading-8">{{priceOld}}</div>
-                        <div class="left-[10.29px] lg:left-[13px] top-[79px] lg:top-[155px] absolute justify-start text-rose-950 text-3xl lg:text-[54px] font-black font-['Crossfit'] leading-8">{{price}}</div>
+                        <div class="left-[10px]  lg:left-[13px] top-[6.11px]  lg:top-[18px] absolute justify-start text-[#4DBCB6] text-xs lg:text-[21px] font-black font-['Crossfit'] leading-3">FROM</div>
+                        <div class="left-[10px] lg:left-[13px] top-[70px] lg:top-[130px] absolute justify-start text-rose-950 text-xs lg:text-[21px] font-black font-['Crossfit'] leading-3">NOW</div>
+                        <div class="left-[10px] lg:left-[13px] top-[47px] lg:top-[90px] absolute font-gelasio italic justify-start text-[#4DBCB6] lg:text-[17px] text-[9.69px] font-normal leading-[9.88px]">one bottle</div>
+                        <div class="left-[10px] lg:left-[13px] top-[110px] lg:top-[200px] absolute font-gelasio italic justify-start text-rose-950 text-[9.69px] lg:text-[17px] font-normal leading-[9.88px]">one bottle</div>
+                        <div class="left-[10px] lg:left-[13px] top-[16px] lg:top-[45px] absolute
+         justify-start text-[#4DBCB6] text-3xl lg:text-[54px]
+         font-black font-['Crossfit'] leading-8 inline-block
+         after:content-[''] after:absolute after:left-[-5px] after:top-1/2
+         after:w-[115%] after:h-[1px] after:bg-[#370F1E] after:rotate-[24deg] after:translate-y-[-50%]">{{priceOld}}</div>
+                        <div class="left-[10px] lg:left-[13px] top-[79px] lg:top-[155px] absolute justify-start text-rose-950 text-3xl lg:text-[54px] font-black font-['Crossfit'] leading-8">{{price}}</div>
                     </div>                
-                    <div v-if="!isUSorCA" class="absolute top-[135px] right-[20px] z-30">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
+                    <div v-if="!isUSorCA" class="absolute <>USA top-[135px] right-[20px] lg:top-[240px] lg:right-[32px] z-30">
+                        <svg class="lg:w-[82px] h-auto" xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
                             <circle cx="23.3307" cy="23.3307" r="23.3307" fill="#E1DCCD"/>
                             <path d="M23.3311 3.80127C34.1167 3.80138 42.8604 12.5449 42.8604 23.3306C42.8602 34.1161 34.1166 42.8598 23.3311 42.8599C12.5454 42.8599 3.80187 34.1162 3.80176 23.3306C3.80176 12.5448 12.5453 3.80127 23.3311 3.80127Z" stroke="#370F1E" stroke-width="2.00353"/>
                             <path d="M11.4065 12.9055C11.398 12.4289 11.5768 12.2757 11.8746 12.0799L13.6024 10.9139C14.2492 10.4969 14.4024 10.3692 15.1003 10.3692C16.1131 10.3692 16.3684 10.5905 16.3684 11.2969V21.7739C16.3684 22.4803 16.1727 22.8123 15.4833 22.8123H13.8407C13.2109 22.8123 13.0407 22.4633 13.0407 21.6888V13.4757L11.9768 13.4927C11.5768 13.5012 11.4065 13.297 11.4065 12.9055Z" fill="#370F1E"/>
@@ -121,8 +125,8 @@ const emit = defineEmits<{ (e: 'expired'): void }>()
                             <path d="M26.2378 34.6383V24.7227C26.2378 24.1278 26.4599 23.866 27.0073 23.866H31.4812C31.7747 23.866 32.0126 24.1198 32.0126 24.4133V26.0395C32.0126 26.3409 31.7747 26.5868 31.4812 26.5868H29.3394V28.6969H31.2432C31.5367 28.6969 31.7747 28.9507 31.7747 29.2442V30.7117C31.7747 31.0131 31.5367 31.2432 31.2432 31.2432H29.3394V34.4955C29.3394 34.8207 29.1649 35.4632 28.5144 35.4632H26.9835C26.4599 35.4632 26.2378 35.2015 26.2378 34.6383Z" fill="#370F1E"/>
                         </svg>
                     </div>
-                    <div v-else class=" absolute top-[135px] right-[20px] z-30">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
+                    <div v-else class=" absolute top-[135px] right-[20px] lg:top-[243px] lg:right-[58px] z-30">
+                        <svg class="lg:w-[82px] h-auto" xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
                             <circle cx="23.3307" cy="23.3307" r="23.3307" fill="#E1DCCD"/>
                             <path d="M23.3311 3.80127C34.1167 3.80138 42.8604 12.5449 42.8604 23.3306C42.8602 34.1161 34.1166 42.8598 23.3311 42.8599C12.5454 42.8599 3.80187 34.1162 3.80176 23.3306C3.80176 12.5448 12.5453 3.80127 23.3311 3.80127Z" stroke="#370F1E" stroke-width="2.00353"/>
                             <path d="M11.4065 12.9054C11.398 12.4288 11.5768 12.2756 11.8746 12.0798L13.6024 10.9138C14.2492 10.4968 14.4024 10.3691 15.1003 10.3691C16.1131 10.3691 16.3684 10.5904 16.3684 11.2968V21.7739C16.3684 22.4803 16.1727 22.8122 15.4833 22.8122H13.8407C13.2109 22.8122 13.0407 22.4633 13.0407 21.6888V13.4757L11.9768 13.4927C11.5768 13.5012 11.4065 13.2969 11.4065 12.9054Z" fill="#370F1E"/>
