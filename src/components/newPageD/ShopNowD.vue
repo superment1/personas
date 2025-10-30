@@ -5,8 +5,8 @@ import ShopButton from '../ShopButton.vue';
 
 const faqs = ref([
     {
-        question: 'Why Super Nerve Relax',
-        answer: 'Super Nerve Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
+        question: 'Why Super Relax',
+        answer: 'Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.',
         open: true
     },
     {
@@ -46,7 +46,7 @@ const props = defineProps({
     <div class="bg-[#4DBCB6] w-full h-full flex flex-col items-center justify-start py-6 pb-10 lg:py-[95px]">
         <p
             class="text-[#FFF] text-center font-crossfit text-[32px] md:text-[46px] font-bold leading-[1] lg:text-[60px]">
-            Get Your <br class="block lg:hidden">Super Nerve Relax Now.</p>
+            Get Your <br class="block lg:hidden">Super Relax Now.</p>
         <div class="flex flex-col items-center justify-center gap-y-0 mt-1">
             <svg class="block md:hidden" xmlns="http://www.w3.org/2000/svg" width="79" height="20" viewBox="0 0 79 20"
                 fill="none">

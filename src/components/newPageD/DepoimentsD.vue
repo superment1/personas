@@ -5,7 +5,7 @@ import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 const props = defineProps({
     primary: {
         type: String,
-        default: "Why People Love Super Nerve Relax."
+        default: "Why People Love Super Relax."
     },
     subtitle: {
         type: String,

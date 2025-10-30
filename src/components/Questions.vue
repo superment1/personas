@@ -30,7 +30,7 @@ const anchorId = 'shop-relax'
       </li>
     </ul>
     <div v-if="showCta" class="flex mt-6 lg:mt-[60px] w-full lg:w-[650px]  justify-center">
-      <ShopButton paymentLink="/relax" title="Try Super Nerve Relax Risk-Free" textColorClass="text-[#370F1E]"
+      <ShopButton paymentLink="/relax" title="Try Super Relax Risk-Free" textColorClass="text-[#370F1E]"
         iconColorClass="text-[#370F1E]"
         :custom-class="'bg-[#FFDC03] lg:h-[100px] shadow-lg lg:text-[33px] font-bold w-full gap-2 mx-0'" />
     </div>

@@ -44,7 +44,7 @@ const props = defineProps({
       },
       {
         question: 'Are there any side effects?',
-        answer: 'Super Nerve Relax is well-tolerated and free from synthetic additives or harsh sedatives. Still, if you have a medical condition or take other medications, check with your doctor before starting any supplement.',
+        answer: 'Super Relax is well-tolerated and free from synthetic additives or harsh sedatives. Still, if you have a medical condition or take other medications, check with your doctor before starting any supplement.',
         open: false
       }
     ]

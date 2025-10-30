@@ -203,6 +203,14 @@ const testimonials = [
     city: 'Brooklyn, NY'
   },
   {
+    avatarDesk: '/assets/dep9desk.webp',
+    avatarMobile: '/assets/dep9.webp',
+    title: 'Anxiety ruled my mornings.',
+    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
+    name: 'Laura M., 45',
+    city: 'Chicago, IL'
+  },
+  {
     avatarDesk: '',
     avatarMobile: '',
     title: 'Anxiety ruled my mornings.',
@@ -714,10 +722,10 @@ const testimonials = [
               class="font-sans text-sm leading-none font-thin">®</sub></span>
         </div>
         <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">
-         © Super Nerve Relax Research 2025. <br>All Rights Reserved.
+         © Super Relax Research 2025. <br>All Rights Reserved.
         </p>
         <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
-          Super Nerve Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Nerve Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
+          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
         </p>
       </div>
     </div>
