@@ -95,8 +95,8 @@ function onScroll() {
   lastScrollT = t
 }
 
-const country = ref<'US'|'UK'|'CA'>('US')
-const ready   = ref(false)
+const country = ref<'US' | 'UK' | 'CA'>('US')
+const ready = ref(false)
 
 const PRICE_MAP = {
   combo3Each: { US: '$39', UK: '£35', CA: '$59' },
@@ -172,53 +172,53 @@ onBeforeUnmount(() => {
   disableBackExitGuard()
 })
 const faqItems = [
-      {
-        question: 'What is Super Relax?',
-        answer: `Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
-        open: true
-      },
-      {
-        question: 'What are the ingredients?',
-        answer: `The formula combines 5 science-backed botanicals:
+  {
+    question: 'What is Super Relax?',
+    answer: `Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
+    open: true
+  },
+  {
+    question: 'What are the ingredients?',
+    answer: `The formula combines 5 science-backed botanicals:
 
 • Passionflower – Calms a restless mind so you can slow down and find peace.
 • California Poppy – Relaxes the body and supports restorative sleep without sedation.
 • Corydalis – Helps ease physical tension and nighttime nerve discomfort.
 • Prickly Pear – Supports healthy stress response for deeper rest and recovery.
 • Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`,
-        open: false
-      },
-      {
-        question: 'Is Super Relax safe?',
-        answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
-        open: false
-      },
-      {
-        question: 'How do I take it?',
-        answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
-        open: false
-      },
-      {
-        question: 'How long does shipping take?',
-        answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
-        open: false
-      },
-      {
-        question: 'How can I reach you if I have questions?',
-        answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
-        open: false
-      },
-      {
-        question: 'What if I’m not satisfied?',
-        answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
-        open: false
-      },
-      {
-        question: 'Are there any side effects?',
-        answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
-        open: false
-      }
-    ]
+    open: false
+  },
+  {
+    question: 'Is Super Relax safe?',
+    answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
+    open: false
+  },
+  {
+    question: 'How do I take it?',
+    answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
+    open: false
+  },
+  {
+    question: 'How long does shipping take?',
+    answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
+    open: false
+  },
+  {
+    question: 'How can I reach you if I have questions?',
+    answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
+    open: false
+  },
+  {
+    question: 'What if I’m not satisfied?',
+    answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
+    open: false
+  },
+  {
+    question: 'Are there any side effects?',
+    answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
+    open: false
+  }
+]
 
 </script>
 
@@ -237,17 +237,18 @@ const faqItems = [
     'GMP-Certified Facility',
   ]" />
   <section class="firtsection bg-[#50b5b2]">
-    <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
+    <div class="relative z-0 min-h-[624px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
         <source media="(min-width:764px)" srcset="/assets/desk_hero_relax1.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
-          fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
+        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero"
+          loading="eager" fetchpriority="high" decoding="async"
+          class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
 
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
         <div class="px-[50px]">
-          <div class="text-[#370F1E] gap-[137px] lg:gap-[20px] flex flex-col">
-            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful
+          <div class="text-[#370F1E] gap-0 lg:gap-[20px] flex flex-col">
+            <h1 class="italic block sm:hidden font-gelasio mt-[38px] text-[13px] leading-[15px] font-bold">A Powerful
               Plant-Based
               <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
 
@@ -256,7 +257,7 @@ const faqItems = [
               <br>Plant-Based
               Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span>
             </h1>
-            <div class="font-gelasio">
+            <div class="font-gelasio mt-[150px] lg:mt-[0px]">
               <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" width="69" height="17" viewBox="0 0 69 17"
                 fill="none">
                 <g filter="url(#filter0_d_155_121)">
@@ -480,7 +481,6 @@ const faqItems = [
               class="w-[260px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
               <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
                 <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
-
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -505,8 +505,8 @@ const faqItems = [
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
               <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
-                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="25" height="43"
-                  viewBox="0 0 33 48" fill="none">
+                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg"
+                  width="25" height="43" viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
                     fill="#370F1E" />
@@ -551,17 +551,18 @@ const faqItems = [
   </section>
   <section class="bg-[#370F1E] relative">
     <div class="px-[40px] lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
-      <h1 class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[30px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
-        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span>  and Wired by Night.
+      <h1
+        class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[30px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
+        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span> and Wired by Night.
       </h1>
       <img src="/assets/why_exhausted1.webp" class="lg:hidden" loading="lazy" alt="exhausted-2">
       <img src="/assets/why_exhausted_desk.webp" class="hidden lg:flex mb-[50px]" loading="lazy" alt="exhausted-2">
       <div>
-        <CarouselImage/>
+        <CarouselImage />
       </div>
       <div class="pt-[26px] lg:pt-[80px] pb-[36px]">
-        <img src="/assets/data_mobile.webp" class="lg:hidden"  loading="lazy" alt="data-2">
-        <img src="/assets/data_desk_relax.webp" class="hidden lg:flex"  loading="lazy" alt="data-2">
+        <img src="/assets/data_mobile.webp" class="lg:hidden" loading="lazy" alt="data-2">
+        <img src="/assets/data_desk_relax.webp" class="hidden lg:flex" loading="lazy" alt="data-2">
       </div>
     </div>
   </section>
@@ -621,12 +622,13 @@ const faqItems = [
       </LazyIsland>
     </div>
   </section>
-  <DepoimentsD  
-  subtitle="4.9/5 (460+ Reviews) | 98% Recommend"/>
+  <DepoimentsD subtitle="4.9/5 (460+ Reviews) | 98% Recommend" />
   <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
-      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super Relax:</span></p>
+      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
+          Relax:</span></p>
+      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
+          Relax:</span></p>
     </div>
     <div class="flex flex-col pt-[14px]">
       <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
@@ -651,15 +653,8 @@ const faqItems = [
       </div>
     </div>
   </section>
-  <ShopNowD 
-    id="shop-now-d"
-    :ready="ready"
-    :bottle="images.bottle"
-    :combo3="images.combo3"
-    :combo6="images.combo6"
-    :price3="prices.price3"
-    :price6="prices.price6"
-    />
+  <ShopNowD id="shop-now-d" :ready="ready" :bottle="images.bottle" :combo3="images.combo3" :combo6="images.combo6"
+    :price3="prices.price3" :price6="prices.price6" />
 
   <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
     <div class="lg:hidden">
@@ -681,8 +676,8 @@ const faqItems = [
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03] w-auto lg:h-[54px]"
-          textColorClass="text-[#FFDC03]" :showIcon="true"
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId"
+          iconColorClass="text-[#FFDC03] w-auto lg:h-[54px]" textColorClass="text-[#FFDC03]" :showIcon="true"
           class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
           Get Calm, Clarity & Rest Now
         </ShopButton>
@@ -700,15 +695,15 @@ const faqItems = [
         <h1
           class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold font-crossfit">
           Frequently asked questions:</h1>
-          <div class="faq-wrap">
-            <FAQ :asks="faqItems" />
-          </div>
+        <div class="faq-wrap">
+          <FAQ :asks="faqItems" />
+        </div>
       </div>
     </div>
   </div>
   <div class="bg-[#350e1d] w-full">
     <div class="max-w-[330px] sm:max-w-[950px] mx-auto">
-    <SuperFooter2 />
+      <SuperFooter2 />
     </div>
   </div>
   <LazyIsland>

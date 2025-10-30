@@ -34,12 +34,12 @@ function toggle(index) {
 }
 
 const props = defineProps({
-    ready: { type: Boolean, default: false }, 
+    ready: { type: Boolean, default: false },
     bottle: { type: String, default: '/assets/NN1sleep.webp' },
-    combo3:  { type: String, default: '/assets/nn2Sleep.webp' },
-    combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
-    price3: { type: String, default: '$39'},
-    price6: { type: String, default: '$29'},
+    combo3: { type: String, default: '/assets/nn2Sleep.webp' },
+    combo6: { type: String, default: '/assets/nn3Sleep.webp' },
+    price3: { type: String, default: '$39' },
+    price6: { type: String, default: '$29' },
 })
 </script>
 <template>
@@ -411,10 +411,9 @@ const props = defineProps({
             <!-- FRASCOS PEQUENOS -->
             <div class="w-[351px] md:w-[420px] h-full rounded-[30px] grid grid-cols-2 gap-2 md:gap-5 mt-4">
                 <div
-                    class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">                    
+                    class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
                     <div class="w-[170px] h-[233px] flex flex-col items-center pb-[14px]">
-                         <img :src=combo3 alt="bagde"
-                            class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
+                        <img :src=combo3 alt="bagde" class="w-[200px] sm:w-[210px] sm:h-auto xl:w-[400px] xl:h-auto">
                         <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jOmiPYB2SrZd"
                             class="!h-[66px] relative top-[-75px] !py-[30px] w-[145px] md:w-[175px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[20px] justify-between ">
                             <div class="flex flex-row items-start justify-end">
@@ -435,9 +434,8 @@ const props = defineProps({
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] md:text-[21px] text-start ml-3">Buy
-                                        3 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]">{{ price3 }}</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                        3 <br><span class="font-gelasio italic font-bold text-[17px] md:text-[19px]">{{
+                                            price3 }}</span><span class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
                             </div>
@@ -446,11 +444,9 @@ const props = defineProps({
                 </div>
                 <div
                     class="w-[170px] h-[233px] md:w-[200px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start ">
-                    <div
-                        class="w-[170px] h-[233px]  flex flex-col items-center pb-[14px]">                     
-                        <img :src=combo6 >
-                        <ShopButton textColorClass=" text-[#370F1E]" 
-                         :show-icon="false" productId="prod_T2jPp4I1S0cfol"
+                    <div class="w-[170px] h-[233px]  flex flex-col items-center pb-[14px]">
+                        <img :src=combo6>
+                        <ShopButton textColorClass=" text-[#370F1E]" :show-icon="false" productId="prod_T2jPp4I1S0cfol"
                             class="h-[66px] relative top-[-75px] !py-[30px] w-[145px] md:w-[175px] shadow-md !rounded-[20px] bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] justify-betwee">
                             <div class="flex flex-row items-start justify-end">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 28 27"
@@ -470,9 +466,8 @@ const props = defineProps({
                                 <div class="flex flex-row items-center justify-end w-full">
                                     <span
                                         class="font-DMSans text-[#370F1E] leading-[1.2] font-bold text-[19px] md:text-[21px] text-start ml-3">Buy
-                                        6 <br><span
-                                            class="font-gelasio italic font-bold text-[17px] md:text-[19px]"> {{ price6 }}</span><span
-                                            class="font-gelasio font-thin italic"> each</span>
+                                        6 <br><span class="font-gelasio italic font-bold text-[17px] md:text-[19px]"> {{
+                                            price6 }}</span><span class="font-gelasio font-thin italic"> each</span>
                                     </span>
                                 </div>
                             </div>
@@ -487,8 +482,7 @@ const props = defineProps({
             <!-- FRASCO GRANDE -->
             <div
                 class="w-[600px] h-[619px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start pb-[34px] pt-[37px]">
-                <div
-                    class="relative w-[565px] flex items-center justify-between">
+                <div class="relative w-[565px] flex items-center justify-between">
                     <img :src="bottle">
                     <!-- <svg class="absolute top-[115px] right-[350px]" xmlns="http://www.w3.org/2000/svg" width="140"
                         height="140" viewBox="0 0 127 127" fill="none">
@@ -615,8 +609,7 @@ const props = defineProps({
             <div class="w-[570px] h-full rounded-[30px] grid grid-cols-2 gap-x-2 gap-y-1">
                 <div class="w-[270px] h-[413px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                     <div class="relative w-[272px] h-[285px] overflow-hidden">
-                        <img :src="combo3" alt="frasco-3"
-                            class=" pointer-events-none" />
+                        <img :src="combo3" alt="frasco-3" class=" pointer-events-none" />
                         <!-- <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
                             height="77" viewBox="0 0 67 67" fill="none">
                             <circle cx="33.0686" cy="33.0686" r="33.0686" fill="#E1DCCD" />
@@ -669,7 +662,8 @@ const props = defineProps({
                     </ShopButton>
                 </div>
                 <div class="w-[270px] h-[412px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
-                    <div class="w-[270px] h-[413px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
+                    <div
+                        class="w-[270px] h-[413px] bg-[#96E3DF] rounded-[30px] flex flex-col items-center justify-start">
                         <div class="relative w-[272px] h-[285px] overflow-hidden">
                             <img :src="combo6" alt="frasco-6">
                             <!-- <svg class="absolute top-[150px] left-[185px]" xmlns="http://www.w3.org/2000/svg" width="77"
@@ -722,7 +716,7 @@ const props = defineProps({
                                 </div>
                             </div>
                         </ShopButton>
-                    </div>                    
+                    </div>
                 </div>
                 <div
                     class="w-[570px] h-[178px] flex bg-[#96E3DF] rounded-[30px] flex-row items-center justify-center gap-8 mt-5">
