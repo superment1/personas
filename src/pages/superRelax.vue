@@ -669,7 +669,7 @@ const faqItems = [
   </section>
   <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
     <div class="justify-self-center max-w-[950px]">
-      <img class="justify-self-center lg:hidden" src="/assets/super_nerve.webp" alt="" loading="lazy">
+      <img class="justify-self-center lg:hidden h-[264px]" src="/assets/super_nerve.webp" alt="" loading="lazy">
       <img class="justify-self-center hidden lg:block" src="/assets/super_nerve_desk.webp" alt="" loading="lazy">
       <div>
         <p
