@@ -6,8 +6,8 @@ const props = defineProps({
     type: Array,
     default: () => [
       {
-        question: 'What is Super Relax?',
-        answer: `Super Relax is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.`,
+        question: 'What is Super?',
+        answer: `Super is a natural, plant-based supplement that helps restore nervous system balance — easing stress and anxiety during the day, supporting focus and mood, relieving pain and inflammation, and promoting deep, restorative sleep at night.`,
         open: true
       },
       {
@@ -16,7 +16,7 @@ const props = defineProps({
         open: false
       },
       {
-        question: 'Is Super Relax safe?',
+        question: 'Is Super safe?',
         answer: 'Yes. It’s 100% plant-based, non-habit forming, and made in the USA in FDA-registered, GMP-certified labs. No sedation, no dependency, no morning fog.',
         open: false
       },

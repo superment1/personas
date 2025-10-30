@@ -38,6 +38,7 @@ const v2 = ref(null)
 function prev() { currentIndex.value = (currentIndex.value - step.value + len) % len }
 function next() { currentIndex.value = (currentIndex.value + step.value) % len }
 
+
 function safePlay(el: HTMLVideoElement | null) {
   if (!el) return
   el.muted = true
@@ -48,29 +49,23 @@ function safePlay(el: HTMLVideoElement | null) {
   if (el.readyState >= 2) {
     doPlay()
   } else {
-    const onCanPlay = () => { doPlay(); el.removeEventListener('canplay', onCanPlay) }
-    el.addEventListener('canplay', onCanPlay, { once: true })
+    const onCanPlay = () => { 
+      doPlay(); 
+      el.removeEventListener('canplay', onCanPlay) }
+      el.addEventListener('canplay', onCanPlay, { once: true })
   }
 }
-
 function pauseAll() {
   ;[vm.value, v0.value, v1.value, v2.value].forEach((el) => {
     try { el?.pause() } catch {}
   })
 }
-
-
 function playVisible() {
-  // tenta dar play nos vídeos visíveis
-  const els = [vm.value, v0.value, v1.value, v2.value]
-  for (const el of els) {
-    if (el && el.tagName === 'VIDEO') {
-      el.play().catch(() => { })
-    }
-  }
+  const els = [vm.value, v0.value, v1.value, v2.value] as (HTMLVideoElement|null)[]
+  for (const el of els) safePlay(el)  
 }
 watch(currentIndex, () => {
-  // dá um microtempo para trocar DOM
+  pauseAll()
   setTimeout(playVisible, 60)
 })
 onMounted(() => {
@@ -106,6 +101,7 @@ onBeforeUnmount(() => window.removeEventListener('resize', updStep))
           <video ref="vm" :src="items[i0].url" 
           muted
           playsinline
+          webkit-playsinline
           autoplay
           loop
           preload="metadata"

@@ -3,7 +3,7 @@
 
   const links = [
     { label: 'About Us', href: '/about' },
-    { label: 'FAQ', href: '/faq' },
+    // { label: 'FAQ', href: '/faq' },
     { label: 'Terms of Service', href: '/terms' },
     { label: 'Refund Policy', href: '/refundpolicy' },
     { label: 'Privacy Policy', href: '/privacypolicy'}

@@ -16,7 +16,7 @@ const testimonials = [
     avatarDesk: new URL('../assets/image/newPageD/ligiani-desk.png', import.meta.url).href,
     avatarMobile: new URL('../assets/image/newPageD/ligiani.png', import.meta.url).href,
     title: 'Stress Relief',
-    testimonial: 'I’d come home tense and tired from work, and still unable to relax. With Super Relax, I actually relax, and sleep comes easily.',
+    testimonial: 'I’d come home tense and tired from work, and still unable to relax. With Super  Relax, I actually relax, and sleep comes easily.',
     name: 'Ligiani G., 44',
     city: 'Boston, MA'
   },
@@ -32,7 +32,7 @@ const testimonials = [
     avatarDesk: new URL('@/assets/image/newPageD/eliseu-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/eliseu.png', import.meta.url).href,
     title: 'Calm & Clarity',
-    testimonial: 'I used to wake up already anxious, and spend the whole day feeling tense and on edge. Since taking Super Relax, I feel calmer, more patient, and way more in control of my reactions — even when things get chaotic.',
+    testimonial: 'I used to wake up already anxious, and spend the whole day feeling tense and on edge. Since taking Super  Relax, I feel calmer, more patient, and way more in control of my reactions — even when things get chaotic.',
     name: 'Eliseu C., 40',
     city: 'Fort Lauderdale, FL'
   },
@@ -40,7 +40,7 @@ const testimonials = [
     avatarDesk: new URL('@/assets/image/newPageD/bruna-desk.png', import.meta.url).href,
     avatarMobile: new URL('@/assets/image/newPageD/bruna.png', import.meta.url).href,
     title: 'No More Burnout Fog',
-    testimonial: 'I’ve tried meds to calm down before, but they either made me numb or completely drained the next day. With Super Relax, I stay clear-headed, sleep deeply, and still wake up myself — just less overwhelmed.',
+    testimonial: 'I’ve tried meds to calm down before, but they either made me numb or completely drained the next day. With Super  Relax, I stay clear-headed, sleep deeply, and still wake up myself — just less overwhelmed.',
     name: 'Bruna R., 38',
     city: 'New York, NY'
   },
@@ -78,7 +78,7 @@ const imgSrc = "/assets/depo.webp"
   <section class="px-[35px] pt-[25px] lg:pt-[60px] max-w-[950px] mx-auto">
     <div>
       <h1 class="text-[20px] lg:text-[50px] leading-[1] lg:leading-[1.1] font-bold font-gelasio italic text-[#370F1E]">
-        7 Reasons Why I Quit Anxiety Meds for a Natural Way to<br><span class="text-[#4DBCB6]"> Sleep Deep and Stay Calm</span></h1>
+        7 Reasons Why I Quit Anxiety Meds for a Natural Way to<br><span class="text-[#4DBCB6]"> Sleep Deep and Stay Calm.</span></h1>
     </div>
     <div class="flex font-gelasio gap-2 items-center pt-[20px] lg:pt-[26px] pb-[24px] lg:pb-[60px] italic border-b">
       <div class="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-1 ring-black/10">
@@ -100,25 +100,25 @@ const imgSrc = "/assets/depo.webp"
         <p class="font-normal text-[7px]  lg:text-[16px]">Last updated Sep. 24, 2025</p>
       </div>
     </div>
-    <img class="pt-[23px] lg:hidden" src="/assets/tabelaAdv.webp" alt="table">
-    <img class="pt-[60px] hidden lg:block" src="/assets/tabelaAdv.webp" alt="table">
+    <img class="pt-[23px] lg:hidden" src="/assets/tabelaAdv1.webp" alt="table">
+    <img class="pt-[60px] hidden lg:block" src="/assets/tabelaAdv2.webp" alt="table">
   </section>
   <section class="px-[35px] max-w-[950px] mx-auto pb-[30px] pt-[24px] lg:py-[60px]">
     <infoBlock 
     :items="[
       { 
         title: '1. Quiet anxiety and racing thoughts. ', 
-        subtitle: 'Stress keeps your body in constant high alert and your mind refuses to switch off. That’s why you lie awake replaying worries night after night. Super Relax, with Passionflower and Prickly Pear, gently calms the nervous system, eases anxiety, and helps you finally feel at peace.', 
+        subtitle: 'Stress keeps your body in constant high alert and your mind refuses to switch off. That’s why you lie awake replaying worries night after night. Super  Relax, with Passionflower and Prickly Pear, gently calms the nervous system, eases anxiety, and helps you finally feel at peace.', 
         image: '/assets/1.webp' 
       },
       { 
         title: '2. Fix the root cause, not just the symptoms.', 
-        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
+        subtitle: 'Prescription pills often sedate, create dependency, or leave you foggy the next day. Super  Relax goes deeper by calming an overstimulated nervous system, the real source of the problem. Because it is natural, gentle, and free from side effects, the calm, focus, and deep sleep it restores feel lasting and real.', 
         image: '/assets/6.webp'
       },
       { 
         title: '3. Restore energy and focus during \n the day.', 
-        subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
+        subtitle: 'When stress steals your nights, it also robs your days. You feel foggy, tired, and unable to concentrate. Super  Relax helps break that cycle, reducing exhaustion and restoring clarity, so you can move through the day with steady energy and a clear mind.', 
         image: '/assets/3.webp'
       },
       { 
@@ -128,7 +128,7 @@ const imgSrc = "/assets/depo.webp"
       },
       { 
         title: '5. Restore balance naturally and safely.', 
-        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you \ncan trust.', 
+        subtitle: 'Living in overdrive drains your patience, energy, and focus. Super Relax helps your system reset so calm and clarity return naturally. The formula is 100% plant-based, safe for daily use, and non-habit forming. No chemicals. No melatonin. No sedation. Just safe, natural relief you can trust.', 
         image: '/assets/5.webp'
       },
       { 
@@ -148,14 +148,14 @@ const imgSrc = "/assets/depo.webp"
   </section>
   <section id="shop-relax" class="bg-[#4DBCB6] flex flex-col items-center justify-items-center py-[29px]">
     <div class="px-[35px] justify-items-center">
-      <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] px-3 lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
+      <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
           Stress and Sleepless Nights End Here. Order Super Relax Today.
       </h1>
       <div class="lg:w-[607px] pt-[20px]"> 
         
         <div class="justify-items-center pb-[20px]">
-          <img class="lg:hidden" src="/assets/bottle-selo-adv.webp" alt="bottle">
-          <img class="hidden lg:block w-[607px]" src="/assets/bottle-selo-desk.webp" alt="bottle">
+          <img class="lg:hidden" src="/assets/botleAdv2.webp" alt="bottle">
+          <img class="hidden lg:block w-[607px]" src="/assets/botleAdv2Desk.webp" alt="bottle">
         </div>
       <ShopButton type="button" id="buy-button" paymentLink="/relax" textColorClass="text-[#370F1E]"
         :showIcon="false"

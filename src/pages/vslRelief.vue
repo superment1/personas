@@ -203,6 +203,14 @@ const testimonials = [
     city: 'Brooklyn, NY'
   },
   {
+    avatarDesk: '/assets/dep9desk.webp',
+    avatarMobile: '/assets/dep9.webp',
+    title: 'Anxiety ruled my mornings.',
+    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
+    name: 'Laura M., 45',
+    city: 'Chicago, IL'
+  },
+  {
     avatarDesk: '',
     avatarMobile: '',
     title: 'Anxiety ruled my mornings.',

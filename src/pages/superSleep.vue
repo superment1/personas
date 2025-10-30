@@ -12,12 +12,12 @@ import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
 import Ingredients from '../components/sleepSupermentComponents/Ingredients.vue';
 import { getValues } from '../composables/useCountry.js';
+import Faq from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
 const Frascos = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Frascos.vue'))
 const Stress = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Stress.vue'))
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
@@ -28,13 +28,9 @@ useSeo({
 })
 
 const anchorId = 'id-vsl-badges'
-
-// ===== Exit-intent / retenção (sem vídeo) =====
 const modalOpen = ref(false)
-
 const BACK_STATE = { exitGuard: true }
 let backGuardActive = false
-
 const values = reactive({
   diconunt:'',
   currentValue: '',
@@ -142,8 +138,49 @@ onBeforeUnmount(() => {
   disableBackExitGuard()
 })
 
+const asks = ref([
+  {
+    question: 'What exactly is Super Natural Sleep?',
+    answer: 'Super Natural Sleep is a plant-based nightly supplement built around the California Poppy — a golden flower once treasured by Native Californians for its calming properties. Combined with other carefully chosen botanicals, it helps quiet racing thoughts, relax the body, and support deep, restorative sleep.',
+    open: true
+  },
+  {
+    question: 'Will it knock me out the next morning?',
+    answer: 'No. Super Natural Sleep is not a sedative. It doesn’t “knock you out.” Instead, it helps your body remember how to rest naturally. You’ll fall asleep more peacefully, stay asleep longer, and wake up clear and refreshed — without the heavy, drugged feeling.',
+    open: false
+  },
+  {
+    question: 'Does it contain melatonin?',
+    answer: 'No. Super Natural Sleep is completely free of melatonin. Many people find melatonin leaves them groggy or disrupts their natural rhythms. Our formula is gentle, non-habit forming, and designed for calm, balanced rest.',
+    open: false
+  },
+  {
+    question: 'Is it safe to take every night?',
+    answer: 'Yes. Super Natural Sleep is 100% plant-based, non-habit forming, and gentle enough for nightly use. It’s produced in the USA in FDA-registered, GMP-compliant facilities for quality and safety.',
+    open: false
+  },
+  {
+    question: 'When will I start to notice results?',
+    answer: 'Some people feel calmer and sleep better after the very first night. For others, the effects build gradually over several days as the body restores its natural rhythm. We recommend giving the formula at least 2–3 weeks to fully experience its benefits',
+    open: false
+  },
+  {
+    question: 'What makes this different from sleep pills or over-the-counter aids?',
+    answer: 'Most pills rely on sedation, forcing you into sleep but stealing your clarity the next morning. Super Natural Sleep works with your body, calming the nervous system and quieting the mind — so your sleep is deep, natural, and restorative.',
+    open: false
+  },
+  {
+    question: 'Is there a guarantee?',
+    answer: 'Absolutely. Every order is backed by up to 120-day, money-back guarantee. Try Super Natural Sleep risk-free. If your nights aren’t calmer and your mornings brighter, simply return the unopened bottles and we’ll refund you.',
+    open: false
+  },
+  {
+    question: 'How do I take it?',
+    answer: 'Simply take 2 capsules with a glass of water about 30 minutes before bedtime. That’s it. Make it part of your nightly ritual, and let the California Poppy do the rest.',
+    open: false
+  },
+])
 </script>
-
 <template>
   <SuperHeader2 :show-redirect="false" />
   <section id="super-sleep-pequeno"
@@ -177,16 +214,13 @@ onBeforeUnmount(() => {
                 class="text-[#FFDC03]">SHOP
                 NOW</span>
             </div>
-
           </ShopButton>
           <div class="place-self-center">
             <span class="stripe justify-items-center">
               <img loading="lazy" alt="logo-stripe" src="/assets/stripelogo1.webp"></img>
             </span>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
@@ -224,7 +258,6 @@ onBeforeUnmount(() => {
           class="self-center md:bottom-[-7px] md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
-
   </section>
   <section class="non-habit-forming sm:gap-[44px]">
     <div class="description-forming">
@@ -237,7 +270,6 @@ onBeforeUnmount(() => {
         <img src="/assets/capsula-flores1-324.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
           decoding="async" class="image-forming" style="max-width:324px;height:auto" />
       </picture>
-
     </div>
   </section>
   <section class="lg:hidden">
@@ -287,7 +319,6 @@ onBeforeUnmount(() => {
     class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[35px] md:pt-[40px]">
     <div class="imagem-centralizada">
       <img src="../assets/image/sleepSuperment/moca.webp" loading="lazy" alt="Mulher com pílula" />
-
     </div>
     <div class="flex flex-col items-center justify-end h-[350px] mt-[30px]">
       <p class="w-[272px] font-crossfit font-bold text-[28px] text-center text-[#370F1E] leading-[1]">The numbers behind
@@ -331,7 +362,6 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </section>
-
   <section class="everyone">
     <p class="title">Why everyone is switching to Super Natural Sleep.</p>
     <picture>
@@ -362,11 +392,9 @@ onBeforeUnmount(() => {
           questions:</h1>
         <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
           Frequently asked questions:</h1>
-        <LazyIsland>
-          <div class="faq-wrap">
-            <FAQ />
-          </div>
-        </LazyIsland>
+        <div class="faq-wrap">
+          <Faq :asks="asks" />
+        </div>
       </div>
     </div>
   </div>

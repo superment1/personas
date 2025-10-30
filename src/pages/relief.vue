@@ -231,8 +231,8 @@ const asks = ref([
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:764px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_new1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
+        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax1.webp" type="image/webp">
+        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero" loading="eager"
           fetchpriority="high" decoding="async" class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
       <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
@@ -693,7 +693,7 @@ const asks = ref([
         </div>
       </div>     
       <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy"alt="bottle">
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottlenerve.webp" width="227" height="236" loading="lazy"alt="bottle">
         <div
           class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import '../styles/superSleep.scss';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, computed, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import FAQ from '../components/Faq.vue';
 import VslBadgesRelax from '../components/VslBadgesRelax.vue';
 import { useSeo } from '../composables/useSeo';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-
+import { detectCountry } from '../composables/useCountry2'
+import { breakpointsBootstrapV5 } from '@vueuse/core';
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
   description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
@@ -16,7 +17,6 @@ useSeo({
 const router = useRouter()
 const modalOpen = ref(false)
 const showAfterVideo = ref(false)
-
 const urlPath = '/sleepnatural'
 
 function openModal() { modalOpen.value = true }
@@ -125,14 +125,11 @@ function onScroll() {
   lastScrollY = y
   lastScrollT = t
 }
-
 const showPlayOverlay = ref(true)
 function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }
-
 let fsHandlerAdded = false
-
 function onModalClose() {
   lastShown = 0
 }
@@ -142,10 +139,65 @@ let readyHandler: any
 let playHandler: any
 let endedHandler: any
 
-onMounted(() => {
-  loadVturbOnce()
+type Market = 'US'|'UK'|'CA'|'BR'
 
-  // ====== Exit-intent listeners ======
+const country = ref<Market>('US')
+const ready   = ref(false)
+
+const PRICE_MAP = {
+  priceOld: { US: '$69', UK: '£59', CA: '$99', BR:'R33' },
+  price: { US: '$59', UK: '£49', CA: '$85', BR:'R32'},
+  combo3Each: { US: '$39', UK: '£35', CA: '$59' },
+  combo6Each: { US: '$29', UK: '£25', CA: '$42' },
+} as const
+
+const EACH_TXT = { US: 'each', UK: 'each', CA: 'each', breakpointsBootstrapV5: 'each' } as const
+const isUSorCA = computed(() => ['US','CA'].includes(country.value))
+
+const prices = computed(() => {
+  const c = country.value
+  return {
+    priceOld: PRICE_MAP.priceOld[c],
+    price:    PRICE_MAP.price[c],
+    price3: PRICE_MAP.combo3Each[c] ?? PRICE_MAP.combo3Each.US,
+    price6: PRICE_MAP.combo6Each[c] ?? PRICE_MAP.combo6Each.US,
+    each: EACH_TXT[c],
+  }
+})
+const IMAGE_MAP = {
+  bottle: {
+    US: '/assets/nn1.webp',
+    UK: '/assets/UK/group_UK.webp',
+    CA: '/assets/CA/group_CA.webp',
+   // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo3: {
+    US: '/assets/US/group_507.webp',
+    UK: '/assets/UK/group_3UK.webp',
+    CA: '/assets/CA/group_3CA.webp',
+    // BR: '/assets/california_poppy_relax.webp',
+  },
+  combo6: {
+    US: '/assets/US/group_520.webp',
+    UK: '/assets/UK/group_6UK.webp',
+    CA: '/assets/CA/group_6CA.webp',
+    // BR: '/assets/br/combo6.webp',
+  }
+} as const
+
+const images = computed(() => ({
+  bottle: IMAGE_MAP.bottle[country.value] ?? IMAGE_MAP.bottle.US,
+  combo3: IMAGE_MAP.combo3[country.value] ?? IMAGE_MAP.combo3.US,
+  combo6: IMAGE_MAP.combo6[country.value] ?? IMAGE_MAP.combo6.US,
+}))
+
+onMounted(async () => {
+  loadVturbOnce()
+  const detected = (await detectCountry())?.toUpperCase?.() as Market | undefined
+  if (detected && ['US','UK','CA','BR'].includes(detected)) country.value = detected
+  ready.value = true
+  console.log('[geo] Final country detected:', detected)
+
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
   document.addEventListener('visibilitychange', onVisibilityChange)
@@ -166,6 +218,8 @@ onMounted(() => {
     el.addEventListener('video:ended', () => {
       showPlayOverlay.value = false
       showAfterVideo.value = true
+      sessionStorage.setItem('videoEnded', 'true')
+      console.log("VIDEO END")
     }, { once: true })
   }
   if (window.matchMedia?.('(pointer: coarse)').matches) {
@@ -202,6 +256,14 @@ const testimonials = [
     name: 'David P., 40',
     city: 'Brooklyn, NY'
   },
+      {
+    avatarDesk: '/assets/dep9desk.webp',
+    avatarMobile: '/assets/dep9.webp',
+    title: 'Anxiety ruled my mornings.',
+    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
+    name: 'Laura M., 45',
+    city: 'Chicago, IL'
+  },
   {
     avatarDesk: '',
     avatarMobile: '',
@@ -235,6 +297,55 @@ const testimonials = [
     city: 'Austin, TX'
   },
 ]
+const faqItems = [
+      {
+        question: 'What is Super Relax?',
+        answer: `Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
+        open: true
+      },
+      {
+        question: 'What are the ingredients?',
+        answer: `The formula combines 5 science-backed botanicals:
+
+• Passionflower – Calms a restless mind so you can slow down and find peace.
+• California Poppy – Relaxes the body and supports restorative sleep without sedation.
+• Corydalis – Helps ease physical tension and nighttime nerve discomfort.
+• Prickly Pear – Supports healthy stress response for deeper rest and recovery.
+• Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`,
+        open: false
+      },
+      {
+        question: 'Is Super Relax safe?',
+        answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
+        open: false
+      },
+      {
+        question: 'How do I take it?',
+        answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
+        open: false
+      },
+      {
+        question: 'How long does shipping take?',
+        answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
+        open: false
+      },
+      {
+        question: 'How can I reach you if I have questions?',
+        answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
+        open: false
+      },
+      {
+        question: 'What if I’m not satisfied?',
+        answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
+        open: false
+      },
+      {
+        question: 'Are there any side effects?',
+        answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
+        open: false
+      }
+    ]
+
 </script>
 
 <template>
@@ -248,28 +359,28 @@ const testimonials = [
     <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-full">
       <div
         class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[36px] sm:pt-[80px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[555px] h-[784px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-28 sm:h-[580px] h-[784px]">
           <div class="sm:hidden font-crossfit leading-none text-[50px] sm:text-[80px]">
-            <h1 class="text-[#fff] leading-[0.9] items-center">
-              THE SECRET THAT ENDED
-              <span class="text-[#370F1E]">
-                MY YEARS OF ANXIETY
+            <h1 class="text-[#fff] mb-[10px] leading-[0.9] items-center">
+              THE SECRET THAT 
+              <span class="text-[#491529]"><br>
+                ENDED MY YEARS OF ANXIETY.
               </span>
             </h1>
-            <p class="pt-[15px] text-[#370F1E] font-gelasio italic text-[20px]">
+            <p class="bg-[#FFDC03] text-center rounded-xl py-[3px] text-[#370F1E] font-gelasio italic px-[15px] text-[19px]">
               And gave me back the clarity and peace I lost to stress and burnout.
             </p>
           </div>
 
           <div
-            class="hidden sm:block max-w-[500px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[95px]">
+            class="hidden sm:block max-w-[630px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[95px]">
             <h1 class="text-[#fff] uppercase leading-[0.875] items-center">
-              THE SECRET THAT ENDED
-              <br><span class="text-[#370F1E]">
-                MY YEARS OF ANXIETY
+              THE SECRET THAT 
+              <br><span class="text-[#491529]">
+                ENDED MY YEARS OF ANXIETY.
               </span>
             </h1>
-            <p class="pt-[35px] text-[#370F1E] leading-[0.9] font-gelasio italic text-[40px]">
+            <p class="bg-[#FFDC03] px-[20px] lg:max-w-[450px] mt-[50px] mb-[30px] py-[14px] rounded-xl text-[#370F1E] leading-[0.9] font-gelasio italic text-[40px]">
               And gave me back the clarity and peace I lost <br></br>to stress and burnout.
             </p>
           </div>
@@ -286,7 +397,7 @@ const testimonials = [
         </div>
       </div>
       <!-- v-show="showAfterVideo"  -->
-      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+      <div class="bg-[#370F1E]  border-none">
         <div
           class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="inline-flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
@@ -1010,13 +1121,31 @@ const testimonials = [
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div v-show="showAfterVideo" class="">
-      <VslBadgesRelax bgCollor="bg-[#4DBCB6]" id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="video-ended"
-        @expired="onCountdownExpired" porductId1="prod_T2jNgj5cCjXcvG" porductId3="prod_T2jOmiPYB2SrZd"
-        porductId6="prod_T2jPp4I1S0cfol" bottle="/assets/nn1Relax.webp" combo3="/assets/bottle3.webp"
-        combo6="/assets/bottle6.webp" />
+    <div class="">
+      <VslBadgesRelax 
+        v-if="ready"
+        :ready="ready"
+        :country="country"
+        :is-us-or-ca="isUSorCA"
+        bgCollor="bg-[#4DBCB6]" 
+        id="id-vsl-badges" 
+        :duration-ms="7 * 60 * 1000" 
+        start-on="video-ended"
+        @expired="onCountdownExpired" 
+        porductId1="prod_T2jNgj5cCjXcvG" 
+        porductId3="prod_T2jOmiPYB2SrZd"
+        porductId6="prod_T2jPp4I1S0cfol"
+        :bottle="images.bottle"
+        :combo3="images.combo3"
+        :combo6="images.combo6"
+        :price3="prices.price3"
+        :price6="prices.price6"
+        :priceOld="prices.priceOld"
+        :price="prices.price"
+        />
     </div>
-    <DepoimentsD v-show="showAfterVideo" :testimonials="testimonials" />
+    <!-- v-show="showAfterVideo" -->
+    <DepoimentsD :testimonials="testimonials" />
     <!-- DESKTOP v-show="showAfterVideo"  -->
 
     <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
@@ -1034,7 +1163,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-t border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Akhondzadeh, S., et al. (2001) – </strong>
+                <strong>Akhondzadeh, S., et al. (2001) <br></strong>
                 <span>Passionflower in the treatment of generalized anxiety: A double-blind randomized trial with
                   oxazepam. Journal of Clinical Pharmacy and Therapeutics, 26(5), 363–367. [Result: Passiflora incarnata
                   was as effective as oxazepam in reducing anxiety, with fewer side effects.]</span>
@@ -1044,7 +1173,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Movafegh, A., et al. (2008) – </strong>
+                <strong>Movafegh, A., et al. (2008) <br></strong>
                 <span>Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: A
                   double-blind, placebo-controlled study. Anesthesia & Analgesia, 106(6), 1728–1732. [Result:
                   Significant anxiolytic effect compared with placebo.]</span>
@@ -1054,7 +1183,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Hanus, M., et al. (2004) – </strong>
+                <strong>Hanus, M., et al. (2004)<br> </strong>
                 <span>Efficacy of a fixed combination of Eschscholzia californica and Crataegus oxyacantha in
                   mild-to-moderate anxiety disorders: A double-blind, placebo-controlled trial. Fundamental & Clinical
                   Pharmacology, 18(5), 527–532. [Result: Combination including California poppy improved anxiety vs.
@@ -1065,7 +1194,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Zhu, Y., et al. (2015) – </strong>
+                <strong>Zhu, Y., et al. (2015)<br> </strong>
                 <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and
                   potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis
                   yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and
@@ -1076,7 +1205,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>EMA Herbal Monograph (2016) – </strong>
+                <strong>EMA Herbal Monograph (2016) <br> </strong>
                 <span> Althaea officinalis root. European Medicines Agency, Committee on Herbal Medicinal Products
                   (HMPC).[Result: Recognized for soothing, anti-inflammatory traditional use; limited clinical data for
                   stress, but supports calming and restorative effects.]</span>
@@ -1086,7 +1215,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Galati, E. M., et al. (2002) –</strong>
+                <strong>Galati, E. M., et al. (2002)<br></strong>
                 <span> Pharmacological profile of l-tetrahydropalmatine (L-THP): A review of its neuropharmacology and
                   potential applications. Phytomedicine, 22(3), 318–323. [Result: L-THP, the main alkaloid in Corydalis
                   yanhusuo, shows sedative and anxiolytic-like activity in preclinical studies, modulating dopamine and
@@ -1097,7 +1226,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Zhu, Y., et al. (2015) – </strong>
+                <strong>Zhu, Y., et al. (2015) <br> </strong>
                 <span>Biological effects of Opuntia ficus-indica (L.) Mill. (Cactaceae) waste matter. Note I:
                   Antioxidant and anti-inflammatory activity. Journal of Ethnopharmacology, 79(1), 17–21.[Result:
                   Extracts reduced oxidative stress and inflammation, pathways linked with stress and mood
@@ -1108,7 +1237,7 @@ const testimonials = [
           <li class="flex gap-5 pt-[11px] pb-[11px] sm:pb-[18px] sm:pt-[17px] border-b border-[#370F1E]">
             <div class="flex-col">
               <h1 class="text-[14px] font-normal sm:text-[16px] leading-[1.3]">
-                <strong>Park, E. H., & Kahng, J. H. (1999) – </strong>
+                <strong>Park, E. H., & Kahng, J. H. (1999) <br></strong>
                 <span>Suppression of immunological and inflammatory responses by cactus (Opuntia ficus-indica). Archives
                   of Pharmacal Research, 22(4), 404–407. [Result: Demonstrated anti-inflammatory effects relevant for
                   stress resilience.]</span>
@@ -1126,7 +1255,7 @@ const testimonials = [
             questions:</h1>
           <h1 class="text-start hidden w-full sm:block pb-[46px] leading-none text-[#370F1E] text-[62px] font-crossfit">
             Frequently asked questions:</h1>
-          <FAQ />
+          <FAQ :asks="faqItems" />
         </div>
       </div>
     </div>
@@ -1140,12 +1269,7 @@ const testimonials = [
           © Super Relax Research 2025. <br>All Rights Reserved.
         </p>
         <p class="text-[#FFFAF0] font-dmsans font-extralight text-[9px] leading-[12px] text-justify mt-3">
-          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the
-          body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more
-          restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in
-          the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose,
-          treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement,
-          especially if you are taking medications, are pregnant, or have a medical condition.
+          Super Relax is a supplement formulated with natural ingredients designed to support nerve health and help the body manage nerve discomfort naturally. It promotes a calmer state during the day and supports deeper, more restorative rest at night. It does not contain sedatives or harsh chemicals. Super Relax is manufactured in the United States in an FDA-registered, GMP-compliant facility. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any dietary supplement, especially if you are taking medications, are pregnant, or have a medical condition.
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-let cachedCurrency = null;
+ let cachedCurrency = null;
 let cachedLocale = null;
 
 export async function detectUserCurrency() {
