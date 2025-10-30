@@ -449,7 +449,7 @@ const faqItems = [
                       d="M11.6879 4.97062C11.391 4.49878 10.8275 4.17383 10.1733 4.17383C9.51915 4.17383 8.95558 4.49878 8.65869 4.97062"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
                   </svg>
-                  <p>Pain & Inflammation Reduction</p>
+                  <p>Nerve Pain & Inflammation Reduction</p>
                 </li>
                 <li class="flex gap-3  items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
