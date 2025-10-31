@@ -53,7 +53,7 @@ onMounted(() => {
 <template>
   <Toast />
   <router-view />
-  <button
+  <!-- <button
     v-show="!isBlocked"
     id="chat-toggle"
     class="chat-fab"
@@ -63,7 +63,7 @@ onMounted(() => {
       <circle cx="30" cy="30" r="30" fill="#370F1E"/>
       <path d="M43.2796 17.5856C44.7821 17.5856 46 18.8036 46 20.306V38.9906C46 40.493 44.7821 41.7109 43.2796 41.7109H42.0626V45.1954C42.0626 46.0114 41.1884 46.5292 40.4727 46.137L32.397 41.7109H16.7204C15.2179 41.7109 14 40.493 14 38.9906V20.306C14 18.8036 15.2179 17.5856 16.7204 17.5856H43.2796Z" fill="#FFFAF0"/>
     </svg>
-  </button>
+  </button> -->
 </template>
 
 <style>
