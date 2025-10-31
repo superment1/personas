@@ -76,12 +76,12 @@ function onPageHide() {
   openExitModal()
 }
 function loadVturbOnce() {
-  const id = 'vturb-script-68aa4210166658ec2475a56e'
+  const id = 'vturb-script-690525af21067174bb51e39b'
   if (document.getElementById(id)) return
   const s = document.createElement('script')
   s.id = id
   s.async = true
-  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/68aa4210166658ec2475a56e/v4/player.js'
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/690525af21067174bb51e39b/v4/player.js'
   document.head.appendChild(s)
 }
 
@@ -157,7 +157,7 @@ onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('pagehide', onPageHide)
 
-  const el = document.getElementById('vid-68aa4210166658ec2475a56e')
+  const el = document.getElementById('vid-690525af21067174bb51e39b')
   if (!el) return
 
   const onReady = () => {
@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
           <div class="relative z-10 pt-[28px] sm:pt-0">
             <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
                     sm:max-w-[649px] sm:h-[437px] sm:max-h-[812px] overflow-hidden">
-              <vturb-smartplayer id="vid-68aa4210166658ec2475a56e" style="
+              <vturb-smartplayer id="vid-690525af21067174bb51e39b" style="
                 display:block;
                 margin:0 auto;
                 width:100%;
