@@ -21,7 +21,7 @@ const BLOCKED = new Set([
   '/sleep2',
   '/relax', 
   '/slim', 
-  '/advetorial',
+  '/7days',
   '/relief', 
   '/vslrelax',
   '/vslrelief',
