@@ -226,7 +226,7 @@ const faqItems = [
   <SuperHeader2 :show-redirect="false" :items="[
     'Save Up To 58%',
     'Free Shipping',
-    'Up to120-Day Money-Back Guarantee',
+    'Up to 120-Day Money-Back Guarantee',
     '100% Plant-Based',
     'Science-Backed',
     'Non-Sedative',

@@ -17,7 +17,7 @@ const routes = [
   { path: '/sleep2',            name:'sleepbetter2',  component: () => import('../pages/sleepBetter2.vue')},
   { path: '/relax',             name:'superrelax',    component: () => import('../pages/superRelax.vue') },  
   { path: '/slim',              name:'superslim',     component: () => import('../pages/superSlim.vue') },  
-  { path: '/advetorial',        name:'advetorial',    component: () => import('../pages/adVetorial.vue') },  
+  { path: '/7days',             name:'7days',         component: () => import('../pages/7days.vue') },  
   { path: '/tsl',               name:'tsl',           component: () => import('../pages/tsl.vue') },  
   { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
   { path: '/vslrelax',          name:'vslrelax',      component: () => import('../pages/vslRelax.vue') },  
@@ -32,6 +32,7 @@ export const router = createRouter({
   }
 })
 
+//ZENDESK função para exibir somente na pagina sleep
 const BLOCKED = new Set ([
   '/tsl',
   '/sleepnatural',
@@ -48,7 +49,7 @@ const BLOCKED = new Set ([
   '/sleep2',
   '/relax', 
   '/slim', 
-  '/advetorial',
+  '/7days',
   '/relief', 
   '/vslrelax',
   '/vslrelief',
@@ -77,7 +78,6 @@ function setThemeColor(color) {
   metaTag.setAttribute('content', color)
 }
 
-
 router.afterEach((to) => {
   const themeColorMap = {
     supersleep: '#E1DCCD',
@@ -97,7 +97,7 @@ router.afterEach((to) => {
     vslrelief: '#4dbcb6',
     sleepbetter: '#E1DCCD',
     sleepbetter2: '#E1DCCD',
-    advetorial: '#370F1E',
+    '7days': '#370F1E',
     tsl:'#E1DCCD',
     relief: '#E1DCCD'
 

@@ -2,6 +2,7 @@
 import { useSeo } from '../composables/useSeo'
 import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
+import SuperFooter2 from '../components/SuperFooter2.vue'
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
         description: 'Natural, deep sleep is essential for healthy, radiant skin.',
@@ -103,10 +104,7 @@ Terms.</p>
                 </div> 
                 <div class="py-5 border-b-2 border-[#370f1e]">
                     <p class="primary pb-2 text-xl font-bold"> 12. Governing Law</p>
-                    <p> These Terms are governed by the laws of the
-Federative Republic of Brazil. Any dispute shall
-be resolved exclusively in the courts located in
-São Paulo, Brazil.</p>                    
+                    <p> These Terms are governed by the laws of the United States of America, without regard to its conflict of law principles. Any dispute shall be resolved exclusively in the federal or state courts of the United States.</p>                    
                 </div> 
                 <div class="py-5 border-b-2 border-[#370f1e]">
                     <p class="primary pb-2 text-xl font-bold"> 13. Changes to These Terms</p>
@@ -125,7 +123,7 @@ the revised Terms.</p>
     </div>
     <div class="bg-[#370F1E] w-full">
         <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-            <SuperFooter />
+            <SuperFooter2 />
         </div>
     </div>
 </template>
