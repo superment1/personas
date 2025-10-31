@@ -239,8 +239,8 @@ const faqItems = [
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[624px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax1.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_mobile1.webp" width="1280" height="800" alt="relax-hero"
+        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax2.webp" type="image/webp">
+        <img id="hero-lcp" src="/assets/hero_relax_mobile2.webp" width="1280" height="800" alt="relax-hero"
           loading="eager" fetchpriority="high" decoding="async"
           class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>

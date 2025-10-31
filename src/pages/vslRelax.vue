@@ -139,14 +139,14 @@ let readyHandler: any
 let playHandler: any
 let endedHandler: any
 
-type Market = 'US'|'UK'|'CA'|'BR'
+type Market = 'US'|'UK'|'CA'
 
 const country = ref<Market>('US')
 const ready   = ref(false)
 
 const PRICE_MAP = {
-  priceOld: { US: '$69', UK: '£59', CA: '$99', BR:'R33' },
-  price: { US: '$59', UK: '£49', CA: '$85', BR:'R32'},
+  priceOld: { US: '$69', UK: '£59', CA: '$99' },
+  price: { US: '$59', UK: '£49', CA: '$85' },
   combo3Each: { US: '$39', UK: '£35', CA: '$59' },
   combo6Each: { US: '$29', UK: '£25', CA: '$42' },
 } as const
@@ -259,14 +259,6 @@ const testimonials = [
       {
     avatarDesk: '/assets/dep9desk.webp',
     avatarMobile: '/assets/dep9.webp',
-    title: 'Anxiety ruled my mornings.',
-    testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
-    name: 'Laura M., 45',
-    city: 'Chicago, IL'
-  },
-  {
-    avatarDesk: '',
-    avatarMobile: '',
     title: 'Anxiety ruled my mornings.',
     testimonial: 'Just the drive into the office made my heart race. Now I get there without that knot in my stomach, and I can focus on the day instead of spiraling before it even starts.',
     name: 'Laura M., 45',
