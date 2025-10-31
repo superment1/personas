@@ -19,7 +19,7 @@ const props = defineProps({
   combo6:  { type: String, default: '/assets/nn3Sleep.webp' },
   price3: { type: String, default: '$39'},
   price6: { type: String, default: '$29'},
-  price: { type: String, default: '$49'},
+  price: { type: String, default: '$59'},
   priceOld: { type: String, default: '$69'},
 })
 
