@@ -103,9 +103,9 @@ useSeo({
                 </p>
             </div>
             <img class="py-8 w-full" src="/assets/image-about.webp" alt="">
-            <p class="font-DMSans text-[13px] text-[#370F1E] sm:text-[15px] leading-[1.28] mt-2 lg:hidden">And it's with
-                technology that we want
-                to fly higher together with you: we believe that innovations in research and the endless opportunities
+            <p class="font-DMSans text-[13px] text-[#370F1E] sm:text-[15px] leading-[1.28] mt-2 lg:hidden">It’s with
+                technology that we want to fly together with you: we believe that innovations in research and the
+                endless opportunities
                 opened by artificial intelligence help us overcome the "no's" of the status quo.
                 <br><br>And they can take us to a new level of
                 prevention and care. Using artificial intelligence with ethics and integrity (which is the only way
@@ -191,10 +191,6 @@ useSeo({
                                 <br class="sm:hidden">human
                                 creativity.
                             </p>
-                            <p
-                                class="mt-[10px] lg:mt-[50px] text-[10px] sm:text-[15px] lg:text-[28px] font-DMSans font-medium">
-                                LinkedIn: xxxxxxxxx
-                            </p>
                         </div>
                     </transition>
                 </div>
@@ -246,9 +242,6 @@ useSeo({
                                 at some of the largest US and <br class="hidden lg:block">Brazilian technology companies
                                 - tinkering around.
                             </p>
-                            <p
-                                class="mt-[10px] lg:mt-[50px] text-[10px] sm:text-[15px] lg:text-[28px] font-DMSans font-medium">
-                                LinkedIn: xxxxxxxxx</p>
                         </div>
                     </transition>
                 </div>
