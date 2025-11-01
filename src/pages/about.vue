@@ -31,7 +31,7 @@ useSeo({
 
 <template>
     <div class="flex items-center justify-center w-full h-full bg-[#E1DCCD] pb-8">
-        <div class="flex flex-col items-center justify-start w-[317px] lg:w-[980px] h-full">
+        <div class="flex flex-col items-center justify-start w-[317px] sm:w-[90%] lg:w-[980px] h-full">
             <div class="flex flex-col items-center w-full bg-[#E1DCCD]">
                 <div class="relative w-[250px] h-[60px]">
                     <video class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
@@ -145,7 +145,7 @@ useSeo({
                 <!-- Ricardo -->
                 <div class="pt-[7px] rounded-[10px] cursor-pointer select-none">
                     <p v-if="!showThomas && !showRicardo"
-                        class="underline font-gelasio italic text-[13px] text-[#370F1E] font-bold lg:text-[32px]"
+                        class="underline font-gelasio italic text-[13px] sm:text-[18px] text-[#370F1E] font-bold lg:text-[32px]"
                         @click="toggle('ricardo')">
                         Ricardo Pedro
                     </p>
@@ -154,7 +154,8 @@ useSeo({
                             class="flex flex-col items-start justify-start w-full text-[13px] text-[#370F1E] bg-[#FFFAF0] rounded-[10px] lg:rounded-[30px] leading-[1.28] p-4 lg:p-10">
                             <div class="flex flex-row items-center justify-between w-full">
                                 <p @click="toggle('ricardo')"
-                                    class="font-gelasio font-bold italic underline lg:text-[36px]">Ricardo
+                                    class="font-gelasio font-bold italic underline sm:text-[18px] lg:text-[36px]">
+                                    Ricardo
                                     Pedro</p>
                                 <div @click="toggle('ricardo')">
                                     <svg class="lg:hidden" width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -175,19 +176,23 @@ useSeo({
                                     </svg>
                                 </div>
                             </div>
-                            <p class="font-DMSans font-medium text-[10px] lg:text-[28px] my-[3px] lg:mt-3 mb-4">Founder
+                            <p
+                                class="font-DMSans font-medium text-[10px] sm:text-[15px] lg:text-[28px] my-[3px] lg:mt-3 mb-4">
+                                Founder
                             </p>
-                            <p class="mt-[5px] font-DMSans font-medium text-[10px] lg:text-[28px] leading-[1.29]">
-                                Former CMO for over 20 years at one of the most <br class="lg:hidden">innovative
+                            <p
+                                class="mt-[5px] font-DMSans font-medium text-[10px] sm:text-[15px] lg:text-[28px] leading-[1.29]">
+                                Former CMO for over 20 years at one of the most <br class="sm:hidden">innovative
                                 companies in the
                                 Brazilian
                                 healthcare market during the 2000s <br class="hidden lg:block">and 2010s, which was part
                                 of the investment portfolio
                                 of private equity funds General Atlantic and The Carlyle Group. Passionate about
-                                <br class="lg:hidden">human
+                                <br class="sm:hidden">human
                                 creativity.
                             </p>
-                            <p class="mt-[10px] lg:mt-[50px] text-[10px] lg:text-[28px] font-DMSans font-medium">
+                            <p
+                                class="mt-[10px] lg:mt-[50px] text-[10px] sm:text-[15px] lg:text-[28px] font-DMSans font-medium">
                                 LinkedIn: xxxxxxxxx
                             </p>
                         </div>
@@ -197,7 +202,7 @@ useSeo({
                 <!-- Thomas -->
                 <div class="pt-[7px] rounded-[10px] cursor-pointer select-none">
                     <p v-if="!showThomas && !showRicardo"
-                        class="underline font-gelasio italic text-[13px] text-[#370F1E] font-bold ml-[40px] lg:ml-[100px] lg:text-[32px]"
+                        class="underline font-gelasio italic text-[13px] sm:text-[18px] text-[#370F1E] font-bold ml-[40px] lg:ml-[100px] lg:text-[32px]"
                         @click="toggle('thomas')">
                         Thomas Yong Chi
                     </p>
@@ -206,7 +211,8 @@ useSeo({
                             class="flex flex-col items-start justify-start w-full text-[13px] text-[#370F1E] bg-[#FFFAF0] rounded-[10px] lg:rounded-[30px] leading-[1.28] p-4 lg:p-10">
                             <div class="flex flex-row items-center justify-between w-full">
                                 <p @click="toggle('thomas')"
-                                    class="font-gelasio font-bold italic underline lg:text-[36px]">Thomas Yong
+                                    class="font-gelasio font-bold italic underline sm:text-[18px] lg:text-[36px]">Thomas
+                                    Yong
                                     Chi</p>
                                 <div @click="toggle('thomas')">
                                     <svg class="lg:hidden" width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -227,9 +233,12 @@ useSeo({
                                     </svg>
                                 </div>
                             </div>
-                            <p class="font-DMSans font-medium text-[10px] lg:text-[28px] my-[3px] lg:mt-3 mb-4">CCO
+                            <p
+                                class="font-DMSans font-medium text-[10px] sm:text-[15px] lg:text-[28px] my-[3px] lg:mt-3 mb-4">
+                                CCO
                                 (Curious Chief Officer)</p>
-                            <p class="mt-[5px] font-DMSans font-medium text-[10px] lg:text-[28px] leading-[1.29]">
+                            <p
+                                class="mt-[5px] font-DMSans font-medium text-[10px] sm:text-[15px] lg:text-[28px] leading-[1.29]">
                                 A very curious executive that goes into the rabbit hole easily. Bring <br
                                     class="hidden lg:block">me a challenge, I
                                 will at least sleep with the provocation and let me <br class="hidden lg:block">give a
@@ -237,7 +246,8 @@ useSeo({
                                 at some of the largest US and <br class="hidden lg:block">Brazilian technology companies
                                 - tinkering around.
                             </p>
-                            <p class="mt-[10px] lg:mt-[50px] text-[10px] lg:text-[28px] font-DMSans font-medium">
+                            <p
+                                class="mt-[10px] lg:mt-[50px] text-[10px] sm:text-[15px] lg:text-[28px] font-DMSans font-medium">
                                 LinkedIn: xxxxxxxxx</p>
                         </div>
                     </transition>
