@@ -79,7 +79,7 @@ function loadVturbOnce() {
   const s = document.createElement('script')
   s.id = id
   s.async = true
-  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/68fac3279a717d043c8e5235/v4/player.js'
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/690525af21067174bb51e39b/v4/player.js'
   document.head.appendChild(s)
 }
 
@@ -207,7 +207,7 @@ onMounted(async () => {
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('pagehide', onPageHide)
 
-  const el = document.getElementById('vid-68aa4210166658ec2475a56e')
+  const el = document.getElementById('vid-690525af21067174bb51e39b')
   if (!el) return
 
   const onReady = () => {
@@ -379,7 +379,7 @@ const faqItems = [
           <div class="relative z-10 pt-[16px] sm:pt-0">
             <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[620px]
                     sm:max-w-[649px] sm:w-[400px] sm:h-[712px] sm:max-h-[812px] overflow-hidden">
-              <vturb-smartplayer id="vid-68fac3279a717d043c8e5235" style="
+              <vturb-smartplayer id="vid-690525af21067174bb51e39b" style="
                 display:block;
                 margin:0 auto;
                 width:100%;
@@ -389,7 +389,7 @@ const faqItems = [
         </div>
       </div>
       <!-- v-show="showAfterVideo"  -->
-      <div class="bg-[#370F1E]  border-none">
+      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
         <div
           class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="inline-flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
@@ -1113,7 +1113,7 @@ const faqItems = [
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div class="">
+    <div v-show="showAfterVideo" class="">
       <VslBadgesRelax 
         v-if="ready"
         :ready="ready"
@@ -1137,9 +1137,8 @@ const faqItems = [
         />
     </div>
     <!-- v-show="showAfterVideo" -->
-    <DepoimentsD :testimonials="testimonials" />
+    <DepoimentsD v-show="showAfterVideo" :testimonials="testimonials" />
     <!-- DESKTOP v-show="showAfterVideo"  -->
-
     <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
