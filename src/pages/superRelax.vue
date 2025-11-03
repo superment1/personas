@@ -239,13 +239,20 @@ const faqItems = [
   <section class="firtsection bg-[#50b5b2]">
     <div class="relative z-0 min-h-[624px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:764px)" srcset="/assets/desk_hero_relax2.webp" type="image/webp">
-        <img id="hero-lcp" src="/assets/hero_relax_mobile2.webp" width="1280" height="800" alt="relax-hero"
-          loading="eager" fetchpriority="high" decoding="async"
+        <source 
+        media="(max-width: 1024px)"
+        srcset="/assets/hero_relax_mobile2.webp"
+        type="image/webp">
+        <img id="hero-lcp" 
+        src="/assets/desk_hero_relax2.webp" 
+        width="1280" height="800" alt="relax-hero"
+          loading="eager" 
+          fetchpriority="high" 
+          decoding="async"
           class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
 
-      <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
+      <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[11.5rem] pb-[25px] lg:pb-[70px]">
         <div class="px-[50px]">
           <div class="text-[#370F1E] gap-0 lg:gap-[20px] flex flex-col">
             <h1 class="italic block sm:hidden font-gelasio mt-[38px] text-[13px] leading-[15px] font-bold">A Powerful
@@ -253,9 +260,9 @@ const faqItems = [
               <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
 
             </h1>
-            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
-              <br>Plant-Based
-              Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span>
+            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">
+              A Powerful Plant-Based Formula 
+              <br><span class="font-medium">that Restores Nervous System Balance.</span>
             </h1>
             <div class="font-gelasio mt-[150px] lg:mt-[0px]">
               <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" width="69" height="17" viewBox="0 0 69 17"
@@ -405,17 +412,16 @@ const faqItems = [
         </div>
         <div>
           <div
-            class="font-crossfit px-0 md:px-12 pt-[18px] md:pt-[62px] text-[29px] md:text-[51px] leading-[31px] md:leading-[57px] justify-center items-center text-center md:text-start">
-            <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">Sleep
-                Peacefully All Night.</span> </p>
+            class="font-crossfit px-0 md:pl-12 pt-[18px] md:pt-[62px] text-[29px] md:text-[50px] leading-[31px] md:leading-[57px] justify-center items-center text-center md:text-start">
+            <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">
+              Sleep Peacefully All Night.</span> </p>
           </div>
-          <div class="flex flex-col px-[50px] lg:px-12">
-
+          <div class="flex flex-col px-[50px] lg:pl-12 lg:pr-0">
             <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">
               <ul
                 class="text-[#370F1E] relative bottom-[3px] gap-[4px] text-[14px] md:text-[18px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
                 <li class="flex gap-2 items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
+                  <svg class="lg:w-[28px] lg:h-[17px]" xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
                     <path
                       d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
@@ -436,7 +442,7 @@ const faqItems = [
                   <p>Stress, Anxiety & Exhaustion Relief </p>
                 </li>
                 <li class="flex gap-3 items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                  <svg class="lg:w-[23px] lg:h-[20px]" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                     <path
                       d="M7.88368 13.1788C11.6854 13.1788 14.7674 10.4525 14.7674 7.08941C14.7674 3.72632 11.6854 1 7.88368 1C4.08193 1 1 3.72632 1 7.08941C1 10.4525 4.08193 13.1788 7.88368 13.1788Z"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
@@ -453,7 +459,7 @@ const faqItems = [
                   <p>Nerve Pain & Inflammation Reduction</p>
                 </li>
                 <li class="flex gap-3  items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                  <svg class="lg:w-[23px] lg:h-[21px]" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                     <path
                       d="M6.99362 5.89752C7.33579 4.74017 8.08052 3.92113 8.99633 3.39142C9.05168 3.36026 9.04162 3.28459 8.9762 3.27124C6.7068 2.71037 4.11032 3.68966 3.18445 6.0088C2.72151 7.16614 2.89763 8.46593 3.65745 9.48974C5.17709 11.5507 7.96478 11.9602 10.0178 10.9364C10.0732 10.9097 10.0631 10.834 10.0027 10.8162C8.97117 10.4913 8.02517 9.85029 7.38108 8.79533C6.84266 7.90952 6.70177 6.86791 6.98859 5.89752H6.99362Z"
                       stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
@@ -476,11 +482,11 @@ const faqItems = [
               </ShopButton>
             </div>
           </div>
-          <div class="px-[50px] flex justify-center md:justify-start lg:justify-center">
+          <div class="px-[50px] lg:pr-0 flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-[260px] md:w-[540px] lg:w-[500px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+              class="w-[260px] md:w-[540px] lg:w-[450px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
               <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
-                <svg class="lg:w-[70px] lg:h-[60px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
+                <svg class="lg:w-[59px] lg:h-[37px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -505,7 +511,7 @@ const faqItems = [
               <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
               <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
-                <svg class="lg:w-[55px] lg:h-[70px] md:w-[50px] md:h-[65px]" xmlns="http://www.w3.org/2000/svg"
+                <svg class="lg:w-[43px] lg:h-[61px]" xmlns="http://www.w3.org/2000/svg"
                   width="25" height="43" viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
@@ -550,10 +556,10 @@ const faqItems = [
     </div>
   </section>
   <section class="bg-[#370F1E] relative">
-    <div class="px-[40px] lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
+    <div class="px-[40px] sm:px-0 lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
       <h1
         class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[30px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
-        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span> and Wired by Night.
+        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span><br>and Wired by Night.
       </h1>
       <img src="/assets/why_exhausted1.webp" class="lg:hidden" loading="lazy" alt="exhausted-2">
       <img src="/assets/why_exhausted_desk.webp" class="hidden lg:flex mb-[50px]" loading="lazy" alt="exhausted-2">
@@ -568,12 +574,12 @@ const faqItems = [
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-[2.5rem] lg:px-40 w-full">
+      <div class="flex relative z-30 bg-[#FFDC03] justify-center gap-6 lg:gap-16 pt-[20px] lg:pt-[45px] pl-0 lg:px-40 w-full">
         <img class="lg:hidden w-[120px] h-[138px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
           loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
-        <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
+        <div class="flex flex-col text-[#370F1E] lg:self-center gap-[10px] lg:gap-[20px]">
           <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
           </p>
           <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">You don’t have to stay
@@ -590,26 +596,26 @@ const faqItems = [
         <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
-      <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottlenerve.webp" width="227" height="236" loading="lazy"
+      <div class="flex justify-center pt-[20px] lg:pt-[40px]">
+        <img class="w-[230px] md:w-[500px]" src="/assets/bottleRelax.webp" width="227" height="236" loading="lazy"
           alt="bottle">
         <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
-          class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          class="flex-col relative right-6 w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[40px] md:text-[30px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
           <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-8 md:px-40">
+      <div class="px-8 md:px-[230px] lg:pt-[30px]">
         <img class="md:hidden block" src="/assets/box41.webp" alt="blocks">
         <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
 
   </section>
-  <section class="ingredients relative z-10 bg-[#FFFAF0]">
+  <section class="relative z-10 bg-[#FFFAF0]">
     <div class="font-crossfit text-[#370F1E] text-center ">
       <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven
           to Restore <br> Calm and Clarity.</span></p>
@@ -623,33 +629,30 @@ const faqItems = [
     </div>
   </section>
   <DepoimentsD subtitle="4.9/5 (460+ Reviews) | 98% Recommend" />
-  <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[28px]">
+  <section class="bg-[#FFFAF0] px-12 justify-items-center lg:px-40 pb-[20px] pt-[28px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
       <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
       <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
     </div>
-    <div class="flex flex-col pt-[14px]">
-      <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">100% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
-          reduced<br>anxiety
-          and greater
-          relaxation.</span>
+    <div class="flex flex-col pt-[14px] lg:max-w-[938px]">
+      <div class="flex items-center w-full lg:self-center pt-[5px] lg:pt-[44px] pb-[11px] lg:pb-[35px] gap-[16px] lg:gap-[96px] text-[#370F1E] lg:px-[45px]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          of users reported reduced<br>anxiety and greater relaxation.</span>
       </div>
-      <div class="flex pl-[17px] pt-[5px] lg:self-center items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">75% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">of users reported
-          better<br> sleep
-          quality.</span>
+      <div class="w-full h-[1px] lg:h-[2px] bg-[#370F1E]"></div>
+      <div class="flex items-center w-full pt-[16px] pb-[12px] lg:pt-[44px] lg:pb-[30px] gap-[16px]  lg:gap-[99px] pl-[15px] lg:pl-[83px] text-[#370F1E]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          of users reported better<br> sleep quality.</span>
       </div>
-      <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px]">0% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">experienced grogginess
-          <br> or
-          unwanted side
-          effects.</span>
+      <div class="w-full h-[1px] lg:h-[2px] bg-[#370F1E]"></div>
+      <div class="flex  items-center justify-center w-full pt-[14px] lg:pt-[40px] lg:pb-[66px] pb-[7px] gap-[16px] lg:gap-[94px] text-[#370F1E]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          experienced grogginess <br> or unwanted side effects.</span>
       </div>
     </div>
   </section>
@@ -679,7 +682,7 @@ const faqItems = [
       <div class="pt-[30px] flex flex-col items-center">
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :show-icon="false"
           class="rounded-3xl text-center  !m-0 lg:!h-[124px] !h-[60px] !hover:bg-none !pb-0 !bg-[#370F1E] mt-[1.65rem] w-[328px] lg:w-[918px]">
-          <div class="flex flex-row items-center justify-center gap-2">
+          <div class="flex flex-row items-center justify-center gap-2 lg:gap-6">
             <svg class="block lg:hidden" width="21" height="21" viewBox="0 0 21 21" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_520_19)">

@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
   <div class="relative overflow-hidden w-full flex justify-center items-center">
     <div 
         ref="carouselContainer" 
-        class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
+        class="w-full max-w-[1000px] overflow-x-auto py-6 lg:py-[3rem] overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
       >
       <div class="flex w-max space-x-4 items-center relative z-0"
           ref="carouselContainer" 
@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
           v-for="(item, index) in items"
           :key="index"
           :data-index="index"
-          class="relative flex-none origin-center snap-center w-[220px] md:w-[260px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
+          class="relative flex-none origin-center snap-center w-[220px] md:w-[780px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
           >
           <div
               class="transform origin-center transition-all duration-300 ease-in-out"
@@ -204,5 +204,18 @@ onBeforeUnmount(() => {
 }
 .carousel-container::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+@media(min-width: 900px) {
+  .title {
+    padding-top: 20px;
+    font-size: 40px;
+    line-height: 56px;
+  }
+  .description {
+    font-size: 30px;
+    max-width: 890px;
+    line-height: 30px;
+    padding-bottom: 40px;
+  }
 }
 </style>

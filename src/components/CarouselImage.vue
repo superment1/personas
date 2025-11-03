@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
           v-for="(img, index) in images"
           :key="index"
           :data-index="index"
-          class="relative flex-none origin-center snap-center w-[296px] md:w-[883px] mx-0 text-center transition-all duration-300 ease-in-out cursor-pointer"
+          class="relative flex-none origin-center snap-center w-[318px] md:w-[975px] mx-0 text-center transition-all duration-300 ease-in-out cursor-pointer"
           @click="scrollToIndex(index)"
         >
           <div
