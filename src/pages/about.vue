@@ -1,7 +1,7 @@
 <script setup>
 import { useSeo } from '../composables/useSeo.js'
-import SuperFooter from '../components/SuperFooter.vue'
 import { ref, onMounted, nextTick } from "vue";
+import SuperFooter1 from '../components/SuperFooter1.vue';
 
 const showVideo = ref(false);
 const mp4Src = new URL('../assets/videos/logo_superment_animado.mp4', import.meta.url).href;
@@ -340,9 +340,9 @@ useSeo({
             </div>
             <div
                 class="w-full pt-[26px] lg:pt-[80px] flex flex-col items-start justify-start gap-[22px] lg:flex-row-reverse lg:gap-[40px]">
-                <img class="lg:hidden rounded-[15px] h-[160px] w-[317px]" src="/assets/peoples-about-mobile.webp"
+                <img class="lg:hidden rounded-[15px] h-[160px] w-[317px]" src="/assets/peoples-about-mobile1.webp"
                     alt="">
-                <img class="hidden lg:block rounded-[15px] h-[360px] w-[360px]" src="/assets/peoples-about-desk.webp"
+                <img class="hidden lg:block rounded-[15px] h-[360px] w-[360px]" src="/assets/peoples-about-desk1.webp"
                     alt="">
                 <div class="py-4">
                     <p
@@ -382,7 +382,7 @@ useSeo({
 
     <div class="bg-[#370F1E] w-full">
         <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-            <SuperFooter />
+            <SuperFooter1 />
         </div>
     </div>
 </template>
