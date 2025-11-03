@@ -701,7 +701,7 @@ const asks = ref([
         </div>
       </div>     
       <div class="flex justify-center">
-        <img class="w-[230px] md:w-[500px] " src="/assets/bottleRelax .webp" width="227" height="236" loading="lazy"alt="bottle">
+        <img class="w-[230px] md:w-[500px] " src="/assets/bottleRelax.webp" width="227" height="236" loading="lazy"alt="bottle">
         <div
           class="flex-col relative right-6 self-center w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[60px] md:text-[40px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
           <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
