@@ -2,7 +2,6 @@
 import InputRD from './InputRD.vue';
 
 const links = [
-  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Refund Policy', href: '/refundpolicy' },

@@ -5,11 +5,18 @@ import SuperFooter1 from '../components/SuperFooter1.vue';
 
 const showVideo = ref(false);
 const mp4Src = new URL('../assets/videos/logo_superment_animado.mp4', import.meta.url).href;
-// controles de exibição
+
 const showRicardo = ref(false)
 const showThomas = ref(false)
 
-// alterna o estado de cada um
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = '/';
+  }
+}
+
 function toggle(name) {
     if (name === 'ricardo') showRicardo.value = !showRicardo.value
     if (name === 'thomas') showThomas.value = !showThomas.value
@@ -33,6 +40,12 @@ useSeo({
     <div class="flex items-center justify-center w-full h-full bg-[#E1DCCD] pb-8">
         <div class="flex flex-col items-center justify-start w-[317px] sm:w-[90%] lg:w-[980px] h-full">
             <div class="flex flex-col items-center w-full bg-[#E1DCCD]">
+                <a  @click.prevent="goBack"  href="#"
+                    class="absolute bg-[#fff9ed] rounded-2xl left-4 top-[0.9rem] flex items-center text-sm text-[#370f1e] hover:text-gray-700">
+                    <svg class="w-8 h-8 mr-[1px]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
                 <div class="relative w-[250px] h-[60px]">
                     <video class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
                         :class="{ 'opacity-0': !showVideo }" autoplay muted loop playsinline preload="auto"
@@ -380,7 +393,7 @@ useSeo({
         </div>
     </div>
 
-    <div class="bg-[#370F1E] w-full">
+    <div class="bg-[#350e1d] w-full">
         <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
             <SuperFooter1 />
         </div>
