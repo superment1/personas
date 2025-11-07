@@ -50,11 +50,11 @@
     <!-- End Google Tag Manager -->
     <script>
       (function () {
-        var color = location.pathname.includes('/sleep')
+        var color = location.pathname.includes('/relax')
+          ? '#4DBCB6'                // relax
+          : location.pathname.includes('/sleepnatural')
           ? '#6EC8F0'                 // sleep
-          : location.pathname.includes('/relax')
-          ? '#4DBCB6'                 // relax
-          : '#4DBCB6';                // padrão
+          : '#6EC8F0'                 // padrão
 
         document.documentElement.style.setProperty('--rd-btn-bg', color);
       })();
@@ -133,7 +133,7 @@
           vslrelax:       { avif: "/assets/poster_vslrelax2.avif",    webp: "/assets/poster_vslrelax2.webp" },
           vslrelief:      { avif: "/assets/poster-vslrelief.avif",    webp: "/assets/poster-vslrelief.webp" },
           maturesleep:    { avif: "/assets/posterElderly.avif",       webp: "/assets/posterElderly.webp" },
-          about:          { avif: "/assets/posterAbout.avif",         webp: "/assets/posterAbout.webp" },
+          about:          { avif: "/assets/posterAbout1.avif",         webp: "/assets/posterAbout1.webp" },
           terms:          { avif: "/assets/posterTerms.avif",         webp: "/assets/posterTerms.webp" },
           faq:            { avif: "/assets/posterFaq.avif",           webp: "/assets/posterFaq.webp" },
           refundpolicy:   { avif: "/assets/posterRefundPolicy.avif",  webp: "/assets/posterRefundPolicy.webp" },
@@ -176,8 +176,5 @@
     <style>
       #app { opacity: 1; }
     </style>
-    <!-- Start of superment Zendesk Widget script -->
-      <!-- <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=ecc1233f-6f86-40d9-812c-3edbf7879774"></script> -->
-    <!-- End of superment Zendesk Widget script -->
   </body>
 </html>

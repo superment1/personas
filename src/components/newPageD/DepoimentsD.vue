@@ -137,15 +137,21 @@ onBeforeUnmount(() => ro?.disconnect?.())
 <template>
     <div class="bg-[#E1DCCD] w-full flex flex-col items-center py-7 gap-y-2 lg:py-[84px]">
         <p
-            class="text-center text-[#370F1E] w-[246px] md:w-full font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[50px]">
+            class="hidden lg:block text-[#370F1E] lg:!pl-0 whitespace-pre-line w-[320px] lg:w-[920px] font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[50px]">
             {{ props.primary }}
         </p>
-        <div
-            class="bg-[#FF5E29] flex flex-col items-center justify-center rounded-[28px] px-[15px] py-[4px] mt-[1px] lg:mt-[10px]">
-            <p class="text-center text-white font-gelasio font-semibold text-[13px] md:text-[22px] lg:text-[32px]">
-                {{ props.subtitle }}
-            </p>
+        <p
+            class="lg:hidden text-[#370F1E] pr-[100px] lg:!pl-0 whitespace-pre-line w-[320px] lg:w-[920px] font-crossfit font-bold leading-[1.08] text-[32px] md:text-[46px] lg:text-[50px]">
+            {{ props.primary }}
+        </p>
+        <div class="w-[320px] lg:w-[920px] ">   
+            <div class="bg-[#FF5E29] w-full max-w-[320px] lg:max-w-[680px] px-2  flex flex-col rounded-[28px] py-[4px] mt-[1px] lg:mt-[10px]">
+                <p class="text-[#fff] text-center font-gelasio font-semibold text-[13px] md:text-[22px] lg:text-[30px]">
+                    {{ props.subtitle }}
+                </p>
+            </div>
         </div>
+
         <div v-if="extraText"
             class="text-[#370F1E] text-center font-medium px-[20px] mt-[8px] lg:mt-[18px] lg:px-0 text-[12px] lg:text-[24px] leading-[1.15] lg:leading-[1.15] max-w-[710px]">
             <p>
@@ -237,7 +243,7 @@ onBeforeUnmount(() => ro?.disconnect?.())
 
         <!-- indicadores dinâmicos -->
         <svg :width="6 + (testimonials.length - 1) * 12" height="6"
-            :viewBox="`0 0 ${6 + (testimonials.length - 1) * 12} 6`" fill="none" class="mt-3">
+            :viewBox="`0 0 ${6 + (testimonials.length - 1) * 12} 6`" fill="none" class="mt-3 lg:mt-[5.5rem]">
             <g v-for="(_, i) in testimonials" :key="`dot-${i}`" @click="centerToIndex(i)" class="cursor-pointer">
                 <circle :cx="3 + i * 12" cy="3" r="3" :fill="i === current ? '#370F1E' : '#FFFAF0'" />
             </g>

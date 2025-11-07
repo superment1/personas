@@ -124,7 +124,7 @@ const imgSrc = "/assets/depo.webp"
       { 
         title: '4. Relieve muscle pain and body tension.', 
         subtitle: 'Stress doesn’t just affect your mind, it builds in your body. Stiff shoulders, sore back, and nerve pain are all signs your system is overloaded. Super Relax, with Corydalis, helps release tight muscles, ease discomfort, and unlock the physical calm your body needs so your mind can finally relax.', 
-        image: '/assets/4.webp'
+        image: '/assets/relieve_muscle.webp'
       },
       { 
         title: '5. Restore balance naturally and safely.', 
@@ -146,20 +146,20 @@ const imgSrc = "/assets/depo.webp"
     ]"
     />
   </section>
-  <section id="shop-relax" class="bg-[#4DBCB6] flex flex-col items-center justify-items-center py-[29px]">
-    <div class="px-[35px] justify-items-center">
-      <h1 class="font-crossfit leading-[1] lg:w-[890px] text-[32px] lg:px-0 lg:text-[60px] text-[#370F1E] text-center ">
+  <section id="shop-relax" class="bg-[#4DBCB6] flex flex-col items-center py-[29px]">
+    <div class="px-[35px]">
+      <h1 class="font-crossfit leading-[1] w-[329px] lg:w-[890px] text-[32px] lg:px-0 lg:text-[60px] text-[#370F1E]">
           Stress and Sleepless Nights End Here. Order Super Relax Today.
       </h1>
-      <div class="lg:w-[607px] pt-[20px]"> 
+      <div class="pt-[20px] lg:justify-items-center"> 
         
         <div class="justify-items-center pb-[20px]">
-          <img class="lg:hidden" src="/assets/botleAdv2.webp" alt="bottle">
-          <img class="hidden lg:block w-[607px]" src="/assets/botleAdv2Desk.webp" alt="bottle">
+          <img class="lg:hidden" src="/assets/botleAdv3.webp" alt="bottle">
+          <img class="hidden lg:block w-[976px]" src="/assets/botleAdv3Desk.webp" alt="bottle">
         </div>
       <ShopButton type="button" id="buy-button" paymentLink="/relax" textColorClass="text-[#370F1E]"
         :showIcon="false"
-        class="botao-shop font-bold font-crossfit !m-0 text-[20px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+        class="botao-shop font-bold font-crossfit !m-0 text-[20px] lg:text-[32px] w-full lg:w-[637px] rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
         Try Super Relax Risk-Free
       </ShopButton>
       </div>
@@ -237,12 +237,12 @@ const imgSrc = "/assets/depo.webp"
   </section>
   <section>
     <DepoimentsD 
-    primary= 'What Real Users Are Saying'
+    primary= 'What Real Users Are Saying.'
     :testimonials="testimonials"/>
   </section>
   <section class=" bg-[#FFFAF0] px-[35px]">
     <Questions :show-cta="true" 
-      title="Everything You Need to Know"
+      title="Everything You Need to Know."
       :items="[
         { question: 'Q: Will this make me groggy the next day?', resp: 'No. Super Relax has no melatonin or sedatives. 0% reported grogginess.' },
         { question: 'Q: Is it addictive or habit-forming?', resp: 'Never. It’s 100% plant-based and non-habit forming.' },

@@ -5,13 +5,12 @@ import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent, computed } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
-import BannerModal from '../components/BannerModal.vue';
 import ShopNowD from '../components/newPageD/ShopNowD.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import SuperFooter2 from '../components/SuperFooter2.vue';
 import CarouselImage from '../components/CarouselImage.vue';
-import { detectCountry } from '../composables/useCountry2.js'
+import { detectUserCurrency } from '../composables/useCountry2.js'
 import FAQ from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
@@ -95,59 +94,8 @@ function onScroll() {
   lastScrollT = t
 }
 
-const country = ref<'US' | 'UK' | 'CA'>('US')
-const ready = ref(false)
-
-const PRICE_MAP = {
-  combo3Each: { US: '$39', UK: '£35', CA: '$59' },
-  combo6Each: { US: '$29', UK: '£25', CA: '$42' },
-} as const
-
-const EACH_TXT = { US: 'each', UK: 'each', CA: 'each' } as const
-
-const prices = computed(() => {
-  const c = country.value
-  return {
-    price3: PRICE_MAP.combo3Each[c] ?? PRICE_MAP.combo3Each.US,
-    price6: PRICE_MAP.combo6Each[c] ?? PRICE_MAP.combo6Each.US,
-    each: EACH_TXT[c],
-  }
-})
-const IMAGE_MAP = {
-  bottle: {
-    US: '/assets/US/group_524.webp',
-    UK: '/assets/UK/group_UK.webp',
-    CA: '/assets/CA/group_CA.webp',
-    // BR: '/assets/california_poppy_relax.webp',
-  },
-  combo3: {
-    US: '/assets/US/group_507.webp',
-    UK: '/assets/UK/group_3UK.webp',
-    CA: '/assets/CA/group_3CA.webp',
-    // BR: '/assets/california_poppy_relax.webp',
-  },
-  combo6: {
-    US: '/assets/US/group_520.webp',
-    UK: '/assets/UK/group_6UK.webp',
-    CA: '/assets/CA/group_6CA.webp',
-    // BR: '/assets/br/combo6.webp',
-  }
-} as const
-
-const images = computed(() => ({
-  bottle: IMAGE_MAP.bottle[country.value] ?? IMAGE_MAP.bottle.US,
-  combo3: IMAGE_MAP.combo3[country.value] ?? IMAGE_MAP.combo3.US,
-  combo6: IMAGE_MAP.combo6[country.value] ?? IMAGE_MAP.combo6.US,
-}))
 
 onMounted(async () => {
-  const detected = await detectCountry()
-
-  console.log('[geo] Final country detected:', detected)
-
-  country.value = detected
-  ready.value = true
-  // listeners de retenção
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
   document.addEventListener('visibilitychange', onVisibilityChange)
@@ -629,7 +577,7 @@ const faqItems = [
     </div>
   </section>
   <DepoimentsD subtitle="4.9/5 (460+ Reviews) | 98% Recommend" />
-  <section class="bg-[#FFFAF0] px-12 justify-items-center lg:px-40 pb-[20px] pt-[28px]">
+  <section class="bg-[#FFFAF0] xs:px-12 justify-items-center lg:px-40 pb-[20px] pt-[28px] lg:pt-[94px]">
     <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
       <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
@@ -656,32 +604,31 @@ const faqItems = [
       </div>
     </div>
   </section>
-  <ShopNowD id="shop-now-d" :ready="ready" :bottle="images.bottle" :combo3="images.combo3" :combo6="images.combo6"
-    :price3="prices.price3" :price6="prices.price6" />
+  <ShopNowD id="shop-now-d"  />
 
-  <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
+  <section class="bg-[#370F1E] px-8 lg:px-40 py-8">
     <div class="lg:hidden">
       <img src="/assets/group_455.webp" alt="table" loading="lazy">
     </div>
-    <div class="hidden lg:block">
+    <div class="hidden lg:block justify-items-center">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
           class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
       <img src="/assets/tabela_relax_nerve.webp" alt="table" loading="lazy">
-      <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
+      <img class="pt-10 max-w-[1064px]" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>
-  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
+  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px] lg:pb-[90px]">
     <div class="justify-self-center max-w-[950px]">
-      <img class="justify-self-center lg:hidden h-[264px]" src="/assets/super_nerve.webp" alt="" loading="lazy">
+      <img class="justify-self-center lg:hidden h-auto" src="/assets/super_nerve.webp" alt="" loading="lazy">
       <img class="justify-self-center hidden lg:block" src="/assets/super_nerve_desk.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] px-[35px] lg:px-0 pb-0 lg:pb-[60px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[35px] lg:px-0 pb-0 lg:pb-[60px] lg:pt-[36px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
       <div class="pt-[30px] flex flex-col items-center">
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :show-icon="false"
-          class="rounded-3xl text-center  !m-0 lg:!h-[124px] !h-[60px] !hover:bg-none !pb-0 !bg-[#370F1E] mt-[1.65rem] w-[328px] lg:w-[918px]">
+          class="rounded-3xl text-center !m-0 lg:!h-[124px] !h-[60px] !hover:bg-none !pb-0 !bg-[#370F1E] mt-[1.65rem] w-full lg:w-[918px]">
           <div class="flex flex-row items-center justify-center gap-2 lg:gap-6">
             <svg class="block lg:hidden" width="21" height="21" viewBox="0 0 21 21" fill="none"
               xmlns="http://www.w3.org/2000/svg">

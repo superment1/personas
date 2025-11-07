@@ -19,8 +19,8 @@ const items = [
   {
     title: 'Corydalis',
     subtitle: 'Relieves stress-driven discomfort and supports a calm, steady state throughout the day.',
-    img1x: 'assets/corydalis-128.webp',
-    img2x: 'assets/corydalis-256.webp',
+    img1x: 'assets/corydalis.webp',
+    img2x: 'assets/corydalis.webp',
     w: 128, h: 128, alt: 'Corydalis'
   },
   {
@@ -158,13 +158,13 @@ onBeforeUnmount(() => {
               }"
           >
           <!-- Card com imagem -->
-          <div class="bg-white rounded-xl shadow rounded-2x1">
+          <div class="bg-white rounded-xl lg:h-[320px] content-center shadow rounded-2x1">
             <img 
             :src="item.img1x"
             :srcset="`${item.img1x} 1x, ${item.img2x} 2x`"
             :alt="item.title" 
             loading="lazy" decoding="async"
-            class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl" />
+            class="w-32 h-32 md:w-[250px] md:h-[250px] object-contain mx-auto rounded-xl" />
           </div>
           <div class="mt-2 grid">
             <h3 class="title">{{ item.title }}</h3>

@@ -32,7 +32,7 @@ const modalOpen = ref(false)
 const BACK_STATE = { exitGuard: true }
 let backGuardActive = false
 const values = reactive({
-  diconunt:'',
+  discount:'',
   currentValue: '',
   oldValue: '',
   threeBottles: '',
