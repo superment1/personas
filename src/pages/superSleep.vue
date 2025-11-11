@@ -184,24 +184,24 @@ const asks = ref([
 <template>
   <SuperHeader2 :show-redirect="false" />
   <section id="super-sleep-pequeno"
-    class="relative overflow-hidden w-full aspect-[14/15] min-h-[438px] block sm:hidden">
+    class="relative overflow-hidden w-full  min-h-[422px] block sm:hidden">
     <picture class="absolute inset-0 z-0">
-      <img src="/assets/newSleep.webp" alt="Super Natural Sleep no travesseiro"
-        class="w-full h-full object-cover object-[50%_100%]" width="768" height="820" loading="eager"
+      <img src="/assets/newSleep4.webp" alt="Super Natural Sleep no travesseiro"
+        class="w-full h-full object-cover" width="400" height="422" loading="eager"
         fetchpriority="high" decoding="async" />
     </picture>
     <div class="">
       <div class="title-super-natural-sleep relative z-10">
-        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[34px]">Say good
-          night<br>to insomnia.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] max-w-[270px] !leading-[1] !text-[34px]">
+          Say good night to insomnia. Without melatonin.</span>
       </div>
       <div class="description !pl-[50px] relative z-10">
-        <span class="description !text-[#fff] !leading-[1.3] !mt-[18px] !text-[13px]">Try our premium plant-based
+        <span class="description max-w-[126px] !text-[#fff] !leading-[1.3] !mt-[18px] !text-[13px]">Try our premium plant-based
           formula, specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
-        <div class="w-full flex flex-col items-center justify-center">
-          <span
+        <div class="w-full flex flex-col items-start">
+          <!-- <span
             class="w-full mt-[39px] leading-[17px] py-[6px] border-y font-gelasio max-w-[130px] italic text-center text-[#fff] text-[13px] font-bold">{{ values.discount }}
-            off <br> for a limited time!</span>
+            off <br> for a limited time!</span> -->
           <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
             class="botao-shop !h-[37px] rounded-md !hover:bg-none !px-0 !pb-0 !bg-transparent mt-[24px]">
             <div
@@ -226,22 +226,23 @@ const asks = ref([
   </section>
   <section class="relative overflow-hidden w-full h-[392px] hidden sm:block" id="super-sleep-grande">
     <picture class="absolute inset-0 z-0 w-full h-full">
-      <img src="/assets/newSleepDesk.webp" alt="bg-desktop" width="1600" height="900" loading="lazy" decoding="async"
+      <img src="/assets/newSleepDesk2.webp" alt="bg-desktop" width="1600" height="900" loading="lazy" decoding="async"
         fetchpriority="low" class="w-full h-full object-cover object-top" />
     </picture>
     <div class="flex flex-row title md:relative gap-52">
       <div class="flex flex-col z-10">
-        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[42px]">Say good
-          night<br>to insomnia.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[38px]">
+          Say good night to insomnia. Without melatonin.
+        </span>
         <div class="description">
           <span class="description !leading-[1.3] !text-[18px] !text-[#fff]">Try our premium plant-based formula,
             specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
         </div>
       </div>
       <div class="button relative bottom-[110px]">
-        <span
+        <!-- <span
           class="px-4 py-1 mb-[34px] border-y-2 font-gelasio italic text-center text-[#fff] text-[16px] font-bold">{{ values.discount }}
-          off<br> for a limited time!</span>
+          off<br> for a limited time!</span> -->
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <div
@@ -261,13 +262,13 @@ const asks = ref([
   </section>
   <section class="non-habit-forming sm:gap-[44px]">
     <div class="description-forming">
-      <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without
-        anything harmful."</p>
-      <p class="superment-team">The Superment Team</p>
+      <p>The American Heart Association recently linked long-term melatonin use to increased heart risk. 
+      </p>
+      <p class="pt-[10px]"> It’s time to rethink how we rest. And choose a safer, natural way.</p>
     </div>
     <div class="img-non">
       <picture>
-        <img src="/assets/capsula-flores1-324.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
+        <img src="/assets/capsula-flores2.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
           decoding="async" class="image-forming" style="max-width:324px;height:auto" />
       </picture>
     </div>

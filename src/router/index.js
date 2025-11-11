@@ -1,4 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {
+  collectInitialUTMs,
+  loadPersistedUTMs,
+  persistUTMs,
+  mergeQueryWithUTMs,
+  haveAnyUTM
+} from '../services/utms.js'
 
 const routes = [
   { path: '/sleepnatural',   alias: '/',  name:'supersleep',    component: () => import('../pages/superSleep.vue') },
@@ -32,7 +39,43 @@ export const router = createRouter({
   }
 })
 
-//ZENDESK função para exibir somente na pagina sleep
+let utms = loadPersistedUTMs();
+if (!Object.keys(utms).length) {
+  utms = collectInitialUTMs();
+  persistUTMs(utms);
+}
+
+router.replace((to) => {
+  if (haveAnyUTM(to.query)) return to;
+  return {
+    name: to.name,
+    params: to.params,
+    query: mergeQueryWithUTMs(to.query, utms),
+    hash: to.hash,      
+    replace: true
+  };
+});
+
+
+router.beforeEach((to, _from, next) => {
+  if (!Object.keys(utms).length) utms = loadPersistedUTMs();
+
+  const newQuery = mergeQueryWithUTMs(to.query, utms);
+  const changed = JSON.stringify(newQuery) !== JSON.stringify(to.query);
+
+  if (changed) {
+    next({
+      name: to.name,
+      params: to.params,
+      query: newQuery,
+      hash: to.hash,    
+      replace: true
+    });
+  } else {
+    next();
+  }
+});
+
 const BLOCKED = new Set ([
   '/tsl',
   '/sleepnatural',

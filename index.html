@@ -176,5 +176,68 @@
     <style>
       #app { opacity: 1; }
     </style>
+    <!-- UTM script  -->
+    <script>
+      (function () {
+          console.log('%cScript de rastreio by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: purple; font-size: 20px;');
+
+          let parametros = ["utm_source"];
+          const url = new URL(window.location.href);
+          const params = new URLSearchParams(url.search);
+
+          // Coletando parâmetros sem duplicatas
+          for (const [key] of params) {
+              if (!parametros.includes(key)) {
+                  parametros.push(key);
+              }
+          }
+
+          // Coleta parâmetros UTM da URL atual e do referrer
+          const urlParamsCapt = new URLSearchParams(window.location.search);
+          const urlParamsCaptReferrer = new URLSearchParams(document.referrer.split('?')[1] || '');
+          let utms = {};
+
+          parametros.forEach(el => {
+              if (el === "utm_source") {
+                  utms[el] = urlParamsCapt.get(el) ?? (document.referrer ? (urlParamsCaptReferrer.get(el) ?? new URL(document.referrer).hostname) : "direto");
+              } else {
+                  utms[el] = urlParamsCapt.get(el) ?? (urlParamsCaptReferrer.get(el) ?? "");
+              }
+          });
+
+          let scks = Object.values(utms).filter(value => value !== "");
+
+          // Remove valores duplicados no sck da URL atual
+          let currentSckValues = [];
+          if (urlParamsCapt.get('sck')) {
+              currentSckValues = urlParamsCapt.get('sck').split('|');
+          }
+          scks = scks.filter(value => !currentSckValues.includes(value));
+
+          document.querySelectorAll('a').forEach(el => {
+              if (el.href) {
+                  const elURL = new URL(el.href);
+                  if (!elURL.hash) {
+                      const elSearchParams = new URLSearchParams(elURL.search);
+                      let modified = false;
+                      for (let key in utms) {
+                          if (!elSearchParams.has(key)) {
+                              elSearchParams.append(key, utms[key]);
+                              modified = true;
+                          }
+                      }
+                      if (!elSearchParams.has('sck') && scks.length > 0) {
+                          elSearchParams.append('sck', scks.join('|'));
+                          modified = true;
+                      }
+                      if (modified) {
+                          el.href = elURL.origin + elURL.pathname + "?" + elSearchParams.toString();
+                      }
+                  }
+              }
+          });
+      })();
+      console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD - Dericson Calari e Samuel Choairy', 'font-size:20px;color:yellow;');
+    </script>
   </body>
 </html>
