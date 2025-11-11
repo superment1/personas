@@ -143,8 +143,9 @@
           '7days' :       { avif: "/assets/poster_advetorial3.avif",   webp: "/assets/poster_advetorial3.webp" },
           discomfort:     { avif: "/assets/poster_discomfort.avif",   webp: "/assets/poster_discomfort.webp" },
           menopause:      { avif: "/assets/poster_menopause.avif",    webp: "/assets/poster_menopause.webp" },
-          tsl:            { avif: "/assets/poster_tsl.avif",    webp: "/assets/poster_tsl.webp" },
-          relief:         { avif: "/assets/poster-relief.avif",    webp: "/assets/poster-relief.webp" },
+          tsl:            { avif: "/assets/poster_tsl.avif",          webp: "/assets/poster_tsl.webp" },
+          relief:         { avif: "/assets/poster-relief.avif",       webp: "/assets/poster-relief.webp" },
+          melatonin:      { avif: "/assets/poster_melatonin.avif",    webp: "/assets/poster_melatonin.webp" },
         };
         const assets = splashMap[route] || splashMap['sleepnatural'];
         splash.innerHTML = `
@@ -178,21 +179,16 @@
     </style>
     <!-- UTM script  -->
     <script>
-      (function () {
-          console.log('%cScript de rastreio by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: purple; font-size: 20px;');
-
+      (function () {      
           let parametros = ["utm_source"];
           const url = new URL(window.location.href);
           const params = new URLSearchParams(url.search);
 
-          // Coletando parâmetros sem duplicatas
           for (const [key] of params) {
               if (!parametros.includes(key)) {
                   parametros.push(key);
               }
           }
-
-          // Coleta parâmetros UTM da URL atual e do referrer
           const urlParamsCapt = new URLSearchParams(window.location.search);
           const urlParamsCaptReferrer = new URLSearchParams(document.referrer.split('?')[1] || '');
           let utms = {};
@@ -204,10 +200,8 @@
                   utms[el] = urlParamsCapt.get(el) ?? (urlParamsCaptReferrer.get(el) ?? "");
               }
           });
-
           let scks = Object.values(utms).filter(value => value !== "");
 
-          // Remove valores duplicados no sck da URL atual
           let currentSckValues = [];
           if (urlParamsCapt.get('sck')) {
               currentSckValues = urlParamsCapt.get('sck').split('|');
@@ -237,7 +231,6 @@
               }
           });
       })();
-      console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD - Dericson Calari e Samuel Choairy', 'font-size:20px;color:yellow;');
     </script>
   </body>
 </html>

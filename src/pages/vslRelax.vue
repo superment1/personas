@@ -80,6 +80,7 @@ function onVideoEnded() {
 }
 
 const showPlayOverlay = ref(true)
+
 function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }

@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import {
-  collectInitialUTMs,
-  loadPersistedUTMs,
-  persistUTMs,
-  mergeQueryWithUTMs,
-  haveAnyUTM
+collectInitialUTMs,
+loadPersistedUTMs,
+persistUTMs,
+mergeQueryWithUTMs,
+haveAnyUTM
 } from '../services/utms.js'
 
 const routes = [
@@ -29,6 +29,7 @@ const routes = [
   { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
   { path: '/vslrelax',          name:'vslrelax',      component: () => import('../pages/vslRelax.vue') },  
   { path: '/vslrelief',         name:'vslrelief',     component: () => import('../pages/vslRelief.vue') },  
+  { path: '/melatonin',         name:'melatonin',     component: () => import('../pages/melatonin.vue') },  
 ]
 
 export const router = createRouter({
@@ -96,6 +97,7 @@ const BLOCKED = new Set ([
   '/relief', 
   '/vslrelax',
   '/vslrelief',
+  '/melatonin'
 ])      
 const norm = (p) => (p || '/').replace(/\/+$/, '') || '/';
 
