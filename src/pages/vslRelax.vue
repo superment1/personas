@@ -6,20 +6,33 @@ import FAQ from '../components/Faq.vue';
 import VslBadgesRelax from '../components/VslBadgesRelax.vue';
 import { useSeo } from '../composables/useSeo';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-import { detectCountry } from '../composables/useCountry2'
 import { breakpointsBootstrapV5 } from '@vueuse/core';
+
 useSeo({
   title: 'Get Restful Sleep Naturally with Superment Super Sleep Aid',
   description: "Experience deep, natural, and restful sleep with Superment Super Sleep. Our melatonin-free botanical blend helps you fall asleep faster & wake up refreshed. Made in USA.",
   keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
 })
-
+const badgesRef = ref<InstanceType<typeof VslBadgesRelax> | null>(null)
 const router = useRouter()
-const modalOpen = ref(false)
 const showAfterVideo = ref(false)
 const urlPath = '/sleepnatural'
 
-function openModal() { modalOpen.value = true }
+const TRIGGER_SECONDS =  958
+const TRIGGER_STORAGE_KEY = 'videoReachedTrigger'
+
+function markTriggered() {
+  if (!showAfterVideo.value) {
+    showAfterVideo.value = true
+    sessionStorage.setItem(TRIGGER_STORAGE_KEY, 'true')
+    badgesRef.value?.startTimer() 
+  }
+}
+if (sessionStorage.getItem(TRIGGER_STORAGE_KEY) === 'true') {
+  showAfterVideo.value = true
+  badgesRef.value?.startTimer() 
+}
+
 function goToPage() { router.push(urlPath) }
 
 const BACK_STATE = { exitGuard: true }
@@ -28,7 +41,6 @@ let backGuardActive = false
 function onBackPress(e: PopStateEvent) {
   if (!backGuardActive) return
   history.pushState(BACK_STATE, document.title, location.href)
-  openExitModal(true)
 }
 
 function enableBackExitGuard() {
@@ -43,36 +55,15 @@ function disableBackExitGuard() {
   backGuardActive = false
   window.removeEventListener('popstate', onBackPress)
 }
-
-const COOLDOWN_MS = 20000
-const TOP_ZONE = 8
 let lastShown = 0
-let lastY = 9999
-let io
 
 const AFTER_VIDEO_GRACE_MS = 10000
 let afterVideoUntil = 0
 
 function onCountdownExpired() {
-  modalOpen.value = true
   lastShown = Date.now()
 }
 
-function openExitModal(force = false) {
-  const now = Date.now()
-  if (modalOpen.value) return
-  if (!force) {
-    if (now < afterVideoUntil) return
-    if (showAfterVideo.value) return
-    if (now - lastShown < COOLDOWN_MS) return
-  }
-
-  modalOpen.value = true
-  lastShown = now
-}
-function onPageHide() {
-  openExitModal()
-}
 function loadVturbOnce() {
   const id = 'vturb-script-68fac3279a717d043c8e5235'
   if (document.getElementById(id)) return
@@ -83,143 +74,49 @@ function loadVturbOnce() {
   document.head.appendChild(s)
 }
 
-function onMouseMove(e: MouseEvent) {
-  const goingUp = e.clientY < lastY
-  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true)
-  lastY = e.clientY
-}
-
-function onMouseOut(e: MouseEvent) {
-  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true)
-}
-
-function onVisibilityChange() {
-  if (document.visibilityState === 'hidden') openExitModal()
-}
-function onWindowBlur() {
-  openExitModal()
-}
-
-function onPopState() {
-  openExitModal()
-}
 function onVideoEnded() {
   showAfterVideo.value = true
   afterVideoUntil = Date.now() + AFTER_VIDEO_GRACE_MS
 }
 
-let lastScrollY = window.scrollY || 0
-let lastScrollT = performance.now()
-
-function onScroll() {
-  const y = window.scrollY
-  const t = performance.now()
-
-  const dy = lastScrollY - y
-  const dt = Math.max(t - lastScrollT, 1)
-  const vel = dy / dt
-
-  if (dy > 120 && vel > 0.6) openExitModal()
-  if (y <= 12 && dy > 0) openExitModal()
-
-  lastScrollY = y
-  lastScrollT = t
-}
 const showPlayOverlay = ref(true)
 function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }
-let fsHandlerAdded = false
-function onModalClose() {
-  lastShown = 0
-}
-const hasStarted = ref(false)
-
-let readyHandler: any
-let playHandler: any
-let endedHandler: any
-
-type Market = 'US'|'UK'|'CA'
-
-const country = ref<Market>('US')
-const ready   = ref(false)
-
-const PRICE_MAP = {
-  priceOld: { US: '$69', UK: '£59', CA: '$99' },
-  price: { US: '$59', UK: '£49', CA: '$85' },
-  combo3Each: { US: '$39', UK: '£35', CA: '$59' },
-  combo6Each: { US: '$29', UK: '£25', CA: '$42' },
-} as const
-
-const EACH_TXT = { US: 'each', UK: 'each', CA: 'each', breakpointsBootstrapV5: 'each' } as const
-const isUSorCA = computed(() => ['US','CA'].includes(country.value))
-
-const prices = computed(() => {
-  const c = country.value
-  return {
-    priceOld: PRICE_MAP.priceOld[c],
-    price:    PRICE_MAP.price[c],
-    price3: PRICE_MAP.combo3Each[c] ?? PRICE_MAP.combo3Each.US,
-    price6: PRICE_MAP.combo6Each[c] ?? PRICE_MAP.combo6Each.US,
-    each: EACH_TXT[c],
-  }
-})
-const IMAGE_MAP = {
-  bottle: {
-    US: '/assets/nn1.webp',
-    UK: '/assets/UK/group_UK.webp',
-    CA: '/assets/CA/group_CA.webp',
-   // BR: '/assets/california_poppy_relax.webp',
-  },
-  combo3: {
-    US: '/assets/US/group_507.webp',
-    UK: '/assets/UK/group_3UK.webp',
-    CA: '/assets/CA/group_3CA.webp',
-    // BR: '/assets/california_poppy_relax.webp',
-  },
-  combo6: {
-    US: '/assets/US/group_520.webp',
-    UK: '/assets/UK/group_6UK.webp',
-    CA: '/assets/CA/group_6CA.webp',
-    // BR: '/assets/br/combo6.webp',
-  }
-} as const
-
-const images = computed(() => ({
-  bottle: IMAGE_MAP.bottle[country.value] ?? IMAGE_MAP.bottle.US,
-  combo3: IMAGE_MAP.combo3[country.value] ?? IMAGE_MAP.combo3.US,
-  combo6: IMAGE_MAP.combo6[country.value] ?? IMAGE_MAP.combo6.US,
-}))
 
 onMounted(async () => {
   loadVturbOnce()
-  const detected = (await detectCountry())?.toUpperCase?.() as Market | undefined
-  if (detected && ['US','UK','CA','BR'].includes(detected)) country.value = detected
-  ready.value = true
-  console.log('[geo] Final country detected:', detected)
-
-  window.addEventListener('mousemove', onMouseMove, { passive: true })
-  document.addEventListener('mouseout', onMouseOut, { passive: true })
-  document.addEventListener('visibilitychange', onVisibilityChange)
-  window.addEventListener('blur', onWindowBlur)
-
-  window.addEventListener('popstate', onPopState)
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('pagehide', onPageHide)
-
   const el = document.getElementById('vid-690525af21067174bb51e39b')
   if (!el) return
 
+  const onTimeEvent = (ev: any) => {
+    const t =
+      Number(ev?.detail?.currentTime) ||
+      Number(ev?.detail?.time) ||
+      0
+
+    if (t >= TRIGGER_SECONDS) {
+      badgesRef.value?.startTimer() 
+      markTriggered()
+      el.removeEventListener('video:timeupdate', onTimeEvent as any)
+      el.removeEventListener('video:progress', onTimeEvent as any)
+      document.removeEventListener('video:timeupdate', onTimeEvent as any)
+      document.removeEventListener('video:progress', onTimeEvent as any)
+    }
+  }
   const onReady = () => {
     el.addEventListener('video:play', () => {
       showPlayOverlay.value = false
     })
+    el.addEventListener('video:timeupdate', onTimeEvent as any)
+    el.addEventListener('video:progress', onTimeEvent as any)
+    document.addEventListener('video:timeupdate', onTimeEvent as any)
+    document.addEventListener('video:progress', onTimeEvent as any)
 
     el.addEventListener('video:ended', () => {
       showPlayOverlay.value = false
       showAfterVideo.value = true
       sessionStorage.setItem('videoEnded', 'true')
-      console.log("VIDEO END")
     }, { once: true })
   }
   if (window.matchMedia?.('(pointer: coarse)').matches) {
@@ -231,10 +128,6 @@ onMounted(async () => {
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', onMouseMove)
-  document.removeEventListener('mouseout', onMouseOut)
-  document.removeEventListener('visibilitychange', onVisibilityChange)
-  window.removeEventListener('blur', onWindowBlur)
   window.removeEventListener('popstate', onPopState)
   window.removeEventListener('scroll', onScroll)
   disableBackExitGuard()
@@ -377,7 +270,7 @@ const faqItems = [
             </p>
           </div>
           <div class="relative z-10 pt-[16px] sm:pt-0">
-            <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[620px]
+            <div class="relative no-seek rounded-[20px] shadow-lg xs:max-w-[349px] h-[620px]
                     sm:max-w-[649px] sm:w-[400px] sm:h-[712px] sm:max-h-[812px] overflow-hidden">
               <vturb-smartplayer id="vid-690525af21067174bb51e39b" style="
                 display:block;
@@ -765,7 +658,7 @@ const faqItems = [
     </main>
 
     <div class="sm:hidden w-full h-[158px] justify-center sm:h-[318px] flex flex-col items-center bg-[#370F1E]">
-      <div class="flex max-w-[349px] mx-auto flex-col sm:gap-[40px]">
+      <div class="flex max-w-[300px] xs:max-w-[349px] mx-auto flex-col sm:gap-[40px]">
         <div class="2 flex flex-row">
           <svg xmlns="http://www.w3.org/2000/svg" width="115" height="118" viewBox="0 0 115 118" fill="none">
             <circle cx="55.1144" cy="55.1144" r="55.1144" fill="white" />
@@ -1115,26 +1008,15 @@ const faqItems = [
     <!-- v-show="showAfterVideo" -->
     <div v-show="showAfterVideo" class="">
       <VslBadgesRelax 
-        v-if="ready"
-        :ready="ready"
-        :country="country"
-        :is-us-or-ca="isUSorCA"
+        ref="badgesRef"
         bgCollor="bg-[#4DBCB6]" 
         id="id-vsl-badges" 
-        :duration-ms="7 * 60 * 1000" 
-        start-on="video-ended"
+        :duration-ms="7 * 60 * 1000"         
         @expired="onCountdownExpired" 
         porductId1="prod_T2jNgj5cCjXcvG" 
         porductId3="prod_T2jOmiPYB2SrZd"
         porductId6="prod_T2jPp4I1S0cfol"
-        :bottle="images.bottle"
-        :combo3="images.combo3"
-        :combo6="images.combo6"
-        :price3="prices.price3"
-        :price6="prices.price6"
-        :priceOld="prices.priceOld"
-        :price="prices.price"
-        />
+      />
     </div>
     <!-- v-show="showAfterVideo" -->
     <DepoimentsD v-show="showAfterVideo" :testimonials="testimonials" />
@@ -1240,7 +1122,7 @@ const faqItems = [
     </div>
     <div class="bg-[#fffaf0] w-full pb-[45px] pt-[40px] flex flex-col">
       <div class="px-0 sm:px-10 flex flex-col">
-        <div class="w-full max-w-[349px] md:max-w-[1260px] mx-auto">
+        <div class="max-w-[300px] xs:max-w-[349px] md:max-w-[1260px] mx-auto">
           <h1 class="text-center w-full sm:hidden pb-[46px] leading-none text-[#370F1E] text-[34px] font-crossfit">
             Frequently asked <br>
             questions:</h1>
@@ -1251,7 +1133,7 @@ const faqItems = [
       </div>
     </div>
     <div class="bg-[#350E1D] flex flex-col pb-4 gap-3 ">
-      <div class="max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
+      <div class="max-w-[300px] xs:max-w-[349px] sm:max-w-[760px] flex flex-col justify-center items-center mx-auto">
         <div class=" mt-6 mb-[12px] leading-[1] text-[#fffaf0] text-[2rem] w-[150px] font-crossfit">
           <span class="inline-flex text-center items-baseline">SUPERMENT<sub
               class="font-sans text-sm leading-none font-thin">®</sub></span>

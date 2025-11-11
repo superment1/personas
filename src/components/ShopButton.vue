@@ -19,6 +19,10 @@
 
 <script setup>
 import { defineProps, useAttrs, computed, ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route  = useRoute()
 
 const props = defineProps({
   productId: { type: String, required: false },
@@ -79,6 +83,26 @@ const buttonAttrs = computed(() => {
   return otherAttrs
 })
 
+/* ===== helpers UTM (simples) ===== */
+function loadUTMs() {
+  try { return JSON.parse(sessionStorage.getItem('__utms__') || '{}') } catch { return {} }
+}
+function mergeParams(a, b) {
+  const out = { ...(a || {}) }
+  for (const k in (b || {})) if (!out[k] && b[k]) out[k] = b[k]
+  return out
+}
+function appendQueryToUrl(rawUrl, extraQuery = {}) {
+  const u = new URL(rawUrl, window.location.origin)
+  const current = new URLSearchParams(u.search)
+  Object.entries(extraQuery).forEach(([k, v]) => {
+    if (v != null && v !== '' && !current.has(k)) current.set(k, v)
+  })
+  u.search = current.toString()
+  return u.toString()
+}
+/* ================================= */
+
 const handleClick = async () => {
   zooming.value = true
   setTimeout(() => zooming.value = false, 300)
@@ -91,12 +115,17 @@ const handleClick = async () => {
   }
 
   if (props.paymentLink) {
-    window.location.href = props.paymentLink
+    const utms   = loadUTMs()
+    const merged = mergeParams(route.query || {}, utms)
+    window.location.href = appendQueryToUrl(props.paymentLink, merged)
     return
   }
   if (props.to) {
-    router.push(props.to)
-    return
+    if (typeof props.to === 'string') {
+      router.push(props.to)
+    } else {
+      router.push(props.to) // { name/path, params, query, hash } — tudo ok
+    }
   }
 
   if (props.productId) {
@@ -107,7 +136,10 @@ const handleClick = async () => {
         alert("Erro ao buscar o preço: " + (data.error || "desconhecido"))
         return
       }
-      window.location.href = `https://checkout.superment.co/checkout?price_id=${data.price_id}`
+      const utms   = loadUTMs()
+      const merged = mergeParams(route.query || {}, utms)
+      const base   = `https://checkout.superment.co/checkout?price_id=${encodeURIComponent(data.price_id)}`
+      window.location.href = appendQueryToUrl(base, merged)
     } catch (err) {
       console.error("Erro na requisição:", err)
       alert("Erro ao tentar iniciar o checkout.")

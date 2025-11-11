@@ -56,7 +56,7 @@ const links = [
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="sm:max-w-[950px] max-w-[330px] flex justify-center md:justify-center">
+    <div class="lg:max-w-[950px] max-w-[330px] flex justify-center md:justify-center">
       <InputRD />
     </div>
 

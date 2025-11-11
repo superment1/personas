@@ -17,6 +17,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{ (e: 'expired'): void }>()
+
 const values = reactive({
     currentValue: '',
     oldValue: '',
@@ -69,13 +70,13 @@ onMounted(async () => {
         <div class="w-[350px] sm:w-[460px] xl:w-[1250px] flex flex-col items-center xl:flex-row justify-between">
             <!-- FRASCO GRANDE -->
             <div
-                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] xl:w-[600px] xl:h-[587px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-radius border-0 flex flex-col items-center xl:pb-4">
+                class="smartplayer-scroll-event w-[350px] sm:w-[460px] h-[360px] sm:h-[410px] xl:w-[600px] xl:h-[587px] bg-[#ffffff3f] rounded-[30px] pt-0 pb-3 border-0 flex flex-col items-center xl:pb-4">
                 <img :src=values.imagePath alt="bagde VSL" class="w-96 h-auto block xl:hidden">
                 <img :src=values.imagePath alt="bagde VSL" class="hidden xl:block h-auto w-full max-w-[900px]">
 
                 <ShopButton textColorClass="text-[#370F1E]" iconColorClass="text-[#370F1E]" :show-icon="false"
                     :productId=porductId1
-                    class="relative top-[-50px] xl:top-[-94px] h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] xl:py-[7px] justify-center sm:w-[406px] sm:h-[60px] xl:w-[95%] xl:h-[70px] xl:text-[54px]">
+                    class="relative top-[-50px] xl:top-[-94px] h-[38px] w-[325px] shadow-md bg-[linear-gradient(132deg,#FFDC03_2.9%,#C9B11C_94.39%)] !rounded-[18px] xl:py-[7px] justify-center sm:w-[406px] sm:h-[60px] xl:w-[95%] xl:h-[70px] xl:text-[54px]">
                     <div class="flex flex-row items-center justify-center">
                         <svg class="hidden xl:block" xmlns="http://www.w3.org/2000/svg" width="47" height="48"
                             viewBox="0 0 47 48" fill="none">

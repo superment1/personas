@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         skin: '#E1DCCD',
       },
+      screens: {
+        'xs': '350px'
+      },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
         gelasio: ['Gelasio', 'serif'],
