@@ -56,10 +56,8 @@ const items = [
       </svg>`,
     title: 'Melatonin isn’t a vitamin — it’s a hormone.', 
     subtitle: [
-      'Most people assume melatonin is like magnesium or chamomile — something gentle and nutritional.', 
-      'But it’s not. It’s a hormone, one your body already produces in microscopic amounts each night.',
-      'When you take it as a supplement, you’re introducing an external hormone into a system that normally regulates itself.',
-      'And that’s never neutral. Hormones influence multiple networks at once — not just sleep, but also mood, metabolism, and cardiovascular function.'
+      'It’s not like magnesium or chamomile. It’s a hormone your body already produces in tiny amounts.', 
+      'Adding more from the outside doesn’t just affect sleep — it can disrupt mood, metabolism, and even heart health.'
     ],
     image: '/assets/1_mel2.webp' ,
     imageDesk: '/assets/men_melat_desk.webp' ,
@@ -69,11 +67,10 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 37" fill="none">
         <path d="M0 36.4795L0.333008 34.209C2.93652 32.4935 5.56022 30.6872 8.2041 28.79C10.848 26.8929 13.2598 24.905 15.4395 22.8262C17.6393 20.7272 19.4053 18.5374 20.7373 16.2568C22.0693 13.9561 22.7354 11.5645 22.7354 9.08203C22.7354 8.25456 22.5638 7.37663 22.2207 6.44824C21.8978 5.51986 21.363 4.73275 20.6162 4.08691C19.8695 3.4209 18.8503 3.08789 17.5586 3.08789C16.5697 3.08789 15.7926 3.19889 15.2275 3.4209C14.6624 3.62272 14.2285 3.86491 13.9258 4.14746C13.6432 4.43001 13.391 4.68229 13.1689 4.9043L10.5957 12.9873C10.3939 13.613 10.0205 14.1074 9.47559 14.4707C8.93067 14.8138 8.35547 14.9854 7.75 14.9854C7.0638 14.9854 6.32715 14.8037 5.54004 14.4404C4.77311 14.0771 4.11719 13.5322 3.57227 12.8057C3.04753 12.0589 2.78516 11.1305 2.78516 10.0205C2.78516 8.64811 3.23926 7.35645 4.14746 6.14551C5.07585 4.93457 6.30697 3.875 7.84082 2.9668C9.39486 2.03841 11.1104 1.31185 12.9873 0.787109C14.8844 0.26237 16.8018 0 18.7393 0C22.3721 0 25.2581 0.433919 27.3975 1.30176C29.5368 2.14941 31.0706 3.3099 31.999 4.7832C32.9476 6.23633 33.4219 7.89128 33.4219 9.74805C33.4219 11.7057 32.877 13.5726 31.7871 15.3486C30.6973 17.1247 29.2139 18.8099 27.3369 20.4043C25.46 21.9987 23.3105 23.5124 20.8887 24.9453C18.487 26.3581 15.9642 27.6901 13.3203 28.9414H33.6035L32.4531 36.4795H0Z" fill="currentColor"/>
       </svg>`,
-    title: 'New research raises serious concerns.', 
+    title: 'Research is raising \nred flags.', 
     subtitle: [
-      'The American Heart Association study didn’t appear out of nowhere. It’s part of a growing wave of research questioning what happens when people use melatonin for years, not weeks.', 
-      'The data doesn’t prove causation — but it shows enough correlation to raise alarms among doctors who once called it harmless. Because with hormones, “inconclusive” doesn’t mean “safe.” ',      
-      'It means **we still don’t know the full cost.**',
+      'Recent studies, including one from the American Heart Association, link long-term melatonin use to higher health risks.',
+      '“Inconclusive” doesn’t mean “safe” — it means we still don’t know the cost of using it for years.',
     ],
     image: '/assets/8mel_9.webp',
     imageDesk: '/assets/1mel_desk.webp' ,
@@ -83,14 +80,10 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 51" fill="none">
         <path d="M14.9854 50.1328C13.4111 50.1328 11.7562 49.9512 10.0205 49.5879C8.28483 49.2448 6.65007 48.6595 5.11621 47.832C3.60254 47.0247 2.37142 45.9147 1.42285 44.502C0.474284 43.1094 0 41.3636 0 39.2647C0 37.5693 0.312826 36.1566 0.938477 35.0264C1.58431 33.8962 2.38151 33.0485 3.33008 32.4834C4.29883 31.8981 5.26758 31.6055 6.23633 31.6055C7.0638 31.6055 7.79037 31.8376 8.41602 32.3018C9.04167 32.766 9.36458 33.3411 9.38477 34.0273L7.02344 43.8965C7.32617 44.4414 7.75 44.9661 8.29492 45.4707C8.86003 45.9954 9.56641 46.4193 10.4141 46.7422C11.2819 47.0853 12.3213 47.2568 13.5322 47.2568C14.6019 47.2568 15.7422 47.0348 16.9531 46.5908C18.1842 46.1468 19.3346 45.4505 20.4043 44.502C21.4941 43.5736 22.3822 42.3727 23.0684 40.8994C23.7546 39.4463 24.0977 37.6904 24.0977 35.6318C24.0977 33.1091 23.6436 31.0606 22.7354 29.4863C21.8473 27.9121 20.7474 26.7516 19.4355 26.0049C18.1439 25.2581 16.8926 24.8848 15.6816 24.8848H13.7744L14.3799 21.4336H16.2871C18.265 21.4336 20.041 20.8685 21.6152 19.7383C23.1895 18.6081 24.4206 17.0641 25.3086 15.1064C26.2168 13.1488 26.6406 10.9287 26.5801 8.44629C26.5801 7.55827 26.4085 6.70052 26.0654 5.87305C25.7223 5.02539 25.127 4.3291 24.2793 3.78418C23.4316 3.23926 22.2106 2.9668 20.6162 2.9668C19.93 2.9668 19.2135 3.00716 18.4668 3.08789C17.7201 3.16862 17.1549 3.34017 16.7715 3.60254L13.7441 12.9873C13.5423 13.613 13.1689 14.1074 12.624 14.4707C12.0791 14.8138 11.5039 14.9854 10.8984 14.9854C10.2122 14.9854 9.47559 14.8037 8.68848 14.4404C7.92155 14.0771 7.26563 13.5322 6.7207 12.8057C6.19596 12.0791 5.93359 11.1709 5.93359 10.0811C5.93359 8.50684 6.40788 7.10417 7.35645 5.87305C8.30501 4.62174 9.55632 3.56217 11.1104 2.69434C12.6644 1.80631 14.3698 1.1403 16.2266 0.696289C18.1035 0.232096 19.9704 0 21.8272 0C26.9535 0 30.6771 0.948568 32.9981 2.8457C35.3392 4.74284 36.5501 7.19499 36.6309 10.2021C36.6712 12.5635 35.9447 14.6725 34.4512 16.5293C32.9779 18.3659 31.0505 19.8392 28.6689 20.9492C26.2874 22.0592 23.7647 22.7152 21.1006 22.917C23.0381 22.9372 24.8444 23.25 26.5195 23.8555C28.1947 24.4609 29.6579 25.2985 30.9092 26.3682C32.1605 27.4176 33.1494 28.6387 33.876 30.0313C34.6025 31.4037 34.9759 32.877 34.9961 34.4512C35.0566 37.0951 34.5117 39.3958 33.3613 41.3535C32.2311 43.3314 30.6973 44.9661 28.7598 46.2578C26.8223 47.5495 24.6527 48.5182 22.251 49.1641C19.8695 49.8099 17.4476 50.1328 14.9854 50.1328Z" fill="currentColor"/>
       </svg>`,
-    title: 'The melatonin industry is massive and well-protected.', 
+    title: 'The industry doesn’t want you to question it.', 
     subtitle: [
-      'Melatonin is now a multi-billion-dollar market.', 
-      'It’s cheap to produce, easy to brand, and has become the default bedtime fix for millions.',
-      'And where that much money flows, so does influence.',
-      'Every time new findings raise concerns, counter-statements appear: “The results are mixed.” “More studies are needed.”',
-      'Maybe that’s true. Maybe it’s not. But waiting for absolute certainty isn’t the smart move when what’s at stake is your own health.',
-      '**Take care of yourself before someone else “confirms” what you already suspect.**',
+      'Melatonin is a multi-billion-dollar market. So when new findings appear, they’re quickly softened by “mixed results” headlines.',
+      'But you don’t need to wait for certainty to protect your health.',
     ],
     image: '/assets/4_mel2.webp',
     imageDesk: '/assets/2mel_desk.webp' ,
@@ -100,11 +93,10 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 50" fill="none">
         <path d="M19.1934 49.709L20.4648 38.084H1.0293L0 35.4502L19.1934 1.24121C19.3548 0.938477 19.819 0.655924 20.5859 0.393555C21.373 0.131185 22.1602 0 22.9473 0C23.9362 0 24.8949 0.161458 25.8232 0.484375C26.7516 0.787109 27.5186 1.18066 28.124 1.66504C28.7295 2.12923 29.0322 2.61361 29.0322 3.11816C29.0322 3.50163 28.9515 3.80436 28.79 4.02637L7.11426 33.1191H20.8584L22.1904 21.8574L23.916 20.6465H31.4844L30.0313 33.1191H36.54L35.9951 38.084H29.6377L28.3662 49.709H19.1934Z" fill="currentColor"/>
       </svg>`,
-    title: 'Most melatonin products are massively overdosed.', 
+    title: 'Most products \nare overdosed.', 
     subtitle: [
-      'Your body makes about **0.3** mg of melatonin naturally.',
-      'Most over-the-counter gummies contain **3 to 10 mg** — up to thirty times more than your body would ever produce on its own.',
-      'That doesn’t make them stronger — it makes them **disruptive**. Overdosing can leave you groggy, confused, or irritable the next day, and may throw off the very rhythm the supplement was meant to restore.',
+      'Your body makes about 0.3 mg naturally. Most gummies have 3–10 mg — up to thirty times more than you’d ever produce.',
+      'That’s not stronger — it’s disruptive.',
     ],
     image: '/assets/5_mel2.webp',
     imageDesk: '/assets/3mel_desk.webp' ,
@@ -114,10 +106,10 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 50" fill="none">
         <path d="M13.3506 49.4719C11.4736 49.4719 9.72787 49.1803 8.11328 48.5971C6.4987 48.034 5.07585 47.2598 3.84473 46.2743C2.63379 45.309 1.69531 44.203 1.0293 42.9561C0.343099 41.7294 0 40.4523 0 39.1251C0 37.9989 0.252279 37.0738 0.756836 36.3498C1.24121 35.6258 1.8265 35.0929 2.5127 34.751C3.21908 34.389 3.86491 34.208 4.4502 34.208C5.23731 34.208 5.91341 34.4091 6.47852 34.8113C7.0638 35.2136 7.43718 35.7666 7.59863 36.4705C7.67936 36.8325 7.82064 37.4659 8.02246 38.3709C8.24447 39.2759 8.47656 40.2512 8.71875 41.297C8.98112 42.3629 9.21322 43.3181 9.41504 44.1627C9.63704 45.0275 9.77832 45.5805 9.83887 45.8219C9.83887 45.8219 9.94987 45.8822 10.1719 46.0029C10.3939 46.1436 10.7471 46.2844 11.2314 46.4252C11.7158 46.566 12.3516 46.6363 13.1387 46.6363C15.2376 46.6363 16.9733 46.1537 18.3457 45.1884C19.7181 44.2231 20.8079 42.9561 21.6152 41.3875C22.4225 39.839 22.9876 38.1497 23.3105 36.3196C23.6536 34.5097 23.8252 32.75 23.8252 31.0406C23.8252 27.9436 23.25 25.4901 22.0996 23.6802C20.9694 21.8702 19.5062 20.9652 17.71 20.9652C16.1357 20.9652 14.39 21.287 12.4727 21.9305C10.5755 22.554 9.01139 23.5997 7.78027 25.0678L5.93359 24.0723L11.8975 0H34.8447L33.7549 8.41626H14.0166L10.6563 20.0904C11.9076 19.3262 13.401 18.7129 15.1367 18.2503C16.8926 17.7878 18.6585 17.5565 20.4346 17.5565C23.583 17.5565 26.1462 18.1296 28.124 19.2759C30.1019 20.4021 31.555 21.9406 32.4834 23.8913C33.4118 25.842 33.876 28.0441 33.876 30.4976C33.876 32.931 33.3815 35.2739 32.3926 37.5263C31.4037 39.7988 29.9909 41.8299 28.1543 43.6198C26.3379 45.4297 24.1683 46.8576 21.6455 47.9033C19.1429 48.9491 16.3779 49.4719 13.3506 49.4719Z" fill="currentColor"/>
       </svg>`,
-    title: '“Better sleep” isn’t about sedation.', 
+    title: 'Sleep isn’t \njust sedation.', 
     subtitle: [
-      'Falling asleep isn’t about shutting down — it’s about feeling safe enough to release. If your nervous system is flooded with stress signals, cortisol, or racing thoughts, your body resists rest.',
-      'Melatonin might make you drowsy, but it doesn’t resolve the reason you can’t switch off. Real rest comes from calming the system that tells your body it’s okay to let go.',
+      'Melatonin can make you drowsy, but it doesn’t solve why your body can’t rest.',
+      'Real sleep happens when your nervous system feels calm and safe enough to let go.',
     ],
     image: '/assets/6_mel2.webp',
     imageDesk: '/assets/4mel_desk.webp' , 
@@ -127,10 +119,9 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" fill="none">
         <path d="M15.5 47.7412C11.9277 47.7412 8.99121 47.0046 6.69043 45.5313C4.40983 44.0579 2.72461 42.1507 1.63477 39.8096C0.544922 37.4684 0 34.986 0 32.3623C0 28.6286 0.666016 25.026 1.99805 21.5547C3.33008 18.0632 5.26758 14.8542 7.81055 11.9277C10.3535 8.98112 13.4414 6.47852 17.0742 4.41992C20.7272 2.34115 24.8747 0.867839 29.5166 0L29.002 2.78516C25.8132 3.75391 23.1087 5.2474 20.8887 7.26562C18.6888 9.26367 16.9027 11.5342 15.5303 14.0772C14.1579 16.5999 13.1185 19.153 12.4121 21.7363C13.0579 21.0905 13.946 20.4648 15.0762 19.8594C16.2266 19.2337 17.4678 18.7191 18.7998 18.3154C20.152 17.8916 21.4639 17.6797 22.7354 17.6797C25.7022 17.6797 28.1139 18.1943 29.9707 19.2236C31.8275 20.2327 33.1898 21.5749 34.0576 23.25C34.9456 24.9049 35.3897 26.7012 35.3897 28.6387C35.3897 32.1908 34.5622 35.4199 32.9072 38.3262C31.2725 41.2122 28.9616 43.5029 25.9746 45.1982C23.0078 46.8936 19.5163 47.7412 15.5 47.7412ZM15.6514 44.8652C17.7503 44.8652 19.5365 44.0983 21.0098 42.5645C22.5033 41.0104 23.6335 39.0023 24.4004 36.54C25.1875 34.0778 25.5811 31.4844 25.5811 28.7598C25.5811 26.7415 25.137 25.0664 24.249 23.7344C23.3812 22.3822 21.9785 21.7061 20.041 21.7061C18.8704 21.7061 17.6191 21.9583 16.2871 22.4629C14.9753 22.9674 13.8249 23.5426 12.8359 24.1885C11.8672 24.8343 11.292 25.3691 11.1104 25.793C10.3636 27.6094 9.86914 29.4964 9.62696 31.4541C9.40495 33.4118 9.29395 35.3493 9.29395 37.2666C9.29395 39.4665 9.73796 41.2829 10.626 42.7158C11.5342 44.1488 13.2093 44.8652 15.6514 44.8652Z" fill="currentColor"/>
       </svg>`,
-    title: 'Dependency creeps in quietly.', 
+    title: 'Dependency \nbuilds quietly.', 
     subtitle: [
-      'Melatonin isn’t addictive like a drug — but it’s quietly habit-forming. You start taking it “just on stressful nights.” Then “every night.” Eventually, you can’t sleep without it.',
-      'That dependency doesn’t make you weak — it just proves that sleep is more complex than a single hormone can fix. And the longer the body leans on an external cue, the more it forgets how to find its own rhythm.'
+      'You start “just once in a while.” Then it’s every night — and suddenly, your body forgets how to sleep on its own.'
     ],
     image: '/assets/3mel3.webp',
     imageDesk: '/assets/5mel_desk.webp',
@@ -140,12 +131,10 @@ const items = [
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 48" fill="none">
         <path d="M4.63006 47.5898L23.9748 9.41504H7.83904C7.21339 9.41504 6.63819 9.5765 6.11345 9.89941C5.58871 10.2223 5.12452 10.6058 4.72088 11.0498C4.33741 11.4938 4.0145 11.9076 3.75213 12.291C3.50994 12.6745 3.35857 12.9268 3.29802 13.0479C3.0962 13.4313 2.78338 13.6937 2.35955 13.835C1.93572 13.9762 1.5018 14.0469 1.05779 14.0469C0.835784 14.0469 0.583506 13.9661 0.300954 13.8047C0.0385838 13.623 -0.0522365 13.3607 0.0284927 13.0176L2.51092 0L30.8771 0.0302734L32.0578 2.05859L12.1379 47.6201L4.63006 47.5898Z" fill="currentColor"/>
       </svg>`,
-    title: 'There’s a safer, smarter way.', 
+    title: 'There’s a safer, \nsmarter way.', 
     subtitle: [
-      'Modern sleep science now focuses on restoring the body’s natural mechanisms — not overriding them.',
-      'That means supporting the nervous system, lowering nighttime cortisol, and nourishing calm through botanical ingredients that work in harmony with your biology.',
-      'No hormones. No dependency cycle. No gamble with long-term health.',
-      'Just real rest — the kind that helps your body heal itself.'
+      'Modern sleep science focuses on restoring your natural rhythm — not replacing it.',
+      'By calming the nervous system and lowering nighttime cortisol with botanical ingredients, you can rest deeply — no hormones, no dependency, no risk.',
     ],
     image: '/assets/7_mel2.webp',
     imageDesk: '/assets/6mel_desk.webp' ,
@@ -331,6 +320,9 @@ const items = [
         <div class="pt-[3px] lg:pt-[35px] lg:justify-items-center">        
           <p class="text-[#491529] pb-[29px] lg:pb-[90px] text-[15px] lg:text-[26px] leading-[16px] lg:leading-[29px]">
             Click below to discover <span class="font-bold">Super Natural Sleep</span> — the melatonin-free botanical formula that helps calm your nervous system, support natural sleep cycles, and help you wake up refreshed — safely.</p>
+            <p class="text-[#491529] pb-[29px] font-black text-[15px] leading-[16px] md:hidden">
+              Don’t wait to find out the hard way.
+            </p>
           <ShopButton type="button" id="buy-button" paymentLink="/vsleep" textColorClass="text-[#370F1E]"
             :showIcon="false"
             class="botao-shop font-bold font-sans !m-0 text-[20px] lg:text-[32px] w-full !rounded-[14px] lg:!rounded-[28px] text-center !h-[35px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">

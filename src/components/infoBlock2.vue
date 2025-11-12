@@ -46,7 +46,7 @@ function parseBold(text: string) {
           <p
             v-for="(sub, idx) in getSubtitles(item.subtitle)"
             :key="idx"
-            class="text-[14px] lg:text-[26px] text-[#fff] whitespace-pre-line font-sans leading-[18px] lg:leading-[33px]"
+            class="text-[15px] lg:text-[26px] text-[#fff] whitespace-pre-line font-sans leading-[18px] lg:leading-[33px] font-light"
           >
             <template v-for="(seg, j) in parseBold(sub)" :key="j">
               <span :class="seg.strong ? HILITE_CLASS : ''">{{ seg.text }}</span>
