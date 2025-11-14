@@ -60,7 +60,7 @@ const items = [
       'Adding more from the outside doesn’t just affect sleep — it can disrupt mood, metabolism, and even heart health.'
     ],
     image: '/assets/1_mel2.webp' ,
-    imageDesk: '/assets/men_melat_desk.webp' ,
+    imageDesk: '/assets/mel1.webp' ,
   },
   { 
     svg: String.raw`
@@ -73,7 +73,7 @@ const items = [
       '“Inconclusive” doesn’t mean “safe” — it means we still don’t know the cost of using it for years.',
     ],
     image: '/assets/8mel_9.webp',
-    imageDesk: '/assets/1mel_desk.webp' ,
+    imageDesk: '/assets/mel2.webp' ,
   },
   { 
     svg: String.raw`
@@ -86,7 +86,7 @@ const items = [
       'But you don’t need to wait for certainty to protect your health.',
     ],
     image: '/assets/4_mel2.webp',
-    imageDesk: '/assets/2mel_desk.webp' ,
+    imageDesk: '/assets/mel3.webp' ,
   },
   { 
     svg: String.raw`
@@ -99,20 +99,20 @@ const items = [
       'That’s not stronger — it’s disruptive.',
     ],
     image: '/assets/5_mel2.webp',
-    imageDesk: '/assets/3mel_desk.webp' ,
+    imageDesk: '/assets/mel4.webp' ,
   },
   { 
     svg: String.raw`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 50" fill="none">
         <path d="M13.3506 49.4719C11.4736 49.4719 9.72787 49.1803 8.11328 48.5971C6.4987 48.034 5.07585 47.2598 3.84473 46.2743C2.63379 45.309 1.69531 44.203 1.0293 42.9561C0.343099 41.7294 0 40.4523 0 39.1251C0 37.9989 0.252279 37.0738 0.756836 36.3498C1.24121 35.6258 1.8265 35.0929 2.5127 34.751C3.21908 34.389 3.86491 34.208 4.4502 34.208C5.23731 34.208 5.91341 34.4091 6.47852 34.8113C7.0638 35.2136 7.43718 35.7666 7.59863 36.4705C7.67936 36.8325 7.82064 37.4659 8.02246 38.3709C8.24447 39.2759 8.47656 40.2512 8.71875 41.297C8.98112 42.3629 9.21322 43.3181 9.41504 44.1627C9.63704 45.0275 9.77832 45.5805 9.83887 45.8219C9.83887 45.8219 9.94987 45.8822 10.1719 46.0029C10.3939 46.1436 10.7471 46.2844 11.2314 46.4252C11.7158 46.566 12.3516 46.6363 13.1387 46.6363C15.2376 46.6363 16.9733 46.1537 18.3457 45.1884C19.7181 44.2231 20.8079 42.9561 21.6152 41.3875C22.4225 39.839 22.9876 38.1497 23.3105 36.3196C23.6536 34.5097 23.8252 32.75 23.8252 31.0406C23.8252 27.9436 23.25 25.4901 22.0996 23.6802C20.9694 21.8702 19.5062 20.9652 17.71 20.9652C16.1357 20.9652 14.39 21.287 12.4727 21.9305C10.5755 22.554 9.01139 23.5997 7.78027 25.0678L5.93359 24.0723L11.8975 0H34.8447L33.7549 8.41626H14.0166L10.6563 20.0904C11.9076 19.3262 13.401 18.7129 15.1367 18.2503C16.8926 17.7878 18.6585 17.5565 20.4346 17.5565C23.583 17.5565 26.1462 18.1296 28.124 19.2759C30.1019 20.4021 31.555 21.9406 32.4834 23.8913C33.4118 25.842 33.876 28.0441 33.876 30.4976C33.876 32.931 33.3815 35.2739 32.3926 37.5263C31.4037 39.7988 29.9909 41.8299 28.1543 43.6198C26.3379 45.4297 24.1683 46.8576 21.6455 47.9033C19.1429 48.9491 16.3779 49.4719 13.3506 49.4719Z" fill="currentColor"/>
       </svg>`,
-    title: 'Sleep isn’t \njust sedation.', 
+    title: 'Melatonin isn’t FDA\n approved for long-term use.', 
     subtitle: [
-      'Melatonin can make you drowsy, but it doesn’t solve why your body can’t rest.',
-      'Real sleep happens when your nervous system feels calm and safe enough to let go.',
+      'You can buy melatonin freely in almost any pharmacy — but that doesn’t mean it’s risk-free.',
+      'The FDA has never approved melatonin for chronic or prolonged use. So if you’ve been taking it every night to fall asleep, you’re doing it at your own risk.',
     ],
     image: '/assets/6_mel2.webp',
-    imageDesk: '/assets/4mel_desk.webp' , 
+    imageDesk: '/assets/mel5.webp' , 
   },
   { 
     svg: String.raw`
@@ -124,7 +124,7 @@ const items = [
       'You start “just once in a while.” Then it’s every night — and suddenly, your body forgets how to sleep on its own.'
     ],
     image: '/assets/3mel3.webp',
-    imageDesk: '/assets/5mel_desk.webp',
+    imageDesk: '/assets/mel6.webp',
   },
   { 
     svg: String.raw`
@@ -137,7 +137,7 @@ const items = [
       'By calming the nervous system and lowering nighttime cortisol with botanical ingredients, you can rest deeply — no hormones, no dependency, no risk.',
     ],
     image: '/assets/7_mel2.webp',
-    imageDesk: '/assets/6mel_desk.webp' ,
+    imageDesk: '/assets/mel7.webp' ,
   }
 ]
 </script>
@@ -145,14 +145,19 @@ const items = [
 <template>
   <section class="bg-[#FFFAF0]">
     <div class="sm:flex bg-[#FFFAF0] max-w-[1269px] mx-auto sm:py-[80px] ">
-      <div class="flex flex-col lg:flex-row items-center pt-[27px] lg:pt-0 px-[50px] lg:px-0 w-full">
-        <div>
-          <h1 class="text-[#370F1E] leading-[36px] lg:leading-[96px] font-crossfit text-[32px] lg:text-[85px] uppercase">
-            Have You Seen <br>the Recent Headlines
-            <br><span class="bg-[#FF0000] px-[5px] lg:px-[15px] rounded-[7px] lg:rounded-[16px] leading-1 text-[#FFF600]"> About Melatonin? </span>
+      <div class="flex flex-col lg:flex-row pt-[27px] min-w-[300px] lg:pt-[85px] px-[50px] lg:px-0 w-full">
+        <div class="hidden sm:flex justify-center">
+          <h1 class="text-[#370F1E] absolute top-[66px] left-[85px] w-[1269px] pb-[30px] z-20 leading-[36px] lg:leading-[96px] font-crossfit text-[32px] lg:text-[85px] uppercase">
+            Have You Seenthe Recent Headlines
           </h1>
-          <p class="leading-[16px] text-[#370F1E] pt-[15px] lg:pt-[46px] font-gelasio italic text-[14px] lg:text-[36px] lg:leading-[41px]">
-            A new study from the American Heart Association has shaken up the sleep <br>supplement world.
+        </div>
+        <div class="max-w-[670px] sm:mr-[120px]">
+          <h1 class="sm:hidden text-[#370F1E] leading-[36px] lg:leading-[96px] font-crossfit text-[32px] lg:text-[85px] uppercase">
+            Have You Seen <br>the Recent Headlines</h1>
+          <p class="bg-[#FF0000] leading-[1] font-crossfit text-[32px] lg:text-[85px] uppercase px-[5px] lg:px-[15px] rounded-[7px] lg:rounded-[16px] text-[#FFF600]"> 
+            About Melatonin? </p>
+          <p class="leading-[16px] text-[#370F1E] pt-[15px] lg:pt-[46px] font-gelasio italic text-[16px] lg:text-[36px] lg:leading-[41px]">
+            A new study from the <span class="font-bold">American Heart Association</span> has shaken up the sleep <br>supplement world.
           </p>
           <div class="hidden sm:flex items-center pt-[32px] gap-[25px] lg:gap-[50px] lg:self-start">
             <svg class="lg:w-[123px] lg:h-[58px]" xmlns="http://www.w3.org/2000/svg" width="54" height="26" viewBox="0 0 54 26" fill="none">
@@ -184,7 +189,7 @@ const items = [
               <path fill-rule="evenodd" clip-rule="evenodd" d="M42.7992 28.9421V28.9457C42.798 28.9445 42.7968 28.9433 42.7955 28.9421H42.7992Z" fill="#370F1E"/>
             </svg>
           </div>
-          <div class="text-[15px] lg:text-[26px] text-[#370F1E] leading-[1.1] font-sans pt-[28px] lg:pr-[130px]">
+          <div class="hidden sm:flex flex-col  text-[15px] lg:text-[26px] text-[#370F1E] leading-[1.1] font-sans pt-[28px] lg:pr-[130px]">
             <p>
               The research linked <span class="font-bold">long-term melatonin use may increase the risk of heart failure by up to 90%,</span> and nearly <span class="font-bold"> double the risk of death from any cause.</span>
             </p>
@@ -195,10 +200,10 @@ const items = [
             </p>
           </div>
         </div>
-        <div class="pt-[16px] sm:pt-0 w-full flex justify-end max-w-max">
+        <div class="pt-[16px] self-end sm:pt-0 w-full flex justify-end max-w-max">
           <div
-            class="no-seek relative rounded-[20px] max-h-[530px] lg:max-h-[854px] max-w-[300px] lg:max-w-[483px] shadow-lg w-full  overflow-hidden"
-            style="width:483px;"
+            class="no-seek relative rounded-[20px] shadow-lg w-full overflow-hidden"
+            style="width:400px;"
           >
             <div class="relative aspect-[9/16] bg-black">
               <vturb-smartplayer
@@ -208,7 +213,7 @@ const items = [
             </div>
           </div>
         </div>
-        <div class="lg:hidden">
+        <div class="flex flex-col lg:hidden items-center">
           <div class="flex items-center pt-[32px] gap-[25px] lg:gap-[50px] lg:self-start">
             <svg class="lg:w-[123px] lg:h-[58px]" xmlns="http://www.w3.org/2000/svg" width="54" height="26" viewBox="0 0 54 26" fill="none">
               <path d="M22.6162 0.000498533C20.221 -0.0356814 18.0952 1.90079 18.0952 4.70324V17.3229C18.0977 17.7771 17.7584 18.18 17.2644 18.18H13.3197C4.78365 18.1902 5.54641 7.26747 12.8122 7.25723C16.0422 7.25264 17.1712 7.25723 17.1712 7.25723V4.19688H12.6572C9.82869 4.20145 7.6873 5.2786 6.24691 6.88449C4.80649 8.49043 4.06905 10.6291 4.0702 12.7545C4.07132 14.8006 4.7692 16.9242 6.22698 18.5337C7.68475 20.1431 9.90127 21.2437 12.9647 21.2437H20.4103C20.8408 21.2437 21.2057 20.8792 21.2057 20.454V5.03622C21.2009 4.22997 21.6191 3.58179 22.2915 3.36724H22.2916C22.9438 3.15971 23.6602 3.43 24.092 4.04415L24.0939 4.0469L24.0956 4.04974C25.1419 5.76431 27.7565 9.97036 30.1181 13.7618C31.2989 15.6576 32.4165 17.4498 33.2435 18.7755C33.657 19.4384 33.9978 19.9846 34.2376 20.3688C34.4754 20.7499 34.6076 20.9617 34.6223 20.9857C34.7965 21.2318 35.0157 21.3243 35.1983 21.2667H35.1984L35.1986 21.2666C35.3022 21.2344 35.3837 21.1615 35.4447 21.0413C35.5057 20.9212 35.5418 20.7544 35.5418 20.5541V5.03843C35.5393 4.23474 35.9549 3.58521 36.6295 3.37188C37.2778 3.16404 37.9963 3.43435 38.4238 4.04911L38.4255 4.05154L38.427 4.05407C39.4757 5.76754 42.0914 9.97362 44.4535 13.7651C46.8143 17.5544 48.9251 20.935 48.9582 20.9877C48.9583 20.9878 48.9583 20.9879 48.9584 20.988C49.1291 21.2326 49.3622 21.3302 49.5568 21.2688C49.6622 21.2355 49.7464 21.161 49.8092 21.0408C49.872 20.9206 49.9095 20.755 49.9095 20.5564V0.0950006H46.8217V12.0431C46.8217 12.0431 44.9097 8.80066 41.6501 3.20439C38.461 -2.278 32.4426 -0.0120324 32.4401 4.70546V12.0409C32.4401 12.0409 30.5739 8.79612 27.3164 3.19986C26.02 0.973534 24.2551 0.0252532 22.6162 0.000498533ZM13.2151 0.0950006C-4.52844 0.092792 -4.36011 25.3718 13.4541 25.3834H20.4147C23.4103 25.3855 25.3339 23.6089 25.3315 20.3344V13.9313C25.3315 13.9313 29.2354 20.404 30.7674 22.9375C33.3738 27.2454 39.6811 26.3983 39.6652 21.0173V13.9359C39.6652 13.9359 43.569 20.4061 45.1031 22.9431C47.7095 27.2497 54.0172 26.4017 54.0012 21.0194V0.0950006H50.9181V20.5564C50.9203 21.5233 50.3783 22.0637 49.8618 22.2269L49.8615 22.2271C49.2316 22.4279 48.5463 22.1591 48.1202 21.5488L48.1187 21.5467L48.1174 21.5445C48.0292 21.4038 39.6741 8.02419 37.5851 4.60589C37.4118 4.35979 37.1579 4.25867 36.9327 4.32988C36.6988 4.40479 36.5501 4.65234 36.5501 5.03801V20.5518C36.5526 21.5226 36.0198 22.0614 35.5055 22.2269L35.5049 22.2272C34.8842 22.4222 34.2098 22.154 33.7864 21.5441L33.7853 21.5427L33.7844 21.5412C33.7675 21.5149 33.6327 21.2992 33.3916 20.9134C33.1505 20.5276 32.8085 19.98 32.394 19.3159C31.5651 17.9879 30.4463 16.1941 29.265 14.2979C26.9036 10.5074 24.2946 6.31016 23.2515 4.60136C23.0784 4.35564 22.8222 4.25632 22.5965 4.32777V4.32766C22.36 4.40271 22.2099 4.65022 22.2121 5.03284V20.4539C22.2121 21.4436 21.4008 22.2499 20.4103 22.2499H12.9646C9.57691 22.2499 7.09632 21.0202 5.46896 19.2164C3.84159 17.4126 3.06622 15.04 3.0639 12.7545C3.06158 10.383 3.88287 7.99595 5.4949 6.19798C7.10694 4.40001 9.51179 3.19517 12.6549 3.19058H17.1712V0.0950006H13.2151Z" fill="#370F1E"/>
@@ -239,7 +244,7 @@ const items = [
               <path fill-rule="evenodd" clip-rule="evenodd" d="M42.7992 28.9421V28.9457C42.798 28.9445 42.7968 28.9433 42.7955 28.9421H42.7992Z" fill="#370F1E"/>
             </svg>
           </div>
-          <div class="text-[15px] lg:text-[26px] text-[#370F1E] leading-[1.1] font-sans pt-[28px] lg:pr-[130px]">
+          <div class="2 text-[15px] lg:text-[26px] text-[#370F1E] leading-[1.1] font-sans pt-[28px] lg:pr-[130px]">
             <p>
               The research linked <span class="font-bold">long-term melatonin use may increase the risk of heart failure by up to 90%,</span> and nearly <span class="font-bold"> double the risk of death from any cause.</span>
             </p>
@@ -256,14 +261,14 @@ const items = [
   </section>
 
   <section class="bg-[#370F1E] px-[50px] pb-[30px] pt-[24px] lg:py-[60px]">
-    <div class="max-w-[1269px] justify-items-center lg:flex flex-col lg:gap-[50px] mx-auto">
+    <div class="max-w-[1269px] justify-items-center lg:flex flex-col lg:gap-[50px] min-w-[300px] mx-auto">
       <div class="flex flex-col sm:flex-row lg:gap-[60px]">
         <div class="flex flex-col">
           <h1 class="font-crossfit text-[#FFDC03] text-[32px] lg:text-[63px] uppercase">
             Maybe you thought:
           </h1>
           <p class="font-gelasio italic pt-[2px] leading-[20px] font-bold lg:text-[36px] lg:leading-[46px] text-[#FFFAF0]">“That can’t be right. Everyone takes melatonin.”</p>
-          <p class="font-gelasio italic pb-[20px] pt-[25px] leading-[20px] lg:leading-[46px] lg:text-[36px] font-bold text-[#FFFAF0]">“If it were risky, someone would’ve said something years ago.”</p>
+          <p class="font-gelasio italic pb-[20px] pt-[14px] leading-[20px] lg:leading-[46px] lg:text-[36px] font-bold text-[#FFFAF0]">“If it were risky, someone would’ve said something years ago.”</p>
         </div>
         <img
             src="/assets/3_mel2.webp"
@@ -295,43 +300,43 @@ const items = [
         <h1 class="font-crossfit text-[#FFDC03] pr-[20px] xs:pr-[40px] sm:pr-0 leading-[1.1] pt-[30px] text-[32px] lg:text-[75px] uppercase">
             7 Reasons to Rethink Melatonin.
         </h1>
-        <p class="text-[#fff] text-[20px] lg:text-[36px]  font-gelasio font-bold pt-[10px] lg:pt-[20px] pb-[40px] leading-[1.1]">
+        <p class="text-[#fff] text-[20px] lg:text-[36px]  font-gelasio font-bold pt-[10px] pr-[15px] lg:pt-[20px] pb-[40px] leading-[1.1]">
           Why More People Are Looking for Something Truly Natural.</p>
       </div>              
     </div>
     <InfoBlock2 :items="items"/>
   </section>
   <section id="shop-relax" class="bg-[#6EC8F0] px-[50px] items-center py-[29px] lg:py-[78px]">
-    <div class="max-w-[1269px] lg:mx-auto flex flex-col lg:flex-row lg:gap-[50px]">
+    <div class="max-w-[1269px] lg:mx-auto flex flex-col lg:flex-row lg:gap-[50px] min-w-[300px]">
       <div class="flex flex-col lg:max-w-[562px]">
         <div class="flex-col">      
           <h1 class="font-crossfit uppercase leading-[35px] lg:leading-[69px] text-[32px] lg:px-0 lg:text-[63px] text-[#491529]">
-              You Don’t Need to Risk Your Heart to Get a<br><span class="text-[#fff]"> Good Night’s Sleep.</span>
+              You Don’t Need to Risk Your Heart to Get <br><span class="text-[#fff]">a Good Night’s Sleep.</span>
           </h1>
-          <div class="text-[15px] lg:text-[26px] lg:leading-[29px] pb-[25px] lg:pb-0 flex flex-col pt-[28px] lg:pt-[60px] gap-[16px] lg:gap-[30px] leading-[16px] text-[#491529] font-sans">
+          <div class="text-[15px] lg:text-[26px] lg:leading-[34px] pb-[25px] lg:pb-0 flex flex-col pt-[28px] lg:pt-[60px] gap-[16px] lg:gap-[20px] leading-[16px] text-[#491529] font-sans">
             <p>For years, melatonin felt like the only way to cope — a simple solution for tired minds and restless nights.</p>
             <p>If your body is asking for rest, there are better ways to give it what it needs:</p>
             <p class="font-bold" >Plant-based, non-habit-forming, science-backed<span class="font-normal"> solutions that help restore balance from within.</span> </p>
           </div>
           <div class="justify-items-center">
-            <img class="lg:hidden" src="/assets/sleepmel2.webp" alt="bottle">
+            <img class="lg:hidden" src="/assets/bottleSleepMel.webp" alt="bottle">
           </div>
         </div>
-        <div class="pt-[3px] lg:pt-[35px] lg:justify-items-center">        
-          <p class="text-[#491529] pb-[29px] lg:pb-[90px] text-[15px] lg:text-[26px] leading-[16px] lg:leading-[29px]">
+        <div class="pt-[3px] lg:pt-[25px] w-full lg:justify-items-center">        
+          <p class="text-[#491529] pb-[29px] lg:pb-[50px] text-[15px] lg:text-[26px] leading-[16px] lg:leading-[32px]">
             Click below to discover <span class="font-bold">Super Natural Sleep</span> — the melatonin-free botanical formula that helps calm your nervous system, support natural sleep cycles, and help you wake up refreshed — safely.</p>
-            <p class="text-[#491529] pb-[29px] font-black text-[15px] leading-[16px] md:hidden">
+            <p class="text-[#491529] w-full pb-[29px] lg:pb-[50px] font-black text-[15px] lg:text-[26px] leading-[16px]">
               Don’t wait to find out the hard way.
             </p>
-          <ShopButton type="button" id="buy-button" paymentLink="/vsleep" textColorClass="text-[#370F1E]"
+          <ShopButton type="button" id="buy-button" paymentLink="/sleepnatural" textColorClass="text-[#370F1E]"
             :showIcon="false"
             class="botao-shop font-bold font-sans !m-0 text-[20px] lg:text-[32px] w-full !rounded-[14px] lg:!rounded-[28px] text-center !h-[35px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
             Learn More
           </ShopButton>
         </div>     
       </div>
-      <div class="justify-items-center">
-        <img class="hidden lg:block w-[976px]" src="/assets/sleep_mel_desk.webp" alt="bottle">
+      <div class="justify-items-center content-center items-center">
+        <img class="hidden lg:block w-[976px]" src="/assets/bottleSleepMelDesk.webp" alt="bottle">
       </div>
     </div>
   </section>
@@ -345,7 +350,7 @@ const items = [
       <p class="label-reserved leading-[1] text-center italic text-[9px] font-gelasio text-[#fffaf0]">
        © Super Natural Sleep Research 2025. <br>All Rights Reserved.
       </p>
-      <p class="text-[#FFFAF0] font-sans font-extralight text-[10px] leading-[12px] text-justify mt-3">
+      <!-- <p class="text-[#FFFAF0] font-sans font-extralight text-[10px] leading-[12px] text-justify mt-3">
         Super Natural Sleep is a supplement formulated with natural 
         ingredients that relax the nervous system and guide the user into 
         deep, restorative sleep. It does not contain melatonin or harsh 
@@ -356,7 +361,8 @@ const items = [
         treat, cure or prevent any disease. Always consult your physician 
         before starting any dietary supplement, especially if you are taking 
         medications, are pregnant, or have a medical condition. Super 
-        Natural Sleep is part of the commercial portfolio of Superment. </p>
+        Natural Sleep is part of the commercial portfolio of Superment. 
+      </p> -->
       </div>
     </div>
       
