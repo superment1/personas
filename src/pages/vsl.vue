@@ -81,8 +81,8 @@ function loadVturbOnce() {
   const s = document.createElement('script')
   s.id = id
   s.async = true
-  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/690525af21067174bb51e39b/v4/player.js'
-  document.head.appendChild(s)
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/69148f73e80be81dcc86d4a4/v4/player.js'
+  document.head.appendChild(s) 
 }
 
 function onMouseMove(e: MouseEvent) {
@@ -157,7 +157,7 @@ onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('pagehide', onPageHide)
 
-  const el = document.getElementById('vid-690525af21067174bb51e39b')
+  const el = document.getElementById('vid-69148f73e80be81dcc86d4a4')
   if (!el) return
 
   const onReady = () => {
@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
           <div class="relative z-10 pt-[28px] sm:pt-0">
             <div class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[622px]
                     sm:max-w-[649px] sm:h-[622px] sm:max-h-[812px] overflow-hidden">
-              <vturb-smartplayer id="vid-690525af21067174bb51e39b" style="
+              <vturb-smartplayer id="vid-69148f73e80be81dcc86d4a4" style="
                 display:block;
                 margin:0 auto;
                 width:100%;

@@ -24,21 +24,21 @@ function parseBold(text: string) {
 }
 </script>
 <template>
-    <div class="grid gap-[30px] lg:max-w-[1269px] lg:mx-auto lg:gap-[60px] sm:grid-cols-2 lg:grid-cols-1">
+    <div class="grid gap-[30px] lg:max-w-[1269px] lg:mx-auto lg:gap-[60px] min-w-[300px] sm:grid-cols-2 lg:grid-cols-1">
       <div
         v-for="(item, i) in items"
         :key="i"
         :class="['flex flex-col gap-[27px] lg:gap-[127px]',
          i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse']"
       ><div class="flex flex-col gap-4 lg:gap-[20px] lg:self-center ">
-        <div class="flex gap-[20px] items-center">
+        <div class="flex gap-[14px] items-center">
           <span
           v-if="item.svg"
           class="shrink-0 w-[30px] h-[35px] lg:h-[80px] lg:w-[60px] text-[#FFDC03]"
           v-html="item.svg"
           aria-hidden="true"
         />
-        <h3 class="text-[18px] lg:text-[37px] leading-[1.2] whitespace-pre-line font-gelasio italic font-bold text-[#fff]">
+        <h3 class="text-[17.5px] lg:text-[37px] leading-[1.2] whitespace-pre-line font-gelasio italic font-bold text-[#fff]">
           {{ item.title }}
         </h3>
         </div>        
@@ -66,7 +66,7 @@ function parseBold(text: string) {
           :alt="item.title"
           :width="660"
           :height="400"
-          class="hidden lg:block w-[570px] h-[680px] rounded-lg object-cover"
+          class="hidden lg:block w-[570px] h-[480px] rounded-lg object-cover"
         />
       </div>
     </div>
