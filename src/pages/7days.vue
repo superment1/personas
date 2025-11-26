@@ -94,7 +94,6 @@ const imgSrc = "/assets/depo.webp"
           </svg>
         </template>
       </div>
-
       <div class="flex-col leading-[1] text-[#370F1E]">
         <p class="font-semibold text-[8px] lg:text-[18px]">By Sarah M.</p>
         <p class="font-normal text-[7px]  lg:text-[16px]">Last updated Sep. 24, 2025</p>

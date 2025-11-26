@@ -18,7 +18,7 @@ const router = useRouter()
 const showAfterVideo = ref(false)
 const urlPath = '/sleepnatural'
 
-const TRIGGER_SECONDS =  958
+const TRIGGER_SECONDS =  1101
 const TRIGGER_STORAGE_KEY = 'videoReachedTrigger'
 
 function markTriggered() {
@@ -70,7 +70,7 @@ function loadVturbOnce() {
   const s = document.createElement('script')
   s.id = id
   s.async = true
-  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/690525af21067174bb51e39b/v4/player.js'
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/6924b171f49d199be119e4c3/v4/player.js'
   document.head.appendChild(s)
 }
 
@@ -85,9 +85,27 @@ function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }
 
+function toggleFakeFullscreen(inFullscreen: boolean) {
+  const container = document.getElementById('vturb-player-container');
+  if (!container) return;
+
+  container.dataset.fullscreen = String(inFullscreen);
+
+  if (inFullscreen) {
+    document.body.classList.add('vturb-fs-open');
+    const rect = container.getBoundingClientRect();
+    window.scrollTo({
+      top: rect.top + window.scrollY,
+      behavior: 'smooth',
+    });
+  } else {
+    document.body.classList.remove('vturb-fs-open');
+  }
+}
+
 onMounted(async () => {
   loadVturbOnce()
-  const el = document.getElementById('vid-690525af21067174bb51e39b')
+  const el = document.getElementById('vid-6924b171f49d199be119e4c3')
   if (!el) return
 
   const onTimeEvent = (ev: any) => {
@@ -108,6 +126,7 @@ onMounted(async () => {
   const onReady = () => {
     el.addEventListener('video:play', () => {
       showPlayOverlay.value = false
+      toggleFakeFullscreen(true);
     })
     el.addEventListener('video:timeupdate', onTimeEvent as any)
     el.addEventListener('video:progress', onTimeEvent as any)
@@ -118,6 +137,7 @@ onMounted(async () => {
       showPlayOverlay.value = false
       showAfterVideo.value = true
       sessionStorage.setItem('videoEnded', 'true')
+      toggleFakeFullscreen(false);
     }, { once: true })
   }
   if (window.matchMedia?.('(pointer: coarse)').matches) {
@@ -270,14 +290,13 @@ const faqItems = [
               And gave me back the clarity and peace I lost <br></br>to stress and burnout.
             </p>
           </div>
-          <div class="relative z-10 pt-[16px] sm:pt-0">
-            <div class="relative no-seek rounded-[20px] shadow-lg xs:max-w-[349px] h-[620px]
-                    sm:max-w-[649px] sm:w-[400px] sm:h-[712px] sm:max-h-[812px] overflow-hidden">
-              <vturb-smartplayer id="vid-690525af21067174bb51e39b" style="
-                display:block;
-                margin:0 auto;
-                width:100%;
-                height:100%;" class="absolute inset-0"></vturb-smartplayer>
+          <div class="relative z-10 pt-[16px] sm:pt-0 !rounded-[20px]">
+             <div
+                id="vturb-player-container"
+                class="relative shadow-lg xs:max-w-[349px] sm:max-w-[649px] sm:w-[400px] rounded-[20px] overflow-hidden">
+              <vturb-smartplayer id="vid-6924b171f49d199be119e4c3"
+                style=" display:block; margin:0 auto; width:100%;" 
+                class="no-seek !rounded-[20px]"></vturb-smartplayer>
             </div>
           </div>
         </div>
