@@ -3,16 +3,17 @@ import '../styles/superSleep.scss';
 import SuperHeader2 from '../components/SuperHeader2.vue';
 import ShopButton from '../components/ShopButton.vue';
 import { useSeo } from '../composables/useSeo';
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, computed } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
-import BannerModal from '../components/BannerModal.vue';
 import ShopNowD from '../components/newPageD/ShopNowD.vue';
 import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import SuperFooter2 from '../components/SuperFooter2.vue';
+import CarouselImage from '../components/CarouselImage.vue';
+import { detectUserCurrency } from '../composables/useCountry2.js'
+import FAQ from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const NotificationDisplay2 = defineAsyncComponent(() => import('../components/NotificationDisplay2.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
@@ -23,7 +24,6 @@ useSeo({
 })
 
 const anchorId = 'shop-now-d'
-
 const modalOpen = ref(false)
 
 const BACK_STATE = { exitGuard: true }
@@ -46,7 +46,6 @@ function disableBackExitGuard() {
   window.removeEventListener('popstate', onBackPress)
 }
 
-// cooldown e gatilhos
 const COOLDOWN_MS = 20000
 const TOP_ZONE = 8
 let lastShown = 0
@@ -94,8 +93,9 @@ function onScroll() {
   lastScrollY = y
   lastScrollT = t
 }
-onMounted(() => {
-  // listeners de retenção
+
+
+onMounted(async () => {
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
   document.addEventListener('visibilitychange', onVisibilityChange)
@@ -119,14 +119,62 @@ onBeforeUnmount(() => {
   window.removeEventListener('pagehide', onPageHide)
   disableBackExitGuard()
 })
+const faqItems = [
+  {
+    question: 'What is Super Relax?',
+    answer: `Super Relax is a natural, plant-based supplement that helps calm overactive nerves and restore balance to the nervous system. It supports relief from stress and anxiety during the day, eases discomfort linked to nerve pain and inflammation, and promotes deep, restorative sleep at night.`,
+    open: true
+  },
+  {
+    question: 'What are the ingredients?',
+    answer: `The formula combines 5 science-backed botanicals:
+
+• Passionflower – Calms a restless mind so you can slow down and find peace.
+• California Poppy – Relaxes the body and supports restorative sleep without sedation.
+• Corydalis – Helps ease physical tension and nighttime nerve discomfort.
+• Prickly Pear – Supports healthy stress response for deeper rest and recovery.
+• Marshmallow Root – Soothes irritation and promotes physical comfort through the night.`,
+    open: false
+  },
+  {
+    question: 'Is Super Relax safe?',
+    answer: 'Yes. 100% natural, non-habit forming, manufactured in FDA-registered, GMP-compliant labs in the USA.',
+    open: false
+  },
+  {
+    question: 'How do I take it?',
+    answer: `Take 2 capsules with water every evening before bedtime to help calm nerves and promote restful sleep.`,
+    open: false
+  },
+  {
+    question: 'How long does shipping take?',
+    answer: `Orders are processed within 24 hours and typically arrive in 5-7 business days within the U.S. Please note that delivery times may vary depending on your location and local carrier delays. Once your order ships, you’ll receive a confirmation email with tracking information.`,
+    open: false
+  },
+  {
+    question: 'How can I reach you if I have questions?',
+    answer: 'You can always reach us at superhelp@superment.co. Our team is here to answer your questions and support you every step of the way.',
+    open: false
+  },
+  {
+    question: 'What if I’m not satisfied?',
+    answer: 'We stand by our formula. Every order is protected by our Money-Back Guarantee: 30 days for a 1-bottle pack, 60 days for a 3-bottle pack, and 120 days for a 6-bottle pack. If you’re not happy with your results, simply contact us at superhelp@superment.co and we’ll refund your purchase — no hassle, no risk. For safety reasons, refunds apply to unopened bottles.',
+    open: false
+  },
+  {
+    question: 'Are there any side effects?',
+    answer: 'Super Relax is well-tolerated and free from heavy drugs or harsh side effects. Still, if you have a medical condition or take prescription medications, check with your doctor before starting any supplement.',
+    open: false
+  }
+]
 
 </script>
 
 <template>
   <SuperHeader2 :show-redirect="false" :items="[
-    'Save 14%',
+    'Save Up To 58%',
     'Free Shipping',
-    '120-Day Money-Back Guarantee',
+    'Up to 120-Day Money-Back Guarantee',
     '100% Plant-Based',
     'Science-Backed',
     'Non-Sedative',
@@ -137,31 +185,34 @@ onBeforeUnmount(() => {
     'GMP-Certified Facility',
   ]" />
   <section class="firtsection bg-[#50b5b2]">
-    <div class="relative z-0 min-h-[640px] lg:min-h-[820px]">
+    <div class="relative z-0 min-h-[624px] lg:min-h-[820px]">
       <picture class="pointer-events-none select-none">
-        <source media="(min-width:1024px)" srcset="/assets/hero_relax_desk.webp" type="image/webp">
-        <img
-          id="hero-lcp"
-          src="/assets/hero_relax_new1.webp"
-          width="1280" height="800"
-          alt="relax-hero"
-          loading="eager"
-          fetchpriority="high"
+        <source 
+        media="(max-width: 1024px)"
+        srcset="/assets/hero_relax_mobile2.webp"
+        type="image/webp">
+        <img id="hero-lcp" 
+        src="/assets/desk_hero_relax2.webp" 
+        width="1280" height="800" alt="relax-hero"
+          loading="eager" 
+          fetchpriority="high" 
           decoding="async"
           class="absolute inset-0 z-0 w-full h-full object-cover" />
       </picture>
 
-      <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[7.5rem] pb-[25px] lg:pb-[36px]">
-        <div class="px-12">
-          <div class="text-[#370F1E] gap-[127px] lg:gap-[20px] flex flex-col">
-            <h1 class="italic block sm:hidden font-gelasio mt-[43px] text-[13px] leading-[15px] font-bold">A Powerful Plant-Based
-             <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
+      <div class="relative w-full lg:w-[750px] pl-0 lg:pl-[11.5rem] pb-[25px] lg:pb-[70px]">
+        <div class="px-[50px]">
+          <div class="text-[#370F1E] gap-0 lg:gap-[20px] flex flex-col">
+            <h1 class="italic block sm:hidden font-gelasio mt-[38px] text-[13px] leading-[15px] font-bold">A Powerful
+              Plant-Based
+              <br>Formula <span class="font-medium">that Restores<br> Nervous System Balance.</span>
+
             </h1>
-            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">A Powerful
-              <br>Plant-Based
-              Formula <span class="font-medium">that <br>Restores Nervous System Balance.</span>
+            <h1 class="hidden sm:block italic font-gelasio mt-[75px] text-[24px] leading-[30px] font-bold">
+              A Powerful Plant-Based Formula 
+              <br><span class="font-medium">that Restores Nervous System Balance.</span>
             </h1>
-            <div class="font-gelasio">
+            <div class="font-gelasio mt-[150px] lg:mt-[0px]">
               <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" width="69" height="17" viewBox="0 0 69 17"
                 fill="none">
                 <g filter="url(#filter0_d_155_121)">
@@ -300,7 +351,8 @@ onBeforeUnmount(() => {
                   </linearGradient>
                 </defs>
               </svg>
-              <p class="text-[13px] lg:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
+
+              <p class="text-[13px] md:text-[22px] font-bold">4.9/5 <span class="font-medium"> Rated.</span> <br>98%
                 <span class="font-medium">Recommend.</span>
               </p>
             </div>
@@ -308,89 +360,81 @@ onBeforeUnmount(() => {
         </div>
         <div>
           <div
-            class="font-crossfit px-0 lg:px-12 pt-[18px] lg:pt-[62px] text-[29px] lg:text-[51px] leading-[31px] lg:leading-[57px] justify-center items-center text-center lg:text-start">
-            <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">Sleep
-                Peacefully All Night.</span> </p>
+            class="font-crossfit px-0 md:pl-12 pt-[18px] md:pt-[62px] text-[29px] md:text-[50px] leading-[31px] md:leading-[57px] justify-center items-center text-center md:text-start">
+            <p class="text-white">Feel Calm, Clear, and<br> Energized by Day. <br><span class="text-[#370F1E]">
+              Sleep Peacefully All Night.</span> </p>
           </div>
-          <div class="flex flex-col px-6 lg:px-12">
-            <div class="flex pt-[24px] pb-[20px] lg:pb-[22px] gap-[5px] ">
-              <svg class="lg:w-[30px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" width="22" height="90"
-                viewBox="0 0 19 81" fill="none">
-                <path
-                  d="M8.99362 48.8975C9.33579 47.7402 10.0805 46.9211 10.9963 46.3914C11.0517 46.3603 11.0416 46.2846 10.9762 46.2712C8.7068 45.7104 6.11032 46.6897 5.18445 49.0088C4.72151 50.1661 4.89763 51.4659 5.65745 52.4897C7.17709 54.5507 9.96478 54.9602 12.0178 53.9364C12.0732 53.9097 12.0631 53.834 12.0027 53.8162C10.9712 53.4913 10.0252 52.8503 9.38108 51.7953C8.84266 50.9095 8.70177 49.8679 8.98859 48.8975H8.99362Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M9.71819 54.4927C12.3388 54.4927 14.4633 52.6134 14.4633 50.2951C14.4633 47.9769 12.3388 46.0975 9.71819 46.0975C7.09754 46.0975 4.97308 47.9769 4.97308 50.2951C4.97308 52.6134 7.09754 54.4927 9.71819 54.4927Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M12.9286 44.3215C12.8581 44.0455 12.4958 43.9164 12.2291 44.0633C11.4995 44.4683 10.6441 44.6998 9.71819 44.6998C8.79232 44.6998 7.93689 44.4639 7.20726 44.0633C6.93553 43.9119 6.57827 44.0455 6.50782 44.3215C6.31661 45.0604 5.89392 45.7637 5.24481 46.3424C4.59065 46.921 3.80064 47.2905 2.96031 47.4596C2.64833 47.522 2.5024 47.8425 2.66846 48.0784C3.12636 48.7238 3.38802 49.4805 3.38802 50.2996C3.38802 51.1186 3.12133 51.8754 2.66846 52.5208C2.49737 52.7612 2.64833 53.0772 2.96031 53.1395C3.79561 53.3087 4.59065 53.6826 5.24481 54.2568C5.89896 54.831 6.31661 55.5343 6.50782 56.2777C6.57827 56.5537 6.94057 56.6828 7.20726 56.5359C7.93689 56.1308 8.79232 55.8993 9.71819 55.8993C10.6441 55.8993 11.4995 56.1353 12.2291 56.5359C12.5008 56.6872 12.8581 56.5537 12.9286 56.2777C13.1198 55.5388 13.5425 54.8355 14.1916 54.2568C14.8407 53.6781 15.6357 53.3087 16.4761 53.1395C16.7881 53.0772 16.934 52.7567 16.7679 52.5208C16.31 51.8754 16.0484 51.1186 16.0484 50.2996C16.0484 49.4805 16.3151 48.7238 16.7679 48.0784C16.939 47.838 16.7881 47.522 16.4761 47.4596C15.6408 47.2905 14.8457 46.9166 14.1916 46.3424C13.5374 45.7637 13.1198 45.0648 12.9286 44.3215Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.79494 66L5.14311 74.5109C5.07769 74.7157 5.25381 74.916 5.49031 74.916H7.9308C8.1673 74.916 8.33839 75.1119 8.278 75.3166L7.09047 79.4074C6.99486 79.7368 7.46283 79.9505 7.71443 79.6923L14.2157 72.2319C14.417 72.0226 14.2509 71.7066 13.944 71.7066H11.3525C11.0808 71.7066 10.9047 71.4484 11.0355 71.2348L14.1452 66.4718C14.2761 66.2582 14.105 66 13.8282 66H7.79494Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.30681 78.6684C4.56944 77.8716 2.59692 75.5925 2.59692 72.9039C2.59692 70.2153 4.63989 67.8605 7.45274 67.0994"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M13.2496 67.8473C15.0963 68.9334 16.314 70.7941 16.314 72.904C16.314 76.2558 13.2446 78.9711 9.45551 78.9711C9.12844 78.9711 8.80639 78.9489 8.48938 78.9133"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M7.2649 4.15601C6.13272 3.39929 4.759 3.13666 3.45573 3.36367C3.16891 4.89493 3.63688 6.53302 4.86467 7.71707C6.09246 8.90112 7.78822 9.35071 9.37831 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M11.4916 4.15161C12.6188 3.39934 13.9975 3.13671 15.2958 3.36373C15.5826 4.89499 15.1146 6.53307 13.8868 7.71713C12.659 8.90118 10.9633 9.35076 9.37317 9.07478"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M4.27579 7.03601C2.9222 7.27193 1.75479 8.0242 1 9.07472C1.92084 10.3522 3.45055 11.1935 5.18657 11.1935C6.92258 11.1935 8.45229 10.3567 9.37313 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M14.4755 7.03601C15.8291 7.27193 16.9965 8.0242 17.7513 9.07472C16.8305 10.3522 15.3008 11.1935 13.5647 11.1935C11.8287 11.1935 10.299 10.3567 9.37817 9.07472"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M8.88368 34.1788C12.6854 34.1788 15.7674 31.4525 15.7674 28.0894C15.7674 24.7263 12.6854 22 8.88368 22C5.08193 22 2 24.7263 2 28.0894C2 31.4525 5.08193 34.1788 8.88368 34.1788Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M12.2551 28.0896C12.5016 28.0896 12.6878 28.281 12.6576 28.4947C12.4312 30.1595 10.831 31.4504 8.88366 31.4504C6.9363 31.4504 5.33615 30.1595 5.10971 28.4947C5.07952 28.281 5.27073 28.0896 5.51227 28.0896H12.25H12.2551Z"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
-                <path
-                  d="M8.11388 25.9706C7.81699 25.4988 7.25342 25.1738 6.59927 25.1738C5.94512 25.1738 5.38154 25.4988 5.08466 25.9706"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
-                <path
-                  d="M12.6879 25.9706C12.391 25.4988 11.8275 25.1738 11.1733 25.1738C10.5192 25.1738 9.95558 25.4988 9.65869 25.9706"
-                  stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
-              </svg>
+          <div class="flex flex-col px-[50px] lg:pl-12 lg:pr-0">
+            <div class="flex pt-[24px] pb-[0px] lg:pb-[22px] gap-[5px] ">
               <ul
-                class="text-[#370F1E] relative bottom-[3px] gap-[2px] text-[14px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
-                <li>
+                class="text-[#370F1E] relative bottom-[3px] gap-[4px] text-[14px] md:text-[18px] lg:text-[23px] leading-[22px] lg:leading-[30px] font-bold flex flex-col">
+                <li class="flex gap-2 items-center">
+                  <svg class="lg:w-[28px] lg:h-[17px]" xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
+                    <path
+                      d="M11.5772 5.03735C11.5772 3.36365 10.7067 1.88581 9.38325 1C8.05985 1.88581 7.18933 3.36365 7.18933 5.03735C7.18933 6.71105 8.05985 8.18889 9.38325 9.0747C10.7067 8.18889 11.5772 6.71105 11.5772 5.03735Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M7.2649 4.15601C6.13272 3.39929 4.759 3.13666 3.45573 3.36367C3.16891 4.89493 3.63688 6.53302 4.86467 7.71707C6.09246 8.90112 7.78822 9.35071 9.37831 9.07472"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M11.4916 4.15161C12.6188 3.39934 13.9975 3.13671 15.2958 3.36373C15.5826 4.89499 15.1146 6.53307 13.8868 7.71713C12.659 8.90118 10.9633 9.35076 9.37317 9.07478"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M4.27579 7.03601C2.9222 7.27193 1.75479 8.0242 1 9.07472C1.92084 10.3522 3.45055 11.1935 5.18657 11.1935C6.92258 11.1935 8.45229 10.3567 9.37313 9.07472"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M14.4755 7.03601C15.8291 7.27193 16.9965 8.0242 17.7513 9.07472C16.8305 10.3522 15.3008 11.1935 13.5647 11.1935C11.8287 11.1935 10.299 10.3567 9.37817 9.07472"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                  </svg>
+
                   <p>Stress, Anxiety & Exhaustion Relief </p>
                 </li>
-                <li>
-                  <p>Pain & Inflammation Reduction</p>
+                <li class="flex gap-3 items-center">
+                  <svg class="lg:w-[23px] lg:h-[20px]" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                    <path
+                      d="M7.88368 13.1788C11.6854 13.1788 14.7674 10.4525 14.7674 7.08941C14.7674 3.72632 11.6854 1 7.88368 1C4.08193 1 1 3.72632 1 7.08941C1 10.4525 4.08193 13.1788 7.88368 13.1788Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M11.2551 7.0896C11.5016 7.0896 11.6878 7.28101 11.6576 7.49467C11.4312 9.15947 9.83102 10.4504 7.88366 10.4504C5.9363 10.4504 4.33615 9.15947 4.10971 7.49467C4.07952 7.28101 4.27073 7.0896 4.51227 7.0896H11.25H11.2551Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M7.11388 4.97062C6.81699 4.49878 6.25342 4.17383 5.59927 4.17383C4.94512 4.17383 4.38154 4.49878 4.08466 4.97062"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path
+                      d="M11.6879 4.97062C11.391 4.49878 10.8275 4.17383 10.1733 4.17383C9.51915 4.17383 8.95558 4.49878 8.65869 4.97062"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" stroke-linecap="round" />
+                  </svg>
+                  <p>Nerve Pain & Inflammation Reduction</p>
                 </li>
-                <li>
+                <li class="flex gap-3  items-center">
+                  <svg class="lg:w-[23px] lg:h-[21px]" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                    <path
+                      d="M6.99362 5.89752C7.33579 4.74017 8.08052 3.92113 8.99633 3.39142C9.05168 3.36026 9.04162 3.28459 8.9762 3.27124C6.7068 2.71037 4.11032 3.68966 3.18445 6.0088C2.72151 7.16614 2.89763 8.46593 3.65745 9.48974C5.17709 11.5507 7.96478 11.9602 10.0178 10.9364C10.0732 10.9097 10.0631 10.834 10.0027 10.8162C8.97117 10.4913 8.02517 9.85029 7.38108 8.79533C6.84266 7.90952 6.70177 6.86791 6.98859 5.89752H6.99362Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M7.71819 11.4927C10.3388 11.4927 12.4633 9.6134 12.4633 7.29513C12.4633 4.97686 10.3388 3.09753 7.71819 3.09753C5.09754 3.09753 2.97308 4.97686 2.97308 7.29513C2.97308 9.6134 5.09754 11.4927 7.71819 11.4927Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                    <path
+                      d="M10.9286 1.32145C10.8581 1.04547 10.4958 0.916385 10.2291 1.06328C9.49949 1.46835 8.64407 1.69982 7.71819 1.69982C6.79232 1.69982 5.93689 1.4639 5.20726 1.06328C4.93553 0.911934 4.57827 1.04547 4.50782 1.32145C4.31661 2.06037 3.89392 2.76368 3.24481 3.34236C2.59065 3.92103 1.80064 4.29049 0.960308 4.45964C0.648329 4.52196 0.502403 4.84245 0.668457 5.07837C1.12636 5.72381 1.38802 6.48054 1.38802 7.29958C1.38802 8.11863 1.12133 8.87535 0.668457 9.52079C0.497371 9.76116 0.648329 10.0772 0.960308 10.1395C1.79561 10.3087 2.59065 10.6826 3.24481 11.2568C3.89896 11.831 4.31661 12.5343 4.50782 13.2777C4.57827 13.5537 4.94057 13.6828 5.20726 13.5359C5.93689 13.1308 6.79232 12.8993 7.71819 12.8993C8.64407 12.8993 9.49949 13.1353 10.2291 13.5359C10.5008 13.6872 10.8581 13.5537 10.9286 13.2777C11.1198 12.5388 11.5425 11.8355 12.1916 11.2568C12.8407 10.6781 13.6357 10.3087 14.4761 10.1395C14.7881 10.0772 14.934 9.75671 14.7679 9.52079C14.31 8.87535 14.0484 8.11863 14.0484 7.29958C14.0484 6.48054 14.3151 5.72381 14.7679 5.07837C14.939 4.838 14.7881 4.52196 14.4761 4.45964C13.6408 4.29049 12.8457 3.91658 12.1916 3.34236C11.5374 2.76368 11.1198 2.06483 10.9286 1.32145Z"
+                      stroke="white" stroke-width="0.79845" stroke-miterlimit="10" />
+                  </svg>
                   <p>Mood, Focus & Energy </p>
-                </li>
-                <li>
-                  <p>Calm by Day, Rest by Night </p>
                 </li>
               </ul>
             </div>
-            <div class="">
+            <div class="pt-[22px]">
               <ShopButton type="button" id="buy-button" :anchorId="anchorId" textColorClass="text-[#370F1E]"
                 :showIcon="false"
-                class="botao-shop font-bold !m-0 text-[18px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem]">
+                class="botao-shop font-bold !m-0 text-[18px] md:text-[24px] lg:text-[32px] w-full rounded-3xl text-center !h-[41px] md:!h-[58px] lg:!h-[75px] !hover:bg-none !px-5 !pb-0 !bg-[#FFDC03] mt-[1.65rem] md:max-w-[540px] ">
                 Yes, I Want to Relax Now
               </ShopButton>
             </div>
           </div>
-          <div class="px-6">
+          <div class="px-[50px] lg:pr-0 flex justify-center md:justify-start lg:justify-center">
             <div
-              class="w-[320px] lg:w-[500px] justify-self-center lg:mt-8 mt-[12px] flex flex-row items-center justify-between px-5">
-              <div class="flex flex-row items-center gap-6 w-[200px] lg:w-[210px]">
-                <svg class="lg:w-[60px] lg:h-[50px]" xmlns="http://www.w3.org/2000/svg" width="32" height="26"
+              class="w-[260px] md:w-[540px] lg:w-[450px] gap-[11px] lg:mt-8 mt-[12px] flex flex-row justify-betwween md:justify-start justify-between">
+              <div class="flex flex-row items-center gap-4 w-[120px] lg:w-[210px]">
+                <svg class="lg:w-[59px] lg:h-[37px]" xmlns="http://www.w3.org/2000/svg" width="38" height="30"
                   viewBox="0 0 43 28" fill="none">
                   <path
                     d="M42.7333 11.5984C42.7333 10.2907 42.3212 9.0117 41.5351 7.97445C40.294 6.33815 38.3205 4.66138 36.7035 3.83336C36.182 3.56689 35.6039 3.43168 35.019 3.43168H31.7937V14.4259C31.7937 16.1491 29.8563 18.2255 28.1318 18.2255H11.678L12.9454 18.6716C15.0732 19.5904 16.412 21.4379 17.0145 23.6585L26.507 23.6407C26.9522 21.4409 28.4697 19.5332 30.5252 18.6716C34.5093 17.0018 38.8381 19.4661 39.712 23.6437C41.0088 23.6516 42.7343 23.9941 42.7343 22.2265V11.5984H42.7333ZM39.5949 11.5737H33.7945V5.98779H34.9419C37.512 5.98779 39.5949 8.09288 39.5949 10.6904V11.5737Z"
@@ -409,14 +453,14 @@ onBeforeUnmount(() => {
                     fill="#370F1E" />
                 </svg>
                 <div>
-                  <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
+                  <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E]">Free U.S. <br>Shipping</p>
                 </div>
               </div>
-              <div class="w-[1px] h-[42px] lg:h-[70px] bg-[#370F1E]"></div>
+              <div class="w-[1px] h-[42px] md:h-[70px] bg-[#370F1E]"></div>
 
-              <div class="flex flex-row items-center justify-end gap-6 w-[200px] lg:w-[240px]">
-                <svg class="lg:w-[50px] lg:h-[65px]" xmlns="http://www.w3.org/2000/svg" width="22" height="33"
-                  viewBox="0 0 33 48" fill="none">
+              <div class="flex flex-row items-center justify-end gap-[14px] w-[120px] md:w-[270px] lg:w-[240px]">
+                <svg class="lg:w-[43px] lg:h-[61px]" xmlns="http://www.w3.org/2000/svg"
+                  width="25" height="43" viewBox="0 0 33 48" fill="none">
                   <path
                     d="M32.5275 20.5256C32.473 13.2452 32.1232 10.8504 26.193 10.8504C20.2629 10.8504 19.8614 13.3988 19.8614 20.5256C19.8614 27.6524 20.2342 30.1761 26.193 30.1761C32.1519 30.1761 32.5791 27.8993 32.5275 20.5256ZM27.0676 25.6334C27.0676 26.4317 26.9472 26.931 26.193 26.931C25.4388 26.931 25.3184 26.418 25.3184 25.6334V15.533C25.3184 14.6058 25.3987 14.145 26.2188 14.145C27.039 14.145 27.0676 14.6058 27.0676 15.5083V25.6334Z"
                     fill="#370F1E" />
@@ -449,7 +493,7 @@ onBeforeUnmount(() => {
                     fill="#370F1E" />
                 </svg>
                 <div>
-                  <p class="font-DMSans text-[13px] lg:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
+                  <p class="font-DMSans text-[13px] md:text-[23px] text-[#370F1E] ">Money-Back<br>Guarantee</p>
                 </div>
               </div>
             </div>
@@ -460,92 +504,34 @@ onBeforeUnmount(() => {
     </div>
   </section>
   <section class="bg-[#370F1E] relative">
-    <div class="sm:hidden px-[30px] pt-[26px] pb-[36px]">
-      <img src="/assets/why_exhausted.webp" loading="lazy" alt="exhausted-2">
-    </div>
-
-    <!-- <div class="px-8 flex flex-col sm:hidden pt-[27px] pb-8">
-
-      <p class="text-center pb-[32px] text-white text-[32px] leading-[1] font-crossfit">Why You’re<br><span class="text-[#FFDC03]"> Exhausted by Day</span> <br>and Wired by Night.</p>
-      <div class="bg-[#5C2841] p-3 px-[20px] rounded-2xl font-sans text-white text-[13px] leading-[1]">
-        <div class="flex justify-between  pb-[10px] items-center border-b border-[#48152b]">
-          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
-              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
-              <defs>
-                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#370F1E"/>
-                  <stop offset="1" stop-color="#4C152A"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <img src="../assets/image/newPageD/mind.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-20">
-          </div>
-          <p class="p-[15px]">Modern life keeps your nervous<br> system stuck in “fight-or-flight.”</p>
-        </div>
-        <div class="flex justify-between py-[10px] items-center border-b border-[#48152b]">
-          <p class="">Deadlines, screens, and constant pressure push cortisol up when it <br> should fall, leaving you wired at<br> night and exhausted by day.</p>
-          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
-              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
-              <defs>
-                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#370F1E"/>
-                  <stop offset="1" stop-color="#4C152A"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <img src="../assets/image/newPageD/batery.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-24 h-20">
-          </div>          
-        </div>
-        <div class="flex justify-between  py-[10px] items-center border-b border-[#48152b]">
-          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
-              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
-              <defs>
-                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#370F1E"/>
-                  <stop offset="1" stop-color="#4C152A"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <img src="../assets/image/newPageD/ray.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
-          </div>
-          <p class="p-[15px] pr-2">Over time, this nonstop overdrive<br> steals your sleep, drains your <br> energy, and clouds your clarity.</p>
-        </div>
-        <div class="flex py-[10px] justify-between items-center">
-          <p class="">Pills can sedate you, but they <br>don’t fix the real problem: a<br> nervous system out of balance.</p>
-          <div class="relative flex items-center justify-center w-[72px] h-[72px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" class="absolute inset-0">
-              <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 72 0)" fill="url(#paint0_linear_44_292)"/>
-              <defs>
-                <linearGradient id="paint0_linear_44_292" x1="73.13" y1="-5.40001" x2="21.4564" y2="-18.8426" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#370F1E"/>
-                  <stop offset="1" stop-color="#4C152A"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <img src="../assets/image/newPageD/pills.webp" alt="mind" loading="lazy" class="relative max-w-none z-10 w-20 h-16">
-          </div>          
-        </div>
+    <div class="px-[40px] sm:px-0 lg:max-w-[975px] lg:justify-self-center pt-[26px] lg:pt-[90px] pb-[36px]">
+      <h1
+        class="pb-[35px] lg:pb-[80px] font-crossfit text-center px-[30px] leading-[1] text-[32px] lg:text-[60px] text-[#fff]">
+        Why You’re <span class="text-[#FFDC03]">Exhausted by Day</span><br>and Wired by Night.
+      </h1>
+      <img src="/assets/why_exhausted1.webp" class="lg:hidden" loading="lazy" alt="exhausted-2">
+      <img src="/assets/why_exhausted_desk.webp" class="hidden lg:flex mb-[50px]" loading="lazy" alt="exhausted-2">
+      <div>
+        <CarouselImage />
       </div>
-      <img src="../assets/image/newPageD/exhausted.webp" class="py-9" loading="lazy" alt="exhausted">
-      <img src="../assets/image/newPageD/statistics.webp" loading="lazy" alt="exhausted">
-      </img>
-    </div> -->
-    <div class="hidden px-40 py-20 sm:flex">
-      <img src="/assets/why_exhausted_desktop.webp" loading="lazy" alt="exhausted-2">
+      <div class="pt-[26px] lg:pt-[80px] pb-[36px]">
+        <img src="/assets/data_mobile.webp" class="lg:hidden" loading="lazy" alt="data-2">
+        <img src="/assets/data_desk_relax.webp" class="hidden lg:flex" loading="lazy" alt="data-2">
+      </div>
     </div>
   </section>
   <section class="bg-[#FFFAF0] pb-[12px]">
     <div class="flex flex-col">
-      <div class="flex relative z-30 bg-[#FFDC03] gap-6 lg:gap-10 pt-[20px] pl-16 lg:px-40 w-full">
-        <img class="lg:hidden" src="/assets/pills_womam.webp" width="120" height="138" loading="lazy" alt="exhausted">
+      <div class="flex relative z-30 bg-[#FFDC03] justify-center gap-6 lg:gap-16 pt-[20px] lg:pt-[45px] pl-0 lg:px-40 w-full">
+        <img class="lg:hidden w-[120px] h-[138px] md:w-[240px] md:h-[280px]" src="/assets/pills_womam.webp"
+          loading="lazy" alt="exhausted">
         <img class="hidden lg:block" src="/assets/pills_womam_desk.webp" width="366" height="422" loading="lazy"
           alt="exhausted"></img>
-        <div class="flex flex-col text-[#370F1E] gap-[10px] lg:gap-[20px]">
-          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px]">But here’s the <br>good news:</p>
-          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px]">You don’t have to stay in
+        <div class="flex flex-col text-[#370F1E] lg:self-center gap-[10px] lg:gap-[20px]">
+          <p class="font-crossfit leading-[1] lg:text-[76px] text-[26px] md:text-[50px]">But here’s the <br>good news:
+          </p>
+          <p class="font-gelasio italic leading-[1.3] lg:text-[40px] text-[14px] md:text-[26px]">You don’t have to stay
+            in
             <br>fight-or-flight. With the right<br> natural support, your body <br>can return to balance.
           </p>
         </div>
@@ -554,29 +540,30 @@ onBeforeUnmount(() => {
                 [clip-path:polygon(0_0,100%_0,100%_65%,50%_95%,0_65%)]">
         </div>
       </div>
-      <div class="pt-[74px] lg:pt-[180px]">
-        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] lg:text-[60px]">
+      <div class="pt-[74px] md:pt-[180px]">
+        <p class="font-crossfit text-center leading-[1] text-[#370F1E] text-[32px] md:text-[60px]">
           Break the Cycle of Stress,<br>Anxiety & Exhaustion.</p>
       </div>
-      <div class="flex justify-center">
-        <img class="w-[230px] lg:w-[500px] " src="/assets/bottle_relax1.webp" width="227" height="236" loading="lazy" alt="bottle">
-        <!-- <img class="hidden lg:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
+      <div class="flex justify-center pt-[20px] lg:pt-[40px]">
+        <img class="w-[230px] md:w-[500px]" src="/assets/bottleRelax.webp" width="227" height="236" loading="lazy"
+          alt="bottle">
+        <!-- <img class="hidden md:block" src="/assets/bottle_relax1.webp" width="688" height="793" loading="lazy" alt="bottle"> -->
         <div
-          class="flex-col relative right-6 self-center w-[150px] lg:w-[400px] text-[14px] pt-0 lg:pt-[60px] lg:text-[40px] leading-[1.1] lg:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
-          <img class="lg:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
+          class="flex-col relative right-6 w-[150px] md:w-[400px] text-[14px] pt-0 md:pt-[40px] md:text-[30px] leading-[1.1] md:leading-[1.3] text-[#370F1E] italic font-gelasio flex">
+          <img class="md:w-[150px]" src="/assets/selo_rated.webp" width="85" height="85" loading="lazy" alt="selo">
           <p class="border-b font-semibold py-2  border-[#370F1E]">Restores Nervous<br> System Balance.</p>
           <p class="border-b font-semibold py-2 border-[#370F1E]">100% plant-based.</p>
           <p class="font-semibold py-2">No sedation. <br>No dependency.<br>No fog.</p>
         </div>
       </div>
-      <div class="px-8 lg:px-40">
-        <img class="lg:hidden block" src="/assets/box41.webp" alt="blocks">
-        <img class="hidden lg:block" src="/assets/box4_desk1.webp" alt="blocks">
+      <div class="px-8 md:px-[230px] lg:pt-[30px]">
+        <img class="md:hidden block" src="/assets/box41.webp" alt="blocks">
+        <img class="hidden md:block" src="/assets/box4_desk1.webp" alt="blocks">
       </div>
     </div>
 
   </section>
-  <section class="ingredients relative z-10 bg-[#FFFAF0]">
+  <section class="relative z-10 bg-[#FFFAF0]">
     <div class="font-crossfit text-[#370F1E] text-center ">
       <p class="lg:hidden leading-[1] block text-[32px]">Five Powerful Plants,<br><span class="text-[#4DBCB6]"> Proven
           to Restore <br> Calm and Clarity.</span></p>
@@ -589,59 +576,90 @@ onBeforeUnmount(() => {
       </LazyIsland>
     </div>
   </section>
-  <DepoimentsD />
-  <section class="bg-[#FFFAF0] px-12 lg:px-40 pb-[20px] pt-[30px]">
-    <div class="font-crossfit text-[32px] lg:text-[70px] text-center text-[#370F1E]">
-      <p class="lg:hidden leading-[1]">What Customers<br>Experience With <br><span
-          class="text-[#4DBCB6] leading-[40px]">Super Relax:</span></p>
-      <p class="hidden lg:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
+  <DepoimentsD subtitle="4.9/5 (460+ Reviews) | 98% Recommend" />
+  <section class="bg-[#FFFAF0] xs:px-12 justify-items-center lg:px-40 pb-[20px] pt-[28px] lg:pt-[94px]">
+    <div class="font-crossfit text-[32px] md:text-[50px] lg:text-[70px] text-center text-[#370F1E]">
+      <p class="md:hidden leading-[34.7px]">What Customers<br>Experience With <br><span class="text-[#4DBCB6]">Super
+          Relax:</span></p>
+      <p class="hidden md:block leading-[1]">What Customers Experience With <br><span class="text-[#4DBCB6]">Super
           Relax:</span></p>
     </div>
-    <div class="flex flex-col pt-[14px]">
-      <div class="flex items-center lg:self-center pb-[2px] border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">100% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported reduced<br>anxiety
-          and greater
-          relaxation.</span>
+    <div class="flex flex-col pt-[14px] lg:max-w-[938px]">
+      <div class="flex items-center w-full lg:self-center pt-[5px] lg:pt-[44px] pb-[11px] lg:pb-[35px] gap-[16px] lg:gap-[96px] text-[#370F1E] lg:px-[45px]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">100% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          of users reported reduced<br>anxiety and greater relaxation.</span>
       </div>
-      <div class="flex pl-[17px] pt-[5px] lg:self-center items-center border-b border-[#370F1E] gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">75% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">of users reported better<br> sleep
-          quality.</span>
+      <div class="w-full h-[1px] lg:h-[2px] bg-[#370F1E]"></div>
+      <div class="flex items-center w-full pt-[16px] pb-[12px] lg:pt-[44px] lg:pb-[30px] gap-[16px]  lg:gap-[99px] pl-[15px] lg:pl-[83px] text-[#370F1E]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">75% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          of users reported better<br> sleep quality.</span>
       </div>
-      <div class="flex pl-[35px] pt-[5px] lg:self-center items-center gap-3 text-[#370F1E]">
-        <span class="font-crossfit text-[43px] lg:text-[100px]">0% </span>
-        <span class="font-sans font-bold leading-[1.1] text-[13px] lg:text-[36px]">experienced grogginess <br> or
-          unwanted side
-          effects.</span>
+      <div class="w-full h-[1px] lg:h-[2px] bg-[#370F1E]"></div>
+      <div class="flex  items-center justify-center w-full pt-[14px] lg:pt-[40px] lg:pb-[66px] pb-[7px] gap-[16px] lg:gap-[94px] text-[#370F1E]">
+        <span class="font-crossfit text-[43px] md:text-[70px] lg:text-[100px] leading-none">0% </span>
+        <span class="font-sans font-bold leading-[1.1] text-[13px] md:text-[24px] lg:text-[36px]">
+          experienced grogginess <br> or unwanted side effects.</span>
       </div>
     </div>
   </section>
-  <ShopNowD id="shop-now-d" />
+  <ShopNowD id="shop-now-d"  />
 
-  <section class="bg-[#370F1E] px-10 lg:px-40 py-8">
+  <section class="bg-[#370F1E] px-8 lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/tabela_relax.webp" alt="table" loading="lazy">
+      <img src="/assets/group_4555.webp" alt="table" loading="lazy">
     </div>
-    <div class="hidden lg:block">
+    <div class="hidden lg:block justify-items-center">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span
           class="text-[#4DBCB6]"> switching to Super Relax.</span></p>
-      <img src="/assets/tabela_relax_desk.webp" alt="table" loading="lazy">
-      <img class="pt-10" src="/assets/selos_table.webp" alt="table" loading="lazy">
+      <img src="/assets/tabela_relax_nerve.webp" alt="table" loading="lazy">
+      <img class="pt-10 max-w-[1064px]" src="/assets/selos_table.webp" alt="table" loading="lazy">
     </div>
   </section>
-  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px]">
+  <section class="bg-[#FFDC03] px-[40px] lg:px-40 pb-[42px] lg:pb-[90px]">
     <div class="justify-self-center max-w-[950px]">
-      <img class="justify-self-center lg:h-[700px]" src="/assets/superbottleNew.webp" alt="" loading="lazy">
+      <img class="justify-self-center lg:hidden h-auto" src="/assets/super_nerve.webp" alt="" loading="lazy">
+      <img class="justify-self-center hidden lg:block" src="/assets/super_nerve_desk.webp" alt="" loading="lazy">
       <div>
         <p
-          class="text-center leading-[1] lg:leading-[0] pb-0 lg:pb-[60px] text-[44px] lg:text-[72px] font-crossfit text-[#370F1E]">
+          class="text-center leading-[1] lg:leading-[0] px-[35px] lg:px-0 pb-0 lg:pb-[60px] lg:pt-[36px] text-[34px] lg:text-[72px] font-crossfit text-[#370F1E]">
           Take Back Your Days and Nights.</p>
       </div>
-      <div class="pt-[30px]">
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" iconColorClass="text-[#FFDC03]" textColorClass="text-[#FFDC03]" :showIcon="true"
-          class="botao-shop font-bold !gap-2 !m-0 text-[18px] lg:text-[45px] w-full rounded-3xl text-center lg:!h-[124px] !h-[60px] !hover:bg-none !px-5 !pb-0 !bg-[#370F1E] mt-[1.65rem]">
-          Get Calm, Clarity & Rest Now
+      <div class="pt-[30px] flex flex-col items-center">
+        <ShopButton type="button" id="buy-button" :anchorId="anchorId" :show-icon="false"
+          class="rounded-3xl text-center !m-0 lg:!h-[124px] !h-[60px] !hover:bg-none !pb-0 !bg-[#370F1E] mt-[1.65rem] w-full lg:w-[918px]">
+          <div class="flex flex-row items-center justify-center gap-2 lg:gap-6">
+            <svg class="block lg:hidden" width="21" height="21" viewBox="0 0 21 21" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_520_19)">
+                <path
+                  d="M0.542581 1.23025C0.242888 1.23025 0 0.954885 0 0.615124C0 0.275362 0.242888 0 0.542581 0H3.36191C3.62308 0 3.84116 0.209483 3.89274 0.487806L4.31584 2.27914H20.2302C20.5299 2.27914 20.7728 2.5545 20.7728 2.89427C20.7728 2.94164 20.7683 2.98753 20.7591 3.03195L20.0644 7.62798C20.0618 7.65093 20.0585 7.67313 20.054 7.69534L19.3547 12.3232C19.3096 12.623 19.0804 12.8347 18.8206 12.834H6.81067L7.2638 14.7504H18.2427C18.5424 14.7504 18.7853 15.0258 18.7853 15.3655C18.7853 15.7053 18.5424 15.9806 18.2427 15.9806H6.84788C6.60826 15.9806 6.38953 15.7985 6.32424 15.5239L5.58839 12.4106C5.58251 12.3898 5.57729 12.3684 5.57337 12.3462L4.93351 9.63916L4.48625 7.74716C4.48038 7.72643 4.47515 7.7057 4.47124 7.68424L3.37628 3.05193V3.05045L2.946 1.22877H0.542581V1.23025ZM16.3186 17.7194C16.0959 17.7194 15.8955 17.8216 15.7499 17.9866C15.6043 18.1517 15.5142 18.3797 15.5142 18.6314C15.5142 18.883 15.6043 19.111 15.7499 19.2761C15.8955 19.4412 16.0966 19.5433 16.3186 19.5433C16.5406 19.5433 16.7417 19.4412 16.8873 19.2761C17.0329 19.111 17.123 18.883 17.123 18.6314C17.123 18.3797 17.0329 18.1517 16.8873 17.9866C16.7417 17.8216 16.5406 17.7194 16.3186 17.7194ZM14.9827 17.1161C15.3248 16.7283 15.7969 16.4884 16.3186 16.4884C16.8403 16.4884 17.3123 16.7283 17.6545 17.1161C17.9966 17.504 18.2081 18.0392 18.2081 18.6306C18.2081 19.2221 17.9966 19.7572 17.6545 20.1451C17.3123 20.533 16.8403 20.7728 16.3186 20.7728C15.7969 20.7728 15.3248 20.533 14.9827 20.1451C14.6406 19.7572 14.429 19.2221 14.429 18.6306C14.429 18.0392 14.6406 17.504 14.9827 17.1161ZM9.23825 17.7194C9.01625 17.7194 8.81515 17.8216 8.66955 17.9866C8.5246 18.1517 8.43384 18.3797 8.43384 18.6314C8.43384 18.883 8.52394 19.111 8.66955 19.2761C8.81515 19.4412 9.01625 19.5433 9.23825 19.5433C9.46024 19.5433 9.66134 19.4412 9.80694 19.2761C9.95255 19.111 10.0426 18.883 10.0426 18.6314C10.0426 18.3797 9.95255 18.1517 9.80694 17.9866C9.66134 17.8216 9.46024 17.7194 9.23825 17.7194ZM7.90236 17.1161C8.24449 16.7283 8.71656 16.4884 9.23825 16.4884C9.75993 16.4884 10.232 16.7283 10.5741 17.1161C10.9163 17.504 11.1278 18.0392 11.1278 18.6306C11.1278 19.2221 10.9163 19.7572 10.5741 20.1451C10.232 20.533 9.75993 20.7728 9.23825 20.7728C8.71656 20.7728 8.24449 20.533 7.90236 20.1451C7.56023 19.7572 7.34868 19.2221 7.34868 18.6306C7.34868 18.0392 7.56023 17.5033 7.90236 17.1161ZM18.8833 8.17204H15.556L15.3483 11.6044H18.3648L18.8833 8.17204ZM14.4701 8.17204H9.84351L10.168 11.6044H14.2625L14.4701 8.17204ZM8.75443 8.17204H5.70983L6.52142 11.6044H9.07958L8.75508 8.17204H8.75443ZM5.41863 6.9418H8.63755L8.31305 3.50939H4.60704L5.41863 6.9418ZM9.72663 6.9418H14.5439L14.7515 3.50939H9.40213L9.72663 6.9418ZM15.6297 6.9418H19.0687L19.5871 3.50939H15.8367L15.6291 6.9418H15.6297Z"
+                  fill="#FFDC03" />
+              </g>
+              <defs>
+                <clipPath id="clip0_520_19">
+                  <rect width="20.7728" height="20.7728" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <svg class="hidden lg:block" width="55" height="55" viewBox="0 0 55 55" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_520_25)">
+                <path
+                  d="M1.42242 3.22518C0.636749 3.22518 0 2.5033 0 1.61259C0 0.721882 0.636749 0 1.42242 0H8.8135C9.49818 0 10.0699 0.549174 10.2051 1.27882L11.3143 5.97493H53.035C53.8207 5.97493 54.4575 6.69681 54.4575 7.58752C54.4575 7.71172 54.4455 7.83203 54.4215 7.94846L52.6003 19.9973C52.5934 20.0575 52.5849 20.1157 52.5729 20.1739L50.7397 32.3062C50.6216 33.0921 50.0208 33.6471 49.3395 33.6451H17.8547L19.0426 38.6692H47.8247C48.6103 38.6692 49.2471 39.3911 49.2471 40.2818C49.2471 41.1725 48.6103 41.8944 47.8247 41.8944H17.9522C17.324 41.8944 16.7506 41.417 16.5794 40.6971L14.6504 32.5351C14.635 32.4808 14.6213 32.4245 14.611 32.3663L12.9335 25.2698L11.761 20.3097C11.7456 20.2554 11.7319 20.2011 11.7217 20.1448L8.85116 8.00086V7.99698L7.72315 3.2213H1.42242V3.22518ZM42.7803 46.4527C42.1966 46.4527 41.6711 46.7205 41.2894 47.1533C40.9077 47.586 40.6715 48.1837 40.6715 48.8435C40.6715 49.5033 40.9077 50.1009 41.2894 50.5337C41.6711 50.9664 42.1983 51.2342 42.7803 51.2342C43.3623 51.2342 43.8895 50.9664 44.2712 50.5337C44.6529 50.1009 44.8891 49.5033 44.8891 48.8435C44.8891 48.1837 44.6529 47.586 44.2712 47.1533C43.8895 46.7205 43.3623 46.4527 42.7803 46.4527ZM39.2782 44.8712C40.1751 43.8543 41.4127 43.2256 42.7803 43.2256C44.1479 43.2256 45.3855 43.8543 46.2824 44.8712C47.1794 45.888 47.7339 47.291 47.7339 48.8415C47.7339 50.392 47.1794 51.795 46.2824 52.8119C45.3855 53.8287 44.1479 54.4575 42.7803 54.4575C41.4127 54.4575 40.1751 53.8287 39.2782 52.8119C38.3813 51.795 37.8267 50.392 37.8267 48.8415C37.8267 47.291 38.3813 45.888 39.2782 44.8712ZM24.2187 46.4527C23.6367 46.4527 23.1095 46.7205 22.7278 47.1533C22.3478 47.586 22.1099 48.1837 22.1099 48.8435C22.1099 49.5033 22.3461 50.1009 22.7278 50.5337C23.1095 50.9664 23.6367 51.2342 24.2187 51.2342C24.8007 51.2342 25.3279 50.9664 25.7096 50.5337C26.0913 50.1009 26.3275 49.5033 26.3275 48.8435C26.3275 48.1837 26.0913 47.586 25.7096 47.1533C25.3279 46.7205 24.8007 46.4527 24.2187 46.4527ZM20.7166 44.8712C21.6135 43.8543 22.8511 43.2256 24.2187 43.2256C25.5864 43.2256 26.8239 43.8543 27.7208 44.8712C28.6178 45.888 29.1724 47.291 29.1724 48.8415C29.1724 50.392 28.6178 51.795 27.7208 52.8119C26.8239 53.8287 25.5864 54.4575 24.2187 54.4575C22.8511 54.4575 21.6135 53.8287 20.7166 52.8119C19.8197 51.795 19.2651 50.392 19.2651 48.8415C19.2651 47.291 19.8197 45.8861 20.7166 44.8712ZM49.5038 21.4236H40.781L40.2367 30.4219H48.1447L49.5038 21.4236ZM37.9345 21.4236H25.8055L26.6562 30.4219H37.3902L37.9345 21.4236ZM22.9504 21.4236H14.9687L17.0964 30.4219H23.8028L22.9521 21.4236H22.9504ZM14.2053 18.1984H22.644L21.7933 9.20011H12.0777L14.2053 18.1984ZM25.4991 18.1984H38.1279L38.6722 9.20011H24.6484L25.4991 18.1984ZM40.9745 18.1984H49.9899L51.349 9.20011H41.5171L40.9728 18.1984H40.9745Z"
+                  fill="#FFDC03" />
+              </g>
+              <defs>
+                <clipPath id="clip0_520_25">
+                  <rect width="54.4575" height="54.4575" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="font-DMSans text-[16px] lg:text-[45px] font-bold leading-[1.2] text-[#FFDC03]">Get Calm,
+              Clarity & Rest
+              Now</span>
+          </div>
         </ShopButton>
       </div>
     </div>
@@ -657,11 +675,9 @@ onBeforeUnmount(() => {
         <h1
           class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[52px] font-bold font-crossfit">
           Frequently asked questions:</h1>
-        <LazyIsland>
-          <div class="faq-wrap">
-            <FAQ />
-          </div>
-        </LazyIsland>
+        <div class="faq-wrap">
+          <FAQ :asks="faqItems" />
+        </div>
       </div>
     </div>
   </div>

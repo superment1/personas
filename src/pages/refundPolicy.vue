@@ -2,6 +2,7 @@
 import { useSeo } from '@/composables/useSeo'
 import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
+import SuperFooter2 from '../components/SuperFooter2.vue'
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
         description: 'Natural, deep sleep is essential for healthy, radiant skin.',
@@ -31,7 +32,8 @@ import SuperHeader from '../components/SuperHeader.vue'
                         <li><span class="">90 days – for purchases of the 3-bottle bundle</span></li>
                         <li><span class="">30 days – for purchases of a single bottle</span></li>
                     </ul>
-                    <p class="pt-3">To be eligible, the request must be made within the time frame above, counting from the delivery date, and applies to first-time purchases made through www.superment.co only. For orders with two or more units of the same product, unopened items may need to be returned to receive a full refund.</p>
+                    <p class="pt-3">To be eligible, the request must be made within the time frame above, counting from the delivery date, and applies to first-time purchases made through <strong>www.superment.co</strong>  only.
+                    Refunds apply <strong>only to unopened bottles </strong>, which may need to be returned to complete the process.</p>
                 </div>
                 <div class="py-5 border-b-2 border-[#370f1e]">
                     <p class="primary pb-2 text-xl font-bold"> Even if you didn't love it, someone else in your circle might!</p>
@@ -58,7 +60,7 @@ import SuperHeader from '../components/SuperHeader.vue'
 
     <div class="bg-[#370F1E] w-full">
         <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-            <SuperFooter />
+            <SuperFooter2 />
         </div>
     </div>
 </template>

@@ -19,8 +19,8 @@ const items = [
   {
     title: 'Corydalis',
     subtitle: 'Relieves stress-driven discomfort and supports a calm, steady state throughout the day.',
-    img1x: 'assets/corydalis-128.webp',
-    img2x: 'assets/corydalis-256.webp',
+    img1x: 'assets/corydalis.webp',
+    img2x: 'assets/corydalis.webp',
     w: 128, h: 128, alt: 'Corydalis'
   },
   {
@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
   <div class="relative overflow-hidden w-full flex justify-center items-center">
     <div 
         ref="carouselContainer" 
-        class="w-full max-w-[1000px] overflow-x-auto py-6 overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
+        class="w-full max-w-[1000px] overflow-x-auto py-6 lg:py-[3rem] overflow-y-hidden scroll-smooth px-4 carousel-container snap-x snap-mandatory overflow-hidden"
       >
       <div class="flex w-max space-x-4 items-center relative z-0"
           ref="carouselContainer" 
@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
           v-for="(item, index) in items"
           :key="index"
           :data-index="index"
-          class="relative flex-none origin-center snap-center w-[220px] md:w-[260px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
+          class="relative flex-none origin-center snap-center w-[220px] md:w-[780px] mx-0 text-center transition-all duration-300 ease-in-out  cursor-pointer"
           >
           <div
               class="transform origin-center transition-all duration-300 ease-in-out"
@@ -158,13 +158,13 @@ onBeforeUnmount(() => {
               }"
           >
           <!-- Card com imagem -->
-          <div class="bg-white rounded-xl shadow rounded-2x1">
+          <div class="bg-white rounded-xl lg:h-[320px] content-center shadow rounded-2x1">
             <img 
             :src="item.img1x"
             :srcset="`${item.img1x} 1x, ${item.img2x} 2x`"
             :alt="item.title" 
             loading="lazy" decoding="async"
-            class="w-32 h-32 md:w-48 md:h-48 object-contain mx-auto rounded-xl" />
+            class="w-32 h-32 md:w-[250px] md:h-[250px] object-contain mx-auto rounded-xl" />
           </div>
           <div class="mt-2 grid">
             <h3 class="title">{{ item.title }}</h3>
@@ -204,5 +204,18 @@ onBeforeUnmount(() => {
 }
 .carousel-container::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+@media(min-width: 900px) {
+  .title {
+    padding-top: 20px;
+    font-size: 40px;
+    line-height: 56px;
+  }
+  .description {
+    font-size: 30px;
+    max-width: 890px;
+    line-height: 30px;
+    padding-bottom: 40px;
+  }
 }
 </style>

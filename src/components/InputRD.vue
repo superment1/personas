@@ -6,7 +6,6 @@ let io, loaded = false, mounted = false
 
 function loadRD(): Promise<any> {
   return new Promise((resolve, reject) => {
-    // se já carregou antes
     if ((window as any).RDStationForms) return resolve((window as any).RDStationForms)
 
     const s = document.createElement('script')
@@ -84,6 +83,11 @@ onBeforeUnmount(() => {
     color: #FFF;
     text-align: start;
   }
+@media (max-width: 350px) {
+   .content-input {
+    width: 300px !important;
+  }
+}
 @media (min-width: 639px) {
   .content-input {
     width: 950px !important;
@@ -103,7 +107,6 @@ onBeforeUnmount(() => {
     role="main"
     id="e-mail-site-2-fc7666a2bfa336762e39"
     class="w-full mx-auto"
-    style="margin-left: -30px;"
   ></div>
 </div>
 

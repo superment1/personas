@@ -2,6 +2,7 @@
 import { useSeo } from '../composables/useSeo'
 import SuperFooter from '../components/SuperFooter.vue'
 import SuperHeader from '../components/SuperHeader.vue'
+import SuperFooter2 from '../components/SuperFooter2.vue'
     useSeo({
         title: 'SUPERMENT - Super Natural Sleep',
         description: 'Natural, deep sleep is essential for healthy, radiant skin.',
@@ -154,7 +155,7 @@ import SuperHeader from '../components/SuperHeader.vue'
     </div>
     <div class="bg-[#370F1E] w-full">
         <div class="max-w-[330px] sm:max-w-[700px] mx-auto">
-            <SuperFooter />
+            <SuperFooter2 />
         </div>
     </div>
 </template>

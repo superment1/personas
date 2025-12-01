@@ -3,7 +3,7 @@
 
   const links = [
     { label: 'About Us', href: '/about' },
-    { label: 'FAQ', href: '/faq' },
+    // { label: 'FAQ', href: '/faq' },
     { label: 'Terms of Service', href: '/terms' },
     { label: 'Refund Policy', href: '/refundpolicy' },
     { label: 'Privacy Policy', href: '/privacypolicy'}
@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <section class="w-full bg-[#350E1D] flex flex-col items-center justify-start pt-0 pb-5">
+  <section class="w-full bg-[#370F1E] flex flex-col items-center justify-start pt-0 pb-5">
 
     <!-- PARTE 1: Explore + Contact -->
     <div class="flex flex-col gap-0  md:gap-[3rem] lg:gap-[2.5rem] md:flex-row w-full justify-center items-center py-6 md:items-start">

@@ -7,15 +7,17 @@ import { useSeo } from '../composables/useSeo';
 import { defineAsyncComponent } from 'vue'
 import LazyIsland from '@/components/LazyIsland.vue'
 import BannerModal from '../components/BannerModal.vue';
-import VslBadges from '../components/VslBadges.vue';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import VslBadgeSleep from '../components/VslBadgeSleep.vue';
+import { ref, onMounted, reactive, onBeforeUnmount } from 'vue'
 import SuperFooter from '../components/SuperFooter.vue';
+import Ingredients from '../components/sleepSupermentComponents/Ingredients.vue';
+import { getValues } from '../composables/useCountry.js';
+import Faq from '../components/Faq.vue';
 
 const IngredientsCarousel = defineAsyncComponent(() => import('../components/IngredientsCarousel.vue'))
 const TestimonialsCarousel = defineAsyncComponent(() => import('../components/TestimonialsCarousel.vue'))
 const Frascos = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Frascos.vue'))
 const Stress = defineAsyncComponent(() => import('../components/sleepSupermentComponents/Stress.vue'))
-const FAQ = defineAsyncComponent(() => import('../components/Faq.vue'))
 const NotificationDisplay = defineAsyncComponent(() => import('../components/NotificationDisplay.vue'))
 const BannerRetention = defineAsyncComponent(() => import('../components/BannerRetention.vue'))
 
@@ -26,12 +28,16 @@ useSeo({
 })
 
 const anchorId = 'id-vsl-badges'
-
-// ===== Exit-intent / retenção (sem vídeo) =====
 const modalOpen = ref(false)
-
 const BACK_STATE = { exitGuard: true }
 let backGuardActive = false
+const values = reactive({
+  discount:'',
+  currentValue: '',
+  oldValue: '',
+  threeBottles: '',
+  sixBottles: ''
+});
 
 function onBackPress(e: PopStateEvent) {
   if (!backGuardActive) return
@@ -99,8 +105,14 @@ function onScroll() {
   lastScrollT = t
 }
 
-onMounted(() => {
-  // listeners de retenção
+onMounted(async () => {
+  const res = await getValues()
+  values.currentValue = res.currentValue;
+  values.discount = res.discount;
+  values.oldValue = res.oldValue;
+  values.threeBottles = res.threeBottles;
+  values.sixBottles = res.sixBottles;
+
   window.addEventListener('mousemove', onMouseMove, { passive: true })
   document.addEventListener('mouseout', onMouseOut, { passive: true })
   document.addEventListener('visibilitychange', onVisibilityChange)
@@ -126,114 +138,168 @@ onBeforeUnmount(() => {
   disableBackExitGuard()
 })
 
+const asks = ref([
+  {
+    question: 'What exactly is Super Natural Sleep?',
+    answer: 'Super Natural Sleep is a plant-based nightly supplement built around the California Poppy — a golden flower once treasured by Native Californians for its calming properties. Combined with other carefully chosen botanicals, it helps quiet racing thoughts, relax the body, and support deep, restorative sleep.',
+    open: true
+  },
+  {
+    question: 'Will it knock me out the next morning?',
+    answer: 'No. Super Natural Sleep is not a sedative. It doesn’t “knock you out.” Instead, it helps your body remember how to rest naturally. You’ll fall asleep more peacefully, stay asleep longer, and wake up clear and refreshed — without the heavy, drugged feeling.',
+    open: false
+  },
+  {
+    question: 'Does it contain melatonin?',
+    answer: 'No. Super Natural Sleep is completely free of melatonin. Many people find melatonin leaves them groggy or disrupts their natural rhythms. Our formula is gentle, non-habit forming, and designed for calm, balanced rest.',
+    open: false
+  },
+  {
+    question: 'Is it safe to take every night?',
+    answer: 'Yes. Super Natural Sleep is 100% plant-based, non-habit forming, and gentle enough for nightly use. It’s produced in the USA in FDA-registered, GMP-compliant facilities for quality and safety.',
+    open: false
+  },
+  {
+    question: 'When will I start to notice results?',
+    answer: 'Some people feel calmer and sleep better after the very first night. For others, the effects build gradually over several days as the body restores its natural rhythm. We recommend giving the formula at least 2–3 weeks to fully experience its benefits',
+    open: false
+  },
+  {
+    question: 'What makes this different from sleep pills or over-the-counter aids?',
+    answer: 'Most pills rely on sedation, forcing you into sleep but stealing your clarity the next morning. Super Natural Sleep works with your body, calming the nervous system and quieting the mind — so your sleep is deep, natural, and restorative.',
+    open: false
+  },
+  {
+    question: 'Is there a guarantee?',
+    answer: 'Absolutely. Every order is backed by up to 120-day, money-back guarantee. Try Super Natural Sleep risk-free. If your nights aren’t calmer and your mornings brighter, simply return the unopened bottles and we’ll refund you.',
+    open: false
+  },
+  {
+    question: 'How do I take it?',
+    answer: 'Simply take 2 capsules with a glass of water about 30 minutes before bedtime. That’s it. Make it part of your nightly ritual, and let the California Poppy do the rest.',
+    open: false
+  },
+])
 </script>
-
 <template>
   <SuperHeader2 :show-redirect="false" />
   <section id="super-sleep-pequeno"
-    class="relative overflow-hidden w-full aspect-[14/15] min-h-[420px] block sm:hidden">
+    class="relative overflow-hidden w-full  min-h-[422px] block sm:hidden">
     <picture class="absolute inset-0 z-0">
-      <!-- AVIF preferido -->
-      <source type="image/avif" srcset="/assets/hero-m-768.avif 768w" sizes="100vw" />
-
-      <!-- WebP fallback responsivo -->
-      <source type="image/webp" srcset="/assets/hero-m-360.webp 360w,
-                /assets/hero-m-480.webp 480w,
-                /assets/hero-m-640.webp 640w,
-                /assets/hero-m-768.webp 768w,
-                /assets/hero-m-960.webp 960w" sizes="100vw" />
-
-      <img src="/assets/hero-m-768.webp" alt="Super Natural Sleep no travesseiro"
-        class="w-full h-full object-cover object-[50%_50%]" width="768" height="820" loading="eager"
+      <img src="/assets/newSleep4.webp" alt="Super Natural Sleep no travesseiro"
+        class="w-full h-full object-cover" width="400" height="422" loading="eager"
         fetchpriority="high" decoding="async" />
     </picture>
     <div class="">
       <div class="title-super-natural-sleep relative z-10">
-        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] max-w-[270px] !leading-[1] !text-[34px]">
+          Say good night to insomnia. Without melatonin.</span>
       </div>
-      <div class="description !pl-[35px] relative z-10">
-        <span class="description">Try our premium <br> natural sleep formula,</span>
-        <span class="description" style="font-weight: bold;">now 30% off <br> for a limited time!</span>
-        <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
-          class="botao-shop rounded-md !hover:bg-none !px-0 !pb-2 !bg-transparent mt-[1.65rem]">
-          <div
-            class="bg-[#370F1E] text-[20px] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[175px] font-crossfit h-9">
-            <span class="relative inline-block text-[#ecd68b]
-            before:content-[''] before:absolute before:-left-1 before:-right-1
-            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
-            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span
-              class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP
-              REST</span>
+      <div class="description !pl-[50px] relative z-10">
+        <span class="description max-w-[126px] !text-[#fff] !leading-[1.3] !mt-[18px] !text-[13px]">Try our premium plant-based
+          formula, specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
+        <div class="w-full flex flex-col items-start">
+          <!-- <span
+            class="w-full mt-[39px] leading-[17px] py-[6px] border-y font-gelasio max-w-[130px] italic text-center text-[#fff] text-[13px] font-bold">{{ values.discount }}
+            off <br> for a limited time!</span> -->
+          <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
+            class="botao-shop !h-[37px] rounded-md !hover:bg-none !px-0 !pb-0 !bg-transparent mt-[24px]">
+            <div
+              class="bg-[#370F1E] text-[18px] gap-1 flex transition-transform duration-300 hover:scale-110 items-center justify-center rounded-md w-[153px] font-crossfit h-[31px]">
+              <span class="relative inline-block text-[#FFF4B3]
+              before:content-[''] before:absolute before:-left-1 before:-right-1
+              before:top-1/2 before:h-[1px] before:bg-[#1E010C]
+              before:-translate-y-1/2 before:rotate-[25deg] before:rounded-full">{{ values.oldValue }}</span><span
+                class="text-[#FFDC03]">{{ values.currentValue }}</span><span class="text-[#FFDC03]">|</span><span
+                class="text-[#FFDC03]">SHOP
+                NOW</span>
+            </div>
+          </ShopButton>
+          <div class="place-self-center">
+            <span class="stripe justify-items-center">
+              <img loading="lazy" alt="logo-stripe" src="/assets/stripelogo1.webp"></img>
+            </span>
           </div>
-
-        </ShopButton>
-        <div class="place-self-center">
-          <span class="stripe justify-items-center">
-            <img loading="lazy" alt="logo-stripe" src="../assets/image/sleepSuperment/stripe.png"></img>
-          </span>
         </div>
       </div>
     </div>
-
   </section>
-  <section class="relative overflow-hidden w-full h-[380px] hidden sm:block" id="super-sleep-grande">
+  <section class="relative overflow-hidden w-full h-[392px] hidden sm:block" id="super-sleep-grande">
     <picture class="absolute inset-0 z-0 w-full h-full">
-      <source media="(min-width: 640px)" type="image/avif" srcset="../assets/image/sleepSuperment/BannerPaginaD2.avif"
-        sizes="100vw" />
-      <!-- WebP fallback (desktop) -->
-      <source media="(min-width: 640px)" type="image/webp" srcset="../assets/image/sleepSuperment/BannerPaginaD2.webp"
-        sizes="100vw" />
-
-      <!-- Fallback final -->
-      <img src="../assets/image/sleepSuperment/BannerPaginaD2.webp" alt="bg-desktop" width="1600" height="900"
-        loading="lazy" decoding="async" fetchpriority="low" class="w-full h-full object-cover object-top" />
+      <img src="/assets/newSleepDesk2.webp" alt="bg-desktop" width="1600" height="900" loading="lazy" decoding="async"
+        fetchpriority="low" class="w-full h-full object-cover object-top" />
     </picture>
     <div class="flex flex-row title md:relative gap-52">
       <div class="flex flex-col z-10">
-        <span class="product-title">FINALLY, <br> RESTFUL SLEEP.</span>
-        <span class="product-sub-title">Natural, safe, and effective.</span>
+        <span class="product-title [text-shadow:_0_2px_6px_rgba(0,0,0,.35)] !leading-[1] !text-[38px]">
+          Say good night to insomnia. Without melatonin.
+        </span>
         <div class="description">
-          <span class="description">Try our premium natural <br> sleep formula, <strong>now 30% off</strong> <br>for a
-            limited time!</span>
+          <span class="description !leading-[1.3] !text-[18px] !text-[#fff]">Try our premium plant-based formula,
+            specially crafted to eliminate insomnia and help you fall asleep faster and deeper.</span>
         </div>
       </div>
-      <div class="button relative bottom-20">
+      <div class="button relative bottom-[110px]">
+        <!-- <span
+          class="px-4 py-1 mb-[34px] border-y-2 font-gelasio italic text-center text-[#fff] text-[16px] font-bold">{{ values.discount }}
+          off<br> for a limited time!</span> -->
         <ShopButton type="button" id="buy-button" :anchorId="anchorId" :showIcon="false"
           class="botao-shop rounded-md !hover:bg-none !px-0 !bg-transparent">
           <div
-            class="bg-[#370F1E] text-[1.2rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[165px] font-crossfit h-9">
-            <span class="relative inline-block text-[#ecd68b]
+            class="bg-[#370F1E] text-[24px] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-md w-[220px] font-crossfit h-[48px]">
+            <span class="relative inline-block text-[#FFF4B3]
             before:content-[''] before:absolute before:-left-1 before:-right-1
-            before:top-1/2 before:h-[1px] before:bg-[#5d4503]
-            before:-translate-y-1/2 before:rotate-[-25deg] before:rounded-full">$60</span><span
-              class="text-[#ffdf01]">$42</span><span class="text-[#ffdf01]">|</span><span class="text-[#ffdf01]">SHOP
-              REST</span>
+            before:top-1/2 before:h-[1px] before:bg-[#1E010C]
+            before:-translate-y-1/2 before:rotate-[25deg] before:rounded-full">{{ values.oldValue }}</span><span
+              class="text-[#FFDC03]">{{ values.currentValue }}</span><span class="text-[#FFDC03]">|</span><span
+              class="text-[#FFDC03]">SHOP NOW</span>
           </div>
         </ShopButton>
-        <img src="../assets/image/sleepSuperment/stripe.png" loading="lazy" alt="logo-stripe"
-          class="self-center md:bottom-1 md:relative strip max-w-[150px] md:max-w-[100px]">
+        <img src="/assets/stripelogo.webp" loading="lazy" alt="logo-stripe"
+          class="self-center md:bottom-[-7px] md:relative strip max-w-[150px] md:max-w-[100px]">
       </div>
     </div>
-
   </section>
-  <section class="non-habit-forming">
+  <section class="non-habit-forming sm:gap-[44px]">
     <div class="description-forming">
-      <p>"We’re proud to share our true purpose: to offer real relief from anxiety and deep, natural sleep, without
-        anything harmful."</p>
-      <p class="superment-team">The Superment Team</p>
+      <p>The American Heart Association recently linked long-term melatonin use to increased heart risk. 
+      </p>
+      <p class="pt-[10px]"> It’s time to rethink how we rest. And choose a safer, natural way.</p>
     </div>
     <div class="img-non">
       <picture>
-        <source type="image/webp" srcset="/assets/capsula-flores-324.webp 1x, 
-          /assets/capsula-flores-648.webp 2x" sizes="324px">
-        <img src="/assets/capsula-flores-324.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
+        <img src="/assets/capsula-flores2.webp" width="324" height="182" alt="cápsula e flores" loading="lazy"
           decoding="async" class="image-forming" style="max-width:324px;height:auto" />
       </picture>
-
     </div>
   </section>
-  <section class="ingredients relative z-10 bg-[#FFFAF0]">
+  <section class="lg:hidden">
+    <Ingredients bgImage="/assets/ingredientBg1.webp"
+      primary="The ancient American secret for restorative sleep and vitality."
+      secondary="Now science-backed and boosted specially for you."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
+      symbol="/assets/symbol.webp" />
+  </section>
+  <section class="hidden lg:block justify-center">
+    <Ingredients bgImage="/assets/ingredientBg2.webp"
+      primary="The ancient American secret for restorative sleep and vitality."
+      secondary="Now science-backed and boosted specially for you."
+      subtitle="At the heart of Super Natural Sleep lies the California Poppy, a golden flower once trusted by Native Californians to quiet the mind, ease sleep and strengthen health. We blended it with other soothing herbs to help you release daily tension, and sleep faster and deeper - restoring energy, balance and vitality."
+      symbol="/assets/symbol.webp" />
+  </section>
+  <section class="testimonials">
+    <p class="title">What Supersleepers are saying.</p>
+    <div class="assessment">
+      <p class="notice">Rated 4.9/5.0 from +750 reviews</p>
+      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
+    </div>
+    <div class="testimonials">
+      <LazyIsland>
+        <TestimonialsCarousel />
+      </LazyIsland>
+    </div>
+  </section>
+  <!-- <section class="ingredients relative z-10 bg-[#FFFAF0]">
     <div class="title">
       <p>The ingredients you can trust.</p>
     </div>
@@ -246,34 +312,40 @@ onBeforeUnmount(() => {
         <IngredientsCarousel />
       </LazyIsland>
     </div>
-  </section>
+  </section> -->
   <LazyIsland>
     <Stress />
   </LazyIsland>
-  <section class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[25px] md:pt-[40px]">
+  <section
+    class="w-full h-full bg-[#E1DCCD] relative z-30 flex flex-col items-center justify-between pt-[150px] pb-[35px] md:pt-[40px]">
     <div class="imagem-centralizada">
       <img src="../assets/image/sleepSuperment/moca.webp" loading="lazy" alt="Mulher com pílula" />
-
     </div>
     <div class="flex flex-col items-center justify-end h-[350px] mt-[30px]">
-      <p class="w-[272px] font-crossfit font-bold text-[28px] text-center text-[#370F1E] leading-[1]">The numbers behind Super Natural Sleep</p>
-      <p class="mt-[10px] mb-[14px] w-[238px] font-DMSans font-medium text-[16px] leading-[18px] text-center text-[#370F1E] md:mb-[14px]">What people are saying about our powerful botanical blend:</p>
+      <p class="w-[272px] font-crossfit font-bold text-[28px] text-center text-[#370F1E] leading-[1]">The numbers behind
+        Super Natural Sleep</p>
+      <p
+        class="mt-[10px] mb-[14px] w-[238px] font-DMSans font-medium text-[16px] leading-[18px] text-center text-[#370F1E] md:mb-[14px]">
+        What people are saying about our powerful botanical blend:</p>
       <div class="w-full flex items-center md:mb-1 flex-col gap-0 md:justify-center md:flex-row md:gap-16">
         <div class="flex gap-8 md:gap-16">
           <div class="flex flex-col items-center justify-start mt-2 max-w-[200px] mx-auto">
             <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7]">75%</p>
-            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15] md:w-[200px]">of users <br>reported better<br> sleep quality.</p>
+            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15] md:w-[200px]">of
+              users <br>reported better<br> sleep quality.</p>
             <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
           </div>
           <div class="flex flex-col items-center justify-start mt-2 max-w-[240px] mx-auto">
             <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7]">0%</p>
-            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]" id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
+            <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]"
+              id="description-maior">experienced <br> grogginess or unwanted<br>side effects.</p>
             <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
           </div>
         </div>
         <div class="flex flex-col items-center justify-start max-w-[200px]">
           <p class="font-crossfit font-bold text-[50px] text-center text-[#370F1E] leading-[0.7] mt-5 md:mt-0">100%</p>
-          <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]">of users reported reduced anxiety and greater relaxation.</p>
+          <p class="font-DMSans font-semibold text-[14px] text-center text-[#370F1E] leading-[1.15]">of users reported
+            reduced anxiety and greater relaxation.</p>
           <span class="info-ref my-[2px] text-[9px]">30-day trial results - 2025</span>
         </div>
       </div>
@@ -281,7 +353,7 @@ onBeforeUnmount(() => {
         class="botao-shop rounded-md !hover:bg-none pb-4 pt-[20px] !px-0 !bg-transparent">
         <div
           class="bg-[#370F1E] text-[1.25rem] gap-1 flex items-center transition-transform duration-300 hover:scale-110 justify-center rounded-sm w-[165px] font-crossfit h-9">
-          <span class="text-[#ffdf01]">SHOP REST</span>
+          <span class="text-[#FFDC03]">SHOP REST</span>
         </div>
       </ShopButton>
       <div>
@@ -289,18 +361,6 @@ onBeforeUnmount(() => {
           <img alt="logo-stripe" loading="lazy" src="../assets/image/sleepSuperment/stripe.png"></img>
         </span>
       </div>
-    </div>
-  </section>
-  <section class="testimonials">
-    <p class="title">What Supersleepers are saying.</p>
-    <div class="assessment">
-      <p class="notice">Rated 4.9/5.0</p>
-      <p class="description"><strong>98%</strong> would recommend it for deeper, better sleep.</p>
-    </div>
-    <div class="testimonials">
-      <LazyIsland>
-        <TestimonialsCarousel />
-      </LazyIsland>
     </div>
   </section>
   <section class="everyone">
@@ -321,10 +381,10 @@ onBeforeUnmount(() => {
 
   </section>
 
-  <LazyIsland>
+  <!-- <LazyIsland>
     <Frascos />
-  </LazyIsland>
-  <VslBadges id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
+  </LazyIsland> -->
+  <VslBadgeSleep id="id-vsl-badges" :duration-ms="7 * 60 * 1000" start-on="mount" @expired="onCountdownExpired" />
   <div class="bg-[#fffaf0] w-full py-[45px] flex flex-col">
     <div class="px-0 sm:px-10 flex flex-col gap-0 sm:gap-[40px]">
       <div class="w-full max-w-[330px] sm:max-w-[700px] mx-auto">
@@ -333,11 +393,9 @@ onBeforeUnmount(() => {
           questions:</h1>
         <h1 class="text-start hidden w-full sm:block pb-[30px] leading-none text-[#370F1E] text-[62px] font-crossfit">
           Frequently asked questions:</h1>
-        <LazyIsland>
-          <div class="faq-wrap">
-            <FAQ />
-          </div>
-        </LazyIsland>
+        <div class="faq-wrap">
+          <Faq :asks="asks" />
+        </div>
       </div>
     </div>
   </div>
@@ -350,15 +408,15 @@ onBeforeUnmount(() => {
     <NotificationDisplay />
   </LazyIsland>
   <!-- <BannerModal /> -->
-  <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
+  <!-- <BannerRetention v-model:open="modalOpen" title="WAIT!" subtitle="DON'T LEAVE" buttonText="SLEEP20"
     :disable-backdrop-close="true" :disable-esc="false">
     <template #message>
       <p>
-        <span class="text-[#fff] sm:text-[31px] text-[16px]">Get <span class="text-[#FFDC03] sm:text-[24px]">20% OFF
+        <span class="text-[#fff] lg:text-[31px] text-[16px]">Get <span class="text-[#FFDC03] sm:text-[24px]">20% OFF
           </span> to shop now <br> — today only.</span>
       </p>
     </template>
-  </BannerRetention>
+</BannerRetention> -->
 </template>
 <style>
 html {

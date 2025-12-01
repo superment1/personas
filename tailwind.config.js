@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         skin: '#E1DCCD',
       },
+      screens: {
+        'xs': '350px'
+      },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
         gelasio: ['Gelasio', 'serif'],
@@ -18,7 +21,7 @@ module.exports = {
       keyframes: {
         marquee: {
           '0%':   { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(-40%)' },
         },
       },
       animation: {
