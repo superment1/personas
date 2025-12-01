@@ -608,7 +608,7 @@ const faqItems = [
 
   <section class="bg-[#370F1E] px-8 lg:px-40 py-8">
     <div class="lg:hidden">
-      <img src="/assets/group_455.webp" alt="table" loading="lazy">
+      <img src="/assets/group_4555.webp" alt="table" loading="lazy">
     </div>
     <div class="hidden lg:block justify-items-center">
       <p class="font-crossfit text-center pt-10 pb-12 text-[60px] text-white">Why everyone is <span

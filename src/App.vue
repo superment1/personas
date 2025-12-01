@@ -26,7 +26,8 @@ const BLOCKED = new Set([
   '/relief', 
   '/vslrelax',
   '/vslrelief',
-  '/melatonin'
+  '/melatonin',
+  '/healthnews'
 ])
 
 let cleanup = null

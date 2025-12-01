@@ -6,6 +6,8 @@
     <base href="/"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
     <link 
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gelasio:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" 
       rel="stylesheet"  media="print" onload="this.media='all'">
@@ -14,7 +16,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- Analitics -->
-    <script>
+    <!-- <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
       (function () {
@@ -40,7 +42,7 @@
         window.addEventListener('mousemove', loadAll);
         window.addEventListener('touchstart', loadAll, { passive:true });
       })();
-    </script>
+    </script> -->
     <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -72,10 +74,10 @@
       </style>     
   </head>
   <body>
-    <noscript>
+    <!-- <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6Z2ZN9H"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    </noscript> -->
     <!-- Google Tag Manager2 (noscript) -->
       <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMKKCTK3"
@@ -131,7 +133,7 @@
           vsleep:         { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
           vsleep2:        { avif: "/assets/posterVsl.avif",           webp: "/assets/posterVsl.webp" },
           vslrelax:       { avif: "/assets/poster_vslrelax2.avif",    webp: "/assets/poster_vslrelax2.webp" },
-          vslrelief:      { avif: "/assets/poster-vslrelief.avif",    webp: "/assets/poster-vslrelief.webp" },
+          vslrelief:      { avif: "/assets/poster-vslrelief1.avif",    webp: "/assets/poster-vslrelief1.webp" },
           maturesleep:    { avif: "/assets/posterElderly.avif",       webp: "/assets/posterElderly.webp" },
           about:          { avif: "/assets/posterAbout1.avif",         webp: "/assets/posterAbout1.webp" },
           terms:          { avif: "/assets/posterTerms.avif",         webp: "/assets/posterTerms.webp" },
@@ -146,6 +148,7 @@
           tsl:            { avif: "/assets/poster_tsl.avif",          webp: "/assets/poster_tsl.webp" },
           relief:         { avif: "/assets/poster-relief.avif",       webp: "/assets/poster-relief.webp" },
           melatonin:      { avif: "/assets/poster_melatonin.avif",    webp: "/assets/poster_melatonin.webp" },
+          healthnews:      { avif: "/assets/poster_healthNews.avif",    webp: "/assets/poster_healthNews.webp" },
         };
         const assets = splashMap[route] || splashMap['sleepnatural'];
         splash.innerHTML = `

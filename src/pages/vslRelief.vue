@@ -13,13 +13,29 @@ import DepoimentsD from '../components/newPageD/DepoimentsD.vue';
     keywords: 'natural sleep aid sleep supplement restful sleep deep sleep fall asleep faster stay asleep longer wake up refreshed'
   })
 
+const badgesRef = ref<InstanceType<typeof VslBadgesRelax> | null>(null)
 const router = useRouter()
 const modalOpen = ref(false)
 const showAfterVideo = ref(false)
 
 const urlPath = '/sleepnatural'
 
-function openModal() { modalOpen.value = true }
+const TRIGGER_SECONDS =  1100
+const TRIGGER_STORAGE_KEY = 'videoReachedTrigger'
+
+function markTriggered() {
+  if (!showAfterVideo.value) {
+    showAfterVideo.value = true
+    sessionStorage.setItem(TRIGGER_STORAGE_KEY, 'true')
+    badgesRef.value?.startTimer() 
+  }
+}
+// if (sessionStorage.getItem(TRIGGER_STORAGE_KEY) === 'true') {
+//   showAfterVideo.value = true
+//   badgesRef.value?.startTimer() 
+// }
+
+// function openModal() { modalOpen.value = true }
 function goToPage() { router.push(urlPath) }
 
 const BACK_STATE = { exitGuard: true }
@@ -54,79 +70,80 @@ const AFTER_VIDEO_GRACE_MS = 10000
 let afterVideoUntil = 0
 
 function onCountdownExpired() {
-  modalOpen.value = true
   lastShown = Date.now()
 }
 
-function openExitModal(force = false) {
-  const now = Date.now()
-  if (modalOpen.value) return
-  if (!force) {
-    if (now < afterVideoUntil) return
-    if (showAfterVideo.value) return
-    if (now - lastShown < COOLDOWN_MS) return
-  }
+// function openExitModal(force = false) {
+//   const now = Date.now()
+//   if (modalOpen.value) return
+//   if (!force) {
+//     if (now < afterVideoUntil) return
+//     if (showAfterVideo.value) return
+//     if (now - lastShown < COOLDOWN_MS) return
+//   }
 
-  modalOpen.value = true
-  lastShown = now
-}
-function onPageHide() {
-  openExitModal()
-}
+//   modalOpen.value = true
+//   lastShown = now
+// }
+// function onPageHide() {
+//   openExitModal()
+// }
 function loadVturbOnce() {
   const id = 'vturb-script-68aa4210166658ec2475a56e'
   if (document.getElementById(id)) return
   const s = document.createElement('script')
   s.id = id
   s.async = true
-  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/68aa4210166658ec2475a56e/v4/player.js'
+  s.src = 'https://scripts.converteai.net/6c399ba7-6c88-47d1-a6ac-c9432f1860cb/players/6920de19813dc92a81d61663/v4/player.js'
   document.head.appendChild(s)
 }
 
-function onMouseMove(e: MouseEvent) {
-  const goingUp = e.clientY < lastY
-  if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true) 
-  lastY = e.clientY
-}
-
-function onMouseOut(e: MouseEvent) {
-  if (!e.relatedTarget && e.clientY <= 0) openExitModal(true) 
-}
-
-function onVisibilityChange() {
-  if (document.visibilityState === 'hidden') openExitModal()
-}
-function onWindowBlur() {
-  openExitModal()
-}
-
-function onPopState() {
-  openExitModal()
-}
 function onVideoEnded() {
   showAfterVideo.value = true
   afterVideoUntil = Date.now() + AFTER_VIDEO_GRACE_MS
 }
 
+// function onMouseMove(e: MouseEvent) {
+//   const goingUp = e.clientY < lastY
+//   if (goingUp && e.clientY <= TOP_ZONE) openExitModal(true) 
+//   lastY = e.clientY
+// }
+
+// function onMouseOut(e: MouseEvent) {
+//   if (!e.relatedTarget && e.clientY <= 0) openExitModal(true) 
+// }
+
+// function onVisibilityChange() {
+//   if (document.visibilityState === 'hidden') openExitModal()
+// }
+// function onWindowBlur() {
+//   openExitModal()
+// }
+
+// function onPopState() {
+//   openExitModal()
+// }
+
 let lastScrollY = window.scrollY || 0
 let lastScrollT = performance.now()
 
-function onScroll() {
-  const y = window.scrollY
-  const t = performance.now()
+// function onScroll() {
+//   const y = window.scrollY
+//   const t = performance.now()
 
-  const dy = lastScrollY - y        
-  const dt = Math.max(t - lastScrollT, 1)
-  const vel = dy / dt                 
+//   const dy = lastScrollY - y        
+//   const dt = Math.max(t - lastScrollT, 1)
+//   const vel = dy / dt                 
 
-  if (dy > 120 && vel > 0.6) openExitModal()
-  if (y <= 12 && dy > 0) openExitModal()
+//   if (dy > 120 && vel > 0.6) openExitModal()
+//   if (y <= 12 && dy > 0) openExitModal()
 
-  lastScrollY = y
-  lastScrollT = t
-}
+//   lastScrollY = y
+//   lastScrollT = t
+// }
 
 const showPlayOverlay = ref(true)
+
 function hideOverlayAndLetUserPlay() {
   showPlayOverlay.value = false
 }
@@ -137,7 +154,6 @@ function onModalClose() {
   lastShown = 0
 }
 const hasStarted = ref(false)
-
 let readyHandler: any
 let playHandler: any
 let endedHandler: any
@@ -146,26 +162,47 @@ onMounted(() => {
   loadVturbOnce()
 
   // ====== Exit-intent listeners ======
-  window.addEventListener('mousemove', onMouseMove, { passive: true })
-  document.addEventListener('mouseout', onMouseOut, { passive: true })
-  document.addEventListener('visibilitychange', onVisibilityChange)
-  window.addEventListener('blur', onWindowBlur)
+  // window.addEventListener('mousemove', onMouseMove, { passive: true })
+  // document.addEventListener('mouseout', onMouseOut, { passive: true })
+  // document.addEventListener('visibilitychange', onVisibilityChange)
+  // window.addEventListener('blur', onWindowBlur)
+  // window.addEventListener('popstate', onPopState)
+  // window.addEventListener('scroll', onScroll, { passive: true })
+  // window.addEventListener('pagehide', onPageHide)
+  if (sessionStorage.getItem(TRIGGER_STORAGE_KEY) === 'true') {
+    showAfterVideo.value = true
+    badgesRef.value?.startTimer() 
+  }
+  const el = document.getElementById('vid-6920de19813dc92a81d61663')
 
-  window.addEventListener('popstate', onPopState)
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('pagehide', onPageHide)
-
-   const el = document.getElementById('vid-68aa4210166658ec2475a56e')
   if (!el) return
+   const onTimeEvent = (ev: any) => {
+    const t =
+      Number(ev?.detail?.currentTime) ||
+      Number(ev?.detail?.time) ||
+      0
 
+    if (t >= TRIGGER_SECONDS) {
+      markTriggered()
+      el.removeEventListener('video:timeupdate', onTimeEvent as any)
+      el.removeEventListener('video:progress', onTimeEvent as any)
+      document.removeEventListener('video:timeupdate', onTimeEvent as any)
+      document.removeEventListener('video:progress', onTimeEvent as any)
+    }
+  }
   const onReady = () => {
     el.addEventListener('video:play', () => {
       showPlayOverlay.value = false
     })
+    el.addEventListener('video:timeupdate', onTimeEvent as any)
+    el.addEventListener('video:progress', onTimeEvent as any)
+    document.addEventListener('video:timeupdate', onTimeEvent as any)
+    document.addEventListener('video:progress', onTimeEvent as any)
 
     el.addEventListener('video:ended', () => {
       showPlayOverlay.value = false
       showAfterVideo.value = true
+      //sessionStorage.setItem('videoEnded', 'true')
     }, { once: true })
   }
   if (window.matchMedia?.('(pointer: coarse)').matches) {
@@ -177,10 +214,10 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', onMouseMove)
-  document.removeEventListener('mouseout', onMouseOut)
-  document.removeEventListener('visibilitychange', onVisibilityChange)
-  window.removeEventListener('blur', onWindowBlur)
+  // window.removeEventListener('mousemove', onMouseMove)
+  // document.removeEventListener('mouseout', onMouseOut)
+  // document.removeEventListener('visibilitychange', onVisibilityChange)
+  // window.removeEventListener('blur', onWindowBlur)
   window.removeEventListener('popstate', onPopState)
   window.removeEventListener('scroll', onScroll)
   disableBackExitGuard()
@@ -253,52 +290,45 @@ const testimonials = [
       </div>
     </header>
     <!-- mobile -->
-    <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-[972px]">
-      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] justify-items-center sm:max-w-[1260px] pb-[104px] sm:pb-0 pt-[44px] sm:pt-[80px]">
-        <div class="flex flex-col sm:flex-row gap-0 sm:gap-56 sm:h-[649px] h-[746px]">
+    <main class="flex-1 bg-[#4DBCB6] flex flex-col justify-center h-full">
+      <div class=" self-center sm:flex flex flex-col w-full max-w-[349px] sm:h-[665px] justify-items-center sm:max-w-[1260px] pb-[40px] sm:pb-0 pt-[44px] sm:pt-[80px]">
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-[100px]">
           <div class="sm:hidden font-crossfit leading-none ">
-            <p class="text-[#370F1E] font-bold font-gelasio italic text-[18px]" >
-                The Truth Doctors Never<br> Explain About Your Neuropathy
+            <p class="text-[#491529] font-bold font-gelasio italic text-[18px]" >
+              What No One Explains About <br>Tingling and Burning
             </p>
-            <h1 class="text-[#370F1E] uppercase pt-[15px] pb-[33px] text-[47px] sm:text-[80px] leading-[41px] items-center">
-              Nerves repaired in only 90 days 
+            <h1 class="text-[#491529] uppercase pt-[15px] pb-[33px] text-[47px] sm:text-[80px] leading-[41px] items-center">
+              THE REAL REASON BEHIND NERVE PAIN AND
               <span class="text-[#fff] ">
-               with a natural <br>3-pillar solution
+                HOW ONE DISCOVERY CHANGED EVERYTHING 
               </span>
             </h1>
-            <p class="text-[#370F1E] font-gelasio italic text-[18px]" >
-                Calm, protect, and regenerate — the system used by 12,000 Americans with a 93% satisfaction rate and up to 120-day full guarantee.
-            </p>
+            <p class="text-[#491529] font-gelasio italic text-[18px]" >
+              A natural, 3-pillar method trusted by 12,000 Americans — backed by a 93 percent satisfaction rate and a 120-day guarantee.
+             </p>
           </div>
 
-          <div class="hidden sm:block max-w-[550px] pt-[42px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[75px]">
-            <p class="text-[#370F1E] font-bold font-gelasio leading-[26px] italic text-[30px]" >
-                The Truth Doctors Never<br> Explain About Your Neuropathy
+          <div class="hidden sm:block max-w-[700px] pt-[42px] font-crossfit leading-none text-[40px] sm:text-[80px] lg:text-[75px]">
+            <p class="text-[#491529] font-bold font-gelasio leading-[26px] italic text-[30px]" >
+              What No One Explains About <br>Tingling and Burning
             </p>
-            <h1 class="text-[#370F1E] pt-[31px] pb-[76px] uppercase leading-[65px] items-center">
-              Nerves repaired in only 90 days 
+            <h1 class="text-[#491529] pt-[31px] pb-[76px] uppercase leading-[65px] items-center">
+              THE REAL REASON BEHIND NERVE PAIN AND
               <span class="text-[#fff] ">
-               with a natural <br>3-pillar solution
+               HOW ONE DISCOVERY CHANGED EVERYTHING
               </span>
             </h1>
-             <p class="text-[#370F1E] leading-[0.9] font-gelasio italic text-[30px]" >
-                  Calm, protect, and regenerate — the system used by 12,000 Americans with<br> a 93% satisfaction rate and up to 120-day full guarantee.
+            <p class="text-[#491529] leading-[0.9] font-gelasio italic text-[30px]" >
+              A natural, 3-pillar method trusted by 12,000 Americans — backed by a 93 percent satisfaction rate and a 120-day guarantee.
             </p>
           </div>
-          <div class="relative z-10 pt-[48px] sm:pt-0">
-            <div
-              class="relative no-seek w-[349px] rounded-[20px] shadow-lg max-w-[349px] h-[432px]
-                    sm:max-w-[649px] sm:w-[400px] sm:h-[500px] sm:max-h-[812px] overflow-hidden"
-            >
-              <vturb-smartplayer
-                id="vid-68aa4210166658ec2475a56e"
-                style="
+          <div class="relative z-10 pt-[16px] sm:pt-0">
+            <div class="relative no-seek rounded-[20px] shadow-lg xs:max-w-[349px] h-[620px] sm:max-w-[649px] sm:w-[400px] sm:h-[712px] sm:max-h-[812px] overflow-hidden">
+              <vturb-smartplayer id="vid-6920de19813dc92a81d61663" style="
                 display:block;
                 margin:0 auto;
                 width:100%;
-                height:100%;"
-                class="absolute inset-0"
-              ></vturb-smartplayer>
+                height:100%;" class="absolute inset-0"></vturb-smartplayer>
             </div>
           </div>
         </div>
@@ -609,10 +639,10 @@ const testimonials = [
     <!-- v-show="showAfterVideo" -->
     <div v-show="showAfterVideo" class="">
      <VslBadgesRelax
+        ref="badgesRef"
         bgCollor="bg-[#4DBCB6]"
         id="id-vsl-badges"
         :duration-ms="7 * 60 * 1000"
-        start-on="video-ended"
         @expired="onCountdownExpired"
         porductId1="prod_T2jNgj5cCjXcvG"
         porductId3="prod_T2jOmiPYB2SrZd"

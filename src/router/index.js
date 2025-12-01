@@ -29,6 +29,7 @@ const routes = [
   { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
   { path: '/vslrelax',          name:'vslrelax',      component: () => import('../pages/vslRelax.vue') },  
   { path: '/vslrelief',         name:'vslrelief',     component: () => import('../pages/vslRelief.vue') },  
+  { path: '/healthnews',        name:'healthnews',   component: () => import('../pages/healthNews.vue') },  
   { path: '/melatonin',         name:'melatonin',     component: () => import('../pages/melatonin.vue') },  
 ]
 
@@ -97,6 +98,7 @@ const BLOCKED = new Set ([
   '/relief', 
   '/vslrelax',
   '/vslrelief',
+  '/healthnews',
   '/melatonin'
 ])      
 const norm = (p) => (p || '/').replace(/\/+$/, '') || '/';
@@ -144,7 +146,8 @@ router.afterEach((to) => {
     sleepbetter2: '#E1DCCD',
     '7days': '#370F1E',
     tsl:'#E1DCCD',
-    relief: '#E1DCCD'
+    relief: '#E1DCCD',
+    healthnews:'#',
 
   }
   const color = themeColorMap[to.name] || '#ffffff'
