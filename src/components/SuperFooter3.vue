@@ -2,6 +2,7 @@
 import InputRD from './InputRD.vue';
 
 const links = [
+  { label: 'Home', href: '/home' },
   { label: 'About Us', href: '/about' },
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Refund Policy', href: '/refundpolicy' },
@@ -10,14 +11,14 @@ const links = [
 </script>
 
 <template>
-  <section class="w-full bg-[#350e1d] flex flex-col items-center justify-start pt-0 pb-5">
+  <section class="w-full bg-[#370F1E] flex flex-col items-center justify-start pt-0 pb-5">
 
     <!-- PARTE 13 : Explore + Contact -->
     <div
       class="flex flex-col gap-0  md:gap-[3rem] lg:gap-[2.5rem] md:flex-row w-full justify-center items-center py-6 md:items-start">
       <!-- Explore -->
       <div class="w-full py-[25px] text-white flex flex-col items-start justify-center">
-        <h2 class="text-4xl font-normal font-crossfit uppercase mb-[25px] w-full text-left">Explore</h2>
+        <h2 class="text-4xl font-normal font-gelasio italic mb-[25px] w-full text-left">Menu</h2>
         <ul class="flex flex-col w-full gap-1 space-y-1 text-[#FFFAF0] font-dmsans text-[18px]">
           <li v-for="item in links" :key="item.label" class="group border-b border-[#FFFAF0] h-[32px]  lg:w-full">
             <RouterLink :to="item.href"
@@ -37,7 +38,7 @@ const links = [
 
       <!-- Contact -->
       <div class="w-full lg:max-w-[330px] py-[25px] text-white font-dmsans flex flex-col items-start text-left">
-        <h2 class="text-4xl font-normal font-crossfit uppercase mb-[28px]">Contact</h2>
+        <h2 class="text-4xl font-normal  font-gelasio italic mb-[28px]">Contact</h2>
         <ul class="text-[#FFF] w-full flex flex-col gap-1">
           <li class="flex items-center gap-2 border-b border-[#FFF] pb-3 h-[32px]">
             <span class="w-8 h-8 flex items-center justify-center">
@@ -63,8 +64,8 @@ const links = [
 
     <!-- PARTE 3: Footer com logo e texto -->
     <div class="flex flex-col gap-3 items-center">
-      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem] font-crossfit">
-        <span class="inline-flex items-baseline">SUPERMENT<sub
+      <div class="mt-5 leading-[1] text-[#fffaf0] text-[2rem]">
+        <span class="inline-flex font-crossfit items-baseline">SUPERMENT<sub
             class="font-sans text-sm leading-none font-thin">®</sub></span>
       </div>
       <p class="font-gelasio text-[10px] text-center text-[#FFFAF0]">

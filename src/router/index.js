@@ -29,8 +29,10 @@ const routes = [
   { path: '/relief',            name:'relief',        component: () => import('../pages/relief.vue') },  
   { path: '/vslrelax',          name:'vslrelax',      component: () => import('../pages/vslRelax.vue') },  
   { path: '/vslrelief',         name:'vslrelief',     component: () => import('../pages/vslRelief.vue') },  
-  { path: '/healthnews',        name:'healthnews',   component: () => import('../pages/healthNews.vue') },  
+  { path: '/healthnews',        name:'healthnews',    component: () => import('../pages/healthNews.vue') },  
   { path: '/melatonin',         name:'melatonin',     component: () => import('../pages/melatonin.vue') },  
+  { path: '/home',              name:'home',          component: () => import('../pages/home.vue') },  
+
 ]
 
 export const router = createRouter({

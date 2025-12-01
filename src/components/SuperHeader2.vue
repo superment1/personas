@@ -8,16 +8,7 @@ const props = withDefaults(defineProps<{
   showRedirect: false
 })
 
-const defaultItems = [
-  'Made in the USA',
-  'Clean, natural, no fillers',
-  'Save up to 57%',
-  'Up to 120-day money-back guarantee',
-  'Real reviews rated 4.9/5.0',
-  'Free U.S. shipping'
-]
-
-const itemsToShow = computed(() => props.items?.length ? props.items : defaultItems)
+const itemsToShow = computed(() => props.items)
 
 const showGif = ref(false)
 const gifSrc = new URL("../assets/image/sleepSuperment/superment-gif.gif", import.meta.url).href
@@ -90,7 +81,7 @@ onMounted(async () => {
               pointer-events-none select-none" :class="{ 'opacity-0': !showGif }" aria-hidden="true" />
     </div>
   </section>
-  <section class="scroll-link-products z-10">
+  <section v-if="items" class="scroll-link-products z-10">
     <div class="marquee">
       <div class="marquee__track">
         <!-- dois grupos idênticos para loop contínuo -->
