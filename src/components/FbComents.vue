@@ -5,7 +5,7 @@
       <small> - Exibindo os {{ visibleComments }} mais relevantes</small>
     </h2>
 
-    <h1 style="font-family: 'Roboto', sans-serif;" class="border-[#222] font-bold border text-[#222] border-b-0 py-2 px-[14px] text-[14px]">Comments</h1>
+    <h1 style="font-family: 'Roboto', sans-serif;" class="border-[#222] font-bold border text-[#222] border-b-0 py-2 px-[14px] text-[14px] sm:text-[32px]">Comments</h1>
     <div class="comments-container">
       <div
         v-for="comment in comments"
@@ -42,10 +42,8 @@
               @click="toggleLike(comment)"
             >
               {{ comment.isLiked ? 'Unlike' : 'Like' }}
-            </span>
-            <span>·</span>
-            <span class="answer-btn">Reply</span>
-            <span>·</span>
+            </span>            
+            <span class="answer-btn">Reply</span>            
             <time>{{ comment.time }}</time>
           </div>
         </div>
@@ -81,10 +79,10 @@ export default {
           name: 'Patricia Williams',
           avatar: '',
           text: 'It’s incredible how finally understanding what’s happening inside the nerves can change everything. I’ve been struggling for years, and this video made me feel seen. I really hope more people watch this.',
-          time: '1 min',
+          time: '7 min',
           likes: 22,
           isAnswer: false,
-          extraImage: 'https://123123.com/img/pri.png',
+          extraImage: null,
           isLiked: false,
         },
         {
@@ -92,7 +90,7 @@ export default {
           name: 'Linda Kovács',
           avatar: '',
           text: 'I’m sharing this with my dad right now. His neuropathy has gotten worse these past months, and finding something that actually explains the real cause gave me so much hope. I’m definitely digging deeper into this.',
-          time: '1 min',
+          time: '15 min',
           likes: 73,
           isAnswer: false,
           extraImage: null,
@@ -103,7 +101,7 @@ export default {
           name: 'Robert Steinberg',
           avatar: '',
           text: 'This hit me hard. Some days the burning and pins-and-needles feel like they’ll never stop. Hearing that there’s a different path to recovery gave me a boost I really needed today.',
-          time: '1 min',
+          time: '28 min',
           likes: 81,
           isAnswer: false,
           extraImage: null,
@@ -114,7 +112,7 @@ export default {
           name: 'Michael Johnson',
           avatar: '',
           text: 'Information like this is priceless. Understanding nerve damage and how to calm the system feels like the first real step forward. Thank you for the clarity and for giving people hope.',
-          time: '1 min',
+          time: '34 min',
           likes: 64,
           isAnswer: false,
           extraImage: null,
@@ -125,7 +123,7 @@ export default {
           name: 'Carla Thompson',
           avatar: '',
           text: 'My husband could barely sleep last night because of the stabbing pain in his feet. Watching this made him emotional. For the first time he said “maybe I can get better.” That means the world to me.',
-          time: '1 min',
+          time: '45 min',
           likes: 102,
           isAnswer: false,
           extraImage: null,
@@ -136,7 +134,7 @@ export default {
           name: 'Angela Morris',
           avatar: '',
           text: 'Saving this. Sending to my sister. Sending to my group. Anyone who deals with nerve pain needs to hear this. It’s the first time something actually made sense.',
-          time: '1 min',
+          time: '58 min',
           likes: 56,
           isAnswer: false,
           extraImage: null,
@@ -147,7 +145,7 @@ export default {
           name: 'Elena Mikkelsen',
           avatar: '',
           text: 'I’ve been searching for something that actually explains what these burning shocks feel like. This is the first time I’ve felt understood. Sharing this with my support group.',
-          time: '1 min',
+          time: '1 h',
           likes: 41,
           isAnswer: false,
           extraImage: null,
@@ -158,7 +156,7 @@ export default {
           name: 'Tomás Reinhardt',
           avatar: '',
           text: 'My mom has suffered from neuropathy for over a decade. She watched this with me and said “that’s exactly how it feels.” Thank you for giving people like her a voice.',
-          time: '1 min',
+          time: '2h',
           likes: 67,
           isAnswer: false,
           extraImage: null,
@@ -169,7 +167,7 @@ export default {
           name: 'Sarah Whitmore',
           avatar: '',
           text: 'This opened my eyes. I thought the pain in my legs was just aging, but now I understand there’s a real reason behind it. I’m relieved… and honestly, hopeful for the first time in years.',
-          time: '1 min',
+          time: '4h min',
           likes: 29,
           isAnswer: false,
           extraImage: null,
@@ -180,7 +178,7 @@ export default {
           name: 'Daniel Ortiz',
           avatar: '',
           text: 'I didn’t expect to get emotional watching this, but I did. Living with nerve pain is exhausting. Hearing that there’s new science behind what we feel gives me a sense of direction again.',
-          time: '1 min',
+          time: '4 h',
           likes: 58,
           isAnswer: false,
           extraImage: null,
@@ -247,7 +245,6 @@ export default {
 #fb-comments {
   font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 13px;
-  max-width: 40em;
   margin: auto;
 }
 
@@ -300,9 +297,9 @@ export default {
 .comment-data .user {
   font-weight: 400;
   color: #050505;
-  border-radius: 0.75em;
+  border-radius: 20px;
   background-color: #D9D9D9;
-  padding: 0.375em 0.75em 0.75em;
+  padding: 12px;
 }
 
 .comment-data .name {
@@ -324,19 +321,25 @@ export default {
 }
 
 .comment-data .buttons {
-  margin: 0.125em 0 0 0.75em;
+  margin: 5px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.3125em;
+  gap: 7px;
+}
+
+
+.comment-data .buttons time{
+  color: #606060 !important;
 }
 
 .comment-data .buttons time,
 .comment-data .buttons .like-btn,
 .comment-data .buttons .answer-btn,
 .comment-data .buttons span {
-  font-size: 0.8em;
-  color: #888;
+  font-size: 15px;
+  color: #036;
+  font-weight: 100;
   user-select: none;
 }
 
@@ -389,8 +392,9 @@ export default {
 
 .likes-count {
   position: absolute;
-  bottom: -0.625em;
-  right: 0;
+  bottom: 15px;
+  right: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #fff;
   border: 0.125em solid #eaebef;
   display: flex;
@@ -398,7 +402,7 @@ export default {
   font-size: 0.875em;
   line-height: 1;
   color: #888;
-  border-radius: 6.25em;
+  border-radius: 9px;
   padding: 0.0625em 0.25em 0.0625em 0;
 }
 
@@ -412,8 +416,8 @@ export default {
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
 }
 
 .comments-closed {
@@ -428,9 +432,32 @@ export default {
   #fb-comments {
     font-size: 16px;
   }
-
   .likes-count {
-    bottom: 0;
+    bottom: 5px;
+  }
+  .likes-count::before {
+    width: 32px;
+    height: 32px;
+  }
+  .comment-data .name {
+   font-size: 32px;
+  }
+  .comment-data .user{
+    padding: 22px ;
+    border-radius: 33px;
+  }
+  .comment-data .user .text{
+    font-size: 30px;
+  }
+  .comment-data .buttons {
+    margin: 20px 0 0 0;
+  }
+  .comment-data .buttons time,
+  .comment-data .buttons .like-btn,
+  .comment-data .buttons .answer-btn {
+    font-size: 32px;
+    color: #365899;
+    font-weight: 100;
   }
 }
 </style>

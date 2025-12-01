@@ -108,7 +108,7 @@ onBeforeUnmount(() => t && clearInterval(t))
         <!-- Minutes -->
         <div class="flex flex-col gap-2">
           <div style="font-family: 'Montserrat', sans-serif;"
-            class="card relative overflow-hidden xl:text-[143px] text-[48px] font-black sm:text-[82px] isolate rounded-[9px]
+            class="card relative overflow-hidden xl:text-[128px] text-[48px] font-black sm:text-[82px] isolate rounded-[9px]
                   w-[80px] h-[68px] xl:w-[120px] xl:h-[100px]
                   shadow-[0_8px_16px_rgba(0,0,0,0.18)]
                   bg-[linear-gradient(180deg,#FFD91F_6%,#F3C81C_54%,#D7A90F_100%)]
@@ -124,7 +124,7 @@ onBeforeUnmount(() => t && clearInterval(t))
         <!-- Seconds -->
         <div class="flex flex-col gap-2">
           <div style="font-family: 'Montserrat', sans-serif;"
-            class="card relative overflow-hidden xl:text-[143px] font-black text-[48px] sm:text-[82px] isolate rounded-[9px]
+            class="card relative overflow-hidden xl:text-[128px] font-black text-[48px] sm:text-[82px] isolate rounded-[9px]
                   w-[80px] h-[68px] xl:w-[120px] xl:h-[100px]
                   shadow-[0_8px_16px_rgba(0,0,0,0.18)]
                   bg-[linear-gradient(180deg,#FFD91F_6%,#F3C81C_54%,#D7A90F_100%)]
