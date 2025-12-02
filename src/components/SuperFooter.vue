@@ -72,7 +72,8 @@
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="sm:max-w-[700px] max-w-[330px] flex justify-center md:justify-center">
+    <div class="sm:max-w-[700px] max-w-[330px] flex flex-col justify-center md:justify-center">
+      <h1 class="font-crossfit text-white text-[32px]">Join out list</h1>
       <InputRD />
     </div>
 
