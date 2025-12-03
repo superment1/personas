@@ -57,7 +57,7 @@ const links = [
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="sm:max-w-[950px] max-w-[330px] flex flex-col justify-center">
+    <div class="sm:max-w-[950px] flex flex-col justify-center">
       <h1 class="font-gelasio italic text-white text-[32px]">Join out list</h1>
       <InputRD />
     </div>
