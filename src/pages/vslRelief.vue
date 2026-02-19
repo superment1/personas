@@ -334,7 +334,7 @@ const testimonials = [
         </div>
       </div>
       <!-- v-show="showAfterVideo"  -->
-      <div v-show="showAfterVideo" class="bg-[#370F1E]  border-none">
+      <div class="bg-[#370F1E]  border-none">
         <div class="overflow-hidden max-w-[100%] xl:max-w-[75%] text-[12px] sm:text-[19px] border-[#ffffff69] border-b-[0.579px] bg-[#370F1E] text-white">
           <div class="inline-flex whitespace-nowrap pt-[3px] pb-[2px] animate-marquee">
             <p>Made in the USA <span class="espacada px-2">|</span> Save up to 58% <span class="espacada px-2">|</span> 120-Day Money-Back Guarantee <span class="espacada px-2">|</span> 100% Plant-Based <span class="espacada px-2">|</span> Science-Backed <span class="espacada px-2">|</span> Non-Sedative <span class="espacada px-2">|</span> Non-Habit Forming  <span class="espacada px-2">|</span> Caffeine-Free <span class="espacada px-2">|</span> Gluten, Soy & Dairy-Free <span class="espacada px-2">|</span> Free Shipping <span class="espacada px-2">|</span> GMP-Certified Facility <span class="espacada px-2">|</span></p> 
@@ -637,7 +637,7 @@ const testimonials = [
 
     </div>
     <!-- v-show="showAfterVideo" -->
-    <div v-show="showAfterVideo" class="">
+    <div class="">
      <VslBadgesRelax
         ref="badgesRef"
         bgCollor="bg-[#4DBCB6]"
@@ -652,12 +652,13 @@ const testimonials = [
         combo6="/assets/bottle6.webp"   
         />
     </div> 
-    <DepoimentsD v-show="showAfterVideo"
+    <!-- v-show="showAfterVideo" -->
+    <DepoimentsD 
         :testimonials="testimonials"
     />
-    <!-- DESKTOP v-show="showAfterVideo"  -->
+    <!-- DESKTOP v-show="!showAfterVideo" -->
     
-    <div v-show="!showAfterVideo" class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
+    <div class="bg-[#FFFAF0] w-full pt-[54px] sm:px-10 items-center justify-start">
       <div class="px-0 flex flex-col items-center justify-start">
         <div class="w-full max-w-[349px] md:max-w-[1260px]">
           <h1 class="text-[#350E1D] sm:hidden w-full leading-[1] pb-[46px] font-crossfit text-[34px] text-center sm:text-[68px] ">

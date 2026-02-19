@@ -7,22 +7,23 @@ import SuperHeader2 from '../components/SuperHeader2.vue';
 
 const items=[
     {
-      image: '/assets/box1-desk.webp',
+      image: '/assets/sleep-home.webp',
       title: 'Restful Sleep',
       subtitle: 'Melatonin-free, plant-based support for deep, restorative rest.',
       info: 'Super Natural Sleep helps your system unwind naturally — without sedation or hormonal interference.'
     },
     {
-      image: '/assets/box2-desk.webp',
-      title: 'Stress Control',
-      subtitle: 'Natural support for a calmer, more regulated day.',
-      info: 'Super Relax helps steady your stress response and promote mental clarity, so you can stay grounded even when life speeds up.'
-    },
-    {
-      image: '/assets/box3-desk.webp',
+      image: '/assets/nerve-home.webp',
       title: 'Nerve Pain Relief',
       subtitle: 'Gentle, continuous relief for everyday nerve discomfort.',
       info: 'Super Relax supports smoother nerve signaling and more comfortable days, helping reduce tension without sedation.'
+     
+    },
+    {
+      image: '/assets/relax-home.webp',
+      title: 'Stress Control',
+      subtitle: 'Natural support for a calmer, more regulated day.',
+      info: 'Super Relax helps steady your stress response and promote mental clarity, so you can stay grounded even when life speeds up.'
     }
 ]
 </script>
@@ -44,7 +45,7 @@ const items=[
         <p> </p>
         <p class="text-[12px] lg:text-[30px] font-medium leading-[1] max-w-[980px]">Superment’s US-made, melatonin-free formulas support a regulated nervous system, helping you move with more balance, focus and real restoration.</p>
     </div>
-    <div class="bg-[#370F1E] py-[20px] justify-items-center">
+    <div class="bg-[#370F1E] py-[20px] flex flex-col items-center">
         <h1 class="text-[#fff] text-[28px] lg:text-[62px] font-gelasio italic">Certified by:</h1>
         <Selos/>
     </div>
@@ -63,10 +64,8 @@ const items=[
                         Creators and professionals who rely on plant-based science to support their sleep, stress, and nerve health.</p>
                 </div>
         </div>
-
     </div>
-    <div class="bg-[#370F1E]  flex flex-col justify-center items-center mx-auto">
+    <div class="bg-[#370F1E] flex flex-col justify-center items-center mx-auto">
         <SuperFooter3 class="max-w-[349px] sm:max-w-[950px]"/>
     </div>
-
 </template>

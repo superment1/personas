@@ -66,12 +66,12 @@ watch(() => pad(props.value), (nv) => {
     }"
   >
     <div class="absolute inset-x-0 top-0 h-1/2 overflow-hidden z-0">
-      <div class="face face-skin">
+      <div class="face face-skin" :style="{ background: props.flipBg }">
         <span class="digit absolute left-1/2 -translate-x-1/2 top-full -translate-y-1/2">{{ curr }}</span>
       </div>
     </div>
     <div class="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden z-0">
-      <div class="face face-skin">
+      <div class="face face-skin" :style="{ background: props.flipBg }">
         <span :class="[
                 'digit absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2',
                 flipping ? 'opacity-0' : 'opacity-100'
@@ -84,7 +84,7 @@ watch(() => pad(props.value), (nv) => {
     <div v-if="flipping"
          class="absolute inset-x-0 top-0 h-1/2 overflow-hidden
                 [transform-origin:bottom] will-change-transform anim-top z-30">
-      <div class="face face-skin">
+      <div class="face face-skin" :style="{ background: props.flipBg }">
         <span class="digit absolute left-1/2 -translate-x-1/2 top-full -translate-y-1/2">{{ curr }}</span>
       </div>
     </div>
@@ -92,7 +92,7 @@ watch(() => pad(props.value), (nv) => {
     <div v-if="flipping"
      class="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden
             [transform-origin:top] will-change-transform anim-bottom z-20">
-        <div class="face face-skin">
+        <div class="face face-skin" :style="{ background: props.flipBg }">
             <span class="digit absolute left-1/2 -translate-x-1/2 top-0 -translate-y-1/2">
             {{ bottomAnim }}
             </span>
