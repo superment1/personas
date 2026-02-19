@@ -182,7 +182,14 @@ const asks = ref([
 ])
 </script>
 <template>
-  <SuperHeader2 :show-redirect="false" />
+  <SuperHeader2 :show-redirect="false" :items="[ 
+    'Made in the USA',
+    'Clean, natural, no fillers',
+    'Save up to 57%',
+    'Up to 120-day money-back guarantee',
+    'Real reviews rated 4.9/5.0',
+    'Free U.S. shipping']"
+  />
   <section id="super-sleep-pequeno"
     class="relative overflow-hidden w-full  min-h-[422px] block sm:hidden">
     <picture class="absolute inset-0 z-0">

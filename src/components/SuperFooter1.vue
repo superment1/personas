@@ -12,7 +12,7 @@ const links = [
 <template>
   <section class="w-full bg-[#350e1d] flex flex-col items-center justify-start pt-0 pb-5">
 
-    <!-- PARTE 1: Explore + Contact -->
+    <!-- PARTE 13 : Explore + Contact -->
     <div
       class="flex flex-col gap-0  md:gap-[3rem] lg:gap-[2.5rem] md:flex-row w-full justify-center items-center py-6 md:items-start">
       <!-- Explore -->
@@ -56,7 +56,8 @@ const links = [
     </div>
 
     <!-- PARTE 2: InputRD -->
-    <div class="sm:max-w-[950px] max-w-[330px] flex justify-center md:justify-center">
+    <div class="sm:max-w-[950px] max-w-[330px] flex flex-col justify-center md:justify-center">
+      <h1 class="font-crossfit text-white text-[32px]">Join out list</h1>
       <InputRD />
     </div>
 
